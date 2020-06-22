@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>flex box | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="cssFront End" />
+  
+  
+  
+  
+  <meta name="description" content="Properties for the Parent(flex container)two axis cross axis main axis   flex-direction the direction of the main axis, thus defining the direction flex items are placed in the flex container row（defa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flex Box">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/06/19/flex/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Properties for the Parent(flex container)two axis cross axis main axis   flex-direction the direction of the main axis, thus defining the direction flex items are placed in the flex container row（defa">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/axis.png">
+<meta property="article:published_time" content="2020-06-19T22:39:00.000Z">
+<meta property="article:modified_time" content="2020-06-21T22:46:20.479Z">
+<meta property="article:author" content="Jojo Yang">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="Front End">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/axis.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-flex" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Flex Box
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/06/19/flex/" class="article-date">
+	  <time datetime="2020-06-19T22:39:00.000Z" itemprop="datePublished">2020-06-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Properties-for-the-Parent-flex-container"><a href="#Properties-for-the-Parent-flex-container" class="headerlink" title="Properties for the Parent(flex container)"></a>Properties for the Parent(flex container)</h1><h2 id="two-axis"><a href="#two-axis" class="headerlink" title="two axis"></a>two axis</h2><ul>
+<li>cross axis</li>
+<li>main axis</li>
+<li><img src="/images/axis.png" alt="axis"></li>
+</ul>
+<h2 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h2><ul>
+<li>the direction of the main axis, thus defining the direction flex items are placed in the flex container<ul>
+<li>row（default）：main-axis is horizontal directions, start point is on the left</li>
+<li>row-reverse：main-axis is horizontal directions, start point is on the right</li>
+<li>column：main-axis is vertical directions, start point is on the top</li>
+<li>column-reverse：main-axis is vertical directions, start point is on the bottom</li>
+</ul>
+</li>
+</ul>
+<h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><ul>
+<li>nowrap(default): all flex items will be on the one line</li>
+<li>wrap: flex items will wrap onto multiple lines from top to bottom</li>
+<li>wrap-reverse: flex  items will wrap onto multiple lines from bottom to top</li>
+</ul>
+<h2 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h2><ul>
+<li>flex-direction + flex wrap</li>
+<li><pre><code class="css">  <span class="selector-class">.containers</span> {
+      <span class="attribute">flex-flow</span>: column wrap
+}</code></pre>
+<h2 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h2><ul>
+<li>define the alignment along the <strong>main axis</strong><ul>
+<li>flex-start(default): items are packed toward the start of the flex-direction</li>
+<li>flex-end: items are packed toward the end of the flex-direction</li>
+<li>center: items are centered along the line</li>
+<li>space-between: items are evenly distributed in the line, <strong>first item is on the start line, lastitem on the end line</strong></li>
+<li>space-around: items are evenly distributed in the line with equal space around them, <strong>visuallythe spaces are not equal, since all the items have equal space on both side</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h2><ul>
+<li>how flex items are laid out along the <strong>cross axis</strong> on the current line<ul>
+<li>stretch(default): stretch to fill the container(still respect min-width/max-width)</li>
+<li>flex-start/start/self-start<ul>
+<li>items are placed start of the cross axis</li>
+<li>the difference between these is subtle, and is about respecting the <strong>flex-direction</strong> rulesor the <strong>writling-mode</strong> rules</li>
+</ul>
+</li>
+<li>flex-end/end/self-end<ul>
+<li>items are placed at the end of the cross axis</li>
+<li>the difference between thses is subtle, and is about respecting the <strong>flex-direction</strong> rulesor the <strong>writling-mode</strong> rules</li>
+</ul>
+</li>
+<li>center<ul>
+<li>items are centered in the cross-axis</li>
+</ul>
+</li>
+<li>baseline<ul>
+<li>itmes are aligned such as their baselines align</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><ul>
+<li>This aligns <strong>a flex container’s lines</strong> within when there is <strong>extra space</strong> in the <strong>cross-axis</strong></li>
+<li><strong>this property has no effect when there is only one line of flex items</strong><ul>
+<li>stretch(default): lines stretch to take up the remaining space</li>
+<li>flex-start/start: items packed to the start of the container<ul>
+<li>flex-start: honors the <strong>flex direction</strong></li>
+<li>start: honors the <strong>writing mode direction</strong></li>
+</ul>
+</li>
+<li>flex-end/end: items packed to the end of the container<ul>
+<li>flex-end: honors the <strong>flex direction</strong></li>
+<li>end: honors the <strong>writing mode direction</strong></li>
+</ul>
+</li>
+<li>center: items centered in the container</li>
+<li>space-around: items evenly distributed with equal space around each line</li>
+<li>space-between: items evenly distributed<ul>
+<li>the first line is at the start of the container</li>
+<li>the last on is at the end</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>the main diff between align-items and align-content is the exptra space, there is some extra space inthe align items, however there is no extra space in  the align-content(except space-around and spacebetween)</li>
+</ul>
+<h1 id="Properties-for-the-Children-flex-items"><a href="#Properties-for-the-Children-flex-items" class="headerlink" title="Properties for the Children(flex items)"></a>Properties for the Children(flex items)</h1><h2 id="order"><a href="#order" class="headerlink" title="order"></a>order</h2><ul>
+<li>control the order in which they appear in the flex container</li>
+<li>default is 0</li>
+<li>the value is smaller, it will be in the front of the container</li>
+</ul>
+<h2 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h2><ul>
+<li>the ability for a flex item to grow if necessary</li>
+<li>Negative numbers are invalid</li>
+<li>defalut is 0, which means even there is extra space, it will not grow</li>
+<li>if all items have flex-glow set to 1, the remaining space in the container will be distributedequally to all children</li>
+<li>if one of the children has a value of 2, the remaining space would take up twice as much space as the others</li>
+</ul>
+<h2 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a>flex-shrink</h2><ul>
+<li>the ability for a flex item to shrink if necessary</li>
+<li>Negative numbers are invalid</li>
+<li>default is 1, if the space is not enough, it will shrink</li>
+<li>if an item is 0, others are 1, then if the space is not enough, the previous one will not shrink</li>
+</ul>
+<h2 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis:"></a>flex-basis:</h2><ul>
+<li>defines the default size of an element before the remaining space is distributed on the main-axis</li>
+<li>can set to width/height, then the item will have the fixed size</li>
+<li>default is auto, the original size of the item</li>
+</ul>
+<h2 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h2><ul>
+<li>shorthand for flex-grow, flex-shrink and flex-basis, default value is 0 1 auto</li>
+<li><strong>it is recommended that you use this shorthand property rather than set the individual properties.the shorthand sets the other values intelligiently</strong></li>
+</ul>
+<h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><ul>
+<li>the default alignment to be overridden for individual flex items</li>
+<li>default is auto, inferit from the align-items of parent items, if there is no parent, it will be stretch</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/06/19/flex/" target="_blank" title="Flex Box">https://jojoyang666.github.io/2020/06/19/flex/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Front-End/" rel="tag">Front End</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/" rel="tag">css</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties-for-the-Parent-flex-container"><span class="nav-number">1.</span> <span class="nav-text">Properties for the Parent(flex container)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#two-axis"><span class="nav-number">1.1.</span> <span class="nav-text">two axis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-direction"><span class="nav-number">1.2.</span> <span class="nav-text">flex-direction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-wrap"><span class="nav-number">1.3.</span> <span class="nav-text">flex-wrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-flow"><span class="nav-number">1.4.</span> <span class="nav-text">flex-flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-content"><span class="nav-number">1.5.</span> <span class="nav-text">justify-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-items"><span class="nav-number">1.6.</span> <span class="nav-text">align-items</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-content"><span class="nav-number">1.7.</span> <span class="nav-text">align-content</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties-for-the-Children-flex-items"><span class="nav-number">2.</span> <span class="nav-text">Properties for the Children(flex items)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#order"><span class="nav-number">2.1.</span> <span class="nav-text">order</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-grow"><span class="nav-number">2.2.</span> <span class="nav-text">flex-grow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-shrink"><span class="nav-number">2.3.</span> <span class="nav-text">flex-shrink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-basis"><span class="nav-number">2.4.</span> <span class="nav-text">flex-basis:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex"><span class="nav-number">2.5.</span> <span class="nav-text">flex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-self"><span class="nav-number">2.6.</span> <span class="nav-text">align-self</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
