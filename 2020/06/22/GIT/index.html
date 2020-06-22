@@ -3,20 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Categories | Jojo&#39;s Blog</title>
+  <title>git | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="Source Control" />
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://jojoyang666.github.io/categories/index.html">
+  
+  <meta name="description" content="Stash Git stash: Hide current work   Git stash list: View current stash   Git stash apply &amp; git stash drop Apply and delete   Git stash pop Same as above   Git stash apply stash@{0} Select stash">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GIT">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/06/22/GIT/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Stash Git stash: Hide current work   Git stash list: View current stash   Git stash apply &amp; git stash drop Apply and delete   Git stash pop Same as above   Git stash apply stash@{0} Select stash">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-06-22T01:51:07.000Z">
-<meta property="article:modified_time" content="2020-06-22T01:52:06.868Z">
+<meta property="article:published_time" content="2020-06-22T22:29:47.000Z">
+<meta property="article:modified_time" content="2020-06-22T22:40:46.941Z">
 <meta property="article:author" content="Jojo Yang">
+<meta property="article:tag" content="Source Control">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
@@ -66,8 +71,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
     <link rel="stylesheet" href="/css/vdonate.css" >
@@ -77,7 +80,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -100,7 +103,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
               </a>
             
@@ -171,166 +174,181 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><div class="archives-wrap" style="margin: 0px;">
-	<div class="col-lg-10 col-lg-offset-1 col-md-10">
-		<div class="archives-category-wrap">
-			<blockquote>
-			
-			  <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Front-End/">Front End</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/cheatsheet/">cheatsheet</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/cheatsheet/">cheatsheet</a><span class="category-list-count">1</span></li></ul>
-			
-			</blockquote>
+          <section id="main" style="float:none;"><article id="post-GIT" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      GIT
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/06/22/GIT/" class="article-date">
+	  <time datetime="2020-06-22T22:29:47.000Z" itemprop="datePublished">2020-06-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Tools/">Tools</a><a class="article-category-link" href="/categories/Tools/cheatsheet/">cheatsheet</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h1><ul>
+<li>Git stash:<ul>
+<li>Hide current work</li>
+</ul>
+</li>
+<li>Git stash list:<ul>
+<li>View current stash</li>
+</ul>
+</li>
+<li>Git stash apply &amp; git stash drop<ul>
+<li>Apply and delete</li>
+</ul>
+</li>
+<li>Git stash pop<ul>
+<li>Same as above</li>
+</ul>
+</li>
+<li>Git stash apply stash@{0}<ul>
+<li>Select stash</li>
+</ul>
+</li>
+<li>Git stash show [<stash>]: 展示存储单元和最新存储的结果<ul>
+<li>Git stash show -p [<stash>]: stash detail</li>
+</ul>
+</li>
+</ul>
+<h1 id="Cherry-pick"><a href="#Cherry-pick" class="headerlink" title="Cherry-pick"></a>Cherry-pick</h1><ul>
+<li>git cherry-pick <commit-number> -n</li>
+</ul>
+<h1 id="Diff"><a href="#Diff" class="headerlink" title="Diff"></a>Diff</h1><ul>
+<li>git diff –staged</li>
+<li>git diff –cached</li>
+</ul>
+<h1 id="REWRITING-GIT-HISTORY"><a href="#REWRITING-GIT-HISTORY" class="headerlink" title="REWRITING GIT HISTORY"></a>REWRITING GIT HISTORY</h1><ul>
+<li>git commit –amend: Replace the last commit with the staged changes and last commit combined. Use with nothing staged to edit the last commit’s message</li>
+<li>git rebase -i <commit number> —&gt; 前闭后开</li>
+</ul>
+<h1 id="Rename"><a href="#Rename" class="headerlink" title="Rename"></a>Rename</h1><p>git branch -m <newname></p>
+<h1 id="Create-New-Branch"><a href="#Create-New-Branch" class="headerlink" title="Create New Branch"></a>Create New Branch</h1><p>git checkout -f -B local_TOT remotes/origin/TOT</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/06/22/GIT/" target="_blank" title="GIT">https://jojoyang666.github.io/2020/06/22/GIT/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
 		</div>
-		
-		<!-- 分类列表 -->
-
-        
-        <div class="archives-wrap">
-            <div class="archive-year-wrap" id="Front End">
-                <h1 class="archive-category">Front End</h1>
-            </div>
-            <div class="archives">
-                
-                    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/06/19/flex/" class="archive-article-date">
-	  <time datetime="2020-06-19T22:39:00.000Z" itemprop="datePublished">2020-06-19</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/06/19/flex/">Flex Box</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-                    
-                
-            </div>
-        </div>
-        
-        <div class="archives-wrap">
-            <div class="archive-year-wrap" id="JavaScript">
-                <h1 class="archive-category">JavaScript</h1>
-            </div>
-            <div class="archives">
-                
-                    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/06/22/Regular-Expression/" class="archive-article-date">
-	  <time datetime="2020-06-22T18:46:19.000Z" itemprop="datePublished">2020-06-22</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/Regular-Expression/">Regular Expression</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-                    
-                
-            </div>
-        </div>
-        
-        <div class="archives-wrap">
-            <div class="archive-year-wrap" id="Tools">
-                <h1 class="archive-category">Tools</h1>
-            </div>
-            <div class="archives">
-                
-                    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/06/22/GIT/" class="archive-article-date">
-	  <time datetime="2020-06-22T22:29:47.000Z" itemprop="datePublished">2020-06-22</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/GIT/">GIT</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-                    
-                
-            </div>
-        </div>
-        
-        <div class="archives-wrap">
-            <div class="archive-year-wrap" id="cheatsheet">
-                <h1 class="archive-category">cheatsheet</h1>
-            </div>
-            <div class="archives">
-                
-                    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/06/22/Shortcut-for-Iterm2/" class="archive-article-date">
-	  <time datetime="2020-06-22T21:41:31.000Z" itemprop="datePublished">2020-06-22</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/Shortcut-for-Iterm2/">Shortcut for Iterm2</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-                    
-                
-            </div>
-        </div>
-        
-        <div class="archives-wrap">
-            <div class="archive-year-wrap" id="cheatsheet">
-                <h1 class="archive-category">cheatsheet</h1>
-            </div>
-            <div class="archives">
-                
-                    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/06/22/GIT/" class="archive-article-date">
-	  <time datetime="2020-06-22T22:29:47.000Z" itemprop="datePublished">2020-06-22</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/GIT/">GIT</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-                    
-                
-            </div>
-        </div>
-        
+		<!-- City版安装代码已完成 -->
 	</div>
-</div></section>
+
+
+
+      
+      
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Source-Control/" rel="tag">Source Control</a></li></ul>
+
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/22/Shortcut-for-Iterm2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Shortcut for Iterm2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Stash"><span class="nav-number">1.</span> <span class="nav-text">Stash</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cherry-pick"><span class="nav-number">2.</span> <span class="nav-text">Cherry-pick</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Diff"><span class="nav-number">3.</span> <span class="nav-text">Diff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REWRITING-GIT-HISTORY"><span class="nav-number">4.</span> <span class="nav-text">REWRITING GIT HISTORY</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rename"><span class="nav-number">5.</span> <span class="nav-text">Rename</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-New-Branch"><span class="nav-number">6.</span> <span class="nav-text">Create New Branch</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
         
       </div>
       
@@ -432,6 +450,10 @@
 
 
 
+  
+<script src="/js/dialog.js"></script>
+
+
 
 
 
@@ -515,6 +537,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
