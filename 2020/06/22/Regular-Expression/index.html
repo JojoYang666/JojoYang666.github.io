@@ -19,7 +19,7 @@
 <meta property="og:description" content="Character ClassesAssertions^ Matches the beginning of input if the multiline flas is set to true, also mathces immediately after a line break character Like: &#x2F;^A&#x2F; does not match the “A” in “an A”, but">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-22T18:46:19.000Z">
-<meta property="article:modified_time" content="2020-06-22T19:16:11.112Z">
+<meta property="article:modified_time" content="2020-06-25T16:51:55.414Z">
 <meta property="article:author" content="Jojo Yang">
 <meta property="article:tag" content="Front End">
 <meta name="twitter:card" content="summary">
@@ -226,7 +226,11 @@
 <li>Matches the preceding item “x” 0 or 1 times</li>
 <li>If used immediately after any of the quantifiers <code>*</code>, <code>+</code>, <code>?</code>, <code>{}</code></li>
 </ol>
-<h1 id="Unicode-Property-Escapes"><a href="#Unicode-Property-Escapes" class="headerlink" title="Unicode Property Escapes"></a>Unicode Property Escapes</h1>
+<h1 id="Unicode-Property-Escapes"><a href="#Unicode-Property-Escapes" class="headerlink" title="Unicode Property Escapes"></a>Unicode Property Escapes</h1><h1 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h1><ol>
+<li>when create the regular expression, it will be global match or not? if it is global, it should add ‘g’; default is not global</li>
+<li>when create the regular expression, it will be case sensitive or not? it if is case insensitive, it should add ‘i’; defalut is case sensitive</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -330,7 +334,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Character-Classes"><span class="nav-number">1.</span> <span class="nav-text">Character Classes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Assertions"><span class="nav-number">2.</span> <span class="nav-text">Assertions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">^</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Groups-and-ranges"><span class="nav-number">3.</span> <span class="nav-text">Groups and ranges</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x"><span class="nav-number">3.1.</span> <span class="nav-text">(?:x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-y"><span class="nav-number">3.2.</span> <span class="nav-text">x|y</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Quantifiers"><span class="nav-number">4.</span> <span class="nav-text">Quantifiers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x-1"><span class="nav-number">4.1.</span> <span class="nav-text">x?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unicode-Property-Escapes"><span class="nav-number">5.</span> <span class="nav-text">Unicode Property Escapes</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Character-Classes"><span class="nav-number">1.</span> <span class="nav-text">Character Classes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Assertions"><span class="nav-number">2.</span> <span class="nav-text">Assertions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">2.1.</span> <span class="nav-text">^</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Groups-and-ranges"><span class="nav-number">3.</span> <span class="nav-text">Groups and ranges</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x"><span class="nav-number">3.1.</span> <span class="nav-text">(?:x)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#x-y"><span class="nav-number">3.2.</span> <span class="nav-text">x|y</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Quantifiers"><span class="nav-number">4.</span> <span class="nav-text">Quantifiers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#x-1"><span class="nav-number">4.1.</span> <span class="nav-text">x?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unicode-Property-Escapes"><span class="nav-number">5.</span> <span class="nav-text">Unicode Property Escapes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Note"><span class="nav-number">6.</span> <span class="nav-text">Note</span></a></li></ol>
     
     </div>
   </aside>
