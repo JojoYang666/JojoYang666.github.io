@@ -19,7 +19,7 @@
 <meta property="og:description" content="Stash Git stash: Hide current work   Git stash list: View current stash   Git stash apply &amp; git stash drop Apply and delete   Git stash pop Same as above   Git stash apply stash@{0} Select stash">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-22T22:29:47.000Z">
-<meta property="article:modified_time" content="2020-06-29T20:55:22.877Z">
+<meta property="article:modified_time" content="2020-07-14T00:32:25.153Z">
 <meta property="article:author" content="Jojo Yang">
 <meta property="article:tag" content="Source Control">
 <meta name="twitter:card" content="summary">
@@ -253,6 +253,30 @@
 </ul>
 <h1 id="Rename"><a href="#Rename" class="headerlink" title="Rename"></a>Rename</h1><p>git branch -m <newname></p>
 <h1 id="Create-New-Branch"><a href="#Create-New-Branch" class="headerlink" title="Create New Branch"></a>Create New Branch</h1><p>git checkout -f -B local_TOT remotes/origin/TOT</p>
+<h1 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h1><ol>
+<li><code>git checkout -- file</code><ul>
+<li>git revoke the file in the working space, let it roll back to the latest status git commit/git add</li>
+</ul>
+</li>
+<li><code>git checkout &lt;other branch&gt; -- &lt;file path1&gt; &lt;file path2&gt;</code><ul>
+<li>copy the file from another branch to current one</li>
+</ul>
+</li>
+</ol>
+<h1 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h1><ol>
+<li>shows the current HEAD and its ancestry<ul>
+<li>prints the commit HEAD points to, then its parent, its parent and so on</li>
+<li>it tranverse back through the repo’s ancestry, by revursively looking up each commit’s parent</li>
+</ul>
+</li>
+<li><code>git log --oneline --graph --decorate</code><h1 id="git-reflog"><a href="#git-reflog" class="headerlink" title="git reflog"></a>git reflog</h1></li>
+<li>an ordered list of the commits that HEAD has points to: <strong>it’s undo history for your repo</strong></li>
+</ol>
+<h1 id="Remove-files-from-git-commit"><a href="#Remove-files-from-git-commit" class="headerlink" title="Remove files from git commit"></a>Remove files from git commit</h1><ol>
+<li>git reset – soft HEAD^/HEAD~1</li>
+<li>git reset HEAD <file path></li>
+<li>git commit -c ORIG_HEAD</li>
+</ol>
 
       
     </div>
@@ -357,7 +381,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Stash"><span class="nav-number">1.</span> <span class="nav-text">Stash</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cherry-pick"><span class="nav-number">2.</span> <span class="nav-text">Cherry-pick</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Diff"><span class="nav-number">3.</span> <span class="nav-text">Diff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REWRITING-GIT-HISTORY"><span class="nav-number">4.</span> <span class="nav-text">REWRITING GIT HISTORY</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rename"><span class="nav-number">5.</span> <span class="nav-text">Rename</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-New-Branch"><span class="nav-number">6.</span> <span class="nav-text">Create New Branch</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Stash"><span class="nav-number">1.</span> <span class="nav-text">Stash</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cherry-pick"><span class="nav-number">2.</span> <span class="nav-text">Cherry-pick</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Diff"><span class="nav-number">3.</span> <span class="nav-text">Diff</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#REWRITING-GIT-HISTORY"><span class="nav-number">4.</span> <span class="nav-text">REWRITING GIT HISTORY</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rename"><span class="nav-number">5.</span> <span class="nav-text">Rename</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-New-Branch"><span class="nav-number">6.</span> <span class="nav-text">Create New Branch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-checkout"><span class="nav-number">7.</span> <span class="nav-text">git checkout</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-log"><span class="nav-number">8.</span> <span class="nav-text">git log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-reflog"><span class="nav-number">9.</span> <span class="nav-text">git reflog</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Remove-files-from-git-commit"><span class="nav-number">10.</span> <span class="nav-text">Remove files from git commit</span></a></li></ol>
     
     </div>
   </aside>
