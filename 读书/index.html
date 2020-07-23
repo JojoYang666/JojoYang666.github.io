@@ -3,30 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>react lifecycle | Jojo&#39;s Blog</title>
+  <title>读书 | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="ReactFront End" />
   
   
   
-  
-  <meta name="description" content="Lifecycle Diagram    UpdatingcomponentDidUpdate invoked immediately after updating occurs, is not called for the initial render A good place to do network requests as long as you compare the current p">
-<meta property="og:type" content="article">
-<meta property="og:title" content="React LifeCycle">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/06/25/React-LifeCycle/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="读书">
+<meta property="og:url" content="https://jojoyang666.github.io/%E8%AF%BB%E4%B9%A6/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Lifecycle Diagram    UpdatingcomponentDidUpdate invoked immediately after updating occurs, is not called for the initial render A good place to do network requests as long as you compare the current p">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jojoyang666.github.io/images/lifecycle.png">
-<meta property="og:image" content="https://jojoyang666.github.io/images/lifecycle_detail.png">
-<meta property="article:published_time" content="2020-06-25T16:51:13.000Z">
-<meta property="article:modified_time" content="2020-06-25T17:56:12.957Z">
+<meta property="article:published_time" content="2020-07-20T00:59:21.000Z">
+<meta property="article:modified_time" content="2020-07-20T00:59:21.372Z">
 <meta property="article:author" content="Jojo Yang">
-<meta property="article:tag" content="React">
-<meta property="article:tag" content="Front End">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jojoyang666.github.io/images/lifecycle.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -75,6 +66,8 @@
   
 
   
+    <link rel="stylesheet" href="/css/archive.css" >
+  
   
   
     <link rel="stylesheet" href="/css/vdonate.css" >
@@ -84,7 +77,7 @@
 
 
 
-  <body data-spy="scroll" data-target="#toc" data-offset="50">
+  <body>
 
 
   
@@ -107,7 +100,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                href="#" data-toggle="modal" data-target="#myModal" >
+                 >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
               </a>
             
@@ -178,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-React-LifeCycle" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="page-"  class="article article-type-page" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -186,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      React LifeCycle
+      读书
     </h1>
   
 
@@ -194,69 +187,18 @@
     
     <div class="article-meta">
       
-	<a href="/2020/06/25/React-LifeCycle/" class="article-date">
-	  <time datetime="2020-06-25T16:51:13.000Z" itemprop="datePublished">2020-06-25</time>
+	<a href="/%E8%AF%BB%E4%B9%A6/index.html" class="article-date">
+	  <time datetime="2020-07-20T00:59:21.000Z" itemprop="datePublished">2020-07-19</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/React/">React</a>
-
       
-	<a class="article-views">
-	<span id="busuanzi_container_page_pv">
-		PV:<span id="busuanzi_value_page_pv"></span>
-	</span>
-	</a>
-
       
 
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Lifecycle-Diagram"><a href="#Lifecycle-Diagram" class="headerlink" title="Lifecycle Diagram"></a>Lifecycle Diagram</h1><ul>
-<li><img src="/images/lifecycle.png" alt="overall"></li>
-<li><img src="/images/lifecycle_detail.png" alt="detail"></li>
-</ul>
-<h1 id="Updating"><a href="#Updating" class="headerlink" title="Updating"></a>Updating</h1><h2 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h2><ol>
-<li>invoked immediately after updating occurs, is not called for the initial render</li>
-<li>A good place to do network requests as long as you compare the current props to previous props(e.g. a network request may not be necessary if the props have not changed)</li>
-<li><strong>May call setState() immediately in componentDidUpdate()</strong>, but nore that <strong>it must be wrapped in a condition</strong>, otherwise will cause a infinite loop</li>
-<li>If try to “mirror” some state to a prop coming from above, consider using the prop directly instead</li>
-</ol>
-<h2 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h2><ol>
-<li>Let react know if a component’s output is not affected by the current change in state or props</li>
-<li>Default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior</li>
-<li>Invoked before rendering when new props or state are being received. Defaults to <code>true</code></li>
-<li>Exists as a <strong>performance optimization</strong>, do not rely on it to “prevent” a rendering, as this can lead bugs<ul>
-<li>If want to prevent a rendering, can use PureComponent</li>
-<li>PureComponent performs a shallow comparison of props and state, and reduces the chance that you’ll skip a necessary update</li>
-</ul>
-</li>
-<li>compare this.props with nextProps and this.state with nextState and return false to tell React the update can be skipped<ul>
-<li>Noted that <strong>returning false does not prevent child components from rerendering when their states changes</strong></li>
-</ul>
-</li>
-<li>Not recommend doing deap <strong>equality checks</strong> or using <strong>JSON.stringify()</strong> in <code>shouldComponentUpdate()</code>, it is every inefficient and will harm the performanced</li>
-</ol>
-<h1 id="React-PureComponent"><a href="#React-PureComponent" class="headerlink" title="React.PureComponent"></a>React.PureComponent</h1><ol>
-<li><p>similar to <code>React.Component</code>. The difference between them is:</p>
-<ul>
-<li>React.Component does not implement shouldComponentUpdate()</li>
-<li>React.PureComponent implements it with a shallow prop and state comparison</li>
-</ul>
-</li>
-<li><p>React.PureComponent’s shouldComponentUpdate only <strong>shallowly compares the object</strong></p>
-<ul>
-<li>if contains complex data structer, may introduce false-negative for deeper diff</li>
-</ul>
-</li>
-<li><p>React.PureComponent’s shouldComponentUpdate skips prop updates for the whole component subtree</p>
-<ul>
-<li>Make sure all the children components are also pure</li>
-</ul>
-</li>
-</ol>
-
+        
       
     </div>
     <footer class="article-footer">
@@ -284,7 +226,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/06/25/React-LifeCycle/" target="_blank" title="React LifeCycle">https://jojoyang666.github.io/2020/06/25/React-LifeCycle/</a>
+          <a href="/读书/index.html" target="_blank" title="读书">https://jojoyang666.github.io/读书/index.html</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -323,47 +265,15 @@ var a = new Donate({
 
       
       
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Front-End/" rel="tag">Front End</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
-
-      
 
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2020/06/30/Binary-Indexed-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Binary Indexed Tree
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">308. Range Sum Query 2D - Mutable</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
 <!-- Table of Contents -->
-
-  <aside id="toc-sidebar">
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
-    
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lifecycle-Diagram"><span class="nav-number">1.</span> <span class="nav-text">Lifecycle Diagram</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Updating"><span class="nav-number">2.</span> <span class="nav-text">Updating</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">2.1.</span> <span class="nav-text">componentDidUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">2.2.</span> <span class="nav-text">shouldComponentUpdate</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-PureComponent"><span class="nav-number">3.</span> <span class="nav-text">React.PureComponent</span></a></li></ol>
-    
-    </div>
-  </aside>
 
 </section>
         
@@ -467,10 +377,6 @@ var a = new Donate({
 
 
 
-  
-<script src="/js/dialog.js"></script>
-
-
 
 
 
@@ -554,8 +460,6 @@ var a = new Donate({
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
-  
-    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
