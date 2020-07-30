@@ -3,30 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>react lifecycle | Jojo&#39;s Blog</title>
+  <title>489. robot room cleaner | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="ReactFront End" />
   
   
   
-  
-  <meta name="description" content="Lifecycle Diagram    UpdatingcomponentDidUpdate invoked immediately after updating occurs, is not called for the initial render A good place to do network requests as long as you compare the current p">
+  <meta name="description" content="Solution https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;y4izHfShEfU  Backtrack algorithm  we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0) then [[-1, 0], [0, 1],">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React LifeCycle">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/06/25/React-LifeCycle/index.html">
+<meta property="og:title" content="489. Robot Room Cleaner">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/07/29/489-Robot-Room-Cleaner/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Lifecycle Diagram    UpdatingcomponentDidUpdate invoked immediately after updating occurs, is not called for the initial render A good place to do network requests as long as you compare the current p">
+<meta property="og:description" content="Solution https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;y4izHfShEfU  Backtrack algorithm  we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0) then [[-1, 0], [0, 1],">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jojoyang666.github.io/images/lifecycle.png">
-<meta property="og:image" content="https://jojoyang666.github.io/images/lifecycle_detail.png">
-<meta property="article:published_time" content="2020-06-25T16:51:13.000Z">
-<meta property="article:modified_time" content="2020-06-25T17:56:12.957Z">
+<meta property="article:published_time" content="2020-07-29T21:48:02.000Z">
+<meta property="article:modified_time" content="2020-07-30T00:22:38.050Z">
 <meta property="article:author" content="Jojo Yang">
-<meta property="article:tag" content="React">
-<meta property="article:tag" content="Front End">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jojoyang666.github.io/images/lifecycle.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -178,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-React-LifeCycle" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-489-Robot-Room-Cleaner" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -186,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      React LifeCycle
+      489. Robot Room Cleaner
     </h1>
   
 
@@ -194,12 +187,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/06/25/React-LifeCycle/" class="article-date">
-	  <time datetime="2020-06-25T16:51:13.000Z" itemprop="datePublished">2020-06-25</time>
+	<a href="/2020/07/29/489-Robot-Room-Cleaner/" class="article-date">
+	  <time datetime="2020-07-29T21:48:02.000Z" itemprop="datePublished">2020-07-29</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/React/">React</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
 	<a class="article-views">
@@ -213,47 +206,25 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Lifecycle-Diagram"><a href="#Lifecycle-Diagram" class="headerlink" title="Lifecycle Diagram"></a>Lifecycle Diagram</h1><ul>
-<li><img src="/images/lifecycle.png" alt="overall"></li>
-<li><img src="/images/lifecycle_detail.png" alt="detail"></li>
-</ul>
-<h1 id="Updating"><a href="#Updating" class="headerlink" title="Updating"></a>Updating</h1><h2 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h2><ol>
-<li>invoked immediately after updating occurs, is not called for the initial render</li>
-<li>A good place to do network requests as long as you compare the current props to previous props(e.g. a network request may not be necessary if the props have not changed)</li>
-<li><strong>May call setState() immediately in componentDidUpdate()</strong>, but nore that <strong>it must be wrapped in a condition</strong>, otherwise will cause a infinite loop</li>
-<li>If try to “mirror” some state to a prop coming from above, consider using the prop directly instead</li>
-</ol>
-<h2 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h2><ol>
-<li>Let react know if a component’s output is not affected by the current change in state or props</li>
-<li>Default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior</li>
-<li>Invoked before rendering when new props or state are being received. Defaults to <code>true</code></li>
-<li>Exists as a <strong>performance optimization</strong>, do not rely on it to “prevent” a rendering, as this can lead bugs<ul>
-<li>If want to prevent a rendering, can use PureComponent</li>
-<li>PureComponent performs a shallow comparison of props and state, and reduces the chance that you’ll skip a necessary update</li>
-</ul>
+        <h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ol>
+<li><p><a href="https://www.youtube.com/watch?v=y4izHfShEfU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=y4izHfShEfU</a></p>
 </li>
-<li>compare this.props with nextProps and this.state with nextState and return false to tell React the update can be skipped<ul>
-<li>Noted that <strong>returning false does not prevent child components from rerendering when their states changes</strong></li>
-</ul>
-</li>
-<li>Not recommend doing deap <strong>equality checks</strong> or using <strong>JSON.stringify()</strong> in <code>shouldComponentUpdate()</code>, it is every inefficient and will harm the performanced</li>
-</ol>
-<h1 id="React-PureComponent"><a href="#React-PureComponent" class="headerlink" title="React.PureComponent"></a>React.PureComponent</h1><ol>
-<li><p>similar to <code>React.Component</code>. The difference between them is:</p>
+<li><p>Backtrack algorithm</p>
 <ul>
-<li>React.Component does not implement shouldComponentUpdate()</li>
-<li>React.PureComponent implements it with a shallow prop and state comparison</li>
+<li>we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0)<ul>
+<li>then [[-1, 0], [0, 1], [1, 0], [0, -1]] to  4 directions, we have all the point which is relative to the initial position</li>
 </ul>
 </li>
-<li><p>React.PureComponent’s shouldComponentUpdate only <strong>shallowly compares the object</strong></p>
-<ul>
-<li>if contains complex data structer, may introduce false-negative for deeper diff</li>
+<li>This is the robot, it can only move to one direction(move forward), otherwise it need to turn right/left</li>
+<li>if the robot arrived a position where it is neighbors all have been vistied, it can not go back to the original position directly(like normal backtrack)<ul>
+<li>Thus, we need to go back following the path how we get here exactly. This is the reason why we need goBack function</li>
 </ul>
 </li>
-<li><p>React.PureComponent’s shouldComponentUpdate skips prop updates for the whole component subtree</p>
-<ul>
-<li>Make sure all the children components are also pure</li>
+<li>why we turn the direction in the clock-wise? the robot just one move direction(move forward) –&gt; clock-wise way to guarantee 机器人要移动的方向和转向是一样的</li>
 </ul>
+</li>
+<li><p>Code</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * // This is the robot's control interface.</span></span><br><span class="line"><span class="comment"> * // You should not implement it, or speculate about its implementation</span></span><br><span class="line"><span class="comment"> * function Robot() &#123;</span></span><br><span class="line"><span class="comment"> *     // Returns true if the cell in front is open and robot moves into the cell.</span></span><br><span class="line"><span class="comment"> *     // Returns false if the cell in front is blocked and robot stays in the current cell.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> *     this.move = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // Robot will stay in the same cell after calling turnLeft/turnRight.</span></span><br><span class="line"><span class="comment"> *     // Each turn will be 90 degrees.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;void&#125;</span></span></span></span><br><span class="line"><span class="comment"> *     this.turnLeft = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> *     // Robot will stay in the same cell after calling turnLeft/turnRight.</span></span><br><span class="line"><span class="comment"> *     // Each turn will be 90 degrees.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span></span></span><br><span class="line"><span class="comment"> *     this.turnRight = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // Clean the current cell.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;void&#125;</span></span></span></span><br><span class="line"><span class="comment"> *     this.clean = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;Robot&#125;</span> <span class="variable">robot</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> cleanRoom = <span class="function"><span class="keyword">function</span>(<span class="params">robot</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    helper(robot, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, visited)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> goback = <span class="function">(<span class="params">robot</span>) =&gt;</span> &#123;</span><br><span class="line">    robot.turnRight();</span><br><span class="line">    robot.turnRight();</span><br><span class="line">    robot.move();</span><br><span class="line">    robot.turnLeft();</span><br><span class="line">    robot.turnLeft();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> helper = <span class="function">(<span class="params">robot, x, y, dir, visited</span>) =&gt;</span> &#123;</span><br><span class="line">    robot.clean();</span><br><span class="line">    visited.add(<span class="string">`<span class="subst">$&#123;x&#125;</span>-<span class="subst">$&#123;y&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">const</span> dirs = [[<span class="number">-1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">-1</span>]]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> cur = (i + dir)%<span class="number">4</span>, newX = x + dirs[cur][<span class="number">0</span>], newY = y + dirs[cur][<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!visited.has(<span class="string">`<span class="subst">$&#123;newX&#125;</span>-<span class="subst">$&#123;newY&#125;</span>`</span>) &amp;&amp; robot.move()) &#123;</span><br><span class="line">            helper(robot, newX, newY, cur, visited);</span><br><span class="line">            </span><br><span class="line">            goback(robot)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        robot.turnRight();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -284,7 +255,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/06/25/React-LifeCycle/" target="_blank" title="React LifeCycle">https://jojoyang666.github.io/2020/06/25/React-LifeCycle/</a>
+          <a href="/2020/07/29/489-Robot-Room-Cleaner/" target="_blank" title="489. Robot Room Cleaner">https://jojoyang666.github.io/2020/07/29/489-Robot-Room-Cleaner/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -324,8 +295,6 @@ var a = new Donate({
       
       
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Front-End/" rel="tag">Front End</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
-
       
 
     </footer>
@@ -334,19 +303,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/06/30/Binary-Indexed-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Binary Indexed Tree
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/24/212-Word-Search-II/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">308. Range Sum Query 2D - Mutable</div>
+      <div class="article-nav-title">212. Word Search II</div>
     </a>
   
 </nav>
@@ -360,7 +320,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lifecycle-Diagram"><span class="nav-number">1.</span> <span class="nav-text">Lifecycle Diagram</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Updating"><span class="nav-number">2.</span> <span class="nav-text">Updating</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">2.1.</span> <span class="nav-text">componentDidUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">2.2.</span> <span class="nav-text">shouldComponentUpdate</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-PureComponent"><span class="nav-number">3.</span> <span class="nav-text">React.PureComponent</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol>
     
     </div>
   </aside>
