@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>489. robot room cleaner | Jojo&#39;s Blog</title>
+  <title>361. bomb enemy | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Solution https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;y4izHfShEfU  Backtrack algorithm  we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0) then [[-1, 0], [0, 1],">
+  <meta name="description" content="Solution Thinking rowCnt: record the number of ememies before hiting the next wall colCnt[j]: in the jth col, the number of emeimis before hiting the wall   why colCnt would be an array? For each row,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="489. Robot Room Cleaner">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/07/29/489-Robot-Room-Cleaner/index.html">
+<meta property="og:title" content="361. Bomb Enemy">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/07/31/361-Bomb-Enemy/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Solution https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v&#x3D;y4izHfShEfU  Backtrack algorithm  we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0) then [[-1, 0], [0, 1],">
+<meta property="og:description" content="Solution Thinking rowCnt: record the number of ememies before hiting the next wall colCnt[j]: in the jth col, the number of emeimis before hiting the wall   why colCnt would be an array? For each row,">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-29T21:48:02.000Z">
-<meta property="article:modified_time" content="2020-07-30T00:22:38.050Z">
+<meta property="article:published_time" content="2020-07-31T16:04:07.000Z">
+<meta property="article:modified_time" content="2020-07-31T17:20:02.037Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-489-Robot-Room-Cleaner" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-361-Bomb-Enemy" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      489. Robot Room Cleaner
+      361. Bomb Enemy
     </h1>
   
 
@@ -187,13 +187,11 @@
     
     <div class="article-meta">
       
-	<a href="/2020/07/29/489-Robot-Room-Cleaner/" class="article-date">
-	  <time datetime="2020-07-29T21:48:02.000Z" itemprop="datePublished">2020-07-29</time>
+	<a href="/2020/07/31/361-Bomb-Enemy/" class="article-date">
+	  <time datetime="2020-07-31T16:04:07.000Z" itemprop="datePublished">2020-07-31</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -207,25 +205,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ol>
-<li><p><a href="https://www.youtube.com/watch?v=y4izHfShEfU" target="_blank" rel="noopener">https://www.youtube.com/watch?v=y4izHfShEfU</a></p>
-</li>
-<li><p>Backtrack algorithm</p>
-<ul>
-<li>we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0)<ul>
-<li>then [[-1, 0], [0, 1], [1, 0], [0, -1]] to  4 directions, we have all the point which is relative to the initial position</li>
+<li>Thinking<ul>
+<li>rowCnt: record the number of ememies before hiting the next wall</li>
+<li>colCnt[j]: in the jth col, the number of emeimis before hiting the wall</li>
 </ul>
 </li>
-<li>This is the robot, it can only move to one direction(move forward), otherwise it need to turn right/left</li>
-<li>if the robot arrived a position where it is neighbors all have been vistied, it can not go back to the original position directly(like normal backtrack)<ul>
-<li>Thus, we need to go back following the path how we get here exactly. This is the reason why we need goBack function</li>
+<li>why colCnt would be an array?<ul>
+<li>For each row, we visit each column once. Once we visit second row(and other rows too), we do not want to recompute for colums</li>
+<li>because we are traversing row wise so value of rowCnt for a row is same throughout for ith row. it is not the case with colums because as we tranverse a particular row our columns keep on changing and also we need to make sure we do not exceed n*m, that is the reasosn for array</li>
 </ul>
 </li>
-<li>why we turn the direction in the clock-wise? the robot just one move direction(move forward) –&gt; clock-wise way to guarantee 机器人要移动的方向和转向是一样的</li>
-</ul>
-</li>
-<li><p>Code</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * // This is the robot's control interface.</span></span><br><span class="line"><span class="comment"> * // You should not implement it, or speculate about its implementation</span></span><br><span class="line"><span class="comment"> * function Robot() &#123;</span></span><br><span class="line"><span class="comment"> *     // Returns true if the cell in front is open and robot moves into the cell.</span></span><br><span class="line"><span class="comment"> *     // Returns false if the cell in front is blocked and robot stays in the current cell.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> *     this.move = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // Robot will stay in the same cell after calling turnLeft/turnRight.</span></span><br><span class="line"><span class="comment"> *     // Each turn will be 90 degrees.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;void&#125;</span></span></span></span><br><span class="line"><span class="comment"> *     this.turnLeft = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> *     // Robot will stay in the same cell after calling turnLeft/turnRight.</span></span><br><span class="line"><span class="comment"> *     // Each turn will be 90 degrees.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;void&#125;</span> </span></span></span><br><span class="line"><span class="comment"> *     this.turnRight = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *     // Clean the current cell.</span></span><br><span class="line"><span class="comment"> *     <span class="doctag">@return <span class="type">&#123;void&#125;</span></span></span></span><br><span class="line"><span class="comment"> *     this.clean = function() &#123;</span></span><br><span class="line"><span class="comment"> *         ...</span></span><br><span class="line"><span class="comment"> *     &#125;;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;Robot&#125;</span> <span class="variable">robot</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> cleanRoom = <span class="function"><span class="keyword">function</span>(<span class="params">robot</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> visited = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    helper(robot, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, visited)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> goback = <span class="function">(<span class="params">robot</span>) =&gt;</span> &#123;</span><br><span class="line">    robot.turnRight();</span><br><span class="line">    robot.turnRight();</span><br><span class="line">    robot.move();</span><br><span class="line">    robot.turnLeft();</span><br><span class="line">    robot.turnLeft();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> helper = <span class="function">(<span class="params">robot, x, y, dir, visited</span>) =&gt;</span> &#123;</span><br><span class="line">    robot.clean();</span><br><span class="line">    visited.add(<span class="string">`<span class="subst">$&#123;x&#125;</span>-<span class="subst">$&#123;y&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">const</span> dirs = [[<span class="number">-1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">-1</span>]]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> cur = (i + dir)%<span class="number">4</span>, newX = x + dirs[cur][<span class="number">0</span>], newY = y + dirs[cur][<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!visited.has(<span class="string">`<span class="subst">$&#123;newX&#125;</span>-<span class="subst">$&#123;newY&#125;</span>`</span>) &amp;&amp; robot.move()) &#123;</span><br><span class="line">            helper(robot, newX, newY, cur, visited);</span><br><span class="line">            </span><br><span class="line">            goback(robot)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        robot.turnRight();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>Code <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[][]&#125;</span> <span class="variable">grid</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maxKilledEnemies = <span class="function"><span class="keyword">function</span>(<span class="params">grid</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> m = grid.length, n  = m ? grid[<span class="number">0</span>].length : <span class="number">0</span></span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span>, rowCnt = <span class="number">0</span>, colCnt = <span class="keyword">new</span> <span class="built_in">Array</span>(n).fill(<span class="number">0</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j === <span class="number">0</span> || grid[i][j<span class="number">-1</span>] === <span class="string">'W'</span>) &#123;</span><br><span class="line">                rowCnt = <span class="number">0</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> k = j; k &lt; n &amp;&amp; grid[i][k] != <span class="string">'W'</span>; k++) &#123;</span><br><span class="line">                    rowCnt += grid[i][k] === <span class="string">'E'</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i === <span class="number">0</span> || grid[i<span class="number">-1</span>][j] === <span class="string">'W'</span>) &#123;</span><br><span class="line">                colCnt[j] = <span class="number">0</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">let</span> k = i; k &lt; m &amp;&amp; grid[k][j] != <span class="string">'W'</span>; k++) &#123;</span><br><span class="line">                    colCnt[j] += grid[k][j] === <span class="string">'E'</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (grid[i][j] === <span class="string">'0'</span>) &#123;</span><br><span class="line">                res = <span class="built_in">Math</span>.max(res, rowCnt + colCnt[j])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -255,7 +245,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/07/29/489-Robot-Room-Cleaner/" target="_blank" title="489. Robot Room Cleaner">https://jojoyang666.github.io/2020/07/29/489-Robot-Room-Cleaner/</a>
+          <a href="/2020/07/31/361-Bomb-Enemy/" target="_blank" title="361. Bomb Enemy">https://jojoyang666.github.io/2020/07/31/361-Bomb-Enemy/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -303,19 +293,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/07/31/361-Bomb-Enemy/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          361. Bomb Enemy
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/24/212-Word-Search-II/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/07/29/489-Robot-Room-Cleaner/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">212. Word Search II</div>
+      <div class="article-nav-title">489. Robot Room Cleaner</div>
     </a>
   
 </nav>
