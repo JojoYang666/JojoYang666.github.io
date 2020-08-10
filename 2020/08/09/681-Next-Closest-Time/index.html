@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>418. sentence screen fitting | Jojo&#39;s Blog</title>
+  <title>681. next closest time | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Solution 1 Thinking start is the counter for how many valid characters from _sentence have been put to our screen _sentence[start%length] &#x3D;&#x3D;&#x3D; &#39; &#39; is the situation that we do not need an extra">
+  <meta name="description" content="Solution Code1234567891011121314class Solution(object):    def nextClosestTime(self, time):        &quot;&quot;&quot;        :type time: str        :rtype: str        &quot;&quot;&quot;        cur &#x3D; 60 * int(time[:2]) + int(time[3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="418. Sentence Screen Fitting">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/03/418-Sentence-Screen-Fitting/index.html">
+<meta property="og:title" content="681. Next Closest Time">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/08/09/681-Next-Closest-Time/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Solution 1 Thinking start is the counter for how many valid characters from _sentence have been put to our screen _sentence[start%length] &#x3D;&#x3D;&#x3D; &#39; &#39; is the situation that we do not need an extra">
+<meta property="og:description" content="Solution Code1234567891011121314class Solution(object):    def nextClosestTime(self, time):        &quot;&quot;&quot;        :type time: str        :rtype: str        &quot;&quot;&quot;        cur &#x3D; 60 * int(time[:2]) + int(time[3">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-03T17:52:17.000Z">
-<meta property="article:modified_time" content="2020-08-03T18:54:08.063Z">
+<meta property="article:published_time" content="2020-08-10T05:05:15.000Z">
+<meta property="article:modified_time" content="2020-08-10T05:27:12.057Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-418-Sentence-Screen-Fitting" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-681-Next-Closest-Time" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      418. Sentence Screen Fitting
+      681. Next Closest Time
     </h1>
   
 
@@ -187,13 +187,11 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/03/418-Sentence-Screen-Fitting/" class="article-date">
-	  <time datetime="2020-08-03T17:52:17.000Z" itemprop="datePublished">2020-08-03</time>
+	<a href="/2020/08/09/681-Next-Closest-Time/" class="article-date">
+	  <time datetime="2020-08-10T05:05:15.000Z" itemprop="datePublished">2020-08-09</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -206,24 +204,12 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><ol>
-<li>Thinking<ul>
-<li><code>start</code> is the counter for how many valid characters from _sentence have been put to our screen</li>
-<li><code>_sentence[start%length] === &#39; &#39;</code> is the situation that we do not need an extra space for current row. THe current row could be successfully fitted. SO that we need to increase our counter by using start++<ul>
-<li>think about <code>&quot;abc de f&quot;</code>, when at the space between <code>de</code> and <code>f</code>, you are looking for the position of the first word in the next row, which <code>f</code> and so you move <code>start</code> forward by <code>1</code></li>
-<li>如果是’ ‘,我们没有算空格那个字符， 因为start%length in _sentence is starting from 0, 所以要加加</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Code<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">sentence</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">rows</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">cols</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> wordsTyping = <span class="function"><span class="keyword">function</span>(<span class="params">sentence, rows, cols</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> _sentence = sentence.join(<span class="string">' '</span>) + <span class="string">' '</span></span><br><span class="line">    <span class="keyword">let</span> start = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">const</span> length = _sentence.length</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        start += cols</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (_sentence[start%length] === <span class="string">' '</span>) &#123;</span><br><span class="line">            start++;<span class="comment">//虽然剩余的位置刚好填满了单词， 后面不用再空格了。 但是我们再算有效空位个数的时候还是要加上这个空格的</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">while</span> (start &gt; <span class="number">0</span> &amp;&amp; _sentence[(start<span class="number">-1</span>)%length] !== <span class="string">' '</span>) &#123;</span><br><span class="line">                start--; <span class="comment">//removimh the extra word from the next word</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(start/_sentence.length)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ol>
+<li>Code<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nextClosestTime</span><span class="params">(self, time)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type time: str</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        cur = <span class="number">60</span> * int(time[:<span class="number">2</span>]) + int(time[<span class="number">3</span>:])</span><br><span class="line">        allowed = &#123;int(x) <span class="keyword">for</span> x <span class="keyword">in</span> time <span class="keyword">if</span> x != <span class="string">':'</span>&#125;</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            cur = (cur + <span class="number">1</span>) % (<span class="number">24</span>*<span class="number">60</span>)</span><br><span class="line">            <span class="keyword">if</span> all(digit <span class="keyword">in</span> allowed</span><br><span class="line">                    <span class="keyword">for</span> block <span class="keyword">in</span> divmod(cur, <span class="number">60</span>)</span><br><span class="line">                    <span class="keyword">for</span> digit <span class="keyword">in</span> divmod(block, <span class="number">10</span>)):</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"&#123;:02d&#125;:&#123;:02d&#125;"</span>.format(*divmod(cur, <span class="number">60</span>))</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
-<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h1><ol>
-<li>Code<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">sentence</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">rows</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">cols</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> wordsTyping = <span class="function"><span class="keyword">function</span>(<span class="params">sentence, rows, cols</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> all = sentence.join(<span class="string">' '</span>) + <span class="string">' '</span>;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span>, idx = <span class="number">0</span>, n = sentence.length, len = all.length</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; rows; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> colsRemaining = cols</span><br><span class="line">        <span class="keyword">while</span> (colsRemaining &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (sentence[idx].length &lt;= colsRemaining) &#123;</span><br><span class="line">                colsRemaining -= sentence[idx].length</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (colsRemaining &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    colsRemaining -= <span class="number">1</span> <span class="comment">//miuns the length of space </span></span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (++idx &gt;= n) &#123;</span><br><span class="line">                    res += (<span class="number">1</span> + <span class="built_in">Math</span>.floor(colsRemaining / len))</span><br><span class="line">                    colsRemaining %= len</span><br><span class="line">                    idx = <span class="number">0</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
-</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">time</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> nextClosestTime = <span class="function"><span class="keyword">function</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timeBlock = time.split(<span class="string">":"</span>)</span><br><span class="line">    cur = <span class="built_in">parseInt</span>(timeBlock[<span class="number">0</span>]) * <span class="number">60</span> + <span class="built_in">parseInt</span>(timeBlock[<span class="number">1</span>])</span><br><span class="line">    allowed = <span class="keyword">new</span> <span class="built_in">Set</span>()</span><br><span class="line">    </span><br><span class="line">    time.split(<span class="string">""</span>).forEach(<span class="function">(<span class="params">x</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (x !== <span class="string">':'</span>) &#123;</span><br><span class="line">            allowed.add(<span class="built_in">parseInt</span>(x))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        cur = (cur + <span class="number">1</span>)%(<span class="number">24</span>*<span class="number">60</span>);</span><br><span class="line">        <span class="keyword">const</span> digits = [<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.floor(cur/<span class="number">60</span>)/<span class="number">10</span>), <span class="built_in">Math</span>.floor(cur/<span class="number">60</span>)%<span class="number">10</span>, <span class="built_in">Math</span>.floor((cur%<span class="number">60</span>)/<span class="number">10</span>), cur%<span class="number">60</span>%<span class="number">10</span>]</span><br><span class="line">        <span class="keyword">const</span> isInAllowed = <span class="function">(<span class="params">digit</span>) =&gt;</span> allowed.has(digit);</span><br><span class="line">        <span class="keyword">if</span> (digits.every(isInAllowed))</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;digits[<span class="number">0</span>]&#125;</span><span class="subst">$&#123;digits[<span class="number">1</span>]&#125;</span>:<span class="subst">$&#123;digits[<span class="number">2</span>]&#125;</span><span class="subst">$&#123;digits[<span class="number">3</span>]&#125;</span>`</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -252,7 +238,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/03/418-Sentence-Screen-Fitting/" target="_blank" title="418. Sentence Screen Fitting">https://jojoyang666.github.io/2020/08/03/418-Sentence-Screen-Fitting/</a>
+          <a href="/2020/08/09/681-Next-Closest-Time/" target="_blank" title="681. Next Closest Time">https://jojoyang666.github.io/2020/08/09/681-Next-Closest-Time/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -300,19 +286,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/04/1007-Minimum-Domino-Rotations-For-Equal-Row/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          1007. Minimum Domino Rotations For Equal Row `
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/31/361-Bomb-Enemy/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/08/08/284-Peeking-Iterator/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">361. Bomb Enemy</div>
+      <div class="article-nav-title">284. Peeking Iterator</div>
     </a>
   
 </nav>
@@ -326,7 +303,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-2"><span class="nav-number">2.</span> <span class="nav-text">Solution 2</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol>
     
     </div>
   </aside>
