@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python | Jojo&#39;s Blog</title>
+  <title>809. expressive words | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+  <meta name="description" content="Solution 112345678910111213141516class Solution(object):    def expressiveWords(self, S, words):        def RLE(S):            return zip(*[(k, len(list(grp)))                         for k, grp in it">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/Python/index.html">
+<meta property="og:title" content="809. Expressive Words">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/03/809-Expressive-Words/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+<meta property="og:description" content="Solution 112345678910111213141516class Solution(object):    def expressiveWords(self, S, words):        def RLE(S):            return zip(*[(k, len(list(grp)))                         for k, grp in it">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-03T20:24:59.193Z">
+<meta property="article:published_time" content="2020-09-03T21:10:22.000Z">
+<meta property="article:modified_time" content="2020-09-03T21:44:11.508Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Python" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-809-Expressive-Words" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Python
+      809. Expressive Words
     </h1>
   
 
@@ -187,11 +187,13 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/03/809-Expressive-Words/" class="article-date">
+	  <time datetime="2020-09-03T21:10:22.000Z" itemprop="datePublished">2020-09-03</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -204,44 +206,16 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base-Data-Type"><a href="#Base-Data-Type" class="headerlink" title="Base Data Type"></a>Base Data Type</h1><ol>
-<li><p>heapq</p>
-<ul>
-<li>heapq.heapify(x): transform list x into a heap, in-place, in linear time.</li>
-<li>heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To access the smallest item without popping it, use <code>heap[0]</code></li>
-<li>heapq.heappush(heap, item): Push the value item onto the heap, , maintaining the heap invariant</li>
-</ul>
-</li>
-<li><p>Other Common Functions</p>
-<ul>
-<li><code>ord(c)</code>: Given a string representing one Unicode character, return an integer represeting the Unicode code point of that character.</li>
-<li><code>chr(i)</code>: return the string representing a character whose Unicode code point is the integer i. For example, <code>chr(97)</code> returns the string ‘a’</li>
-</ul>
-</li>
-<li><p>itertools</p>
-<ul>
-<li>count(start = 0, step = 1)<ul>
-<li>make an interator that returns evenly spaced values starting with n.</li>
-</ul>
-</li>
-<li>groupby(iterable, key)<ul>
-<li>make an iterator that returns consecutive keys and gtroups from the iterable</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>next(): retrieve the next item from the iterator</p>
-</li>
-<li><p>zip(): make an iterator that aggregates slements from each of the iterables. Returns an itrator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables.</p>
-</li>
-<li><p>all(iterable): return <code>True</code> if all elements of the iterable are true (or if the iterable is empty)</p>
-</li>
-<li><p>while, else</p>
-</li>
-<li><p><code>*</code>: unpack the arguments out of a list or tuple</p>
-</li>
-</ol>
+        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">expressiveWords</span><span class="params">(self, S, words)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">RLE</span><span class="params">(S)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> zip(*[(k, len(list(grp)))</span><br><span class="line">                         <span class="keyword">for</span> k, grp <span class="keyword">in</span> itertools.groupby(S)])</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> S:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        R, count = RLE(S)</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> words:</span><br><span class="line">            R2, count2 = RLE(word)</span><br><span class="line">            <span class="keyword">if</span> R2 != R: <span class="keyword">continue</span></span><br><span class="line">            ans += all(c1 &gt;= max(c2, <span class="number">3</span>) <span class="keyword">or</span> c1 == c2</span><br><span class="line">                       <span class="keyword">for</span> c1, c2 <span class="keyword">in</span> zip(count, count2))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 
+<ol>
+<li>explain: <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip(*[(k, len(list(grp)))</span><br><span class="line">    <span class="keyword">for</span> k, grp <span class="keyword">in</span> itertools.groupby(S)])</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>S = “heeellooo”</li>
+<li>result: [(‘h’, ‘e’, ‘l’, ‘o’), (1, 3, 2, 3)]</li>
+</ul>
+<h1 id="Solution2"><a href="#Solution2" class="headerlink" title="Solution2"></a>Solution2</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">S</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">words</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> expressiveWords = <span class="function"><span class="keyword">function</span>(<span class="params">S, words</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> m = S.length</span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> word <span class="keyword">of</span> words) &#123;</span><br><span class="line">        <span class="keyword">let</span> i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; word.length &amp;&amp; S.charAt(i) === word.charAt(j)) &#123;</span><br><span class="line">                j++</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; i + <span class="number">1</span> &lt; m &amp;&amp; S.charAt(i<span class="number">-1</span>) === S.charAt(i) &amp;&amp; S.charAt(i) === S.charAt(i+<span class="number">1</span>)) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> ( !(i &gt; <span class="number">1</span> &amp;&amp; S.charAt(i<span class="number">-2</span>) === S.charAt(i) &amp;&amp; S.charAt(i<span class="number">-1</span>) === S.charAt(i))) &#123;</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (i === m &amp;&amp; j === word.length) &#123;</span><br><span class="line">            res++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -269,7 +243,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/Python/" target="_blank" title="Python">https://jojoyang666.github.io/2020/08/17/Python/</a>
+          <a href="/2020/09/03/809-Expressive-Words/" target="_blank" title="809. Expressive Words">https://jojoyang666.github.io/2020/09/03/809-Expressive-Words/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -317,19 +291,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/17/1057-Campus-Bikes/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/03/1110-Delete-Nodes-And-Return-Forest/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          1057. Campus Bikes
+          1110. Delete Nodes And Return Forest
         
       </div>
     </a>
   
   
-    <a href="/2020/08/12/97-Interleaving-String/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/03/Graph/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">97. Interleaving String</div>
+      <div class="article-nav-title">Graph</div>
     </a>
   
 </nav>
@@ -343,7 +317,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution2"><span class="nav-number">2.</span> <span class="nav-text">Solution2</span></a></li></ol>
     
     </div>
   </aside>
