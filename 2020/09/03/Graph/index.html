@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python | Jojo&#39;s Blog</title>
+  <title>graph | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+  <meta name="description" content="Coming from 737. Sentence Similarity II123456789101112131415161718192021222324252627282930class Solution(object):    def areSentencesSimilarTwo(self, words1, words2, pairs):        &quot;&quot;&quot;        :type w">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/Python/index.html">
+<meta property="og:title" content="Graph">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/03/Graph/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+<meta property="og:description" content="Coming from 737. Sentence Similarity II123456789101112131415161718192021222324252627282930class Solution(object):    def areSentencesSimilarTwo(self, words1, words2, pairs):        &quot;&quot;&quot;        :type w">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-03T19:49:00.310Z">
+<meta property="article:published_time" content="2020-09-03T19:51:10.000Z">
+<meta property="article:modified_time" content="2020-09-03T19:52:10.252Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Python" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Graph" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Python
+      Graph
     </h1>
   
 
@@ -187,11 +187,13 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/03/Graph/" class="article-date">
+	  <time datetime="2020-09-03T19:51:10.000Z" itemprop="datePublished">2020-09-03</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -204,36 +206,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base-Data-Type"><a href="#Base-Data-Type" class="headerlink" title="Base Data Type"></a>Base Data Type</h1><ol>
-<li><p>heapq</p>
-<ul>
-<li>heapq.heapify(x): transform list x into a heap, in-place, in linear time.</li>
-<li>heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To access the smallest item without popping it, use <code>heap[0]</code></li>
-<li>heapq.heappush(heap, item): Push the value item onto the heap, , maintaining the heap invariant</li>
-</ul>
-</li>
-<li><p>Other Common Functions</p>
-<ul>
-<li><code>ord(c)</code>: Given a string representing one Unicode character, return an integer represeting the Unicode code point of that character.</li>
-<li><code>chr(i)</code>: return the string representing a character whose Unicode code point is the integer i. For example, <code>chr(97)</code> returns the string ‘a’</li>
-</ul>
-</li>
-<li><p>itertools</p>
-<ul>
-<li>count(start = 0, step = 1)<ul>
-<li>make an interator that returns evenly spaced values starting with n.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>next(): retrieve the next item from the iterator</p>
-</li>
-<li><p>zip(): make an iterator that aggregates slements from each of the iterables. Returns an itrator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables.</p>
-</li>
-<li><p>all(iterable): return <code>True</code> if all elements of the iterable are true (or if the iterable is empty)</p>
-</li>
-<li><p>while, else</p>
-</li>
+        <ol>
+<li>Coming from 737. Sentence Similarity II<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">areSentencesSimilarTwo</span><span class="params">(self, words1, words2, pairs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type words1: List[str]</span></span><br><span class="line"><span class="string">        :type words2: List[str]</span></span><br><span class="line"><span class="string">        :type pairs: List[List[str]]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> len(words1) != len(words2):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        graph = collections.defaultdict(list)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> w1, w2 <span class="keyword">in</span> pairs:</span><br><span class="line">            graph[w1].append(w2)</span><br><span class="line">            graph[w2].append(w1)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> w1, w2 <span class="keyword">in</span> zip(words1, words2):</span><br><span class="line">            stack, seen = [w1], &#123;w1&#125;</span><br><span class="line">            <span class="keyword">while</span> stack:</span><br><span class="line">                word = stack.pop()</span><br><span class="line">                <span class="keyword">if</span> word == w2:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">for</span> nei <span class="keyword">in</span> graph[word]:</span><br><span class="line">                    <span class="keyword">if</span> nei <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">                        seen.add(nei)</span><br><span class="line">                        stack.append(nei)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -263,7 +237,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/Python/" target="_blank" title="Python">https://jojoyang666.github.io/2020/08/17/Python/</a>
+          <a href="/2020/09/03/Graph/" target="_blank" title="Graph">https://jojoyang666.github.io/2020/09/03/Graph/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -311,19 +285,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/17/1057-Campus-Bikes/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          1057. Campus Bikes
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/12/97-Interleaving-String/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/03/UNION-FIND/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">97. Interleaving String</div>
+      <div class="article-nav-title">UNION FIND</div>
     </a>
   
 </nav>
@@ -337,7 +302,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li></ol>
+        <ol class="nav">None</ol>
     
     </div>
   </aside>
