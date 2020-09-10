@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>1057. campus bikes | Jojo&#39;s Blog</title>
+  <title>777. swap adjacent in lr string | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances &#x3D; []     # distances[worker] is tuple of (distance, worker, bike) for">
+  <meta name="description" content="Solution 1 一种是把 “XL” 变成 “LX”，另一种是把 “RX” 变成 “XR”。 每次分别找到 start 和 end 中非X的字符，如果二者不相同的话，直接返回 false，想想问什么？这是因为不论是L还是R，其只能跟X交换位置，L和R之间是不能改变相对顺序的，所以如果分别将 start 和 end 中所有的X去掉后的字符串不相等的话，那么就永远无法让 start 和 end 相">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1057. Campus Bikes">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/1057-Campus-Bikes/index.html">
+<meta property="og:title" content="777. Swap Adjacent in LR String">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/09/777-Swap-Adjacent-in-LR-String/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances &#x3D; []     # distances[worker] is tuple of (distance, worker, bike) for">
+<meta property="og:description" content="Solution 1 一种是把 “XL” 变成 “LX”，另一种是把 “RX” 变成 “XR”。 每次分别找到 start 和 end 中非X的字符，如果二者不相同的话，直接返回 false，想想问什么？这是因为不论是L还是R，其只能跟X交换位置，L和R之间是不能改变相对顺序的，所以如果分别将 start 和 end 中所有的X去掉后的字符串不相等的话，那么就永远无法让 start 和 end 相">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:55:33.000Z">
-<meta property="article:modified_time" content="2020-08-18T02:56:24.016Z">
+<meta property="article:published_time" content="2020-09-10T03:50:48.000Z">
+<meta property="article:modified_time" content="2020-09-10T05:36:14.938Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-1057-Campus-Bikes" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-777-Swap-Adjacent-in-LR-String" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      1057. Campus Bikes
+      777. Swap Adjacent in LR String
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/1057-Campus-Bikes/" class="article-date">
-	  <time datetime="2020-08-18T02:55:33.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/" class="article-date">
+	  <time datetime="2020-09-10T03:50:48.000Z" itemprop="datePublished">2020-09-09</time>
 	</a>
 
       
@@ -206,7 +206,18 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">assignBikes</span><span class="params">(self, workers, bikes)</span>:</span></span><br><span class="line">        distances = []     <span class="comment"># distances[worker] is tuple of (distance, worker, bike) for each bike </span></span><br><span class="line">        <span class="keyword">for</span> i, (x, y) <span class="keyword">in</span> enumerate(workers):</span><br><span class="line">            distances.append([])</span><br><span class="line">            <span class="keyword">for</span> j, (x_b, y_b) <span class="keyword">in</span> enumerate(bikes):</span><br><span class="line">                distance = abs(x - x_b) + abs(y - y_b)</span><br><span class="line">                distances[<span class="number">-1</span>].append((distance, i, j))</span><br><span class="line">            distances[<span class="number">-1</span>].sort(reverse = <span class="literal">True</span>)  <span class="comment"># reverse so we can pop the smallest distance</span></span><br><span class="line">        </span><br><span class="line">        result = [<span class="literal">None</span>] * len(workers)</span><br><span class="line">        used_bikes = set()</span><br><span class="line">        queue = [distances[i].pop() <span class="keyword">for</span> i <span class="keyword">in</span> range(len(workers))]   <span class="comment"># smallest distance for each worker</span></span><br><span class="line">        heapq.heapify(queue)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> len(used_bikes) &lt; len(workers):</span><br><span class="line">            _, worker, bike = heapq.heappop(queue)</span><br><span class="line">            <span class="keyword">if</span> bike <span class="keyword">not</span> <span class="keyword">in</span> used_bikes:</span><br><span class="line">                result[worker] = bike</span><br><span class="line">                used_bikes.add(bike)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                heapq.heappush(queue, distances[worker].pop())  <span class="comment"># bike used, add next closest bike</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><ol>
+<li>一种是把 “XL” 变成 “LX”，另一种是把 “RX” 变成 “XR”。</li>
+<li>每次分别找到 start 和 end 中非X的字符，如果二者不相同的话，直接返回 false，想想问什么？这是因为不论是L还是R，其只能跟X交换位置，L和R之间是不能改变相对顺序的，所以如果分别将 start 和 end 中所有的X去掉后的字符串不相等的话，那么就永远无法让 start 和 end 相等了。</li>
+<li>这个判断完之后，就来验证L只能前移，R只能后移这个限制条件吧，当i指向 start 中的L时，那么j指向 end 中的L必须要在前面，所以如果i小于j的话，就不对了，同理，当i指向 start 中的R，那么j指向 end 中的R必须在后面，所以i大于j就是错的<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">start</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">end</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> canTransform = <span class="function"><span class="keyword">function</span>(<span class="params">start, end</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> n = start.length, i = <span class="number">0</span>, j = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; n &amp;&amp; start.charAt(i) === <span class="string">'X'</span>) i++;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; n &amp;&amp; end.charAt(j) === <span class="string">'X'</span>) j++;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (start.charAt(i) !== end.charAt(j)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> ((start.charAt(i) === <span class="string">'L'</span> &amp;&amp; i &lt; j) || (start.charAt(i) === <span class="string">'R'</span> &amp;&amp; i &gt; j)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        i++; j++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (i &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (start.charAt(i) !== <span class="string">'X'</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (end.charAt(j) !== <span class="string">'X'</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        j++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h1><ol>
+<li>，这里使用两个计数器 cntL 和 cntR，分别来统计L和R出现的次数，统计方法时，start 中出现了L或R，计数器自增1，end 中出现了L或R，计数器自减1。</li>
+<li>注意检测的顺序很重要，由于 start 中的R必须在 end 中的R前面，所以要先检测 start 中的R，同理，由于 end 中的L必须要在 start 中的L前面，所以要先检测 end 中的L，那么四个 if 写完后，如果 cntL 或者 cntR 中有任何一个小于0了，说明限制条件被打破了，返回 false，或者当二者都大于0的时候，说明此时不匹配了，参见上面解法中对于去掉所有的X的解释，一个道理，说明L和R的相对顺序不同了，那么也是 false。最终 for 循环退出后，如果 cntL 和 cntR 均为0的时候，才返回 true，否则就是 false，参见代码如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">start</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">end</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> canTransform = <span class="function"><span class="keyword">function</span>(<span class="params">start, end</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len = start.length, cntL = <span class="number">0</span>, cntR = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (start.charAt(i) === <span class="string">'R'</span>) cntR++;</span><br><span class="line">        <span class="keyword">if</span> (end.charAt(i) === <span class="string">'L'</span>) cntL++;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (cntL * cntR !== <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (end.charAt(i) === <span class="string">'R'</span>) cntR--;</span><br><span class="line">        <span class="keyword">if</span> (start.charAt(i) === <span class="string">'L'</span>) cntL--;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (cntL &lt; <span class="number">0</span> || cntR &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> cntL === <span class="number">0</span> &amp;&amp; cntR === <span class="number">0</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -234,7 +245,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/1057-Campus-Bikes/" target="_blank" title="1057. Campus Bikes">https://jojoyang666.github.io/2020/08/17/1057-Campus-Bikes/</a>
+          <a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/" target="_blank" title="777. Swap Adjacent in LR String">https://jojoyang666.github.io/2020/09/09/777-Swap-Adjacent-in-LR-String/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -282,19 +293,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/18/163-Missing-Ranges/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          163. Missing Ranges
+          524. Longest Word in Dictionary through Deleting
         
       </div>
     </a>
   
   
-    <a href="/2020/08/17/Python/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/06/1055-Shortest-Way-to-Form-String/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Common Python Methods</div>
+      <div class="article-nav-title">1055. Shortest Way to Form String</div>
     </a>
   
 </nav>
@@ -308,7 +319,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-2"><span class="nav-number">2.</span> <span class="nav-text">Solution 2</span></a></li></ol>
     
     </div>
   </aside>

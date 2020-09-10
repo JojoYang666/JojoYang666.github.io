@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>1057. campus bikes | Jojo&#39;s Blog</title>
+  <title>524. longest word in dictionary through deleting | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances &#x3D; []     # distances[worker] is tuple of (distance, worker, bike) for">
+  <meta name="description" content="Solution 1123456789101112131415161718192021222324&#x2F;** * @param &amp;#123;string&amp;#125; s * @param &amp;#123;string[]&amp;#125; d * @return &amp;#123;string&amp;#125; *&#x2F;var findLongestWord &#x3D; function(s, d) &amp;#123;    let res">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1057. Campus Bikes">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/1057-Campus-Bikes/index.html">
+<meta property="og:title" content="524. Longest Word in Dictionary through Deleting">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances &#x3D; []     # distances[worker] is tuple of (distance, worker, bike) for">
+<meta property="og:description" content="Solution 1123456789101112131415161718192021222324&#x2F;** * @param &amp;#123;string&amp;#125; s * @param &amp;#123;string[]&amp;#125; d * @return &amp;#123;string&amp;#125; *&#x2F;var findLongestWord &#x3D; function(s, d) &amp;#123;    let res">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:55:33.000Z">
-<meta property="article:modified_time" content="2020-08-18T02:56:24.016Z">
+<meta property="article:published_time" content="2020-09-10T06:05:45.000Z">
+<meta property="article:modified_time" content="2020-09-10T19:50:34.331Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-1057-Campus-Bikes" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-524-Longest-Word-in-Dictionary-through-Deleting" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      1057. Campus Bikes
+      524. Longest Word in Dictionary through Deleting
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/1057-Campus-Bikes/" class="article-date">
-	  <time datetime="2020-08-18T02:55:33.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/" class="article-date">
+	  <time datetime="2020-09-10T06:05:45.000Z" itemprop="datePublished">2020-09-09</time>
 	</a>
 
       
@@ -206,7 +206,14 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">assignBikes</span><span class="params">(self, workers, bikes)</span>:</span></span><br><span class="line">        distances = []     <span class="comment"># distances[worker] is tuple of (distance, worker, bike) for each bike </span></span><br><span class="line">        <span class="keyword">for</span> i, (x, y) <span class="keyword">in</span> enumerate(workers):</span><br><span class="line">            distances.append([])</span><br><span class="line">            <span class="keyword">for</span> j, (x_b, y_b) <span class="keyword">in</span> enumerate(bikes):</span><br><span class="line">                distance = abs(x - x_b) + abs(y - y_b)</span><br><span class="line">                distances[<span class="number">-1</span>].append((distance, i, j))</span><br><span class="line">            distances[<span class="number">-1</span>].sort(reverse = <span class="literal">True</span>)  <span class="comment"># reverse so we can pop the smallest distance</span></span><br><span class="line">        </span><br><span class="line">        result = [<span class="literal">None</span>] * len(workers)</span><br><span class="line">        used_bikes = set()</span><br><span class="line">        queue = [distances[i].pop() <span class="keyword">for</span> i <span class="keyword">in</span> range(len(workers))]   <span class="comment"># smallest distance for each worker</span></span><br><span class="line">        heapq.heapify(queue)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> len(used_bikes) &lt; len(workers):</span><br><span class="line">            _, worker, bike = heapq.heappop(queue)</span><br><span class="line">            <span class="keyword">if</span> bike <span class="keyword">not</span> <span class="keyword">in</span> used_bikes:</span><br><span class="line">                result[worker] = bike</span><br><span class="line">                used_bikes.add(bike)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                heapq.heappush(queue, distances[worker].pop())  <span class="comment"># bike used, add next closest bike</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">s</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">d</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findLongestWord = <span class="function"><span class="keyword">function</span>(<span class="params">s, d</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="string">""</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> str <span class="keyword">of</span> d) &#123;</span><br><span class="line">        <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> c <span class="keyword">of</span> [...s]) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i &lt; str.length &amp;&amp; c === str.charAt(i)) i++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (i === str.length &amp;&amp; str.length &gt;= res.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (str.length &gt; res.length || str &lt; res) &#123;</span><br><span class="line">                res = str</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLongestWord</span><span class="params">(self, s, d)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type d: List[str]</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        heap = [(-len(word), word) <span class="keyword">for</span> word <span class="keyword">in</span> d]</span><br><span class="line">        heapq.heapify(heap)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> heap:</span><br><span class="line">            word = heapq.heappop(heap)[<span class="number">1</span>]</span><br><span class="line">            it = iter(s)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> all(c <span class="keyword">in</span> it <span class="keyword">for</span> c <span class="keyword">in</span> word):</span><br><span class="line">                <span class="keyword">return</span> word</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution 3"></a>Solution 3</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLongestWord</span><span class="params">(self, s, d)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type d: List[str]</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> sorted(d, key=<span class="keyword">lambda</span> x: (-len(x), x)):</span><br><span class="line">            it = iter(s)</span><br><span class="line">            <span class="keyword">if</span> all(c <span class="keyword">in</span> it <span class="keyword">for</span> c <span class="keyword">in</span> x):</span><br><span class="line">                <span class="keyword">return</span> x</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Solution-4"><a href="#Solution-4" class="headerlink" title="Solution 4"></a>Solution 4</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findLongestWord</span><span class="params">(self, s, d)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type d: List[str]</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">isSubsequence</span><span class="params">(x)</span>:</span></span><br><span class="line">            it = iter(s)</span><br><span class="line">            <span class="keyword">return</span> all(c <span class="keyword">in</span> it <span class="keyword">for</span> c <span class="keyword">in</span> x)</span><br><span class="line">        </span><br><span class="line">        d.sort(key=<span class="keyword">lambda</span> x : (-len(x), x))</span><br><span class="line">        <span class="keyword">return</span> next(itertools.ifilter(isSubsequence, d), <span class="string">''</span>)</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -234,7 +241,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/1057-Campus-Bikes/" target="_blank" title="1057. Campus Bikes">https://jojoyang666.github.io/2020/08/17/1057-Campus-Bikes/</a>
+          <a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/" target="_blank" title="524. Longest Word in Dictionary through Deleting">https://jojoyang666.github.io/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -282,19 +289,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/18/163-Missing-Ranges/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/10/1087-Brace-Expansion/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          163. Missing Ranges
+          1087. Brace Expansion
         
       </div>
     </a>
   
   
-    <a href="/2020/08/17/Python/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Common Python Methods</div>
+      <div class="article-nav-title">777. Swap Adjacent in LR String</div>
     </a>
   
 </nav>
@@ -308,7 +315,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">1.</span> <span class="nav-text">Solution</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-2"><span class="nav-number">2.</span> <span class="nav-text">Solution 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-3"><span class="nav-number">3.</span> <span class="nav-text">Solution 3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-4"><span class="nav-number">4.</span> <span class="nav-text">Solution 4</span></a></li></ol>
     
     </div>
   </aside>
