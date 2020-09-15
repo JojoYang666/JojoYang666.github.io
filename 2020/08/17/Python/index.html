@@ -17,7 +17,7 @@
 <meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-10T21:11:34.009Z">
+<meta property="article:modified_time" content="2020-09-13T21:23:12.110Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -256,6 +256,27 @@
 <li>Counter: A counter is a <code>dict</code> subclass for counting hashable objects. it is an unordered collection wherer elements are stored as disctionary keys and their counts are stored as disctionary values</li>
 </ul>
 </li>
+<li><p>Binary Search</p>
+<ul>
+<li>bisect.bisect(a, x, lo=0, hi=len(a))<ul>
+<li>returns an insertion point which comes after (to the right of) any existing entries of x in a </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Common-Problem"><a href="#Common-Problem" class="headerlink" title="Common Problem"></a>Common Problem</h1><ol>
+<li>What’s the difference between <code>xrange</code> and <code>range</code>?<ul>
+<li><code>xrange</code>: return an xrange object<ul>
+<li>better to use when have a really gigantic range to generate a list for: dat one billion</li>
+</ul>
+</li>
+<li><code>range</code>: return a python list object<ul>
+<li>better to use when iterate over the list multiple times</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 
       
@@ -359,7 +380,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Problem"><span class="nav-number">2.</span> <span class="nav-text">Common Problem</span></a></li></ol>
     
     </div>
   </aside>

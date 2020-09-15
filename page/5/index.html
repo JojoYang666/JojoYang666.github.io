@@ -265,6 +265,508 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1007-Minimum-Domino-Rotations-For-Equal-Row"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/04/1007-Minimum-Domino-Rotations-For-Equal-Row/">1007. Minimum Domino Rotations For Equal Row `</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/04/1007-Minimum-Domino-Rotations-For-Equal-Row/" class="article-date">
+	  <time datetime="2020-08-04T18:29:23.000Z" itemprop="datePublished">2020-08-04</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution
+If we take only A[0], the answer wil be wrong for the remaining possible items?
+In the end, the whole A/B row should be equal to A[0]/B[0], so we could arbitrarily choose A[0]/B[0] as the final target number
+
+
+Code123456789101112131415161...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/04/1007-Minimum-Domino-Rotations-For-Equal-Row/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-418-Sentence-Screen-Fitting"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/03/418-Sentence-Screen-Fitting/">418. Sentence Screen Fitting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/03/418-Sentence-Screen-Fitting/" class="article-date">
+	  <time datetime="2020-08-03T17:52:17.000Z" itemprop="datePublished">2020-08-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+Thinking
+start is the counter for how many valid characters from _sentence have been put to our screen
+_sentence[start%length] === &#39; &#39; is the situation that we do not need an extra space for current row. THe current row could be...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/03/418-Sentence-Screen-Fitting/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-361-Bomb-Enemy"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/31/361-Bomb-Enemy/">361. Bomb Enemy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/31/361-Bomb-Enemy/" class="article-date">
+	  <time datetime="2020-07-31T16:04:07.000Z" itemprop="datePublished">2020-07-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution
+Thinking
+rowCnt: record the number of ememies before hiting the next wall
+colCnt[j]: in the jth col, the number of emeimis before hiting the wall
+
+
+why colCnt would be an array?
+For each row, we visit each column once. Once we visit secon...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/31/361-Bomb-Enemy/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-489-Robot-Room-Cleaner"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/29/489-Robot-Room-Cleaner/">489. Robot Room Cleaner</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/29/489-Robot-Room-Cleaner/" class="article-date">
+	  <time datetime="2020-07-29T21:48:02.000Z" itemprop="datePublished">2020-07-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution
+https://www.youtube.com/watch?v=y4izHfShEfU
+
+Backtrack algorithm
+
+we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0)
+then [[-1, 0], [0, 1], [1, 0], [0, -1]] to  4 directions, we have all ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/29/489-Robot-Room-Cleaner/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-212-Word-Search-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/24/212-Word-Search-II/">212. Word Search II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/24/212-Word-Search-II/" class="article-date">
+	  <time datetime="2020-07-24T13:54:43.000Z" itemprop="datePublished">2020-07-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution
+Trie Tree123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657/** * @param &#123;character[][]&#125; board * @param &#123;string[]&#125; words * @return &#123;string[]&#125; */var findWo...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/24/212-Word-Search-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-295-Find-Median-from-Data-Stream"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/22/295-Find-Median-from-Data-Stream/">295. Find Median from Data Stream</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/22/295-Find-Median-from-Data-Stream/" class="article-date">
+	  <time datetime="2020-07-23T00:21:33.000Z" itemprop="datePublished">2020-07-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution
+In python, heapq is the min heap, to do the max heap, there is  a trick when push the the item, we can push -item, it will logically become the max heap
+Min Heap: put larger number part  –&gt; largeMax Heap: put smaller number part  –&gt;...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/22/295-Find-Median-from-Data-Stream/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-123-Best-Time-to-Buy-and-Sell-Stock-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/22/123-Best-Time-to-Buy-and-Sell-Stock-III/">123. Best Time to Buy and Sell Stock III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/22/123-Best-Time-to-Buy-and-Sell-Stock-III/" class="article-date">
+	  <time datetime="2020-07-22T23:26:01.000Z" itemprop="datePublished">2020-07-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+Ideas:
+two variables for the dp: global one and local one
+local[i][j]: means when we at the ith day, the maximum profit for having at most j transactions and the last one traction is the ith day
+global[i][j]: means when we at the ith da...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/22/123-Best-Time-to-Buy-and-Sell-Stock-III/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-4-Median-of-Two-Sorted-Arrays"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/21/4-Median-of-Two-Sorted-Arrays/">4. Median of Two Sorted Arrays </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/21/4-Median-of-Two-Sorted-Arrays/" class="article-date">
+	  <time datetime="2020-07-21T18:19:08.000Z" itemprop="datePublished">2020-07-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+Trick: 
+
+Find the median in an array, there are two cases – odd and even: number a: (m + 1)/2 number b: (m+2)/2. median is: a + b / 2 ==&gt; in this way: can handle even and odd case together
+in javascript: if /2, to aviod use Math.floo...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/21/4-Median-of-Two-Sorted-Arrays/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-128-Longest-Consecutive-Sequence"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/16/128-Longest-Consecutive-Sequence/">128. Longest Consecutive Sequence</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/16/128-Longest-Consecutive-Sequence/" class="article-date">
+	  <time datetime="2020-07-16T17:28:43.000Z" itemprop="datePublished">2020-07-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+set and pointer
+Javascript code12345678910111213141516171819202122232425/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var longestConsecutive = function(nums) &#123;   if (!nums || nums.length === 0)       return ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/16/128-Longest-Consecutive-Sequence/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-LinkedList"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -319,521 +821,11 @@ Reverse LinkedList code:123456789101112// prev is the dummy head, next is nullco
 
 
   
-    <article id="post-25-Reverse-Nodes-in-k-Group"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/15/25-Reverse-Nodes-in-k-Group/">25. Reverse Nodes in k-Group</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/15/25-Reverse-Nodes-in-k-Group/" class="article-date">
-	  <time datetime="2020-07-16T04:53:59.000Z" itemprop="datePublished">2020-07-15</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1
-code123456789101112131415161718192021222324252627282930313233343536373839404142/** * Definition for singly-linked list. * function ListNode(val, next) &#123; *     this.val = (val===undefined ? 0 : val) *     this.next = (next===undefin...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/15/25-Reverse-Nodes-in-k-Group/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-381-Insert-Delete-GetRandom-O-1-Duplicates-allowed"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/15/381-Insert-Delete-GetRandom-O-1-Duplicates-allowed/">381. Insert Delete GetRandom O(1) - Duplicates allowed</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/15/381-Insert-Delete-GetRandom-O-1-Duplicates-allowed/" class="article-date">
-	  <time datetime="2020-07-15T20:42:55.000Z" itemprop="datePublished">2020-07-15</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869/** * Initialize your data structure here. */var RandomizedCollection = function() &#123;    this.map = &#12...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/15/381-Insert-Delete-GetRandom-O-1-Duplicates-allowed/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-432-All-Oone-Data-Structure"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/15/432-All-Oone-Data-Structure/">432. All Oone Data Structure</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/15/432-All-Oone-Data-Structure/" class="article-date">
-	  <time datetime="2020-07-15T19:09:14.000Z" itemprop="datePublished">2020-07-15</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution
-class Node:
-
-key_set: is set of key. In current scenario, all key with the same frequency
-prev node
-next node
-
-
-class DoubleLinkedList
-
-head_node
-tail_node
-item is Node, this class is a link list of Node
-
-
-class AllOne
-
-dll is a DoubleLin...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/15/432-All-Oone-Data-Structure/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-python-basic-syntax"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/02/python-basic-syntax/">python-basic-syntax</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/02/python-basic-syntax/" class="article-date">
-	  <time datetime="2020-07-02T19:07:39.000Z" itemprop="datePublished">2020-07-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          from import and import
-Util.py
-12345def lookNum():    print("I am number") def lookStr():    print("I am string")
-
-Teacher.py
-1234567class Teacher:     def check(self):        return 'I am teacher';  class Order:     def checkOrder(self):         ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/02/python-basic-syntax/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-307-Range-Sum-Query-Mutable"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/01/307-Range-Sum-Query-Mutable/">307. Range Sum Query - Mutable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/01/307-Range-Sum-Query-Mutable/" class="article-date">
-	  <time datetime="2020-07-01T18:22:45.000Z" itemprop="datePublished">2020-07-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution1
-Binary Indexed Tree12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061/** * @param &#123;number[]&#125; nums */var NumArray = function(nums) &#123;   this.bitArray = new Array...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/01/307-Range-Sum-Query-Mutable/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Binary-Indexed-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/30/Binary-Indexed-Tree/">Binary Indexed Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/06/30/Binary-Indexed-Tree/" class="article-date">
-	  <time datetime="2020-06-30T23:47:14.000Z" itemprop="datePublished">2020-06-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Definition
-A data structure that can efficiently update element and calculate prefix sums in a table of numbers
-It can solve the problems below efficiently
-update(idx, delta): add num at the number which at position idx
-prefixSum(idx): get the sum...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/06/30/Binary-Indexed-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-React-LifeCycle"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/25/React-LifeCycle/">React LifeCycle</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/06/25/React-LifeCycle/" class="article-date">
-	  <time datetime="2020-06-25T16:51:13.000Z" itemprop="datePublished">2020-06-25</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/React/">React</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Lifecycle Diagram
-
-
-
-UpdatingcomponentDidUpdate
-invoked immediately after updating occurs, is not called for the initial render
-A good place to do network requests as long as you compare the current props to previous props(e.g. a network request m...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/06/25/React-LifeCycle/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-308-Range-Sum-Query-2D-Mutable"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/">308. Range Sum Query 2D - Mutable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/" class="article-date">
-	  <time datetime="2020-06-24T18:27:47.000Z" itemprop="datePublished">2020-06-24</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution I
-建立列之和的矩阵： 就是(i, j)就是(0, j) + (1, j) + … + (i, j) 之和
-相当于把多个一维的区间之和拼到了一起， 所以在构造函数中需要建立起这样一个列之和的矩阵， 然后在更新某一个位置时， 我们只需要将该列中改变的位置下面的所有数字更新一下即可
-求某个区间的和时， 只要将相差的各列中对应的起始和结束的行上的差值累加起来即可。
-Code12345678910111213141516171819202122232425262728293031...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Docker"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/23/Docker/">Docker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/06/23/Docker/" class="article-date">
-	  <time datetime="2020-06-23T18:09:23.000Z" itemprop="datePublished">2020-06-23</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Tools/">Tools</a><a class="article-category-link" href="/categories/Tools/cheatsheet/">cheatsheet</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Load
-docker load &lt; ***.tar.gz  —&gt; load images from .tar.gz
-docker tag ** ***
-
-
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/06/23/Docker/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
   </nav>
 
 </section>
