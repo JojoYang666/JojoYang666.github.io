@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>common python methods | Jojo&#39;s Blog</title>
+  <title>911. online election | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+  <meta name="description" content="Counter + Binary Search 1234567891011121314151617181920212223242526272829303132class TopVotedCandidate(object):    def __init__(self, persons, times):        &quot;&quot;&quot;        :type persons: List[int]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Common Python Methods">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/Python/index.html">
+<meta property="og:title" content="911. Online Election">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/15/911-Online-Election/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+<meta property="og:description" content="Counter + Binary Search 1234567891011121314151617181920212223242526272829303132class TopVotedCandidate(object):    def __init__(self, persons, times):        &quot;&quot;&quot;        :type persons: List[int]">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-15T13:58:26.756Z">
+<meta property="article:published_time" content="2020-09-15T14:40:02.000Z">
+<meta property="article:modified_time" content="2020-09-15T15:31:56.674Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Python" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-911-Online-Election" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Common Python Methods
+      911. Online Election
     </h1>
   
 
@@ -187,12 +187,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/15/911-Online-Election/" class="article-date">
+	  <time datetime="2020-09-15T14:40:02.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/python/">python</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
 	<a class="article-views">
@@ -206,85 +206,11 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base-Data-Type"><a href="#Base-Data-Type" class="headerlink" title="Base Data Type"></a>Base Data Type</h1><ol>
-<li><p>heapq</p>
-<ul>
-<li>heapq.heapify(x): transform list x into a heap, in-place, in linear time.</li>
-<li>heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To access the smallest item without popping it, use <code>heap[0]</code></li>
-<li>heapq.heappush(heap, item): Push the value item onto the heap, , maintaining the heap invariant</li>
-</ul>
-</li>
-<li><p>Other Common Functions</p>
-<ul>
-<li><code>ord(c)</code>: Given a string representing one Unicode character, return an integer represeting the Unicode code point of that character.</li>
-<li><code>chr(i)</code>: return the string representing a character whose Unicode code point is the integer i. For example, <code>chr(97)</code> returns the string ‘a’</li>
-</ul>
-</li>
-<li><p>itertools</p>
-<ul>
-<li>count(start = 0, step = 1)<ul>
-<li>make an interator that returns evenly spaced values starting with n.</li>
-</ul>
-</li>
-<li>groupby(iterable, key)<ul>
-<li>make an iterator that returns consecutive keys and gtroups from the iterable</li>
-</ul>
-</li>
-<li>ifilter(predicate, iterable)<ul>
-<li>make an iterator that filters elements from iterable returning only those for which the predicate is <code>True</code>.</li>
-</ul>
-</li>
-<li>product<ul>
-<li>Cartesian product of input iterables.</li>
-<li>Roughly equivalent to nested for-loops in a generator expression. For example, product(A, B) returns the same as ((x,y) for x in A for y in B).</li>
-</ul>
-</li>
-<li>zip(): <ul>
-<li>make an iterator that aggregates slements from each of the iterables. Returns an itrator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables.</li>
-</ul>
-</li>
-<li>izip<ul>
-<li>make an iterator that aggregates elements from each of the iterables. Like <code>zip()</code> except that it returns an iterator instead of a list</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>next(): retrieve the next item from the iterator</p>
-</li>
-<li><p>all(iterable): return <code>True</code> if all elements of the iterable are true (or if the iterable is empty)</p>
-</li>
-<li><p>while, else</p>
-</li>
-<li><p><code>*</code>: unpack the arguments out of a list or tuple</p>
-</li>
-<li><p>collections</p>
-<ul>
-<li>Counter: A counter is a <code>dict</code> subclass for counting hashable objects. it is an unordered collection wherer elements are stored as disctionary keys and their counts are stored as disctionary values</li>
-</ul>
-</li>
-<li><p>Binary Search</p>
-<ul>
-<li>bisect.bisect(a, x, lo=0, hi=len(a))<ul>
-<li>returns an insertion point which comes after (to the right of) any existing entries of x in a </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Common-Problem"><a href="#Common-Problem" class="headerlink" title="Common Problem"></a>Common Problem</h1><ol>
-<li>What’s the difference between <code>xrange</code> and <code>range</code>?<ul>
-<li><code>xrange</code>: return an xrange object<ul>
-<li>better to use when have a really gigantic range to generate a list for: dat one billion</li>
-</ul>
-</li>
-<li><code>range</code>: return a python list object<ul>
-<li>better to use when iterate over the list multiple times</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
+        <p>Counter + Binary Search</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TopVotedCandidate</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, persons, times)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type persons: List[int]</span></span><br><span class="line"><span class="string">        :type times: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.A = []</span><br><span class="line">        count = collections.Counter()</span><br><span class="line">        leader, m = <span class="literal">None</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> p, t <span class="keyword">in</span> itertools.izip(persons, times):</span><br><span class="line">            count[p] += <span class="number">1</span></span><br><span class="line">            c = count[p]</span><br><span class="line">            <span class="keyword">if</span> c &gt;= m:</span><br><span class="line">                <span class="keyword">if</span> p != leader:</span><br><span class="line">                    leader = p</span><br><span class="line">                    self.A.append((t, leader))</span><br><span class="line">                <span class="keyword">if</span> c &gt; m:</span><br><span class="line">                    m = c</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">q</span><span class="params">(self, t)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type t: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        i = bisect.bisect(self.A, (t, float(<span class="string">'inf'</span>)))</span><br><span class="line">        <span class="keyword">return</span> self.A[i<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your TopVotedCandidate object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = TopVotedCandidate(persons, times)</span></span><br><span class="line"><span class="comment"># param_1 = obj.q(t)</span></span><br></pre></td></tr></table></figure>
 
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">persons</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">times</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> TopVotedCandidate = <span class="function"><span class="keyword">function</span>(<span class="params">persons, times</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> map = &#123;&#125;</span><br><span class="line">    <span class="keyword">this</span>.A = []</span><br><span class="line">    <span class="keyword">let</span> m = <span class="number">0</span>, leader = <span class="literal">null</span>;<span class="comment">//must set to null, not 0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; persons.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> person = persons[i]</span><br><span class="line">        <span class="keyword">if</span> (map[person] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">            map[person] = <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        map[person] = map[person] + <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (map[person] &gt;= m) &#123;</span><br><span class="line">            <span class="keyword">if</span> (person !== leader) &#123;</span><br><span class="line">                leader = person</span><br><span class="line">                <span class="keyword">this</span>.A.push([times[i], leader])</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (map[person] &gt; m) &#123;</span><br><span class="line">                m = map[person]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">t</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">TopVotedCandidate.prototype.q = <span class="function"><span class="keyword">function</span>(<span class="params">t</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">let</span> idx = binarySearch(<span class="keyword">this</span>.A, t) - <span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">this</span>.A[idx][<span class="number">1</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//find num &gt; target</span></span><br><span class="line"><span class="keyword">const</span> binarySearch = <span class="function">(<span class="params">nums, target</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>, right = nums.length;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">let</span> mid = (right + left) &gt;&gt; <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid][<span class="number">0</span>] &lt;= target) &#123;</span><br><span class="line">           left = mid + <span class="number">1</span>; </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right = mid;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> right</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * Your TopVotedCandidate object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * var obj = new TopVotedCandidate(persons, times)</span></span><br><span class="line"><span class="comment"> * var param_1 = obj.q(t)</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -312,7 +238,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/Python/" target="_blank" title="Common Python Methods">https://jojoyang666.github.io/2020/08/17/Python/</a>
+          <a href="/2020/09/15/911-Online-Election/" target="_blank" title="911. Online Election">https://jojoyang666.github.io/2020/09/15/911-Online-Election/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -360,19 +286,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/17/1057-Campus-Bikes/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/15/837-New-21-Game/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          1057. Campus Bikes
+          837. New 21 Game
         
       </div>
     </a>
   
   
-    <a href="/2020/08/12/97-Interleaving-String/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/14/259-3Sum-Smaller/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">97. Interleaving String</div>
+      <div class="article-nav-title">259. 3Sum Smaller</div>
     </a>
   
 </nav>
@@ -386,7 +312,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Problem"><span class="nav-number">2.</span> <span class="nav-text">Common Problem</span></a></li></ol>
+        <ol class="nav">None</ol>
     
     </div>
   </aside>

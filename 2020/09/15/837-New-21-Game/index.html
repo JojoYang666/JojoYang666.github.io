@@ -3,23 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>common python methods | Jojo&#39;s Blog</title>
+  <title>837. new 21 game | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+  <meta name="description" content="Thinking:   12345678910111213141516171819class Solution(object):    def new21Game(self, N, K, W):        &quot;&quot;&quot;        :type N: int        :type K: int        :type W: int        :rtype: float        &quot;&quot;&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Common Python Methods">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/Python/index.html">
+<meta property="og:title" content="837. New 21 Game">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/15/837-New-21-Game/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+<meta property="og:description" content="Thinking:   12345678910111213141516171819class Solution(object):    def new21Game(self, N, K, W):        &quot;&quot;&quot;        :type N: int        :type K: int        :type W: int        :rtype: float        &quot;&quot;&quot;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-15T13:58:26.756Z">
+<meta property="og:image" content="https://jojoyang666.github.io/images/837.png">
+<meta property="article:published_time" content="2020-09-15T20:54:36.000Z">
+<meta property="article:modified_time" content="2020-09-15T21:13:21.288Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/837.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -171,7 +173,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Python" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-837-New-21-Game" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +181,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Common Python Methods
+      837. New 21 Game
     </h1>
   
 
@@ -187,12 +189,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/15/837-New-21-Game/" class="article-date">
+	  <time datetime="2020-09-15T20:54:36.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/python/">python</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
 	<a class="article-views">
@@ -206,85 +208,14 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base-Data-Type"><a href="#Base-Data-Type" class="headerlink" title="Base Data Type"></a>Base Data Type</h1><ol>
-<li><p>heapq</p>
+        <p>Thinking: </p>
 <ul>
-<li>heapq.heapify(x): transform list x into a heap, in-place, in linear time.</li>
-<li>heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To access the smallest item without popping it, use <code>heap[0]</code></li>
-<li>heapq.heappush(heap, item): Push the value item onto the heap, , maintaining the heap invariant</li>
-</ul>
-</li>
-<li><p>Other Common Functions</p>
-<ul>
-<li><code>ord(c)</code>: Given a string representing one Unicode character, return an integer represeting the Unicode code point of that character.</li>
-<li><code>chr(i)</code>: return the string representing a character whose Unicode code point is the integer i. For example, <code>chr(97)</code> returns the string ‘a’</li>
-</ul>
-</li>
-<li><p>itertools</p>
-<ul>
-<li>count(start = 0, step = 1)<ul>
-<li>make an interator that returns evenly spaced values starting with n.</li>
-</ul>
-</li>
-<li>groupby(iterable, key)<ul>
-<li>make an iterator that returns consecutive keys and gtroups from the iterable</li>
-</ul>
-</li>
-<li>ifilter(predicate, iterable)<ul>
-<li>make an iterator that filters elements from iterable returning only those for which the predicate is <code>True</code>.</li>
-</ul>
-</li>
-<li>product<ul>
-<li>Cartesian product of input iterables.</li>
-<li>Roughly equivalent to nested for-loops in a generator expression. For example, product(A, B) returns the same as ((x,y) for x in A for y in B).</li>
-</ul>
-</li>
-<li>zip(): <ul>
-<li>make an iterator that aggregates slements from each of the iterables. Returns an itrator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables.</li>
-</ul>
-</li>
-<li>izip<ul>
-<li>make an iterator that aggregates elements from each of the iterables. Like <code>zip()</code> except that it returns an iterator instead of a list</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>next(): retrieve the next item from the iterator</p>
-</li>
-<li><p>all(iterable): return <code>True</code> if all elements of the iterable are true (or if the iterable is empty)</p>
-</li>
-<li><p>while, else</p>
-</li>
-<li><p><code>*</code>: unpack the arguments out of a list or tuple</p>
-</li>
-<li><p>collections</p>
-<ul>
-<li>Counter: A counter is a <code>dict</code> subclass for counting hashable objects. it is an unordered collection wherer elements are stored as disctionary keys and their counts are stored as disctionary values</li>
-</ul>
-</li>
-<li><p>Binary Search</p>
-<ul>
-<li>bisect.bisect(a, x, lo=0, hi=len(a))<ul>
-<li>returns an insertion point which comes after (to the right of) any existing entries of x in a </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Common-Problem"><a href="#Common-Problem" class="headerlink" title="Common Problem"></a>Common Problem</h1><ol>
-<li>What’s the difference between <code>xrange</code> and <code>range</code>?<ul>
-<li><code>xrange</code>: return an xrange object<ul>
-<li>better to use when have a really gigantic range to generate a list for: dat one billion</li>
-</ul>
-</li>
-<li><code>range</code>: return a python list object<ul>
-<li>better to use when iterate over the list multiple times</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
+<li><img src="/images/837.png" alt="837"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">new21Game</span><span class="params">(self, N, K, W)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :type W: int</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        dp = [<span class="number">0.0</span>] * (N + W + <span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> xrange(K, N + <span class="number">1</span>):</span><br><span class="line">            dp[k] = <span class="number">1.0</span></span><br><span class="line">            </span><br><span class="line">        S = min(N - K + <span class="number">1</span>, W)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> xrange(K - <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>):</span><br><span class="line">            dp[k] = S/float(W)</span><br><span class="line">            S += dp[k] - dp[k + W]</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 
+
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">N</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">K</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">W</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> new21Game = <span class="function"><span class="keyword">function</span>(<span class="params">N, K, W</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> dp = <span class="keyword">new</span> <span class="built_in">Array</span>(N + W + <span class="number">1</span>).fill(<span class="number">0.0</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = K; i &lt; N + <span class="number">1</span>; i++) &#123;</span><br><span class="line">        dp[i] = <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> S = <span class="built_in">Math</span>.min(N - K + <span class="number">1</span>, W);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = K - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        dp[i] = S/W</span><br><span class="line">        S += dp[i] - dp[i+W]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -312,7 +243,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/Python/" target="_blank" title="Common Python Methods">https://jojoyang666.github.io/2020/08/17/Python/</a>
+          <a href="/2020/09/15/837-New-21-Game/" target="_blank" title="837. New 21 Game">https://jojoyang666.github.io/2020/09/15/837-New-21-Game/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -360,19 +291,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/17/1057-Campus-Bikes/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/15/274-H-Index/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          1057. Campus Bikes
+          274. H-Index
         
       </div>
     </a>
   
   
-    <a href="/2020/08/12/97-Interleaving-String/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/15/911-Online-Election/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">97. Interleaving String</div>
+      <div class="article-nav-title">911. Online Election</div>
     </a>
   
 </nav>
@@ -386,7 +317,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Problem"><span class="nav-number">2.</span> <span class="nav-text">Common Problem</span></a></li></ol>
+        <ol class="nav">None</ol>
     
     </div>
   </aside>
