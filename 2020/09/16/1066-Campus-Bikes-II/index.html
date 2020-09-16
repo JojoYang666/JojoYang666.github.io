@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>833. find and replace in string | Jojo&#39;s Blog</title>
+  <title>1066. campus bikes ii | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse sorted  123456789101112131415class Solution(object):    def findReplaceString(self, S, indexes, sources, targets):        &quot;&quot;&quot;        :type S: str">
+  <meta name="description" content="bfs + pq 12345678910111213141516171819202122232425class Solution(object):    def assignBikes(self, workers, bikes):        &quot;&quot;&quot;        :type workers: List[List[int]]        :type bikes: List[List[int]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="833. Find And Replace in String">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/09/15/833-Find-And-Replace-in-String/index.html">
+<meta property="og:title" content="1066. Campus Bikes II">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/16/1066-Campus-Bikes-II/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse sorted  123456789101112131415class Solution(object):    def findReplaceString(self, S, indexes, sources, targets):        &quot;&quot;&quot;        :type S: str">
+<meta property="og:description" content="bfs + pq 12345678910111213141516171819202122232425class Solution(object):    def assignBikes(self, workers, bikes):        &quot;&quot;&quot;        :type workers: List[List[int]]        :type bikes: List[List[int]">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-16T03:21:10.000Z">
-<meta property="article:modified_time" content="2020-09-16T05:17:18.345Z">
+<meta property="article:published_time" content="2020-09-16T18:24:26.000Z">
+<meta property="article:modified_time" content="2020-09-16T20:02:39.436Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-833-Find-And-Replace-in-String" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-1066-Campus-Bikes-II" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      833. Find And Replace in String
+      1066. Campus Bikes II
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/15/833-Find-And-Replace-in-String/" class="article-date">
-	  <time datetime="2020-09-16T03:21:10.000Z" itemprop="datePublished">2020-09-15</time>
+	<a href="/2020/09/16/1066-Campus-Bikes-II/" class="article-date">
+	  <time datetime="2020-09-16T18:24:26.000Z" itemprop="datePublished">2020-09-16</time>
 	</a>
 
       
@@ -207,12 +207,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse sorted  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findReplaceString</span><span class="params">(self, S, indexes, sources, targets)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type S: str</span></span><br><span class="line"><span class="string">        :type indexes: List[int]</span></span><br><span class="line"><span class="string">        :type sources: List[str]</span></span><br><span class="line"><span class="string">        :type targets: List[str]</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        S = list(S)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i, x, y <span class="keyword">in</span> sorted(zip(indexes, sources, targets), reverse = <span class="literal">True</span>):</span><br><span class="line">            <span class="keyword">if</span> all(i + k &lt; len(S) <span class="keyword">and</span> S[i + k] == x[k] <span class="keyword">for</span> k <span class="keyword">in</span> xrange(len(x))):</span><br><span class="line">                S[i:i+len(x)] = list(y)</span><br><span class="line">        <span class="keyword">return</span> <span class="string">""</span>.join(S)</span><br></pre></td></tr></table></figure>
-
-
+<li><p>bfs + pq</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">assignBikes</span><span class="params">(self, workers, bikes)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type workers: List[List[int]]</span></span><br><span class="line"><span class="string">        :type bikes: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dis</span><span class="params">(i, j)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> abs(workers[i][<span class="number">0</span>] - bikes[j][<span class="number">0</span>]) + abs(workers[i][<span class="number">1</span>] - bikes[j][<span class="number">1</span>])</span><br><span class="line">        </span><br><span class="line">        h = [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]]</span><br><span class="line">        seen = set()</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            cost, i, taken = heapq.heappop(h)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (i, taken) <span class="keyword">in</span> seen: <span class="keyword">continue</span></span><br><span class="line">            seen.add((i, taken))</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> i == len(workers):</span><br><span class="line">                <span class="keyword">return</span> cost</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(bikes)):</span><br><span class="line">                <span class="keyword">if</span> taken &amp; (<span class="number">1</span> &lt;&lt; j) == <span class="number">0</span>:</span><br><span class="line">                    heapq.heappush(h, [cost + dis(i, j), i + <span class="number">1</span>, taken | (<span class="number">1</span> &lt;&lt; j)])</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>backtracking</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">workers</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">bikes</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> assignBikes = <span class="function"><span class="keyword">function</span>(<span class="params">workers, bikes</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> used = <span class="keyword">new</span> <span class="built_in">Set</span>()</span><br><span class="line">    <span class="keyword">let</span> res = <span class="literal">Infinity</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> calDist = <span class="function">(<span class="params">i, j</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Math</span>.abs(workers[i][<span class="number">0</span>] - bikes[j][<span class="number">0</span>]) + <span class="built_in">Math</span>.abs(workers[i][<span class="number">1</span>] - bikes[j][<span class="number">1</span>])</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> go = <span class="function">(<span class="params">i, dis</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (i === workers.length) &#123;</span><br><span class="line">            res = <span class="built_in">Math</span>.min(res, dis)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        bikes.forEach(<span class="function">(<span class="params">bike, idx</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!used.has(bike)) &#123;</span><br><span class="line">                <span class="keyword">const</span> dist = calDist(i, idx)</span><br><span class="line">                used.add(bike)</span><br><span class="line">                go(i + <span class="number">1</span>, dis + dist)</span><br><span class="line">                used.delete(bike)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    go(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dijistra</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">assignBikes</span><span class="params">(self, workers, bikes)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type workers: List[List[int]]</span></span><br><span class="line"><span class="string">        :type bikes: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dist</span><span class="params">(i, j)</span>:</span></span><br><span class="line">            <span class="keyword">return</span> abs(workers[i][<span class="number">0</span>] - bikes[j][<span class="number">0</span>]) + abs(workers[i][<span class="number">1</span>] - bikes[j][<span class="number">1</span>])</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        h = [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]]</span><br><span class="line">        optimal = defaultdict(<span class="keyword">lambda</span>: float(<span class="string">'inf'</span>))</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            cost, i, taken = heapq.heappop(h)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> i == len(workers): <span class="keyword">return</span> cost</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> j, bike <span class="keyword">in</span> enumerate(bikes):</span><br><span class="line">                <span class="keyword">if</span> taken &amp; (<span class="number">1</span> &lt;&lt; j) == <span class="number">0</span>:</span><br><span class="line">                    new_cost = cost + dist(i, j)</span><br><span class="line">                    new_taken = taken | (<span class="number">1</span> &lt;&lt; j)</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span> new_cost &lt; optimal[(i+<span class="number">1</span>, new_taken)]:</span><br><span class="line">                        optimal[(i+<span class="number">1</span>, new_taken)] = new_cost</span><br><span class="line">                        heapq.heappush(h, [new_cost, i + <span class="number">1</span>, new_taken])</span><br></pre></td></tr></table></figure></li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">S</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">indexes</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">sources</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">targets</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findReplaceString = <span class="function"><span class="keyword">function</span>(<span class="params">S, indexes, sources, targets</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> array = indexes.map(<span class="function">(<span class="params">item, idex</span>) =&gt;</span> [item, idex])</span><br><span class="line">    array.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b[<span class="number">0</span>] - a[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> [index, i] <span class="keyword">of</span> array) &#123;</span><br><span class="line">        <span class="keyword">const</span> source = sources[i]</span><br><span class="line">        <span class="keyword">if</span> (S.substring(index, index + source.length) === source) &#123;</span><br><span class="line">            S = S.substring(<span class="number">0</span>, index) + targets[i] + S.substring(index + source.length)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> S</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -240,7 +244,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/09/15/833-Find-And-Replace-in-String/" target="_blank" title="833. Find And Replace in String">https://jojoyang666.github.io/2020/09/15/833-Find-And-Replace-in-String/</a>
+          <a href="/2020/09/16/1066-Campus-Bikes-II/" target="_blank" title="1066. Campus Bikes II">https://jojoyang666.github.io/2020/09/16/1066-Campus-Bikes-II/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -288,19 +292,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/09/16/1066-Campus-Bikes-II/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          1066. Campus Bikes II
+          bfs, dfs, backtracking, Dijkstra
         
       </div>
     </a>
   
   
-    <a href="/2020/09/15/731-My-Calendar-II/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/15/833-Find-And-Replace-in-String/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">731. My Calendar II</div>
+      <div class="article-nav-title">833. Find And Replace in String</div>
     </a>
   
 </nav>

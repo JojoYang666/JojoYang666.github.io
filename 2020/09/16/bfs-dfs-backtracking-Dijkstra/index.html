@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>category: algorithms | Jojo&#39;s Blog</title>
+  <title>bfs, dfs, backtracking, dijkstra | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jojo&#39;s Blog">
-<meta property="og:url" content="https://jojoyang666.github.io/categories/Algorithms/index.html">
+  <meta name="description" content="General 可以用掩码token &amp; (1 &lt;&lt; i)和token | (1 &lt;&lt; i)来看这个ith item是否用过， 并且更新他的状态  BFS + DFS add visited set  Backtracking find all the possible solutions used-thing —-&gt; 123used(flag -&gt; t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bfs, dfs, backtracking, Dijkstra">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/16/bfs-dfs-backtracking-Dijkstra/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="General 可以用掩码token &amp; (1 &lt;&lt; i)和token | (1 &lt;&lt; i)来看这个ith item是否用过， 并且更新他的状态  BFS + DFS add visited set  Backtracking find all the possible solutions used-thing —-&gt; 123used(flag -&gt; t">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-09-16T19:11:13.000Z">
+<meta property="article:modified_time" content="2020-09-16T20:11:24.802Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -64,8 +68,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
     <link rel="stylesheet" href="/css/vdonate.css" >
@@ -75,7 +77,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -98,7 +100,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
               </a>
             
@@ -169,148 +171,168 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-  
-  
+          <section id="main" style="float:none;"><article id="post-bfs-dfs-backtracking-Dijkstra" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2020" class="archive-year">2020</a></h1>
-        </div>
-        <div class="archives">
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      bfs, dfs, backtracking, Dijkstra
+    </h1>
+  
+
+      </header>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+    <div class="article-meta">
       
-	<a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/" class="archive-article-date">
+	<a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/" class="article-date">
 	  <time datetime="2020-09-16T19:11:13.000Z" itemprop="datePublished">2020-09-16</time>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/">bfs, dfs, backtracking, Dijkstra</a>
-    </h1>
-  
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
       
-	<a href="/2020/09/03/Graph/" class="archive-article-date">
-	  <time datetime="2020-09-03T19:51:10.000Z" itemprop="datePublished">2020-09-03</time>
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/03/Graph/">Graph</a>
-    </h1>
-  
 
-    </header>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="General"><a href="#General" class="headerlink" title="General"></a>General</h1><ol>
+<li>可以用掩码<code>token &amp; (1 &lt;&lt; i)</code>和<code>token | (1 &lt;&lt; i)</code>来看这个ith item是否用过， 并且更新他的状态</li>
+</ol>
+<h1 id="BFS-DFS"><a href="#BFS-DFS" class="headerlink" title="BFS + DFS"></a>BFS + DFS</h1><ol>
+<li>add visited set</li>
+</ol>
+<h1 id="Backtracking"><a href="#Backtracking" class="headerlink" title="Backtracking"></a>Backtracking</h1><ol>
+<li>find all the possible solutions</li>
+<li>used-thing —-&gt; <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">used(flag -&gt; true)</span><br><span class="line">recursivefuncition()</span><br><span class="line">used(flag -&gt; false -&gt; reset to initial funtion)</span><br></pre></td></tr></table></figure></li>
+<li>In recursive function: 明确触底条件</li>
+</ol>
+<h1 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h1><ol>
+<li>算法特点<ul>
+<li>bfs解决<strong>赋权</strong>有向图或者无向图的<strong>单源</strong>最短路径问题</li>
+</ul>
+</li>
+<li>算法的思路<ul>
+<li>dis保存源点（s）到各个顶点的最短路径</li>
+<li>T: 已经找到了最短路径顶点的集合</li>
+<li>初始赋值：<ul>
+<li>dis[s] = 0</li>
+<li>s顶点能直接到达的边(s, m)  —&gt; dis[m] = w(s, m)</li>
+<li>s不能到达的点设置为无穷大</li>
+<li>从dis中选择最小值， 将该点加入T中</li>
+</ul>
+</li>
+<li>从T中新加入的点来看是否可以到达其他顶点v 并且 看看通过该顶点到其他点v的路径长度， 是否比dis[v]小， 如果是， update dis[v], 然后从dis中选择最小值， 将该点加入T中， 重复改操作， 直到T中包含了图中的所有顶点</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/" target="_blank" title="bfs, dfs, backtracking, Dijkstra">https://jojoyang666.github.io/2020/09/16/bfs-dfs-backtracking-Dijkstra/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/16/1066-Campus-Bikes-II/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">1066. Campus Bikes II</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#General"><span class="nav-number">1.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFS-DFS"><span class="nav-number">2.</span> <span class="nav-text">BFS + DFS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Backtracking"><span class="nav-number">3.</span> <span class="nav-text">Backtracking</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dijkstra"><span class="nav-number">4.</span> <span class="nav-text">Dijkstra</span></a></li></ol>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/03/UNION-FIND/" class="archive-article-date">
-	  <time datetime="2020-09-03T18:38:26.000Z" itemprop="datePublished">2020-09-03</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/03/UNION-FIND/">UNION FIND</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/08/10/Binary-Search/" class="archive-article-date">
-	  <time datetime="2020-08-11T04:26:32.000Z" itemprop="datePublished">2020-08-10</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/08/10/Binary-Search/">Binary Search</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/07/15/LinkedList/" class="archive-article-date">
-	  <time datetime="2020-07-16T04:56:04.000Z" itemprop="datePublished">2020-07-15</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/07/15/LinkedList/">LinkedList</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/06/30/Binary-Indexed-Tree/" class="archive-article-date">
-	  <time datetime="2020-06-30T23:47:14.000Z" itemprop="datePublished">2020-06-30</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/06/30/Binary-Indexed-Tree/">Binary Indexed Tree</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+    </div>
+  </aside>
 
 </section>
         
@@ -414,6 +436,10 @@
 
 
 
+  
+<script src="/js/dialog.js"></script>
+
+
 
 
 
@@ -497,6 +523,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
