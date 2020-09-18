@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>common python methods | Jojo&#39;s Blog</title>
+  <title>320. generalized abbreviation | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+  <meta name="description" content="Iterative wayusing bit to represent word123456789101112131415161718192021222324252627&#x2F;** * @param &amp;#123;string&amp;#125; word * @return &amp;#123;string[]&amp;#125; *&#x2F;var generateAbbreviations &#x3D; function(word) &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Common Python Methods">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/Python/index.html">
+<meta property="og:title" content="320. Generalized Abbreviation">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/18/320-Generalized-Abbreviation/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+<meta property="og:description" content="Iterative wayusing bit to represent word123456789101112131415161718192021222324252627&#x2F;** * @param &amp;#123;string&amp;#125; word * @return &amp;#123;string[]&amp;#125; *&#x2F;var generateAbbreviations &#x3D; function(word) &amp;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-18T17:44:38.076Z">
+<meta property="article:published_time" content="2020-09-18T16:25:34.000Z">
+<meta property="article:modified_time" content="2020-09-18T18:28:28.446Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Python" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-320-Generalized-Abbreviation" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Common Python Methods
+      320. Generalized Abbreviation
     </h1>
   
 
@@ -187,12 +187,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/18/320-Generalized-Abbreviation/" class="article-date">
+	  <time datetime="2020-09-18T16:25:34.000Z" itemprop="datePublished">2020-09-18</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/python/">python</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
 	<a class="article-views">
@@ -206,86 +206,20 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base-Data-Type"><a href="#Base-Data-Type" class="headerlink" title="Base Data Type"></a>Base Data Type</h1><ol>
-<li><p>heapq</p>
-<ul>
-<li>heapq.heapify(x): transform list x into a heap, in-place, in linear time.</li>
-<li>heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To access the smallest item without popping it, use <code>heap[0]</code></li>
-<li>heapq.heappush(heap, item): Push the value item onto the heap, , maintaining the heap invariant</li>
-</ul>
-</li>
-<li><p>Other Common Functions</p>
-<ul>
-<li><code>ord(c)</code>: Given a string representing one Unicode character, return an integer represeting the Unicode code point of that character.</li>
-<li><code>chr(i)</code>: return the string representing a character whose Unicode code point is the integer i. For example, <code>chr(97)</code> returns the string ‘a’</li>
-</ul>
-</li>
-<li><p>itertools</p>
-<ul>
-<li>count(start = 0, step = 1)<ul>
-<li>make an interator that returns evenly spaced values starting with n.</li>
-</ul>
-</li>
-<li>groupby(iterable, key)<ul>
-<li>make an iterator that returns consecutive keys and gtroups from the iterable</li>
-</ul>
-</li>
-<li>ifilter(predicate, iterable)<ul>
-<li>make an iterator that filters elements from iterable returning only those for which the predicate is <code>True</code>.</li>
-</ul>
-</li>
-<li>product<ul>
-<li>Cartesian product of input iterables.</li>
-<li>Roughly equivalent to nested for-loops in a generator expression. For example, product(A, B) returns the same as ((x,y) for x in A for y in B).</li>
-</ul>
-</li>
-<li>zip(): <ul>
-<li>make an iterator that aggregates slements from each of the iterables. Returns an itrator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables.</li>
-</ul>
-</li>
-<li>izip<ul>
-<li>make an iterator that aggregates elements from each of the iterables. Like <code>zip()</code> except that it returns an iterator instead of a list</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>next(): retrieve the next item from the iterator</p>
-</li>
-<li><p>all(iterable): return <code>True</code> if all elements of the iterable are true (or if the iterable is empty)</p>
-</li>
-<li><p>while, else</p>
-</li>
-<li><p><code>*</code>: unpack the arguments out of a list or tuple</p>
-</li>
-<li><p>collections</p>
-<ul>
-<li>Counter: A counter is a <code>dict</code> subclass for counting hashable objects. it is an unordered collection wherer elements are stored as disctionary keys and their counts are stored as disctionary values</li>
-</ul>
-</li>
-<li><p>Binary Search</p>
-<ul>
-<li>bisect.bisect(a, x, lo=0, hi=len(a))<ul>
-<li>returns an insertion point which comes after (to the right of) any existing entries of x in a </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Common-Problem"><a href="#Common-Problem" class="headerlink" title="Common Problem"></a>Common Problem</h1><ol>
-<li>What’s the difference between <code>xrange</code> and <code>range</code>?<ul>
-<li><code>xrange</code>: return an xrange object<ul>
-<li>better to use when have a really gigantic range to generate a list for: dat one billion</li>
-</ul>
-</li>
-<li><code>range</code>: return a python list object<ul>
-<li>better to use when iterate over the list multiple times</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>there is no increment<code>++</code> and decrement<code>--</code> operators in python</li>
-</ol>
+        <ol>
+<li>Iterative way<br>using bit to represent word<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">word</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> generateAbbreviations = <span class="function"><span class="keyword">function</span>(<span class="params">word</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">Math</span>.pow(<span class="number">2</span>, word.length); i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> out = <span class="string">""</span>, cnt = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; word.length; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((i &gt;&gt; j) &amp; <span class="number">1</span>) cnt++;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (cnt !== <span class="number">0</span>) &#123;</span><br><span class="line">                    out += cnt + <span class="string">''</span>;</span><br><span class="line">                    cnt = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                out += word.charAt(j)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (cnt &gt; <span class="number">0</span>) out += cnt + <span class="string">''</span></span><br><span class="line">        res.push(out)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateAbbreviations</span><span class="params">(self, word)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type word: str</span></span><br><span class="line"><span class="string">        :rtype: List[str]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(pow(<span class="number">2</span>, len(word))):</span><br><span class="line">            cnt, out = <span class="number">0</span>, <span class="string">""</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> xrange(len(word)):</span><br><span class="line">                <span class="keyword">if</span> (i &gt;&gt; j) &amp; <span class="number">1</span>:</span><br><span class="line">                    cnt+=<span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">if</span> cnt != <span class="number">0</span>:</span><br><span class="line">                        out += str(cnt)</span><br><span class="line">                        cnt = <span class="number">0</span></span><br><span class="line">                    out += word[j]</span><br><span class="line">            <span class="keyword">if</span> cnt &gt; <span class="number">0</span>:</span><br><span class="line">                out += str(cnt)</span><br><span class="line">            res.append(out)</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Recursive way — backtrackiing<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">word</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> generateAbbreviations = <span class="function"><span class="keyword">function</span>(<span class="params">word</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = []</span><br><span class="line">    helper(word, <span class="number">0</span>, res)</span><br><span class="line">    res.push(word)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> helper = <span class="function">(<span class="params">word, pos, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = pos; i &lt; word.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; i + j &lt;= word.length; j++) &#123;</span><br><span class="line">            <span class="keyword">const</span> t = word.substring(<span class="number">0</span>, i) + j + word.substring(i + j)</span><br><span class="line">            res.push(t)</span><br><span class="line">            helper(t, i + <span class="number">1</span> + j.toString().length, res)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generateAbbreviations</span><span class="params">(self, word)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type word: str</span></span><br><span class="line"><span class="string">        :rtype: List[str]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = []</span><br><span class="line">        res.append(word)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">helper</span><span class="params">(w, pos)</span>:</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> xrange(pos, len(w)):</span><br><span class="line">                <span class="keyword">for</span> j <span class="keyword">in</span> xrange(<span class="number">1</span>, len(w) - i + <span class="number">1</span>):</span><br><span class="line">                    t = w[<span class="number">0</span>:i] + str(j) + w[i + j:]</span><br><span class="line">                    res.append(t)</span><br><span class="line">                    helper(t, i + <span class="number">1</span> + len(str(j)))</span><br><span class="line">        helper(word, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -313,7 +247,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/Python/" target="_blank" title="Common Python Methods">https://jojoyang666.github.io/2020/08/17/Python/</a>
+          <a href="/2020/09/18/320-Generalized-Abbreviation/" target="_blank" title="320. Generalized Abbreviation">https://jojoyang666.github.io/2020/09/18/320-Generalized-Abbreviation/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -361,19 +295,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/17/1057-Campus-Bikes/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          1057. Campus Bikes
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/12/97-Interleaving-String/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/17/406-Queue-Reconstruction-by-Height/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">97. Interleaving String</div>
+      <div class="article-nav-title">406. Queue Reconstruction by Height</div>
     </a>
   
 </nav>
@@ -387,7 +312,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Problem"><span class="nav-number">2.</span> <span class="nav-text">Common Problem</span></a></li></ol>
+        <ol class="nav">None</ol>
     
     </div>
   </aside>
