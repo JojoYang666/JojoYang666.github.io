@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>946. validate stack sequences | Jojo&#39;s Blog</title>
+  <title>946-validate-stack-sequences | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Dijistra 123456789101112131415161718192021222324252627class Solution(object):    def shortestDistance(self, maze, start, destination):        &quot;&quot;&quot;        :type maze: List[List[int]]        :type start:">
+  <meta name="description" content="title: 946. Validate Stack Sequencesdate: 2020-09-21 22:13:03tags:categories:   Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="946. Validate Stack Sequences">
+<meta property="og:title" content="946-Validate-Stack-Sequences">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/09/21/946-Validate-Stack-Sequences/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Dijistra 123456789101112131415161718192021222324252627class Solution(object):    def shortestDistance(self, maze, start, destination):        &quot;&quot;&quot;        :type maze: List[List[int]]        :type start:">
+<meta property="og:description" content="title: 946. Validate Stack Sequencesdate: 2020-09-21 22:13:03tags:categories:   Leetcode">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-22T05:13:03.000Z">
-<meta property="article:modified_time" content="2020-09-22T05:15:35.902Z">
+<meta property="article:published_time" content="2020-09-22T05:13:03.111Z">
+<meta property="article:modified_time" content="2020-09-22T05:17:47.637Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      946. Validate Stack Sequences
+      946-Validate-Stack-Sequences
     </h1>
   
 
@@ -188,12 +188,10 @@
     <div class="article-meta">
       
 	<a href="/2020/09/21/946-Validate-Stack-Sequences/" class="article-date">
-	  <time datetime="2020-09-22T05:13:03.000Z" itemprop="datePublished">2020-09-21</time>
+	  <time datetime="2020-09-22T05:13:03.111Z" itemprop="datePublished">2020-09-21</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -206,8 +204,11 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Dijistra</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shortestDistance</span><span class="params">(self, maze, start, destination)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type maze: List[List[int]]</span></span><br><span class="line"><span class="string">        :type start: List[int]</span></span><br><span class="line"><span class="string">        :type destination: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        m, n, q, stopped = len(maze), len(maze[<span class="number">0</span>]), [(<span class="number">0</span>, start[<span class="number">0</span>], start[<span class="number">1</span>])], &#123;(start[<span class="number">0</span>], start[<span class="number">1</span>]): <span class="number">0</span>&#125;</span><br><span class="line">        <span class="comment">#dist must be first one in q</span></span><br><span class="line">        <span class="keyword">while</span> q:</span><br><span class="line">            dist, x, y = heapq.heappop(q)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> [x, y] == destination:</span><br><span class="line">                <span class="keyword">return</span> dist</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> i, j <span class="keyword">in</span> ((<span class="number">1</span>, <span class="number">0</span>), (<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">0</span>, <span class="number">-1</span>)):</span><br><span class="line">                newX, newY, d = x, y, <span class="number">0</span></span><br><span class="line">                <span class="keyword">while</span> <span class="number">0</span> &lt;= newX + i &lt; m <span class="keyword">and</span> <span class="number">0</span> &lt;= newY + j &lt; n <span class="keyword">and</span> maze[newX + i][newY + j] != <span class="number">1</span>:</span><br><span class="line">                    newX += i</span><br><span class="line">                    newY += j</span><br><span class="line">                    d += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (newX, newY) <span class="keyword">not</span> <span class="keyword">in</span> stopped <span class="keyword">or</span>  d + dist &lt; stopped[(newX, newY)]:</span><br><span class="line">                    stopped[(newX, newY)] = dist + d</span><br><span class="line">                    heapq.heappush(q, (dist + d, newX, newY))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+        <hr>
+<p>title: 946. Validate Stack Sequences<br>date: 2020-09-21 22:13:03<br>tags:<br>categories: </p>
+<ul>
+<li>Leetcode</li>
+</ul>
 
       
     </div>
@@ -236,7 +237,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/09/21/946-Validate-Stack-Sequences/" target="_blank" title="946. Validate Stack Sequences">https://jojoyang666.github.io/2020/09/21/946-Validate-Stack-Sequences/</a>
+          <a href="/2020/09/21/946-Validate-Stack-Sequences/" target="_blank" title="946-Validate-Stack-Sequences">https://jojoyang666.github.io/2020/09/21/946-Validate-Stack-Sequences/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
