@@ -3,30 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>react lifecycle | Jojo&#39;s Blog</title>
+  <title>apollo | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="Front EndReact" />
+  <meta name="keywords" content="GraphQLFront End" />
   
   
   
   
-  <meta name="description" content="Lifecycle Diagram    UpdatingcomponentDidUpdate invoked immediately after updating occurs, is not called for the initial render A good place to do network requests as long as you compare the current p">
+  <meta name="description" content="Intro A comprehensive state management library for Javascript that enables you to manage both local and remote data with GraphQL  Appollo Client Cache – what we can configure Specify custom primary ke">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React LifeCycle">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/06/25/React-LifeCycle/index.html">
+<meta property="og:title" content="Apollo">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/22/Apollo/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Lifecycle Diagram    UpdatingcomponentDidUpdate invoked immediately after updating occurs, is not called for the initial render A good place to do network requests as long as you compare the current p">
+<meta property="og:description" content="Intro A comprehensive state management library for Javascript that enables you to manage both local and remote data with GraphQL  Appollo Client Cache – what we can configure Specify custom primary ke">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jojoyang666.github.io/images/lifecycle.png">
-<meta property="og:image" content="https://jojoyang666.github.io/images/lifecycle_detail.png">
-<meta property="article:published_time" content="2020-06-25T16:51:13.000Z">
-<meta property="article:modified_time" content="2020-06-25T17:56:12.957Z">
+<meta property="article:published_time" content="2020-09-22T19:09:34.000Z">
+<meta property="article:modified_time" content="2020-09-22T22:03:21.276Z">
 <meta property="article:author" content="Jojo Yang">
+<meta property="article:tag" content="GraphQL">
 <meta property="article:tag" content="Front End">
-<meta property="article:tag" content="React">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jojoyang666.github.io/images/lifecycle.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -178,7 +175,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-React-LifeCycle" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Apollo" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -186,7 +183,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      React LifeCycle
+      Apollo
     </h1>
   
 
@@ -194,12 +191,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/06/25/React-LifeCycle/" class="article-date">
-	  <time datetime="2020-06-25T16:51:13.000Z" itemprop="datePublished">2020-06-25</time>
+	<a href="/2020/09/22/Apollo/" class="article-date">
+	  <time datetime="2020-09-22T19:09:34.000Z" itemprop="datePublished">2020-09-22</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/React/">React</a>
+    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/GraphQL/">GraphQL</a>
 
       
 	<a class="article-views">
@@ -213,49 +210,59 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Lifecycle-Diagram"><a href="#Lifecycle-Diagram" class="headerlink" title="Lifecycle Diagram"></a>Lifecycle Diagram</h1><ul>
-<li><img src="/images/lifecycle.png" alt="overall"></li>
-<li><img src="/images/lifecycle_detail.png" alt="detail"></li>
-</ul>
-<h1 id="Updating"><a href="#Updating" class="headerlink" title="Updating"></a>Updating</h1><h2 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h2><ol>
-<li>invoked immediately after updating occurs, is not called for the initial render</li>
-<li>A good place to do network requests as long as you compare the current props to previous props(e.g. a network request may not be necessary if the props have not changed)</li>
-<li><strong>May call setState() immediately in componentDidUpdate()</strong>, but nore that <strong>it must be wrapped in a condition</strong>, otherwise will cause a infinite loop</li>
-<li>If try to “mirror” some state to a prop coming from above, consider using the prop directly instead</li>
+        <h1 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h1><ol>
+<li>A comprehensive state management library for Javascript that enables you to manage both local and remote data with GraphQL</li>
 </ol>
-<h2 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h2><ol>
-<li>Let react know if a component’s output is not affected by the current change in state or props</li>
-<li>Default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior</li>
-<li>Invoked before rendering when new props or state are being received. Defaults to <code>true</code></li>
-<li>Exists as a <strong>performance optimization</strong>, do not rely on it to “prevent” a rendering, as this can lead bugs<ul>
-<li>If want to prevent a rendering, can use PureComponent</li>
-<li>PureComponent performs a shallow comparison of props and state, and reduces the chance that you’ll skip a necessary update</li>
+<h1 id="Appollo-Client"><a href="#Appollo-Client" class="headerlink" title="Appollo Client"></a>Appollo Client</h1><ol>
+<li>Cache – what we can configure<ul>
+<li>Specify custom primary key fields</li>
+<li>Customize the storage and retrival of individual fields</li>
+<li>Customize the interpretation of field arguments</li>
+<li>Define supertype-subtype relationsips for fragment matching</li>
+<li>Define patterns for pagination</li>
+<li>Manage client-side local state</li>
 </ul>
 </li>
-<li>compare this.props with nextProps and this.state with nextState and return false to tell React the update can be skipped<ul>
-<li>Noted that <strong>returning false does not prevent child components from rerendering when their states changes</strong></li>
+<li><code>ApolloClient</code>: encapsulates Apollo’s core client-side API. It backs all available view-layer integrations<ul>
+<li>constructor for <code>ApolloClient</code> accepts an <code>ApolloClientOptions</code> object that supports the required and optional fields listed below</li>
+<li>Required One:<ul>
+<li><code>uri</code>: A URI pointing to the backend GraphQL endpoint that Apollo Client will communicate with. Note: One of <code>uri</code> ir <code>link</code> is required; if both are specified, <code>link</code> will take precedence</li>
+<li><code>link</code>: You can provide an Apollo link instance to serve as Apollo Client’s network layer</li>
+<li><code>cache</code>: Apollo Client uses an Apollo Cache instance to handle its caching strategy</li>
 </ul>
 </li>
-<li>Not recommend doing deap <strong>equality checks</strong> or using <strong>JSON.stringify()</strong> in <code>shouldComponentUpdate()</code>, it is every inefficient and will harm the performanced</li>
-</ol>
-<h1 id="React-PureComponent"><a href="#React-PureComponent" class="headerlink" title="React.PureComponent"></a>React.PureComponent</h1><ol>
-<li><p>similar to <code>React.Component</code>. The difference between them is:</p>
-<ul>
-<li>React.Component does not implement shouldComponentUpdate()</li>
-<li>React.PureComponent implements it with a shallow prop and state comparison</li>
-</ul>
-</li>
-<li><p>React.PureComponent’s shouldComponentUpdate only <strong>shallowly compares the object</strong></p>
-<ul>
-<li>if contains complex data structer, may introduce false-negative for deeper diff</li>
-</ul>
-</li>
-<li><p>React.PureComponent’s shouldComponentUpdate skips prop updates for the whole component subtree</p>
-<ul>
-<li>Make sure all the children components are also pure</li>
 </ul>
 </li>
 </ol>
+<h1 id="GraphQL-Client"><a href="#GraphQL-Client" class="headerlink" title="GraphQL Client"></a>GraphQL Client</h1><ol>
+<li>apollo-link-http:<ul>
+<li>a system of modular components for GraphQL networking</li>
+<li>Is a terminating link that fetches GraphQL results from a GraphQl endpoint over an http connection</li>
+<li>The http link supports both POST and GET requests with the ability to change the http options on a per query basis</li>
+<li>This can be used for authentication, persisted queries, dynamic uris, and other granular updates</li>
+</ul>
+</li>
+<li>apollo-link-http<ul>
+<li><code>setContext</code> takes a function that returns either an object or a promise that returns an object to set the new context of a request</li>
+<li>Receive two arguments:<ul>
+<li>The GraphQL request being executed, and the previous context</li>
+<li>This link makes it easy to perform async look up of things like authentication tokens and more</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>apollo-cache-inmemory<ul>
+<li><code>InMemoryCache</code>: is a normalized data store that supports all of Apollo client feactures without the dependency Redux</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ApolloClient &#125; <span class="keyword">from</span> <span class="string">"apollo-client"</span></span><br><span class="line"><span class="keyword">import</span> &#123; createHttpLink &#125; <span class="keyword">from</span> <span class="string">"apollo-link-http"</span></span><br><span class="line"><span class="keyword">import</span> &#123; InMemoryCache &#125; <span class="keyword">from</span> <span class="string">"apollo-cache-inmemory"</span></span><br><span class="line"><span class="keyword">import</span> &#123; setContext &#125; <span class="keyword">from</span> <span class="string">"appollo-link-context"</span></span><br><span class="line"><span class="keyword">import</span> fetchPollyfill <span class="keyword">from</span> <span class="string">"unfetch"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> httpLink = <span class="literal">null</span></span><br><span class="line"><span class="keyword">let</span> httplinkConfig = <span class="literal">null</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">window</span>.fetch) &#123;</span><br><span class="line">    httpLink = createHttpLink(&#123;</span><br><span class="line">        uri: <span class="string">"****"</span>,</span><br><span class="line">        fetch: fetchPollyfill</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    httplinkConfig = createHttpLink(&#123;</span><br><span class="line">        uri: <span class="string">"****"</span>,</span><br><span class="line">        fetch: fetchPollyfill</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    httpLink = createHttpLink(&#123;</span><br><span class="line">        uri: <span class="string">"****"</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    httplinkConfig = createHttpLink(&#123;</span><br><span class="line">        uri: <span class="string">"****"</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> authLink = setContext(<span class="function">(<span class="params">_, &#123; headers&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        headers: &#123;</span><br><span class="line">            ...headers,</span><br><span class="line">            <span class="comment">//other settings</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> client = <span class="keyword">new</span> ApolloClient(&#123;</span><br><span class="line">    link: authLink.concat(httpLink),</span><br><span class="line">    cache: <span class="keyword">new</span> InMemoryCache(&#123;</span><br><span class="line">        addTypename: <span class="literal">false</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">client.configClient = <span class="keyword">new</span> ApolloClient(&#123;</span><br><span class="line">    link: authLink.concat(httplinkConfig);</span><br><span class="line">    cache: <span class="keyword">new</span> InMemoryCache(&#123;</span><br><span class="line">        addTypename: <span class="literal">false</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="Apollo-Middleware"><a href="#Apollo-Middleware" class="headerlink" title="Apollo Middleware"></a>Apollo Middleware</h1><p>Integrated with Redux</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">apolloMiddleware</span>(<span class="params">graphQlClient</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function">(<span class="params">&#123;dispatch, getState&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="params">next</span> =&gt;</span> <span class="function">(<span class="params">action</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">typeof</span> action === <span class="string">"function"</span>) &#123;</span><br><span class="line">                <span class="comment">// thunk</span></span><br><span class="line">                <span class="keyword">return</span> action(dispatch, getState)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 
       
     </div>
@@ -284,7 +291,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/06/25/React-LifeCycle/" target="_blank" title="React LifeCycle">https://jojoyang666.github.io/2020/06/25/React-LifeCycle/</a>
+          <a href="/2020/09/22/Apollo/" target="_blank" title="Apollo">https://jojoyang666.github.io/2020/09/22/Apollo/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -324,7 +331,7 @@ var a = new Donate({
       
       
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Front-End/" rel="tag">Front End</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/" rel="tag">React</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Front-End/" rel="tag">Front End</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GraphQL/" rel="tag">GraphQL</a></li></ul>
 
       
 
@@ -334,19 +341,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/06/30/Binary-Indexed-Tree/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Binary Indexed Tree
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/22/RectDom/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">308. Range Sum Query 2D - Mutable</div>
+      <div class="article-nav-title">RectDom</div>
     </a>
   
 </nav>
@@ -360,7 +358,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lifecycle-Diagram"><span class="nav-number">1.</span> <span class="nav-text">Lifecycle Diagram</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Updating"><span class="nav-number">2.</span> <span class="nav-text">Updating</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#componentDidUpdate"><span class="nav-number">2.1.</span> <span class="nav-text">componentDidUpdate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shouldComponentUpdate"><span class="nav-number">2.2.</span> <span class="nav-text">shouldComponentUpdate</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#React-PureComponent"><span class="nav-number">3.</span> <span class="nav-text">React.PureComponent</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Intro"><span class="nav-number">1.</span> <span class="nav-text">Intro</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Appollo-Client"><span class="nav-number">2.</span> <span class="nav-text">Appollo Client</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GraphQL-Client"><span class="nav-number">3.</span> <span class="nav-text">GraphQL Client</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Apollo-Middleware"><span class="nav-number">4.</span> <span class="nav-text">Apollo Middleware</span></a></li></ol>
     
     </div>
   </aside>
