@@ -265,6 +265,127 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-391-Perfect-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/11/391-Perfect-Rectangle/">391. Perfect Rectangle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/11/391-Perfect-Rectangle/" class="article-date">
+	  <time datetime="2020-08-11T18:12:17.000Z" itemprop="datePublished">2020-08-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+
+
+
+
+所有矩形的4个顶点只会有蓝， 绿， 红三种情况
+
+蓝表示该顶点周围没有其他矩形
+绿点表示两个矩形并排相邻
+红点表示四个矩形相邻
+
+
+在一个完美矩形中， 蓝色的点只能有四个
+
+矩形的四个顶点： 左下， 左上， 右上， 右下的顺序来给顶点标号为1， 2， 4， 8 —》 考虑二进制表示
+
+当一个点是某一个矩形的左下顶点时，这个点就不能是其他矩形的左下顶点了, 这个条件对于这四种顶点都要成立，那么对于每一个点，如果它是某个矩形的四个顶点之一. 我们记录下来，如果在别...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/11/391-Perfect-Rectangle/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Binary-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/10/Binary-Search/">Binary Search</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/10/Binary-Search/" class="article-date">
+	  <time datetime="2020-08-11T04:26:32.000Z" itemprop="datePublished">2020-08-10</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          需要找和目标值完全相等的数
+code 1234567891011const find = (nums, target) =&gt; &#123;    let left = 0, right = nums.length    while (left &lt; right) &#123;        let mid = left + (right - left)&gt;&gt;1        if (nums[mid] === target) return mid;        els...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/10/Binary-Search/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1095-Find-in-Mountain-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -710,118 +831,11 @@ then [[-1, 0], [0, 1], [1, 0], [0, -1]] to  4 directions, we have all ...
 
 
   
-    <article id="post-212-Word-Search-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/24/212-Word-Search-II/">212. Word Search II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/24/212-Word-Search-II/" class="article-date">
-	  <time datetime="2020-07-24T13:54:43.000Z" itemprop="datePublished">2020-07-24</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution
-Trie Tree123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657/** * @param &#123;character[][]&#125; board * @param &#123;string[]&#125; words * @return &#123;string[]&#125; */var findWo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/24/212-Word-Search-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-295-Find-Median-from-Data-Stream"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/22/295-Find-Median-from-Data-Stream/">295. Find Median from Data Stream</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/22/295-Find-Median-from-Data-Stream/" class="article-date">
-	  <time datetime="2020-07-23T00:21:33.000Z" itemprop="datePublished">2020-07-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution
-In python, heapq is the min heap, to do the max heap, there is  a trick when push the the item, we can push -item, it will logically become the max heap
-Min Heap: put larger number part  –&gt; largeMax Heap: put smaller number part  –&gt;...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/22/295-Find-Median-from-Data-Stream/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
   </nav>
 
 </section>
