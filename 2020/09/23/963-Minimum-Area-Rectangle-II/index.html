@@ -3,23 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>common python methods | Jojo&#39;s Blog</title>
+  <title>963. minimum area rectangle ii | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+  <meta name="description" content="Solution 1Iterate centers  123456789101112131415161718class Solution(object):    def minAreaFreeRect(self, points):        &quot;&quot;&quot;        :type points: List[List[int]]        :rtype: float        &quot;&quot;&quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Common Python Methods">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/08/17/Python/index.html">
+<meta property="og:title" content="963. Minimum Area Rectangle II">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/23/963-Minimum-Area-Rectangle-II/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
+<meta property="og:description" content="Solution 1Iterate centers  123456789101112131415161718class Solution(object):    def minAreaFreeRect(self, points):        &quot;&quot;&quot;        :type points: List[List[int]]        :rtype: float        &quot;&quot;&quot;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-23T14:40:30.479Z">
+<meta property="og:image" content="https://jojoyang666.github.io/images/963-lc.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/963-lc-2.png">
+<meta property="article:published_time" content="2020-09-23T15:29:33.000Z">
+<meta property="article:modified_time" content="2020-09-23T15:42:30.723Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/963-lc.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -171,7 +174,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Python" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-963-Minimum-Area-Rectangle-II" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +182,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Common Python Methods
+      963. Minimum Area Rectangle II
     </h1>
   
 
@@ -187,13 +190,11 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/23/963-Minimum-Area-Rectangle-II/" class="article-date">
+	  <time datetime="2020-09-23T15:29:33.000Z" itemprop="datePublished">2020-09-23</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/python/">python</a>
-
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -206,103 +207,16 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Base-Data-Type"><a href="#Base-Data-Type" class="headerlink" title="Base Data Type"></a>Base Data Type</h1><ol>
-<li><p>heapq</p>
+        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><p>Iterate centers</p>
 <ul>
-<li>heapq.heapify(x): transform list x into a heap, in-place, in linear time.</li>
-<li>heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To access the smallest item without popping it, use <code>heap[0]</code></li>
-<li>heapq.heappush(heap, item): Push the value item onto the heap, , maintaining the heap invariant</li>
-</ul>
+<li><img src="/images/963-lc.png" alt="image"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAreaFreeRect</span><span class="params">(self, points)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type points: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        points = [complex(*z) <span class="keyword">for</span> z <span class="keyword">in</span> points]</span><br><span class="line">        seen = collections.defaultdict(list)</span><br><span class="line">        <span class="keyword">for</span> P, Q <span class="keyword">in</span> itertools.combinations(points, <span class="number">2</span>):</span><br><span class="line">            center = (P + Q) / <span class="number">2</span></span><br><span class="line">            radius = abs(center - P)</span><br><span class="line">            seen[center, radius].append(P)</span><br><span class="line">        </span><br><span class="line">        ans = float(<span class="string">"inf"</span>)</span><br><span class="line">        <span class="keyword">for</span> (center, radius), candidates <span class="keyword">in</span> seen.iteritems():</span><br><span class="line">            <span class="keyword">for</span> P, Q <span class="keyword">in</span> itertools.combinations(candidates, <span class="number">2</span>):</span><br><span class="line">                ans = min(ans, abs(P-Q) * abs(P - (<span class="number">2</span>*center - Q)))</span><br><span class="line">        <span class="keyword">return</span> ans <span class="keyword">if</span> ans &lt; float(<span class="string">"inf"</span>) <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
 </li>
-<li><p>Other Common Functions</p>
+</ul>
+<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h1><p>Iterate triangles</p>
 <ul>
-<li><code>ord(c)</code>: Given a string representing one Unicode character, return an integer represeting the Unicode code point of that character.</li>
-<li><code>chr(i)</code>: return the string representing a character whose Unicode code point is the integer i. For example, <code>chr(97)</code> returns the string ‘a’</li>
+<li><img src="/images/963-lc-2.png" alt="image"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAreaFreeRect</span><span class="params">(self, points)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type points: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        EPS = <span class="number">1e-7</span></span><br><span class="line">        points = set(map(tuple, points))</span><br><span class="line">        </span><br><span class="line">        ans = float(<span class="string">'inf'</span>)</span><br><span class="line">        <span class="keyword">for</span> p1, p2, p3 <span class="keyword">in</span> itertools.permutations(points, <span class="number">3</span>):</span><br><span class="line">            p4 = p2[<span class="number">0</span>] + p3[<span class="number">0</span>] - p1[<span class="number">0</span>],  p2[<span class="number">1</span>] + p3[<span class="number">1</span>] - p1[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> p4 <span class="keyword">in</span> points:</span><br><span class="line">                v21 = complex(p2[<span class="number">0</span>] - p1[<span class="number">0</span>], p2[<span class="number">1</span>] - p1[<span class="number">1</span>])</span><br><span class="line">                v31 = complex(p3[<span class="number">0</span>] - p1[<span class="number">0</span>], p3[<span class="number">1</span>] - p1[<span class="number">1</span>])</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> abs(v21.real * v31.real + v21.imag * v31.imag) &lt; EPS:</span><br><span class="line">                    area = abs(v21) * abs(v31)</span><br><span class="line">                    <span class="keyword">if</span> area &lt; ans:</span><br><span class="line">                        ans = area</span><br><span class="line">        <span class="keyword">return</span> ans <span class="keyword">if</span> ans &lt; float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li><p>itertools</p>
-<ul>
-<li>count(start = 0, step = 1)<ul>
-<li>make an interator that returns evenly spaced values starting with n.</li>
-</ul>
-</li>
-<li>groupby(iterable, key)<ul>
-<li>make an iterator that returns consecutive keys and gtroups from the iterable</li>
-</ul>
-</li>
-<li>ifilter(predicate, iterable)<ul>
-<li>make an iterator that filters elements from iterable returning only those for which the predicate is <code>True</code>.</li>
-</ul>
-</li>
-<li>product<ul>
-<li>Cartesian product of input iterables.</li>
-<li>Roughly equivalent to nested for-loops in a generator expression. For example, product(A, B) returns the same as ((x,y) for x in A for y in B).</li>
-</ul>
-</li>
-<li>zip(): <ul>
-<li>make an iterator that aggregates slements from each of the iterables. Returns an itrator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables.</li>
-</ul>
-</li>
-<li>izip<ul>
-<li>make an iterator that aggregates elements from each of the iterables. Like <code>zip()</code> except that it returns an iterator instead of a list</li>
-</ul>
-</li>
-<li>zip_longest<ul>
-<li>make an iterator that aggregates elements from each of the iterables. If the iterables are of uneven length, missing values are filled-in with fillvalue. Iteration continues until the longest iterable is exhausted. # <code>zip_longest(&#39;ABCD&#39;, &#39;xy&#39;, fillvalue=&#39;-&#39;) --&gt; Ax By C- D-</code></li>
-</ul>
-</li>
-<li>permutations<ul>
-<li>Return successive r length permutations of elements in the iterable</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>next(): retrieve the next item from the iterator</p>
-</li>
-<li><p>all(iterable): return <code>True</code> if all elements of the iterable are true (or if the iterable is empty)</p>
-</li>
-<li><p>while, else</p>
-</li>
-<li><p><code>*</code>: unpack the arguments out of a list or tuple</p>
-</li>
-<li><p>collections</p>
-<ul>
-<li>Counter: A counter is a <code>dict</code> subclass for counting hashable objects. it is an unordered collection wherer elements are stored as disctionary keys and their counts are stored as disctionary values</li>
-</ul>
-</li>
-<li><p>Binary Search</p>
-<ul>
-<li>bisect.bisect(a, x, lo=0, hi=len(a))<ul>
-<li>returns an insertion point which comes after (to the right of) any existing entries of x in a </li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Common-Problem"><a href="#Common-Problem" class="headerlink" title="Common Problem"></a>Common Problem</h1><ol>
-<li>What’s the difference between <code>xrange</code> and <code>range</code>?<ul>
-<li><code>xrange</code>: return an xrange object<ul>
-<li>better to use when have a really gigantic range to generate a list for: dat one billion</li>
-</ul>
-</li>
-<li><code>range</code>: return a python list object<ul>
-<li>better to use when iterate over the list multiple times</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>there is no increment<code>++</code> and decrement<code>--</code> operators in python</li>
-</ol>
-<h1 id="Common-built-in-func"><a href="#Common-built-in-func" class="headerlink" title="Common built in func"></a>Common built in func</h1><ol>
-<li>ord(c)<ul>
-<li>Given a string represeting one Unicode character, return an integer represeting the Unicode code point of the character.</li>
-</ul>
-</li>
-<li>complex([real[, imag]])<ul>
-<li>Return a complex number with the value real + imag*1j</li>
-</ul>
-</li>
-</ol>
 
       
     </div>
@@ -331,7 +245,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/08/17/Python/" target="_blank" title="Common Python Methods">https://jojoyang666.github.io/2020/08/17/Python/</a>
+          <a href="/2020/09/23/963-Minimum-Area-Rectangle-II/" target="_blank" title="963. Minimum Area Rectangle II">https://jojoyang666.github.io/2020/09/23/963-Minimum-Area-Rectangle-II/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -379,19 +293,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/08/17/1057-Campus-Bikes/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          1057. Campus Bikes
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/12/97-Interleaving-String/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/22/353-Design-Snake-Game/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">97. Interleaving String</div>
+      <div class="article-nav-title">353. Design Snake Game </div>
     </a>
   
 </nav>
@@ -405,7 +310,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Base-Data-Type"><span class="nav-number">1.</span> <span class="nav-text">Base Data Type</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-Problem"><span class="nav-number">2.</span> <span class="nav-text">Common Problem</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-built-in-func"><span class="nav-number">3.</span> <span class="nav-text">Common built in func</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-2"><span class="nav-number">2.</span> <span class="nav-text">Solution 2</span></a></li></ol>
     
     </div>
   </aside>
