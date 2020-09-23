@@ -3,26 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>963. minimum area rectangle ii | Jojo&#39;s Blog</title>
+  <title>designing a url shortening service like tinyurl | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Solution 1Iterate centers  123456789101112131415161718class Solution(object):    def minAreaFreeRect(self, points):        &quot;&quot;&quot;        :type points: List[List[int]]        :rtype: float        &quot;&quot;&quot;">
+  <meta name="description" content="Why do we meed URL shortening? The shortened URL is nearly one-third the size of the actual URL Used for optimizing links across devices tracking individual links to analyze audience campaign performa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="963. Minimum Area Rectangle II">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/09/23/963-Minimum-Area-Rectangle-II/index.html">
+<meta property="og:title" content="Designing a URL Shortening service like TinyURL">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Solution 1Iterate centers  123456789101112131415161718class Solution(object):    def minAreaFreeRect(self, points):        &quot;&quot;&quot;        :type points: List[List[int]]        :rtype: float        &quot;&quot;&quot;">
+<meta property="og:description" content="Why do we meed URL shortening? The shortened URL is nearly one-third the size of the actual URL Used for optimizing links across devices tracking individual links to analyze audience campaign performa">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jojoyang666.github.io/images/963-lc.png">
-<meta property="og:image" content="https://jojoyang666.github.io/images/963-lc-2.png">
-<meta property="article:published_time" content="2020-09-23T15:29:33.000Z">
-<meta property="article:modified_time" content="2020-09-23T17:18:38.588Z">
+<meta property="og:image" content="https://jojoyang666.github.io/images/tinyurl-traffic.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/tinyurl-storage.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/tinyurl-bandwidth.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/tiny-url-database-schema.png">
+<meta property="article:published_time" content="2020-09-23T17:41:07.000Z">
+<meta property="article:modified_time" content="2020-09-23T23:16:12.953Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jojoyang666.github.io/images/963-lc.png">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/tinyurl-traffic.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -174,7 +176,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-963-Minimum-Area-Rectangle-II" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Designing-a-URL-Shortening-service-like-TinyURL" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -182,7 +184,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      963. Minimum Area Rectangle II
+      Designing a URL Shortening service like TinyURL
     </h1>
   
 
@@ -190,12 +192,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/23/963-Minimum-Area-Rectangle-II/" class="article-date">
-	  <time datetime="2020-09-23T15:29:33.000Z" itemprop="datePublished">2020-09-23</time>
+	<a href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/" class="article-date">
+	  <time datetime="2020-09-23T17:41:07.000Z" itemprop="datePublished">2020-09-23</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
 
       
 	<a class="article-views">
@@ -209,16 +211,153 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><p>Iterate centers</p>
+        <h1 id="Why-do-we-meed-URL-shortening"><a href="#Why-do-we-meed-URL-shortening" class="headerlink" title="Why do we meed URL shortening?"></a>Why do we meed URL shortening?</h1><ol>
+<li>The shortened URL is nearly one-third the size of the actual URL</li>
+<li>Used for<ul>
+<li>optimizing links across devices</li>
+<li>tracking individual links to analyze audience</li>
+<li>campaign performance</li>
+<li>hiding affiliated original URLs</li>
+</ul>
+</li>
+</ol>
+<h1 id="Requirement-and-Goals-of-the-System"><a href="#Requirement-and-Goals-of-the-System" class="headerlink" title="Requirement and Goals of the System"></a>Requirement and Goals of the System</h1><p><strong>Ask Questions to find the exact scope of the system that interviewer has in mind</strong></p>
+<ol>
+<li><p><strong>Funcational</strong> Requirements</p>
 <ul>
-<li><img src="/images/963-lc.png" alt="image"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAreaFreeRect</span><span class="params">(self, points)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type points: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        points = [complex(*z) <span class="keyword">for</span> z <span class="keyword">in</span> points]</span><br><span class="line">        seen = collections.defaultdict(list)</span><br><span class="line">        <span class="keyword">for</span> P, Q <span class="keyword">in</span> itertools.combinations(points, <span class="number">2</span>):</span><br><span class="line">            center = (P + Q) / <span class="number">2</span></span><br><span class="line">            radius = abs(center - P)</span><br><span class="line">            seen[center, radius].append(P)</span><br><span class="line">        </span><br><span class="line">        ans = float(<span class="string">"inf"</span>)</span><br><span class="line">        <span class="keyword">for</span> (center, radius), candidates <span class="keyword">in</span> seen.iteritems():</span><br><span class="line">            <span class="keyword">for</span> P, Q <span class="keyword">in</span> itertools.combinations(candidates, <span class="number">2</span>):</span><br><span class="line">                ans = min(ans, abs(P-Q) * abs(P - (<span class="number">2</span>*center - Q)))</span><br><span class="line">        <span class="keyword">return</span> ans <span class="keyword">if</span> ans &lt; float(<span class="string">"inf"</span>) <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
-
+<li>The generated URL from the original one should be short enough to be easily copied and pasted into applications</li>
+<li>When users access a short link, our service should redirect them to the original link</li>
+<li>Users should optionally be able to pick a custom short link for their URL</li>
+<li>links will expire after a standard default timespan. Users should be able to specify the expiration time</li>
+</ul>
+</li>
+<li><p><strong>Non-Funtional</strong> Requirements(性能要求)</p>
+<ul>
+<li>The system should be <strong>highly available</strong>. THis is required because, if our service is down, all the URL redirections will start failing</li>
+<li>URL redirection should happen in real-time with <strong>minimal latency</strong></li>
+<li>Shortened links should <strong>not be guessable</strong>(not predictable)</li>
+</ul>
+</li>
+<li><p><strong>Extended</strong> Requirements</p>
+<ul>
+<li>Analytics; e.g., how many times a redirection happened?</li>
+<li>Our service should also be accessible through REST APIs by other services</li>
+</ul>
+</li>
+</ol>
+<h1 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h1><ol>
+<li><p>Overall</p>
+<ul>
+<li>System will be <strong>Read-heavy</strong></li>
+<li>will be lots of redirection requests compared to new URL shortenings</li>
+<li>Assume a <strong>100:1</strong> ratio between read and write</li>
+</ul>
+</li>
+<li><p>Traffic estimates</p>
+</li>
+</ol>
+<ul>
+<li>Incoming data and outgoing data</li>
+</ul>
+<ul>
+<li><img src="/images/tinyurl-traffic.png" alt="image"></li>
+</ul>
+<ol start="3">
+<li>Storage estimates</li>
+</ol>
+<ul>
+<li><img src="/images/tinyurl-storage.png" alt="image"></li>
+</ul>
+<ol start="4">
+<li>Bandwidth estimates</li>
+</ol>
+<ul>
+<li><img src="/images/tinyurl-bandwidth.png" alt="image"></li>
+</ul>
+<ol start="5">
+<li><p>Memory estimates</p>
+<ul>
+<li><p>If want to cache some of the hot URLs that are frequently accessed, how much memory will we need to store them? —&gt; (<strong>If we follow the 80-20 rule, meaning 20% of URLs generate 80% of traffic, we would like to cache these 20% hot URLs</strong>)</p>
+<ul>
+<li>since 20K requests/secod, 1.7 billion/day<ul>
+<li>20K * 3600 seconds * 24 hours = ~1.7 billion</li>
+</ul>
+</li>
+<li>To cache 20% of these:<ul>
+<li>0.2 * 1.7 billion * 500 bytes = ~170GB</li>
+</ul>
 </li>
 </ul>
-<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h1><p>Iterate triangles</p>
+</li>
+<li><p><em>Note: There will be a lot of duplicate requests(of the same URL), thus, the actual memory usage will be less than 170GB*</em></p>
+<h1 id="System-APIS"><a href="#System-APIS" class="headerlink" title="System APIS"></a>System APIS</h1></li>
+<li><p>After finalized the requirements, to define the system APIS</p>
+</li>
+<li><p>API for creaing URLs</p>
 <ul>
-<li><img src="/images/963-lc-2.png" alt="image"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minAreaFreeRect</span><span class="params">(self, points)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type points: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: float</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        EPS = <span class="number">1e-7</span></span><br><span class="line">        points = set(map(tuple, points))</span><br><span class="line">        </span><br><span class="line">        ans = float(<span class="string">'inf'</span>)</span><br><span class="line">        <span class="keyword">for</span> p1, p2, p3 <span class="keyword">in</span> itertools.permutations(points, <span class="number">3</span>):</span><br><span class="line">            p4 = p2[<span class="number">0</span>] + p3[<span class="number">0</span>] - p1[<span class="number">0</span>],  p2[<span class="number">1</span>] + p3[<span class="number">1</span>] - p1[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> p4 <span class="keyword">in</span> points:</span><br><span class="line">                v21 = complex(p2[<span class="number">0</span>] - p1[<span class="number">0</span>], p2[<span class="number">1</span>] - p1[<span class="number">1</span>])</span><br><span class="line">                v31 = complex(p3[<span class="number">0</span>] - p1[<span class="number">0</span>], p3[<span class="number">1</span>] - p1[<span class="number">1</span>])</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> abs(v21.real * v31.real + v21.imag * v31.imag) &lt; EPS:</span><br><span class="line">                    area = abs(v21) * abs(v31)</span><br><span class="line">                    <span class="keyword">if</span> area &lt; ans:</span><br><span class="line">                        ans = area</span><br><span class="line">        <span class="keyword">return</span> ans <span class="keyword">if</span> ans &lt; float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></li>
+<li><code>createURL(api_dev_key, original_url, custom_alias=None, user_name=None, expire_daye=None)</code><ul>
+<li>Parameters<ul>
+<li>api_dev_key (string): The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.</li>
+<li>original_url (string): Original URL to be shortened.</li>
+<li>custom_alias (string): Optional custom key for the URL.</li>
+<li>user_name (string): Optional user name to be used in the encoding.</li>
+<li>expire_date (string): Optional expiration date for the shortened URL.</li>
 </ul>
+</li>
+<li>Returns<ul>
+<li>A successful insertion returns the shortened URL; otherwise, it returns an error code.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>API for delteing URL</p>
+<ul>
+<li><code>deleteURL(api_dev_key, url_key)</code><ul>
+<li><code>url_key</code> is a string representing the shortened URL to be retrieved. A successful deletion returns ‘URL Removed’.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>How do we detect and prevent abuse?</strong> —&gt; ratelimit</p>
+<ul>
+<li>A malicicious use can put us out of business by consuming all URL keys in current design</li>
+<li>To aviod it, Limit users via their api_dev_key, in other words, api_dev_key can be limited to a certain number of URL creations and redirections per some time period</li>
+<li>set to a different duration per developer key</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h1><ol>
+<li>Define DB schema in early stages, will help to understand the data flow among various components and later would guide towards data partitioning</li>
+<li>Obverations about the nature of the data we will store:<ul>
+<li>need to store <strong>billions</strong> of records</li>
+<li>Each object we store is <strong>small(less than 1K)</strong></li>
+<li>There are <strong>no relationships between records</strong> – other than storing which user created a URL</li>
+<li>Our service is <strong>read-heavy</strong></li>
+</ul>
+</li>
+<li>Database schema</li>
+</ol>
+<ul>
+<li><img src="/images/tiny-url-database-schema.png" alt="image"></li>
+</ul>
+<ol start="4">
+<li>What kind of db shoud we use?<ul>
+<li>NoSQL like: DynamoDB, Cassandra, Riak is better choice</li>
+<li>NoSQL would also be easier to scale</li>
+</ul>
+</li>
+</ol>
+<h1 id="Basic-System-Design-and-Algorithm"><a href="#Basic-System-Design-and-Algorithm" class="headerlink" title="Basic System Design and Algorithm"></a>Basic System Design and Algorithm</h1><p>How to Generate the short key —&gt; two solutions here</p>
+<ol>
+<li>Encoding actual URL<ul>
+<li>Compute a unique hash of the given URL    </li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -247,7 +386,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/09/23/963-Minimum-Area-Rectangle-II/" target="_blank" title="963. Minimum Area Rectangle II">https://jojoyang666.github.io/2020/09/23/963-Minimum-Area-Rectangle-II/</a>
+          <a href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/" target="_blank" title="Designing a URL Shortening service like TinyURL">https://jojoyang666.github.io/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -295,19 +434,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/09/23/369-Plus-One-Linked-List/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/09/23/723-Candy-Crush/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          369. Plus One Linked List
+          723. Candy Crush
         
       </div>
     </a>
   
   
-    <a href="/2020/09/22/353-Design-Snake-Game/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/23/369-Plus-One-Linked-List/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">353. Design Snake Game </div>
+      <div class="article-nav-title">369. Plus One Linked List</div>
     </a>
   
 </nav>
@@ -321,7 +460,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-2"><span class="nav-number">2.</span> <span class="nav-text">Solution 2</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-do-we-meed-URL-shortening"><span class="nav-number">1.</span> <span class="nav-text">Why do we meed URL shortening?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirement-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirement and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-APIS"><span class="nav-number">4.</span> <span class="nav-text">System APIS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Design"><span class="nav-number">5.</span> <span class="nav-text">Database Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-System-Design-and-Algorithm"><span class="nav-number">6.</span> <span class="nav-text">Basic System Design and Algorithm</span></a></li></ol>
     
     </div>
   </aside>
