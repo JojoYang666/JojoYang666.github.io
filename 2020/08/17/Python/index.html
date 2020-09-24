@@ -17,7 +17,7 @@
 <meta property="og:description" content="Base Data Type heapq  heapq.heapify(x): transform list x into a heap, in-place, in linear time. heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-18T02:09:04.000Z">
-<meta property="article:modified_time" content="2020-09-23T14:40:30.479Z">
+<meta property="article:modified_time" content="2020-09-24T19:08:06.201Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -272,8 +272,20 @@
 </li>
 <li><p>Binary Search</p>
 <ul>
-<li>bisect.bisect(a, x, lo=0, hi=len(a))<ul>
-<li>returns an insertion point which comes after (to the right of) any existing entries of x in a </li>
+<li>bisect.bisect/bisect_right(a, x, lo=0, hi=len(a))<ul>
+<li>returns an insertion point which comes <strong>after (to the right of) any existing entries of x in a</strong></li>
+<li>The returned insertion point i partitions the array a into two halves so that <ul>
+<li>all(val &lt;= x for val in a[lo:i]) for the left side and all(val &gt; x for val in a[i:hi]) for the right side.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>bisect.bisect_left(a, x, lo=0, hi=len(a))<ul>
+<li>returns an insertion point which comes <strong>before (to the left of) any existing entries of x in a</strong></li>
+<li>The returned insertion point i partitions the array a into two halves so that<ul>
+<li>all(val &lt; x for val in a[lo:i]) for the left side and all(val &gt;= x for val in a[i:hi]) for the right side.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
