@@ -265,6 +265,59 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-846-Hand-of-Straights"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/14/846-Hand-of-Straights/">846. Hand of Straights</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/14/846-Hand-of-Straights/" class="article-date">
+	  <time datetime="2020-09-14T17:08:24.000Z" itemprop="datePublished">2020-09-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Greedy
+1234567891011121314151617181920class Solution(object):    def isNStraightHand(self, hand, W):        """        :type hand: List[int]        :type W: int        :rtype: bool        """        count = collections.Counter(hand)        while c...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/14/846-Hand-of-Straights/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1146-Snapshot-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -719,61 +772,6 @@ Sort + swamp
         </p>
         <p class="article-more-link">
           <a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-777-Swap-Adjacent-in-LR-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/09/777-Swap-Adjacent-in-LR-String/">777. Swap Adjacent in LR String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/" class="article-date">
-	  <time datetime="2020-09-10T03:50:48.000Z" itemprop="datePublished">2020-09-09</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1
-一种是把 “XL” 变成 “LX”，另一种是把 “RX” 变成 “XR”。
-每次分别找到 start 和 end 中非X的字符，如果二者不相同的话，直接返回 false，想想问什么？这是因为不论是L还是R，其只能跟X交换位置，L和R之间是不能改变相对顺序的，所以如果分别将 start 和 end 中所有的X去掉后的字符串不相等的话，那么就永远无法让 start 和 end 相等了。
-这个判断完之后，就来验证L只能前移，R只能后移这个限制条件吧，当i指向 start 中...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/#more">Read More</a>
         </p>
       
     </div>
