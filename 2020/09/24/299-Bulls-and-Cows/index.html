@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>505. the maze ii | Jojo&#39;s Blog</title>
+  <title>299. bulls and cows | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Dijistra 123456789101112131415161718192021222324252627class Solution(object):    def shortestDistance(self, maze, start, destination):        &quot;&quot;&quot;        :type maze: List[List[int]]        :type start:">
+  <meta name="description" content="Solution 1Two Pass 1234567891011121314151617181920212223242526272829303132&#x2F;** * @param &amp;#123;string&amp;#125; secret * @param &amp;#123;string&amp;#125; guess * @return &amp;#123;string&amp;#125; *&#x2F;var getHint &#x3D; function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="505. The Maze II">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/09/21/505-The-Maze-II/index.html">
+<meta property="og:title" content="299. Bulls and Cows">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/09/24/299-Bulls-and-Cows/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Dijistra 123456789101112131415161718192021222324252627class Solution(object):    def shortestDistance(self, maze, start, destination):        &quot;&quot;&quot;        :type maze: List[List[int]]        :type start:">
+<meta property="og:description" content="Solution 1Two Pass 1234567891011121314151617181920212223242526272829303132&#x2F;** * @param &amp;#123;string&amp;#125; secret * @param &amp;#123;string&amp;#125; guess * @return &amp;#123;string&amp;#125; *&#x2F;var getHint &#x3D; function">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-22T05:15:21.000Z">
-<meta property="article:modified_time" content="2020-09-24T22:36:40.466Z">
+<meta property="article:published_time" content="2020-09-24T23:48:48.000Z">
+<meta property="article:modified_time" content="2020-09-25T00:19:34.198Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-505-The-Maze-II" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-299-Bulls-and-Cows" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      505. The Maze II
+      299. Bulls and Cows
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/21/505-The-Maze-II/" class="article-date">
-	  <time datetime="2020-09-22T05:15:21.000Z" itemprop="datePublished">2020-09-21</time>
+	<a href="/2020/09/24/299-Bulls-and-Cows/" class="article-date">
+	  <time datetime="2020-09-24T23:48:48.000Z" itemprop="datePublished">2020-09-24</time>
 	</a>
 
       
@@ -206,8 +206,11 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Dijistra</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shortestDistance</span><span class="params">(self, maze, start, destination)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type maze: List[List[int]]</span></span><br><span class="line"><span class="string">        :type start: List[int]</span></span><br><span class="line"><span class="string">        :type destination: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        m, n, q, stopped = len(maze), len(maze[<span class="number">0</span>]), [(<span class="number">0</span>, start[<span class="number">0</span>], start[<span class="number">1</span>])], &#123;(start[<span class="number">0</span>], start[<span class="number">1</span>]): <span class="number">0</span>&#125;</span><br><span class="line">        <span class="comment">#dist must be first one in q</span></span><br><span class="line">        <span class="keyword">while</span> q:</span><br><span class="line">            dist, x, y = heapq.heappop(q)</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> [x, y] == destination:</span><br><span class="line">                <span class="keyword">return</span> dist</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> i, j <span class="keyword">in</span> ((<span class="number">1</span>, <span class="number">0</span>), (<span class="number">-1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">0</span>, <span class="number">-1</span>)):</span><br><span class="line">                newX, newY, d = x, y, <span class="number">0</span></span><br><span class="line">                <span class="keyword">while</span> <span class="number">0</span> &lt;= newX + i &lt; m <span class="keyword">and</span> <span class="number">0</span> &lt;= newY + j &lt; n <span class="keyword">and</span> maze[newX + i][newY + j] != <span class="number">1</span>:</span><br><span class="line">                    newX += i</span><br><span class="line">                    newY += j</span><br><span class="line">                    d += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (newX, newY) <span class="keyword">not</span> <span class="keyword">in</span> stopped <span class="keyword">or</span>  d + dist &lt; stopped[(newX, newY)]:</span><br><span class="line">                    stopped[(newX, newY)] = dist + d</span><br><span class="line">                    heapq.heappush(q, (dist + d, newX, newY))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><p>Two Pass</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">secret</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">guess</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> getHint = <span class="function"><span class="keyword">function</span>(<span class="params">secret, guess</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> map = &#123;&#125;</span><br><span class="line">    <span class="keyword">let</span> bulls = <span class="number">0</span>, cows = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; secret.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> ch = secret.charAt(i)</span><br><span class="line">        <span class="keyword">if</span> (ch === guess.charAt(i)) &#123;</span><br><span class="line">            bulls++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (map[ch] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">                map[ch] = <span class="number">0</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            map[ch] = ++map[ch]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    [...guess].forEach(<span class="function">(<span class="params">ch, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch !== secret.charAt(i) &amp;&amp; map[ch]) &#123;</span><br><span class="line">            cows++</span><br><span class="line">            map[ch]= --map[ch]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;bulls&#125;</span>A<span class="subst">$&#123;cows&#125;</span>B`</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h1><p>One Pass<br>有点儿生产者消费者的感觉</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">secret</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">guess</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> getHint = <span class="function"><span class="keyword">function</span>(<span class="params">secret, guess</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> map = &#123;&#125;</span><br><span class="line">    <span class="keyword">let</span> bulls = <span class="number">0</span>, cows = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; secret.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (secret.charAt(i) === guess.charAt(i)) &#123;</span><br><span class="line">            bulls++;   </span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (map[secret.charAt(i)] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">                map[secret.charAt(i)] = <span class="number">0</span> </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (map[guess.charAt(i)] === <span class="literal">undefined</span>) &#123;</span><br><span class="line">                map[guess.charAt(i)] = <span class="number">0</span> </span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (map[secret.charAt(i)] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                cows++</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (map[guess.charAt(i)] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                cows++</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            map[guess.charAt(i)] = --map[guess.charAt(i)]</span><br><span class="line">            map[secret.charAt(i)] = ++map[secret.charAt(i)]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;bulls&#125;</span>A<span class="subst">$&#123;cows&#125;</span>B`</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -235,7 +238,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/09/21/505-The-Maze-II/" target="_blank" title="505. The Maze II">https://jojoyang666.github.io/2020/09/21/505-The-Maze-II/</a>
+          <a href="/2020/09/24/299-Bulls-and-Cows/" target="_blank" title="299. Bulls and Cows">https://jojoyang666.github.io/2020/09/24/299-Bulls-and-Cows/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -283,19 +286,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/09/22/946-Validate-Stack-Sequences-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          946. Validate Stack Sequences
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/09/21/946-Validate-Stack-Sequences/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/24/490-The-Maze/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">946-Validate-Stack-Sequences</div>
+      <div class="article-nav-title">490. The Maze</div>
     </a>
   
 </nav>
@@ -309,7 +303,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-2"><span class="nav-number">2.</span> <span class="nav-text">Solution 2</span></a></li></ol>
     
     </div>
   </aside>
