@@ -265,6 +265,116 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-4-Median-of-Two-Sorted-Arrays"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/21/4-Median-of-Two-Sorted-Arrays/">4. Median of Two Sorted Arrays </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/21/4-Median-of-Two-Sorted-Arrays/" class="article-date">
+	  <time datetime="2020-07-21T18:19:08.000Z" itemprop="datePublished">2020-07-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+Trick: 
+
+Find the median in an array, there are two cases – odd and even: number a: (m + 1)/2 number b: (m+2)/2. median is: a + b / 2 ==&gt; in this way: can handle even and odd case together
+in javascript: if /2, to aviod use Math.floo...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/21/4-Median-of-Two-Sorted-Arrays/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-128-Longest-Consecutive-Sequence"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/07/16/128-Longest-Consecutive-Sequence/">128. Longest Consecutive Sequence</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/07/16/128-Longest-Consecutive-Sequence/" class="article-date">
+	  <time datetime="2020-07-16T17:28:43.000Z" itemprop="datePublished">2020-07-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+set and pointer
+Javascript code12345678910111213141516171819202122232425/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var longestConsecutive = function(nums) &#123;   if (!nums || nums.length === 0)       return ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/07/16/128-Longest-Consecutive-Sequence/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-LinkedList"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -699,118 +809,6 @@ A good place to do network requests as long as you compare the current props to 
         </p>
         <p class="article-more-link">
           <a href="/2020/06/25/React-LifeCycle/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-308-Range-Sum-Query-2D-Mutable"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/">308. Range Sum Query 2D - Mutable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/" class="article-date">
-	  <time datetime="2020-06-24T18:27:47.000Z" itemprop="datePublished">2020-06-24</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution I
-建立列之和的矩阵： 就是(i, j)就是(0, j) + (1, j) + … + (i, j) 之和
-相当于把多个一维的区间之和拼到了一起， 所以在构造函数中需要建立起这样一个列之和的矩阵， 然后在更新某一个位置时， 我们只需要将该列中改变的位置下面的所有数字更新一下即可
-求某个区间的和时， 只要将相差的各列中对应的起始和结束的行上的差值累加起来即可。
-Code12345678910111213141516171819202122232425262728293031...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/06/24/308-Range-Sum-Query-2D-Mutable/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Docker"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/06/23/Docker/">Docker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/06/23/Docker/" class="article-date">
-	  <time datetime="2020-06-23T18:09:23.000Z" itemprop="datePublished">2020-06-23</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Tools/">Tools</a><a class="article-category-link" href="/categories/Tools/cheatsheet/">cheatsheet</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Load
-docker load &lt; ***.tar.gz  —&gt; load images from .tar.gz
-docker tag ** ***
-
-
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/06/23/Docker/#more">Read More</a>
         </p>
       
     </div>
