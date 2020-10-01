@@ -3,23 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>sliding window/montonic list | Jojo&#39;s Blog</title>
+  <title>856. score of parentheses | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="1425. Constrained Subseque 1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit 1358. Number of Substrings Containing All Three Characters 992. Subarrays with K Different">
+  <meta name="description" content="Solution 1 123456789101112131415class Solution(object):    def scoreOfParentheses(self, S):        &quot;&quot;&quot;        :type S: str        :rtype: int        &quot;&quot;&quot;        stack, cur &#x3D; [], 0                for c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sliding Window&#x2F;Montonic List">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/09/28/Sliding-Window-Montonic-List/index.html">
+<meta property="og:title" content="856. Score of Parentheses">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/10/01/856-Score-of-Parentheses/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="1425. Constrained Subseque 1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit 1358. Number of Substrings Containing All Three Characters 992. Subarrays with K Different">
+<meta property="og:description" content="Solution 1 123456789101112131415class Solution(object):    def scoreOfParentheses(self, S):        &quot;&quot;&quot;        :type S: str        :rtype: int        &quot;&quot;&quot;        stack, cur &#x3D; [], 0                for c">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-28T17:35:10.000Z">
-<meta property="article:modified_time" content="2020-10-01T17:46:01.279Z">
+<meta property="og:image" content="https://jojoyang666.github.io/images/856-Score-of-Parentheses.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Minimum-Cost-Tree-From-Leaf-Values-2.png">
+<meta property="article:published_time" content="2020-10-01T17:45:45.000Z">
+<meta property="article:modified_time" content="2020-10-01T19:21:41.776Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/856-Score-of-Parentheses.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -171,7 +174,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Sliding-Window-Montonic-List" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-856-Score-of-Parentheses" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +182,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Sliding Window/Montonic List
+      856. Score of Parentheses
     </h1>
   
 
@@ -187,12 +190,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/28/Sliding-Window-Montonic-List/" class="article-date">
-	  <time datetime="2020-09-28T17:35:10.000Z" itemprop="datePublished">2020-09-28</time>
+	<a href="/2020/10/01/856-Score-of-Parentheses/" class="article-date">
+	  <time datetime="2020-10-01T17:45:45.000Z" itemprop="datePublished">2020-10-01</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
 	<a class="article-views">
@@ -206,31 +209,19 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><a href="/2020/09/28/1425-Constrained-Subseque/" title="1425. Constrained Subseque">1425. Constrained Subseque</a></li>
-<li><a href="/2020/09/25/1438-Longest-Continuous-Subarray-With-Absolute-Diff-Less-Than-or-Equal-to-Limit/" title="1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit">1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit</a></li>
-<li><a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/" title="1358. Number of Substrings Containing All Three Characters">1358. Number of Substrings Containing All Three Characters</a></li>
-<li><a href="/2020/09/28/992-Subarrays-with-K-Different-Integers/" title="992. Subarrays with K Different Integers">992. Subarrays with K Different Integers</a></li>
-<li><a href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/" title="1248. Count Number of Nice Subarrays">1248. Count Number of Nice Subarrays</a></li>
-<li><a href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/" title="1234. Replace the Substring for Balanced String">1234. Replace the Substring for Balanced String</a></li>
-<li><a href="/2020/09/28/1004-Max-Consecutive-Ones-III/" title="1004. Max Consecutive Ones III">1004. Max Consecutive Ones III</a></li>
-<li><a href="/2020/09/29/930-Binary-Subarrays-With-Sum/" title="930. Binary Subarrays With Sum">930. Binary Subarrays With Sum</a></li>
-<li><a href="/2020/09/01/904-Fruit-Into-Baskets/" title="904. Fruit Into Baskets">904. Fruit Into Baskets</a></li>
-<li><a href="/2020/09/29/862-Shortest-Subarray-with-Sum-at-Least-K/" title="862. Shortest Subarray with Sum at Least K">862. Shortest Subarray with Sum at Least K</a></li>
-<li><a href="/2020/09/29/209-Minimum-Size-Subarray-Sum/" title="209. Minimum Size Subarray Sum">209. Minimum Size Subarray Sum</a></li>
-<li><a href="/2020/09/29/1130-Minimum-Cost-Tree-From-Leaf-Values/" title="1130. Minimum Cost Tree From Leaf Values">1130. Minimum Cost Tree From Leaf Values</a></li>
-<li><a href="/2020/09/29/496-Next-Greater-Element-I/" title="496. Next Greater Element I">496. Next Greater Element I</a></li>
-<li><a href="/2020/09/29/503-Next-Greater-Element-II/" title="503. Next Greater Element II">503. Next Greater Element II</a></li>
-<li><a href="/2020/09/30/901-Online-Stock-Span/" title="901. Online Stock Span">901. Online Stock Span</a></li>
-<li><a href="/2020/09/30/907-Sum-of-Subarray-Minimums/" title="907. Sum of Subarray Minimums">907. Sum of Subarray Minimums</a>
-
-
-
-
+        <h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h1><ul>
+<li><img src="/images/856-Score-of-Parentheses.png" alt="image"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">scoreOfParentheses</span><span class="params">(self, S)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type S: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        stack, cur = [], <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> S:</span><br><span class="line">            <span class="keyword">if</span> c == <span class="string">'('</span>:</span><br><span class="line">                stack.append(cur)</span><br><span class="line">                cur = <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                cur = stack.pop() + max(cur*<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> cur</span><br></pre></td></tr></table></figure>
 
 </li>
-</ol>
-<p>连续 不能有什么间断<br>Largest Rectangle in Histogram<br>Trapping Rain Water<br>739. Daily Temperatures.<br>828. Unique Letter String<br>891. Sum of Subsequence Widths</p>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">S</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> scoreOfParentheses = <span class="function"><span class="keyword">function</span>(<span class="params">S</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> stack = []</span><br><span class="line">    <span class="keyword">let</span> cur = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> c <span class="keyword">of</span> [...S]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (c === <span class="string">'('</span>) &#123;</span><br><span class="line">            stack.push(cur)</span><br><span class="line">            cur = <span class="number">0</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            cur = stack.pop() + <span class="built_in">Math</span>.max(cur*<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> cur</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Solution-2-–-gt-O-1-space"><a href="#Solution-2-–-gt-O-1-space" class="headerlink" title="Solution 2  –&gt; O(1) space"></a>Solution 2  –&gt; O(1) space</h1><ul>
+<li><img src="/images/Minimum-Cost-Tree-From-Leaf-Values-2.png" alt="image"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">scoreOfParentheses</span><span class="params">(self, S)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type S: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res, l = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i, c <span class="keyword">in</span> enumerate(S):</span><br><span class="line">            l += <span class="number">1</span> <span class="keyword">if</span> c == <span class="string">'('</span> <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> c == <span class="string">')'</span> <span class="keyword">and</span> S[i<span class="number">-1</span>] == <span class="string">'('</span>:</span><br><span class="line">                res += <span class="number">1</span> &lt;&lt; l</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">S</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> scoreOfParentheses = <span class="function"><span class="keyword">function</span>(<span class="params">S</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span>, l = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; S.length; i++) &#123;</span><br><span class="line">        l += S.charAt(i) === <span class="string">'('</span> ? <span class="number">1</span> : <span class="number">-1</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (S.charAt(i) === <span class="string">')'</span> &amp;&amp; S.charAt(i<span class="number">-1</span>) === <span class="string">'('</span>) &#123;</span><br><span class="line">            res += <span class="number">1</span> &lt;&lt; l</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -259,7 +250,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/09/28/Sliding-Window-Montonic-List/" target="_blank" title="Sliding Window/Montonic List">https://jojoyang666.github.io/2020/09/28/Sliding-Window-Montonic-List/</a>
+          <a href="/2020/10/01/856-Score-of-Parentheses/" target="_blank" title="856. Score of Parentheses">https://jojoyang666.github.io/2020/10/01/856-Score-of-Parentheses/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -307,19 +298,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          1358. Number of Substrings Containing All Three Characters
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/09/28/1425-Constrained-Subseque/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/09/30/907-Sum-of-Subarray-Minimums/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">1425. Constrained Subsequence Sum</div>
+      <div class="article-nav-title">907. Sum of Subarray Minimums</div>
     </a>
   
 </nav>
@@ -333,7 +315,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-1"><span class="nav-number">1.</span> <span class="nav-text">Solution 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-2-–-gt-O-1-space"><span class="nav-number">2.</span> <span class="nav-text">Solution 2  –&gt; O(1) space</span></a></li></ol>
     
     </div>
   </aside>
