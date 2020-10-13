@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-274-H-Index"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-System-Design-Step-Guide"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/15/274-H-Index/">274. H-Index</a>
+      <a class="article-title" href="/2020/09/22/System-Design-Step-Guide/">System Design Step Guide</a>
     </h1>
   
 
@@ -281,11 +281,13 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/15/274-H-Index/" class="article-date">
-	  <time datetime="2020-09-15T23:02:41.000Z" itemprop="datePublished">2020-09-15</time>
+	<a href="/2020/09/22/System-Design-Step-Guide/" class="article-date">
+	  <time datetime="2020-09-22T15:34:59.000Z" itemprop="datePublished">2020-09-22</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+
       
       
 
@@ -293,10 +295,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213/** * @param &#123;number[]&#125; citations * @return &#123;number&#125; */var hIndex = function(citations) &#123;    citations.sort((a, b) =&gt; b - a)        for (let i = 0; i &lt; citations.length; i++) &#123;        if (citati...
+          Step 1: Requirements clarifications
+Ask questions about the exact scope of the problem we are solving
+clarify the ambiguities early
+should clarify what parts of the system we will be focusing on
+Example of Twitter should be answered:
+will users of...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/15/274-H-Index/#more">Read More</a>
+          <a href="/2020/09/22/System-Design-Step-Guide/#more">Read More</a>
         </p>
       
     </div>
@@ -315,7 +322,7 @@
 
 
   
-    <article id="post-837-New-21-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-318-Maximum-Product-of-Word-Lengths"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -323,7 +330,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/15/837-New-21-Game/">837. New 21 Game</a>
+      <a class="article-title" href="/2020/09/22/318-Maximum-Product-of-Word-Lengths/">318. Maximum Product of Word Lengths</a>
     </h1>
   
 
@@ -331,62 +338,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/15/837-New-21-Game/" class="article-date">
-	  <time datetime="2020-09-15T20:54:36.000Z" itemprop="datePublished">2020-09-15</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Thinking: 
-
-12345678910111213141516171819class Solution(object):    def new21Game(self, N, K, W):        """        :type N: int        :type K: int        :type W: int        :rtype: float        """        dp = [0.0] * (N + W + 1)               ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/15/837-New-21-Game/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-911-Online-Election"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/15/911-Online-Election/">911. Online Election</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/15/911-Online-Election/" class="article-date">
-	  <time datetime="2020-09-15T14:40:02.000Z" itemprop="datePublished">2020-09-15</time>
+	<a href="/2020/09/22/318-Maximum-Product-of-Word-Lengths/" class="article-date">
+	  <time datetime="2020-09-22T14:44:44.000Z" itemprop="datePublished">2020-09-22</time>
 	</a>
 
       
@@ -399,11 +352,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Counter + Binary Search
-1234567891011121314151617181920212223242526272829303132class TopVotedCandidate(object):    def __init__(self, persons, times):        """        :type persons: List[int]        :type times: List[int]        """        self....
+          Bit Mask
+Solution 112345678910111213141516171819202122232425class Solution(object):    def maxProduct(self, words):        """        :type words: List[str]        :rtype: int        """        n = len(words)        masks = [0] * n        lens = [...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/15/911-Online-Election/#more">Read More</a>
+          <a href="/2020/09/22/318-Maximum-Product-of-Word-Lengths/#more">Read More</a>
         </p>
       
     </div>
@@ -422,7 +375,7 @@
 
 
   
-    <article id="post-259-3Sum-Smaller"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-946-Validate-Stack-Sequences-1"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -430,7 +383,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/14/259-3Sum-Smaller/">259. 3Sum Smaller</a>
+      <a class="article-title" href="/2020/09/22/946-Validate-Stack-Sequences-1/">946. Validate Stack Sequences</a>
     </h1>
   
 
@@ -438,60 +391,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/14/259-3Sum-Smaller/" class="article-date">
-	  <time datetime="2020-09-15T03:11:54.000Z" itemprop="datePublished">2020-09-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var threeSumSmaller = function(nums, target) &#123;    nums.sort((a, b) =&gt; a - b);    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/14/259-3Sum-Smaller/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-846-Hand-of-Straights"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/14/846-Hand-of-Straights/">846. Hand of Straights</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/14/846-Hand-of-Straights/" class="article-date">
-	  <time datetime="2020-09-14T17:08:24.000Z" itemprop="datePublished">2020-09-14</time>
+	<a href="/2020/09/22/946-Validate-Stack-Sequences-1/" class="article-date">
+	  <time datetime="2020-09-22T14:05:34.000Z" itemprop="datePublished">2020-09-22</time>
 	</a>
 
       
@@ -505,10 +406,10 @@
       
         <p class="article-excerpt-content">
           Greedy
-1234567891011121314151617181920class Solution(object):    def isNStraightHand(self, hand, W):        """        :type hand: List[int]        :type W: int        :rtype: bool        """        count = collections.Counter(hand)        while c...
+123456789101112131415class Solution(object):    def validateStackSequences(self, pushed, popped):        """        :type pushed: List[int]        :type popped: List[int]        :rtype: bool        """        j = 0        stack = []        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/14/846-Hand-of-Straights/#more">Read More</a>
+          <a href="/2020/09/22/946-Validate-Stack-Sequences-1/#more">Read More</a>
         </p>
       
     </div>
@@ -527,7 +428,7 @@
 
 
   
-    <article id="post-1146-Snapshot-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-505-The-Maze-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -535,7 +436,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/13/1146-Snapshot-Array/">1146. Snapshot Array</a>
+      <a class="article-title" href="/2020/09/21/505-The-Maze-II/">505. The Maze II</a>
     </h1>
   
 
@@ -543,109 +444,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/13/1146-Snapshot-Array/" class="article-date">
-	  <time datetime="2020-09-13T21:35:43.000Z" itemprop="datePublished">2020-09-13</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839class SnapshotArray(object):    def __init__(self, length):        """        :type length: int        """        self.A = [[[-1, 0]] for _ in xrange(length)]        self.snap_id...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/13/1146-Snapshot-Array/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-221-Maximal-Square"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/221-Maximal-Square/">221. Maximal Square</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/11/221-Maximal-Square/" class="article-date">
-	  <time datetime="2020-09-12T00:33:54.000Z" itemprop="datePublished">2020-09-11</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1这种方法的机理就是就是把数组中每一个点都当成正方形的左顶点来向右下方扫描，来寻找最大正方形。具体的扫描方法是，确定了左顶点后，再往下扫的时候，正方形的竖边长度就确定了，只需要找到横边即可，这时候我们使用直方图的原理，从其累加值能反映出上面的值是否全为1
-12345678910111213141516171819202122232425262728293031323334/** * @param &#123;character[][]&#125; matrix * @re...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/11/221-Maximal-Square/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-279-Perfect-Squares"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/279-Perfect-Squares/">279. Perfect Squares</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/11/279-Perfect-Squares/" class="article-date">
-	  <time datetime="2020-09-11T21:54:05.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/21/505-The-Maze-II/" class="article-date">
+	  <time datetime="2020-09-22T05:15:21.000Z" itemprop="datePublished">2020-09-21</time>
 	</a>
 
       
@@ -658,11 +458,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1dp
-123456789101112131415/** * @param &#123;number&#125; n * @return &#123;number&#125; */var numSquares = function(n) &#123;    const dp = new Array(n+1).fill(Number.MAX_VALUE)    dp[0] = 0    for (let i = 0; i &lt;= n; i++) &#123;      ...
+          Dijistra
+123456789101112131415161718192021222324252627class Solution(object):    def shortestDistance(self, maze, start, destination):        """        :type maze: List[List[int]]        :type start: List[int]        :type destination: List[int] ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/279-Perfect-Squares/#more">Read More</a>
+          <a href="/2020/09/21/505-The-Maze-II/#more">Read More</a>
         </p>
       
     </div>
@@ -681,7 +481,7 @@
 
 
   
-    <article id="post-562-Longest-Line-of-Consecutive-One-in-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-946-Validate-Stack-Sequences"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -689,7 +489,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/">562. Longest Line of Consecutive One in Matrix</a>
+      <a class="article-title" href="/2020/09/21/946-Validate-Stack-Sequences/">946-Validate-Stack-Sequences</a>
     </h1>
   
 
@@ -697,13 +497,11 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/" class="article-date">
-	  <time datetime="2020-09-11T21:12:53.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/21/946-Validate-Stack-Sequences/" class="article-date">
+	  <time datetime="2020-09-22T05:13:03.111Z" itemprop="datePublished">2020-09-21</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
       
 
@@ -711,11 +509,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1DP SolutionThree Dimensional dp Array 
-1234567891011121314151617181920212223242526272829/** * @param &#123;number[][]&#125; M * @return &#123;number&#125; */var longestLine = function(M) &#123;    if (!M.length || !M[0].length) return 0;...
+          
+title: 946. Validate Stack Sequencesdate: 2020-09-21 22:13:03tags:categories: 
+
+Leetcode
+
+
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/#more">Read More</a>
+          <a href="/2020/09/21/946-Validate-Stack-Sequences/#more">Read More</a>
         </p>
       
     </div>
@@ -734,7 +536,7 @@
 
 
   
-    <article id="post-544-Output-Contest-Matches"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-457-Circular-Array-Loop"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -742,7 +544,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/544-Output-Contest-Matches/">544. Output Contest Matches</a>
+      <a class="article-title" href="/2020/09/21/457-Circular-Array-Loop/">457. Circular Array Loop</a>
     </h1>
   
 
@@ -750,8 +552,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/544-Output-Contest-Matches/" class="article-date">
-	  <time datetime="2020-09-11T20:45:07.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/21/457-Circular-Array-Loop/" class="article-date">
+	  <time datetime="2020-09-21T23:12:34.000Z" itemprop="datePublished">2020-09-21</time>
 	</a>
 
       
@@ -764,11 +566,221 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1dfs
-1234567891011121314151617181920/** * @param &#123;number&#125; n * @return &#123;string&#125; */var findContestMatch = function(n) &#123;    const res = [...new Array(n)].map((item, idx) =&gt; idx+1)        helper(n, res)    return r...
+          题目中循环必须是 forward 或是 backward 的。
+Solution 112345678910111213141516171819202122232425262728/** * @param &#123;number[]&#125; nums * @return &#123;boolean&#125; */var circularArrayLoop = function(nums) &#123;    const visited = new Array(nums.length)...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/544-Output-Contest-Matches/#more">Read More</a>
+          <a href="/2020/09/21/457-Circular-Array-Loop/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-900-RLE-Iterator"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/18/900-RLE-Iterator/">900. RLE Iterator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/18/900-RLE-Iterator/" class="article-date">
+	  <time datetime="2020-09-19T00:12:23.000Z" itemprop="datePublished">2020-09-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425262728/** * @param &#123;number[]&#125; A */var RLEIterator = function(A) &#123;    this.A = A    this.cur = 0&#125;;/**  * @param &#123;number&#125; n * @return &#123;number&#125; */RLEIterator.prototype.n...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/18/900-RLE-Iterator/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-849-Maximize-Distance-to-Closest-Person"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/18/849-Maximize-Distance-to-Closest-Person/">849. Maximize Distance to Closest Person</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/18/849-Maximize-Distance-to-Closest-Person/" class="article-date">
+	  <time datetime="2020-09-18T22:21:13.000Z" itemprop="datePublished">2020-09-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920/** * @param &#123;number[]&#125; seats * @return &#123;number&#125; */var maxDistToClosest = function(seats) &#123;    let start = 0, res = 0        for (let i = 0; i &lt; seats.length; i++) &#123;        if (seats[...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/18/849-Maximize-Distance-to-Closest-Person/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-659-Split-Array-into-Consecutive-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/">659. Split Array into Consecutive Subsequences</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/" class="article-date">
+	  <time datetime="2020-09-18T19:30:03.000Z" itemprop="datePublished">2020-09-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+重点： 整个array 都能分成几个subsequences123456789101112131415161718192021222324class Solution(object):    def isPossible(self, nums):        """        :type nums: List[int]        :rtype: bool        """        count = collections.Counter(nums)        tai...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-320-Generalized-Abbreviation"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/18/320-Generalized-Abbreviation/">320. Generalized Abbreviation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/18/320-Generalized-Abbreviation/" class="article-date">
+	  <time datetime="2020-09-18T16:25:34.000Z" itemprop="datePublished">2020-09-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+Iterative wayusing bit to represent word123456789101112131415161718192021222324252627/** * @param &#123;string&#125; word * @return &#123;string[]&#125; */var generateAbbreviations = function(word) &#123;    const res = []        for (let i = 0; ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/18/320-Generalized-Abbreviation/#more">Read More</a>
         </p>
       
     </div>
@@ -791,7 +803,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
   </nav>
 
 </section>
