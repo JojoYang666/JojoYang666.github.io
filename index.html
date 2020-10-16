@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-609-Find-Duplicate-File-in-System"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1314-Matrix-Block-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/11/609-Find-Duplicate-File-in-System/">609. Find Duplicate File in System</a>
+      <a class="article-title" href="/2020/10/15/1314-Matrix-Block-Sum/">1314. Matrix Block Sum</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/11/609-Find-Duplicate-File-in-System/" class="article-date">
-	  <time datetime="2020-10-11T22:28:09.000Z" itemprop="datePublished">2020-10-11</time>
+	<a href="/2020/10/15/1314-Matrix-Block-Sum/" class="article-date">
+	  <time datetime="2020-10-16T03:37:22.000Z" itemprop="datePublished">2020-10-15</time>
 	</a>
 
       
@@ -295,10 +295,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def findDuplicate(self, paths):        """        :type paths: List[str]        :rtype: List[List[str]]        """        M = collections.defaultdict(list)        for line in paths:            data...
+          
+
+
+重点我们左上角的r1,c1， 其实是 i - k - 1, j - k - 1(in mat array), 因为我们的和里面要有 i - k, j - k
+123456789101112131415161718192021class Solution(object):    def matrixBlockSum(self, mat, K):        """        :type mat: List[List[int]]        :type K: int       ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/11/609-Find-Duplicate-File-in-System/#more">Read More</a>
+          <a href="/2020/10/15/1314-Matrix-Block-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +321,7 @@
 
 
   
-    <article id="post-384-Shuffle-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-range-prefix-sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +329,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/11/384-Shuffle-an-Array/">384. Shuffle an Array</a>
+      <a class="article-title" href="/2020/10/15/range-prefix-sum/">range/prefix sum</a>
     </h1>
   
 
@@ -333,61 +337,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/11/384-Shuffle-an-Array/" class="article-date">
-	  <time datetime="2020-10-11T21:23:08.000Z" itemprop="datePublished">2020-10-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Corner Case： 就是记得update original 给它新给一个区间段的值， 要不然其实两个指针指向的是同一个object
-1234567891011121314151617181920212223242526272829303132333435class Solution(object):    def __init__(self, nums):        """        :type nums: List[int]        """        self.a...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/11/384-Shuffle-an-Array/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Fisher-Yates-Shuffle算法"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/11/Fisher-Yates-Shuffle%E7%AE%97%E6%B3%95/">Fisher-Yates Shuffle算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/11/Fisher-Yates-Shuffle%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2020-10-11T21:09:15.000Z" itemprop="datePublished">2020-10-11</time>
+	<a href="/2020/10/15/range-prefix-sum/" class="article-date">
+	  <time datetime="2020-10-16T03:32:56.000Z" itemprop="datePublished">2020-10-15</time>
 	</a>
 
       
@@ -401,18 +352,15 @@
       
         <p class="article-excerpt-content">
           
-高效和等概率的洗牌算法
-一个用来将一个有限集合生成一个随机排列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效。
-核心思想
-从1到n之间随机出一个数和最后一个数n交换
-从1到n-1之间随机出一个数和倒数第二个数n-1交换
-
-
+Range Sum Query 2D - Immutable
+Range Sum Query - Mutable
+Range Sum Query 2D - Mutable: Premium
+Matrix Block Sum
 
 
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/11/Fisher-Yates-Shuffle%E7%AE%97%E6%B3%95/#more">Read More</a>
+          <a href="/2020/10/15/range-prefix-sum/#more">Read More</a>
         </p>
       
     </div>
@@ -431,7 +379,7 @@
 
 
   
-    <article id="post-437-Path-Sum-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-983-Minimum-Cost-For-Tickets"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -439,7 +387,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/11/437-Path-Sum-III/">437. Path Sum III</a>
+      <a class="article-title" href="/2020/10/15/983-Minimum-Cost-For-Tickets/">983. Minimum Cost For Tickets</a>
     </h1>
   
 
@@ -447,8 +395,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/11/437-Path-Sum-III/" class="article-date">
-	  <time datetime="2020-10-11T20:25:02.000Z" itemprop="datePublished">2020-10-11</time>
+	<a href="/2020/10/15/983-Minimum-Cost-For-Tickets/" class="article-date">
+	  <time datetime="2020-10-16T03:17:13.000Z" itemprop="datePublished">2020-10-15</time>
 	</a>
 
       
@@ -461,15 +409,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Prefix Sum
-currPathSum: 表示sum of vals from root node to cur node
-oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多少个也就说明了， sum 为target的有多少个
-迭代完后不要忘记-1， 说明到了另外的branch， 别的branch是不会考虑当前node的值的
-
-123456789101112131415161718192021222324252627...
+          12345678910111213141516class Solution(object):    def mincostTickets(self, days, costs):        """        :type days: List[int]        :type costs: List[int]        :rtype: int        """        dp = [0 for i in range(days[-1] + 1)]        for i ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/11/437-Path-Sum-III/#more">Read More</a>
+          <a href="/2020/10/15/983-Minimum-Cost-For-Tickets/#more">Read More</a>
         </p>
       
     </div>
@@ -488,7 +431,7 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
 
 
   
-    <article id="post-735-Asteroid-Collision"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-150-Evaluate-Reverse-Polish-Notation"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -496,7 +439,7 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/11/735-Asteroid-Collision/">735. Asteroid Collision</a>
+      <a class="article-title" href="/2020/10/14/150-Evaluate-Reverse-Polish-Notation/">150. Evaluate Reverse Polish Notation</a>
     </h1>
   
 
@@ -504,8 +447,8 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
     
     <div class="article-meta">
       
-	<a href="/2020/10/11/735-Asteroid-Collision/" class="article-date">
-	  <time datetime="2020-10-11T19:24:52.000Z" itemprop="datePublished">2020-10-11</time>
+	<a href="/2020/10/14/150-Evaluate-Reverse-Polish-Notation/" class="article-date">
+	  <time datetime="2020-10-15T04:18:45.000Z" itemprop="datePublished">2020-10-14</time>
 	</a>
 
       
@@ -518,11 +461,10 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          while ... else statement in python
-12345678910111213141516171819class Solution(object):    def asteroidCollision(self, asteroids):        """        :type asteroids: List[int]        :rtype: List[int]        """        stack = []                fo...
+          123456789101112131415161718192021222324class Solution(object):    def evalRPN(self, tokens):        """        :type tokens: List[str]        :rtype: int        """        operations = &#123;            "+": lambda a, b: a + b,            "-": lam...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/11/735-Asteroid-Collision/#more">Read More</a>
+          <a href="/2020/10/14/150-Evaluate-Reverse-Polish-Notation/#more">Read More</a>
         </p>
       
     </div>
@@ -541,7 +483,7 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
 
 
   
-    <article id="post-1029-Two-City-Scheduling"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1423-Maximum-Points-You-Can-Obtain-from-Cards"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -549,7 +491,7 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/10/1029-Two-City-Scheduling/">1029. Two City Scheduling</a>
+      <a class="article-title" href="/2020/10/14/1423-Maximum-Points-You-Can-Obtain-from-Cards/">1423. Maximum Points You Can Obtain from Cards</a>
     </h1>
   
 
@@ -557,8 +499,8 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
     
     <div class="article-meta">
       
-	<a href="/2020/10/10/1029-Two-City-Scheduling/" class="article-date">
-	  <time datetime="2020-10-11T05:04:14.000Z" itemprop="datePublished">2020-10-10</time>
+	<a href="/2020/10/14/1423-Maximum-Points-You-Can-Obtain-from-Cards/" class="article-date">
+	  <time datetime="2020-10-15T03:43:45.000Z" itemprop="datePublished">2020-10-14</time>
 	</a>
 
       
@@ -571,13 +513,11 @@ oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-Greedy problems usually look like “Find minimum number of something to do something” or “Find maximum number of something to fit in some conditions”, and typically propose an unsorted input.
-
-The idea of greedy algorithm is to pick the locally op...
+          Solution 1Problem Tranlation:    * find the smallest sum of subarray with length is equal to len(cardPoints) - k
+12345678910111213141516171819202122class Solution(object):    def maxScore(self, cardPoints, k):        """        :type cardPoints: L...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/10/1029-Two-City-Scheduling/#more">Read More</a>
+          <a href="/2020/10/14/1423-Maximum-Points-You-Can-Obtain-from-Cards/#more">Read More</a>
         </p>
       
     </div>
@@ -596,7 +536,7 @@ The idea of greedy algorithm is to pick the locally op...
 
 
   
-    <article id="post-934-Shortest-Bridge"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-94-Binary-Tree-Inorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -604,7 +544,7 @@ The idea of greedy algorithm is to pick the locally op...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/10/934-Shortest-Bridge/">934. Shortest Bridge</a>
+      <a class="article-title" href="/2020/10/14/94-Binary-Tree-Inorder-Traversal/">94. Binary Tree Inorder Traversal</a>
     </h1>
   
 
@@ -612,8 +552,8 @@ The idea of greedy algorithm is to pick the locally op...
     
     <div class="article-meta">
       
-	<a href="/2020/10/10/934-Shortest-Bridge/" class="article-date">
-	  <time datetime="2020-10-11T04:41:58.000Z" itemprop="datePublished">2020-10-10</time>
+	<a href="/2020/10/14/94-Binary-Tree-Inorder-Traversal/" class="article-date">
+	  <time datetime="2020-10-15T01:53:58.000Z" itemprop="datePublished">2020-10-14</time>
 	</a>
 
       
@@ -626,11 +566,10 @@ The idea of greedy algorithm is to pick the locally op...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          找到一个岛的所有的点后同时向外扩张（BFS）
-12345678910111213141516171819202122232425262728293031323334class Solution(object):    def shortestBridge(self, A):        """        :type A: List[List[int]]        :rtype: int        """        res, step, bfs = 0, 0, deque(...
+          123456789101112131415161718192021# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(objec...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/10/934-Shortest-Bridge/#more">Read More</a>
+          <a href="/2020/10/14/94-Binary-Tree-Inorder-Traversal/#more">Read More</a>
         </p>
       
     </div>
@@ -649,7 +588,7 @@ The idea of greedy algorithm is to pick the locally op...
 
 
   
-    <article id="post-430-Flatten-a-Multilevel-Doubly-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-556-Next-Greater-Element-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -657,7 +596,7 @@ The idea of greedy algorithm is to pick the locally op...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/">430. Flatten a Multilevel Doubly Linked List</a>
+      <a class="article-title" href="/2020/10/14/556-Next-Greater-Element-III/">556. Next Greater Element III</a>
     </h1>
   
 
@@ -665,8 +604,8 @@ The idea of greedy algorithm is to pick the locally op...
     
     <div class="article-meta">
       
-	<a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/" class="article-date">
-	  <time datetime="2020-10-11T04:12:08.000Z" itemprop="datePublished">2020-10-10</time>
+	<a href="/2020/10/14/556-Next-Greater-Element-III/" class="article-date">
+	  <time datetime="2020-10-15T01:34:01.000Z" itemprop="datePublished">2020-10-14</time>
 	</a>
 
       
@@ -679,10 +618,10 @@ The idea of greedy algorithm is to pick the locally op...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          DFS Recursive12345678910111213141516171819202122232425262728293031323334"""# Definition for a Node.class Node(object):    def __init__(self, val, prev, next, child):        self.val = val        self.prev = prev        self.next = next        self...
+          123456789101112131415161718192021222324class Solution(object):    def nextGreaterElement(self, n):        """        :type n: int        :rtype: int        """        s = list(map(int, str(n)))        i = len(s) - 1                while i - 1 &gt;...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/#more">Read More</a>
+          <a href="/2020/10/14/556-Next-Greater-Element-III/#more">Read More</a>
         </p>
       
     </div>
@@ -701,7 +640,7 @@ The idea of greedy algorithm is to pick the locally op...
 
 
   
-    <article id="post-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-694-Number-of-Distinct-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -709,7 +648,7 @@ The idea of greedy algorithm is to pick the locally op...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">309. Best Time to Buy and Sell Stock with Cooldown</a>
+      <a class="article-title" href="/2020/10/14/694-Number-of-Distinct-Islands/">694. Number of Distinct Islands</a>
     </h1>
   
 
@@ -717,8 +656,8 @@ The idea of greedy algorithm is to pick the locally op...
     
     <div class="article-meta">
       
-	<a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/" class="article-date">
-	  <time datetime="2020-10-11T03:16:35.000Z" itemprop="datePublished">2020-10-10</time>
+	<a href="/2020/10/14/694-Number-of-Distinct-Islands/" class="article-date">
+	  <time datetime="2020-10-14T21:15:48.000Z" itemprop="datePublished">2020-10-14</time>
 	</a>
 
       
@@ -731,13 +670,11 @@ The idea of greedy algorithm is to pick the locally op...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-
-1234567891011121314class Solution(object):    def maxProfit(self, prices):        """        :type prices: List[int]        :rtype: int        """        sold, held, reset = float('-inf'), float('-inf'), 0                for price in prices:   ...
+          When we start a depth-first search on the top-left square of some island, the path taken by our depth-first search will be the same if and only if the shape is the same.
+1234567891011121314151617181920212223242526class Solution(object):    def num...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/#more">Read More</a>
+          <a href="/2020/10/14/694-Number-of-Distinct-Islands/#more">Read More</a>
         </p>
       
     </div>
@@ -756,7 +693,7 @@ The idea of greedy algorithm is to pick the locally op...
 
 
   
-    <article id="post-1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-187-Repeated-DNA-Sequences"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -764,7 +701,7 @@ The idea of greedy algorithm is to pick the locally op...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/">1031. Maximum Sum of Two Non-Overlapping Subarrays</a>
+      <a class="article-title" href="/2020/10/14/187-Repeated-DNA-Sequences/">187. Repeated DNA Sequences</a>
     </h1>
   
 
@@ -772,8 +709,8 @@ The idea of greedy algorithm is to pick the locally op...
     
     <div class="article-meta">
       
-	<a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/" class="article-date">
-	  <time datetime="2020-10-11T02:35:51.000Z" itemprop="datePublished">2020-10-10</time>
+	<a href="/2020/10/14/187-Repeated-DNA-Sequences/" class="article-date">
+	  <time datetime="2020-10-14T19:42:33.000Z" itemprop="datePublished">2020-10-14</time>
 	</a>
 
       
@@ -786,11 +723,62 @@ The idea of greedy algorithm is to pick the locally op...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-12345678910111213141516171819class Solution(object):    def maxSumTwoNoOverlap(self, A, L, M):        """        :type A: List[int]        :type L: int        :type M: int        :rtype: int        """        for i in range(1, len(A)):           ...
+          Linear-time Slice Using Substring + HashSet123456789101112131415class Solution(object):    def findRepeatedDnaSequences(self, s):        """        :type s: str        :rtype: List[str]        """        L, n = 10, len(s)        seen, output = set...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/#more">Read More</a>
+          <a href="/2020/10/14/187-Repeated-DNA-Sequences/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-581-Shortest-Unsorted-Continuous-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/14/581-Shortest-Unsorted-Continuous-Subarray/">581. Shortest Unsorted Continuous Subarray</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/14/581-Shortest-Unsorted-Continuous-Subarray/" class="article-date">
+	  <time datetime="2020-10-14T18:21:22.000Z" itemprop="datePublished">2020-10-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Using sort1234567891011121314151617class Solution(object):    def findUnsortedSubarray(self, nums):        """        :type nums: List[int]        :rtype: int        """        snums = list(nums)        snums.sort()                start, end = len...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/14/581-Shortest-Unsorted-Continuous-Subarray/#more">Read More</a>
         </p>
       
     </div>
@@ -813,7 +801,7 @@ The idea of greedy algorithm is to pick the locally op...
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>

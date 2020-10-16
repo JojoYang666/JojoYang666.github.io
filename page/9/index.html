@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-400-Nth-Digit"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-209-Minimum-Size-Subarray-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/400-Nth-Digit/">400. Nth Digit</a>
+      <a class="article-title" href="/2020/09/29/209-Minimum-Size-Subarray-Sum/">209. Minimum Size Subarray Sum</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/400-Nth-Digit/" class="article-date">
-	  <time datetime="2020-09-24T18:24:41.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/29/209-Minimum-Size-Subarray-Sum/" class="article-date">
+	  <time datetime="2020-09-29T20:02:55.000Z" itemprop="datePublished">2020-09-29</time>
 	</a>
 
       
@@ -295,10 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617/** * @param &#123;number&#125; n * @return &#123;number&#125; */var findNthDigit = function(n) &#123;  let start = 1, len = 1, cnt = 9    while (n &gt; cnt * len) &#123;      n -= cnt *len      cnt *= 10      len++      s...
+          Solution 1
+注意这个题目862. Shortest Subarray with Sum at Least K      与不同， 因为其输入都是正数， 不包含负数1234567891011121314151617class Solution(object):    def minSubArrayLen(self, s, nums):        """        :type s: int        :type nums: List[int]        :rtype:...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/400-Nth-Digit/#more">Read More</a>
+          <a href="/2020/09/29/209-Minimum-Size-Subarray-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +318,7 @@
 
 
   
-    <article id="post-723-Candy-Crush"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-862-Shortest-Subarray-with-Sum-at-Least-K"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/23/723-Candy-Crush/">723. Candy Crush</a>
+      <a class="article-title" href="/2020/09/29/862-Shortest-Subarray-with-Sum-at-Least-K/">862. Shortest Subarray with Sum at Least K</a>
     </h1>
   
 
@@ -333,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/23/723-Candy-Crush/" class="article-date">
-	  <time datetime="2020-09-23T23:15:48.000Z" itemprop="datePublished">2020-09-23</time>
+	<a href="/2020/09/29/862-Shortest-Subarray-with-Sum-at-Least-K/" class="article-date">
+	  <time datetime="2020-09-29T19:52:38.000Z" itemprop="datePublished">2020-09-29</time>
 	</a>
 
       
@@ -347,10 +348,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627class Solution(object):    def candyCrush(self, M):        """        :type board: List[List[int]]        :rtype: List[List[int]]        """        while True:            # 1. check            crush = s...
+          Montonic queue
+12345678910111213141516171819202122class Solution(object):    def shortestSubarray(self, A, K):        """        :type A: List[int]        :type K: int        :rtype: int        """        d = collections.deque([[0, 0]])        res...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/23/723-Candy-Crush/#more">Read More</a>
+          <a href="/2020/09/29/862-Shortest-Subarray-with-Sum-at-Least-K/#more">Read More</a>
         </p>
       
     </div>
@@ -369,7 +371,7 @@
 
 
   
-    <article id="post-Designing-a-URL-Shortening-service-like-TinyURL"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-930-Binary-Subarrays-With-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -377,7 +379,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/">Designing a URL Shortening service like TinyURL</a>
+      <a class="article-title" href="/2020/09/29/930-Binary-Subarrays-With-Sum/">930. Binary Subarrays With Sum</a>
     </h1>
   
 
@@ -385,70 +387,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/" class="article-date">
-	  <time datetime="2020-09-23T17:41:07.000Z" itemprop="datePublished">2020-09-23</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Why do we meed URL shortening?
-The shortened URL is nearly one-third the size of the actual URL
-Used for
-optimizing links across devices
-tracking individual links to analyze audience
-campaign performance
-hiding affiliated original URLs
-
-
-
-Requirem...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-369-Plus-One-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/23/369-Plus-One-Linked-List/">369. Plus One Linked List</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/23/369-Plus-One-Linked-List/" class="article-date">
-	  <time datetime="2020-09-23T17:17:53.000Z" itemprop="datePublished">2020-09-23</time>
+	<a href="/2020/09/29/930-Binary-Subarrays-With-Sum/" class="article-date">
+	  <time datetime="2020-09-29T18:21:10.000Z" itemprop="datePublished">2020-09-29</time>
 	</a>
 
       
@@ -461,11 +401,11 @@ Requirem...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Sentinel Head 
-12345678910111213141516171819202122232425262728# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def ...
+          Solution 1这个题和 1248. Count Number of Nice Subarrays 不太一样的点是： 遇到1后还可能重新开始， 所以需要update S and left， 也就是说可以不算当前的1，但是1248如果遇到了奇数是， 如果subarray有肯定是包括这个1的
+123456789101112131415161718192021class Solution(object):    def numSubarraysWithSum(self, A, S):    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/23/369-Plus-One-Linked-List/#more">Read More</a>
+          <a href="/2020/09/29/930-Binary-Subarrays-With-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -484,7 +424,7 @@ Requirem...
 
 
   
-    <article id="post-963-Minimum-Area-Rectangle-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1004-Max-Consecutive-Ones-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -492,7 +432,7 @@ Requirem...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/23/963-Minimum-Area-Rectangle-II/">963. Minimum Area Rectangle II</a>
+      <a class="article-title" href="/2020/09/28/1004-Max-Consecutive-Ones-III/">1004. Max Consecutive Ones III</a>
     </h1>
   
 
@@ -500,8 +440,8 @@ Requirem...
     
     <div class="article-meta">
       
-	<a href="/2020/09/23/963-Minimum-Area-Rectangle-II/" class="article-date">
-	  <time datetime="2020-09-23T15:29:33.000Z" itemprop="datePublished">2020-09-23</time>
+	<a href="/2020/09/28/1004-Max-Consecutive-Ones-III/" class="article-date">
+	  <time datetime="2020-09-29T05:58:34.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -514,12 +454,10 @@ Requirem...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Iterate centers
-
-123456789101112131415161718class Solution(object):    def minAreaFreeRect(self, points):        """        :type points: List[List[int]]        :rtype: float        """        points = [complex(*z) for z in points]      ...
+          1234567891011121314151617class Solution(object):    def longestOnes(self, A, K):        """        :type A: List[int]        :type K: int        :rtype: int        """        left = 0        for right, num in enumerate(A):            K -= 1 - num ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/23/963-Minimum-Area-Rectangle-II/#more">Read More</a>
+          <a href="/2020/09/28/1004-Max-Consecutive-Ones-III/#more">Read More</a>
         </p>
       
     </div>
@@ -538,7 +476,7 @@ Requirem...
 
 
   
-    <article id="post-353-Design-Snake-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1234-Replace-the-Substring-for-Balanced-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -546,7 +484,7 @@ Requirem...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/353-Design-Snake-Game/">353. Design Snake Game </a>
+      <a class="article-title" href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/">1234. Replace the Substring for Balanced String</a>
     </h1>
   
 
@@ -554,8 +492,8 @@ Requirem...
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/353-Design-Snake-Game/" class="article-date">
-	  <time datetime="2020-09-23T04:20:09.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/" class="article-date">
+	  <time datetime="2020-09-29T04:59:10.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -568,14 +506,15 @@ Requirem...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Deque
+          
+首先输入保证了是4的倍数
+我们更加的关注滑动窗口外的counter, 因为只有滑动窗口外的字母count &lt;= n/4时，我们对滑动窗口内部的字符更改， 才能满足条件
+i &lt; n,保证其不要越界， 如果i &gt; j只有一个case 就是， counter[c] == n/4, 同时保证了 j == i + 1, 然后退出循环因为all(counter[c] &lt;= n/4 for c in &quot;QWER&quot;)条件不再满足
 
-
-
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class SnakeGame(object):    def __init__(self, width, height, food):        """        Initialize your data structure here.        @param width - scree...
+12345678910111...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/353-Design-Snake-Game/#more">Read More</a>
+          <a href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/#more">Read More</a>
         </p>
       
     </div>
@@ -594,7 +533,7 @@ Requirem...
 
 
   
-    <article id="post-951-Flip-Equivalent-Binary-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1248-Count-Number-of-Nice-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -602,7 +541,7 @@ Requirem...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/951-Flip-Equivalent-Binary-Trees/">951. Flip Equivalent Binary Trees</a>
+      <a class="article-title" href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/">1248. Count Number of Nice Subarrays</a>
     </h1>
   
 
@@ -610,8 +549,8 @@ Requirem...
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/951-Flip-Equivalent-Binary-Trees/" class="article-date">
-	  <time datetime="2020-09-23T00:32:32.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/" class="article-date">
+	  <time datetime="2020-09-29T00:15:18.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -624,10 +563,10 @@ Requirem...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 11234567891011121314151617181920# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Soluti...
+          Solution 112345678910111213141516171819class Solution(object):    def numberOfSubarrays(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: int        """        return self.atMost(nums, k) - self.atMost(nums...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/951-Flip-Equivalent-Binary-Trees/#more">Read More</a>
+          <a href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/#more">Read More</a>
         </p>
       
     </div>
@@ -646,7 +585,7 @@ Requirem...
 
 
   
-    <article id="post-applyMiddleware"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-992-Subarrays-with-K-Different-Integers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -654,7 +593,7 @@ Requirem...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/applyMiddleware/">applyMiddleware</a>
+      <a class="article-title" href="/2020/09/28/992-Subarrays-with-K-Different-Integers/">992. Subarrays with K Different Integers</a>
     </h1>
   
 
@@ -662,12 +601,12 @@ Requirem...
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/applyMiddleware/" class="article-date">
-	  <time datetime="2020-09-22T22:45:57.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/09/28/992-Subarrays-with-K-Different-Integers/" class="article-date">
+	  <time datetime="2020-09-28T22:51:06.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/Redux/">Redux</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -676,14 +615,15 @@ Requirem...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Function: applyMiddleware(…middleware)
-Arguments ...middleware
-Functions that conform to the Redux middleware API
-Each middleware receives Store‘s dispatch and getState functions as named argument, and returns a function
-That function will be give...
+          Solution 1Explanition
+
+Write/copy a helper function of sliding window, to get the number of subarrays with at most K distinct elements.
+exactly(K) = atMost(K) - atMost(K-1)
+
+Way to understande res += j - i + 1    * you contract the range by increm...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/applyMiddleware/#more">Read More</a>
+          <a href="/2020/09/28/992-Subarrays-with-K-Different-Integers/#more">Read More</a>
         </p>
       
     </div>
@@ -702,7 +642,7 @@ That function will be give...
 
 
   
-    <article id="post-Apollo"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1358-Number-of-Substrings-Containing-All-Three-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -710,7 +650,7 @@ That function will be give...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/Apollo/">Apollo</a>
+      <a class="article-title" href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/">1358. Number of Substrings Containing All Three Characters</a>
     </h1>
   
 
@@ -718,12 +658,12 @@ That function will be give...
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/Apollo/" class="article-date">
-	  <time datetime="2020-09-22T19:09:34.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/" class="article-date">
+	  <time datetime="2020-09-28T20:06:38.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/GraphQL/">GraphQL</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -732,16 +672,10 @@ That function will be give...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Intro
-A comprehensive state management library for Javascript that enables you to manage both local and remote data with GraphQL
-
-Appollo Client
-Cache – what we can configure
-Specify custom primary key fields
-Customize the storage and retrival of ...
+          Solution 11234567891011121314151617class Solution(object):    def numberOfSubstrings(self, s):        """        :type s: str        :rtype: int        """        res = i = 0        count = &#123;c: 0 for c in 'abc'&#125;                for j in x...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/Apollo/#more">Read More</a>
+          <a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/#more">Read More</a>
         </p>
       
     </div>
@@ -760,7 +694,7 @@ Customize the storage and retrival of ...
 
 
   
-    <article id="post-RectDom"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Sliding-Window-Montonic-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -768,7 +702,7 @@ Customize the storage and retrival of ...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/RectDom/">RectDom</a>
+      <a class="article-title" href="/2020/09/28/Sliding-Window-Montonic-List/">Sliding Window/Montonic List</a>
     </h1>
   
 
@@ -776,12 +710,12 @@ Customize the storage and retrival of ...
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/RectDom/" class="article-date">
-	  <time datetime="2020-09-22T18:51:21.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/09/28/Sliding-Window-Montonic-List/" class="article-date">
+	  <time datetime="2020-09-28T17:35:10.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/React/">React</a>
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
       
       
@@ -790,15 +724,71 @@ Customize the storage and retrival of ...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Overall
-If load react from a &lt;script&gt; tag, these top-level APIs are available on the ReactDOM global
-
-unmountComponentAtNode()ReactDOM.unmountComponentAtNode(container)
-
-Remove a mounted React component from the DOM and clean up its event he...
+          
+1425. Constrained Subseque
+1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
+1358. Number of Substrings Containing All Three Characters
+992. Subarrays with K Different Integers
+1248. Count Number of Nice Subarrays
+1...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/RectDom/#more">Read More</a>
+          <a href="/2020/09/28/Sliding-Window-Montonic-List/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1425-Constrained-Subseque"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/28/1425-Constrained-Subseque/">1425. Constrained Subsequence Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/28/1425-Constrained-Subseque/" class="article-date">
+	  <time datetime="2020-09-28T17:26:54.000Z" itemprop="datePublished">2020-09-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution
+res[i] represent the current maximum sum if we count the A[i], thus, the result is the maxmum value in array A
+deque is a non decreasing array
+deque is the maximun value from i-k to i12345678910111213141516class Solution(object):    def c...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/28/1425-Constrained-Subseque/#more">Read More</a>
         </p>
       
     </div>
@@ -821,7 +811,7 @@ Remove a mounted React component from the DOM and clean up its event he...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/10/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/10/">Next &amp;raquo;</a>
   </nav>
 
 </section>

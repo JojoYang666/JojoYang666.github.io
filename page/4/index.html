@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-210-Course-Schedule-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-368-Largest-Divisible-Subset"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/210-Course-Schedule-II/">210. Course Schedule II</a>
+      <a class="article-title" href="/2020/10/10/368-Largest-Divisible-Subset/">368. Largest Divisible Subset</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/210-Course-Schedule-II/" class="article-date">
-	  <time datetime="2020-10-06T21:47:06.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/368-Largest-Divisible-Subset/" class="article-date">
+	  <time datetime="2020-10-10T16:34:59.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -295,11 +295,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          不能用这个题目 207. Course Schedule 里面的方法是因为， 这个是用来判断是否存在环的， 也就是说如果里面有若干个独立节点是返回true，但是不知道这个独立节点是谁， 而本题是要图没有环的同时还没有独立节点， 所以要通过知道所有节点的方式来找到入度为0的节点
-12345678910111213141516171819202122232425262728class Solution(object):    def findOrder(self, numCourses, pr...
+          DP
+Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较难/复杂， 所以我们要对原数组排序， 这样只用考虑后面大的值
+用DP解决， dp[i] = set() &lt;- b set b是所有i能整除的数即i%b == 0, 那么一个新数m%i == 0,肯定会有m%b == 0
+
+1234567891011class Solution(object):    def largestDivisibleSubset(self, nums):      ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/210-Course-Schedule-II/#more">Read More</a>
+          <a href="/2020/10/10/368-Largest-Divisible-Subset/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +321,7 @@
 
 
   
-    <article id="post-207-Course-Schedule"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-86-Partition-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +329,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/207-Course-Schedule/">207. Course Schedule</a>
+      <a class="article-title" href="/2020/10/09/86-Partition-List/">86. Partition List</a>
     </h1>
   
 
@@ -334,8 +337,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/207-Course-Schedule/" class="article-date">
-	  <time datetime="2020-10-06T16:58:42.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/09/86-Partition-List/" class="article-date">
+	  <time datetime="2020-10-09T22:52:51.000Z" itemprop="datePublished">2020-10-09</time>
 	</a>
 
       
@@ -348,10 +351,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839class GNode(object):    def __init__(self):        self.inDegrees = 0        self.outNodes = []        class Solution(object):    def canFinish(self, numCourses, prerequisites): ...
+          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def partition(self, h...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/207-Course-Schedule/#more">Read More</a>
+          <a href="/2020/10/09/86-Partition-List/#more">Read More</a>
         </p>
       
     </div>
@@ -370,7 +373,7 @@
 
 
   
-    <article id="post-103-Binary-Tree-Zigzag-Level-Order-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1344-Angle-Between-Hands-of-a-Clock"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -378,7 +381,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/">103. Binary Tree Zigzag Level Order Traversal</a>
+      <a class="article-title" href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/">1344. Angle Between Hands of a Clock</a>
     </h1>
   
 
@@ -386,8 +389,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/" class="article-date">
-	  <time datetime="2020-10-06T16:07:34.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/" class="article-date">
+	  <time datetime="2020-10-09T22:19:48.000Z" itemprop="datePublished">2020-10-09</time>
 	</a>
 
       
@@ -400,11 +403,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1BFS + reverse the level array according to the condition
-1234567891011121314151617181920212223242526# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = ...
+          MathIt is a math problem
+123456789101112131415class Solution(object):    def angleClock(self, hour, minutes):        """        :type hour: int        :type minutes: int        :rtype: float        """        one_minute_angel = 6        one_hour_a...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/#more">Read More</a>
+          <a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/#more">Read More</a>
         </p>
       
     </div>
@@ -423,7 +426,7 @@
 
 
   
-    <article id="post-1428-Leftmost-Column-with-at-Least-a-One"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-24-Swap-Nodes-in-Pairs"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -431,7 +434,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/">1428. Leftmost Column with at Least a One</a>
+      <a class="article-title" href="/2020/10/09/24-Swap-Nodes-in-Pairs/">24. Swap Nodes in Pairs</a>
     </h1>
   
 
@@ -439,8 +442,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/" class="article-date">
-	  <time datetime="2020-10-06T03:47:22.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/09/24-Swap-Nodes-in-Pairs/" class="article-date">
+	  <time datetime="2020-10-09T21:52:35.000Z" itemprop="datePublished">2020-10-09</time>
 	</a>
 
       
@@ -453,11 +456,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          有点儿two pointer的感觉， 矩阵问题 可以考虑类似这种操作方式来将时间复杂度变成O(m + n)  —&gt; 找到范围， 通过一些条件， 来慢慢排除一些值，最后确定一个最终的值
-1234567891011121314151617181920212223242526272829303132# """# This is BinaryMatrix's API interface.# You should not implement it, or speculate about its...
+          Recursive
+凡事有重复逻辑操作，并且 一些结果 要由 其他的重复操作的结果来完成， 那么就可以用recursive的方法来解决
+重点：触底条件， 也就是base case
+
+
+
+1234567891011121314151617181920# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/#more">Read More</a>
+          <a href="/2020/10/09/24-Swap-Nodes-in-Pairs/#more">Read More</a>
         </p>
       
     </div>
@@ -476,7 +484,7 @@
 
 
   
-    <article id="post-547-Friend-Circles"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-540-Single-Element-in-a-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -484,7 +492,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/547-Friend-Circles/">547. Friend Circles</a>
+      <a class="article-title" href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/">540. Single Element in a Sorted Array</a>
     </h1>
   
 
@@ -492,8 +500,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/547-Friend-Circles/" class="article-date">
-	  <time datetime="2020-10-06T03:01:29.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/" class="article-date">
+	  <time datetime="2020-10-09T04:59:54.000Z" itemprop="datePublished">2020-10-08</time>
 	</a>
 
       
@@ -506,11 +514,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Union Find
-123456789101112131415161718192021222324252627282930class DSU:    def __init__(self, N):        self.parent = range(N)        def find(self, x):        if self.parent[x] != x:            self.parent[x] = self.find(self.parent[x])        ...
+          BST12345678910111213141516171819202122232425class Solution(object):    def singleNonDuplicate(self, nums):        """        :type nums: List[int]        :rtype: int        """        low, high = 0, len(nums) - 1                while low &lt; high...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/547-Friend-Circles/#more">Read More</a>
+          <a href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -529,7 +536,7 @@
 
 
   
-    <article id="post-131-Palindrome-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-402-Remove-K-Digits"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -537,7 +544,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/131-Palindrome-Partitioning/">131. Palindrome Partitioning</a>
+      <a class="article-title" href="/2020/10/08/402-Remove-K-Digits/">402. Remove K Digits</a>
     </h1>
   
 
@@ -545,8 +552,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/131-Palindrome-Partitioning/" class="article-date">
-	  <time datetime="2020-10-06T00:44:58.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/08/402-Remove-K-Digits/" class="article-date">
+	  <time datetime="2020-10-09T04:03:02.000Z" itemprop="datePublished">2020-10-08</time>
 	</a>
 
       
@@ -559,10 +566,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122class Solution(object):    def partition(self, s):        """        :type s: str        :rtype: List[List[str]]        """        res = []        self.dfs(s, [], res)        return res    def dfs(self, s, path, ...
+          Greedy + Stack
+maintain one stack, the result would be the join the value in the stack
+should maintain a increasing stack
+cornor case 1, after tranverse the string, k is still there, we should truncate the last remaining chars
+cornor case 2, do no...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/131-Palindrome-Partitioning/#more">Read More</a>
+          <a href="/2020/10/08/402-Remove-K-Digits/#more">Read More</a>
         </p>
       
     </div>
@@ -581,7 +592,7 @@
 
 
   
-    <article id="post-148-Sort-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-526-Beautiful-Arrangement"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -589,7 +600,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/148-Sort-List/">148. Sort List</a>
+      <a class="article-title" href="/2020/10/08/526-Beautiful-Arrangement/">526. Beautiful Arrangement</a>
     </h1>
   
 
@@ -597,8 +608,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/148-Sort-List/" class="article-date">
-	  <time datetime="2020-10-05T22:38:57.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/08/526-Beautiful-Arrangement/" class="article-date">
+	  <time datetime="2020-10-08T19:14:18.000Z" itemprop="datePublished">2020-10-08</time>
 	</a>
 
       
@@ -611,11 +622,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Merge Sort
-12345678910111213141516171819202122232425262728293031323334353637# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(ob...
+          Backtracking1234567891011121314151617181920class Solution(object):    def countArrangement(self, N):        """        :type N: int        :rtype: int        """                return self.cal(1, N, 0, 0)    def cal(self, pos, N, mask, count):    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/148-Sort-List/#more">Read More</a>
+          <a href="/2020/10/08/526-Beautiful-Arrangement/#more">Read More</a>
         </p>
       
     </div>
@@ -634,7 +644,7 @@
 
 
   
-    <article id="post-518-Coin-Change-2"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-395-Longest-Substring-with-At-Least-K-Repeating-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -642,7 +652,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/518-Coin-Change-2/">518. Coin Change 2</a>
+      <a class="article-title" href="/2020/10/08/395-Longest-Substring-with-At-Least-K-Repeating-Characters/">395. Longest Substring with At Least K Repeating Characters</a>
     </h1>
   
 
@@ -650,8 +660,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/518-Coin-Change-2/" class="article-date">
-	  <time datetime="2020-10-05T22:03:44.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/08/395-Longest-Substring-with-At-Least-K-Repeating-Characters/" class="article-date">
+	  <time datetime="2020-10-08T17:22:40.000Z" itemprop="datePublished">2020-10-08</time>
 	</a>
 
       
@@ -664,10 +674,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314class Solution(object):    def change(self, amount, coins):        """        :type amount: int        :type coins: List[int]        :rtype: int        """        dp = [0] * (amount + 1)        dp[0] = 1                for coin ...
+          Solution 1Recursive way, 当遍历到某个位置i, 如果s[i]在整个string中出现的次数少于k,那就可以分段考虑s[start:i], s[i+1:end]这两个分段中得到的结果取最大， 以这种recursive的方法解决他
+12345678910111213141516171819class Solution(object):    def longestSubstring(self, s, k):        """        :type s: str ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/518-Coin-Change-2/#more">Read More</a>
+          <a href="/2020/10/08/395-Longest-Substring-with-At-Least-K-Repeating-Characters/#more">Read More</a>
         </p>
       
     </div>
@@ -686,7 +697,7 @@
 
 
   
-    <article id="post-445-Add-Two-Numbers-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-12-Integer-to-Roman"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -694,7 +705,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/445-Add-Two-Numbers-II/">445. Add Two Numbers II</a>
+      <a class="article-title" href="/2020/10/08/12-Integer-to-Roman/">12. Integer to Roman</a>
     </h1>
   
 
@@ -702,8 +713,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/445-Add-Two-Numbers-II/" class="article-date">
-	  <time datetime="2020-10-05T16:29:26.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/08/12-Integer-to-Roman/" class="article-date">
+	  <time datetime="2020-10-08T16:01:28.000Z" itemprop="datePublished">2020-10-08</time>
 	</a>
 
       
@@ -716,12 +727,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          这个题目可以发现要走到最后才能算出， 然后根据后面的值 一步步往前传递得到前面的值递归的特点， 所以要用递归同时递归说明了可以用stack来做
-Solution 1Stack
-12345678910111213141516171819202122232425262728293031323334# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=No...
+          Solution 1Greedy
+123456789101112131415class Solution(object):    def intToRoman(self, num):        """        :type num: int        :rtype: str        """        digits = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/445-Add-Two-Numbers-II/#more">Read More</a>
+          <a href="/2020/10/08/12-Integer-to-Roman/#more">Read More</a>
         </p>
       
     </div>
@@ -740,7 +750,7 @@ Solution 1Stack
 
 
   
-    <article id="post-48-Rotate-Image"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-909-Snakes-and-Ladders"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -748,7 +758,7 @@ Solution 1Stack
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/48-Rotate-Image/">48. Rotate Image</a>
+      <a class="article-title" href="/2020/10/08/909-Snakes-and-Ladders/">909. Snakes and Ladders</a>
     </h1>
   
 
@@ -756,8 +766,8 @@ Solution 1Stack
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/48-Rotate-Image/" class="article-date">
-	  <time datetime="2020-10-05T11:18:48.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/08/909-Snakes-and-Ladders/" class="article-date">
+	  <time datetime="2020-10-08T15:53:07.000Z" itemprop="datePublished">2020-10-08</time>
 	</a>
 
       
@@ -770,10 +780,11 @@ Solution 1Stack
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1 – Rotate 4 rectangles in one single loop123456789101112131415class Solution(object):    def rotate(self, matrix):        """        :type matrix: List[List[int]]        :rtype: None Do not return anything, modify matrix in-place instead...
+          Min steps –&gt; bfs not dfs
+123456789101112131415161718192021222324252627282930class Solution(object):    def snakesAndLadders(self, board):        """        :type board: List[List[int]]        :rtype: int        """        N = len(board)        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/48-Rotate-Image/#more">Read More</a>
+          <a href="/2020/10/08/909-Snakes-and-Ladders/#more">Read More</a>
         </p>
       
     </div>
@@ -796,7 +807,7 @@ Solution 1Stack
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
   </nav>
 
 </section>
