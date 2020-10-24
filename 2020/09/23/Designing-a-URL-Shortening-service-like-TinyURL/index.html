@@ -21,8 +21,11 @@
 <meta property="og:image" content="https://jojoyang666.github.io/images/tinyurl-bandwidth.png">
 <meta property="og:image" content="https://jojoyang666.github.io/images/tiny-url-database-schema.png">
 <meta property="og:image" content="https://jojoyang666.github.io/images/solution-url.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/High-level-system-design-for-URL-shortening.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Request-flow-for-accessing%E2%80%93a-shortened-URL.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Detailed-component-design-for-URL-shortening.png">
 <meta property="article:published_time" content="2020-09-23T17:41:07.000Z">
-<meta property="article:modified_time" content="2020-09-28T16:13:02.099Z">
+<meta property="article:modified_time" content="2020-10-20T22:19:47.650Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jojoyang666.github.io/images/tinyurl-traffic.png">
@@ -353,14 +356,15 @@
 </li>
 </ol>
 <h1 id="Basic-System-Design-and-Algorithm"><a href="#Basic-System-Design-and-Algorithm" class="headerlink" title="Basic System Design and Algorithm"></a>Basic System Design and Algorithm</h1><p>How to Generate the short key —&gt; two solutions here</p>
-<h2 id="Encoding-actual-URL"><a href="#Encoding-actual-URL" class="headerlink" title="Encoding actual URL"></a>Encoding actual URL</h2><ol>
+<h2 id="Encoding-actual-URL"><a href="#Encoding-actual-URL" class="headerlink" title="Encoding actual URL"></a>Encoding actual URL</h2><h2 id="Overall"><a href="#Overall" class="headerlink" title="Overall"></a>Overall</h2><ol>
 <li>Compute a unique hash of the given URL using <strong>MD5</strong> or <strong>SHA256</strong></li>
 <li>A reasonable question would be: what should be the length of the short key? 6, 8 or 10 characters<ul>
 <li>using base64 encoding, a 6 letters long key would result in 64^6 = ~68.7 billion possible strings –&gt; <strong>assume we use this one, this one will suffice our system</strong></li>
-<li>using base64 encoding, a 8 letters long key would result in 64^8 = ~281 trillion possible strings</li>
+<li>using base64 encoding, a 8 letters long key would result in 64^8 = ~281 trillion possible strings<h3 id="Using-MD5-algorithm"><a href="#Using-MD5-algorithm" class="headerlink" title="Using MD5 algorithm"></a>Using MD5 algorithm</h3></li>
 </ul>
 </li>
-<li>Using MD5 algorithm<ul>
+</ol>
+<ul>
 <li>produce a 128-bit hash value</li>
 <li>After base64 encoding, get a string having more than 21 chars</li>
 <li>Each base64 char encodes 6 bits  of the hash value</li>
@@ -387,14 +391,194 @@
 <li>Solution 2<ul>
 <li>Append user id(which should be unique) to the input URL</li>
 <li>if user has not signed in, we would have to ask the user to choose a uniqueness key</li>
-<li>Even after this, if we have a conflict, we have to keep generating a key until we get a unique one</li>
-</ul>
-<ul>
+<li>Even after this, if we have a conflict, we have to keep generating a key until we get a unique one<ul>
 <li><img src="/images/solution-url.png" alt="image"></li>
 </ul>
 </li>
-</ol>
+</ul>
 </li>
+</ol>
+<h3 id="Generating-keys-offline"><a href="#Generating-keys-offline" class="headerlink" title="Generating keys offline"></a>Generating keys offline</h3><ul>
+<li><p>Basic Idea</p>
+<ul>
+<li>standalone <strong>Key Generation Service(KGS)</strong> that generates randpm six-letter strings beforehand and store them into a db(call it key-DB)</li>
+<li>simple and fast</li>
+</ul>
+</li>
+<li><p>Can concurrency cause problem?</p>
+<ul>
+<li>we must guarante the used key cannot be used again</li>
+<li>if there are multiple servers reading keys concurrently, we might get a scenario where two or more servers try to read the same key from the db, how to solve it?<ul>
+<li>servers uses KGS to read/mark keys in the db</li>
+<li>KGS can use two tables to store keys<ul>
+<li>one for keys that are not used yet</li>
+<li>one for all the used keys</li>
+</ul>
+</li>
+<li>As soon as KGS gives keys to one of the servers, it can move them to the used keys table</li>
+<li>KGS can always keep some keys in memory to quickly provide them whenever a server needs them<ul>
+<li>if KGS dies before assigning all the loaded keys to some server, we will be wasting those keys –&gt; which could be acceptable, given the huge number of keys we have</li>
+</ul>
+</li>
+<li>KGS also has to make sure not to give the same key to multiple servers<ul>
+<li>it must synchronize(or get a lock on) the data structure holding the keys before removing keys from it and giving them to a server</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>what would be the key-DB size?</p>
+<ul>
+<li>one byte to store one alpha-numeric character<ul>
+<li>6 (characters per key) * * 68.7B (unique keys) =  412 GB.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Is not KGS a single point of failure?</p>
+<ul>
+<li>Yes, it is. </li>
+<li>have a standby replica of KGS</li>
+<li>Whenever the primary server dies, the standby server can take over to generate and provide keys</li>
+</ul>
+</li>
+<li><p>Can each app server cache some keys form key-DB?</p>
+<ul>
+<li>Yes, this can surely speed things up</li>
+<li>Although. if the application server dies before consuming all the keys, we wil end up losing these keys</li>
+<li>this can be acceptable since we have 68B unique 6-letter keys</li>
+</ul>
+</li>
+<li><p>How would we perforrm a key lookup?</p>
+<ul>
+<li>look up the key in the db to get the full url<ul>
+<li>if it is in db, issue an ‘HTTP 302 Redirect’ status back to the browser, passing the stored URL in the ‘location’ field of the request</li>
+<li>if key is not present in the system, issue an ‘HTTP 404 not find’ status back or redirect the user back to the home page</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Should we impose size limits on custom aliases?</p>
+<ul>
+<li>service supports custom aliases</li>
+<li>it is reasonable and desirable to impose a size limit on the custom alias to ensure we have a <strong>consistent URL db</strong></li>
+<li>Let’s assume users can specify a maximum of 16 characters per customer key</li>
+<li><img src="/images/High-level-system-design-for-URL-shortening.png" alt="image"> </li>
+</ul>
+</li>
+</ul>
+<h1 id="Data-Partitioning-and-Replication"><a href="#Data-Partitioning-and-Replication" class="headerlink" title="Data Partitioning and Replication"></a>Data Partitioning and Replication</h1><h2 id="Range-Based-Partitioning"><a href="#Range-Based-Partitioning" class="headerlink" title="Range Based Partitioning"></a>Range Based Partitioning</h2><ol>
+<li>Concept<ul>
+<li>Store the URLs in seperate partitions based on the hash key’s first letter</li>
+<li>Even combine certain less frequency occurring letters into one db partition</li>
+<li>come up with a static partitioning scheme to always store/find a URL in a predictable manner</li>
+</ul>
+</li>
+<li>Probelm<ul>
+<li>leading to unbalanced DB servers</li>
+<li>For example, we decide to put all URLs starting with the letter ‘E’ into a DB partition, but later we realize that we have too many URLs that start with the letter ‘E.’</li>
+</ul>
+</li>
+</ol>
+<h2 id="Hash-Based-Partitioning"><a href="#Hash-Based-Partitioning" class="headerlink" title="Hash-Based Partitioning"></a>Hash-Based Partitioning</h2><ol>
+<li><p>Concept</p>
+<ul>
+<li>Take a hash of the object we are storing</li>
+<li>calculate which partition to use based upon the hash</li>
+<li>In our case: take the hash of the key or short link to determine the partition in which we store the data object</li>
+</ul>
+</li>
+<li><p>Concept</p>
+<ul>
+<li>Lead to overloaded partitions, which can be solved using <a href="https://www.educative.io/courses/grokking-the-system-design-interview/B81vnyp0GpY" target="_blank" rel="noopener">Consistent Hashing</a>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><ol>
+<li><p>Overall</p>
+<ul>
+<li>Cache URLs that are frequently accessed</li>
+<li>Use off-the-shelf solution, like Memcached<ul>
+<li>Store full URLs with their respective hashes</li>
+<li>Before hitting the backend storage, the application servers can quickly check if the cache has the desired the URL</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>How much cache memory should we have?</p>
+<ul>
+<li>Start with 20% of daily traffic</li>
+<li>Based on clients’ usage patterns, we can adjust how many cache servers we need</li>
+<li>Thus, we need 170GB memory to cache 20% of daily traffic</li>
+<li><strong>A modern-day server can have 256 GB memory</strong>, 170 GB can easily fit into the machine</li>
+<li>Alternatively, can use a couple of <strong>smaller servers to store all these hot URLs</strong></li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li>which cache eviction policy would best fit our needs?<ul>
+<li>LRU –&gt; discard the least recently used URL first</li>
+<li>can use a Linked Hash Map or a similar data structure to store our URLs and Hashes, which will also keep track of the URLs that have been accessed recently</li>
+<li>To further increase the efficiency, we can <strong>replicate our caching servers to distribute the load  between them</strong><ul>
+<li><img src="/images/Request-flow-for-accessing%E2%80%93a-shortened-URL.png" alt="image"> </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Load-Balancer-LB"><a href="#Load-Balancer-LB" class="headerlink" title="Load Balancer(LB)"></a>Load Balancer(LB)</h2><ol>
+<li><p>Add a load balancing layer at three places in our system</p>
+<ul>
+<li>Between Clients and Application servers</li>
+<li>Between Appliction Servers and database servers</li>
+<li>Between Application Servers and cache servers</li>
+</ul>
+</li>
+<li><p>Using a simple Round Robin approach</p>
+<ul>
+<li>Advantage<ul>
+<li>Distributes incoming requests equally among backend servers </li>
+<li>simple to implement and does not introduce any overhead</li>
+<li>if a server is dead, LB will take it out of the rotation and will stop sending any traffice to it</li>
+</ul>
+</li>
+<li>Disvantage<ul>
+<li>not take the server load into consideration</li>
+<li>If a server is overloaded or slow, LB will not stop sending new requests to that server</li>
+<li>Solution<ul>
+<li>a more intelligent LB solution can be placed that periodically queires the backend server about its load and adjusts traffic based on that</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Purging-or-DB-cleanup"><a href="#Purging-or-DB-cleanup" class="headerlink" title="Purging or DB cleanup"></a>Purging or DB cleanup</h1><ol>
+<li>If we chose to actively search for expired links to remove them, it would put a lot of pressure on our db. Insteas, we do a lazy clean up<ul>
+<li>whenever a user tries to access an expired link, we can delete the link and return an error to the user</li>
+<li>A seperate cleanup service can run periodically to remove expired links from our storage and cache<ul>
+<li>This service should be very lighweight and can be scheduled to run only when the user traffic is expected to be low</li>
+</ul>
+</li>
+<li>we can have a default expiration time for each link(like: two years)</li>
+<li>after removing an expired linke, we can put the key back in the key-DB to be reused</li>
+<li>Should we remove links that have not been visited in some length of time, say 6 months? This could be tricky<ul>
+<li>Since storage is getting cheap, we can decide to keep this links forever</li>
+<li><img src="/images/Detailed-component-design-for-URL-shortening.png" alt="image"> </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Telemetry"><a href="#Telemetry" class="headerlink" title="Telemetry"></a>Telemetry</h1><p>Some statistics worth tracking: country of the visitor, date and time of access, web page that referred the click, browser, or platform from where the page was accessed.</p>
+<h1 id="Security-and-Permissions"><a href="#Security-and-Permissions" class="headerlink" title="Security and Permissions"></a>Security and Permissions</h1><ol>
+<li>We can store the permission level (public/private) with each URL in the database. </li>
+<li>We can also create a separate table to store UserIDs that have permission to see a specific URL. </li>
+<li>If a user does not have permission and tries to access a URL, we can send an error (HTTP 401) back. </li>
+<li>Given that we are storing our data in a NoSQL wide-column database like Cassandra, the key for the table storing permissions would be the ‘Hash’ (or the KGS generated ‘key’). </li>
+<li>The columns will store the UserIDs of those users that have permission to see the URL.</li>
 </ol>
 
       
@@ -498,7 +682,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-do-we-meed-URL-shortening"><span class="nav-number">1.</span> <span class="nav-text">Why do we meed URL shortening?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirement-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirement and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-APIS"><span class="nav-number">4.</span> <span class="nav-text">System APIS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Design"><span class="nav-number">5.</span> <span class="nav-text">Database Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-System-Design-and-Algorithm"><span class="nav-number">6.</span> <span class="nav-text">Basic System Design and Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoding-actual-URL"><span class="nav-number">6.1.</span> <span class="nav-text">Encoding actual URL</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-do-we-meed-URL-shortening"><span class="nav-number">1.</span> <span class="nav-text">Why do we meed URL shortening?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirement-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirement and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-APIS"><span class="nav-number">4.</span> <span class="nav-text">System APIS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Design"><span class="nav-number">5.</span> <span class="nav-text">Database Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-System-Design-and-Algorithm"><span class="nav-number">6.</span> <span class="nav-text">Basic System Design and Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoding-actual-URL"><span class="nav-number">6.1.</span> <span class="nav-text">Encoding actual URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overall"><span class="nav-number">6.2.</span> <span class="nav-text">Overall</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-MD5-algorithm"><span class="nav-number">6.2.1.</span> <span class="nav-text">Using MD5 algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generating-keys-offline"><span class="nav-number">6.2.2.</span> <span class="nav-text">Generating keys offline</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Partitioning-and-Replication"><span class="nav-number">7.</span> <span class="nav-text">Data Partitioning and Replication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Range-Based-Partitioning"><span class="nav-number">7.1.</span> <span class="nav-text">Range Based Partitioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash-Based-Partitioning"><span class="nav-number">7.2.</span> <span class="nav-text">Hash-Based Partitioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">7.3.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Load-Balancer-LB"><span class="nav-number">7.4.</span> <span class="nav-text">Load Balancer(LB)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Purging-or-DB-cleanup"><span class="nav-number">8.</span> <span class="nav-text">Purging or DB cleanup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Telemetry"><span class="nav-number">9.</span> <span class="nav-text">Telemetry</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-and-Permissions"><span class="nav-number">10.</span> <span class="nav-text">Security and Permissions</span></a></li></ol>
     
     </div>
   </aside>

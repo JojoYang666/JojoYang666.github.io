@@ -9,16 +9,16 @@
   
   
   
-  <meta name="description" content="优先级 位运算 &lt; 算术运算 按位与、按位或及异或低于比较运算符  一些常见数字的二进制 -1 —-&gt; 11111111 11111111 11111111 11111111  判断一个数是不是 2 的非负整数次幂bool isPowerOfTwo(int n) { return n &gt; 0 &amp;&amp; (n &amp; (n - 1)) &#x3D;&#x3D; 0; } 对 2">
+  <meta name="description" content="优先级 位运算 &lt; 算术运算 按位与、按位或及异或低于比较运算符  ~ 把  的补码中的 0 和 1 全部取反（0 变为 1，1 变为 0）。有符号整数的符号位在 ~ 运算中同样会取反。 一些常见数字的二进制 -1 —-&gt; 11111111 11111111 11111111 11111111  判断一个数是不是 2 的非负整数次幂bool isPowerOfTwo(int n)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bit Manipulation">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/10/17/Bit-Manipulation/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="优先级 位运算 &lt; 算术运算 按位与、按位或及异或低于比较运算符  一些常见数字的二进制 -1 —-&gt; 11111111 11111111 11111111 11111111  判断一个数是不是 2 的非负整数次幂bool isPowerOfTwo(int n) { return n &gt; 0 &amp;&amp; (n &amp; (n - 1)) &#x3D;&#x3D; 0; } 对 2">
+<meta property="og:description" content="优先级 位运算 &lt; 算术运算 按位与、按位或及异或低于比较运算符  ~ 把  的补码中的 0 和 1 全部取反（0 变为 1，1 变为 0）。有符号整数的符号位在 ~ 运算中同样会取反。 一些常见数字的二进制 -1 —-&gt; 11111111 11111111 11111111 11111111  判断一个数是不是 2 的非负整数次幂bool isPowerOfTwo(int n)">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jojoyang666.github.io/images/%E9%9B%86%E5%90%88.png">
 <meta property="article:published_time" content="2020-10-17T15:54:05.000Z">
-<meta property="article:modified_time" content="2020-10-19T05:02:39.100Z">
+<meta property="article:modified_time" content="2020-10-20T02:35:09.492Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jojoyang666.github.io/images/%E9%9B%86%E5%90%88.png">
@@ -215,6 +215,7 @@
 <li>位运算 &lt; 算术运算</li>
 <li>按位与、按位或及异或低于比较运算符</li>
 </ol>
+<p><code>~ 把  的补码中的 0 和 1 全部取反（0 变为 1，1 变为 0）。有符号整数的符号位在 ~ 运算中同样会取反。</code></p>
 <h1 id="一些常见数字的二进制"><a href="#一些常见数字的二进制" class="headerlink" title="一些常见数字的二进制"></a>一些常见数字的二进制</h1><ol>
 <li>-1 —-&gt; <code>11111111 11111111 11111111 11111111</code></li>
 </ol>
@@ -231,9 +232,16 @@
 
 <h1 id="将一个二进制数的某一位设置为1"><a href="#将一个二进制数的某一位设置为1" class="headerlink" title="将一个二进制数的某一位设置为1"></a>将一个二进制数的某一位设置为1</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将 a 的第 b 位设置为 1 ，最低位编号为 0</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">setBit</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a | (<span class="number">1</span> &lt;&lt; b); &#125;</span><br></pre></td></tr></table></figure>
 
-<h1 id="将一个数二进制的某一位取反"><a href="#将一个数二进制的某一位取反" class="headerlink" title="将一个数二进制的某一位取反"></a>将一个数二进制的某一位取反</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将 a 的第 b 位取反 ，最低位编号为 0</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">flapBit</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a ^ (<span class="number">1</span> &lt;&lt; b); &#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="将一个数二进制的某一位取反"><a href="#将一个数二进制的某一位取反" class="headerlink" title="将一个数二进制的某一位取反"></a>将一个数二进制的某一位取反</h1><pre><code class="C++"><span class="comment">// 将 a 的第 b 位取反 ，最低位编号为 0</span>
+<span class="function"><span class="keyword">int</span> <span class="title">flapBit</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>{ <span class="keyword">return</span> a ^ (<span class="number">1</span> &lt;&lt; b); }</code></pre>
 <h1 id="表示集合"><a href="#表示集合" class="headerlink" title="表示集合"></a>表示集合</h1><p>一个数的二进制表示可以看作是一个集合（0 表示不在集合中，1 表示在集合中）。对应的位运算也就可以看作是对集合进行的操作</p>
+<h1 id="正数，-负数的计算机表示"><a href="#正数，-负数的计算机表示" class="headerlink" title="正数， 负数的计算机表示"></a>正数， 负数的计算机表示</h1><ol>
+<li>采用补码表示</li>
+<li>正数的补码是原码</li>
+<li>负数的补码是： 原码各位取反 + 1</li>
+</ol>
+<p>~x + x = -1<br>加法：<br>整数： [A]补 + [B]补 = [A+B]补 （mod 2^(n+1)）</p>
+<p>减法：<br>整数： [A-B]补 = [A]补 + [-B]补 （mod 2^(n+1)）<br>小数： [A-B]补 = [A]补 + [-B]补（mod 2）<br>[-B]补的求法就是 [B]补的连同符号位在内，每位求反加一</p>
 <p><a href="https://graphics.stanford.edu/~seander/bithacks.html" target="_blank" rel="noopener">Other Info</a></p>
 
       
@@ -311,6 +319,15 @@ var a = new Donate({
     
 <nav id="article-nav">
   
+    <a href="/2020/10/19/371-Sum-of-Two-Integers/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          371. Sum of Two Integers
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/10/16/137-Single-Number-II/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
@@ -328,7 +345,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#优先级"><span class="nav-number">1.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些常见数字的二进制"><span class="nav-number">2.</span> <span class="nav-text">一些常见数字的二进制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断一个数是不是-2-的非负整数次幂"><span class="nav-number">3.</span> <span class="nav-text">判断一个数是不是 2 的非负整数次幂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对-2-的非负整数次幂取模"><span class="nav-number">4.</span> <span class="nav-text">对 2 的非负整数次幂取模</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取绝对值"><span class="nav-number">5.</span> <span class="nav-text">取绝对值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#n-gt-gt-31-取得-n-的符号，若-n-为正数，n-gt-gt-31-等于-0，若-n-为负数，n-gt-gt-31-等于-1"><span class="nav-number">6.</span> <span class="nav-text">n&gt;&gt;31 取得 n 的符号，若 n 为正数，n&gt;&gt;31 等于 0，若 n 为负数，n&gt;&gt;31 等于 -1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取一个数二进制的某一位"><span class="nav-number">7.</span> <span class="nav-text">获取一个数二进制的某一位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将一个二进制数的某一位设置为0"><span class="nav-number">8.</span> <span class="nav-text">将一个二进制数的某一位设置为0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将一个二进制数的某一位设置为1"><span class="nav-number">9.</span> <span class="nav-text">将一个二进制数的某一位设置为1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将一个数二进制的某一位取反"><span class="nav-number">10.</span> <span class="nav-text">将一个数二进制的某一位取反</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表示集合"><span class="nav-number">11.</span> <span class="nav-text">表示集合</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#优先级"><span class="nav-number">1.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些常见数字的二进制"><span class="nav-number">2.</span> <span class="nav-text">一些常见数字的二进制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断一个数是不是-2-的非负整数次幂"><span class="nav-number">3.</span> <span class="nav-text">判断一个数是不是 2 的非负整数次幂</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对-2-的非负整数次幂取模"><span class="nav-number">4.</span> <span class="nav-text">对 2 的非负整数次幂取模</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取绝对值"><span class="nav-number">5.</span> <span class="nav-text">取绝对值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#n-gt-gt-31-取得-n-的符号，若-n-为正数，n-gt-gt-31-等于-0，若-n-为负数，n-gt-gt-31-等于-1"><span class="nav-number">6.</span> <span class="nav-text">n&gt;&gt;31 取得 n 的符号，若 n 为正数，n&gt;&gt;31 等于 0，若 n 为负数，n&gt;&gt;31 等于 -1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#获取一个数二进制的某一位"><span class="nav-number">7.</span> <span class="nav-text">获取一个数二进制的某一位</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将一个二进制数的某一位设置为0"><span class="nav-number">8.</span> <span class="nav-text">将一个二进制数的某一位设置为0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将一个二进制数的某一位设置为1"><span class="nav-number">9.</span> <span class="nav-text">将一个二进制数的某一位设置为1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#将一个数二进制的某一位取反"><span class="nav-number">10.</span> <span class="nav-text">将一个数二进制的某一位取反</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#表示集合"><span class="nav-number">11.</span> <span class="nav-text">表示集合</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正数，-负数的计算机表示"><span class="nav-number">12.</span> <span class="nav-text">正数， 负数的计算机表示</span></a></li></ol>
     
     </div>
   </aside>

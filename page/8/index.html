@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-763-Partition-Labels"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1209-Remove-All-Adjacent-Duplicates-in-String-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/04/763-Partition-Labels/">763. Partition Labels</a>
+      <a class="article-title" href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/">1209. Remove All Adjacent Duplicates in String II</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/04/763-Partition-Labels/" class="article-date">
-	  <time datetime="2020-10-04T20:33:09.000Z" itemprop="datePublished">2020-10-04</time>
+	<a href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/" class="article-date">
+	  <time datetime="2020-10-06T23:40:04.000Z" itemprop="datePublished">2020-10-06</time>
 	</a>
 
       
@@ -295,13 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-Figure out the rightmost index first and use it to denote the start of the next section.
-Reset the left pointer at the start of each new section.
-Store the difference of right and left pointers + 1 as in the result for each section.12345678910111...
+          涉及到后进来/后处理的中间值， 可以最后拿到结果的话， 就可以用stack
+1234567891011121314151617class Solution(object):    def removeDuplicates(self, s, k):        """        :type s: str        :type k: int        :rtype: str        """        stack = [['#', 0]]        for j, c ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/04/763-Partition-Labels/#more">Read More</a>
+          <a href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/#more">Read More</a>
         </p>
       
     </div>
@@ -320,7 +318,7 @@ Store the difference of right and left pointers + 1 as in the result for each se
 
 
   
-    <article id="post-322-Coin-Change"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-55-Jump-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -328,7 +326,7 @@ Store the difference of right and left pointers + 1 as in the result for each se
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/04/322-Coin-Change/">322. Coin Change</a>
+      <a class="article-title" href="/2020/10/06/55-Jump-Game/">55. Jump Game</a>
     </h1>
   
 
@@ -336,8 +334,8 @@ Store the difference of right and left pointers + 1 as in the result for each se
     
     <div class="article-meta">
       
-	<a href="/2020/10/04/322-Coin-Change/" class="article-date">
-	  <time datetime="2020-10-04T19:08:36.000Z" itemprop="datePublished">2020-10-04</time>
+	<a href="/2020/10/06/55-Jump-Game/" class="article-date">
+	  <time datetime="2020-10-06T23:13:47.000Z" itemprop="datePublished">2020-10-06</time>
 	</a>
 
       
@@ -350,10 +348,11 @@ Store the difference of right and left pointers + 1 as in the result for each se
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213class Solution(object):    def coinChange(self, coins, amount):        """        :type coins: List[int]        :type amount: int        :rtype: int        """        MAX = float('inf')        dp = [0] + [MAX]*amount              ...
+          Greedy
+1234567891011121314class Solution(object):    def canJump(self, nums):        """        :type nums: List[int]        :rtype: bool        """        m = nums[0]                for i, num in enumerate(nums):            if i &lt;= m:         ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/04/322-Coin-Change/#more">Read More</a>
+          <a href="/2020/10/06/55-Jump-Game/#more">Read More</a>
         </p>
       
     </div>
@@ -372,7 +371,7 @@ Store the difference of right and left pointers + 1 as in the result for each se
 
 
   
-    <article id="post-11-Container-With-Most-Water"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-96-Unique-Binary-Search-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -380,7 +379,7 @@ Store the difference of right and left pointers + 1 as in the result for each se
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/03/11-Container-With-Most-Water/">11. Container With Most Water</a>
+      <a class="article-title" href="/2020/10/06/96-Unique-Binary-Search-Trees/">96. Unique Binary Search Trees</a>
     </h1>
   
 
@@ -388,13 +387,11 @@ Store the difference of right and left pointers + 1 as in the result for each se
     
     <div class="article-meta">
       
-	<a href="/2020/10/03/11-Container-With-Most-Water/" class="article-date">
-	  <time datetime="2020-10-03T22:52:30.000Z" itemprop="datePublished">2020-10-03</time>
+	<a href="/2020/10/06/96-Unique-Binary-Search-Trees/" class="article-date">
+	  <time datetime="2020-10-06T23:01:49.000Z" itemprop="datePublished">2020-10-06</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
       
 
@@ -402,10 +399,17 @@ Store the difference of right and left pointers + 1 as in the result for each se
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def maxArea(self, height):        """        :type height: List[int]        :rtype: int        """        l, r, res = 0, len(height) - 1, 0                while l &lt; r:            res = max(res, ...
+          n = 2dp[2] =  dp[0] * dp[1]　　　(1为根的情况，则左子树一定不存在，右子树可以有一个数字) 
+
+dp[1] * dp[0]　　  (2为根的情况，则左子树可以有一个数字，右子树一定不存在)
+
+同理可写出 n = 3 的计算方法：
+dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在，右子树可以有两个数字)
+　　　　+ dp[1] * dp[1]　　  (2为根的情况，则左右子树都可以各有一个数字)
+ 　　　  + dp[2] * ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/03/11-Container-With-Most-Water/#more">Read More</a>
+          <a href="/2020/10/06/96-Unique-Binary-Search-Trees/#more">Read More</a>
         </p>
       
     </div>
@@ -424,7 +428,7 @@ Store the difference of right and left pointers + 1 as in the result for each se
 
 
   
-    <article id="post-1-on-1-with-Manager"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-19-Remove-Nth-Node-From-End-of-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -432,7 +436,7 @@ Store the difference of right and left pointers + 1 as in the result for each se
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/02/1-on-1-with-Manager/">1 on 1 with Manager</a>
+      <a class="article-title" href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/">19. Remove Nth Node From End of List</a>
     </h1>
   
 
@@ -440,13 +444,11 @@ Store the difference of right and left pointers + 1 as in the result for each se
     
     <div class="article-meta">
       
-	<a href="/2020/10/02/1-on-1-with-Manager/" class="article-date">
-	  <time datetime="2020-10-03T00:02:42.000Z" itemprop="datePublished">2020-10-02</time>
+	<a href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/" class="article-date">
+	  <time datetime="2020-10-06T21:59:05.000Z" itemprop="datePublished">2020-10-06</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Work/">Work</a>
-
       
       
 
@@ -454,13 +456,11 @@ Store the difference of right and left pointers + 1 as in the result for each se
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          How To Talk About the Promotions
-This procress happens during the whole 1 on 1 process among the one promotion cycle
-Bring the topic, like how do I / what should I do for the next level? 
-Before this bring topic, 一定要列出 在这个阶段中自己都有什么achievement, gap...
+          one pass means two pointers will be one option
+123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextc...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/02/1-on-1-with-Manager/#more">Read More</a>
+          <a href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/#more">Read More</a>
         </p>
       
     </div>
@@ -479,7 +479,7 @@ Before this bring topic, 一定要列出 在这个阶段中自己都有什么ach
 
 
   
-    <article id="post-891-Sum-of-Subsequence-Widths"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-210-Course-Schedule-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -487,7 +487,7 @@ Before this bring topic, 一定要列出 在这个阶段中自己都有什么ach
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/891-Sum-of-Subsequence-Widths/">891. Sum of Subsequence Widths</a>
+      <a class="article-title" href="/2020/10/06/210-Course-Schedule-II/">210. Course Schedule II</a>
     </h1>
   
 
@@ -495,8 +495,8 @@ Before this bring topic, 一定要列出 在这个阶段中自己都有什么ach
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/891-Sum-of-Subsequence-Widths/" class="article-date">
-	  <time datetime="2020-10-02T01:12:19.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/06/210-Course-Schedule-II/" class="article-date">
+	  <time datetime="2020-10-06T21:47:06.000Z" itemprop="datePublished">2020-10-06</time>
 	</a>
 
       
@@ -509,14 +509,11 @@ Before this bring topic, 一定要列出 在这个阶段中自己都有什么ach
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-The order of the input does not matter
-There are i smaller numbers,so there are 2 ^ i sequences in which A[i] is maximum.we should do res += A[i] * (2 ^ i)
-
-There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh...
+          不能用这个题目 207. Course Schedule 里面的方法是因为， 这个是用来判断是否存在环的， 也就是说如果里面有若干个独立节点是返回true，但是不知道这个独立节点是谁， 而本题是要图没有环的同时还没有独立节点， 所以要通过知道所有节点的方式来找到入度为0的节点
+12345678910111213141516171819202122232425262728class Solution(object):    def findOrder(self, numCourses, pr...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/891-Sum-of-Subsequence-Widths/#more">Read More</a>
+          <a href="/2020/10/06/210-Course-Schedule-II/#more">Read More</a>
         </p>
       
     </div>
@@ -535,7 +532,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
 
   
-    <article id="post-828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-207-Course-Schedule"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -543,7 +540,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/">828. Count Unique Characters of All Substrings of a Given String</a>
+      <a class="article-title" href="/2020/10/06/207-Course-Schedule/">207. Course Schedule</a>
     </h1>
   
 
@@ -551,8 +548,8 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/" class="article-date">
-	  <time datetime="2020-10-02T01:11:22.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/06/207-Course-Schedule/" class="article-date">
+	  <time datetime="2020-10-06T16:58:42.000Z" itemprop="datePublished">2020-10-06</time>
 	</a>
 
       
@@ -565,13 +562,10 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-
-123456789101112131415161718class Solution(object):    def uniqueLetterString(self, s):        """        :type s: str        :rtype: int        """        index = &#123;c: [-1, -1] for c in string.ascii_uppercase&#125;        res = 0           ...
+          123456789101112131415161718192021222324252627282930313233343536373839class GNode(object):    def __init__(self):        self.inDegrees = 0        self.outNodes = []        class Solution(object):    def canFinish(self, numCourses, prerequisites): ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/#more">Read More</a>
+          <a href="/2020/10/06/207-Course-Schedule/#more">Read More</a>
         </p>
       
     </div>
@@ -590,7 +584,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
 
   
-    <article id="post-739-Daily-Temperatures"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-103-Binary-Tree-Zigzag-Level-Order-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -598,7 +592,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/739-Daily-Temperatures/">739. Daily Temperatures</a>
+      <a class="article-title" href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/">103. Binary Tree Zigzag Level Order Traversal</a>
     </h1>
   
 
@@ -606,8 +600,8 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/739-Daily-Temperatures/" class="article-date">
-	  <time datetime="2020-10-02T01:10:04.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/" class="article-date">
+	  <time datetime="2020-10-06T16:07:34.000Z" itemprop="datePublished">2020-10-06</time>
 	</a>
 
       
@@ -620,10 +614,11 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def dailyTemperatures(self, T):        """        :type T: List[int]        :rtype: List[int]        """        n = len(T)        stack, res = [], [0] * n                        for i, cur in enume...
+          Solution 1BFS + reverse the level array according to the condition
+1234567891011121314151617181920212223242526# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/739-Daily-Temperatures/#more">Read More</a>
+          <a href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/#more">Read More</a>
         </p>
       
     </div>
@@ -642,7 +637,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
 
   
-    <article id="post-42-Trapping-Rain-Water"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1428-Leftmost-Column-with-at-Least-a-One"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -650,7 +645,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/42-Trapping-Rain-Water/">42. Trapping Rain Water</a>
+      <a class="article-title" href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/">1428. Leftmost Column with at Least a One</a>
     </h1>
   
 
@@ -658,8 +653,8 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/42-Trapping-Rain-Water/" class="article-date">
-	  <time datetime="2020-10-01T19:24:21.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/" class="article-date">
+	  <time datetime="2020-10-06T03:47:22.000Z" itemprop="datePublished">2020-10-05</time>
 	</a>
 
       
@@ -672,11 +667,11 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Stack
-12345678910111213141516171819- ![image](/images/42-Trapping-Rain-Water.png)class Solution(object):    def trap(self, height):        """        :type height: List[int]        :rtype: int        """        stack, res = [], 0        ...
+          有点儿two pointer的感觉， 矩阵问题 可以考虑类似这种操作方式来将时间复杂度变成O(m + n)  —&gt; 找到范围， 通过一些条件， 来慢慢排除一些值，最后确定一个最终的值
+1234567891011121314151617181920212223242526272829303132# """# This is BinaryMatrix's API interface.# You should not implement it, or speculate about its...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/42-Trapping-Rain-Water/#more">Read More</a>
+          <a href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/#more">Read More</a>
         </p>
       
     </div>
@@ -695,7 +690,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
 
   
-    <article id="post-84-Largest-Rectangle-in-Histogram"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-547-Friend-Circles"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -703,7 +698,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/84-Largest-Rectangle-in-Histogram/">84. Largest Rectangle in Histogram</a>
+      <a class="article-title" href="/2020/10/05/547-Friend-Circles/">547. Friend Circles</a>
     </h1>
   
 
@@ -711,8 +706,8 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/84-Largest-Rectangle-in-Histogram/" class="article-date">
-	  <time datetime="2020-10-01T19:23:28.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/05/547-Friend-Circles/" class="article-date">
+	  <time datetime="2020-10-06T03:01:29.000Z" itemprop="datePublished">2020-10-05</time>
 	</a>
 
       
@@ -725,13 +720,11 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-
-12345678910111213141516class Solution(object):    def largestRectangleArea(self, heights):        """        :type heights: List[int]        :rtype: int        """        stack, res = [], 0        heights = [0] + heights + [0]        for i, hei...
+          Union Find
+123456789101112131415161718192021222324252627282930class DSU:    def __init__(self, N):        self.parent = range(N)        def find(self, x):        if self.parent[x] != x:            self.parent[x] = self.find(self.parent[x])        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/84-Largest-Rectangle-in-Histogram/#more">Read More</a>
+          <a href="/2020/10/05/547-Friend-Circles/#more">Read More</a>
         </p>
       
     </div>
@@ -750,7 +743,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
 
   
-    <article id="post-856-Score-of-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-131-Palindrome-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -758,7 +751,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/856-Score-of-Parentheses/">856. Score of Parentheses</a>
+      <a class="article-title" href="/2020/10/05/131-Palindrome-Partitioning/">131. Palindrome Partitioning</a>
     </h1>
   
 
@@ -766,8 +759,8 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/856-Score-of-Parentheses/" class="article-date">
-	  <time datetime="2020-10-01T17:45:45.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/05/131-Palindrome-Partitioning/" class="article-date">
+	  <time datetime="2020-10-06T00:44:58.000Z" itemprop="datePublished">2020-10-05</time>
 	</a>
 
       
@@ -780,11 +773,10 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-123456789101112131415class Solution(object):    def scoreOfParentheses(self, S):        """        :type S: str        :rtype: int        """        stack, cur = [], 0                for c in S:            if c == '(':                st...
+          12345678910111213141516171819202122class Solution(object):    def partition(self, s):        """        :type s: str        :rtype: List[List[str]]        """        res = []        self.dfs(s, [], res)        return res    def dfs(self, s, path, ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/856-Score-of-Parentheses/#more">Read More</a>
+          <a href="/2020/10/05/131-Palindrome-Partitioning/#more">Read More</a>
         </p>
       
     </div>
@@ -807,7 +799,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/9/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/7/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/9/">Next &amp;raquo;</a>
   </nav>
 
 </section>

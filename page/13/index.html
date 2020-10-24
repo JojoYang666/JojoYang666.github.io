@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-849-Maximize-Distance-to-Closest-Person"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-299-Bulls-and-Cows"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/18/849-Maximize-Distance-to-Closest-Person/">849. Maximize Distance to Closest Person</a>
+      <a class="article-title" href="/2020/09/24/299-Bulls-and-Cows/">299. Bulls and Cows</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/18/849-Maximize-Distance-to-Closest-Person/" class="article-date">
-	  <time datetime="2020-09-18T22:21:13.000Z" itemprop="datePublished">2020-09-18</time>
+	<a href="/2020/09/24/299-Bulls-and-Cows/" class="article-date">
+	  <time datetime="2020-09-24T23:48:48.000Z" itemprop="datePublished">2020-09-24</time>
 	</a>
 
       
@@ -295,10 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920/** * @param &#123;number[]&#125; seats * @return &#123;number&#125; */var maxDistToClosest = function(seats) &#123;    let start = 0, res = 0        for (let i = 0; i &lt; seats.length; i++) &#123;        if (seats[...
+          Solution 1Two Pass
+1234567891011121314151617181920212223242526272829303132/** * @param &#123;string&#125; secret * @param &#123;string&#125; guess * @return &#123;string&#125; */var getHint = function(secret, guess) &#123;    const map = &#123;&#1...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/18/849-Maximize-Distance-to-Closest-Person/#more">Read More</a>
+          <a href="/2020/09/24/299-Bulls-and-Cows/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +318,7 @@
 
 
   
-    <article id="post-659-Split-Array-into-Consecutive-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-490-The-Maze"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/">659. Split Array into Consecutive Subsequences</a>
+      <a class="article-title" href="/2020/09/24/490-The-Maze/">490. The Maze</a>
     </h1>
   
 
@@ -333,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/" class="article-date">
-	  <time datetime="2020-09-18T19:30:03.000Z" itemprop="datePublished">2020-09-18</time>
+	<a href="/2020/09/24/490-The-Maze/" class="article-date">
+	  <time datetime="2020-09-24T22:29:34.000Z" itemprop="datePublished">2020-09-24</time>
 	</a>
 
       
@@ -347,11 +348,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-重点： 整个array 都能分成几个subsequences123456789101112131415161718192021222324class Solution(object):    def isPossible(self, nums):        """        :type nums: List[int]        :rtype: bool        """        count = collections.Counter(nums)        tai...
+          DFS12345678910111213141516171819202122232425class Solution(object):    def hasPath(self, maze, start, destination):        """        :type maze: List[List[int]]        :type start: List[int]        :type destination: List[int]        :rtype: bool...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/#more">Read More</a>
+          <a href="/2020/09/24/490-The-Maze/#more">Read More</a>
         </p>
       
     </div>
@@ -370,7 +370,7 @@
 
 
   
-    <article id="post-320-Generalized-Abbreviation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-817-Linked-List-Components"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -378,7 +378,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/18/320-Generalized-Abbreviation/">320. Generalized Abbreviation</a>
+      <a class="article-title" href="/2020/09/24/817-Linked-List-Components/">817. Linked List Components</a>
     </h1>
   
 
@@ -386,8 +386,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/18/320-Generalized-Abbreviation/" class="article-date">
-	  <time datetime="2020-09-18T16:25:34.000Z" itemprop="datePublished">2020-09-18</time>
+	<a href="/2020/09/24/817-Linked-List-Components/" class="article-date">
+	  <time datetime="2020-09-24T21:39:12.000Z" itemprop="datePublished">2020-09-24</time>
 	</a>
 
       
@@ -400,11 +400,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-Iterative wayusing bit to represent word123456789101112131415161718192021222324252627/** * @param &#123;string&#125; word * @return &#123;string[]&#125; */var generateAbbreviations = function(word) &#123;    const res = []        for (let i = 0; ...
+          123456789101112131415161718192021# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def numComponents(self, head, G):...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/18/320-Generalized-Abbreviation/#more">Read More</a>
+          <a href="/2020/09/24/817-Linked-List-Components/#more">Read More</a>
         </p>
       
     </div>
@@ -423,7 +422,7 @@ Iterative wayusing bit to represent word1234567891011121314151617181920212223242
 
 
   
-    <article id="post-406-Queue-Reconstruction-by-Height"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-729-My-Calendar-I"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -431,7 +430,7 @@ Iterative wayusing bit to represent word1234567891011121314151617181920212223242
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/17/406-Queue-Reconstruction-by-Height/">406. Queue Reconstruction by Height</a>
+      <a class="article-title" href="/2020/09/24/729-My-Calendar-I/">729. My Calendar I</a>
     </h1>
   
 
@@ -439,8 +438,8 @@ Iterative wayusing bit to represent word1234567891011121314151617181920212223242
     
     <div class="article-meta">
       
-	<a href="/2020/09/17/406-Queue-Reconstruction-by-Height/" class="article-date">
-	  <time datetime="2020-09-17T16:40:09.000Z" itemprop="datePublished">2020-09-17</time>
+	<a href="/2020/09/24/729-My-Calendar-I/" class="article-date">
+	  <time datetime="2020-09-24T19:50:01.000Z" itemprop="datePublished">2020-09-24</time>
 	</a>
 
       
@@ -453,11 +452,10 @@ Iterative wayusing bit to represent word1234567891011121314151617181920212223242
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-sort by the hight(reversed), insert by the index1234567891011class Solution(object):    def reconstructQueue(self, people):        """        :type people: List[List[int]]        :rtype: List[List[int]]        """        people.sort(key=lambda x:...
+          1234567891011121314151617181920212223242526272829303132class MyCalendar(object):    def __init__(self):        self.intervals = []    def book(self, start, end):        """        :type start: int        :type end: int        :rtype: bool        "...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/17/406-Queue-Reconstruction-by-Height/#more">Read More</a>
+          <a href="/2020/09/24/729-My-Calendar-I/#more">Read More</a>
         </p>
       
     </div>
@@ -476,7 +474,7 @@ sort by the hight(reversed), insert by the index1234567891011class Solution(obje
 
 
   
-    <article id="post-362-Design-Hit-Counter"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-400-Nth-Digit"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -484,7 +482,7 @@ sort by the hight(reversed), insert by the index1234567891011class Solution(obje
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/16/362-Design-Hit-Counter/">362. Design Hit Counter</a>
+      <a class="article-title" href="/2020/09/24/400-Nth-Digit/">400. Nth Digit</a>
     </h1>
   
 
@@ -492,8 +490,8 @@ sort by the hight(reversed), insert by the index1234567891011class Solution(obje
     
     <div class="article-meta">
       
-	<a href="/2020/09/16/362-Design-Hit-Counter/" class="article-date">
-	  <time datetime="2020-09-17T04:57:32.000Z" itemprop="datePublished">2020-09-16</time>
+	<a href="/2020/09/24/400-Nth-Digit/" class="article-date">
+	  <time datetime="2020-09-24T18:24:41.000Z" itemprop="datePublished">2020-09-24</time>
 	</a>
 
       
@@ -506,11 +504,10 @@ sort by the hight(reversed), insert by the index1234567891011class Solution(obje
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-选择合适的数据结构12345678910111213141516171819202122232425262728293031323334353637/** * Initialize your data structure here. */var HitCounter = function() &#123;    this.queue = []&#125;;/** * Record a hit.        @param timestamp - The current timestamp...
+          1234567891011121314151617/** * @param &#123;number&#125; n * @return &#123;number&#125; */var findNthDigit = function(n) &#123;  let start = 1, len = 1, cnt = 9    while (n &gt; cnt * len) &#123;      n -= cnt *len      cnt *= 10      len++      s...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/16/362-Design-Hit-Counter/#more">Read More</a>
+          <a href="/2020/09/24/400-Nth-Digit/#more">Read More</a>
         </p>
       
     </div>
@@ -529,7 +526,7 @@ sort by the hight(reversed), insert by the index1234567891011class Solution(obje
 
 
   
-    <article id="post-bfs-dfs-backtracking-Dijkstra"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-723-Candy-Crush"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -537,7 +534,7 @@ sort by the hight(reversed), insert by the index1234567891011class Solution(obje
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/">bfs, dfs, backtracking, Dijkstra</a>
+      <a class="article-title" href="/2020/09/23/723-Candy-Crush/">723. Candy Crush</a>
     </h1>
   
 
@@ -545,69 +542,8 @@ sort by the hight(reversed), insert by the index1234567891011class Solution(obje
     
     <div class="article-meta">
       
-	<a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/" class="article-date">
-	  <time datetime="2020-09-16T19:11:13.000Z" itemprop="datePublished">2020-09-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          General
-可以用掩码token &amp; (1 &lt;&lt; i)和token | (1 &lt;&lt; i)来看这个ith item是否用过， 并且更新他的状态
-
-BFS + DFS
-add visited set
-考虑是否 有重复情况， 如果有可以用memo
-
-Backtracking
-find all the possible solutions
-used-thing —-&gt; 123used(flag -&gt; true)recursivefuncition()...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1066-Campus-Bikes-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/16/1066-Campus-Bikes-II/">1066. Campus Bikes II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/16/1066-Campus-Bikes-II/" class="article-date">
-	  <time datetime="2020-09-16T18:24:26.000Z" itemprop="datePublished">2020-09-16</time>
+	<a href="/2020/09/23/723-Candy-Crush/" class="article-date">
+	  <time datetime="2020-09-23T23:15:48.000Z" itemprop="datePublished">2020-09-23</time>
 	</a>
 
       
@@ -620,12 +556,10 @@ used-thing —-&gt; 123used(flag -&gt; true)recursivefuncition()...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-bfs + pq
-12345678910111213141516171819202122232425class Solution(object):    def assignBikes(self, workers, bikes):        """        :type workers: List[List[int]]        :type bikes: List[List[int]]        :rtype: int        """        def dis(...
+          123456789101112131415161718192021222324252627class Solution(object):    def candyCrush(self, M):        """        :type board: List[List[int]]        :rtype: List[List[int]]        """        while True:            # 1. check            crush = s...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/16/1066-Campus-Bikes-II/#more">Read More</a>
+          <a href="/2020/09/23/723-Candy-Crush/#more">Read More</a>
         </p>
       
     </div>
@@ -644,7 +578,7 @@ bfs + pq
 
 
   
-    <article id="post-833-Find-And-Replace-in-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Designing-a-URL-Shortening-service-like-TinyURL"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -652,7 +586,7 @@ bfs + pq
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/15/833-Find-And-Replace-in-String/">833. Find And Replace in String</a>
+      <a class="article-title" href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/">Designing a URL Shortening service like TinyURL</a>
     </h1>
   
 
@@ -660,8 +594,70 @@ bfs + pq
     
     <div class="article-meta">
       
-	<a href="/2020/09/15/833-Find-And-Replace-in-String/" class="article-date">
-	  <time datetime="2020-09-16T03:21:10.000Z" itemprop="datePublished">2020-09-15</time>
+	<a href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/" class="article-date">
+	  <time datetime="2020-09-23T17:41:07.000Z" itemprop="datePublished">2020-09-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Why do we meed URL shortening?
+The shortened URL is nearly one-third the size of the actual URL
+Used for
+optimizing links across devices
+tracking individual links to analyze audience
+campaign performance
+hiding affiliated original URLs
+
+
+
+Requirem...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-369-Plus-One-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/23/369-Plus-One-Linked-List/">369. Plus One Linked List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/23/369-Plus-One-Linked-List/" class="article-date">
+	  <time datetime="2020-09-23T17:17:53.000Z" itemprop="datePublished">2020-09-23</time>
 	</a>
 
       
@@ -674,11 +670,11 @@ bfs + pq
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse sorted  123456789101112131415class Solution(object):    def findReplaceString(self, S, indexes, sources, targets):        """        :type S: str        :type indexes: List[int]        :type sources: ...
+          Sentinel Head 
+12345678910111213141516171819202122232425262728# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/15/833-Find-And-Replace-in-String/#more">Read More</a>
+          <a href="/2020/09/23/369-Plus-One-Linked-List/#more">Read More</a>
         </p>
       
     </div>
@@ -697,7 +693,7 @@ reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse so
 
 
   
-    <article id="post-731-My-Calendar-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-963-Minimum-Area-Rectangle-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -705,7 +701,7 @@ reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse so
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/15/731-My-Calendar-II/">731. My Calendar II</a>
+      <a class="article-title" href="/2020/09/23/963-Minimum-Area-Rectangle-II/">963. Minimum Area Rectangle II</a>
     </h1>
   
 
@@ -713,8 +709,8 @@ reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse so
     
     <div class="article-meta">
       
-	<a href="/2020/09/15/731-My-Calendar-II/" class="article-date">
-	  <time datetime="2020-09-16T02:57:02.000Z" itemprop="datePublished">2020-09-15</time>
+	<a href="/2020/09/23/963-Minimum-Area-Rectangle-II/" class="article-date">
+	  <time datetime="2020-09-23T15:29:33.000Z" itemprop="datePublished">2020-09-23</time>
 	</a>
 
       
@@ -727,12 +723,12 @@ reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse so
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-filtered by overlaps list
-add overlap list contents12345678910111213141516171819202122232425262728class MyCalendarTwo(object):    def __init__(self):        self.overlaps = []        self.calender = []    def book(self, start, end):        """   ...
+          Solution 1Iterate centers
+
+123456789101112131415161718class Solution(object):    def minAreaFreeRect(self, points):        """        :type points: List[List[int]]        :rtype: float        """        points = [complex(*z) for z in points]      ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/15/731-My-Calendar-II/#more">Read More</a>
+          <a href="/2020/09/23/963-Minimum-Area-Rectangle-II/#more">Read More</a>
         </p>
       
     </div>
@@ -751,7 +747,7 @@ add overlap list contents12345678910111213141516171819202122232425262728class My
 
 
   
-    <article id="post-274-H-Index"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-353-Design-Snake-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -759,7 +755,7 @@ add overlap list contents12345678910111213141516171819202122232425262728class My
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/15/274-H-Index/">274. H-Index</a>
+      <a class="article-title" href="/2020/09/22/353-Design-Snake-Game/">353. Design Snake Game </a>
     </h1>
   
 
@@ -767,11 +763,13 @@ add overlap list contents12345678910111213141516171819202122232425262728class My
     
     <div class="article-meta">
       
-	<a href="/2020/09/15/274-H-Index/" class="article-date">
-	  <time datetime="2020-09-15T23:02:41.000Z" itemprop="datePublished">2020-09-15</time>
+	<a href="/2020/09/22/353-Design-Snake-Game/" class="article-date">
+	  <time datetime="2020-09-23T04:20:09.000Z" itemprop="datePublished">2020-09-22</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
       
       
 
@@ -779,10 +777,14 @@ add overlap list contents12345678910111213141516171819202122232425262728class My
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213/** * @param &#123;number[]&#125; citations * @return &#123;number&#125; */var hIndex = function(citations) &#123;    citations.sort((a, b) =&gt; b - a)        for (let i = 0; i &lt; citations.length; i++) &#123;        if (citati...
+          Deque
+
+
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class SnakeGame(object):    def __init__(self, width, height, food):        """        Initialize your data structure here.        @param width - scree...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/15/274-H-Index/#more">Read More</a>
+          <a href="/2020/09/22/353-Design-Snake-Game/#more">Read More</a>
         </p>
       
     </div>
@@ -805,7 +807,7 @@ add overlap list contents12345678910111213141516171819202122232425262728class My
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/12/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/14/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/12/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/14/">Next &amp;raquo;</a>
   </nav>
 
 </section>

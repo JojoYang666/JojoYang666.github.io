@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-55-Jump-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-934-Shortest-Bridge"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/55-Jump-Game/">55. Jump Game</a>
+      <a class="article-title" href="/2020/10/10/934-Shortest-Bridge/">934. Shortest Bridge</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/55-Jump-Game/" class="article-date">
-	  <time datetime="2020-10-06T23:13:47.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/934-Shortest-Bridge/" class="article-date">
+	  <time datetime="2020-10-11T04:41:58.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -295,11 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Greedy
-1234567891011121314class Solution(object):    def canJump(self, nums):        """        :type nums: List[int]        :rtype: bool        """        m = nums[0]                for i, num in enumerate(nums):            if i &lt;= m:         ...
+          找到一个岛的所有的点后同时向外扩张（BFS）
+12345678910111213141516171819202122232425262728293031323334class Solution(object):    def shortestBridge(self, A):        """        :type A: List[List[int]]        :rtype: int        """        res, step, bfs = 0, 0, deque(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/55-Jump-Game/#more">Read More</a>
+          <a href="/2020/10/10/934-Shortest-Bridge/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +318,7 @@
 
 
   
-    <article id="post-96-Unique-Binary-Search-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-430-Flatten-a-Multilevel-Doubly-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/96-Unique-Binary-Search-Trees/">96. Unique Binary Search Trees</a>
+      <a class="article-title" href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/">430. Flatten a Multilevel Doubly Linked List</a>
     </h1>
   
 
@@ -334,116 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/96-Unique-Binary-Search-Trees/" class="article-date">
-	  <time datetime="2020-10-06T23:01:49.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          n = 2dp[2] =  dp[0] * dp[1]　　　(1为根的情况，则左子树一定不存在，右子树可以有一个数字) 
-
-dp[1] * dp[0]　　  (2为根的情况，则左子树可以有一个数字，右子树一定不存在)
-
-同理可写出 n = 3 的计算方法：
-dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在，右子树可以有两个数字)
-　　　　+ dp[1] * dp[1]　　  (2为根的情况，则左右子树都可以各有一个数字)
- 　　　  + dp[2] * ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/96-Unique-Binary-Search-Trees/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-19-Remove-Nth-Node-From-End-of-List"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/">19. Remove Nth Node From End of List</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/" class="article-date">
-	  <time datetime="2020-10-06T21:59:05.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          one pass means two pointers will be one option
-123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextc...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-210-Course-Schedule-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/210-Course-Schedule-II/">210. Course Schedule II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/210-Course-Schedule-II/" class="article-date">
-	  <time datetime="2020-10-06T21:47:06.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/" class="article-date">
+	  <time datetime="2020-10-11T04:12:08.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -456,11 +348,10 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          不能用这个题目 207. Course Schedule 里面的方法是因为， 这个是用来判断是否存在环的， 也就是说如果里面有若干个独立节点是返回true，但是不知道这个独立节点是谁， 而本题是要图没有环的同时还没有独立节点， 所以要通过知道所有节点的方式来找到入度为0的节点
-12345678910111213141516171819202122232425262728class Solution(object):    def findOrder(self, numCourses, pr...
+          DFS Recursive12345678910111213141516171819202122232425262728293031323334"""# Definition for a Node.class Node(object):    def __init__(self, val, prev, next, child):        self.val = val        self.prev = prev        self.next = next        self...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/210-Course-Schedule-II/#more">Read More</a>
+          <a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/#more">Read More</a>
         </p>
       
     </div>
@@ -479,7 +370,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
 
   
-    <article id="post-207-Course-Schedule"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -487,7 +378,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/207-Course-Schedule/">207. Course Schedule</a>
+      <a class="article-title" href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">309. Best Time to Buy and Sell Stock with Cooldown</a>
     </h1>
   
 
@@ -495,8 +386,8 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/207-Course-Schedule/" class="article-date">
-	  <time datetime="2020-10-06T16:58:42.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/" class="article-date">
+	  <time datetime="2020-10-11T03:16:35.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -509,10 +400,13 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839class GNode(object):    def __init__(self):        self.inDegrees = 0        self.outNodes = []        class Solution(object):    def canFinish(self, numCourses, prerequisites): ...
+          
+
+
+1234567891011121314class Solution(object):    def maxProfit(self, prices):        """        :type prices: List[int]        :rtype: int        """        sold, held, reset = float('-inf'), float('-inf'), 0                for price in prices:   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/207-Course-Schedule/#more">Read More</a>
+          <a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/#more">Read More</a>
         </p>
       
     </div>
@@ -531,7 +425,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
 
   
-    <article id="post-103-Binary-Tree-Zigzag-Level-Order-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -539,7 +433,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/">103. Binary Tree Zigzag Level Order Traversal</a>
+      <a class="article-title" href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/">1031. Maximum Sum of Two Non-Overlapping Subarrays</a>
     </h1>
   
 
@@ -547,8 +441,8 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/" class="article-date">
-	  <time datetime="2020-10-06T16:07:34.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/" class="article-date">
+	  <time datetime="2020-10-11T02:35:51.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -561,11 +455,11 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1BFS + reverse the level array according to the condition
-1234567891011121314151617181920212223242526# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = ...
+          
+12345678910111213141516171819class Solution(object):    def maxSumTwoNoOverlap(self, A, L, M):        """        :type A: List[int]        :type L: int        :type M: int        :rtype: int        """        for i in range(1, len(A)):           ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/103-Binary-Tree-Zigzag-Level-Order-Traversal/#more">Read More</a>
+          <a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/#more">Read More</a>
         </p>
       
     </div>
@@ -584,7 +478,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
 
   
-    <article id="post-1428-Leftmost-Column-with-at-Least-a-One"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-120-Triangle"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -592,7 +486,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/">1428. Leftmost Column with at Least a One</a>
+      <a class="article-title" href="/2020/10/10/120-Triangle/">120. Triangle</a>
     </h1>
   
 
@@ -600,8 +494,8 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/" class="article-date">
-	  <time datetime="2020-10-06T03:47:22.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/10/120-Triangle/" class="article-date">
+	  <time datetime="2020-10-11T01:54:57.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -614,11 +508,11 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          有点儿two pointer的感觉， 矩阵问题 可以考虑类似这种操作方式来将时间复杂度变成O(m + n)  —&gt; 找到范围， 通过一些条件， 来慢慢排除一些值，最后确定一个最终的值
-1234567891011121314151617181920212223242526272829303132# """# This is BinaryMatrix's API interface.# You should not implement it, or speculate about its...
+          
+123456789101112class Solution(object):    def minimumTotal(self, triangle):        """        :type triangle: List[List[int]]        :rtype: int        """        dp = triangle[-1]                for i in xrange(len(triangle)-2, -1, -1):         ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/#more">Read More</a>
+          <a href="/2020/10/10/120-Triangle/#more">Read More</a>
         </p>
       
     </div>
@@ -637,7 +531,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
 
   
-    <article id="post-547-Friend-Circles"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-698-Partition-to-K-Equal-Sum-Subsets"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -645,7 +539,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/547-Friend-Circles/">547. Friend Circles</a>
+      <a class="article-title" href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/">698. Partition to K Equal Sum Subsets</a>
     </h1>
   
 
@@ -653,8 +547,8 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/547-Friend-Circles/" class="article-date">
-	  <time datetime="2020-10-06T03:01:29.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/" class="article-date">
+	  <time datetime="2020-10-10T18:16:45.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -667,11 +561,14 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Union Find
-123456789101112131415161718192021222324252627282930class DSU:    def __init__(self, N):        self.parent = range(N)        def find(self, x):        if self.parent[x] != x:            self.parent[x] = self.find(self.parent[x])        ...
+          Solution 1Brute Force: Backtracking
+几个加速的key point:
+
+backtracking 的时候倒序 加入数字， 也就是先考虑最大的值， 这样会减小subset的size 降低recursive的次数
+加入if not group: break的判断， 当前group开始是0， 通过这种方式recursive 并没有找到结果， 那么这个group的下一个group开始也是0， 同样的recursive再走一遍 肯定是依旧找不到结果的 所以避免rep...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/547-Friend-Circles/#more">Read More</a>
+          <a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/#more">Read More</a>
         </p>
       
     </div>
@@ -690,7 +587,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
 
   
-    <article id="post-131-Palindrome-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-368-Largest-Divisible-Subset"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -698,7 +595,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/131-Palindrome-Partitioning/">131. Palindrome Partitioning</a>
+      <a class="article-title" href="/2020/10/10/368-Largest-Divisible-Subset/">368. Largest Divisible Subset</a>
     </h1>
   
 
@@ -706,8 +603,8 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/131-Palindrome-Partitioning/" class="article-date">
-	  <time datetime="2020-10-06T00:44:58.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/10/368-Largest-Divisible-Subset/" class="article-date">
+	  <time datetime="2020-10-10T16:34:59.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -720,10 +617,14 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122class Solution(object):    def partition(self, s):        """        :type s: str        :rtype: List[List[str]]        """        res = []        self.dfs(s, [], res)        return res    def dfs(self, s, path, ...
+          DP
+Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较难/复杂， 所以我们要对原数组排序， 这样只用考虑后面大的值
+用DP解决， dp[i] = set() &lt;- b set b是所有i能整除的数即i%b == 0, 那么一个新数m%i == 0,肯定会有m%b == 0
+
+1234567891011class Solution(object):    def largestDivisibleSubset(self, nums):      ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/131-Palindrome-Partitioning/#more">Read More</a>
+          <a href="/2020/10/10/368-Largest-Divisible-Subset/#more">Read More</a>
         </p>
       
     </div>
@@ -742,7 +643,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
 
   
-    <article id="post-148-Sort-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-86-Partition-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -750,7 +651,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/148-Sort-List/">148. Sort List</a>
+      <a class="article-title" href="/2020/10/09/86-Partition-List/">86. Partition List</a>
     </h1>
   
 
@@ -758,8 +659,8 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     
     <div class="article-meta">
       
-	<a href="/2020/10/05/148-Sort-List/" class="article-date">
-	  <time datetime="2020-10-05T22:38:57.000Z" itemprop="datePublished">2020-10-05</time>
+	<a href="/2020/10/09/86-Partition-List/" class="article-date">
+	  <time datetime="2020-10-09T22:52:51.000Z" itemprop="datePublished">2020-10-09</time>
 	</a>
 
       
@@ -772,11 +673,121 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Merge Sort
-12345678910111213141516171819202122232425262728293031323334353637# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(ob...
+          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def partition(self, h...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/05/148-Sort-List/#more">Read More</a>
+          <a href="/2020/10/09/86-Partition-List/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1344-Angle-Between-Hands-of-a-Clock"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/">1344. Angle Between Hands of a Clock</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/" class="article-date">
+	  <time datetime="2020-10-09T22:19:48.000Z" itemprop="datePublished">2020-10-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          MathIt is a math problem
+123456789101112131415class Solution(object):    def angleClock(self, hour, minutes):        """        :type hour: int        :type minutes: int        :rtype: float        """        one_minute_angel = 6        one_hour_a...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-24-Swap-Nodes-in-Pairs"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/09/24-Swap-Nodes-in-Pairs/">24. Swap Nodes in Pairs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/09/24-Swap-Nodes-in-Pairs/" class="article-date">
+	  <time datetime="2020-10-09T21:52:35.000Z" itemprop="datePublished">2020-10-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Recursive
+凡事有重复逻辑操作，并且 一些结果 要由 其他的重复操作的结果来完成， 那么就可以用recursive的方法来解决
+重点：触底条件， 也就是base case
+
+
+
+1234567891011121314151617181920# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/09/24-Swap-Nodes-in-Pairs/#more">Read More</a>
         </p>
       
     </div>
@@ -799,7 +810,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
   </nav>
 
 </section>
