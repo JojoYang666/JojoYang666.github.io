@@ -265,6 +265,272 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-84-Largest-Rectangle-in-Histogram"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/01/84-Largest-Rectangle-in-Histogram/">84. Largest Rectangle in Histogram</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/01/84-Largest-Rectangle-in-Histogram/" class="article-date">
+	  <time datetime="2020-10-01T19:23:28.000Z" itemprop="datePublished">2020-10-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+12345678910111213141516class Solution(object):    def largestRectangleArea(self, heights):        """        :type heights: List[int]        :rtype: int        """        stack, res = [], 0        heights = [0] + heights + [0]        for i, hei...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/01/84-Largest-Rectangle-in-Histogram/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-856-Score-of-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/01/856-Score-of-Parentheses/">856. Score of Parentheses</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/01/856-Score-of-Parentheses/" class="article-date">
+	  <time datetime="2020-10-01T17:45:45.000Z" itemprop="datePublished">2020-10-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+123456789101112131415class Solution(object):    def scoreOfParentheses(self, S):        """        :type S: str        :rtype: int        """        stack, cur = [], 0                for c in S:            if c == '(':                st...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/01/856-Score-of-Parentheses/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-907-Sum-of-Subarray-Minimums"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/30/907-Sum-of-Subarray-Minimums/">907. Sum of Subarray Minimums</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/30/907-Sum-of-Subarray-Minimums/" class="article-date">
+	  <time datetime="2020-10-01T04:41:04.000Z" itemprop="datePublished">2020-09-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          注意Input的特点， input都是正数
+Solution 112345678910111213141516171819202122232425262728class Solution(object):    def sumSubarrayMins(self, A):        """        :type A: List[int]        :rtype: int        """        n, mod = len(A), 10**9+7        left,...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/30/907-Sum-of-Subarray-Minimums/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-901-Online-Stock-Span"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/30/901-Online-Stock-Span/">901. Online Stock Span</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/30/901-Online-Stock-Span/" class="article-date">
+	  <time datetime="2020-10-01T02:51:12.000Z" itemprop="datePublished">2020-09-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Write a class StockSpanner which collects daily price quotes for some stock, and returns the span of that stock’s price for the current day.
+The span of the stock’s price today is defined as the maximum number of consecutive days (starting from to...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/30/901-Online-Stock-Span/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-503-Next-Greater-Element-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/29/503-Next-Greater-Element-II/">503. Next Greater Element II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/29/503-Next-Greater-Element-II/" class="article-date">
+	  <time datetime="2020-09-30T04:26:50.000Z" itemprop="datePublished">2020-09-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213class Solution(object):    def nextGreaterElements(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        stack, res = [], [-1]*len(nums)                for i in range(len(nums))*2:        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/29/503-Next-Greater-Element-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-496-Next-Greater-Element-I"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -514,276 +780,6 @@
         </p>
         <p class="article-more-link">
           <a href="/2020/09/29/930-Binary-Subarrays-With-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1004-Max-Consecutive-Ones-III"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/28/1004-Max-Consecutive-Ones-III/">1004. Max Consecutive Ones III</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/28/1004-Max-Consecutive-Ones-III/" class="article-date">
-	  <time datetime="2020-09-29T05:58:34.000Z" itemprop="datePublished">2020-09-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617class Solution(object):    def longestOnes(self, A, K):        """        :type A: List[int]        :type K: int        :rtype: int        """        left = 0        for right, num in enumerate(A):            K -= 1 - num ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/28/1004-Max-Consecutive-Ones-III/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1234-Replace-the-Substring-for-Balanced-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/">1234. Replace the Substring for Balanced String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/" class="article-date">
-	  <time datetime="2020-09-29T04:59:10.000Z" itemprop="datePublished">2020-09-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-首先输入保证了是4的倍数
-我们更加的关注滑动窗口外的counter, 因为只有滑动窗口外的字母count &lt;= n/4时，我们对滑动窗口内部的字符更改， 才能满足条件
-i &lt; n,保证其不要越界， 如果i &gt; j只有一个case 就是， counter[c] == n/4, 同时保证了 j == i + 1, 然后退出循环因为all(counter[c] &lt;= n/4 for c in &quot;QWER&quot;)条件不再满足
-
-12345678910111...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1248-Count-Number-of-Nice-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/">1248. Count Number of Nice Subarrays</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/" class="article-date">
-	  <time datetime="2020-09-29T00:15:18.000Z" itemprop="datePublished">2020-09-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 112345678910111213141516171819class Solution(object):    def numberOfSubarrays(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: int        """        return self.atMost(nums, k) - self.atMost(nums...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-992-Subarrays-with-K-Different-Integers"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/28/992-Subarrays-with-K-Different-Integers/">992. Subarrays with K Different Integers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/28/992-Subarrays-with-K-Different-Integers/" class="article-date">
-	  <time datetime="2020-09-28T22:51:06.000Z" itemprop="datePublished">2020-09-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1Explanition
-
-Write/copy a helper function of sliding window, to get the number of subarrays with at most K distinct elements.
-exactly(K) = atMost(K) - atMost(K-1)
-
-Way to understande res += j - i + 1    * you contract the range by increm...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/28/992-Subarrays-with-K-Different-Integers/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1358-Number-of-Substrings-Containing-All-Three-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/">1358. Number of Substrings Containing All Three Characters</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/" class="article-date">
-	  <time datetime="2020-09-28T20:06:38.000Z" itemprop="datePublished">2020-09-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 11234567891011121314151617class Solution(object):    def numberOfSubstrings(self, s):        """        :type s: str        :rtype: int        """        res = i = 0        count = &#123;c: 0 for c in 'abc'&#125;                for j in x...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/#more">Read More</a>
         </p>
       
     </div>
