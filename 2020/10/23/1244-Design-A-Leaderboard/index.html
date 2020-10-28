@@ -9,13 +9,15 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="巧用counter 12345678910111213141516171819202122232425262728293031323334class Leaderboard(object):    def __init__(self):        self.A &#x3D; collections.Counter()    def addScore(self, playerId, score):">
+<meta property="og:type" content="article">
 <meta property="og:title" content="1244. Design A Leaderboard">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/10/23/1244-Design-A-Leaderboard/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="巧用counter 12345678910111213141516171819202122232425262728293031323334class Leaderboard(object):    def __init__(self):        self.A &#x3D; collections.Counter()    def addScore(self, playerId, score):">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-24T03:23:02.000Z">
-<meta property="article:modified_time" content="2020-10-24T03:23:02.290Z">
+<meta property="article:modified_time" content="2020-10-27T15:24:32.175Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -190,6 +192,8 @@
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -202,7 +206,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>巧用counter</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Leaderboard</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.A = collections.Counter()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addScore</span><span class="params">(self, playerId, score)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type playerId: int</span></span><br><span class="line"><span class="string">        :type score: int</span></span><br><span class="line"><span class="string">        :rtype: None</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.A[playerId] += score</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">top</span><span class="params">(self, K)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">return</span> sum(v <span class="keyword">for</span> i, v <span class="keyword">in</span> self.A.most_common(K))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reset</span><span class="params">(self, playerId)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type playerId: int</span></span><br><span class="line"><span class="string">        :rtype: None</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.A[playerId] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your Leaderboard object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = Leaderboard()</span></span><br><span class="line"><span class="comment"># obj.addScore(playerId,score)</span></span><br><span class="line"><span class="comment"># param_2 = obj.top(K)</span></span><br><span class="line"><span class="comment"># obj.reset(playerId)</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">

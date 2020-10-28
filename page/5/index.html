@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-1041-Robot-Bounded-In-Circle"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-516-Longest-Palindromic-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/19/1041-Robot-Bounded-In-Circle/">1041. Robot Bounded In Circle</a>
+      <a class="article-title" href="/2020/10/23/516-Longest-Palindromic-Subsequence/">516. Longest Palindromic Subsequence</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/19/1041-Robot-Bounded-In-Circle/" class="article-date">
-	  <time datetime="2020-10-20T03:23:33.000Z" itemprop="datePublished">2020-10-19</time>
+	<a href="/2020/10/23/516-Longest-Palindromic-Subsequence/" class="article-date">
+	  <time datetime="2020-10-23T21:51:33.000Z" itemprop="datePublished">2020-10-23</time>
 	</a>
 
       
@@ -295,11 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-12345678910111213141516171819class Solution(object):    def isRobotBounded(self, instructions):        """        :type instructions: str        :rtype: bool        """#         north, west, sorth, east        x = y = 0        dirctions = [[0, 1]...
+          DP重点： 这是DP的表达式， dp的表达式不是i-1, j-1dp[i][j] = dp[i+1][j-1] + 2time: O(n) space: O(n)
+123456789101112131415161718class Solution(object):    def longestPalindromeSubseq(self, s):        """        :type s: str        :rtype: int        """             ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/19/1041-Robot-Bounded-In-Circle/#more">Read More</a>
+          <a href="/2020/10/23/516-Longest-Palindromic-Subsequence/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +318,7 @@
 
 
   
-    <article id="post-371-Sum-of-Two-Integers"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-421-Maximum-XOR-of-Two-Numbers-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/19/371-Sum-of-Two-Integers/">371. Sum of Two Integers</a>
+      <a class="article-title" href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/">421. Maximum XOR of Two Numbers in an Array</a>
     </h1>
   
 
@@ -334,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/19/371-Sum-of-Two-Integers/" class="article-date">
-	  <time datetime="2020-10-19T23:06:44.000Z" itemprop="datePublished">2020-10-19</time>
+	<a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/" class="article-date">
+	  <time datetime="2020-10-23T18:42:44.000Z" itemprop="datePublished">2020-10-23</time>
 	</a>
 
       
@@ -349,20 +349,11 @@
       
         <p class="article-excerpt-content">
           
-例子 759+674
-如果不考虑进位，可以得到 323
-如果只考虑进位，可以得到 1110
-把上面两个数字假期 323+1110=1433 就是最终结果了
-
-
-如果得到上面的第一第二种情况，在二进制下来看，不考虑进位的加，0+0=0，0+1=1, 1+0=1，1+1=0，这就是异或的运算规则
-如果只考虑进位的加 0+0=0, 0+1=0, 1+0=0, 1+1=1，而这其实这就是’与’的运算，
-第三步在将两者相加时，再递归调用这个算法，终止条件是当进位为0时
-
-Python has no...
+这个题目的思路的大前提是: a ^ b = c  &lt;===&gt;  a ^ c = b
+讲解.123456789101112131415class Solution(object):    def findMaximumXOR(self, nums):        """        :type nums: List[int]        :rtype: int        """        max_xor = 0                for i in ra...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/19/371-Sum-of-Two-Integers/#more">Read More</a>
+          <a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -381,7 +372,7 @@ Python has no...
 
 
   
-    <article id="post-Bit-Manipulation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Three-way-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -389,7 +380,7 @@ Python has no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/17/Bit-Manipulation/">Bit Manipulation</a>
+      <a class="article-title" href="/2020/10/22/Three-way-Partitioning/">Three-way Partitioning</a>
     </h1>
   
 
@@ -397,8 +388,274 @@ Python has no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/17/Bit-Manipulation/" class="article-date">
-	  <time datetime="2020-10-17T15:54:05.000Z" itemprop="datePublished">2020-10-17</time>
+	<a href="/2020/10/22/Three-way-Partitioning/" class="article-date">
+	  <time datetime="2020-10-23T03:51:22.000Z" itemprop="datePublished">2020-10-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          i, j, k –&gt; i &lt;= j &lt;= k
+
+Entries from 0 up to (but not including) i are values less than mid –&gt; [0, i) &lt; mid
+Entries from i up to (but not including) j are values equal to mid –&gt; 【i, j) == mid
+Entries from j up to (but not inclusi...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/22/Three-way-Partitioning/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-215-Kth-Largest-Element-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/">215. Kth Largest Element in an Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/" class="article-date">
+	  <time datetime="2020-10-22T20:00:03.000Z" itemprop="datePublished">2020-10-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number&#125; */var findKthLargest = function(nums, k) &#123;    let lef...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-324-Wiggle-Sort-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/21/324-Wiggle-Sort-II/">324. Wiggle Sort II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/21/324-Wiggle-Sort-II/" class="article-date">
+	  <time datetime="2020-10-22T05:52:05.000Z" itemprop="datePublished">2020-10-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          time: nlogn space: n
+1234567891011121314151617181920class Solution(object):    def wiggleSort(self, nums):        """        :type nums: List[int]        :rtype: None Do not return anything, modify nums in-place instead.        """        tmp = so...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/21/324-Wiggle-Sort-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-435-Non-overlapping-Intervals"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/21/435-Non-overlapping-Intervals/">435. Non-overlapping Intervals</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/21/435-Non-overlapping-Intervals/" class="article-date">
+	  <time datetime="2020-10-22T05:20:03.000Z" itemprop="datePublished">2020-10-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Using Greedy Approach based on end pointssort based on end time not start time
+1234567891011121314class Solution(object):    def eraseOverlapIntervals(self, intervals):        """        :type intervals: List[List[int]]        :rtype: int        "...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/21/435-Non-overlapping-Intervals/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1472-Design-Browser-History"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/21/1472-Design-Browser-History/">1472. Design Browser History</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/21/1472-Design-Browser-History/" class="article-date">
+	  <time datetime="2020-10-22T03:00:29.000Z" itemprop="datePublished">2020-10-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354class BrowserHistory(object):    def __init__(self, homepage):        """        :type homepage: str        """        self.arr = [homepage]        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/21/1472-Design-Browser-History/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-GCD"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/20/GCD/">GCD</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/20/GCD/" class="article-date">
+	  <time datetime="2020-10-20T19:27:06.000Z" itemprop="datePublished">2020-10-20</time>
 	</a>
 
       
@@ -412,20 +669,12 @@ Python has no...
       
         <p class="article-excerpt-content">
           
+12def gcd(self, A, B):        return A if B == 0 else self.gcd(B, A%B)
 
 
-优先级
-位运算 &lt; 算术运算
-按位与、按位或及异或低于比较运算符
-
-~ 把  的补码中的 0 和 1 全部取反（0 变为 1，1 变为 0）。有符号整数的符号位在 ~ 运算中同样会取反。
-一些常见数字的二进制
--1 —-&gt; 11111111 11111111 11111111 11111111
-
-判断一个数是不是 2 的非负整数次幂bool isPowerOfTwo(int n) { return n &gt; 0 &amp;&amp; (n &amp; (n - 1))...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/17/Bit-Manipulation/#more">Read More</a>
+          <a href="/2020/10/20/GCD/#more">Read More</a>
         </p>
       
     </div>
@@ -444,7 +693,7 @@ Python has no...
 
 
   
-    <article id="post-137-Single-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1223-Dice-Roll-Simulation"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -452,7 +701,7 @@ Python has no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/137-Single-Number-II/">137. Single Number II</a>
+      <a class="article-title" href="/2020/10/20/1223-Dice-Roll-Simulation/">1223. Dice Roll Simulation</a>
     </h1>
   
 
@@ -460,230 +709,8 @@ Python has no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/16/137-Single-Number-II/" class="article-date">
-	  <time datetime="2020-10-17T02:26:04.000Z" itemprop="datePublished">2020-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-~x&amp;x = 0
-
-123456789101112class Solution(object):    def singleNumber(self, nums):        """        :type nums: List[int]        :rtype: int        """        seen_once, seen_twice = 0, 0                for num in nums:            seen_once ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/16/137-Single-Number-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-356-Line-Reflection"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/356-Line-Reflection/">356. Line Reflection</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/16/356-Line-Reflection/" class="article-date">
-	  <time datetime="2020-10-16T17:13:25.000Z" itemprop="datePublished">2020-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-找到所有点的横坐标的最大值和最小值, 那么二者的平均值就是中间直线的横坐标
-我们遍历每个点，如果都能找到直线对称的另一个点, 则返回true，反之返回false
-
-12345678910111213141516171819class Solution(object):    def isReflected(self, points):        """        :type points: List[List[int]]        :rtype: bool        ""...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/16/356-Line-Reflection/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-539-Minimum-Time-Difference"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/539-Minimum-Time-Difference/">539. Minimum Time Difference</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/16/539-Minimum-Time-Difference/" class="article-date">
-	  <time datetime="2020-10-16T16:43:53.000Z" itemprop="datePublished">2020-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          corner case: 最小的也可以和最大的diff 因为可能是来自第二天
-123456789class Solution(object):    def findMinDifference(self, timePoints):        """        :type timePoints: List[str]        :rtype: int        """        minutes = sorted(int(time[:2]) * 60 + int(time[3...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/16/539-Minimum-Time-Difference/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-969-Pancake-Sorting"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/969-Pancake-Sorting/">969. Pancake Sorting</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/16/969-Pancake-Sorting/" class="article-date">
-	  <time datetime="2020-10-16T15:17:31.000Z" itemprop="datePublished">2020-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-注意题目的输入特点
-有没有什么限制
-
-Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the x will be at A[0]Reverse x numbers, so that x will be at A[x - 1].Repeat this process N times.
-12345678910111213141516class Solution(object):    d...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/16/969-Pancake-Sorting/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1314-Matrix-Block-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/15/1314-Matrix-Block-Sum/">1314. Matrix Block Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/15/1314-Matrix-Block-Sum/" class="article-date">
-	  <time datetime="2020-10-16T03:37:22.000Z" itemprop="datePublished">2020-10-15</time>
+	<a href="/2020/10/20/1223-Dice-Roll-Simulation/" class="article-date">
+	  <time datetime="2020-10-20T18:58:10.000Z" itemprop="datePublished">2020-10-20</time>
 	</a>
 
       
@@ -699,11 +726,10 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
           
 
 
-重点我们左上角的r1,c1， 其实是 i - k - 1, j - k - 1(in mat array), 因为我们的和里面要有 i - k, j - k
-123456789101112131415161718192021class Solution(object):    def matrixBlockSum(self, mat, K):        """        :type mat: List[List[int]]        :type K: int       ...
+1234567891011121314151617class Solution(object):    def dieSimulator(self, n, rollMax):        """        :type n: int        :type rollMax: List[int]        :rtype: int        """        dp = [[1 if i == 1 else 0 for j in range(6)] for i in ra...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/15/1314-Matrix-Block-Sum/#more">Read More</a>
+          <a href="/2020/10/20/1223-Dice-Roll-Simulation/#more">Read More</a>
         </p>
       
     </div>
@@ -722,7 +748,7 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
 
 
   
-    <article id="post-range-prefix-sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-256-Paint-House"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -730,7 +756,7 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/15/range-prefix-sum/">range/prefix sum</a>
+      <a class="article-title" href="/2020/10/20/256-Paint-House/">256. Paint House</a>
     </h1>
   
 
@@ -738,66 +764,8 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
     
     <div class="article-meta">
       
-	<a href="/2020/10/15/range-prefix-sum/" class="article-date">
-	  <time datetime="2020-10-16T03:32:56.000Z" itemprop="datePublished">2020-10-15</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-Range Sum Query 2D - Immutable
-Range Sum Query - Mutable
-Range Sum Query 2D - Mutable: Premium
-Matrix Block Sum
-
-
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/15/range-prefix-sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-983-Minimum-Cost-For-Tickets"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/15/983-Minimum-Cost-For-Tickets/">983. Minimum Cost For Tickets</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/15/983-Minimum-Cost-For-Tickets/" class="article-date">
-	  <time datetime="2020-10-16T03:17:13.000Z" itemprop="datePublished">2020-10-15</time>
+	<a href="/2020/10/20/256-Paint-House/" class="article-date">
+	  <time datetime="2020-10-20T18:26:46.000Z" itemprop="datePublished">2020-10-20</time>
 	</a>
 
       
@@ -810,10 +778,10 @@ Matrix Block Sum
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def mincostTickets(self, days, costs):        """        :type days: List[int]        :type costs: List[int]        :rtype: int        """        dp = [0 for i in range(days[-1] + 1)]        for i ...
+          12345678910111213class Solution(object):    def minCost(self, costs):        """        :type costs: List[List[int]]        :rtype: int        """        if not costs: return 0        for i in range(1, len(costs)):            costs[i][0] += min(co...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/15/983-Minimum-Cost-For-Tickets/#more">Read More</a>
+          <a href="/2020/10/20/256-Paint-House/#more">Read More</a>
         </p>
       
     </div>
@@ -836,7 +804,7 @@ Matrix Block Sum
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
   </nav>
 
 </section>
