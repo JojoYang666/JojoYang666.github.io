@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-752-Open-the-Lock"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1329-Sort-the-Matrix-Diagonally"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/752-Open-the-Lock/">752. Open the Lock</a>
+      <a class="article-title" href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/">1329. Sort the Matrix Diagonally</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/26/752-Open-the-Lock/" class="article-date">
-	  <time datetime="2020-10-26T23:54:49.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/" class="article-date">
+	  <time datetime="2020-10-27T20:41:55.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -295,10 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829class Solution(object):    def openLock(self, deadends, target):        """        :type deadends: List[str]        :type target: str        :rtype: int        """        def neighbors(node):       ...
+          123456789101112131415161718192021class Solution(object):    def diagonalSort(self, mat):        """        :type mat: List[List[int]]        :rtype: List[List[int]]        """        n, m = len(mat), len(mat[0])        res = []        dic = collec...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/752-Open-the-Lock/#more">Read More</a>
+          <a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +317,7 @@
 
 
   
-    <article id="post-134-Gas-Station"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-General"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/134-Gas-Station/">134. Gas Station</a>
+      <a class="article-title" href="/2020/10/27/General/">General</a>
     </h1>
   
 
@@ -333,69 +333,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/26/134-Gas-Station/" class="article-date">
-	  <time datetime="2020-10-26T22:12:28.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/27/General/" class="article-date">
+	  <time datetime="2020-10-27T20:34:11.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-实际上是用greedy的方法
-一旦不满足就更新cur_index
-最终的判定就是你的汽油是否能支持你走完全程
-
-123456789101112131415161718192021class Solution(object):    def canCompleteCircuit(self, gas, cost):        """        :type gas: List[int]        :type cost: List[int]        :rtype: int   ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/134-Gas-Station/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-365-Water-and-Jug-Problem"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/365-Water-and-Jug-Problem/">365. Water and Jug Problem</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/365-Water-and-Jug-Problem/" class="article-date">
-	  <time datetime="2020-10-26T21:25:17.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
       
       
@@ -405,16 +348,13 @@
       
         <p class="article-excerpt-content">
           
-可以用一个公式来表达： z = m * x + n * y m，n为舀水和倒水的次数，正数表示往里舀水，负数表示往外倒水
-问题就变成了对于任意给定的x,y,z，存不存在m和n使得上面的等式成立
-裴蜀定理，ax + by = d的解为 d = gcd(x, y)
-只要z % d == 0，上面的等式就有解
-裴蜀定理:ax+by=m有整数解时当且仅当m是a及b的最大公约数d的倍数。裴蜀等式有解时必然有无穷多个整数解，每组解x、y都稱為裴蜀數
+同意对角线上的元素特点： i-j相同
+对于str转化int/str表示数字的问题： corner case 考虑preceding is zero或者说这个数字本来就是0的情况（many 0 in preceding）
 
-1234567891011class Solut...
+
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/365-Water-and-Jug-Problem/#more">Read More</a>
+          <a href="/2020/10/27/General/#more">Read More</a>
         </p>
       
     </div>
@@ -433,7 +373,7 @@
 
 
   
-    <article id="post-1091-Shortest-Path-in-Binary-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-366-Find-Leaves-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -441,7 +381,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1091-Shortest-Path-in-Binary-Matrix/">1091. Shortest Path in Binary Matrix </a>
+      <a class="article-title" href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/">366. Find Leaves of Binary Tree </a>
     </h1>
   
 
@@ -449,8 +389,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/26/1091-Shortest-Path-in-Binary-Matrix/" class="article-date">
-	  <time datetime="2020-10-26T19:47:13.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/" class="article-date">
+	  <time datetime="2020-10-27T20:11:04.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -463,10 +403,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def shortestPathBinaryMatrix(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        n = len(grid)                if grid[0][0] or grid[n-1][n-1]: retu...
+          123456789101112131415161718192021222324252627# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass So...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/1091-Shortest-Path-in-Binary-Matrix/#more">Read More</a>
+          <a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -485,7 +425,7 @@
 
 
   
-    <article id="post-189-Rotate-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-797-All-Paths-From-Source-to-Target"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -493,7 +433,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/25/189-Rotate-Array/">189. Rotate Array</a>
+      <a class="article-title" href="/2020/10/27/797-All-Paths-From-Source-to-Target/">797. All Paths From Source to Target </a>
     </h1>
   
 
@@ -501,8 +441,60 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/25/189-Rotate-Array/" class="article-date">
-	  <time datetime="2020-10-25T22:38:54.000Z" itemprop="datePublished">2020-10-25</time>
+	<a href="/2020/10/27/797-All-Paths-From-Source-to-Target/" class="article-date">
+	  <time datetime="2020-10-27T19:48:30.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223class Solution(object):    def allPathsSourceTarget(self, graph):        """        :type graph: List[List[int]]        :rtype: List[List[int]]        """        target = len(graph)-1        res = []           ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/797-All-Paths-From-Source-to-Target/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-373-Find-K-Pairs-with-Smallest-Sums"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/">373. Find K Pairs with Smallest Sums</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/" class="article-date">
+	  <time datetime="2020-10-27T18:16:16.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -518,10 +510,10 @@
           
 
 
-123456789101112131415161718192021class Solution(object):    def rotate(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: None Do not return anything, modify nums in-place instead.        """        n = l...
+1234567891011121314151617181920212223class Solution(object):    def kSmallestPairs(self, nums1, nums2, k):        """        :type nums1: List[int]        :type nums2: List[int]        :type k: int        :rtype: List[List[int]]        """     ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/25/189-Rotate-Array/#more">Read More</a>
+          <a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/#more">Read More</a>
         </p>
       
     </div>
@@ -540,7 +532,7 @@
 
 
   
-    <article id="post-592-Fraction-Addition-and-Subtraction"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1353-Maximum-Number-of-Events-That-Can-Be-Attended"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -548,7 +540,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/25/592-Fraction-Addition-and-Subtraction/">592. Fraction Addition and Subtraction</a>
+      <a class="article-title" href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/">1353. Maximum Number of Events That Can Be Attended </a>
     </h1>
   
 
@@ -556,8 +548,60 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/25/592-Fraction-Addition-and-Subtraction/" class="article-date">
-	  <time datetime="2020-10-25T21:15:44.000Z" itemprop="datePublished">2020-10-25</time>
+	<a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/" class="article-date">
+	  <time datetime="2020-10-27T16:10:27.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324class Solution(object):    def maxEvents(self, events):        """        :type events: List[List[int]]        :rtype: int        """        events.sort(reverse=1)        h = []                res = d = 0    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-813-Largest-Sum-of-Averages"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/813-Largest-Sum-of-Averages/">813. Largest Sum of Averages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/813-Largest-Sum-of-Averages/" class="article-date">
+	  <time datetime="2020-10-27T14:08:14.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -571,13 +615,17 @@
       
         <p class="article-excerpt-content">
           
-用regular expression 来提取 分子 分母
-然后用数学来进行分数运算
-前面加上一个dummy 分数： 0/1
-结果 用/gcd123456789101112131415161718192021222324class Solution(object):    def fractionAddition(self, expression):        """        :type expression: str        :rtype: str        """...
+dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
+[i, n-1]范围内的子数组分成k组，那么suppose我们已经知道了任意范围内分成k-1组的最大分数
+要求状态k，一定要先求出所有的状态k-1
+在范围[i, n-1]多分出一组，实际上就是将其分成两部分
+一部分是一组，另一部分是k-1组
+就用一个变量j，遍历范围(i, n-1)中的每一个位置
+第一部分[i, j)，由于是一组，那么直接求出平均值即可
+另一部分由于是k-1组，由于我们已经知道了所有k-1的情况，可以直...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/25/592-Fraction-Addition-and-Subtraction/#more">Read More</a>
+          <a href="/2020/10/27/813-Largest-Sum-of-Averages/#more">Read More</a>
         </p>
       
     </div>
@@ -596,7 +644,7 @@
 
 
   
-    <article id="post-545-Boundary-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-959-Regions-Cut-By-Slashes"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -604,7 +652,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/25/545-Boundary-of-Binary-Tree/">545. Boundary of Binary Tree</a>
+      <a class="article-title" href="/2020/10/27/959-Regions-Cut-By-Slashes/">959. Regions Cut By Slashes</a>
     </h1>
   
 
@@ -612,112 +660,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/25/545-Boundary-of-Binary-Tree/" class="article-date">
-	  <time datetime="2020-10-25T19:50:40.000Z" itemprop="datePublished">2020-10-25</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = right...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/25/545-Boundary-of-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1328-Break-a-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/25/1328-Break-a-Palindrome/">1328. Break a Palindrome</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/25/1328-Break-a-Palindrome/" class="article-date">
-	  <time datetime="2020-10-25T19:35:58.000Z" itemprop="datePublished">2020-10-25</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011class Solution(object):    def breakPalindrome(self, palindrome):        """        :type palindrome: str        :rtype: str        """        for i in range(len(palindrome)/2):            if palindrome[i] != 'a':                retur...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/25/1328-Break-a-Palindrome/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-688-Knight-Probability-in-Chessboard"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/25/688-Knight-Probability-in-Chessboard/">688. Knight Probability in Chessboard</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/25/688-Knight-Probability-in-Chessboard/" class="article-date">
-	  <time datetime="2020-10-25T19:20:31.000Z" itemprop="datePublished">2020-10-25</time>
+	<a href="/2020/10/27/959-Regions-Cut-By-Slashes/" class="article-date">
+	  <time datetime="2020-10-27T13:13:30.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -731,10 +675,10 @@
       
         <p class="article-excerpt-content">
           
-DP solution:1234567891011121314151617181920212223class Solution(object):    def knightProbability(self, N, K, r, c):        """        :type N: int        :type K: int        :type r: int        :type c: int        :rtype: float        """       ...
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Solution(object):    def regionsBySlashes(self, grid):        """        :type grid: List[str]        :rtype: int        """        N = len(grid)        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/25/688-Knight-Probability-in-Chessboard/#more">Read More</a>
+          <a href="/2020/10/27/959-Regions-Cut-By-Slashes/#more">Read More</a>
         </p>
       
     </div>
@@ -753,7 +697,7 @@ DP solution:1234567891011121314151617181920212223class Solution(object):    def 
 
 
   
-    <article id="post-1424-Diagonal-Traverse-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-116-Populating-Next-Right-Pointers-in-Each-Node"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -761,7 +705,7 @@ DP solution:1234567891011121314151617181920212223class Solution(object):    def 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/24/1424-Diagonal-Traverse-II/">1424. Diagonal Traverse II</a>
+      <a class="article-title" href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/">116. Populating Next Right Pointers in Each Node</a>
     </h1>
   
 
@@ -769,8 +713,8 @@ DP solution:1234567891011121314151617181920212223class Solution(object):    def 
     
     <div class="article-meta">
       
-	<a href="/2020/10/24/1424-Diagonal-Traverse-II/" class="article-date">
-	  <time datetime="2020-10-25T06:40:45.000Z" itemprop="datePublished">2020-10-24</time>
+	<a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/" class="article-date">
+	  <time datetime="2020-10-27T04:57:21.000Z" itemprop="datePublished">2020-10-26</time>
 	</a>
 
       
@@ -783,13 +727,64 @@ DP solution:1234567891011121314151617181920212223class Solution(object):    def 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-同一对角线上面的元素： 横坐标和纵坐标之和 相同
-不同的对角线上 不同的和不同
-但是因为坐标遍历的方向， 我们要reverse 来得到结果1234567891011121314151617class Solution(object):    def findDiagonalOrder(self, nums):        """        :type nums: List[List[int]]        :rtype: List[int]        """        r...
+          BFS1234567891011121314151617181920212223242526272829303132333435"""# Definition for a Node.class Node(object):    def __init__(self, val=0, left=None, right=None, next=None):        self.val = val        self.left = left        self.right = right ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/24/1424-Diagonal-Traverse-II/#more">Read More</a>
+          <a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1254-Number-of-Closed-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/26/1254-Number-of-Closed-Islands/">1254. Number of Closed Islands</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/26/1254-Number-of-Closed-Islands/" class="article-date">
+	  <time datetime="2020-10-27T04:46:56.000Z" itemprop="datePublished">2020-10-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          本质上就是找到连续的island
+然后排除从边界开始的island
+123456789101112131415161718192021222324252627282930class Solution(object):    def closedIsland(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        if not grid or not gri...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/26/1254-Number-of-Closed-Islands/#more">Read More</a>
         </p>
       
     </div>
@@ -812,7 +807,7 @@ DP solution:1234567891011121314151617181920212223class Solution(object):    def 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
   </nav>
 
 </section>
