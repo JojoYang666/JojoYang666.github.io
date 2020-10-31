@@ -265,6 +265,117 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Difference-Among-Unicode-ASCII-and-UTF-8"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/">Difference Among Unicode, ASCII, and UTF-8</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/" class="article-date">
+	  <time datetime="2020-08-19T17:24:06.000Z" itemprop="datePublished">2020-08-19</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          ASCII
+ASCII码使用指定的7位或8位二进制数组合来表示128/256种可能的字符
+ASCII是单字节编码（1 byte = 8 bits）， 无法用来表示中文（中文编码至少需要2个字节）
+
+Unicode
+ASCII编码 是1个字节， 而Unicode编码通常是2个字节
+
+UTF8
+把Unicode编码转化为可变长编码的UTF-8编码
+UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， 常用的英文字母被编码成一个字节， 汉字通常是3个字节。 如果要传输的文本包...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-271-Encode-and-Decode-Strings"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/18/271-Encode-and-Decode-Strings/">271. Encode and Decode Strings</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/18/271-Encode-and-Decode-Strings/" class="article-date">
+	  <time datetime="2020-08-19T05:10:30.000Z" itemprop="datePublished">2020-08-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1123456789101112131415161718192021222324252627class Codec:    def encode(self, strs):        """Encodes a list of strings to a single string.                :type strs: List[str]        :rtype: str        """        if len(strs) == 0:    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/18/271-Encode-and-Decode-Strings/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-298-Binary-Tree-Longest-Consecutive-Sequence"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -689,114 +800,6 @@ code 1234567891011const find = (nums, target) =&gt; &#123;    let left = 0, righ
         </p>
         <p class="article-more-link">
           <a href="/2020/08/10/Binary-Search/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1095-Find-in-Mountain-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/10/1095-Find-in-Mountain-Array/">1095. Find in Mountain Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/10/1095-Find-in-Mountain-Array/" class="article-date">
-	  <time datetime="2020-08-11T03:28:18.000Z" itemprop="datePublished">2020-08-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          SolutionBinary Search 的判定条件， 不一定还可以和mid附近的值比较
-
-Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455# """# This is MountainArray's API interface.# You should not implement it, or speculate about ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/10/1095-Find-in-Mountain-Array/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-681-Next-Closest-Time"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/09/681-Next-Closest-Time/">681. Next Closest Time</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/09/681-Next-Closest-Time/" class="article-date">
-	  <time datetime="2020-08-10T05:05:15.000Z" itemprop="datePublished">2020-08-09</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1
-时间模拟， 以当下的0为时间起点， 递增模拟
-Code1234567891011121314class Solution(object):    def nextClosestTime(self, time):        """        :type time: str        :rtype: str        """        cur = 60 * int(time[:2]) + int(time[3:])        allowed = &...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/09/681-Next-Closest-Time/#more">Read More</a>
         </p>
       
     </div>

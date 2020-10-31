@@ -265,6 +265,113 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-542-01-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/542-01-Matrix/">542. 01 Matrix</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/542-01-Matrix/" class="article-date">
+	  <time datetime="2020-10-27T22:49:32.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+当前的值可能是上方， 左方（从左上角遍历）， 下方， 右方（从右下角）里面选取最小的值+1  —&gt; 所以要遍历两次
+range(len(matrix)-1, -1, -1) 最后一个step -1不能少， 要不然不会遍历， 因为default是112345678910111213141516171819202122232425262728class Solution(object):    def updateMatrix(self, matrix):        """    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/542-01-Matrix/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1381-Design-a-Stack-With-Increment-Operation"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/">1381. Design a Stack With Increment Operation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/" class="article-date">
+	  <time datetime="2020-10-27T22:36:32.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Lazy IncrementLazy is a wayinc[i] means for all elements stack[0] ~ stack[i],we should plus inc[i] when popped from the stack.Then inc[i-1]+=inc[i],so that we can accumulate the increment inc[i]for the bottom elements and the following pops.
+12345...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1329-Sort-the-Matrix-Diagonally"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -679,112 +786,6 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         </p>
         <p class="article-more-link">
           <a href="/2020/10/27/959-Regions-Cut-By-Slashes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-116-Populating-Next-Right-Pointers-in-Each-Node"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/">116. Populating Next Right Pointers in Each Node</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/" class="article-date">
-	  <time datetime="2020-10-27T04:57:21.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          BFS1234567891011121314151617181920212223242526272829303132333435"""# Definition for a Node.class Node(object):    def __init__(self, val=0, left=None, right=None, next=None):        self.val = val        self.left = left        self.right = right ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1254-Number-of-Closed-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1254-Number-of-Closed-Islands/">1254. Number of Closed Islands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1254-Number-of-Closed-Islands/" class="article-date">
-	  <time datetime="2020-10-27T04:46:56.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          本质上就是找到连续的island
-然后排除从边界开始的island
-123456789101112131415161718192021222324252627282930class Solution(object):    def closedIsland(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        if not grid or not gri...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1254-Number-of-Closed-Islands/#more">Read More</a>
         </p>
       
     </div>

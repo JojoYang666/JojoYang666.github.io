@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="12345678910111213141516class Solution(object):    def findSubstringInWraproundString(self, p):        &quot;&quot;&quot;        :type p: str        :rtype: int        &quot;&quot;&quot;        res &#x3D; &amp;#123;i: 1 for i in p&amp;#125;">
+  <meta name="description" content="res表示以i结尾的最长substring -&gt; length is a, then final res_val +&#x3D; a 12345678910111213141516class Solution(object):    def findSubstringInWraproundString(self, p):        &quot;&quot;&quot;        :type p: str        :r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="467. Unique Substrings in Wraparound String">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/10/31/467-Unique-Substrings-in-Wraparound-String/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="12345678910111213141516class Solution(object):    def findSubstringInWraproundString(self, p):        &quot;&quot;&quot;        :type p: str        :rtype: int        &quot;&quot;&quot;        res &#x3D; &amp;#123;i: 1 for i in p&amp;#125;">
+<meta property="og:description" content="res表示以i结尾的最长substring -&gt; length is a, then final res_val +&#x3D; a 12345678910111213141516class Solution(object):    def findSubstringInWraproundString(self, p):        &quot;&quot;&quot;        :type p: str        :r">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-31T21:29:08.000Z">
-<meta property="article:modified_time" content="2020-10-31T21:29:28.861Z">
+<meta property="article:modified_time" content="2020-10-31T21:36:23.834Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -206,7 +206,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findSubstringInWraproundString</span><span class="params">(self, p)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type p: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = &#123;i: <span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> p&#125;</span><br><span class="line">        length = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i, c <span class="keyword">in</span> enumerate(p):</span><br><span class="line">            <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> (ord(c) - ord(p[i<span class="number">-1</span>]) == <span class="number">1</span> <span class="keyword">or</span> ord(c) - ord(p[i<span class="number">-1</span>]) == <span class="number">-25</span>):</span><br><span class="line">                length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                length = <span class="number">1</span></span><br><span class="line">            res[c] = max(res[c], length)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sum(res.values())</span><br></pre></td></tr></table></figure>
+        <p>res表示以i结尾的最长substring -&gt; length is a, then final res_val += a</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findSubstringInWraproundString</span><span class="params">(self, p)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type p: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = &#123;i: <span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> p&#125;</span><br><span class="line">        length = <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> i, c <span class="keyword">in</span> enumerate(p):</span><br><span class="line">            <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> (ord(c) - ord(p[i<span class="number">-1</span>]) == <span class="number">1</span> <span class="keyword">or</span> ord(c) - ord(p[i<span class="number">-1</span>]) == <span class="number">-25</span>):</span><br><span class="line">                length += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                length = <span class="number">1</span></span><br><span class="line">            res[c] = max(res[c], length)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sum(res.values())</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -282,6 +283,15 @@ var a = new Donate({
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/10/31/1233-Remove-Sub-Folders-from-the-Filesystem/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          1233. Remove Sub-Folders from the Filesystem 
+        
+      </div>
+    </a>
   
   
     <a href="/2020/10/31/1026-Maximum-Difference-Between-Node-and-Ancestor/" id="article-nav-older" class="article-nav-link-wrap">
