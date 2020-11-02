@@ -265,6 +265,65 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1262-Greatest-Sum-Divisible-by-Three"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/">1262. Greatest Sum Divisible by Three</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/" class="article-date">
+	  <time datetime="2020-10-31T18:55:36.000Z" itemprop="datePublished">2020-10-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i] (i: 0, 1, 2): represent the greatest sum which module 3 is 0, 1, 2(in current array a)
+formula: (num is the current last number in a) val = (dp[i] + num)%3 dp[i] = max(dp[val], dp[i] + num)
+Cornor case:
+
+
+当前更新的值可能影响后面的值， 所以要new tmp array
+se...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-853-Car-Fleet"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -727,61 +786,6 @@ recursive to solve it
         </p>
         <p class="article-more-link">
           <a href="/2020/10/29/333-Largest-BST-Subtree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-898-Bitwise-ORs-of-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/">898. Bitwise ORs of Subarrays</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/" class="article-date">
-	  <time datetime="2020-10-30T01:02:39.000Z" itemprop="datePublished">2020-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-12345678910111213class Solution(object):    def subarrayBitwiseORs(self, A):        """        :type A: List[int]        :rtype: int        """        ans = set()        cur = set()                for num in A:            cur = &#123;num | x fo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/#more">Read More</a>
         </p>
       
     </div>
