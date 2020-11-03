@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>designing instagram | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Requirements and Goals of the System Functional Requirements   Users should be able to upload&#x2F;download&#x2F;view photos. Users can perform searches based on photo&#x2F;video titles. Users can follow other users">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing Instagram">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/11/02/Designing-Instagram/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Requirements and Goals of the System Functional Requirements   Users should be able to upload&#x2F;download&#x2F;view photos. Users can perform searches based on photo&#x2F;video titles. Users can follow other users">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/instagram.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/db_schema.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/ins_component_design.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/reliability_redundancy.png">
+<meta property="article:published_time" content="2020-11-02T22:20:49.000Z">
+<meta property="article:modified_time" content="2020-11-03T00:58:37.017Z">
+<meta property="article:author" content="Jojo Yang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/instagram.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Designing-Instagram" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Designing Instagram
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/02/Designing-Instagram/" class="article-date">
+	  <time datetime="2020-11-02T22:20:49.000Z" itemprop="datePublished">2020-11-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h1><ol>
+<li>Functional Requirements</li>
+</ol>
+<ul>
+<li>Users should be able to upload/download/view photos.</li>
+<li>Users can perform searches based on photo/video titles.</li>
+<li>Users can follow other users.</li>
+<li>The system should generate and display a user’s News Feed consisting of top photos from all the people the user follows.</li>
+</ul>
+<ol start="2">
+<li>Non-functional Requirements</li>
+</ol>
+<ul>
+<li>Our service needs to be highly available.</li>
+<li>The acceptable latency of the system is 200ms for News Feed generation.</li>
+<li>Consistency can take a hit (in the interest of availability) if a user doesn’t see a photo for a while; it should be fine.</li>
+<li>The system should be highly reliable; any uploaded photo or video should never be lost.</li>
+</ul>
+<ol start="3">
+<li>Not in scope: Adding tags to photos, searching photos on tags, commenting on photos, tagging users to photos, who to follow, etc.</li>
+</ol>
+<h1 id="Some-Design-Considerations"><a href="#Some-Design-Considerations" class="headerlink" title="Some Design Considerations"></a>Some Design Considerations</h1><p>The system would be <strong>read-heavy</strong>, so we will focus on building a system that can retrieve photos quickly.</p>
+<ol>
+<li>users can upload as many photos as they like; therefore, <strong>efficient management of storage</strong> should be a crucial factor in designing this system.</li>
+<li><strong>Low latency</strong> is expected while viewing photos.</li>
+<li>Data should be 100% <strong>reliable</strong>. If a user uploads a photo, the system will guarantee that it will never be lost.</li>
+</ol>
+<h1 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h1><ol>
+<li>Assume we have 500M <strong>total users</strong>, with 1M <strong>daily active users</strong>.</li>
+<li>2M new photos every day, 23 new photos every second.</li>
+<li>Average photo file size =&gt; 200KB</li>
+<li>Total space required for 1 day of photos<br>2M * 200KB =&gt; 400 GB</li>
+<li>Total space required for 10 years<br>400GB * 365 (days a year) * 10 (years) ~= 1425TB</li>
+</ol>
+<h1 id="High-Level-System-Design"><a href="#High-Level-System-Design" class="headerlink" title="High Level System Design"></a>High Level System Design</h1><ol>
+<li><p>Support two scenarios</p>
+<ul>
+<li>Upload photos</li>
+<li>the other to view/search photos</li>
+</ul>
+</li>
+<li><p>storage</p>
+</li>
+</ol>
+<ul>
+<li>Need some <strong>object storage servers</strong> to store photos </li>
+<li>Some database servers to store metadata information about the photos.</li>
+</ul>
+<ul>
+<li><img src="/images/instagram.png" alt="image"></li>
+</ul>
+<h1 id="Database-schema"><a href="#Database-schema" class="headerlink" title="Database schema"></a>Database schema</h1><ol>
+<li>schema</li>
+</ol>
+<ul>
+<li><img src="/images/db_schema.png" alt="image"></li>
+</ul>
+<ol start="2">
+<li>Storing the above schema would be to use an RDBMS like MySQL since we require joins.</li>
+</ol>
+<ul>
+<li>challenge: especially when we need to scale them.</li>
+</ul>
+<ol start="3">
+<li>Can store photos in a distributed file storage like HDFS or S3.</li>
+<li>Store the above schema in a <strong>distributed key-value store</strong> to enjoy the <strong>benefits offered by NoSQL</strong>. <h2 id="Metadata-related-to-photos"><a href="#Metadata-related-to-photos" class="headerlink" title="Metadata related to photos"></a>Metadata related to photos</h2></li>
+</ol>
+<ul>
+<li>All the metadata related to photos can go to a table where the ‘key’ would be the ‘PhotoID’</li>
+<li>the ‘value’ would be an object containing PhotoLocation, UserLocation, CreationTimestamp, etc.</li>
+</ul>
+<h2 id="Store-relationships-between-users-and-photos-the-list-of-people-a-user-follows"><a href="#Store-relationships-between-users-and-photos-the-list-of-people-a-user-follows" class="headerlink" title="Store relationships between users and photos/the list of people a user follows"></a>Store relationships between users and photos/the list of people a user follows</h2><ol>
+<li>use a wide-column datastore like Cassandra</li>
+<li>For the ‘UserPhoto’ table</li>
+</ol>
+<ul>
+<li>the ‘key’ would be ‘UserID’</li>
+<li>the ‘value’ would be the list of ‘PhotoIDs’ the user owns, stored in different columns.</li>
+</ul>
+<ol start="3">
+<li>a similar scheme for the ‘UserFollow’ table.</li>
+<li><strong>Cassandra or key-value stores, in general, always maintain a certain number of replicas to offer reliability.</strong></li>
+</ol>
+<ul>
+<li>in such data stores, deletes don’t get applied instantly</li>
+<li>data is retained for certain days (to support undeleting) before getting removed from the system permanently.</li>
+</ul>
+<h1 id="Data-Size-Estimation"><a href="#Data-Size-Estimation" class="headerlink" title="Data Size Estimation"></a>Data Size Estimation</h1><ul>
+<li>Estimate how much data will be going into each table</li>
+<li>how much total storage we will need for 10 years.</li>
+</ul>
+<h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><ol>
+<li>Assuming each “int” and “dateTime” is four bytes, each row in the User’s table will be of 68 bytes<br><code>UserID (4 bytes) + Name (20 bytes) + Email (32 bytes) + DateOfBirth (4 bytes) + CreationDate (4 bytes) + LastLogin (4 bytes) = 68 bytes</code></li>
+<li>If we have 500 million users, we will need 32GB of total storage.<br><code>500 million * 68 ~= 32GB</code></li>
+</ol>
+<h2 id="Photo"><a href="#Photo" class="headerlink" title="Photo"></a>Photo</h2><ol>
+<li>Each row in Photo’s table will be of 284 bytes:<br><code>PhotoID (4 bytes) + UserID (4 bytes) + PhotoPath (256 bytes) + PhotoLatitude (4 bytes) + PhotoLongitude(4 bytes) + UserLatitude (4 bytes) + UserLongitude (4 bytes) + CreationDate (4 bytes) = 284 bytes</code></li>
+<li>If 2M new photos get uploaded every day, we will need 0.5GB of storage for one day<br><code>2M * 284 bytes ~= 0.5GB per day</code><br>For 10 years we will need 1.88TB of storage.</li>
+</ol>
+<h2 id="UserFollow"><a href="#UserFollow" class="headerlink" title="UserFollow"></a>UserFollow</h2><ol>
+<li>Each row in the UserFollow table will consist of 8 bytes</li>
+<li>If we have 500 million users and on average each user follows 500 users. </li>
+<li>We would need 1.82TB of storage for the UserFollow table:<br><code>500 million users * 500 followers * 8 bytes ~= 1.82TB</code></li>
+<li>Total space required for all tables for 10 years will be 3.7TB:<br><code>32GB + 1.88TB + 1.82TB ~= 3.7TB</code></li>
+</ol>
+<h1 id="Component-Design"><a href="#Component-Design" class="headerlink" title="Component Design"></a>Component Design</h1><ol>
+<li>Uploading users can consume all the available connections, as uploading is a slow process.</li>
+</ol>
+<ul>
+<li>This means that ‘reads’ cannot be served if the system gets busy with all the ‘write’ requests.</li>
+</ul>
+<ol start="2">
+<li>We should keep in mind that <strong>web servers have a connection limit before designing our system.</strong></li>
+<li>To handle this bottleneck, we can split reads and writes into separate services. </li>
+<li>Dedicated servers for reads and different servers for writes to ensure that uploads don’t hog the system.</li>
+<li>Separating photos’ read and write requests will also allow us to scale and optimize each of these operations independently.</li>
+</ol>
+<ul>
+<li><img src="/images/ins_component_design.png" alt="image"></li>
+</ul>
+<h1 id="Reliability-and-Redundancy"><a href="#Reliability-and-Redundancy" class="headerlink" title="Reliability and Redundancy"></a>Reliability and Redundancy</h1><ol>
+<li>Store multiple copies of each file so that if one storage server dies, we can retrieve the photo from the other copy present on a different storage server.</li>
+<li>High Reliability</li>
+</ol>
+<ul>
+<li>This same principle also applies to other components of the system.</li>
+<li><strong>If we want to have high availability of the system, we need to have multiple replicas of services running in the system so that even if a few services die down, the system remains available and running.</strong></li>
+<li>Redundancy removes the single point of failure in the system.</li>
+</ul>
+<ol start="3">
+<li>If only one instance of a service is required to run at any point, we can run a redundant secondary copy of the service that is not serving any traffic, but it can take control after the failover when the primary has a problem</li>
+<li>Creating redundancy in a system can remove single points of failure and provide a backup or spare functionality if needed in a crisis</li>
+<li>Failover can happen automatically or require manual intervention.</li>
+</ol>
+<ul>
+<li><img src="/images/reliability_redundancy.png" alt="image"></li>
+</ul>
+<h1 id="Data-Sharding"><a href="#Data-Sharding" class="headerlink" title="Data Sharding"></a>Data Sharding</h1><h2 id="Partitioning-based-on-UserID"><a href="#Partitioning-based-on-UserID" class="headerlink" title="Partitioning based on UserID"></a>Partitioning based on UserID</h2><ol>
+<li>we can keep all photos of a user on the same shard. </li>
+<li>If one DB shard is 1TB, we will need four shards to store 3.7TB of data.</li>
+<li>Let’s assume for better performance and scalability we keep 10 shards.</li>
+</ol>
+<ul>
+<li>find the shard number by UserID % 10 and then store the data there</li>
+<li>To uniquely identify any photo in our system, we can append shard number with each PhotoID.</li>
+</ul>
+<ol start="4">
+<li>How can we generate PhotoIDs? </li>
+</ol>
+<ul>
+<li>Each DB shard can have its own auto-increment sequence for PhotoIDs </li>
+<li>we will append ShardID with each PhotoID, it will make it unique throughout our system.</li>
+</ul>
+<ol start="5">
+<li>What are the different issues with this partitioning scheme?</li>
+</ol>
+<ul>
+<li>How would we handle hot users? <ul>
+<li>Several people follow such hot users and a lot of other people see any photo they upload.</li>
+</ul>
+</li>
+<li>Some users will have a lot of photos compared to others, thus making a non-uniform distribution of storage.</li>
+<li>What if we cannot store all pictures of a user on one shard? If we distribute photos of a user onto multiple shards will it cause higher latencies?</li>
+<li>Storing all photos of a user on one shard can cause issues like unavailability of all of the user’s data if that shard is down or higher latency if it is serving high load etc.</li>
+</ul>
+<h2 id="Partitioning-based-on-Photo-ID"><a href="#Partitioning-based-on-Photo-ID" class="headerlink" title="Partitioning based on Photo ID"></a>Partitioning based on Photo ID</h2><ol>
+<li>General</li>
+</ol>
+<ul>
+<li>If we can generate unique PhotoIDs first and then find a shard number through “PhotoID % 10”</li>
+<li>the above problems will have been solved.</li>
+<li>not need to append ShardID with PhotoID in this case as PhotoID will itself be unique throughout the system.</li>
+</ul>
+<ol start="2">
+<li>How can we generate PhotoIDs</li>
+</ol>
+<ul>
+<li>Dedicate a separate database instance to generate auto-incrementing IDs. </li>
+<li>If our PhotoID can fit into 64 bits, we can define a table containing only a 64 bit ID field</li>
+<li>whenever we would like to add a photo in our system, we can insert a new row in this table and take that ID to be our PhotoID of the new photo.</li>
+</ul>
+<ol start="3">
+<li>Wouldn’t this key generating DB be a single point of failure?</li>
+</ol>
+<ul>
+<li>Yes, it would be.</li>
+<li>Defining two such databases with one generating even numbered IDs and the other odd numbered. </li>
+<li>For the MySQL, the following script can define such sequences:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">KeyGeneratingServer1:</span><br><span class="line">auto-increment-increment &#x3D; 2</span><br><span class="line">auto-increment-offset &#x3D; 1</span><br><span class="line"> </span><br><span class="line">KeyGeneratingServer2:</span><br><span class="line">auto-increment-increment &#x3D; 2</span><br><span class="line">auto-increment-offset &#x3D; 2</span><br></pre></td></tr></table></figure></li>
+<li>put a load balancer in front of both of these databases to round robin between them and to deal with downtime.</li>
+<li>Both these servers could be out of sync with one generating more keys than the other, but this will not cause any issue in our system. </li>
+<li>extend this design by defining separate ID tables for Users, Photo-Comments, or other objects present in our system.</li>
+</ul>
+<ol start="4">
+<li>Alternately, we can implement a ‘key’ generation scheme similar to what we have discussed in <a href="/2020/09/23/Designing-a-URL-Shortening-service-like-TinyURL/" title="Designing a URL Shortening service like TinyURL">Designing a URL Shortening service like TinyURL</a></li>
+</ol>
+<h2 id="How-can-we-plan-for-the-future-growth-of-our-system"><a href="#How-can-we-plan-for-the-future-growth-of-our-system" class="headerlink" title="How can we plan for the future growth of our system?"></a>How can we plan for the future growth of our system?</h2><ol>
+<li>have a large number of logical partitions to accommodate future data growth</li>
+<li>Such that in the beginning, multiple logical partitions reside on a single physical database server</li>
+<li>Each database server can have multiple database instances on it, we can have separate databases for each logical partition on any server</li>
+<li>whenever we feel that a particular database server has a lot of data, we can migrate some logical partitions from it to another server.</li>
+<li>We can maintain a config file (or a separate database) that can map our logical partitions to database servers;</li>
+<li>this will enable us to move partitions around easily. </li>
+</ol>
+<ul>
+<li>Whenever we want to move a partition, we only have to update the config file to announce the change.</li>
+</ul>
+<h1 id="Ranking-and-News-Feed-Generation"><a href="#Ranking-and-News-Feed-Generation" class="headerlink" title="Ranking and News Feed Generation"></a>Ranking and News Feed Generation</h1><ol>
+<li>we need to fetch the latest, most popular and relevant photos of the people the user follows.</li>
+<li>For simplicity, let’s assume we need to fetch top 100 photos for a user’s News Feed. </li>
+</ol>
+<ul>
+<li>Our application server will first get a list of people the user follows</li>
+<li>Then fetch metadata info of latest 100 photos from each user.</li>
+<li>The server will submit all these photos to our ranking algorithm which will determine the top 100 photos (based on recency, likeness, etc.) and return them to the user. </li>
+<li>A possible problem with this approach would be <strong>higher latency</strong><ul>
+<li>as we have to query multiple tables and perform sorting/merging/ranking on the results.</li>
+<li>To improve the efficiency, we can pre-generate the News Feed and store it in a separate table.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Pre-generating-the-News-Feed"><a href="#Pre-generating-the-News-Feed" class="headerlink" title="Pre-generating the News Feed"></a>Pre-generating the News Feed</h2>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/11/02/Designing-Instagram/" target="_blank" title="Designing Instagram">https://jojoyang666.github.io/2020/11/02/Designing-Instagram/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/02/310-Minimum-Height-Trees/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          310. Minimum Height Trees 
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/02/Designing-Pastebin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Designing Pastebin</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">2.</span> <span class="nav-text">Some Design Considerations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-System-Design"><span class="nav-number">4.</span> <span class="nav-text">High Level System Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-schema"><span class="nav-number">5.</span> <span class="nav-text">Database schema</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadata-related-to-photos"><span class="nav-number">5.1.</span> <span class="nav-text">Metadata related to photos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Store-relationships-between-users-and-photos-the-list-of-people-a-user-follows"><span class="nav-number">5.2.</span> <span class="nav-text">Store relationships between users and photos&#x2F;the list of people a user follows</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Size-Estimation"><span class="nav-number">6.</span> <span class="nav-text">Data Size Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#User"><span class="nav-number">6.1.</span> <span class="nav-text">User</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photo"><span class="nav-number">6.2.</span> <span class="nav-text">Photo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UserFollow"><span class="nav-number">6.3.</span> <span class="nav-text">UserFollow</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Component-Design"><span class="nav-number">7.</span> <span class="nav-text">Component Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reliability-and-Redundancy"><span class="nav-number">8.</span> <span class="nav-text">Reliability and Redundancy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Sharding"><span class="nav-number">9.</span> <span class="nav-text">Data Sharding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioning-based-on-UserID"><span class="nav-number">9.1.</span> <span class="nav-text">Partitioning based on UserID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioning-based-on-Photo-ID"><span class="nav-number">9.2.</span> <span class="nav-text">Partitioning based on Photo ID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-we-plan-for-the-future-growth-of-our-system"><span class="nav-number">9.3.</span> <span class="nav-text">How can we plan for the future growth of our system?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ranking-and-News-Feed-Generation"><span class="nav-number">10.</span> <span class="nav-text">Ranking and News Feed Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pre-generating-the-News-Feed"><span class="nav-number">10.1.</span> <span class="nav-text">Pre-generating the News Feed</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
