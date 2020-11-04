@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-264-Ugly-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-738-Monotone-Increasing-Digits"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/20/264-Ugly-Number-II/">264. Ugly Number II</a>
+      <a class="article-title" href="/2020/10/24/738-Monotone-Increasing-Digits/">738. Monotone Increasing Digits</a>
     </h1>
   
 
@@ -281,8 +281,61 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/20/264-Ugly-Number-II/" class="article-date">
-	  <time datetime="2020-10-20T15:41:42.000Z" itemprop="datePublished">2020-10-20</time>
+	<a href="/2020/10/24/738-Monotone-Increasing-Digits/" class="article-date">
+	  <time datetime="2020-10-25T04:23:26.000Z" itemprop="datePublished">2020-10-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          例子是 332，最后一位2小于之前的3，那么此时将前面位减1，先变成322，再往前看，还是小于前面的3，那么再将前面位减1，就变成了 222，此时 222 不是最大的单调递增数，可以将后面两位变成9，于是乎就有了 299，
+1234567891011121314151617class Solution(object):    def monotoneIncreasingDigits(self, N):        """        :type N: int        :rtype...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/24/738-Monotone-Increasing-Digits/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-979-Distribute-Coins-in-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/24/979-Distribute-Coins-in-Binary-Tree/">979. Distribute Coins in Binary Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/24/979-Distribute-Coins-in-Binary-Tree/" class="article-date">
+	  <time datetime="2020-10-25T03:25:43.000Z" itemprop="datePublished">2020-10-24</time>
 	</a>
 
       
@@ -296,13 +349,15 @@
       
         <p class="article-excerpt-content">
           
-通过观察可以知道， 每一个ugly number is coming from previous ugly number *2/3/5,
-thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] * 5 and add it into nums –&gt; record the right i2/i3/i5 pos
+每一个node 有一个val表示已此node为根节点的子树还需要多少coin
+正数表示 有多余的， 可以像上运输
+负数表示需要， 需要父节点像下运输
 
-12345678910111213141516171819202122...
+
+最终结果就是+上这些绝对值12345678910111213141516171819202122# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/20/264-Ugly-Number-II/#more">Read More</a>
+          <a href="/2020/10/24/979-Distribute-Coins-in-Binary-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -321,7 +376,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
 
 
   
-    <article id="post-718-Maximum-Length-of-Repeated-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1008-Construct-Binary-Search-Tree-from-Preorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -329,7 +384,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/20/718-Maximum-Length-of-Repeated-Subarray/">718. Maximum Length of Repeated Subarray</a>
+      <a class="article-title" href="/2020/10/23/1008-Construct-Binary-Search-Tree-from-Preorder-Traversal/">1008. Construct Binary Search Tree from Preorder Traversal</a>
     </h1>
   
 
@@ -337,8 +392,8 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
     
     <div class="article-meta">
       
-	<a href="/2020/10/20/718-Maximum-Length-of-Repeated-Subarray/" class="article-date">
-	  <time datetime="2020-10-20T15:05:38.000Z" itemprop="datePublished">2020-10-20</time>
+	<a href="/2020/10/23/1008-Construct-Binary-Search-Tree-from-Preorder-Traversal/" class="article-date">
+	  <time datetime="2020-10-24T04:05:50.000Z" itemprop="datePublished">2020-10-23</time>
 	</a>
 
       
@@ -351,10 +406,10 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314class Solution(object):    def findLength(self, A, B):        """        :type A: List[int]        :type B: List[int]        :rtype: int        """        memo = [[0]*(len(B) + 1) for _ in range(len(A) + 1)]        for i in rang...
+          O(n * n) 1234567891011121314151617181920 # Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Soluti...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/20/718-Maximum-Length-of-Repeated-Subarray/#more">Read More</a>
+          <a href="/2020/10/23/1008-Construct-Binary-Search-Tree-from-Preorder-Traversal/#more">Read More</a>
         </p>
       
     </div>
@@ -373,7 +428,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
 
 
   
-    <article id="post-1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1395-Count-Number-of-Teams"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -381,7 +436,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/20/1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/">1239. Maximum Length of a Concatenated String with Unique Characters</a>
+      <a class="article-title" href="/2020/10/23/1395-Count-Number-of-Teams/">1395. Count Number of Teams</a>
     </h1>
   
 
@@ -389,8 +444,8 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
     
     <div class="article-meta">
       
-	<a href="/2020/10/20/1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/" class="article-date">
-	  <time datetime="2020-10-20T14:15:50.000Z" itemprop="datePublished">2020-10-20</time>
+	<a href="/2020/10/23/1395-Count-Number-of-Teams/" class="article-date">
+	  <time datetime="2020-10-24T03:23:32.000Z" itemprop="datePublished">2020-10-23</time>
 	</a>
 
       
@@ -403,10 +458,12 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Set Operation1234567891011121314151617class Solution(object):    def maxLength(self, arr):        """        :type arr: List[str]        :rtype: int        """        dp = [set()]                for a in arr:#             skip the word which has t...
+          count how many soldiers on the left and right have less and greater ratings.
+This soldier can form less[left] * greater[right] + greater[left] * less[right] teams.
+12345678910111213141516171819class Solution(object):    def numTeams(self, rating):...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/20/1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/#more">Read More</a>
+          <a href="/2020/10/23/1395-Count-Number-of-Teams/#more">Read More</a>
         </p>
       
     </div>
@@ -425,7 +482,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
 
 
   
-    <article id="post-1143-Longest-Common-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1244-Design-A-Leaderboard"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -433,7 +490,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/19/1143-Longest-Common-Subsequence/">1143. Longest Common Subsequence</a>
+      <a class="article-title" href="/2020/10/23/1244-Design-A-Leaderboard/">1244. Design A Leaderboard</a>
     </h1>
   
 
@@ -441,8 +498,8 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
     
     <div class="article-meta">
       
-	<a href="/2020/10/19/1143-Longest-Common-Subsequence/" class="article-date">
-	  <time datetime="2020-10-20T04:21:25.000Z" itemprop="datePublished">2020-10-19</time>
+	<a href="/2020/10/23/1244-Design-A-Leaderboard/" class="article-date">
+	  <time datetime="2020-10-24T03:23:02.000Z" itemprop="datePublished">2020-10-23</time>
 	</a>
 
       
@@ -455,10 +512,11 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def longestCommonSubsequence(self, text1, text2):        """        :type text1: str        :type text2: str        :rtype: int        """        dp = [[0] * (len(text2) + 1) for _ in range(len(tex...
+          巧用counter
+12345678910111213141516171819202122232425262728293031323334class Leaderboard(object):    def __init__(self):        self.A = collections.Counter()    def addScore(self, playerId, score):        """        :type playerId: int        :type...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/19/1143-Longest-Common-Subsequence/#more">Read More</a>
+          <a href="/2020/10/23/1244-Design-A-Leaderboard/#more">Read More</a>
         </p>
       
     </div>
@@ -477,7 +535,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
 
 
   
-    <article id="post-1041-Robot-Bounded-In-Circle"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-338-Counting-Bits"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -485,7 +543,7 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/19/1041-Robot-Bounded-In-Circle/">1041. Robot Bounded In Circle</a>
+      <a class="article-title" href="/2020/10/23/338-Counting-Bits/">338. Counting Bits</a>
     </h1>
   
 
@@ -493,61 +551,8 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
     
     <div class="article-meta">
       
-	<a href="/2020/10/19/1041-Robot-Bounded-In-Circle/" class="article-date">
-	  <time datetime="2020-10-20T03:23:33.000Z" itemprop="datePublished">2020-10-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-12345678910111213141516171819class Solution(object):    def isRobotBounded(self, instructions):        """        :type instructions: str        :rtype: bool        """#         north, west, sorth, east        x = y = 0        dirctions = [[0, 1]...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/19/1041-Robot-Bounded-In-Circle/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-371-Sum-of-Two-Integers"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/19/371-Sum-of-Two-Integers/">371. Sum of Two Integers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/19/371-Sum-of-Two-Integers/" class="article-date">
-	  <time datetime="2020-10-19T23:06:44.000Z" itemprop="datePublished">2020-10-19</time>
+	<a href="/2020/10/23/338-Counting-Bits/" class="article-date">
+	  <time datetime="2020-10-23T23:25:04.000Z" itemprop="datePublished">2020-10-23</time>
 	</a>
 
       
@@ -561,20 +566,16 @@ thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] 
       
         <p class="article-excerpt-content">
           
-例子 759+674
-如果不考虑进位，可以得到 323
-如果只考虑进位，可以得到 1110
-把上面两个数字假期 323+1110=1433 就是最终结果了
+分为奇数， 偶数  
 
 
-如果得到上面的第一第二种情况，在二进制下来看，不考虑进位的加，0+0=0，0+1=1, 1+0=1，1+1=0，这就是异或的运算规则
-如果只考虑进位的加 0+0=0, 0+1=0, 1+0=0, 1+1=1，而这其实这就是’与’的运算，
-第三步在将两者相加时，再递归调用这个算法，终止条件是当进位为0时
 
-Python has no...
+
+
+12345678910111213class Solution(object):    def countBits(self, num):        """        :type num: int        :rtype: List[int]        """        ans = [0] * (num+ 1)                ans[0] = 0                for i in range(num + 1...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/19/371-Sum-of-Two-Integers/#more">Read More</a>
+          <a href="/2020/10/23/338-Counting-Bits/#more">Read More</a>
         </p>
       
     </div>
@@ -593,7 +594,7 @@ Python has no...
 
 
   
-    <article id="post-Bit-Manipulation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-516-Longest-Palindromic-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -601,7 +602,7 @@ Python has no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/17/Bit-Manipulation/">Bit Manipulation</a>
+      <a class="article-title" href="/2020/10/23/516-Longest-Palindromic-Subsequence/">516. Longest Palindromic Subsequence</a>
     </h1>
   
 
@@ -609,8 +610,115 @@ Python has no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/17/Bit-Manipulation/" class="article-date">
-	  <time datetime="2020-10-17T15:54:05.000Z" itemprop="datePublished">2020-10-17</time>
+	<a href="/2020/10/23/516-Longest-Palindromic-Subsequence/" class="article-date">
+	  <time datetime="2020-10-23T21:51:33.000Z" itemprop="datePublished">2020-10-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          DP重点： 这是DP的表达式， dp的表达式不是i-1, j-1dp[i][j] = dp[i+1][j-1] + 2time: O(n) space: O(n)
+123456789101112131415161718class Solution(object):    def longestPalindromeSubseq(self, s):        """        :type s: str        :rtype: int        """             ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/23/516-Longest-Palindromic-Subsequence/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-421-Maximum-XOR-of-Two-Numbers-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/">421. Maximum XOR of Two Numbers in an Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/" class="article-date">
+	  <time datetime="2020-10-23T18:42:44.000Z" itemprop="datePublished">2020-10-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+这个题目的思路的大前提是: a ^ b = c  &lt;===&gt;  a ^ c = b
+讲解.123456789101112131415class Solution(object):    def findMaximumXOR(self, nums):        """        :type nums: List[int]        :rtype: int        """        max_xor = 0                for i in ra...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Three-way-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/22/Three-way-Partitioning/">Three-way Partitioning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/22/Three-way-Partitioning/" class="article-date">
+	  <time datetime="2020-10-23T03:51:22.000Z" itemprop="datePublished">2020-10-22</time>
 	</a>
 
       
@@ -623,21 +731,14 @@ Python has no...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
+          i, j, k –&gt; i &lt;= j &lt;= k
 
-
-优先级
-位运算 &lt; 算术运算
-按位与、按位或及异或低于比较运算符
-
-~ 把  的补码中的 0 和 1 全部取反（0 变为 1，1 变为 0）。有符号整数的符号位在 ~ 运算中同样会取反。
-一些常见数字的二进制
--1 —-&gt; 11111111 11111111 11111111 11111111
-
-判断一个数是不是 2 的非负整数次幂bool isPowerOfTwo(int n) { return n &gt; 0 &amp;&amp; (n &amp; (n - 1))...
+Entries from 0 up to (but not including) i are values less than mid –&gt; [0, i) &lt; mid
+Entries from i up to (but not including) j are values equal to mid –&gt; 【i, j) == mid
+Entries from j up to (but not inclusi...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/17/Bit-Manipulation/#more">Read More</a>
+          <a href="/2020/10/22/Three-way-Partitioning/#more">Read More</a>
         </p>
       
     </div>
@@ -656,7 +757,7 @@ Python has no...
 
 
   
-    <article id="post-137-Single-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-215-Kth-Largest-Element-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -664,7 +765,7 @@ Python has no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/137-Single-Number-II/">137. Single Number II</a>
+      <a class="article-title" href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/">215. Kth Largest Element in an Array</a>
     </h1>
   
 
@@ -672,8 +773,8 @@ Python has no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/16/137-Single-Number-II/" class="article-date">
-	  <time datetime="2020-10-17T02:26:04.000Z" itemprop="datePublished">2020-10-16</time>
+	<a href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/" class="article-date">
+	  <time datetime="2020-10-22T20:00:03.000Z" itemprop="datePublished">2020-10-22</time>
 	</a>
 
       
@@ -686,123 +787,10 @@ Python has no...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-~x&amp;x = 0
-
-123456789101112class Solution(object):    def singleNumber(self, nums):        """        :type nums: List[int]        :rtype: int        """        seen_once, seen_twice = 0, 0                for num in nums:            seen_once ...
+          1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number&#125; */var findKthLargest = function(nums, k) &#123;    let lef...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/16/137-Single-Number-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-356-Line-Reflection"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/356-Line-Reflection/">356. Line Reflection</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/16/356-Line-Reflection/" class="article-date">
-	  <time datetime="2020-10-16T17:13:25.000Z" itemprop="datePublished">2020-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-找到所有点的横坐标的最大值和最小值, 那么二者的平均值就是中间直线的横坐标
-我们遍历每个点，如果都能找到直线对称的另一个点, 则返回true，反之返回false
-
-12345678910111213141516171819class Solution(object):    def isReflected(self, points):        """        :type points: List[List[int]]        :rtype: bool        ""...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/16/356-Line-Reflection/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-539-Minimum-Time-Difference"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/539-Minimum-Time-Difference/">539. Minimum Time Difference</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/16/539-Minimum-Time-Difference/" class="article-date">
-	  <time datetime="2020-10-16T16:43:53.000Z" itemprop="datePublished">2020-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          corner case: 最小的也可以和最大的diff 因为可能是来自第二天
-123456789class Solution(object):    def findMinDifference(self, timePoints):        """        :type timePoints: List[str]        :rtype: int        """        minutes = sorted(int(time[:2]) * 60 + int(time[3...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/16/539-Minimum-Time-Difference/#more">Read More</a>
+          <a href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -825,7 +813,7 @@ Python has no...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/10/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/12/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/10/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/12/">Next &amp;raquo;</a>
   </nav>
 
 </section>

@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-228-Summary-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-562-Longest-Line-of-Consecutive-One-in-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/01/228-Summary-Ranges/">228. Summary Ranges</a>
+      <a class="article-title" href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/">562. Longest Line of Consecutive One in Matrix</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/01/228-Summary-Ranges/" class="article-date">
-	  <time datetime="2020-09-01T21:51:35.000Z" itemprop="datePublished">2020-09-01</time>
+	<a href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/" class="article-date">
+	  <time datetime="2020-09-11T21:12:53.000Z" itemprop="datePublished">2020-09-11</time>
 	</a>
 
       
@@ -295,10 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution123456789101112131415161718192021222324/** * @param &#123;number[]&#125; nums * @return &#123;string[]&#125; */var summaryRanges = function(nums) &#123;    let i = 0;    const res = []        while (i &lt; nums.length) &#123;        let di...
+          Solution 1DP SolutionThree Dimensional dp Array 
+1234567891011121314151617181920212223242526272829/** * @param &#123;number[][]&#125; M * @return &#123;number&#125; */var longestLine = function(M) &#123;    if (!M.length || !M[0].length) return 0;...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/01/228-Summary-Ranges/#more">Read More</a>
+          <a href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +318,7 @@
 
 
   
-    <article id="post-904-Fruit-Into-Baskets"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-544-Output-Contest-Matches"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/01/904-Fruit-Into-Baskets/">904. Fruit Into Baskets</a>
+      <a class="article-title" href="/2020/09/11/544-Output-Contest-Matches/">544. Output Contest Matches</a>
     </h1>
   
 
@@ -333,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/01/904-Fruit-Into-Baskets/" class="article-date">
-	  <time datetime="2020-09-01T17:48:14.000Z" itemprop="datePublished">2020-09-01</time>
+	<a href="/2020/09/11/544-Output-Contest-Matches/" class="article-date">
+	  <time datetime="2020-09-11T20:45:07.000Z" itemprop="datePublished">2020-09-11</time>
 	</a>
 
       
@@ -347,10 +348,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 11234567891011121314151617class Solution(object):    def totalFruit(self, tree):        """        :type tree: List[int]        :rtype: int        """        ans = i = 0        count = collections.Counter()        for j, x in enumerate(tr...
+          Solution 1dfs
+1234567891011121314151617181920/** * @param &#123;number&#125; n * @return &#123;string&#125; */var findContestMatch = function(n) &#123;    const res = [...new Array(n)].map((item, idx) =&gt; idx+1)        helper(n, res)    return r...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/01/904-Fruit-Into-Baskets/#more">Read More</a>
+          <a href="/2020/09/11/544-Output-Contest-Matches/#more">Read More</a>
         </p>
       
     </div>
@@ -369,7 +371,7 @@
 
 
   
-    <article id="post-939-Minimum-Area-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-294-Flip-Game-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -377,7 +379,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/28/939-Minimum-Area-Rectangle/">939. Minimum Area Rectangle</a>
+      <a class="article-title" href="/2020/09/11/294-Flip-Game-II/">294. Flip Game II</a>
     </h1>
   
 
@@ -385,8 +387,60 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/28/939-Minimum-Area-Rectangle/" class="article-date">
-	  <time datetime="2020-08-28T22:39:09.000Z" itemprop="datePublished">2020-08-28</time>
+	<a href="/2020/09/11/294-Flip-Game-II/" class="article-date">
+	  <time datetime="2020-09-11T19:58:30.000Z" itemprop="datePublished">2020-09-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 112345678910111213/** * @param &#123;string&#125; s * @return &#123;boolean&#125; */var canWin = function(s) &#123;    for(let i = 1; i &lt; s.length; i++) &#123;        if (s.charAt(i) === '+' &amp;&amp; s.charAt(i-1) === '+' &amp;&amp; ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/11/294-Flip-Game-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-280-Wiggle-Sort"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/11/280-Wiggle-Sort/">280. Wiggle Sort</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/11/280-Wiggle-Sort/" class="article-date">
+	  <time datetime="2020-09-11T16:32:04.000Z" itemprop="datePublished">2020-09-11</time>
 	</a>
 
       
@@ -400,10 +454,12 @@
       
         <p class="article-excerpt-content">
           Solution 1
-Sorted by column12345678910111213141516171819202122class Solution(object):    def minAreaRect(self, points):        """        :type points: List[List[int]]        :rtype: int        """        columns = collections.defaultdict(list)   ...
+Sort + swamp
+
+12345678910111213141516/** * @param &#123;number[]&#125; nums * @return &#123;void&#125; Do not return anything, modify nums in-place instead. */var wiggleSort = function(nums) &#123;    nums.sort((a, b) =&gt; a - b)    co...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/28/939-Minimum-Area-Rectangle/#more">Read More</a>
+          <a href="/2020/09/11/280-Wiggle-Sort/#more">Read More</a>
         </p>
       
     </div>
@@ -422,7 +478,7 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
 
 
   
-    <article id="post-288-Unique-Word-Abbreviation-exiyexit"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1087-Brace-Expansion"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -430,7 +486,7 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/19/288-Unique-Word-Abbreviation-exiyexit/">288. Unique Word Abbreviation</a>
+      <a class="article-title" href="/2020/09/10/1087-Brace-Expansion/">1087. Brace Expansion</a>
     </h1>
   
 
@@ -438,8 +494,8 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
     
     <div class="article-meta">
       
-	<a href="/2020/08/19/288-Unique-Word-Abbreviation-exiyexit/" class="article-date">
-	  <time datetime="2020-08-19T23:43:36.000Z" itemprop="datePublished">2020-08-19</time>
+	<a href="/2020/09/10/1087-Brace-Expansion/" class="article-date">
+	  <time datetime="2020-09-10T21:03:39.000Z" itemprop="datePublished">2020-09-10</time>
 	</a>
 
       
@@ -452,10 +508,11 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132333435363738/** * @param &#123;string[]&#125; dictionary */var ValidWordAbbr = function(dictionary) &#123;    this.map = &#123;&#125;    this.set = new Set(dictionary)        for (let word of ...
+          Solution 1Backtracking
+123456789101112131415161718192021class Solution(object):    def expand(self, S):        """        :type S: str        :rtype: List[str]        """        self.res = []                def helper(s, word):            if not s...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/19/288-Unique-Word-Abbreviation-exiyexit/#more">Read More</a>
+          <a href="/2020/09/10/1087-Brace-Expansion/#more">Read More</a>
         </p>
       
     </div>
@@ -474,7 +531,7 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
 
 
   
-    <article id="post-Difference-Among-Unicode-ASCII-and-UTF-8"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-524-Longest-Word-in-Dictionary-through-Deleting"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -482,7 +539,7 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/">Difference Among Unicode, ASCII, and UTF-8</a>
+      <a class="article-title" href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/">524. Longest Word in Dictionary through Deleting</a>
     </h1>
   
 
@@ -490,67 +547,8 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
     
     <div class="article-meta">
       
-	<a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/" class="article-date">
-	  <time datetime="2020-08-19T17:24:06.000Z" itemprop="datePublished">2020-08-19</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          ASCII
-ASCII码使用指定的7位或8位二进制数组合来表示128/256种可能的字符
-ASCII是单字节编码（1 byte = 8 bits）， 无法用来表示中文（中文编码至少需要2个字节）
-
-Unicode
-ASCII编码 是1个字节， 而Unicode编码通常是2个字节
-
-UTF8
-把Unicode编码转化为可变长编码的UTF-8编码
-UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， 常用的英文字母被编码成一个字节， 汉字通常是3个字节。 如果要传输的文本包...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-271-Encode-and-Decode-Strings"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/271-Encode-and-Decode-Strings/">271. Encode and Decode Strings</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/271-Encode-and-Decode-Strings/" class="article-date">
-	  <time datetime="2020-08-19T05:10:30.000Z" itemprop="datePublished">2020-08-18</time>
+	<a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/" class="article-date">
+	  <time datetime="2020-09-10T06:05:45.000Z" itemprop="datePublished">2020-09-09</time>
 	</a>
 
       
@@ -563,10 +561,10 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1123456789101112131415161718192021222324252627class Codec:    def encode(self, strs):        """Encodes a list of strings to a single string.                :type strs: List[str]        :rtype: str        """        if len(strs) == 0:    ...
+          Solution 1123456789101112131415161718192021222324/** * @param &#123;string&#125; s * @param &#123;string[]&#125; d * @return &#123;string&#125; */var findLongestWord = function(s, d) &#123;    let res = ""        for (let str of d) &#123;        l...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/18/271-Encode-and-Decode-Strings/#more">Read More</a>
+          <a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/#more">Read More</a>
         </p>
       
     </div>
@@ -585,7 +583,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
 
 
   
-    <article id="post-298-Binary-Tree-Longest-Consecutive-Sequence"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-777-Swap-Adjacent-in-LR-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -593,7 +591,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/298-Binary-Tree-Longest-Consecutive-Sequence/">298. Binary Tree Longest Consecutive Sequence</a>
+      <a class="article-title" href="/2020/09/09/777-Swap-Adjacent-in-LR-String/">777. Swap Adjacent in LR String</a>
     </h1>
   
 
@@ -601,8 +599,8 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     
     <div class="article-meta">
       
-	<a href="/2020/08/18/298-Binary-Tree-Longest-Consecutive-Sequence/" class="article-date">
-	  <time datetime="2020-08-18T23:11:47.000Z" itemprop="datePublished">2020-08-18</time>
+	<a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/" class="article-date">
+	  <time datetime="2020-09-10T03:50:48.000Z" itemprop="datePublished">2020-09-09</time>
 	</a>
 
       
@@ -615,11 +613,13 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Recursion one
-12345678910111213141516171819202122/** * Definition for a binary tree node. * function TreeNode(val, left, right) &#123; *     this.val = (val===undefined ? 0 : val) *     this.left = (left===undefined ? null : left) *     ...
+          Solution 1
+一种是把 “XL” 变成 “LX”，另一种是把 “RX” 变成 “XR”。
+每次分别找到 start 和 end 中非X的字符，如果二者不相同的话，直接返回 false，想想问什么？这是因为不论是L还是R，其只能跟X交换位置，L和R之间是不能改变相对顺序的，所以如果分别将 start 和 end 中所有的X去掉后的字符串不相等的话，那么就永远无法让 start 和 end 相等了。
+这个判断完之后，就来验证L只能前移，R只能后移这个限制条件吧，当i指向 start 中...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/18/298-Binary-Tree-Longest-Consecutive-Sequence/#more">Read More</a>
+          <a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/#more">Read More</a>
         </p>
       
     </div>
@@ -638,7 +638,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
 
 
   
-    <article id="post-281-Zigzag-Iterator"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1055-Shortest-Way-to-Form-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -646,7 +646,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/281-Zigzag-Iterator/">281. Zigzag Iterator</a>
+      <a class="article-title" href="/2020/09/06/1055-Shortest-Way-to-Form-String/">1055. Shortest Way to Form String</a>
     </h1>
   
 
@@ -654,8 +654,8 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     
     <div class="article-meta">
       
-	<a href="/2020/08/18/281-Zigzag-Iterator/" class="article-date">
-	  <time datetime="2020-08-18T18:35:40.000Z" itemprop="datePublished">2020-08-18</time>
+	<a href="/2020/09/06/1055-Shortest-Way-to-Form-String/" class="article-date">
+	  <time datetime="2020-09-07T00:21:20.000Z" itemprop="datePublished">2020-09-06</time>
 	</a>
 
       
@@ -668,11 +668,11 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution1用i, j的大小关系来判断， 打印哪个数组， diff不能小于1， 到头的话赋最大值
-12345678910111213141516171819202122232425262728293031323334353637/** * @constructor * @param &#123;Integer[]&#125; v1 * @param &#123;Integer[]&#125; v1 */var ZigzagIterator = function ZigzagItera...
+          Solution 1
+Greedy123456789101112131415161718192021222324252627282930313233/** * @param &#123;string&#125; source * @param &#123;string&#125; target * @return &#123;number&#125; */var shortestWay = function(source, target) &#123;    const map = new...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/18/281-Zigzag-Iterator/#more">Read More</a>
+          <a href="/2020/09/06/1055-Shortest-Way-to-Form-String/#more">Read More</a>
         </p>
       
     </div>
@@ -691,7 +691,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
 
 
   
-    <article id="post-163-Missing-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-289-Game-of-Life"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -699,7 +699,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/163-Missing-Ranges/">163. Missing Ranges</a>
+      <a class="article-title" href="/2020/09/04/289-Game-of-Life/">289. Game of Life</a>
     </h1>
   
 
@@ -707,8 +707,8 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     
     <div class="article-meta">
       
-	<a href="/2020/08/18/163-Missing-Ranges/" class="article-date">
-	  <time datetime="2020-08-18T17:55:42.000Z" itemprop="datePublished">2020-08-18</time>
+	<a href="/2020/09/04/289-Game-of-Life/" class="article-date">
+	  <time datetime="2020-09-04T17:14:42.000Z" itemprop="datePublished">2020-09-04</time>
 	</a>
 
       
@@ -721,11 +721,12 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          SolutionCornor Case:整形溢出， 当数组中有整形最大值时， 此时lower更新为num+1时就会溢出， 所以再更新前要判断一下， 若num已经时整形最大值了 直接返回结果
-123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; lower * @param &#123;number&#125; upper ...
+          Solution 1 -&gt; constant space
+状态机
+Code12345678910111213141516171819202122232425262728293031323334353637/** * @param &#123;number[][]&#125; board * @return &#123;void&#125; Do not return anything, modify board in-place instead. */var gameOfLife =...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/18/163-Missing-Ranges/#more">Read More</a>
+          <a href="/2020/09/04/289-Game-of-Life/#more">Read More</a>
         </p>
       
     </div>
@@ -744,7 +745,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
 
 
   
-    <article id="post-1057-Campus-Bikes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1110-Delete-Nodes-And-Return-Forest"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -752,7 +753,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/1057-Campus-Bikes/">1057. Campus Bikes</a>
+      <a class="article-title" href="/2020/09/03/1110-Delete-Nodes-And-Return-Forest/">1110. Delete Nodes And Return Forest</a>
     </h1>
   
 
@@ -760,8 +761,8 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/1057-Campus-Bikes/" class="article-date">
-	  <time datetime="2020-08-18T02:55:33.000Z" itemprop="datePublished">2020-08-17</time>
+	<a href="/2020/09/03/1110-Delete-Nodes-And-Return-Forest/" class="article-date">
+	  <time datetime="2020-09-03T22:06:01.000Z" itemprop="datePublished">2020-09-03</time>
 	</a>
 
       
@@ -774,10 +775,10 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances = []     # distances[worker] is tuple of (distance, worker, bike) for each bike         for i, (x, y) in enumerate(wo...
+          123456789101112131415161718192021222324252627282930# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightcl...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/17/1057-Campus-Bikes/#more">Read More</a>
+          <a href="/2020/09/03/1110-Delete-Nodes-And-Return-Forest/#more">Read More</a>
         </p>
       
     </div>
@@ -800,7 +801,7 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/26/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/28/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/26/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/28/">Next &amp;raquo;</a>
   </nav>
 
 </section>
