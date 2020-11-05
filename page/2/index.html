@@ -265,6 +265,323 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1162-As-Far-from-Land-as-Possible"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/03/1162-As-Far-from-Land-as-Possible/">1162. As Far from Land as Possible</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/03/1162-As-Far-from-Land-as-Possible/" class="article-date">
+	  <time datetime="2020-11-04T01:49:30.000Z" itemprop="datePublished">2020-11-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223242526class Solution(object):    def maxDistance(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        m, n = len(grid), len(grid[0])        q = deque((i, j) for i in r...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/03/1162-As-Far-from-Land-as-Possible/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-451-Sort-Characters-By-Frequency"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/03/451-Sort-Characters-By-Frequency/">451. Sort Characters By Frequency</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/03/451-Sort-Characters-By-Frequency/" class="article-date">
+	  <time datetime="2020-11-04T01:20:10.000Z" itemprop="datePublished">2020-11-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567class Solution(object):    def frequencySort(self, s):        """        :type s: str        :rtype: str        """        return ''.join([key * times for key, times in Counter(s).most_common()])
+
+Bucket sort
+1234567891011121314151617181920...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/03/451-Sort-Characters-By-Frequency/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-355-Design-Twitter"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/03/355-Design-Twitter/">355. Design Twitter</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/03/355-Design-Twitter/" class="article-date">
+	  <time datetime="2020-11-04T01:13:52.000Z" itemprop="datePublished">2020-11-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152class Twitter(object):    def __init__(self):        """        Initialize your data structure here.        """        self.timer = itertools.count(step...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/03/355-Design-Twitter/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1177-Can-Make-Palindrome-from-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/">1177. Can Make Palindrome from Substring</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/" class="article-date">
+	  <time datetime="2020-11-04T00:14:27.000Z" itemprop="datePublished">2020-11-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          This will Time Limit Exceeded. Thus, we need some memo to aviod repeating counter operation
+123456789101112131415class Solution(object):    def canMakePaliQueries(self, s, queries):        """        :type s: str        :type queries: List[List[in...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-444-Sequence-Reconstruction"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/03/444-Sequence-Reconstruction/">444. Sequence Reconstruction</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/03/444-Sequence-Reconstruction/" class="article-date">
+	  <time datetime="2020-11-03T21:45:31.000Z" itemprop="datePublished">2020-11-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Topological Sort
+12345678910111213141516171819202122232425262728293031323334353637class Solution(object):    def sequenceReconstruction(self, org, seqs):        """        :type org: List[int]        :type seqs: List[List[int]]        :rtype: bool...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/03/444-Sequence-Reconstruction/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1169-Invalid-Transactions"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/03/1169-Invalid-Transactions/">1169. Invalid Transactions </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/03/1169-Invalid-Transactions/" class="article-date">
+	  <time datetime="2020-11-03T21:04:30.000Z" itemprop="datePublished">2020-11-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627282930313233343536373839class Transaction:    def __init__(self, name, time, amount, city):        self.name = name        self.time = int(time)        self.amount = int(amount)        self.city = cityc...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/03/1169-Invalid-Transactions/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-532-K-diff-Pairs-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -479,323 +796,11 @@ Then we increment res
 
 
   
-    <article id="post-413-Arithmetic-Slices"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/413-Arithmetic-Slices/">413. Arithmetic Slices</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/03/413-Arithmetic-Slices/" class="article-date">
-	  <time datetime="2020-11-03T18:35:56.000Z" itemprop="datePublished">2020-11-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213class Solution(object):    def numberOfArithmeticSlices(self, A):        """        :type A: List[int]        :rtype: int        """        dp = [0] * len(A)        s = 0        for i in range(2, len(A)):            if A[i] - A[i-...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/03/413-Arithmetic-Slices/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1482-Minimum-Number-of-Days-to-Make-m-Bouquets"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/1482-Minimum-Number-of-Days-to-Make-m-Bouquets/">1482. Minimum Number of Days to Make m Bouquets</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/03/1482-Minimum-Number-of-Days-to-Make-m-Bouquets/" class="article-date">
-	  <time datetime="2020-11-03T17:51:52.000Z" itemprop="datePublished">2020-11-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930class Solution(object):    def minDays(self, bloomDay, m, k):        """        :type bloomDay: List[int]        :type m: int        :type k: int        :rtype: int        """                if m ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/03/1482-Minimum-Number-of-Days-to-Make-m-Bouquets/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-328-Odd-Even-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/328-Odd-Even-Linked-List/">328. Odd Even Linked List </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/03/328-Odd-Even-Linked-List/" class="article-date">
-	  <time datetime="2020-11-03T17:01:11.000Z" itemprop="datePublished">2020-11-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def oddEvenList(self, head):   ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/03/328-Odd-Even-Linked-List/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold/">1292. Maximum Side Length of a Square with Sum Less than or Equal to Threshold </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/02/1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold/" class="article-date">
-	  <time datetime="2020-11-03T06:43:41.000Z" itemprop="datePublished">2020-11-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324class Solution(object):    def maxSideLength(self, mat, threshold):        """        :type mat: List[List[int]]        :type threshold: int        :rtype: int        """        prefixSum = [[0] * (len(mat[0]...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/02/1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1376-Time-Needed-to-Inform-All-Employees"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/1376-Time-Needed-to-Inform-All-Employees/">1376. Time Needed to Inform All Employees</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/02/1376-Time-Needed-to-Inform-All-Employees/" class="article-date">
-	  <time datetime="2020-11-03T05:59:59.000Z" itemprop="datePublished">2020-11-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122class Solution(object):    def numOfMinutes(self, n, headID, manager, informTime):        """        :type n: int        :type headID: int        :type manager: List[int]        :type informTime: List[int]       ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/02/1376-Time-Needed-to-Inform-All-Employees/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1481-Least-Number-of-Unique-Integers-after-K-Removals"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/1481-Least-Number-of-Unique-Integers-after-K-Removals/">1481. Least Number of Unique Integers after K Removals</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/02/1481-Least-Number-of-Unique-Integers-after-K-Removals/" class="article-date">
-	  <time datetime="2020-11-03T05:13:07.000Z" itemprop="datePublished">2020-11-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415class Solution(object):    def findLeastNumOfUniqueInts(self, arr, k):        """        :type arr: List[int]        :type k: int        :rtype: int        """                hp = [(count, value) for value, count in Counter(ar...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/02/1481-Least-Number-of-Unique-Integers-after-K-Removals/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
   </nav>
 
 </section>
