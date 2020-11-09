@@ -265,6 +265,369 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-UNION-FIND"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/03/UNION-FIND/">UNION FIND</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/03/UNION-FIND/" class="article-date">
+	  <time datetime="2020-09-03T18:38:26.000Z" itemprop="datePublished">2020-09-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011class DSU:    def __init__(self, N):        self.parent = range(N)        def find(self, x):        if self.parent[x] != x:            self.parent[x] = self.find(self.parent[x])        return self.parent[x]        def union(self, x, y...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/03/UNION-FIND/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-737-Sentence-Similarity-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/02/737-Sentence-Similarity-II/">737. Sentence Similarity II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/02/737-Sentence-Similarity-II/" class="article-date">
+	  <time datetime="2020-09-03T03:27:11.000Z" itemprop="datePublished">2020-09-02</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1Union Find
+12345678910111213141516171819202122232425262728293031323334class Solution(object):    def areSentencesSimilarTwo(self, words1, words2, pairs):        """        :type words1: List[str]        :type words2: List[str]        :ty...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/02/737-Sentence-Similarity-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-351-Android-Unlock-Patterns"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/02/351-Android-Unlock-Patterns/">351. Android Unlock Patterns</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/02/351-Android-Unlock-Patterns/" class="article-date">
+	  <time datetime="2020-09-02T15:36:10.000Z" itemprop="datePublished">2020-09-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 112345678910111213141516171819202122232425262728293031323334class Solution(object):    def numberOfPatterns(self, m, n):        """        :type m: int        :type n: int        :rtype: int        """        skip = &#123;&#125;        sk...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/02/351-Android-Unlock-Patterns/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-686-Repeated-String-Match"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/686-Repeated-String-Match/">686. Repeated String Match</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/686-Repeated-String-Match/" class="article-date">
+	  <time datetime="2020-09-01T22:49:44.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345const repeatedStringMatch = (A, B) =&gt; &#123;    const count = Math.ceil(B.length / A.length)    const str = A.repeat(count)    return str.includes(B) ? count : (str + A).includes(B) ? count + 1 : -1 &#125;;
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/686-Repeated-String-Match/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-947-Most-Stones-Removed-with-Same-Row-or-Column"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/">947. Most Stones Removed with Same Row or Column</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/" class="article-date">
+	  <time datetime="2020-09-01T22:02:02.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 112345678910111213141516171819202122232425262728293031323334class Solution(object):    def removeStones(self, stones):        """        :type stones: List[List[int]]        :rtype: int        """        graph = collections.defaultdict(li...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-228-Summary-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/228-Summary-Ranges/">228. Summary Ranges</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/228-Summary-Ranges/" class="article-date">
+	  <time datetime="2020-09-01T21:51:35.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution123456789101112131415161718192021222324/** * @param &#123;number[]&#125; nums * @return &#123;string[]&#125; */var summaryRanges = function(nums) &#123;    let i = 0;    const res = []        while (i &lt; nums.length) &#123;        let di...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/228-Summary-Ranges/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-904-Fruit-Into-Baskets"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/904-Fruit-Into-Baskets/">904. Fruit Into Baskets</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/904-Fruit-Into-Baskets/" class="article-date">
+	  <time datetime="2020-09-01T17:48:14.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 11234567891011121314151617class Solution(object):    def totalFruit(self, tree):        """        :type tree: List[int]        :rtype: int        """        ans = i = 0        count = collections.Counter()        for j, x in enumerate(tr...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/904-Fruit-Into-Baskets/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-939-Minimum-Area-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -411,379 +774,6 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
         </p>
         <p class="article-more-link">
           <a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-271-Encode-and-Decode-Strings"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/271-Encode-and-Decode-Strings/">271. Encode and Decode Strings</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/271-Encode-and-Decode-Strings/" class="article-date">
-	  <time datetime="2020-08-19T05:10:30.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1123456789101112131415161718192021222324252627class Codec:    def encode(self, strs):        """Encodes a list of strings to a single string.                :type strs: List[str]        :rtype: str        """        if len(strs) == 0:    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/271-Encode-and-Decode-Strings/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-298-Binary-Tree-Longest-Consecutive-Sequence"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/298-Binary-Tree-Longest-Consecutive-Sequence/">298. Binary Tree Longest Consecutive Sequence</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/298-Binary-Tree-Longest-Consecutive-Sequence/" class="article-date">
-	  <time datetime="2020-08-18T23:11:47.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1Recursion one
-12345678910111213141516171819202122/** * Definition for a binary tree node. * function TreeNode(val, left, right) &#123; *     this.val = (val===undefined ? 0 : val) *     this.left = (left===undefined ? null : left) *     ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/298-Binary-Tree-Longest-Consecutive-Sequence/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-281-Zigzag-Iterator"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/281-Zigzag-Iterator/">281. Zigzag Iterator</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/281-Zigzag-Iterator/" class="article-date">
-	  <time datetime="2020-08-18T18:35:40.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution1用i, j的大小关系来判断， 打印哪个数组， diff不能小于1， 到头的话赋最大值
-12345678910111213141516171819202122232425262728293031323334353637/** * @constructor * @param &#123;Integer[]&#125; v1 * @param &#123;Integer[]&#125; v1 */var ZigzagIterator = function ZigzagItera...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/281-Zigzag-Iterator/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-163-Missing-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/163-Missing-Ranges/">163. Missing Ranges</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/163-Missing-Ranges/" class="article-date">
-	  <time datetime="2020-08-18T17:55:42.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          SolutionCornor Case:整形溢出， 当数组中有整形最大值时， 此时lower更新为num+1时就会溢出， 所以再更新前要判断一下， 若num已经时整形最大值了 直接返回结果
-123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; lower * @param &#123;number&#125; upper ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/163-Missing-Ranges/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1057-Campus-Bikes"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/1057-Campus-Bikes/">1057. Campus Bikes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/17/1057-Campus-Bikes/" class="article-date">
-	  <time datetime="2020-08-18T02:55:33.000Z" itemprop="datePublished">2020-08-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances = []     # distances[worker] is tuple of (distance, worker, bike) for each bike         for i, (x, y) in enumerate(wo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/17/1057-Campus-Bikes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Python"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/Python/">Common Python Methods</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Base Data Type
-heapq
-
-heapq.heapify(x): transform list x into a heap, in-place, in linear time.
-heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To acc...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/17/Python/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-97-Interleaving-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/12/97-Interleaving-String/">97. Interleaving String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/12/97-Interleaving-String/" class="article-date">
-	  <time datetime="2020-08-13T05:06:10.000Z" itemprop="datePublished">2020-08-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1
-只要是遇到字符串的子序列或是匹配问题， 直接上动态规划
-Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object):    def isInterleave(self, s1, s2, s3):        """        :type s1: str        :type s2: str        :type s3: str        :rtype: ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/12/97-Interleaving-String/#more">Read More</a>
         </p>
       
     </div>
