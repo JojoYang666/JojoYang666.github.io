@@ -265,6 +265,59 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-384-Shuffle-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/11/384-Shuffle-an-Array/">384. Shuffle an Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/11/384-Shuffle-an-Array/" class="article-date">
+	  <time datetime="2020-10-11T21:23:08.000Z" itemprop="datePublished">2020-10-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Corner Case： 就是记得update original 给它新给一个区间段的值， 要不然其实两个指针指向的是同一个object
+1234567891011121314151617181920212223242526272829303132333435class Solution(object):    def __init__(self, nums):        """        :type nums: List[int]        """        self.a...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/11/384-Shuffle-an-Array/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-Fisher-Yates-Shuffle算法"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -739,62 +792,6 @@ The idea of greedy algorithm is to pick the locally op...
         </p>
         <p class="article-more-link">
           <a href="/2020/10/10/120-Triangle/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-698-Partition-to-K-Equal-Sum-Subsets"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/">698. Partition to K Equal Sum Subsets</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/" class="article-date">
-	  <time datetime="2020-10-10T18:16:45.000Z" itemprop="datePublished">2020-10-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1Brute Force: Backtracking
-几个加速的key point:
-
-backtracking 的时候倒序 加入数字， 也就是先考虑最大的值， 这样会减小subset的size 降低recursive的次数
-加入if not group: break的判断， 当前group开始是0， 通过这种方式recursive 并没有找到结果， 那么这个group的下一个group开始也是0， 同样的recursive再走一遍 肯定是依旧找不到结果的 所以避免rep...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/#more">Read More</a>
         </p>
       
     </div>

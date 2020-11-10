@@ -265,6 +265,64 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1163-Last-Substring-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/">1163. Last Substring in Lexicographical Order</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/" class="article-date">
+	  <time datetime="2020-11-10T05:43:47.000Z" itemprop="datePublished">2020-11-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+The mean idea here is to eliminate those candidates we are certain not the solution, at last, the only one left is our solution
+i, j,j &gt; i –&gt; final we return s[i:]
+
+
+s[i+k] == s[j+k], k++
+s[i+k] &lt; s[j+k], 0 &lt;= p &lt;= k, which means i...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1335-Minimum-Difficulty-of-a-Job-Schedule"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -748,59 +806,6 @@ when update pointer, max()/min()
         </p>
         <p class="article-more-link">
           <a href="/2020/11/06/759-Employee-Free-Time/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-115-Distinct-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/115-Distinct-Subsequences/">115. Distinct Subsequences </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/06/115-Distinct-Subsequences/" class="article-date">
-	  <time datetime="2020-11-07T05:54:22.000Z" itemprop="datePublished">2020-11-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          s: i, t: jdp[i][j]: the number of distinct subsenquences in s[0, i] &amp; t[0:j]at first, must initialize dp[i][j] = sp[i-1][j] then if s[i] == t[j], we can update dp[i][j] by adding dp[i-1][j-1]
-123456789101112131415161718192021class Solution(obj...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/06/115-Distinct-Subsequences/#more">Read More</a>
         </p>
       
     </div>
