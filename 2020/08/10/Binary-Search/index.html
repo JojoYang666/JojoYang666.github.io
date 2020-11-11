@@ -17,7 +17,7 @@
 <meta property="og:description" content="需要找和目标值完全相等的数 code 1234567891011const find &#x3D; (nums, target) &#x3D;&gt; &amp;#123;    let left &#x3D; 0, right &#x3D; nums.length    while (left &lt; right) &amp;#123;        let mid &#x3D; left + (right - left)&gt;&gt;1        i">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-11T04:26:32.000Z">
-<meta property="article:modified_time" content="2020-09-29T22:34:26.198Z">
+<meta property="article:modified_time" content="2020-11-11T19:08:00.254Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -243,6 +243,9 @@
 <p>第四类中虽然是用子函数来判断关系，但大部分时候 mid 也会作为一个参数带入子函数进行计算，这样实际上最终算出的值还是受 mid 的影响，但是 right 却可以初始化为数组长度，循环条件也可以不带等号</p>
 <p><a href="https://www.cnblogs.com/grandyang/p/6854825.html" target="_blank" rel="noopener">https://www.cnblogs.com/grandyang/p/6854825.html</a></p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>适合知道答案的范围， 然后通过一些条件进行binary search 来排除一半又一半的结果，最终找到答案</p>
+<h1 id="Python-Bisect"><a href="#Python-Bisect" class="headerlink" title="Python Bisect"></a>Python Bisect</h1><p>example:<br>a = [0,1,2,3,4,5]</p>
+<p>bisect.bisect_left(a, 2)  -&gt; return 2<br>bisect.bisect_right(a, 2) -&gt; return 3</p>
+<p>a = [0,2,4,6,8,10]<br>bisect.bisect_left(a, 3) -&gt; return 2<br>bisect.bisect_right(a, 3) -&gt; return 2</p>
 
       
     </div>
@@ -345,7 +348,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需要找和目标值完全相等的数"><span class="nav-number">1.</span> <span class="nav-text">需要找和目标值完全相等的数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找第一个不小于目标值的数，-可变形为查找最后一个小于目标值的数"><span class="nav-number">2.</span> <span class="nav-text">查找第一个不小于目标值的数， 可变形为查找最后一个小于目标值的数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找第一个大于目标值的数，-可变形为查找最后一个不大于目标值的数"><span class="nav-number">3.</span> <span class="nav-text">查找第一个大于目标值的数， 可变形为查找最后一个不大于目标值的数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用子函数当作判断关系"><span class="nav-number">4.</span> <span class="nav-text">用子函数当作判断关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他（通常target值不固定）"><span class="nav-number">5.</span> <span class="nav-text">其他（通常target值不固定）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需要找和目标值完全相等的数"><span class="nav-number">1.</span> <span class="nav-text">需要找和目标值完全相等的数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找第一个不小于目标值的数，-可变形为查找最后一个小于目标值的数"><span class="nav-number">2.</span> <span class="nav-text">查找第一个不小于目标值的数， 可变形为查找最后一个小于目标值的数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找第一个大于目标值的数，-可变形为查找最后一个不大于目标值的数"><span class="nav-number">3.</span> <span class="nav-text">查找第一个大于目标值的数， 可变形为查找最后一个不大于目标值的数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用子函数当作判断关系"><span class="nav-number">4.</span> <span class="nav-text">用子函数当作判断关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他（通常target值不固定）"><span class="nav-number">5.</span> <span class="nav-text">其他（通常target值不固定）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">6.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-Bisect"><span class="nav-number">7.</span> <span class="nav-text">Python Bisect</span></a></li></ol>
     
     </div>
   </aside>
