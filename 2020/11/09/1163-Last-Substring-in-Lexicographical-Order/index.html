@@ -17,7 +17,7 @@
 <meta property="og:description" content="The mean idea here is to eliminate those candidates we are certain not the solution, at last, the only one left is our solution i, j,j &gt; i –&gt; final we return s[i:]   s[i+k] &#x3D;&#x3D; s[j+k], k++ s[i+k">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-10T05:43:47.000Z">
-<meta property="article:modified_time" content="2020-11-10T06:01:06.603Z">
+<meta property="article:modified_time" content="2020-11-10T06:02:26.230Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -213,9 +213,10 @@
 <ul>
 <li>s[i+k] == s[j+k], k++</li>
 <li>s[i+k] &lt; s[j+k], 0 &lt;= p &lt;= k, which means idx between i, and i + k, will not be the answer, thus update i = max(j, i+k+1), j = i + 1</li>
-<li>s[i+k] &gt; s[j+k], 0 &lt;= p &lt;= k, which means idx between j and j+k, will not be the answer, thus update j = j+k+1<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lastSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        i, j, k = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j + k &lt; len(s):</span><br><span class="line">            <span class="keyword">if</span> s[i+k] == s[j+k]:</span><br><span class="line">                k += <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> s[i+k] &lt; s[j+k]:</span><br><span class="line">                i = max(i+k+<span class="number">1</span>, j)</span><br><span class="line">                j = i+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                j = j + k + <span class="number">1</span></span><br><span class="line">            k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> s[i:]</span><br></pre></td></tr></table></figure></li>
+<li>s[i+k] &gt; s[j+k], 0 &lt;= p &lt;= k, which means idx between j and j+k, will not be the answer, thus update j = j+k+1</li>
 </ul>
-
+<p><strong>if s[i+k] == s[j+k] s[i:] is the largest</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lastSubstring</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        i, j, k = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> j + k &lt; len(s):</span><br><span class="line">            <span class="keyword">if</span> s[i+k] == s[j+k]:</span><br><span class="line">                k += <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> s[i+k] &lt; s[j+k]:</span><br><span class="line">                i = max(i+k+<span class="number">1</span>, j)</span><br><span class="line">                j = i+<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                j = j + k + <span class="number">1</span></span><br><span class="line">            k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> s[i:]</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -290,6 +291,15 @@ var a = new Donate({
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/11/09/1531-String-Compression-II/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          1531. String Compression II
+        
+      </div>
+    </a>
   
   
     <a href="/2020/11/09/1335-Minimum-Difficulty-of-a-Job-Schedule/" id="article-nav-older" class="article-nav-link-wrap">
