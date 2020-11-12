@@ -265,6 +265,276 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-KMP"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/06/KMP/">KMP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/06/KMP/" class="article-date">
+	  <time datetime="2020-11-06T20:39:17.000Z" itemprop="datePublished">2020-11-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+input:        an array of characters, W (the word to be analyzed)    output:        an array of integers, T (the table to be filled)
+define variables:
+    an integer, pos ← 1 (the current position we are computing in T)
+    an integer, cnd ← 0 ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/06/KMP/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-315-Count-of-Smaller-Numbers-After-Self"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/06/315-Count-of-Smaller-Numbers-After-Self/">315. Count of Smaller Numbers After Self </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/06/315-Count-of-Smaller-Numbers-After-Self/" class="article-date">
+	  <time datetime="2020-11-06T18:35:52.000Z" itemprop="datePublished">2020-11-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+123456789101112131415161718192021222324class Solution(object):    def countSmaller(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        def sort(enum):            half = len(enum)/2            if half:...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/06/315-Count-of-Smaller-Numbers-After-Self/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1235-Maximum-Profit-in-Job-Scheduling"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/">1235. Maximum Profit in Job Scheduling</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/" class="article-date">
+	  <time datetime="2020-11-06T06:36:29.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Kind of knapack algorithm, along with binary search
+12345678910111213141516class Solution(object):    def jobScheduling(self, startTime, endTime, profit):        """        :type startTime: List[int]        :type endTime: List[int]        :type pr...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-329-Longest-Increasing-Path-in-a-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/">329. Longest Increasing Path in a Matrix</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/" class="article-date">
+	  <time datetime="2020-11-06T06:20:25.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819class Solution(object):    def longestIncreasingPath(self, matrix):        """        :type matrix: List[List[int]]        :rtype: int        """        def dfs(i, j):            if not dp[i][j]:                val = m...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-37-Sudoku-Solver"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/37-Sudoku-Solver/">37. Sudoku Solver</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/37-Sudoku-Solver/" class="article-date">
+	  <time datetime="2020-11-06T05:26:57.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Solution(object):    def solveSudoku(self, board):        """        :type board: List[List[str]]        :rtype: None Do not return anything, mo...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/37-Sudoku-Solver/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-72-Edit-Distance"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -516,271 +786,6 @@
         </p>
         <p class="article-more-link">
           <a href="/2020/11/04/829-Consecutive-Numbers-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-780-Reaching-Points"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/04/780-Reaching-Points/">780. Reaching Points</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/04/780-Reaching-Points/" class="article-date">
-	  <time datetime="2020-11-05T06:58:23.000Z" itemprop="datePublished">2020-11-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617class Solution(object):    def reachingPoints(self, sx, sy, tx, ty):        """        :type sx: int        :type sy: int        :type tx: int        :type ty: int        :rtype: bool        """        if sx &gt; tx or sy ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/04/780-Reaching-Points/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-312-Burst-Balloons"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/04/312-Burst-Balloons/">312. Burst Balloons </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/04/312-Burst-Balloons/" class="article-date">
-	  <time datetime="2020-11-05T05:39:35.000Z" itemprop="datePublished">2020-11-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          https://www.youtube.com/watch?v=uG_MtaCJIrM
-12345678910111213141516class Solution(object):    def maxCoins(self, nums):        """        :type nums: List[int]        :rtype: int        """        N = len(nums)        nums = [1] + nums + [1]      ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/04/312-Burst-Balloons/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-45-Jump-Game-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/04/45-Jump-Game-II/">45. Jump Game II </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/04/45-Jump-Game-II/" class="article-date">
-	  <time datetime="2020-11-05T04:46:35.000Z" itemprop="datePublished">2020-11-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Greedy
-1234567891011121314151617181920class Solution(object):    def jump(self, nums):        """        :type nums: List[int]        :rtype: int        """        if len(nums) &lt; 2: return 0 #cornor case        # maximum position it can reach w...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/04/45-Jump-Game-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Tarjan-algorithm"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/04/Tarjan-algorithm/">Tarjan algorithm</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/04/Tarjan-algorithm/" class="article-date">
-	  <time datetime="2020-11-05T04:12:04.000Z" itemprop="datePublished">2020-11-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1192. Critical Connections in a Network
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/04/Tarjan-algorithm/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1192-Critical-Connections-in-a-Network"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/04/1192-Critical-Connections-in-a-Network/">1192. Critical Connections in a Network </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/04/1192-Critical-Connections-in-a-Network/" class="article-date">
-	  <time datetime="2020-11-05T04:08:45.000Z" itemprop="datePublished">2020-11-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        """        :type n: int        :type connections: List[List[int]]        :rtype: List[List[int]]        """       ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/04/1192-Critical-Connections-in-a-Network/#more">Read More</a>
         </p>
       
     </div>
