@@ -265,6 +265,171 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-813-Largest-Sum-of-Averages"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/813-Largest-Sum-of-Averages/">813. Largest Sum of Averages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/813-Largest-Sum-of-Averages/" class="article-date">
+	  <time datetime="2020-10-27T14:08:14.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
+[i, n-1]范围内的子数组分成k组，那么suppose我们已经知道了任意范围内分成k-1组的最大分数
+要求状态k，一定要先求出所有的状态k-1
+在范围[i, n-1]多分出一组，实际上就是将其分成两部分
+一部分是一组，另一部分是k-1组
+就用一个变量j，遍历范围(i, n-1)中的每一个位置
+第一部分[i, j)，由于是一组，那么直接求出平均值即可
+另一部分由于是k-1组，由于我们已经知道了所有k-1的情况，可以直...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/813-Largest-Sum-of-Averages/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-959-Regions-Cut-By-Slashes"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/959-Regions-Cut-By-Slashes/">959. Regions Cut By Slashes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/959-Regions-Cut-By-Slashes/" class="article-date">
+	  <time datetime="2020-10-27T13:13:30.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Solution(object):    def regionsBySlashes(self, grid):        """        :type grid: List[str]        :rtype: int        """        N = len(grid)        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/959-Regions-Cut-By-Slashes/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-116-Populating-Next-Right-Pointers-in-Each-Node"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/">116. Populating Next Right Pointers in Each Node</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/" class="article-date">
+	  <time datetime="2020-10-27T04:57:21.000Z" itemprop="datePublished">2020-10-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          BFS1234567891011121314151617181920212223242526272829303132333435"""# Definition for a Node.class Node(object):    def __init__(self, val=0, left=None, right=None, next=None):        self.val = val        self.left = left        self.right = right ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1254-Number-of-Closed-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -644,177 +809,11 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
 
 
   
-    <article id="post-365-Water-and-Jug-Problem"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/365-Water-and-Jug-Problem/">365. Water and Jug Problem</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/365-Water-and-Jug-Problem/" class="article-date">
-	  <time datetime="2020-10-26T21:25:17.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-可以用一个公式来表达： z = m * x + n * y m，n为舀水和倒水的次数，正数表示往里舀水，负数表示往外倒水
-问题就变成了对于任意给定的x,y,z，存不存在m和n使得上面的等式成立
-裴蜀定理，ax + by = d的解为 d = gcd(x, y)
-只要z % d == 0，上面的等式就有解
-裴蜀定理:ax+by=m有整数解时当且仅当m是a及b的最大公约数d的倍数。裴蜀等式有解时必然有无穷多个整数解，每组解x、y都稱為裴蜀數
-
-1234567891011class Solut...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/365-Water-and-Jug-Problem/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1091-Shortest-Path-in-Binary-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1091-Shortest-Path-in-Binary-Matrix/">1091. Shortest Path in Binary Matrix </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1091-Shortest-Path-in-Binary-Matrix/" class="article-date">
-	  <time datetime="2020-10-26T19:47:13.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def shortestPathBinaryMatrix(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        n = len(grid)                if grid[0][0] or grid[n-1][n-1]: retu...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1091-Shortest-Path-in-Binary-Matrix/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-189-Rotate-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/25/189-Rotate-Array/">189. Rotate Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/25/189-Rotate-Array/" class="article-date">
-	  <time datetime="2020-10-25T22:38:54.000Z" itemprop="datePublished">2020-10-25</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-123456789101112131415161718192021class Solution(object):    def rotate(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: None Do not return anything, modify nums in-place instead.        """        n = l...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/25/189-Rotate-Array/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/14/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="extend next" rel="next" href="/page/16/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/14/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/16/">Next &amp;raquo;</a>
   </nav>
 
 </section>
