@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://jojoyang666.github.io/images/ins_component_design.png">
 <meta property="og:image" content="https://jojoyang666.github.io/images/reliability_redundancy.png">
 <meta property="article:published_time" content="2020-11-02T22:20:49.000Z">
-<meta property="article:modified_time" content="2020-11-03T00:58:37.017Z">
+<meta property="article:modified_time" content="2020-11-13T20:19:44.934Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jojoyang666.github.io/images/instagram.png">
@@ -431,7 +431,98 @@
 </ul>
 </li>
 </ul>
-<h2 id="Pre-generating-the-News-Feed"><a href="#Pre-generating-the-News-Feed" class="headerlink" title="Pre-generating the News Feed"></a>Pre-generating the News Feed</h2>
+<h2 id="Pre-generating-the-News-Feed"><a href="#Pre-generating-the-News-Feed" class="headerlink" title="Pre-generating the News Feed"></a>Pre-generating the News Feed</h2><ol>
+<li>Dedicated servers that are continuously generating users’ News Feeds and storing them in a ‘UserNewsFeed’ table. </li>
+<li>whenever any user needs the latest photos for their News Feed, we will simply query this table and return the results to the user.</li>
+</ol>
+<h2 id="What-are-the-different-approaches-for-sending-News-Feed-contents-to-the-users"><a href="#What-are-the-different-approaches-for-sending-News-Feed-contents-to-the-users" class="headerlink" title="What are the different approaches for sending News Feed contents to the users?"></a>What are the different approaches for sending News Feed contents to the users?</h2><ol>
+<li>Pull<ul>
+<li>Clients can pull the News Feed contents from the server on a regular basis or manually whenever they need it.</li>
+<li>Possible problems<ul>
+<li>New data might not be shown to the users until clients issue a pull request</li>
+<li>Most of the time pull requests will result in an empty response if there is no new data.</li>
+<li>Problem<ul>
+<li>a user who follows a lot of people or a celebrity user who has millions of followers</li>
+<li>in this case, the server has to push updates quite frequently.</li>
+<li>Or: That the server <strong>pushes</strong> updates to all the users <strong>not more than a certain frequency</strong>, letting users with a lot of follows/updates to regularly pull data.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Push<ul>
+<li>Servers can push new data to the users as soon as it is available.</li>
+<li>To efficiently manage this, users have to maintain a Long Poll request with the server for receiving the updates. </li>
+</ul>
+</li>
+<li>Hybrid<ul>
+<li>move all the users who have a high number of follows to a pull-based model</li>
+<li>push data to those users who have a few hundred (or thousand) follows</li>
+</ul>
+</li>
+<li>Other Techniques need to know as base<ul>
+<li>Polling<ul>
+<li>Situation 1<ul>
+<li>when an I/O operation is required, the computer does nothing other than check the status of the I/O device until it is ready</li>
+<li>at which point the device is accessed. In other words, the computer waits until the device is ready.</li>
+</ul>
+</li>
+<li>Situation 2<ul>
+<li>where a device is repeatedly checked for readiness, and if it is not, the computer returns to a different task. </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Long Polling<ul>
+<li>the client requests information from the server exactly as in normal polling</li>
+<li>with the expectation the server may not respond immediately. </li>
+<li>If the server has no new information for the client when the poll is received, the server holds the request open and waits for response information to become available. </li>
+<li>Once it does have new information, the server immediately sends an HTTP/S response to the client, completing the open HTTP/S Request.</li>
+<li>Upon receipt of the server response, the client often immediately issues another server request.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="News-Feed-Creation-with-Sharded-Data"><a href="#News-Feed-Creation-with-Sharded-Data" class="headerlink" title="News Feed Creation with Sharded Data"></a>News Feed Creation with Sharded Data</h1><ol>
+<li>One of the most important requirement to create the News Feed for any given user is to fetch the latest photos from all people the user follows.</li>
+<li>Need to have a mechanism to sort photos on their time of creation. <ul>
+<li>Make photo creation time part of the PhotoID</li>
+<li>As we will have a primary index on PhotoID, it will be quite quick to find the latest PhotoIDs</li>
+</ul>
+</li>
+<li>PhotoID = epoch time + auto-incrementing sequence(auto-incrementing ID from our key-generating DB)<ul>
+<li>Figure out shard number from this PhotoID ( PhotoID % 10) and store the photo there</li>
+</ul>
+</li>
+<li>What could be the size of our PhotoID?<ul>
+<li>our epoch time starts today, how many bits we would need to store the number of seconds for next 50 years?<ul>
+<li>86400 sec/day * 365 (days a year) * 50 (years) =&gt; 1.6 billion seconds</li>
+</ul>
+</li>
+<li>Need <strong>31 bits</strong> to store this number</li>
+<li>Expecting 23 new photos per second; we can allocate 9 bits to store auto incremented sequence</li>
+<li>Every second we can store (2^9 =&gt; 512) new photos</li>
+<li><strong>Can reset our auto incrementing sequence every second</strong></li>
+</ul>
+</li>
+</ol>
+<h1 id="Cache-and-Load-Balancing"><a href="#Cache-and-Load-Balancing" class="headerlink" title="Cache and Load Balancing"></a>Cache and Load Balancing</h1><ol>
+<li>Need a massive-scale photo delivery system to serve the globally distributed users</li>
+<li>Service should push its content closer to the user using a large number of <strong>geographically distributed photo cache servers and use CDNs</strong></li>
+<li>A cache for metadata servers to cache hot database rows</li>
+<li>Use Memcache to cache the data and Application servers before hitting database can quickly check if the cache has desired rows.</li>
+<li>Least Recently Used (LRU) can be a reasonable cache eviction policy for our system</li>
+</ol>
+<h2 id="How-can-we-build-more-intelligent-cache"><a href="#How-can-we-build-more-intelligent-cache" class="headerlink" title="How can we build more intelligent cache?"></a>How can we build more intelligent cache?</h2><ol>
+<li>If we go with 80-20 rule:<ul>
+<li><strong>20% of daily read volume for photos</strong> is <strong>generating 80% of traffic</strong> which means that certain photos are so popular that the majority of people read them. </li>
+<li>Can try caching <strong>20% of daily read volume</strong> of <strong>photos and metadata</strong></li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -533,7 +624,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">2.</span> <span class="nav-text">Some Design Considerations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-System-Design"><span class="nav-number">4.</span> <span class="nav-text">High Level System Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-schema"><span class="nav-number">5.</span> <span class="nav-text">Database schema</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadata-related-to-photos"><span class="nav-number">5.1.</span> <span class="nav-text">Metadata related to photos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Store-relationships-between-users-and-photos-the-list-of-people-a-user-follows"><span class="nav-number">5.2.</span> <span class="nav-text">Store relationships between users and photos&#x2F;the list of people a user follows</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Size-Estimation"><span class="nav-number">6.</span> <span class="nav-text">Data Size Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#User"><span class="nav-number">6.1.</span> <span class="nav-text">User</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photo"><span class="nav-number">6.2.</span> <span class="nav-text">Photo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UserFollow"><span class="nav-number">6.3.</span> <span class="nav-text">UserFollow</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Component-Design"><span class="nav-number">7.</span> <span class="nav-text">Component Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reliability-and-Redundancy"><span class="nav-number">8.</span> <span class="nav-text">Reliability and Redundancy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Sharding"><span class="nav-number">9.</span> <span class="nav-text">Data Sharding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioning-based-on-UserID"><span class="nav-number">9.1.</span> <span class="nav-text">Partitioning based on UserID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioning-based-on-Photo-ID"><span class="nav-number">9.2.</span> <span class="nav-text">Partitioning based on Photo ID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-we-plan-for-the-future-growth-of-our-system"><span class="nav-number">9.3.</span> <span class="nav-text">How can we plan for the future growth of our system?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ranking-and-News-Feed-Generation"><span class="nav-number">10.</span> <span class="nav-text">Ranking and News Feed Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pre-generating-the-News-Feed"><span class="nav-number">10.1.</span> <span class="nav-text">Pre-generating the News Feed</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">2.</span> <span class="nav-text">Some Design Considerations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-System-Design"><span class="nav-number">4.</span> <span class="nav-text">High Level System Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-schema"><span class="nav-number">5.</span> <span class="nav-text">Database schema</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadata-related-to-photos"><span class="nav-number">5.1.</span> <span class="nav-text">Metadata related to photos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Store-relationships-between-users-and-photos-the-list-of-people-a-user-follows"><span class="nav-number">5.2.</span> <span class="nav-text">Store relationships between users and photos&#x2F;the list of people a user follows</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Size-Estimation"><span class="nav-number">6.</span> <span class="nav-text">Data Size Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#User"><span class="nav-number">6.1.</span> <span class="nav-text">User</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Photo"><span class="nav-number">6.2.</span> <span class="nav-text">Photo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UserFollow"><span class="nav-number">6.3.</span> <span class="nav-text">UserFollow</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Component-Design"><span class="nav-number">7.</span> <span class="nav-text">Component Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reliability-and-Redundancy"><span class="nav-number">8.</span> <span class="nav-text">Reliability and Redundancy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Sharding"><span class="nav-number">9.</span> <span class="nav-text">Data Sharding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioning-based-on-UserID"><span class="nav-number">9.1.</span> <span class="nav-text">Partitioning based on UserID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioning-based-on-Photo-ID"><span class="nav-number">9.2.</span> <span class="nav-text">Partitioning based on Photo ID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-we-plan-for-the-future-growth-of-our-system"><span class="nav-number">9.3.</span> <span class="nav-text">How can we plan for the future growth of our system?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ranking-and-News-Feed-Generation"><span class="nav-number">10.</span> <span class="nav-text">Ranking and News Feed Generation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pre-generating-the-News-Feed"><span class="nav-number">10.1.</span> <span class="nav-text">Pre-generating the News Feed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-are-the-different-approaches-for-sending-News-Feed-contents-to-the-users"><span class="nav-number">10.2.</span> <span class="nav-text">What are the different approaches for sending News Feed contents to the users?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#News-Feed-Creation-with-Sharded-Data"><span class="nav-number">11.</span> <span class="nav-text">News Feed Creation with Sharded Data</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cache-and-Load-Balancing"><span class="nav-number">12.</span> <span class="nav-text">Cache and Load Balancing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-we-build-more-intelligent-cache"><span class="nav-number">12.1.</span> <span class="nav-text">How can we build more intelligent cache?</span></a></li></ol></li></ol>
     
     </div>
   </aside>
