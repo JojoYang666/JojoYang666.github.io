@@ -265,6 +265,115 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1329-Sort-the-Matrix-Diagonally"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/">1329. Sort the Matrix Diagonally</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/" class="article-date">
+	  <time datetime="2020-10-27T20:41:55.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021class Solution(object):    def diagonalSort(self, mat):        """        :type mat: List[List[int]]        :rtype: List[List[int]]        """        n, m = len(mat), len(mat[0])        res = []        dic = collec...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-General"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/General/">General</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/General/" class="article-date">
+	  <time datetime="2020-10-27T20:34:11.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+同意对角线上的元素特点： i-j相同
+对于str转化int/str表示数字的问题： corner case 考虑preceding is zero或者说这个数字本来就是0的情况（many 0 in preceding）
+Index as a hash key
+
+
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/General/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-366-Find-Leaves-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -677,111 +786,6 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         </p>
         <p class="article-more-link">
           <a href="/2020/10/26/1254-Number-of-Closed-Islands/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1155-Number-of-Dice-Rolls-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/">1155. Number of Dice Rolls With Target Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/" class="article-date">
-	  <time datetime="2020-10-27T04:20:22.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          DFS + MemoThe general relation is:dp(d, f, target) = dp(d-1, f, target-1) + dp(d-1, f, target-2) + … + dp(d-1, f, target-f)
-The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing else.So dp(0, f, t) = 0 iff t != 0, and dp(0...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-229-Majority-Element-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/229-Majority-Element-II/">229. Majority Element II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/229-Majority-Element-II/" class="article-date">
-	  <time datetime="2020-10-27T03:39:28.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031class Solution(object):    def majorityElement(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        if not nums: return []                count1, count...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/229-Majority-Element-II/#more">Read More</a>
         </p>
       
     </div>

@@ -265,6 +265,114 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1497-Check-If-Array-Pairs-Are-Divisible-by-k"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/1497-Check-If-Array-Pairs-Are-Divisible-by-k/">1497. Check If Array Pairs Are Divisible by k</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/1497-Check-If-Array-Pairs-Are-Divisible-by-k/" class="article-date">
+	  <time datetime="2020-10-29T17:28:18.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          数学a%k = m b%k = n
+if (a + b)%k == 0 ===&gt; m+n =k
+12345678910111213141516171819202122class Solution(object):    def canArrange(self, arr, k):        """        :type arr: List[int]        :type k: int        :rtype: bool        """        reminde...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/1497-Check-If-Array-Pairs-Are-Divisible-by-k/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/">1477. Find Two Non-overlapping Sub-arrays Each With Target Sum </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/" class="article-date">
+	  <time datetime="2020-10-29T16:34:03.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          using another premin[i] array to store the min length of subarray which sum is equal is target in the array which starts with 0 ends with i, premin保证了不会overlap
+数组越界in python可能是是a[-1] 不会越界， 但是有时候考虑是否有效的what we want 
+12345678910111213141516171819202...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1405-Longest-Happy-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -683,111 +791,6 @@ cornor case 每次遍历一个到c时一定要重置head[c] = []， 因为可能
         </p>
         <p class="article-more-link">
           <a href="/2020/10/28/886-Possible-Bipartition/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-260-Single-Number-III"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/260-Single-Number-III/">260. Single Number III</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/260-Single-Number-III/" class="article-date">
-	  <time datetime="2020-10-28T21:37:23.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          通过找到不一样的那个位数， 再进行一次异或
-123456789101112131415161718class Solution(object):    def singleNumber(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        bitmask = 0                for num in nums:            bit...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/260-Single-Number-III/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-82-Remove-Duplicates-from-Sorted-List-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/">82. Remove Duplicates from Sorted List II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/" class="article-date">
-	  <time datetime="2020-10-28T19:54:00.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def deleteDuplicates(...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/#more">Read More</a>
         </p>
       
     </div>
