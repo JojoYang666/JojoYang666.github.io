@@ -295,7 +295,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718class Solution(object):    def crackSafe(self, n, k):        """        :type n: int        :type k: int        :rtype: str        """        ans = "0" * (n-1)        visits = set()                for x in range(k ** n):...
+          
+there are k ** n possible password, thus for loop from 0 to k ** n
+
+try to create new password from previuos one, and add to visited
+
+Cornor case
+
+initial state is 000
+
+we need to tranvse from back to end: k-1, k-2, …0
+
+if we tranverse from 0 to ...
         </p>
         <p class="article-more-link">
           <a href="/2020/11/14/753-Cracking-the-Safe/#more">Read More</a>
