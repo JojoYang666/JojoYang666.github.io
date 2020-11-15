@@ -265,6 +265,184 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Python"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/17/Python/">Common Python Methods</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/17/Python/" class="article-date">
+	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/python/">python</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Base Data Type
+heapq
+
+heapq.heapify(x): transform list x into a heap, in-place, in linear time.
+heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To acc...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/17/Python/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-97-Interleaving-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/12/97-Interleaving-String/">97. Interleaving String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/12/97-Interleaving-String/" class="article-date">
+	  <time datetime="2020-08-13T05:06:10.000Z" itemprop="datePublished">2020-08-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+只要是遇到字符串的子序列或是匹配问题， 直接上动态规划
+Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object):    def isInterleave(self, s1, s2, s3):        """        :type s1: str        :type s2: str        :type s3: str        :rtype: ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/12/97-Interleaving-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-391-Perfect-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/11/391-Perfect-Rectangle/">391. Perfect Rectangle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/11/391-Perfect-Rectangle/" class="article-date">
+	  <time datetime="2020-08-11T18:12:17.000Z" itemprop="datePublished">2020-08-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+
+
+
+
+所有矩形的4个顶点只会有蓝， 绿， 红三种情况
+
+蓝表示该顶点周围没有其他矩形
+绿点表示两个矩形并排相邻
+红点表示四个矩形相邻
+
+
+在一个完美矩形中， 蓝色的点只能有四个
+
+矩形的四个顶点： 左下， 左上， 右上， 右下的顺序来给顶点标号为1， 2， 4， 8 —》 考虑二进制表示
+
+当一个点是某一个矩形的左下顶点时，这个点就不能是其他矩形的左下顶点了, 这个条件对于这四种顶点都要成立，那么对于每一个点，如果它是某个矩形的四个顶点之一. 我们记录下来，如果在别...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/11/391-Perfect-Rectangle/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-Binary-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -646,181 +824,11 @@ _sentence[start%length] === &#39; &#39; is the situation that we do not need an 
 
 
   
-    <article id="post-361-Bomb-Enemy"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/31/361-Bomb-Enemy/">361. Bomb Enemy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/31/361-Bomb-Enemy/" class="article-date">
-	  <time datetime="2020-07-31T16:04:07.000Z" itemprop="datePublished">2020-07-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution
-Thinking
-rowCnt: record the number of ememies before hiting the next wall
-colCnt[j]: in the jth col, the number of emeimis before hiting the wall
-
-
-why colCnt would be an array?
-For each row, we visit each column once. Once we visit secon...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/31/361-Bomb-Enemy/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-489-Robot-Room-Cleaner"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/29/489-Robot-Room-Cleaner/">489. Robot Room Cleaner</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/29/489-Robot-Room-Cleaner/" class="article-date">
-	  <time datetime="2020-07-29T21:48:02.000Z" itemprop="datePublished">2020-07-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution
-https://www.youtube.com/watch?v=y4izHfShEfU
-
-Backtrack algorithm
-
-we do not know where the robot is (the exactly location), thus we give the initial location is (0, 0)
-then [[-1, 0], [0, 1], [1, 0], [0, -1]] to  4 directions, we have all ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/29/489-Robot-Room-Cleaner/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-212-Word-Search-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/07/24/212-Word-Search-II/">212. Word Search II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/07/24/212-Word-Search-II/" class="article-date">
-	  <time datetime="2020-07-24T13:54:43.000Z" itemprop="datePublished">2020-07-24</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution
-Trie Tree123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657/** * @param &#123;character[][]&#125; board * @param &#123;string[]&#125; words * @return &#123;string[]&#125; */var findWo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/07/24/212-Word-Search-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/36/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><a class="extend next" rel="next" href="/page/38/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/36/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/38/">Next &amp;raquo;</a>
   </nav>
 
 </section>
