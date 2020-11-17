@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>913. cat and mouse | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Thinking state of the game (m, c, t)  m is the location of the mouse c is the location of the cat t is 1 if it’s mouse’s move t is 2 if it is cat’s move   States forms a graph:  the player whose turn">
+<meta property="og:type" content="article">
+<meta property="og:title" content="913. Cat and Mouse">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/11/16/913-Cat-and-Mouse/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Thinking state of the game (m, c, t)  m is the location of the mouse c is the location of the cat t is 1 if it’s mouse’s move t is 2 if it is cat’s move   States forms a graph:  the player whose turn">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-16T21:14:27.000Z">
+<meta property="article:modified_time" content="2020-11-16T22:35:19.513Z">
+<meta property="article:author" content="Jojo Yang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-913-Cat-and-Mouse" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      913. Cat and Mouse
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/913-Cat-and-Mouse/" class="article-date">
+	  <time datetime="2020-11-16T21:14:27.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Thinking"><a href="#Thinking" class="headerlink" title="Thinking"></a>Thinking</h1><ol>
+<li><p>state of the game <code>(m, c, t)</code></p>
+<ul>
+<li>m is the location of the mouse</li>
+<li>c is the location of the cat</li>
+<li>t is 1 if it’s mouse’s move</li>
+<li>t is 2 if it is cat’s move</li>
+</ul>
+</li>
+<li><p>States forms a graph:</p>
+<ul>
+<li>the player whose turn it has vaious moves which can be considered as outgoing edges from this node to other nodes.</li>
+</ul>
+</li>
+<li><p>The node can be either colored Mouse, Cat, or Draw depending on which player is assured victory</p>
+</li>
+<li><p>we will corlor the each node marked as DRAW: – suppose the current turn is Mouse</p>
+<ul>
+<li>Immediate coloring: if there is a child that is colored Mouse, this will be draw</li>
+<li>Eventual coloring: if all children are colored CAT, this node will be colired CAT</li>
+</ul>
+</li>
+<li><p>Repeatedly do this kind of coloring until no node satisfies the above conditions. To perform this coloring efficiently, we will use a queue and perform a bottom-up percolation:</p>
+<ul>
+<li>Enqueue any node initially colored </li>
+<li>For every node in the queue, for each parent of that node:<ul>
+<li>For every node in the queue, for each parent of that node:</li>
+<li>If you can’t, then decrement the side-count of the number of children marked DRAW. If it becomes zero, then do an “eventual coloring” of this parent.</li>
+<li>All parents that were colored in this manner get enqueued to the queue.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>Color the graph bottom up, final res is color[1, 2, 1], mouse 先下</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">catMouseGame</span><span class="params">(self, graph)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type graph: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        N = len(graph)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 1: mouse; 2: Cat</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">parents</span><span class="params">(m, c, t)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> t == <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">for</span> m2 <span class="keyword">in</span> graph[m]:</span><br><span class="line">                    <span class="keyword">yield</span> m2, c, <span class="number">3</span>-t</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">for</span> c2 <span class="keyword">in</span> graph[c]:</span><br><span class="line">                    <span class="keyword">if</span> c2: <span class="comment"># current is mouse'turn, previous is cat and cat cannot goto the hole</span></span><br><span class="line">                        <span class="keyword">yield</span> m, c2, <span class="number">3</span>-t</span><br><span class="line">        </span><br><span class="line">        DRAW, MOUSE, CAT = <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">        color = collections.defaultdict(int)</span><br><span class="line">        </span><br><span class="line">        degree = &#123;&#125; </span><br><span class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> xrange(N):</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> xrange(N):</span><br><span class="line">                degree[m, c, <span class="number">1</span>] = len(graph[m]) <span class="comment"># # of mouse to choose for next turn</span></span><br><span class="line">                degree[m, c, <span class="number">2</span>] = len(graph[c]) - (<span class="number">0</span> <span class="keyword">in</span> graph[c]) <span class="comment"># # of cat to choose for next turn, cat is not allowed to travel to hole</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># initial color from bottom up</span></span><br><span class="line">        queue = collections.deque([])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> xrange(N):</span><br><span class="line">            <span class="keyword">for</span> t <span class="keyword">in</span> xrange(<span class="number">1</span>, <span class="number">3</span>):</span><br><span class="line">                color[<span class="number">0</span>, i, t] = MOUSE <span class="comment"># no matter which node i code to the node 0, no matter whose turn to it, it is Mouse to win</span></span><br><span class="line">                queue.append((<span class="number">0</span>, i, t, MOUSE))</span><br><span class="line">                <span class="keyword">if</span> i &gt; <span class="number">0</span>:</span><br><span class="line">                    color[i, i, t] = CAT</span><br><span class="line">                    queue.append((i, i, t, CAT)) <span class="comment"># from node i to node i(means 2 different player), no matter whose to turn, it is cat win it, because mouse and cat arrive at the same node</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            i, j, t, c = queue.popleft()</span><br><span class="line">            <span class="keyword">for</span> i2, j2, t2 <span class="keyword">in</span> parents(i, j, t): <span class="comment"># find which node comes to this pos</span></span><br><span class="line">                <span class="keyword">if</span> color[i2, j2, t2] <span class="keyword">is</span> DRAW: <span class="comment"># not make a dicision yet</span></span><br><span class="line">                    <span class="keyword">if</span> t2 == c: <span class="comment"># parent is t2 to turn, after t2 make decision, it goes to [i, j, t] state, this state is c to win, if t2 == c, color i2, j2, t2 to c, t2 make itself to win, add append it to the list</span></span><br><span class="line">                        color[i2, j2, t2] = c</span><br><span class="line">                        queue.append((i2, j2, t2, c))</span><br><span class="line">                    <span class="keyword">else</span>: <span class="comment"># supose (i, j, t) is mouse to win, but current is cat, we remove this edge(do not go this way), if after remove, we do not have more ways to play, then it will be mouse to win, thus update it</span></span><br><span class="line">                        degree[i2, j2, t2] -= <span class="number">1</span></span><br><span class="line">                        <span class="keyword">if</span> degree[i2, j2, t2] == <span class="number">0</span>: <span class="comment"># t2 have no choice to make itself win, color it to the 3-t2</span></span><br><span class="line">                            color[i2, j2, t2] = <span class="number">3</span> - t2</span><br><span class="line">                            queue.append((i2, j2, t2, <span class="number">3</span> - t2)) <span class="comment"># get the final state append  it to the queue</span></span><br><span class="line">        <span class="keyword">return</span> color[<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>] <span class="comment"># root state is mouse at pos 1, cat at pos 2, mouse play first</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/11/16/913-Cat-and-Mouse/" target="_blank" title="913. Cat and Mouse">https://jojoyang666.github.io/2020/11/16/913-Cat-and-Mouse/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/16/827-Making-A-Large-Island/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          827. Making A Large Island
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/16/MIN-MAX/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MIN-MAX</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Thinking"><span class="nav-number">1.</span> <span class="nav-text">Thinking</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
