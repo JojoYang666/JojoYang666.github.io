@@ -18,8 +18,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jojoyang666.github.io/images/high_level_design_facebook.png">
 <meta property="og:image" content="https://jojoyang666.github.io/images/high_level_setail_messenger.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/detai;_component_design_fb_messenger.png">
 <meta property="article:published_time" content="2020-11-17T22:50:03.000Z">
-<meta property="article:modified_time" content="2020-11-18T01:36:19.681Z">
+<meta property="article:modified_time" content="2020-11-18T04:05:12.005Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jojoyang666.github.io/images/high_level_design_facebook.png">
@@ -335,7 +336,155 @@
 <li>Send an acknowledgment to the sender</li>
 </ol>
 <p><strong>Note: step 1 and 2 happen at the same time</strong></p>
-<h3 id="How-does-the-messenger-maintain-the-sequencing-of-the-messages"><a href="#How-does-the-messenger-maintain-the-sequencing-of-the-messages" class="headerlink" title="How does the messenger maintain the sequencing of the messages?"></a>How does the messenger maintain the sequencing of the messages?</h3>
+<h3 id="How-does-the-messenger-maintain-the-sequencing-of-the-messages"><a href="#How-does-the-messenger-maintain-the-sequencing-of-the-messages" class="headerlink" title="How does the messenger maintain the sequencing of the messages?"></a>How does the messenger maintain the sequencing of the messages?</h3><ol>
+<li>store a timestamp with each message, which is the time the message is received by the server, still not ensure correct ordering of messages for clients. <ul>
+<li>Here is the scenario<ul>
+<li>User-1 sends a message M1 to the server for User-2.</li>
+<li>The server receives M1 at T1.</li>
+<li>Meanwhile, User-2 sends a message M2 to the server for User-1.</li>
+<li>The server receives the message M2 at T2, such that T2 &gt; T1.</li>
+<li>The server sends message M1 to User-2 and M2 to User-1.</li>
+<li>User-1 will see M1 first and then M2, whereas User-2 will see M2 first and then M1.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Solution<ul>
+<li>keep a sequence number with every message for each client</li>
+<li>sequence number will determine the exact ordering of messages for EACH user</li>
+<li>Both clients will see a different view of the message sequence, but this view will be consistent for them on all devices.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Storing-and-retrieving-the-messages-from-the-database"><a href="#Storing-and-retrieving-the-messages-from-the-database" class="headerlink" title="Storing and retrieving the messages from the database"></a>Storing and retrieving the messages from the database</h2><ol>
+<li><p>when chat server receives a new message, it need to store it in the db, two options:</p>
+<ul>
+<li>Start a separate thread, which will work with the database to store the message.</li>
+<li>Send an asynchronous request to the database to store the message.</li>
+</ul>
+</li>
+<li><p><strong>keep certain things in mind while designing our database</strong></p>
+<ul>
+<li>How to efficiently work with the database connection pool.</li>
+<li>How to retry failed requests</li>
+<li>Where to log those requests that failed even after some retries</li>
+<li>How to retry these logged requests (that failed after the retry) when all the issues have resolved</li>
+</ul>
+</li>
+<li><p>Which storage system we should use?</p>
+<ul>
+<li>Support a very high rate of small updates</li>
+<li>Fetch a range of records quickly.<ul>
+<li>A huge number of small messages that need to be inserted in the database</li>
+<li>while querying, a user is mostly interested in sequentially accessing the messages.</li>
+</ul>
+</li>
+<li>wide-column database solution like HBase<ul>
+<li>column-oriented key-value NoSQL database</li>
+<li>store multiple values against one key into multiple columns</li>
+<li>Groups data together to store new data in a memory buffer </li>
+<li>Once the buffer is full, it dumps the data to the disk. <ul>
+<li>helps to store a lot of small data quickly </li>
+<li>fetching rows by the key or scanning ranges of rows quickly</li>
+</ul>
+</li>
+<li><strong>HBase is also an efficient database to store variable sized data</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>How should clients efficiently fetch data from the server? </p>
+<ul>
+<li>Clients should paginate while fetching data from the server</li>
+<li>Page size could be different for different clients<ul>
+<li>cell phones have smaller screens, so we need a fewer number of message/conversations in the viewport.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Managing-user’s-status"><a href="#Managing-user’s-status" class="headerlink" title="Managing user’s status"></a>Managing user’s status</h2><ol>
+<li>keep track of user’s online/offline status and notify all the relevant users whenever a status change happens</li>
+<li>With 500M active users at any time, if we have to broadcast each status change to all the relevant active users, it will consume a lot of resources.</li>
+<li>Optimization like this:<ul>
+<li>Whenever a client starts the app, it can pull the current status of all users in their friends’ list.</li>
+<li>Whenever a user sends a message to another user that has gone offline, we can send a failure to the sender and update the status on the client</li>
+<li>Whenever a user comes online, the server can always broadcast that status with a delay of a few seconds to see if the user does not go offline immediately.</li>
+<li>Clients can pull the status from the server about those users that are being shown on the user’s viewport.<ul>
+<li>This should not be a frequent operation, as the server is broadcasting the online status of users</li>
+<li>live with the stale offline status of users for a while.</li>
+</ul>
+</li>
+<li>Whenever the client starts a new chat with another user, we can pull the status at that time.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><img src="/images/detai;_component_design_fb_messenger.png" alt="image"></li>
+</ul>
+<h2 id="Design-Summary"><a href="#Design-Summary" class="headerlink" title="Design Summary"></a>Design Summary</h2><ol>
+<li>Clients will open a connection to the chat server to send a message</li>
+<li>the server will then pass it to the requested user</li>
+<li>All the active users will keep a connection open with the server to receive messages</li>
+<li>Whenever a new message arrives, the chat server will push it to the receiving user on the long poll request. </li>
+<li>Messages can be stored in HBase, which supports quick small updates, and range based searches</li>
+<li>the servers can broadcast the online status of a user to other relevant users.</li>
+<li>Clients can pull status updates for users who are visible in the client’s viewport on a less frequent basis.</li>
+</ol>
+<h1 id="Data-partitioning"><a href="#Data-partitioning" class="headerlink" title="Data partitioning"></a>Data partitioning</h1><ol>
+<li><h1 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h1></li>
+<li><p>cache a few recent messages (say last 15) in a few recent conversations that are visible in a user’s viewport (say last 5).</p>
+</li>
+<li><p>we decided to store all of the user’s messages on one shard, the cache for a user should entirely reside on one machine too.</p>
+</li>
+</ol>
+<h1 id="LB"><a href="#LB" class="headerlink" title="LB"></a>LB</h1><ol>
+<li>a load balancer in front of our chat servers: <ul>
+<li>can map each UserID to a server that holds the connection for the user</li>
+<li>then direct the request to that server</li>
+</ul>
+</li>
+<li>lb in front of the cache servers</li>
+</ol>
+<h1 id="Fault-tolerance-and-Replication"><a href="#Fault-tolerance-and-Replication" class="headerlink" title="Fault tolerance and Replication"></a>Fault tolerance and Replication</h1><ol>
+<li>What will happen when a chat server fails? <ul>
+<li>It’s extremely hard to failover TCP connections to other servers; </li>
+<li>an easier approach can be to have clients automatically reconnect if the connection is lost.</li>
+</ul>
+</li>
+<li>Should we store multiple copies of user messages?<ul>
+<li>we have to store multiple copies of the data on different servers </li>
+<li>use techniques like Reed-Solomon encoding to distribute and replicate it.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Extended-Requirements"><a href="#Extended-Requirements" class="headerlink" title="Extended Requirements"></a>Extended Requirements</h1><h2 id="Group-chat"><a href="#Group-chat" class="headerlink" title="Group chat"></a>Group chat</h2><ol>
+<li>Separate group-chat objects in our system that can be stored on the chat servers</li>
+<li>A group-chat object is identified by GroupChatID <ul>
+<li>maintain a list of people who are part of that chat</li>
+</ul>
+</li>
+<li>LB direct each group chat message based on GroupChatID </li>
+<li>the server handling that group chat<ul>
+<li>iterate through all the users of the chat to find the server handling the connection of each user to deliver the message.</li>
+</ul>
+</li>
+<li>DB<ul>
+<li>store all the group chats in a separate table partitioned based on GroupChatID</li>
+</ul>
+</li>
+</ol>
+<h2 id="Push-notifications"><a href="#Push-notifications" class="headerlink" title="Push notifications"></a>Push notifications</h2><ol>
+<li>set up a Notification server<ul>
+<li>take the messages for offline users </li>
+<li>send them to the manufacture’s push notification server<ul>
+<li>then send them to the user’s device.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -411,6 +560,15 @@ var a = new Donate({
     
 <nav id="article-nav">
   
+    <a href="/2020/11/17/818-Race-Car/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          818. Race Car 
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/11/17/1463-Cherry-Pickup-II/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
@@ -428,7 +586,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">2.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">3.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">4.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Messages-Handling"><span class="nav-number">4.1.</span> <span class="nav-text">Messages Handling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-would-we-efficiently-send-receive-messages"><span class="nav-number">4.1.1.</span> <span class="nav-text">How would we efficiently send&#x2F;receive messages?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-will-clients-maintain-an-open-connection-with-the-server"><span class="nav-number">4.1.2.</span> <span class="nav-text">How will clients maintain an open connection with the server?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-can-the-server-keep-track-of-all-the-opened-connection-to-redirect-messages-to-the-users-efficiently"><span class="nav-number">4.1.3.</span> <span class="nav-text">How can the server keep track of all the opened connection to redirect messages to the users efficiently?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-will-happen-when-the-server-receives-a-message-for-a-user-who-has-gone-offline"><span class="nav-number">4.1.4.</span> <span class="nav-text">What will happen when the server receives a message for a user who has gone offline?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-many-chat-servers-we-need"><span class="nav-number">4.1.5.</span> <span class="nav-text">How many chat servers we need?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-do-we-know-which-server-holds-the-connection-to-which-user"><span class="nav-number">4.1.6.</span> <span class="nav-text">How do we know which server holds the connection to which user?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-should-the-server-process-a-‘deliver-message’-request"><span class="nav-number">4.1.7.</span> <span class="nav-text">How should the server process a ‘deliver message’ request?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-does-the-messenger-maintain-the-sequencing-of-the-messages"><span class="nav-number">4.1.8.</span> <span class="nav-text">How does the messenger maintain the sequencing of the messages?</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">2.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">3.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">4.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Messages-Handling"><span class="nav-number">4.1.</span> <span class="nav-text">Messages Handling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-would-we-efficiently-send-receive-messages"><span class="nav-number">4.1.1.</span> <span class="nav-text">How would we efficiently send&#x2F;receive messages?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-will-clients-maintain-an-open-connection-with-the-server"><span class="nav-number">4.1.2.</span> <span class="nav-text">How will clients maintain an open connection with the server?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-can-the-server-keep-track-of-all-the-opened-connection-to-redirect-messages-to-the-users-efficiently"><span class="nav-number">4.1.3.</span> <span class="nav-text">How can the server keep track of all the opened connection to redirect messages to the users efficiently?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-will-happen-when-the-server-receives-a-message-for-a-user-who-has-gone-offline"><span class="nav-number">4.1.4.</span> <span class="nav-text">What will happen when the server receives a message for a user who has gone offline?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-many-chat-servers-we-need"><span class="nav-number">4.1.5.</span> <span class="nav-text">How many chat servers we need?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-do-we-know-which-server-holds-the-connection-to-which-user"><span class="nav-number">4.1.6.</span> <span class="nav-text">How do we know which server holds the connection to which user?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-should-the-server-process-a-‘deliver-message’-request"><span class="nav-number">4.1.7.</span> <span class="nav-text">How should the server process a ‘deliver message’ request?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-does-the-messenger-maintain-the-sequencing-of-the-messages"><span class="nav-number">4.1.8.</span> <span class="nav-text">How does the messenger maintain the sequencing of the messages?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Storing-and-retrieving-the-messages-from-the-database"><span class="nav-number">4.2.</span> <span class="nav-text">Storing and retrieving the messages from the database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Managing-user’s-status"><span class="nav-number">4.3.</span> <span class="nav-text">Managing user’s status</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Design-Summary"><span class="nav-number">4.4.</span> <span class="nav-text">Design Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-partitioning"><span class="nav-number">5.</span> <span class="nav-text">Data partitioning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cache"><span class="nav-number">6.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LB"><span class="nav-number">7.</span> <span class="nav-text">LB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fault-tolerance-and-Replication"><span class="nav-number">8.</span> <span class="nav-text">Fault tolerance and Replication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Extended-Requirements"><span class="nav-number">9.</span> <span class="nav-text">Extended Requirements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Group-chat"><span class="nav-number">9.1.</span> <span class="nav-text">Group chat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Push-notifications"><span class="nav-number">9.2.</span> <span class="nav-text">Push notifications</span></a></li></ol></li></ol>
     
     </div>
   </aside>
