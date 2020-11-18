@@ -18,8 +18,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jojoyang666.github.io/images/Dropbox_High_Level.png">
 <meta property="og:image" content="https://jojoyang666.github.io/images/client_dropbox.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/dropbox_system_detail_design.png">
 <meta property="article:published_time" content="2020-11-13T21:38:42.000Z">
-<meta property="article:modified_time" content="2020-11-13T23:19:35.980Z">
+<meta property="article:modified_time" content="2020-11-17T22:47:38.102Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://jojoyang666.github.io/images/Dropbox_High_Level.png">
@@ -394,7 +395,120 @@
 </li>
 <li>multiple Synchronization Service instances can receive requests from a global request Queue, and the communication middleware will be able to balance its load.</li>
 </ul>
-<h2 id="Message-Queuing-Service"><a href="#Message-Queuing-Service" class="headerlink" title="Message Queuing Service"></a>Message Queuing Service</h2><h2 id="Cloud-Block-Storage"><a href="#Cloud-Block-Storage" class="headerlink" title="Cloud/Block Storage"></a>Cloud/Block Storage</h2>
+<h2 id="Message-Queuing-Service"><a href="#Message-Queuing-Service" class="headerlink" title="Message Queuing Service"></a>Message Queuing Service</h2><ol>
+<li>A scalable Message Queuing Service that supports asynchronous message-based communication <strong>between clients and the Synchronization Service</strong> best fits the requirements of our application.</li>
+<li>Asynchronous and loosely coupled message-based communication between <strong>distributed components</strong> of the system</li>
+<li>Efficiently store any number of messages in a <strong>highly available, reliable and scalable queue</strong>.</li>
+</ol>
+<h3 id="Two-types-of-queues-in-the-system"><a href="#Two-types-of-queues-in-the-system" class="headerlink" title="Two types of queues in the system"></a>Two types of queues in the system</h3><ol>
+<li>Request Queue: global queue and all clients will share it</li>
+<li>Response Queues:<ul>
+<li>Correspond to individual subscribed clients are responsible for <strong>delivering the update messages to each client</strong>.</li>
+<li>a message will be deleted from the queue once received by a client, we need to create separate Response Queues for each subscribed client to share update messages.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Cloud-Block-Storage"><a href="#Cloud-Block-Storage" class="headerlink" title="Cloud/Block Storage"></a>Cloud/Block Storage</h2><ol>
+<li>Cloud/Block Storage stores chunks of files uploaded by the users. </li>
+<li>Clients directly interact with the storage to send and receive objects from it. </li>
+<li>Separation of the metadata from storage enables us to use any storage either in the cloud or in-house.</li>
+</ol>
+<ul>
+<li><img src="/images/dropbox_system_detail_design.png" alt="image"></li>
+</ul>
+<h1 id="File-Processing-Workflow"><a href="#File-Processing-Workflow" class="headerlink" title="File Processing Workflow"></a>File Processing Workflow</h1><ol>
+<li>Client A uploads chunks to cloud storage.</li>
+<li>Client A updates metadata and commits changes.</li>
+<li>Client A gets confirmation and notifications are sent to Clients B and C about the changes.</li>
+<li>Client B and C receive metadata changes and download updated chunks.</li>
+</ol>
+<p>Note: If the other clients are not online at the time of the update, the Message Queuing Service keeps the <strong>update notifications in separate response queues</strong> for them until they come online later.</p>
+<h1 id="Data-Deduplication"><a href="#Data-Deduplication" class="headerlink" title="Data Deduplication"></a>Data Deduplication</h1><h2 id="Post-process-deduplication"><a href="#Post-process-deduplication" class="headerlink" title="Post-process deduplication"></a>Post-process deduplication</h2><ol>
+<li>New chunks are first stored on the storage device </li>
+<li>Some process analyzes the data looking for duplication. </li>
+<li>Benefit:<ul>
+<li>Not need to wait for the hash calculation</li>
+<li>No need to Lookup to complete before storing the data</li>
+</ul>
+</li>
+<li>Drawbacks:<ul>
+<li>Unnecessarily be storing duplicate data, though for a short time</li>
+<li>Duplicate data will be transferred consuming bandwidth</li>
+</ul>
+</li>
+</ol>
+<h2 id="In-line-deduplication"><a href="#In-line-deduplication" class="headerlink" title="In-line deduplication"></a>In-line deduplication</h2><ol>
+<li>Deduplication hash calculations can be done in real-time as the clients are entering data on their device. </li>
+<li>If our system identifies a chunk that it has already stored, only a reference to the existing chunk will be added in the metadata<ul>
+<li>Rather than a full copy of the chunk. </li>
+<li>optimal network and storage usage.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Metadata-Partitioning"><a href="#Metadata-Partitioning" class="headerlink" title="Metadata Partitioning"></a>Metadata Partitioning</h1><ol>
+<li><p>Vertical Partitioning:</p>
+<ul>
+<li>partition our database in such a way that we store tables <strong>related to one particular feature</strong> on one server. </li>
+<li>issues:<ul>
+<li>What if we have trillions of chunks to be stored and our database cannot support storing such a huge number of records?</li>
+<li>How would we further partition such tables?</li>
+<li>Joining two tables in two separate databases can cause performance and consistency issues. How frequently do we have to join user and file tables?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Range Based Partitioning:</p>
+<ul>
+<li>Store files/chunks in separate partitions based on the first letter of the File Path?</li>
+<li>Even combine certain less frequently occurring letters into one database partition. </li>
+<li>Issues:<ul>
+<li>unbalanced servers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Hash-Based Partitioning</p>
+<ul>
+<li>Take a hash of the object we are storing and based on this hash we figure out the DB partition to which this object should go</li>
+<li>Take the hash of the ‘FileID’ of the File object we are storing to determine the partition the file will be stored. </li>
+<li>Problem: overloaded partitions</li>
+</ul>
+</li>
+</ol>
+<h1 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h1><ol>
+<li><p>off-the-shelf solution like Memcached</p>
+<ul>
+<li>Store whole chunks with its respective IDs/Hashes and Block servers  before hitting Block storage</li>
+<li>A high-end commercial server can have <strong>144GB of memory</strong>; one such server can <strong>cache 36K chunks</strong>.</li>
+</ul>
+</li>
+<li><p>Which cache replacement policy would best fit our needs? </p>
+<ul>
+<li>Least Recently Used (LRU)</li>
+</ul>
+</li>
+</ol>
+<h1 id="Load-Balancer-LB"><a href="#Load-Balancer-LB" class="headerlink" title="Load Balancer (LB)"></a>Load Balancer (LB)</h1><ol>
+<li>Add the Load balancing layer at two places in our system<ul>
+<li>Between Clients and Block servers</li>
+<li>Clients and Metadata servers</li>
+</ul>
+</li>
+<li>Simple Round Robin approach<ul>
+<li>simple to implement and does not introduce any overhead. </li>
+<li>if a server is dead, LB will take it out of the rotation and will stop sending any traffic to it.</li>
+<li>Problem<ul>
+<li>won’t take server load into consideration.</li>
+<li>To handle it: Periodically queries backend server about their load and adjusts traffic based on that.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Security-Permissions-and-File-Sharing"><a href="#Security-Permissions-and-File-Sharing" class="headerlink" title="Security, Permissions and File Sharing"></a>Security, Permissions and File Sharing</h1><ol>
+<li>Storing the <strong>permissions</strong>of each file in our metadata DB to reflect what files are <strong>visible or modifiable</strong> by any user.</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -496,7 +610,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-Cloud-Storage"><span class="nav-number">1.</span> <span class="nav-text">Why Cloud Storage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">3.</span> <span class="nav-text">Some Design Considerations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">4.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">5.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Component-Design"><span class="nav-number">6.</span> <span class="nav-text">Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Client"><span class="nav-number">6.1.</span> <span class="nav-text">Client</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Essential-operations-for-the-client"><span class="nav-number">6.1.1.</span> <span class="nav-text">Essential operations for the client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-do-we-handle-file-transfer-efficiently"><span class="nav-number">6.1.2.</span> <span class="nav-text">How do we handle file transfer efficiently?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Should-we-keep-a-copy-of-metadata-with-Client"><span class="nav-number">6.1.3.</span> <span class="nav-text">Should we keep a copy of metadata with Client?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-can-clients-efficiently-listen-to-changes-happening-with-other-clients"><span class="nav-number">6.1.4.</span> <span class="nav-text">How can clients efficiently listen to changes happening with other clients?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detail"><span class="nav-number">6.1.5.</span> <span class="nav-text">Detail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-should-clients-handle-slow-servers"><span class="nav-number">6.1.6.</span> <span class="nav-text">How should clients handle slow servers?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Should-mobile-clients-sync-remote-changes-immediately"><span class="nav-number">6.1.7.</span> <span class="nav-text">Should mobile clients sync remote changes immediately?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadata-Database"><span class="nav-number">6.2.</span> <span class="nav-text">Metadata Database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synchronization-Service"><span class="nav-number">6.3.</span> <span class="nav-text">Synchronization Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Message-Queuing-Service"><span class="nav-number">6.4.</span> <span class="nav-text">Message Queuing Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Block-Storage"><span class="nav-number">6.5.</span> <span class="nav-text">Cloud&#x2F;Block Storage</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-Cloud-Storage"><span class="nav-number">1.</span> <span class="nav-text">Why Cloud Storage</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">3.</span> <span class="nav-text">Some Design Considerations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">4.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">5.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Component-Design"><span class="nav-number">6.</span> <span class="nav-text">Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Client"><span class="nav-number">6.1.</span> <span class="nav-text">Client</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Essential-operations-for-the-client"><span class="nav-number">6.1.1.</span> <span class="nav-text">Essential operations for the client</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-do-we-handle-file-transfer-efficiently"><span class="nav-number">6.1.2.</span> <span class="nav-text">How do we handle file transfer efficiently?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Should-we-keep-a-copy-of-metadata-with-Client"><span class="nav-number">6.1.3.</span> <span class="nav-text">Should we keep a copy of metadata with Client?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-can-clients-efficiently-listen-to-changes-happening-with-other-clients"><span class="nav-number">6.1.4.</span> <span class="nav-text">How can clients efficiently listen to changes happening with other clients?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Detail"><span class="nav-number">6.1.5.</span> <span class="nav-text">Detail</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-should-clients-handle-slow-servers"><span class="nav-number">6.1.6.</span> <span class="nav-text">How should clients handle slow servers?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Should-mobile-clients-sync-remote-changes-immediately"><span class="nav-number">6.1.7.</span> <span class="nav-text">Should mobile clients sync remote changes immediately?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metadata-Database"><span class="nav-number">6.2.</span> <span class="nav-text">Metadata Database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synchronization-Service"><span class="nav-number">6.3.</span> <span class="nav-text">Synchronization Service</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Message-Queuing-Service"><span class="nav-number">6.4.</span> <span class="nav-text">Message Queuing Service</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-types-of-queues-in-the-system"><span class="nav-number">6.4.1.</span> <span class="nav-text">Two types of queues in the system</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cloud-Block-Storage"><span class="nav-number">6.5.</span> <span class="nav-text">Cloud&#x2F;Block Storage</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#File-Processing-Workflow"><span class="nav-number">7.</span> <span class="nav-text">File Processing Workflow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Deduplication"><span class="nav-number">8.</span> <span class="nav-text">Data Deduplication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Post-process-deduplication"><span class="nav-number">8.1.</span> <span class="nav-text">Post-process deduplication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#In-line-deduplication"><span class="nav-number">8.2.</span> <span class="nav-text">In-line deduplication</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Metadata-Partitioning"><span class="nav-number">9.</span> <span class="nav-text">Metadata Partitioning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cache"><span class="nav-number">10.</span> <span class="nav-text">Cache</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Load-Balancer-LB"><span class="nav-number">11.</span> <span class="nav-text">Load Balancer (LB)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-Permissions-and-File-Sharing"><span class="nav-number">12.</span> <span class="nav-text">Security, Permissions and File Sharing</span></a></li></ol>
     
     </div>
   </aside>
