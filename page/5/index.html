@@ -265,6 +265,237 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-471-Encode-String-with-Shortest-Length"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/471-Encode-String-with-Shortest-Length/">471. Encode String with Shortest Length </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/471-Encode-String-with-Shortest-Length/" class="article-date">
+	  <time datetime="2020-11-13T07:46:49.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+using dp[i][j]: shortest length from i to j, but i must from end to start
+because when update dp[i][j]: will using dp[k+1][j], k+1 &gt; i —&gt; split
+
+
+also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + ‘[‘ + dp[i][k] ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/471-Encode-String-with-Shortest-Length/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-440-K-th-Smallest-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/">440. K-th Smallest in Lexicographical Order</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/" class="article-date">
+	  <time datetime="2020-11-13T05:23:28.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+12345678910111213141516171819202122232425class Solution(object):    def findKthNumber(self, n, k):        """        :type n: int        :type k: int        :rtype: int        """        result = 1        k -= 1                while k &gt; 0:  ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/">1312. Minimum Insertion Steps to Make a String Palindrome</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/" class="article-date">
+	  <time datetime="2020-11-13T04:43:28.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          convert the problem to find the longest common sequence
+
+find the longest common sequences between s and reversed(s) -&gt; m
+then the chars needed to add is len(s) - m
+
+12345678910111213class Solution(object):    def minInsertions(self, s):       ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-321-Create-Maximum-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/321-Create-Maximum-Number/">321. Create Maximum Number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/321-Create-Maximum-Number/" class="article-date">
+	  <time datetime="2020-11-13T04:23:38.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+using dp[i]: represent the maximun subsequence of arr with length i –&gt; using maxNumber function
+from end to start 这个DP的方法从最大的开始到最后
+
+
+after find two dps, using merge function
+each pop the maximum value –&gt;  like merge sort
+
+
+
+1234567891011121...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/321-Create-Maximum-Number/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1092-Shortest-Common-Supersequence"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -593,230 +824,11 @@ After getting the records, calculate res which is the number of matches with n1 
 
 
   
-    <article id="post-980-Unique-Paths-III"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/980-Unique-Paths-III/">980. Unique Paths III</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/980-Unique-Paths-III/" class="article-date">
-	  <time datetime="2020-11-12T05:57:24.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-不能有memo是因为题目要求要走过每一个非障碍
-所以 每一次到pos可能经过的障碍节点不一样所以不能memo
-但是要记住用visited
-本题目在原数组上面进行更改来作为visited， 最后记得还原12345678910111213141516171819202122232425262728293031323334353637383940414243class Solution(object):    def uniquePathsIII(self, grid):        """...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/980-Unique-Paths-III/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1240-Tiling-a-Rectangle-with-the-Fewest-Squares"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/1240-Tiling-a-Rectangle-with-the-Fewest-Squares/">1240. Tiling a Rectangle with the Fewest Squares</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/1240-Tiling-a-Rectangle-with-the-Fewest-Squares/" class="article-date">
-	  <time datetime="2020-11-12T04:49:00.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-using dfs/backtrack
-从下往上填充正方形
-先从height 相同且最低的位置开始填充正方形
-重点是正方形12345678910111213141516171819202122232425262728class Solution(object):    def tilingRectangle(self, n, m):        """        :type n: int        :type m: int        :rtype: int        "...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/1240-Tiling-a-Rectangle-with-the-Fewest-Squares/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-428-Serialize-and-Deserialize-N-ary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/428-Serialize-and-Deserialize-N-ary-Tree/">428. Serialize and Deserialize N-ary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/428-Serialize-and-Deserialize-N-ary-Tree/" class="article-date">
-	  <time datetime="2020-11-12T00:28:09.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          BFS
-
-
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990"""# Definition for a Node.class Node(object):    def __init__(self, v...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/428-Serialize-and-Deserialize-N-ary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-410-Split-Array-Largest-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/410-Split-Array-Largest-Sum/">410. Split Array Largest Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/410-Split-Array-Largest-Sum/" class="article-date">
-	  <time datetime="2020-11-11T22:32:58.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Memoization + Cumulative Sum1234567891011121314151617181920212223242526272829class Solution(object):    def splitArray(self, nums, m):        """        :type nums: List[int]        :type m: int        :rtype: int        """        cums = [0]     ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/410-Split-Array-Largest-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
   </nav>
 
 </section>
