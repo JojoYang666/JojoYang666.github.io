@@ -265,60 +265,6 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-421-Maximum-XOR-of-Two-Numbers-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/">421. Maximum XOR of Two Numbers in an Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/" class="article-date">
-	  <time datetime="2020-10-23T18:42:44.000Z" itemprop="datePublished">2020-10-23</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-这个题目的思路的大前提是: a ^ b = c  &lt;===&gt;  a ^ c = b
-讲解.123456789101112131415class Solution(object):    def findMaximumXOR(self, nums):        """        :type nums: List[int]        :rtype: int        """        max_xor = 0                for i in ra...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
     <article id="post-Three-way-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -782,6 +728,62 @@ Entries from j up to (but not inclusi...
         </p>
         <p class="article-more-link">
           <a href="/2020/10/20/787-Cheapest-Flights-Within-K-Stops/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-264-Ugly-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/20/264-Ugly-Number-II/">264. Ugly Number II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/20/264-Ugly-Number-II/" class="article-date">
+	  <time datetime="2020-10-20T15:41:42.000Z" itemprop="datePublished">2020-10-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+通过观察可以知道， 每一个ugly number is coming from previous ugly number *2/3/5,
+thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] * 5 and add it into nums –&gt; record the right i2/i3/i5 pos
+
+12345678910111213141516171819202122...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/20/264-Ugly-Number-II/#more">Read More</a>
         </p>
       
     </div>
