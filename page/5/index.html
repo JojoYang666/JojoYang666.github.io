@@ -265,6 +265,61 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-730-Count-Different-Palindromic-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/">730. Count Different Palindromic Subsequences</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/" class="article-date">
+	  <time datetime="2020-11-15T05:18:03.000Z" itemprop="datePublished">2020-11-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+using memo + dfs
+因为只有4个不一样的字符， 所以我们只用考虑4种情况
+如果s[i] == S[j], 那么就有a, aa, a*a, * represent memo[i+1][j] otherwise it would be 112345678910111213141516171819202122232425262728class Solution(object):    def countPalindromicSubsequences(self, S):      ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-864-Shortest-Path-to-Get-All-Keys"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -778,68 +833,11 @@ also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + �
 
 
   
-    <article id="post-1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/">1312. Minimum Insertion Steps to Make a String Palindrome</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/" class="article-date">
-	  <time datetime="2020-11-13T04:43:28.000Z" itemprop="datePublished">2020-11-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          convert the problem to find the longest common sequence
-
-find the longest common sequences between s and reversed(s) -&gt; m
-then the chars needed to add is len(s) - m
-
-12345678910111213class Solution(object):    def minInsertions(self, s):       ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/6/">Next &amp;raquo;</a>
   </nav>
 
 </section>

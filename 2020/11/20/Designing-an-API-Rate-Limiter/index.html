@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>designing an api rate limiter | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Why do we need API rate limiting helps to protect services against abusive behaviors targeting the application layer like Denial-of-service (DOS) attacks, brute-force password attempts, brute-force cr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing an API Rate Limiter">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/11/20/Designing-an-API-Rate-Limiter/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Why do we need API rate limiting helps to protect services against abusive behaviors targeting the application layer like Denial-of-service (DOS) attacks, brute-force password attempts, brute-force cr">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Designing-an-API-Rate-Limiter_ratelimit_algorithm.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/high_level_ratelimit.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/issue_fixed_sliding_window.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/ratelimit_automic.png">
+<meta property="article:published_time" content="2020-11-20T15:50:45.000Z">
+<meta property="article:modified_time" content="2020-11-20T20:26:38.819Z">
+<meta property="article:author" content="Jojo Yang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/Designing-an-API-Rate-Limiter_ratelimit_algorithm.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Designing-an-API-Rate-Limiter" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Designing an API Rate Limiter
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/20/Designing-an-API-Rate-Limiter/" class="article-date">
+	  <time datetime="2020-11-20T15:50:45.000Z" itemprop="datePublished">2020-11-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Why-do-we-need-API-rate-limiting"><a href="#Why-do-we-need-API-rate-limiting" class="headerlink" title="Why do we need API rate limiting"></a>Why do we need API rate limiting</h1><ol>
+<li>helps to protect services against abusive behaviors <strong>targeting the application layer like Denial-of-service (DOS) attacks, brute-force password attempts, brute-force credit card transactions, etc</strong><ul>
+<li>a barrage of HTTP/S requests which may look like they are coming from real users, but are typically generated by machines (or bots)</li>
+</ul>
+</li>
+<li>a list of scenarios that can benefit from Rate limiting <ul>
+<li>Misbehaving clients/scripts: <ul>
+<li>Either intentionally or unintentionally, some entities can overwhelm a service by sending a large number of requests.</li>
+<li>when a user is sending a lot of lower-priority requests and we want to make sure that it doesn’t affect the high-priority traffic</li>
+</ul>
+</li>
+<li>Security<ul>
+<li>By limiting the number of the second-factor attempts (in 2-factor auth) that the users are allowed to perform</li>
+</ul>
+</li>
+<li>To prevent abusive behavior and bad design practices<ul>
+<li>use sloppy development tactics, for example, requesting the same information over and over again.</li>
+</ul>
+</li>
+<li>To keep costs and resource usage under control<ul>
+<li>Rate limiter enables controls on service APIs</li>
+</ul>
+</li>
+<li>Revenue<ul>
+<li>There could be default limits for all the APIs a service offers. To go beyond that, the user has to buy higher limits</li>
+</ul>
+</li>
+<li>To eliminate spikiness in traffic<ul>
+<li>Make sure the service stays up for everyone else.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h1><h2 id="Functional-Requirements"><a href="#Functional-Requirements" class="headerlink" title="Functional Requirements"></a>Functional Requirements</h2><ol>
+<li>Limit the number of requests an entity can send to an API within a time window</li>
+<li>The APIs are accessible through a cluster, so the rate limit should be considered across different servers<ul>
+<li>user should get an error message whenever the defined threshold is crossed within a single server or across a combination of servers.<h2 id="Non-Functional-Requirements"><a href="#Non-Functional-Requirements" class="headerlink" title="Non-Functional Requirements"></a>Non-Functional Requirements</h2></li>
+</ul>
+</li>
+<li>highly available, The rate limiter should always work since it protects our service from external attacks.</li>
+<li>should <strong>not introduce substantial latencies</strong> affecting the user experience</li>
+</ol>
+<h1 id="How-to-do-Rate-Limiting"><a href="#How-to-do-Rate-Limiting" class="headerlink" title="How to do Rate Limiting"></a>How to do Rate Limiting</h1><ol>
+<li>Rate Limiting is a process that is used to <strong>define the rate and speed at which consumers can access APIs.</strong></li>
+<li>Throttling<ul>
+<li>process of controlling the usage of the APIs by customers during a given period</li>
+<li>be defined at the application level and/or API level</li>
+<li>a throttle limit is crossed, <strong>the server returns HTTP status “429 - Too many requests”.</strong></li>
+</ul>
+</li>
+</ol>
+<h1 id="What-are-different-types-of-throttling"><a href="#What-are-different-types-of-throttling" class="headerlink" title="What are different types of throttling?"></a>What are different types of throttling?</h1><ol>
+<li>Hard Throttling: The number of API requests cannot exceed the throttle limit</li>
+<li>Soft Throttling: <ul>
+<li>set the API request limit to exceed a certain percentage</li>
+</ul>
+</li>
+<li>Elastic or Dynamic Throttling<ul>
+<li>Under Elastic throttling, the number of requests can go beyond the threshold if the system has some resources available.</li>
+</ul>
+</li>
+</ol>
+<h1 id="What-are-different-types-of-algorithms-used-for-Rate-Limiting"><a href="#What-are-different-types-of-algorithms-used-for-Rate-Limiting" class="headerlink" title="What are different types of algorithms used for Rate Limiting?"></a>What are different types of algorithms used for Rate Limiting?</h1><ul>
+<li><img src="/images/Designing-an-API-Rate-Limiter_ratelimit_algorithm.png" alt="image"></li>
+</ul>
+<h2 id="Fixed-Window-Algorithm"><a href="#Fixed-Window-Algorithm" class="headerlink" title="Fixed Window Algorithm"></a>Fixed Window Algorithm</h2><ol>
+<li>The time window is considered from the start of the time-unit to the end of the time-unit.</li>
+<li>Example:<br> If we have a rate limiting of two messages a second, this algorithm will throttle only ‘m5’.</li>
+</ol>
+<h2 id="Rolling-Window-Algorithm"><a href="#Rolling-Window-Algorithm" class="headerlink" title="Rolling Window Algorithm"></a>Rolling Window Algorithm</h2><ol>
+<li>The time window is considered from the fraction of the time at which the request is made plus the time window length. </li>
+<li>Example:<br>In the above diagram, keeping two messages a second, we’ll throttle ‘m3’ and ‘m4’.</li>
+</ol>
+<h1 id="High-level-design-for-Rate-Limiter"><a href="#High-level-design-for-Rate-Limiter" class="headerlink" title="High level design for Rate Limiter"></a>High level design for Rate Limiter</h1><ol>
+<li>Once a new request arrives, the Web Server first asks the Rate Limiter to decide if it will be served or throttled. If the request is not throttled, then it’ll be passed to the API servers.</li>
+</ol>
+<ul>
+<li><img src="/images/high_level_ratelimit.png" alt="image"></li>
+</ul>
+<h1 id="Basic-System-Design-and-Algorithm"><a href="#Basic-System-Design-and-Algorithm" class="headerlink" title="Basic System Design and Algorithm"></a>Basic System Design and Algorithm</h1><ol>
+<li>Under this scenario, for each unique user, we would keep <strong>a count representing how many requests the user has made</strong> and a <strong>timestamp when we started counting the requests.</strong></li>
+<li>keep in the hashtable<br>key:      value<br>UserID:   {Count, StartTime}<br>Kristie:  {3, 1499818564}</li>
+<li>assume our rate limiter is allowing three requests/minute per user</li>
+<li>steps:<ul>
+<li>If the ‘UserID’ is not present in the hash-table –&gt;  insert it, set the ‘Count’ to 1, set ‘StartTime’ to the current time (normalized to a minute), and allow the request.</li>
+<li>Otherwise, find the record of the ‘UserID’ -&gt; CurrentTime – StartTime &gt;= 1 min -&gt;  set the ‘StartTime’ to the current time, ‘Count’ to 1, and allow the request.</li>
+<li>CurrentTime - StartTime &lt;= 1 min:<ul>
+<li>‘Count &lt; 3’, increment the Count and allow the request.</li>
+<li>If ‘Count &gt;= 3’, reject the request.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="What-are-some-of-the-problems-with-our-algorithm"><a href="#What-are-some-of-the-problems-with-our-algorithm" class="headerlink" title="What are some of the problems with our algorithm?"></a>What are some of the problems with our algorithm?</h2><ol>
+<li>This is a <strong>Fixed Window</strong> algorithm since we’re resetting the ‘StartTime’ at the end of every minute<ul>
+<li>it can potentially allow twice the number of requests per minute</li>
+<li>Example:<ul>
+<li><ul>
+<li><img src="/images/issue_fixed_sliding_window.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Atomicity</strong><ol>
+<li>In a <strong>distributed environment</strong>, the <strong>“read-and-then-write”</strong> behavior can <strong>create a race condition</strong>.</li>
+<li>if Kristile issues two more requests, like this:<ul>
+<li><ul>
+<li><img src="/images/ratelimit_automic.png" alt="image"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>using Redis to store our key-value<ul>
+<li>resolve the atomicity problem is to use <strong>Redis lock</strong> for the <strong>duration of the read-update operation</strong></li>
+<li>come at the <strong>expense of slowing down concurrent requests</strong> from the same user and introducing another layer of complexity. </li>
+<li>can use Memcached, but it would have comparable complications.</li>
+<li>if using a simple hash-table, we can have a <strong>custom implementation for ‘locking’</strong> each record to solve our atomicity problems.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="How-much-memory-would-we-need-to-store-all-of-the-user-data"><a href="#How-much-memory-would-we-need-to-store-all-of-the-user-data" class="headerlink" title="How much memory would we need to store all of the user data?"></a>How much memory would we need to store all of the user data?</h2><ol>
+<li>userID: 8 bytes</li>
+<li>2 byte ‘Count’, which can count up to 65k</li>
+<li>epoch time will need 4 bytes -&gt;  store only the minute and second part -&gt; can fit into 2 bytes</li>
+<li>need total 12 bytes to store a user’s data:<ul>
+<li>8 + 2 + 2 = 12 bytes</li>
+</ul>
+</li>
+<li>memory storage:<ul>
+<li>hash-table has an overhead of 20 bytes for each record</li>
+<li>track one million users at any time<ul>
+<li>(12 + 20) bytes * 1 million =&gt; 32MB</li>
+</ul>
+</li>
+<li>assume that we would need a <strong>4-byte number to lock each user’s record</strong> to <strong>resolve our atomicity problems</strong><ul>
+<li>(12 + 20 + 4) bytes * 1 million =&gt; 36MB</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Thus:<ul>
+<li>can easily fit on a single server</li>
+<li>would not like to route all of our traffic through a single machine. </li>
+<li>storing all the data in the remote Redis servers and all the Rate Limiter servers will read (and update) these servers before serving or throttling any request.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Sliding-Window-algorithm"><a href="#Sliding-Window-algorithm" class="headerlink" title="Sliding Window algorithm"></a>Sliding Window algorithm</h2><ol>
+<li>keep track of each request per user</li>
+<li>store the timestamp of each request in a Redis Sorted Set in our ‘value’ field of hash-table<br>key: value<br>userID: {sorted Set<Unix Time>}</li>
+<li>assume our rate limiter is allowing three requests per minute per user, steps below<ul>
+<li>Remove all the timestamps from the Sorted Set that are older than “CurrentTime - 1 minute”.</li>
+<li>Count the total number of elements in the sorted set. Reject the request if this count is greater than our throttling limit of “3”.</li>
+<li>Insert the current time in the sorted set and accept the request.</li>
+</ul>
+</li>
+</ol>
+<h3 id="How-much-memory-would-we-need-to-store-all-of-the-user-data-for-sliding-window"><a href="#How-much-memory-would-we-need-to-store-all-of-the-user-data-for-sliding-window" class="headerlink" title="How much memory would we need to store all of the user data for sliding window"></a>How much memory would we need to store all of the user data for sliding window</h3><ol>
+<li><p>UserID:  8 bytes</p>
+</li>
+<li><p>epoch time : 4 bytes</p>
+</li>
+<li><p>need a rate limiting of 500 requests per hour</p>
+</li>
+<li><p>20 bytes overhead for hash-table</p>
+</li>
+<li><p>20 bytes overhead for the Sorted Set.</p>
+</li>
+<li><p>At max, we would need a total of 12KB to store one user’s data:</p>
+<ul>
+<li>8 + (4 + 20 (sorted set overhead)) * 500 + 20 (hash-table overhead) = 12KB</li>
+</ul>
+</li>
+<li><p>In a sorted set -&gt; two pointers(how 2o bytes coming from)</p>
+<ul>
+<li>one pointer to the previous element</li>
+<li>one to the next element. </li>
+<li>On a 64bit machine, each pointer will cost 8 bytes<ul>
+<li>16 bytes for pointer</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>an extra word (4 bytes) for storing other overhead.</p>
+</li>
+<li><p>track one million users at any time, total memory we would need would be 12GB:<br>12KB * 1 million ~= 12GB</p>
+</li>
+<li><p>Sliding Window Algorithm takes a lot of memory compared to the Fixed Window</p>
+<ul>
+<li>this would be a scalability issue.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Sliding-Window-with-Counters"><a href="#Sliding-Window-with-Counters" class="headerlink" title="Sliding Window with Counters"></a>Sliding Window with Counters</h1><ol>
+<li>we keep track of request counts for each user using multiple fixed time windows<ul>
+<li>if we have an hourly rate limit</li>
+<li>we can keep a count for each minute</li>
+<li>calculate the sum of all counters in the past hour when we receive a new request to calculate the throttling limit. </li>
+<li>reduce our memory footprint.</li>
+<li>example: 500 request/hour + 10 request/minutes<ul>
+<li>counters in a Redis Hash since it offers incredibly efficient storage for fewer than 100 keys</li>
+<li>each request increments a counter in the hash, it also sets the hash to expire an hour later.</li>
+<li>normalize each ‘time’ to a minute.<h2 id="How-much-memory-we-would-need-to-store-all-the-user-data-for-sliding-window-with-counters"><a href="#How-much-memory-we-would-need-to-store-all-the-user-data-for-sliding-window-with-counters" class="headerlink" title="How much memory we would need to store all the user data for sliding window with counters?"></a>How much memory we would need to store all the user data for sliding window with counters?</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>UserID:  8 bytes</li>
+<li>epoch time : 4 bytes</li>
+<li>Counter: 2 bytes</li>
+<li>rate limiting of 500 requests per hour</li>
+<li>hash-table overhead: 20 bytes</li>
+<li>Redis hash: 20 bytes </li>
+<li>keep a count for each minute, at max, we would need 60 entries for each user.<br>8 + (4 + 2 + 20 (Redis hash overhead)) * 60 + 20 (hash-table overhead) = 1.6KB</li>
+<li>track one million users at any time, total memory we would need would be 1.6GB:</li>
+<li>6KB * 1 million ~= 1.6GB</li>
+<li>‘Sliding Window with Counters’ algorithm <ul>
+<li>86% less memory than the simple sliding window algorithm.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Data-Sharding-and-Caching"><a href="#Data-Sharding-and-Caching" class="headerlink" title="Data Sharding and Caching"></a>Data Sharding and Caching</h1><ol>
+<li>shard based on the ‘UserID’ to distribute the user’s data</li>
+<li>For fault tolerance and replication –&gt; use Consistent Hashing</li>
+<li>have different throttling limits for different APIs -&gt; shard per user per API</li>
+</ol>
+<h1 id="Should-we-rate-limit-by-IP-or-by-user"><a href="#Should-we-rate-limit-by-IP-or-by-user" class="headerlink" title="Should we rate limit by IP or by user?"></a>Should we rate limit by IP or by user?</h1><ol>
+<li>IP: throttle requests per-IP<ul>
+<li>problem:<ul>
+<li>multiple users share a single public IP <ul>
+<li>an internet cafe / smartphone users that are using the same gateway<ul>
+<li>One bad user can cause throttling to other users.</li>
+<li>arise while caching IP-based limits, as there are a huge number of IPv6 addresses available to a hacker from even one computer</li>
+<li>make a server run out of memory tracking IPv6 addresses</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>User</li>
+</ol>
+<ul>
+<li>Can be done on APIs after user authentication<ul>
+<li>Once authenticated, the user will be provided with a token which the user will pass with each request.<ul>
+<li>we will rate limit against a particular API that has a valid authentication token<ul>
+<li>what if we have to rate limit on the login API itself<ul>
+<li>weakness of this rate-limiting would be that a hacker can perform a denial of service attack against a user by entering wrong credentials up to the limit</li>
+<li>after that the actual user will not be able to log-in.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>How about if we combine the above two schemes?<br> Hybrid:  more cache entries with more details per entry, requiring more memory and storage.  </li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/11/20/Designing-an-API-Rate-Limiter/" target="_blank" title="Designing an API Rate Limiter">https://jojoyang666.github.io/2020/11/20/Designing-an-API-Rate-Limiter/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/19/786-K-th-Smallest-Prime-Fraction/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">786. K-th Smallest Prime Fraction</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Why-do-we-need-API-rate-limiting"><span class="nav-number">1.</span> <span class="nav-text">Why do we need API rate limiting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">2.</span> <span class="nav-text">Requirements and Goals of the System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-Requirements"><span class="nav-number">2.1.</span> <span class="nav-text">Functional Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-Functional-Requirements"><span class="nav-number">2.2.</span> <span class="nav-text">Non-Functional Requirements</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-do-Rate-Limiting"><span class="nav-number">3.</span> <span class="nav-text">How to do Rate Limiting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-different-types-of-throttling"><span class="nav-number">4.</span> <span class="nav-text">What are different types of throttling?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-different-types-of-algorithms-used-for-Rate-Limiting"><span class="nav-number">5.</span> <span class="nav-text">What are different types of algorithms used for Rate Limiting?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fixed-Window-Algorithm"><span class="nav-number">5.1.</span> <span class="nav-text">Fixed Window Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rolling-Window-Algorithm"><span class="nav-number">5.2.</span> <span class="nav-text">Rolling Window Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-level-design-for-Rate-Limiter"><span class="nav-number">6.</span> <span class="nav-text">High level design for Rate Limiter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-System-Design-and-Algorithm"><span class="nav-number">7.</span> <span class="nav-text">Basic System Design and Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-are-some-of-the-problems-with-our-algorithm"><span class="nav-number">7.1.</span> <span class="nav-text">What are some of the problems with our algorithm?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-much-memory-would-we-need-to-store-all-of-the-user-data"><span class="nav-number">7.2.</span> <span class="nav-text">How much memory would we need to store all of the user data?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sliding-Window-algorithm"><span class="nav-number">7.3.</span> <span class="nav-text">Sliding Window algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-much-memory-would-we-need-to-store-all-of-the-user-data-for-sliding-window"><span class="nav-number">7.3.1.</span> <span class="nav-text">How much memory would we need to store all of the user data for sliding window</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sliding-Window-with-Counters"><span class="nav-number">8.</span> <span class="nav-text">Sliding Window with Counters</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-much-memory-we-would-need-to-store-all-the-user-data-for-sliding-window-with-counters"><span class="nav-number">8.1.</span> <span class="nav-text">How much memory we would need to store all the user data for sliding window with counters?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Sharding-and-Caching"><span class="nav-number">9.</span> <span class="nav-text">Data Sharding and Caching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Should-we-rate-limit-by-IP-or-by-user"><span class="nav-number">10.</span> <span class="nav-text">Should we rate limit by IP or by user?</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
