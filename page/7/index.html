@@ -265,6 +265,331 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-407-Trapping-Rain-Water-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/11/407-Trapping-Rain-Water-II/">407. Trapping Rain Water II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/11/407-Trapping-Rain-Water-II/" class="article-date">
+	  <time datetime="2020-11-11T21:14:26.000Z" itemprop="datePublished">2020-11-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+123456789101112131415161718192021222324252627class Solution(object):    def trapRainWater(self, heightMap):        """        :type heightMap: List[List[int]]        :rtype: int        """        if not heightMap or not heightMap[0]: return 0  ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/11/407-Trapping-Rain-Water-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-815-Bus-Routes"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/11/815-Bus-Routes/">815. Bus Routes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/11/815-Bus-Routes/" class="article-date">
+	  <time datetime="2020-11-11T20:16:51.000Z" itemprop="datePublished">2020-11-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+Using BFS
+Each node represent the car
+if node A and node B are connected, which means people can take car B by taking car A
+source: a collection of bus which can reach to S
+target: a collection of bus which can reach to T
+find the depth from set ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/11/815-Bus-Routes/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-354-Russian-Doll-Envelopes"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/11/354-Russian-Doll-Envelopes/">354. Russian Doll Envelopes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/11/354-Russian-Doll-Envelopes/" class="article-date">
+	  <time datetime="2020-11-11T19:16:51.000Z" itemprop="datePublished">2020-11-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920class Solution(object):    def maxEnvelopes(self, envelopes):        """        :type envelopes: List[List[int]]        :rtype: int        """        envelopes = sorted(envelopes, key=lambda x: (x[0], -x[1]))        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/11/354-Russian-Doll-Envelopes/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-300-Longest-Increasing-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/11/300-Longest-Increasing-Subsequence/">300. Longest Increasing Subsequence </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/11/300-Longest-Increasing-Subsequence/" class="article-date">
+	  <time datetime="2020-11-11T18:43:44.000Z" itemprop="datePublished">2020-11-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          O(n*n)1234567891011121314class Solution(object):    def lengthOfLIS(self, nums):        """        :type nums: List[int]        :rtype: int        """        if not nums: return 0        dp = [1] * len(nums)                for i in range(len(nums)...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/11/300-Longest-Increasing-Subsequence/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-135-Candy"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/10/135-Candy/">135. Candy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/10/135-Candy/" class="article-date">
+	  <time datetime="2020-11-11T06:20:04.000Z" itemprop="datePublished">2020-11-10</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718class Solution(object):    def candy(self, ratings):        """        :type ratings: List[int]        :rtype: int        """        left2right = [1] * len(ratings)        right2left = [1] * len(ratings)                f...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/10/135-Candy/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1359-Count-All-Valid-Pickup-and-Delivery-Options"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/10/1359-Count-All-Valid-Pickup-and-Delivery-Options/">1359. Count All Valid Pickup and Delivery Options</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/10/1359-Count-All-Valid-Pickup-and-Delivery-Options/" class="article-date">
+	  <time datetime="2020-11-11T05:45:36.000Z" itemprop="datePublished">2020-11-10</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+Assume we already have n-1 pairs, now we need to insert the  nth pair
+To insert the first element, there are 2*(n-1) + 1 = 2n - 1 choices of the position
+To insert the second element, there are 2*(n-1)+1 + = 2n choices of the position
+because sec...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/10/1359-Count-All-Valid-Pickup-and-Delivery-Options/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1293-Shortest-Path-in-a-Grid-with-Obstacles-Elimination"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -461,336 +786,6 @@
         </p>
         <p class="article-more-link">
           <a href="/2020/11/10/420-Strong-Password-Checker/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-749-Contain-Virus"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/749-Contain-Virus/">749. Contain Virus</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/10/749-Contain-Virus/" class="article-date">
-	  <time datetime="2020-11-10T22:09:24.000Z" itemprop="datePublished">2020-11-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354class Solution(object):    def containVirus(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        R, C = l...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/10/749-Contain-Virus/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-87-Scramble-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/87-Scramble-String/">87. Scramble String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/10/87-Scramble-String/" class="article-date">
-	  <time datetime="2020-11-10T19:54:11.000Z" itemprop="datePublished">2020-11-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def isScramble(self, s1, s2):        """        :type s1: str        :type s2: str        :rtype: bool        """        n, m = len(s1), len(s2)                if n != m or sorted(s1) != sort...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/10/87-Scramble-String/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1383-Maximum-Performance-of-a-Team"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/1383-Maximum-Performance-of-a-Team/">1383. Maximum Performance of a Team</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/10/1383-Maximum-Performance-of-a-Team/" class="article-date">
-	  <time datetime="2020-11-10T19:14:28.000Z" itemprop="datePublished">2020-11-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Greddy
-1234567891011121314151617181920class Solution(object):    def maxPerformance(self, n, speed, efficiency, k):        """        :type n: int        :type speed: List[int]        :type efficiency: List[int]        :type k: int        :rtype: ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/10/1383-Maximum-Performance-of-a-Team/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-843-Guess-the-Word"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/843-Guess-the-Word/">843. Guess the Word </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/10/843-Guess-the-Word/" class="article-date">
-	  <time datetime="2020-11-10T17:50:26.000Z" itemprop="datePublished">2020-11-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-solve(self, possible, path = ()):
-
-
-path: the guess we have made so far
-return the better guess we made
-
-
-everytime we update the possible list, in the matches list to narrow the range
-
-123456789101112131415161718192021222324252627282930313233343...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/10/843-Guess-the-Word/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1531-String-Compression-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/1531-String-Compression-II/">1531. String Compression II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/09/1531-String-Compression-II/" class="article-date">
-	  <time datetime="2020-11-10T06:39:24.000Z" itemprop="datePublished">2020-11-09</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          决策最优解可以考虑用DP解决
-123456789101112131415161718192021222324252627282930313233class Solution(object):    def getLengthOfOptimalCompression(self, s, k):        """        :type s: str        :type k: int        :rtype: int        """        memo = &#123;...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/09/1531-String-Compression-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1163-Last-Substring-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/">1163. Last Substring in Lexicographical Order</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/" class="article-date">
-	  <time datetime="2020-11-10T05:43:47.000Z" itemprop="datePublished">2020-11-09</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-The mean idea here is to eliminate those candidates we are certain not the solution, at last, the only one left is our solution
-i, j,j &gt; i –&gt; final we return s[i:]
-
-
-s[i+k] == s[j+k], k++
-s[i+k] &lt; s[j+k], 0 &lt;= p &lt;= k, which means i...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/#more">Read More</a>
         </p>
       
     </div>

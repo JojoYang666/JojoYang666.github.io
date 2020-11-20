@@ -9,17 +9,20 @@
   
   
   
-  <meta name="description" content="Requirements and Goals of the SystemFunctional Requirements1.">
+  <meta name="description" content="Requirements and Goals of the SystemFunctional Requirements able to upload videos able to share and view videos able to perform searches based on video titles be able to record stats of videos, e.g.,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Designing Youtube or Netflix">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/11/18/Designing-Youtube-or-Netflix/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Requirements and Goals of the SystemFunctional Requirements1.">
+<meta property="og:description" content="Requirements and Goals of the SystemFunctional Requirements able to upload videos able to share and view videos able to perform searches based on video titles be able to record stats of videos, e.g.,">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/youtube_high_level_design.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/youtube_detail_component.png">
 <meta property="article:published_time" content="2020-11-18T20:31:57.000Z">
-<meta property="article:modified_time" content="2020-11-18T20:35:53.265Z">
+<meta property="article:modified_time" content="2020-11-19T17:13:45.947Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/youtube_high_level_design.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -206,7 +209,345 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h1><h2 id="Functional-Requirements"><a href="#Functional-Requirements" class="headerlink" title="Functional Requirements"></a>Functional Requirements</h2><p>1. </p>
+        <h1 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h1><h2 id="Functional-Requirements"><a href="#Functional-Requirements" class="headerlink" title="Functional Requirements"></a>Functional Requirements</h2><ol>
+<li>able to upload videos</li>
+<li>able to share and view videos</li>
+<li>able to perform searches based on video titles</li>
+<li>be able to record stats of videos, e.g., likes/dislikes, total number of views, etc</li>
+<li>add and view comments on videos</li>
+</ol>
+<h2 id="Non-Functional-Requirements"><a href="#Non-Functional-Requirements" class="headerlink" title="Non-Functional Requirements"></a>Non-Functional Requirements</h2><ol>
+<li>should be highly reliable, any video uploaded should not be lost</li>
+<li>should be highly available<ul>
+<li>Consistency can take a hit (in the interest of availability); if a user doesn’t see a video for a while, it should be fine.</li>
+</ul>
+</li>
+<li>a real time experience while watching videos and should not feel any lag.</li>
+</ol>
+<h2 id="Not-in-scope"><a href="#Not-in-scope" class="headerlink" title="Not in scope"></a>Not in scope</h2><ol>
+<li>Video recommendations</li>
+<li>most popular videos</li>
+<li>channels</li>
+<li>subscriptions</li>
+<li>watch later</li>
+<li>favorites</li>
+</ol>
+<h1 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h1><ol>
+<li>Assumption<ul>
+<li>Users:  1.5 billion</li>
+<li>DAU: 800 million</li>
+<li>On average: views 5 videos/day</li>
+<li>total video-views per second<ul>
+<li>800M * 5 / 86400 sec =&gt; 46K videos/sec</li>
+</ul>
+</li>
+<li>upload:vieo ratio: 1 : 200, 230 videos uploaded per second: <ul>
+<li>46K / 200 =&gt; 230 videos/sec</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Storage Estimates<ul>
+<li>every minute 500 hours worth of videos are uploaded to Youtube</li>
+<li>on average, one minute of video needs 50MB of storage</li>
+<li>the total storage needed for videos uploaded in a minute would be<ul>
+<li>500 hours * 60 min * 50MB =&gt; 1500 GB/min (25 GB/sec)</li>
+</ul>
+</li>
+<li>These numbers are estimated with <strong>ignoring video compression and replication</strong>, which would change our estimates.</li>
+</ul>
+</li>
+<li>Bandwidth estimates<ul>
+<li>each video upload: bandwidth of 10 MB/min</li>
+<li>500 hours of video uploads /minute<ul>
+<li>500 hours * 60 mins * 10MB =&gt; 300GB/min (5GB/sec)</li>
+</ul>
+</li>
+<li>Assuming an upload:view ratio of 1:200, we would need 1TB/s outgoing bandwidth.</li>
+</ul>
+</li>
+</ol>
+<h1 id="System-APIs"><a href="#System-APIs" class="headerlink" title="System APIs"></a>System APIs</h1><ol>
+<li><p>uploadVideo(api_dev_key, video_title, video_description, tags[], category_id, default_language, recording_details, video_contents)</p>
+<ul>
+<li>api_dev_key: The API developer key of a registered account. This will be used to, among other things, throttle users based on their allocated quota.</li>
+<li>video_title: Title of the video</li>
+<li>video_description: Optional description of the video</li>
+<li>tags: Optional tags for the video</li>
+<li>category_id: Category of the video, e.g., Film, Song, People, etc.</li>
+<li>default_language: For example English, Mandarin, Hindi, etc.</li>
+<li>recording_details: Location where the video was recorded</li>
+<li>video_contents: Video to be uploaded</li>
+<li>returns: <ul>
+<li>A successful upload will return HTTP 202 (request accepted)</li>
+<li>once the video encoding is completed the user is notified through email with a link to access the video.</li>
+<li>expose a queryable API to let users know the current status of their uploaded video</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>searchVideo(api_dev_key, search_query, user_location, maximum_videos_to_return, page_token)</p>
+<ul>
+<li>api_dev_key: API developer key of a registered account of our service</li>
+<li>search_query: string containing the search terms</li>
+<li>user_location: Optional location of the user performing the search</li>
+<li>maximum_videos_to_return: Maximum number of results returned in one request</li>
+<li>page_token: This token will specify a page in the result set that should be returned.</li>
+<li>return<ul>
+<li>list of video resources matching the search query</li>
+<li>have a video title, a thumbnail, a video creation date, and a view count</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>streamVideo(api_dev_key, video_id, offset, codec, resolution)</p>
+<ul>
+<li>api_dev_key: The API developer key of a registered account of our service</li>
+<li>video_id: A string to identify the video</li>
+<li>offset: <ul>
+<li>able to stream video from any offset</li>
+<li>a time in seconds from the beginning of the video</li>
+<li>If we support playing/pausing a video from multiple devices, we will need to store the offset on the server.<ul>
+<li>enable the users to start watching a video on any device from the same point where they left off.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>codec (string) &amp; resolution(string): <ul>
+<li>send the codec and resolution info in the API from the client to support play/pause from multiple devices. </li>
+</ul>
+</li>
+<li>return<ul>
+<li>A media stream (a video chunk) from the given offset</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="High-Level-Design"><a href="#High-Level-Design" class="headerlink" title="High Level Design"></a>High Level Design</h1><ul>
+<li><img src="/images/youtube_high_level_design.png" alt="image"></li>
+</ul>
+<ol>
+<li>Processing Queue: <ul>
+<li>Each uploaded video will be pushed to a processing queue to be de-queued later<ul>
+<li>encoding, thumbnail generation, and storage</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Encoder<ul>
+<li>encode each uploaded video into multiple formats</li>
+</ul>
+</li>
+<li>Thumbnails generator<ul>
+<li>generate a few thumbnails for each video</li>
+</ul>
+</li>
+<li>Video and Thumbnail storage<ul>
+<li>store video and thumbnail files in some distributed file storage</li>
+</ul>
+</li>
+<li>User Database<ul>
+<li>store user’s information, e.g., name, email, address, etc.</li>
+</ul>
+</li>
+<li>Video metadata storage<ul>
+<li>A metadata database to store all the information about videos like title, file path in the system, uploading user, total views, likes, dislikes, etc.</li>
+<li>be used to store all the video comments.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Database-Schema"><a href="#Database-Schema" class="headerlink" title="Database Schema"></a>Database Schema</h1><ol>
+<li><p>Video metadata storage - MySql</p>
+<ul>
+<li>VideoID</li>
+<li>Title</li>
+<li>Description</li>
+<li>Size</li>
+<li>Thumbnail</li>
+<li>Uploader/User</li>
+<li>Total number of likes</li>
+<li>Total number of dislikes</li>
+<li>Total number of views</li>
+</ul>
+</li>
+<li><p>each video comment, we need to store following information:</p>
+<ul>
+<li>CommentID</li>
+<li>VideoID</li>
+<li>UserID</li>
+<li>Comment</li>
+<li>TimeOfCreation</li>
+</ul>
+</li>
+<li><p>User data storage - MySql</p>
+<ul>
+<li>UserID, Name, email, address, age, registration details, etc.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h1><p>Read Heavy</p>
+<h2 id="Where-would-videos-be-stored"><a href="#Where-would-videos-be-stored" class="headerlink" title="Where would videos be stored?"></a>Where would videos be stored?</h2><p>stored in a distributed <strong>file storage system</strong> like <strong>HDFS or GlusterFS</strong></p>
+<h2 id="How-should-we-efficiently-manage-read-traffic"><a href="#How-should-we-efficiently-manage-read-traffic" class="headerlink" title="How should we efficiently manage read traffic?"></a>How should we efficiently manage read traffic?</h2><ul>
+<li><img src="/images/youtube_detail_component.png" alt="image"></li>
+</ul>
+<ol>
+<li><p>segregate our read traffic from write traffic</p>
+<ul>
+<li>multiple copies of each video</li>
+<li>distribute our read traffic on different servers</li>
+</ul>
+</li>
+<li><p>metadata</p>
+<ul>
+<li>primary-secondary configurations<ul>
+<li>writes will go to primary first </li>
+<li>get applied at all the secondaries</li>
+<li>there will be some legancy between first and secondary when user read/upload at the same time</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Where-would-thumbnails-be-stored"><a href="#Where-would-thumbnails-be-stored" class="headerlink" title="Where would thumbnails be stored?"></a>Where would thumbnails be stored?</h2><ol>
+<li><p>a lot more thumbnails than videos</p>
+</li>
+<li><p>have a very efficient storage system that can serve a huge read traffic. </p>
+</li>
+<li><p>some considerations before deciding which storage to use</p>
+<ul>
+<li>Thumbnails are small files with, say, a maximum 5KB each</li>
+<li>Read traffic for thumbnails will be huge compared to videos. <ul>
+<li>Users will be watching one video at a time, </li>
+<li>but they might be looking at a page that has 20 thumbnails of other videos.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Assume storing all the thumbnails on a disk</p>
+<ul>
+<li>Given that we have a huge number of files, </li>
+<li>perform a lot of seeks to different locations on the disk to read these files. </li>
+<li>inefficient and will result in higher latencies.</li>
+</ul>
+</li>
+<li><p>Bigtable can be a reasonable choice</p>
+<ul>
+<li>combines multiple files into one block to store on the disk </li>
+<li>efficient in reading a small amount of data</li>
+</ul>
+</li>
+<li><p>Keeping hot thumbnails in the cache will also help in improving the latencies </p>
+</li>
+<li><p>thumbnails are small, easily cache a large number of such files in memory</p>
+</li>
+</ol>
+<h2 id="Video-Uploads"><a href="#Video-Uploads" class="headerlink" title="Video Uploads"></a>Video Uploads</h2><ol>
+<li>Since videos could be huge</li>
+<li>while uploading the connection drops we should support resuming from the same point.</li>
+</ol>
+<h2 id="Video-Encoding"><a href="#Video-Encoding" class="headerlink" title="Video Encoding"></a>Video Encoding</h2><ol>
+<li>Newly uploaded videos are stored on the server</li>
+<li>a new task is added to the processing queue to encode the video into multiple formats. </li>
+<li>Once all the encoding will be completed the uploader will be notified and the video is made available for view/sharing.</li>
+</ol>
+<h1 id="Metadata-Sharding"><a href="#Metadata-Sharding" class="headerlink" title="Metadata Sharding"></a>Metadata Sharding</h1><h2 id="Sharding-based-on-UserID"><a href="#Sharding-based-on-UserID" class="headerlink" title="Sharding based on UserID"></a>Sharding based on UserID</h2><ol>
+<li>storing all the data for a particular user on one server</li>
+<li>To search videos by titles, have to query all servers and each server will return a set of videos<ul>
+<li>A centralized server will then aggregate and rank these results before returning them to the user.</li>
+</ul>
+</li>
+<li>Issues:<ul>
+<li>What if a user becomes popular?  <ul>
+<li>could be a lot of queries on the server holding that user; a performance bottleneck</li>
+<li>affect the overall performance of our service</li>
+</ul>
+</li>
+<li>some users can end up storing a lot of videos compared to others<ul>
+<li>Maintaining a uniform distribution of growing user data is quite tricky.</li>
+</ul>
+</li>
+<li>solution<ul>
+<li>repartition/redistribute our data </li>
+<li>used consistent hashing to balance the load between servers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Sharding-based-on-VideoID"><a href="#Sharding-based-on-VideoID" class="headerlink" title="Sharding based on VideoID"></a>Sharding based on VideoID</h2><ul>
+<li>This approach solves our problem of popular users but shifts it to popular videos.</li>
+<li>introducing a cache to store hot videos in front of the database servers.</li>
+</ul>
+<h1 id="Video-Deduplication"><a href="#Video-Deduplication" class="headerlink" title="Video Deduplication"></a>Video Deduplication</h1><ol>
+<li>a huge number of users uploading a massive amount of video data our service will have to deal with widespread video duplication.</li>
+<li>Duplicate videos often differ in aspect ratios or encodings</li>
+<li>The proliferation of duplicate videos can have an impact on many levels:<ul>
+<li>Data Storage: We could be wasting storage space by keeping multiple copies of the same video.</li>
+<li>Caching: Duplicate videos would result in degraded cache efficiency by taking up space that could be used for unique content.</li>
+<li>Network usage: Duplicate videos will also increase the amount of data that must be sent over the network to in-network caching systems.</li>
+<li>Energy consumption: Higher storage, inefficient cache, and network usage could result in energy wastage.</li>
+</ul>
+</li>
+<li>For the end user, these inefficiencies will be realized in the form of duplicate search results, longer video startup times, and interrupted streaming.</li>
+<li>deduplication makes most sense early<ul>
+<li>Inline deduplication will save us a lot of resources that can be used to encode, transfer, and store the duplicate copy of the video</li>
+<li>As soon as any user starts uploading a video, our service can run video matching algorithms (e.g., Block Matching, Phase Correlation, etc.) to find duplications. </li>
+</ul>
+</li>
+<li>If we already have a copy of the video being uploaded<ul>
+<li>stop the upload</li>
+<li>use the newly uploaded video if it is of higher quality</li>
+<li>If the newly uploaded video is a subpart of an existing video<ul>
+<li>we can intelligently divide the video into smaller chunks so that we only upload the parts that are missing.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Load-Balancing"><a href="#Load-Balancing" class="headerlink" title="Load Balancing"></a>Load Balancing</h1><ol>
+<li>using  Consistent Hashing among our cache servers<ul>
+<li>balancing the load between cache servers</li>
+</ul>
+</li>
+<li>for different popularity of each video, it will have uneven load<ul>
+<li>solution<ul>
+<li>any busy server in one location can redirect a client to a less busy server in the same cache location</li>
+<li>We can use dynamic HTTP redirections for this scenario.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>drawback for redirection<ul>
+<li>since our service tries to load balance locally, it leads to multiple redirections if the host that receives the redirection can’t serve the video</li>
+<li>each redirection requires a client to make an additional HTTP request; it also leads to higher delays before the video starts playing back. </li>
+<li>inter-tier (or cross data-center) redirections lead a client to a distant cache location because the higher tier caches are only present at a small number of locations.</li>
+</ul>
+</li>
+</ol>
+<h1 id="cache"><a href="#cache" class="headerlink" title="cache"></a>cache</h1><ol>
+<li>push its content closer to the user using a large number of geographically distributed video cache servers. </li>
+<li>maximize user performance and also evenly distributes the load on its cache servers.</li>
+<li>cache for metadata servers to cache hot database rows<ul>
+<li>Memcache to cache the data and Application servers before hitting database can quickly check if the cache has the desired rows</li>
+<li>Least Recently Used (LRU) can be a reasonable cache eviction policy for our system.</li>
+<li>Under this policy, we discard the least recently viewed row first.<h2 id="How-can-we-build-more-intelligent-cache"><a href="#How-can-we-build-more-intelligent-cache" class="headerlink" title="How can we build more intelligent cache?"></a>How can we build more intelligent cache?</h2>If we go with 80-20 rule, i.e., 20% of daily read volume for videos is generating 80% of traffic<br>caching 20% of daily read volume of videos and metadata</li>
+</ul>
+</li>
+</ol>
+<h1 id="Content-Delivery-Network-CDN"><a href="#Content-Delivery-Network-CDN" class="headerlink" title="Content Delivery Network (CDN)"></a>Content Delivery Network (CDN)</h1><p>Our service can move popular videos to CDNs:</p>
+<ul>
+<li>CDNs replicate content in multiple places. </li>
+<li>CDN machines make heavy use of caching and can mostly serve videos out of memory.</li>
+<li><em>Less popular videos (1-20 views per day) that are not cached by CDNs can be served by our servers in various data centers.*</em></li>
+</ul>
+<h1 id="Fault-Tolerance"><a href="#Fault-Tolerance" class="headerlink" title="Fault Tolerance"></a>Fault Tolerance</h1><ol>
+<li>use Consistent Hashing for distribution among database servers<ul>
+<li>replacing a dead server</li>
+<li>distributing load among servers</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -309,7 +650,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-Requirements"><span class="nav-number">1.1.</span> <span class="nav-text">Functional Requirements</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-Requirements"><span class="nav-number">1.1.</span> <span class="nav-text">Functional Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-Functional-Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Non-Functional Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Not-in-scope"><span class="nav-number">1.3.</span> <span class="nav-text">Not in scope</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">2.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-APIs"><span class="nav-number">3.</span> <span class="nav-text">System APIs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">4.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Schema"><span class="nav-number">5.</span> <span class="nav-text">Database Schema</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">6.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Where-would-videos-be-stored"><span class="nav-number">6.1.</span> <span class="nav-text">Where would videos be stored?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-should-we-efficiently-manage-read-traffic"><span class="nav-number">6.2.</span> <span class="nav-text">How should we efficiently manage read traffic?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Where-would-thumbnails-be-stored"><span class="nav-number">6.3.</span> <span class="nav-text">Where would thumbnails be stored?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-Uploads"><span class="nav-number">6.4.</span> <span class="nav-text">Video Uploads</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-Encoding"><span class="nav-number">6.5.</span> <span class="nav-text">Video Encoding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Metadata-Sharding"><span class="nav-number">7.</span> <span class="nav-text">Metadata Sharding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sharding-based-on-UserID"><span class="nav-number">7.1.</span> <span class="nav-text">Sharding based on UserID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sharding-based-on-VideoID"><span class="nav-number">7.2.</span> <span class="nav-text">Sharding based on VideoID</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Video-Deduplication"><span class="nav-number">8.</span> <span class="nav-text">Video Deduplication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Load-Balancing"><span class="nav-number">9.</span> <span class="nav-text">Load Balancing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cache"><span class="nav-number">10.</span> <span class="nav-text">cache</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-we-build-more-intelligent-cache"><span class="nav-number">10.1.</span> <span class="nav-text">How can we build more intelligent cache?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Content-Delivery-Network-CDN"><span class="nav-number">11.</span> <span class="nav-text">Content Delivery Network (CDN)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fault-Tolerance"><span class="nav-number">12.</span> <span class="nav-text">Fault Tolerance</span></a></li></ol>
     
     </div>
   </aside>

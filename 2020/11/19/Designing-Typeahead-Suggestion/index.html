@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>designing typeahead suggestion | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Requirements and Goals of the SystemFunctional Requirements As the user types in their query, our service should suggest top 10 terms starting with whatever the user has typed.  Non-function Requireme">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing Typeahead Suggestion">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/11/19/Designing-Typeahead-Suggestion/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Requirements and Goals of the SystemFunctional Requirements As the user types in their query, our service should suggest top 10 terms starting with whatever the user has typed.  Non-function Requireme">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-19T17:14:43.000Z">
+<meta property="article:modified_time" content="2020-11-20T03:56:54.006Z">
+<meta property="article:author" content="Jojo Yang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Designing-Typeahead-Suggestion" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Designing Typeahead Suggestion
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/19/Designing-Typeahead-Suggestion/" class="article-date">
+	  <time datetime="2020-11-19T17:14:43.000Z" itemprop="datePublished">2020-11-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h1><h2 id="Functional-Requirements"><a href="#Functional-Requirements" class="headerlink" title="Functional Requirements"></a>Functional Requirements</h2><ol>
+<li>As the user types in their query, our service should suggest top 10 terms starting with whatever the user has typed.</li>
+</ol>
+<h2 id="Non-function-Requirements"><a href="#Non-function-Requirements" class="headerlink" title="Non-function Requirements"></a>Non-function Requirements</h2><ul>
+<li>The suggestions should appear in real-time</li>
+<li>The user should be able to see the suggestions within 200ms</li>
+</ul>
+<h1 id="Basic-System-Design-and-Algorithm"><a href="#Basic-System-Design-and-Algorithm" class="headerlink" title="Basic System Design and Algorithm"></a>Basic System Design and Algorithm</h1><ol>
+<li>serve a lot of queries with minimum latency,we need to come up with a scheme that can efficiently store our data such that it can be queried quickly. </li>
+<li>can’t depend upon some database for this</li>
+<li>need to store our index in memory in a highly efficient data structure.</li>
+<li>using <strong>Trie</strong> data structure<ul>
+<li>merge nodes that have only one branch to save storage space</li>
+</ul>
+</li>
+</ol>
+<h2 id="Should-we-have-case-insensitive-trie"><a href="#Should-we-have-case-insensitive-trie" class="headerlink" title="Should we have case insensitive trie?"></a>Should we have case insensitive trie?</h2><ul>
+<li>For simplicity and search use-case, let’s assume our data is case insensitive.</li>
+</ul>
+<h2 id="How-to-find-top-suggestion"><a href="#How-to-find-top-suggestion" class="headerlink" title="How to find top suggestion?"></a>How to find top suggestion?</h2><ol>
+<li>store the count of searches that terminated at each node</li>
+<li>to find the top suggestions for a given prefix, we can traverse the sub-tree under it.</li>
+</ol>
+<h2 id="Given-a-prefix-how-much-time-will-it-take-to-traverse-its-sub-tree"><a href="#Given-a-prefix-how-much-time-will-it-take-to-traverse-its-sub-tree" class="headerlink" title="Given a prefix, how much time will it take to traverse its sub-tree?"></a>Given a prefix, how much time will it take to traverse its sub-tree?</h2><ol>
+<li>Given the amount of data we need to index, we should expect a huge tree.</li>
+<li>Even traversing a sub-tree would take really long</li>
+<li>Since we have very strict latency requirements we do need to improve the efficiency of our solution.</li>
+</ol>
+<h2 id="Can-we-store-top-suggestions-with-each-node"><a href="#Can-we-store-top-suggestions-with-each-node" class="headerlink" title="Can we store top suggestions with each node?"></a>Can we store top suggestions with each node?</h2><ol>
+<li>surely speed up our searches but will require a lot of extra storage</li>
+<li>store top 10 suggestions at each node that we can return to the user</li>
+<li>have to bear the big increase in our storage capacity to achieve the required efficiency</li>
+<li>Optimize by:</li>
+</ol>
+<ul>
+<li>storing only references of the terminal nodes rather than storing the entire phrase</li>
+<li>suggested terms we need to traverse back using the parent reference from the terminal node</li>
+<li>store the frequency with each reference to keep track of top suggestions</li>
+</ul>
+<h2 id="How-would-we-build-this-trie"><a href="#How-would-we-build-this-trie" class="headerlink" title="How would we build this trie?"></a>How would we build this trie?</h2><ol>
+<li>efficiently build our trie bottom up</li>
+<li>Each parent node will recursively call all the child nodes to calculate their top suggestions and their counts. </li>
+<li>Parent nodes will combine top suggestions from all of their children to determine their top suggestions.</li>
+</ol>
+<h2 id="How-to-update-the-trie"><a href="#How-to-update-the-trie" class="headerlink" title="How to update the trie?"></a>How to update the trie?</h2><ol>
+<li>Try to update our trie for every query it’ll be extremely resource intensive </li>
+<li>hamper our read requests</li>
+<li>solution: Update our trie offline after a certain interval.</li>
+<li>As the new queries come in we can log them and also track their frequencies<ul>
+<li>can log every query</li>
+<li>or do sampling and log every 1000th query. <ul>
+<li>eg: if we don’t want to show a term which is searched for less than 1000 times, it’s safe to log every 1000th searched term.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>have a <strong>Map-reduce(MR)</strong> set-up to process all the logging data periodically say every hour<ul>
+<li>calculate frequencies of all searched terms in the past hour</li>
+<li>update our trie with this new data</li>
+<li>take the current snapshot of the trie tree and  it with all the new terms and their frequiences</li>
+<li>We should do this offline, there are two options<ul>
+<li>make a copy of the trie on each server to update it offline, once done, we switch to start using it and discard the old one</li>
+<li>Have a primary-scondary configuration for each trie server<ul>
+<li>the secondary while the primary is serving traffic</li>
+<li>Once the update is complete, we can make the secondary our new primary.</li>
+<li>update our old primary, which can then start serving traffic</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="How-can-we-update-the-frequencies-of-typeahead-suggestions"><a href="#How-can-we-update-the-frequencies-of-typeahead-suggestions" class="headerlink" title="How can we update the frequencies of typeahead suggestions?"></a>How can we update the frequencies of typeahead suggestions?</h2><ol>
+<li>Update only differences in frequencies rather than recounting all search terms from scratch. </li>
+<li>we’ll need to subtract the counts from the time period no longer included and add the counts for the new time period being included. </li>
+<li>add and subtract frequencies based on Exponential Moving Average (EMA) of each term<ul>
+<li>give more weight to the latest data</li>
+<li>exponentially weighted moving average</li>
+</ul>
+</li>
+<li>After inserting a new term in the trie, we’ll go to the terminal node of the phrase and increase its frequency.<ul>
+<li>For every parent, we check if the current query is part of the top 10. If so, we update the corresponding frequency.</li>
+<li>If not, we check if the current query’s frequency is high enough to be a part of the top 10<ul>
+<li>If so, we insert this new term and remove the term with the lowest frequency.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="How-can-we-remove-a-term-from-the-trie"><a href="#How-can-we-remove-a-term-from-the-trie" class="headerlink" title="How can we remove a term from the trie?"></a>How can we remove a term from the trie?</h2><ol>
+<li>completely remove such terms from the trie when the regular update happens</li>
+<li>add a filtering layer on each server which will remove any such term before sending them to users.</li>
+</ol>
+<h2 id="What-could-be-different-ranking-criteria-for-suggestions"><a href="#What-could-be-different-ranking-criteria-for-suggestions" class="headerlink" title="What could be different ranking criteria for suggestions?"></a>What could be different ranking criteria for suggestions?</h2><p>freshness, user location, language, demographics, personal history,</p>
+<h1 id="Permanent-Storage-of-the-Trie"><a href="#Permanent-Storage-of-the-Trie" class="headerlink" title="Permanent Storage of the Trie"></a>Permanent Storage of the Trie</h1><h2 id="How-to-store-trie-in-a-file-so-that-we-can-rebuild-our-trie-easily-this-will-be-needed-when-a-machine-restarts"><a href="#How-to-store-trie-in-a-file-so-that-we-can-rebuild-our-trie-easily-this-will-be-needed-when-a-machine-restarts" class="headerlink" title="How to store trie in a file so that we can rebuild our trie easily - this will be needed when a machine restarts?"></a>How to store trie in a file so that we can rebuild our trie easily - this will be needed when a machine restarts?</h2><ol>
+<li>take a snapshot of our trie periodically</li>
+<li>store it in a file</li>
+<li>To store<ul>
+<li>start with the root node and save the trie level-by-level</li>
+<li>With each node, we can store what character it contains and how many children it has.</li>
+<li>Right after each node, we should put all of its children. </li>
+<li>Not storing top suggestions and their counts with each node</li>
+</ul>
+</li>
+<li>not storing top suggestions and their counts with each node<ul>
+<li>as our trie is being stored top-down, we don’t have child nodes created before the parent</li>
+<li>get it when we try to build it as our trie is being stored top-down, we don’t have child nodes created before the parent</li>
+</ul>
+</li>
+</ol>
+<h1 id="Scale-Estimation"><a href="#Scale-Estimation" class="headerlink" title="Scale Estimation"></a>Scale Estimation</h1><p>Let’s assume we will have 100 million unique terms for which we want to build an index</p>
+<h2 id="Storage-Estimation"><a href="#Storage-Estimation" class="headerlink" title="Storage Estimation"></a>Storage Estimation</h2><ol>
+<li>Assume each query consists of 3 words and if the average length of a word is 5 characters =&gt; 15 characters of average query size</li>
+<li>Assume need <strong>2 bytes to store a character</strong> ==&gt; 30 bytes to store an average query</li>
+<li>total storage<ul>
+<li>100 million * 30 bytes =&gt; 3 GB</li>
+</ul>
+</li>
+<li>Assume 2% new queries every day,  if we are maintaining our index for the last one year, total storage we should expect:<ul>
+<li>3GB + (0.02 * 3 GB * 365 days) =&gt; 25 GB</li>
+</ul>
+</li>
+</ol>
+<h1 id="Data-Partition"><a href="#Data-Partition" class="headerlink" title="Data Partition"></a>Data Partition</h1><ol>
+<li>partition it in order to meet our requirements of higher efficiency and lower latencies</li>
+<li>how can we efficiently partition our data to distribute it onto multiple servers?</li>
+</ol>
+<h2 id="Range-Based-Partitioning"><a href="#Range-Based-Partitioning" class="headerlink" title="Range Based Partitioning"></a>Range Based Partitioning</h2><ol>
+<li>we store our phrases in separate partitions based on their first letter<ul>
+<li>issums:<ul>
+<li>lead to unbalanced servers</li>
+<li>problem will happen with every statically defined scheme</li>
+<li>not possible to calculate if each of our partitions will fit on one server statically</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Partition-based-on-the-maximum-capacity-of-the-server"><a href="#Partition-based-on-the-maximum-capacity-of-the-server" class="headerlink" title="Partition based on the maximum capacity of the server"></a>Partition based on the maximum capacity of the server</h2><ol>
+<li>partition our trie based on the maximum memory capacity of the servers<ul>
+<li>Whenever a sub-tree cannot fit into a server, we break our partition there to assign that range to this server and move on to the next server to repeat this process</li>
+</ul>
+</li>
+<li>Example<ul>
+<li>if our first trie server can store all terms from ‘A’ to ‘AABC’, which mean our next server will store from ‘AABD’ onwards</li>
+<li>If our second server could store up to ‘BXA’, the next server will start from ‘BXB’, and so on.</li>
+<li>We can keep a hash table to quickly access this partitioning scheme<br>Server 1, A-AABC<br>Server 2, AABD-BXA<br>Server 3, BXB-CDA</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>For querying<ul>
+<li>if the user has typed ‘A’ we have to query both servers 1 and 2 to find the top suggestions</li>
+<li>When the user has typed ‘AA’, we still have to query server 1 and 2, but when the user has typed ‘AAA’ we only need to query server 1.</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>a load balancer in front of our trie servers <ul>
+<li>store this mapping and redirect traffic</li>
+</ul>
+</li>
+<li>if we are querying from multiple servers, either <ul>
+<li>we need to merge the results on the server-side to calculate the overall top results or <ul>
+<li>introduce another layer of servers between load balancers and trie severs (let’s call them aggregator).</li>
+<li>aggregate results from multiple trie servers and return the top results to the client.</li>
+</ul>
+</li>
+<li>make our clients do that.</li>
+</ul>
+</li>
+<li>Partitioning based on the maximum capacity can still lead us to hotspots,</li>
+</ol>
+<h2 id="Partition-based-on-the-hash-of-the-term"><a href="#Partition-based-on-the-hash-of-the-term" class="headerlink" title="Partition based on the hash of the term"></a>Partition based on the hash of the term</h2><ol>
+<li>term will be passed to a hash function</li>
+<li>make our term distribution random and hence minimize hotspots. </li>
+<li>problem:<ul>
+<li>find typeahead suggestions for a term we have to ask all the servers and then aggregate the results.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><ol>
+<li>have separate cache servers in front of the trie servers holding the <strong>most frequently searched terms</strong> and their <strong>typeahead suggestions.</strong></li>
+<li>check these cache servers before hitting the trie servers to see if they have the desired searched terms. </li>
+<li>also build a simple Machine Learning (ML) model that can try to predict the engagement on each suggestion based on simple counting, personalization, or trending data, and cache these terms beforehand.</li>
+</ol>
+<h1 id="Replication-and-Load-Balancer"><a href="#Replication-and-Load-Balancer" class="headerlink" title="Replication and Load Balancer"></a>Replication and Load Balancer</h1><ol>
+<li>replicas for our trie servers both for load balancing and also for fault tolerance. </li>
+<li>lb: that keeps track of our data partitioning scheme and redirects traffic based on the prefixes.</li>
+</ol>
+<h1 id="Fault-Tolerance"><a href="#Fault-Tolerance" class="headerlink" title="Fault Tolerance"></a>Fault Tolerance</h1><h2 id="What-will-happen-when-a-trie-server-goes-down"><a href="#What-will-happen-when-a-trie-server-goes-down" class="headerlink" title="What will happen when a trie server goes down?"></a>What will happen when a trie server goes down?</h2><p> a primary-secondary configuration;</p>
+<h1 id="Typeahead-Client"><a href="#Typeahead-Client" class="headerlink" title="Typeahead Client"></a>Typeahead Client</h1><p>optimizations on the client-side to improve user’s experience</p>
+<ol>
+<li>The client should only try hitting the server if the user has not pressed any key for 50ms.</li>
+<li>If the user is constantly typing, the client can cancel the in-progress requests.</li>
+<li>Initially, the client can wait until the user enters a couple of characters.</li>
+<li>Clients can pre-fetch some data from the server to save future requests.</li>
+<li>Clients can store the recent history of suggestions locally. Recent history has a very high rate of being reused.</li>
+<li>Establishing an early connection with the server turns out to be one of the most important factors.<ul>
+<li>As soon as the user opens the search engine website, the client can open a connection with the server. </li>
+</ul>
+</li>
+<li>The server can push some part of their cache to CDNs and Internet Service Providers (ISPs) for efficiency.</li>
+</ol>
+<h1 id="Personalization"><a href="#Personalization" class="headerlink" title="Personalization"></a>Personalization</h1><ol>
+<li>Receive some typeahead suggestions based on their historical searches, location, language, etc</li>
+<li>store the personal history of each user separately on the server and also cache them on the client.</li>
+<li>server can add these personalized terms in the final set before sending it to the user.</li>
+<li>Personalized searches should always come before others.</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/11/19/Designing-Typeahead-Suggestion/" target="_blank" title="Designing Typeahead Suggestion">https://jojoyang666.github.io/2020/11/19/Designing-Typeahead-Suggestion/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/19/Interval-scheduling/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Interval scheduling
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/18/943-Find-the-Shortest-Superstring/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">943. Find the Shortest Superstring</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-Requirements"><span class="nav-number">1.1.</span> <span class="nav-text">Functional Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-function-Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Non-function Requirements</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-System-Design-and-Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Basic System Design and Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Should-we-have-case-insensitive-trie"><span class="nav-number">2.1.</span> <span class="nav-text">Should we have case insensitive trie?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-find-top-suggestion"><span class="nav-number">2.2.</span> <span class="nav-text">How to find top suggestion?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Given-a-prefix-how-much-time-will-it-take-to-traverse-its-sub-tree"><span class="nav-number">2.3.</span> <span class="nav-text">Given a prefix, how much time will it take to traverse its sub-tree?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Can-we-store-top-suggestions-with-each-node"><span class="nav-number">2.4.</span> <span class="nav-text">Can we store top suggestions with each node?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-would-we-build-this-trie"><span class="nav-number">2.5.</span> <span class="nav-text">How would we build this trie?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-update-the-trie"><span class="nav-number">2.6.</span> <span class="nav-text">How to update the trie?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-we-update-the-frequencies-of-typeahead-suggestions"><span class="nav-number">2.7.</span> <span class="nav-text">How can we update the frequencies of typeahead suggestions?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-can-we-remove-a-term-from-the-trie"><span class="nav-number">2.8.</span> <span class="nav-text">How can we remove a term from the trie?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-could-be-different-ranking-criteria-for-suggestions"><span class="nav-number">2.9.</span> <span class="nav-text">What could be different ranking criteria for suggestions?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Permanent-Storage-of-the-Trie"><span class="nav-number">3.</span> <span class="nav-text">Permanent Storage of the Trie</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-store-trie-in-a-file-so-that-we-can-rebuild-our-trie-easily-this-will-be-needed-when-a-machine-restarts"><span class="nav-number">3.1.</span> <span class="nav-text">How to store trie in a file so that we can rebuild our trie easily - this will be needed when a machine restarts?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scale-Estimation"><span class="nav-number">4.</span> <span class="nav-text">Scale Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Storage-Estimation"><span class="nav-number">4.1.</span> <span class="nav-text">Storage Estimation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Partition"><span class="nav-number">5.</span> <span class="nav-text">Data Partition</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Range-Based-Partitioning"><span class="nav-number">5.1.</span> <span class="nav-text">Range Based Partitioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partition-based-on-the-maximum-capacity-of-the-server"><span class="nav-number">5.2.</span> <span class="nav-text">Partition based on the maximum capacity of the server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partition-based-on-the-hash-of-the-term"><span class="nav-number">5.3.</span> <span class="nav-text">Partition based on the hash of the term</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cache"><span class="nav-number">5.4.</span> <span class="nav-text">Cache</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Replication-and-Load-Balancer"><span class="nav-number">6.</span> <span class="nav-text">Replication and Load Balancer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fault-Tolerance"><span class="nav-number">7.</span> <span class="nav-text">Fault Tolerance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-will-happen-when-a-trie-server-goes-down"><span class="nav-number">7.1.</span> <span class="nav-text">What will happen when a trie server goes down?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Typeahead-Client"><span class="nav-number">8.</span> <span class="nav-text">Typeahead Client</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Personalization"><span class="nav-number">9.</span> <span class="nav-text">Personalization</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

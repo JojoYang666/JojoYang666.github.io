@@ -265,6 +265,340 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1463-Cherry-Pickup-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/17/1463-Cherry-Pickup-II/">1463. Cherry Pickup II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/17/1463-Cherry-Pickup-II/" class="article-date">
+	  <time datetime="2020-11-17T19:52:39.000Z" itemprop="datePublished">2020-11-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp solution from top down123456789101112131415161718192021class Solution(object):    def cherryPickup(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        memo=&#123;&#125;        m, n = len(grid), len(g...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/17/1463-Cherry-Pickup-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-996-Number-of-Squareful-Arrays"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/17/996-Number-of-Squareful-Arrays/">996. Number of Squareful Arrays </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/17/996-Number-of-Squareful-Arrays/" class="article-date">
+	  <time datetime="2020-11-17T19:15:14.000Z" itemprop="datePublished">2020-11-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          backtrackingbase case: is single one(is a valid candidate, return 1)
+123456789101112131415class Solution(object):    def numSquarefulPerms(self, A):        """        :type A: List[int]        :rtype: int        """        counter = collections.Co...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/17/996-Number-of-Squareful-Arrays/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-630-Course-Schedule-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/17/630-Course-Schedule-III/">630. Course Schedule III </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/17/630-Course-Schedule-III/" class="article-date">
+	  <time datetime="2020-11-17T18:25:52.000Z" itemprop="datePublished">2020-11-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+Sort based on the end time of courses
+if a course cannot be taken, (kind of find longest increasing sub senquence), we remove the longest duration course from the list, and add this course, update the used time, it will not influence the courses ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/17/630-Course-Schedule-III/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1074-Number-of-Submatrices-That-Sum-to-Target"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/17/1074-Number-of-Submatrices-That-Sum-to-Target/">1074. Number of Submatrices That Sum to Target </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/17/1074-Number-of-Submatrices-That-Sum-to-Target/" class="article-date">
+	  <time datetime="2020-11-17T17:33:51.000Z" itemprop="datePublished">2020-11-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+compute 2D prefix sum
+reduce 2D problem to 1D one, by fixing two rows r1 and r2 and computing 1D prefix sum for all matrices using [r1..r2] rows
+类似于2sum
+
+
+
+
+1234567891011121314151617181920212223242526class Solution(object):    def numSubmatrixSum...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/17/1074-Number-of-Submatrices-That-Sum-to-Target/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-895-Maximum-Frequency-Stack"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/17/895-Maximum-Frequency-Stack/">895. Maximum Frequency Stack</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/17/895-Maximum-Frequency-Stack/" class="article-date">
+	  <time datetime="2020-11-17T16:52:33.000Z" itemprop="datePublished">2020-11-17</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+freq: map item and the frequency of this item
+group: a list of item with the same freq
+max freq in the current state
+Note
+if 5 is appear 3 times, then group[1], group[2], group[3]: will have 5
+four push/pop:
+update freq
+update group
+update max fr...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/17/895-Maximum-Frequency-Stack/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-546-Remove-Boxes"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/546-Remove-Boxes/">546. Remove Boxes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/546-Remove-Boxes/" class="article-date">
+	  <time datetime="2020-11-17T07:22:45.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i][j][k]: the maximum value of removing boxes if we have the k extra boxes  of color A[i] on the left of boxes[i]123456789101112131415161718192021222324252627class Solution(object):    def removeBoxes(self, boxes):        """        :type boxe...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/546-Remove-Boxes/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-Segment-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -476,336 +810,6 @@ the player whose turn it has vaious moves which can be considered as ...
         </p>
         <p class="article-more-link">
           <a href="/2020/11/16/913-Cat-and-Mouse/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-MIN-MAX"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/16/MIN-MAX/">MIN-MAX</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/16/MIN-MAX/" class="article-date">
-	  <time datetime="2020-11-16T20:44:44.000Z" itemprop="datePublished">2020-11-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          适合的游戏
-零和游戏（Zero-sum Game）：意思就是你死我活，一方的胜利代表另一方的失败，比如，象棋，五子棋等。
-完全信息（Perfect Information）：玩家知道之前所有的步骤。象棋就是完全信息，因为玩家是交替着落子，且之前的步骤都能在棋盘上体现，但是石头剪子布就不是。这样的游戏通常可以把他们看作一个树状图，把每一种可能性列出来。比如下面这个井字棋游戏，Max代表你自己，Min代表你的对手。
-
-剪枝
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/16/MIN-MAX/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-174-Dungeon-Game-1"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/16/174-Dungeon-Game-1/">174. Dungeon Game</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/16/174-Dungeon-Game-1/" class="article-date">
-	  <time datetime="2020-11-16T20:13:03.000Z" itemprop="datePublished">2020-11-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728class Solution(object):    def calculateMinimumHP(self, dungeon):        """        :type dungeon: List[List[int]]        :rtype: int        """        rows, cols = len(dungeon), len(dungeon[0])      ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/16/174-Dungeon-Game-1/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1473-Paint-House-III"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/16/1473-Paint-House-III/">1473. Paint House III</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/16/1473-Paint-House-III/" class="article-date">
-	  <time datetime="2020-11-16T20:04:58.000Z" itemprop="datePublished">2020-11-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-dp[color, blocks]: the minimum cost with current house are painted in color and blocks neighbors up to now
-For each cell, calculate the range of possible neighborhoods number
-To reduce the space, thus when iterate to each house, update the space
-...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/16/1473-Paint-House-III/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-642-Design-Search-Autocomplete-System"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/16/642-Design-Search-Autocomplete-System/">642. Design Search Autocomplete System</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/16/642-Design-Search-Autocomplete-System/" class="article-date">
-	  <time datetime="2020-11-16T18:03:53.000Z" itemprop="datePublished">2020-11-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364class TrieNode(object):    def __init__(self):        self.children = &#123;&#125;        self.isEnd = False        self.data = ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/16/642-Design-Search-Autocomplete-System/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-715-Range-Module"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/15/715-Range-Module/">715. Range Module</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/15/715-Range-Module/" class="article-date">
-	  <time datetime="2020-11-16T07:05:59.000Z" itemprop="datePublished">2020-11-15</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-self.X: is the coordinates where track might start/stop
-self.track: whether tracking is on the coordinate to its right
-
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960class RangeModu...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/15/715-Range-Module/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-753-Cracking-the-Safe"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/753-Cracking-the-Safe/">753. Cracking the Safe</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/14/753-Cracking-the-Safe/" class="article-date">
-	  <time datetime="2020-11-15T06:30:45.000Z" itemprop="datePublished">2020-11-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-there are k ** n possible password, thus for loop from 0 to k ** n
-try to create new password from previuos one, and add to visited
-Cornor case
-initial state is 000
-we need to tranvse from back to end: k-1, k-2, …0
-if we tranverse from 0 to k, we...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/14/753-Cracking-the-Safe/#more">Read More</a>
         </p>
       
     </div>
