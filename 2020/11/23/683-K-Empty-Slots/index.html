@@ -17,7 +17,7 @@
 <meta property="og:description" content="days[x] &#x3D; i: the bulb x will be on at ith day goal: need to find the interval [left, right] days[left], days[right] are two smallest values among days[left], days[left+1],…, days[right] right - left">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-24T05:33:36.000Z">
-<meta property="article:modified_time" content="2020-11-24T05:52:27.812Z">
+<meta property="article:modified_time" content="2020-11-24T06:22:42.488Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -211,14 +211,13 @@
 <li>goal: need to find the interval [left, right]<ul>
 <li>days[left], days[right] are two smallest values among days[left], days[left+1],…, days[right]</li>
 <li>right - left = k + 1</li>
-</ul>
-</li>
-<li>for candidate interval: [left1, right1], [left2, right2] &lt;— left1 &lt; left2 &lt; right1 &lt; right2<ul>
-<li>if [left1, right1] to be candidate, days[left2] &gt; days[right1]</li>
-<li>if [left2, right2] to be candidate, days[left2] &lt; days[right1]</li>
+<li>checkling every possible intervals using sliding window</li>
 </ul>
 </li>
 </ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">kEmptySlots</span><span class="params">(self, bulbs, k)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type bulbs: List[int]</span></span><br><span class="line"><span class="string">        :type k: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        days = [<span class="number">0</span>] * len(bulbs)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> day, position <span class="keyword">in</span> enumerate(bulbs, <span class="number">1</span>):</span><br><span class="line">            days[position<span class="number">-1</span>] = day</span><br><span class="line">        </span><br><span class="line">        left, right = <span class="number">0</span>, k + <span class="number">1</span></span><br><span class="line">        ans = float(<span class="string">'inf'</span>)</span><br><span class="line">        <span class="keyword">while</span> right &lt; len(days):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> xrange(left+<span class="number">1</span>, right):</span><br><span class="line">                <span class="comment"># check [left, right] if is an candidate, which means left &lt; i &lt; right must be off</span></span><br><span class="line">                <span class="comment"># the bulb i is on must after the day bulb left/right is on</span></span><br><span class="line">                <span class="keyword">if</span> days[i] &lt; days[left] <span class="keyword">or</span> days[i] &lt; days[right]:</span><br><span class="line">                    left, right = i, i + k + <span class="number">1</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans = min(ans, max(days[left], days[right]))</span><br><span class="line">                left, right = right, right + k + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans <span class="keyword">if</span> ans &lt; float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<p>for – else:<br>else will run when there is no break in the for-loop</p>
 
       
     </div>
