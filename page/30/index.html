@@ -265,6 +265,168 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-957-Prison-Cells-After-N-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/06/957-Prison-Cells-After-N-Days/">957. Prison Cells After N Days</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/06/957-Prison-Cells-After-N-Days/" class="article-date">
+	  <time datetime="2020-10-07T03:16:56.000Z" itemprop="datePublished">2020-10-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Fast-forward直觉 这个题目会有周期 -》 hashmap来找到这个周期
+1234567891011121314151617class Solution(object):    def prisonAfterNDays(self, cells, N):        """        :type cells: List[int]        :type N: int        :rtype: List[int]        """        seen = &#12...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/06/957-Prison-Cells-After-N-Days/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-974-Subarray-Sums-Divisible-by-K"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/">974. Subarray Sums Divisible by K</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/" class="article-date">
+	  <time datetime="2020-10-07T02:37:23.000Z" itemprop="datePublished">2020-10-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+Cornor case: 开始要给P给0， for the case: a single num is equal to the K
+p(i) = sum(A[0],…, A[i])%k
+这样在拿到dict: key is p(i), value: account of p(i), 也就是说有相同余数的， 他们一减 就可以拿到一个(sum of sub array )/k = 0
+有多少种这个情况呢吗就是 在count 中取2个， 他们一减就可以拿到一个subarray – v*(v-1...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1209-Remove-All-Adjacent-Duplicates-in-String-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/">1209. Remove All Adjacent Duplicates in String II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/" class="article-date">
+	  <time datetime="2020-10-06T23:40:04.000Z" itemprop="datePublished">2020-10-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          涉及到后进来/后处理的中间值， 可以最后拿到结果的话， 就可以用stack
+1234567891011121314151617class Solution(object):    def removeDuplicates(self, s, k):        """        :type s: str        :type k: int        :rtype: str        """        stack = [['#', 0]]        for j, c ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-55-Jump-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -619,164 +781,6 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         </p>
         <p class="article-more-link">
           <a href="/2020/10/05/1428-Leftmost-Column-with-at-Least-a-One/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-547-Friend-Circles"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/547-Friend-Circles/">547. Friend Circles</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/05/547-Friend-Circles/" class="article-date">
-	  <time datetime="2020-10-06T03:01:29.000Z" itemprop="datePublished">2020-10-05</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Union Find
-123456789101112131415161718192021222324252627282930class DSU:    def __init__(self, N):        self.parent = range(N)        def find(self, x):        if self.parent[x] != x:            self.parent[x] = self.find(self.parent[x])        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/05/547-Friend-Circles/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-131-Palindrome-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/131-Palindrome-Partitioning/">131. Palindrome Partitioning</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/05/131-Palindrome-Partitioning/" class="article-date">
-	  <time datetime="2020-10-06T00:44:58.000Z" itemprop="datePublished">2020-10-05</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122class Solution(object):    def partition(self, s):        """        :type s: str        :rtype: List[List[str]]        """        res = []        self.dfs(s, [], res)        return res    def dfs(self, s, path, ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/05/131-Palindrome-Partitioning/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-148-Sort-List"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/05/148-Sort-List/">148. Sort List</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/05/148-Sort-List/" class="article-date">
-	  <time datetime="2020-10-05T22:38:57.000Z" itemprop="datePublished">2020-10-05</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Merge Sort
-12345678910111213141516171819202122232425262728293031323334353637# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(ob...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/05/148-Sort-List/#more">Read More</a>
         </p>
       
     </div>
