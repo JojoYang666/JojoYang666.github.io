@@ -265,6 +265,58 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-UNION-FIND"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/03/UNION-FIND/">UNION FIND</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/03/UNION-FIND/" class="article-date">
+	  <time datetime="2020-09-03T18:38:26.000Z" itemprop="datePublished">2020-09-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011class DSU:    def __init__(self, N):        self.parent = range(N)        def find(self, x):        if self.parent[x] != x:            self.parent[x] = self.find(self.parent[x])        return self.parent[x]        def union(self, x, y...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/03/UNION-FIND/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-737-Sentence-Similarity-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -722,58 +774,6 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
         </p>
         <p class="article-more-link">
           <a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-271-Encode-and-Decode-Strings"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/271-Encode-and-Decode-Strings/">271. Encode and Decode Strings</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/271-Encode-and-Decode-Strings/" class="article-date">
-	  <time datetime="2020-08-19T05:10:30.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1123456789101112131415161718192021222324252627class Codec:    def encode(self, strs):        """Encodes a list of strings to a single string.                :type strs: List[str]        :rtype: str        """        if len(strs) == 0:    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/271-Encode-and-Decode-Strings/#more">Read More</a>
         </p>
       
     </div>
