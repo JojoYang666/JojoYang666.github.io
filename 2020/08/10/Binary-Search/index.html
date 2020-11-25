@@ -17,7 +17,7 @@
 <meta property="og:description" content="需要找和目标值完全相等的数 code 1234567891011const find &#x3D; (nums, target) &#x3D;&gt; &amp;#123;    let left &#x3D; 0, right &#x3D; nums.length    while (left &lt; right) &amp;#123;        let mid &#x3D; left + (right - left)&gt;&gt;1        i">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-11T04:26:32.000Z">
-<meta property="article:modified_time" content="2020-11-11T19:08:00.254Z">
+<meta property="article:modified_time" content="2020-11-24T19:57:28.012Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -246,6 +246,7 @@
 <h1 id="Python-Bisect"><a href="#Python-Bisect" class="headerlink" title="Python Bisect"></a>Python Bisect</h1><p>example:<br>a = [0,1,2,3,4,5]</p>
 <p>bisect.bisect_left(a, 2)  -&gt; return 2<br>bisect.bisect_right(a, 2) -&gt; return 3</p>
 <p>a = [0,2,4,6,8,10]<br>bisect.bisect_left(a, 3) -&gt; return 2<br>bisect.bisect_right(a, 3) -&gt; return 2</p>
+<p><strong>最值中找最值， 考虑用binary search（最大值找到最小的/最小值中找到最大的）</strong></p>
 
       
     </div>
