@@ -16,10 +16,13 @@
 <meta property="og:site_name" content="Jojo&#39;s Blog">
 <meta property="og:description" content="Requirements and Goals of the System Scalability be scalable such that it can crawl the entire Web be used to fetch hundreds of millions of Web documents   Extensibility designed in a modular way with">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/crawler_high_level_design.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/detailed_design_crawler.png">
 <meta property="article:published_time" content="2020-11-24T22:43:35.000Z">
-<meta property="article:modified_time" content="2020-11-25T04:22:29.384Z">
+<meta property="article:modified_time" content="2020-11-26T04:37:57.942Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/crawler_high_level_design.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -218,7 +221,292 @@
 </ul>
 </li>
 </ol>
-<h1 id="Some-Design-Considerations"><a href="#Some-Design-Considerations" class="headerlink" title="Some Design Considerations"></a>Some Design Considerations</h1><h2 id="Is-it-a-crawler-for-HTML-pages-only-Or-should-we-fetch-and-store-other-types-of-media-such-as-sound-files-images-videos-etc"><a href="#Is-it-a-crawler-for-HTML-pages-only-Or-should-we-fetch-and-store-other-types-of-media-such-as-sound-files-images-videos-etc" class="headerlink" title="Is it a crawler for HTML pages only? Or should we fetch and store other types of media, such as sound files, images, videos, etc.?"></a>Is it a crawler for HTML pages only? Or should we fetch and store other types of media, such as sound files, images, videos, etc.?</h2>
+<h1 id="Some-Design-Considerations"><a href="#Some-Design-Considerations" class="headerlink" title="Some Design Considerations"></a>Some Design Considerations</h1><h2 id="Is-it-a-crawler-for-HTML-pages-only-Or-should-we-fetch-and-store-other-types-of-media-such-as-sound-files-images-videos-etc"><a href="#Is-it-a-crawler-for-HTML-pages-only-Or-should-we-fetch-and-store-other-types-of-media-such-as-sound-files-images-videos-etc" class="headerlink" title="Is it a crawler for HTML pages only? Or should we fetch and store other types of media, such as sound files, images, videos, etc.?"></a>Is it a crawler for HTML pages only? Or should we fetch and store other types of media, such as sound files, images, videos, etc.?</h2><ol>
+<li>If we are writing a general-purpose crawler to download different media types, break down the parsing module into different sets of module:</li>
+</ol>
+<ul>
+<li>HTML</li>
+<li>images</li>
+<li>videos</li>
+</ul>
+<ol start="2">
+<li>Assume for now that our crawler is going to deal with HTML only<ul>
+<li>be extensible and make it easy to add support for new media types.</li>
+</ul>
+</li>
+</ol>
+<h2 id="What-protocols-are-we-looking-at-HTTP-What-about-FTP-links-What-different-protocols-should-our-crawler-handle"><a href="#What-protocols-are-we-looking-at-HTTP-What-about-FTP-links-What-different-protocols-should-our-crawler-handle" class="headerlink" title="What protocols are we looking at? HTTP? What about FTP links? What different protocols should our crawler handle?"></a>What protocols are we looking at? HTTP? What about FTP links? What different protocols should our crawler handle?</h2><ol>
+<li>assume HTTP</li>
+<li>shouldn’t be hard to extend the design to use FTP and other protocols later</li>
+</ol>
+<h2 id="What-is-the-expected-number-of-pages-we-will-crawl-How-big-will-the-URL-database-become"><a href="#What-is-the-expected-number-of-pages-we-will-crawl-How-big-will-the-URL-database-become" class="headerlink" title="What is the expected number of pages we will crawl? How big will the URL database become?"></a>What is the expected number of pages we will crawl? How big will the URL database become?</h2><ol>
+<li>Assume crawl <strong>one billion</strong> websites</li>
+<li>Assume upper bound of 15 billion different web pages that will be reached by our crawler</li>
+</ol>
+<h2 id="What-is-‘RobotsExclusion’-and-how-should-we-deal-with-it"><a href="#What-is-‘RobotsExclusion’-and-how-should-we-deal-with-it" class="headerlink" title="What is ‘RobotsExclusion’ and how should we deal with it?"></a>What is ‘RobotsExclusion’ and how should we deal with it?</h2><ol>
+<li>Courteous Web crawlers implement the <strong>Robots Exclusion Protocol</strong><ul>
+<li>allows Webmasters to declare parts of their sites off-limits to crawlers</li>
+<li>a Web crawler to fetch a special document called <strong>robot.txt</strong><ul>
+<li>contains declarations from a Web site before downloading any real content from it</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h2><ol>
+<li>crawl 15 billion pages within four weeks, how many pages do we need to fetch per second?<ul>
+<li>15B / (4 weeks * 7 days * 86400 sec) ~= 6200 pages/sec<h3 id="What-about-storage"><a href="#What-about-storage" class="headerlink" title="What about storage?"></a>What about storage?</h3></li>
+</ul>
+</li>
+<li>assume an average page size of 100KB(html txt only)</li>
+<li>500 bytes of metadata for each page<br> 15B * (100KB + 500) ~= 1.5 petabytes</li>
+<li><strong>Assuming a 70% capacity model</strong>, don’t want to go above 70% of the total capacity of our storage system, total storage:<ul>
+<li>1.5 petabytes / 0.7 ~= 2.14 petabytes</li>
+</ul>
+</li>
+</ol>
+<h1 id="High-Level-design"><a href="#High-Level-design" class="headerlink" title="High Level design"></a>High Level design</h1><h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><ol>
+<li>Pick a URL from the unvisited URL list.</li>
+<li>Determine the IP Address of its host-name.</li>
+<li>Establish a connection to the host to download the corresponding document.</li>
+<li>Parse the document contents to look for new URLs.</li>
+<li>Add the new URLs to the list of unvisited URLs.</li>
+<li>Process the downloaded document, e.g., store it or index its contents, etc.</li>
+<li>go back to step1</li>
+</ol>
+<h2 id="How-to-crawl"><a href="#How-to-crawl" class="headerlink" title="How to crawl?"></a>How to crawl?</h2><h3 id="Breadth-first-or-depth-first"><a href="#Breadth-first-or-depth-first" class="headerlink" title="Breadth-first or depth-first?"></a>Breadth-first or depth-first?</h3><ol>
+<li>usually BFS</li>
+<li>but Depth First Search (DFS) is also utilized in some situations<ul>
+<li>if your crawler has already established a connection with the website, it might just DFS <strong>all the URLs within this website</strong> to <strong>save some handshaking overhead</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="Path-ascending-crawling"><a href="#Path-ascending-crawling" class="headerlink" title="Path-ascending crawling:"></a>Path-ascending crawling:</h3><ol>
+<li>help discover a lot of isolated resources or resources<ul>
+<li>no inbound link would have been found in regular crawling of a particular Web site</li>
+</ul>
+</li>
+<li>a crawler would ascend to every path in each URL that it intends to crawl<ul>
+<li><a href="http://foo.com/a/b/page.html" target="_blank" rel="noopener">http://foo.com/a/b/page.html</a>, it will attempt to crawl /a/b/, /a/, and /.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Difficulties-in-implementing-efficient-web-crawler"><a href="#Difficulties-in-implementing-efficient-web-crawler" class="headerlink" title="Difficulties in implementing efficient web crawler"></a>Difficulties in implementing efficient web crawler</h2><ol>
+<li>Large volume of Web pages</li>
+</ol>
+<ul>
+<li>web crawler should be intelligent enough to prioritize download</li>
+</ul>
+<ol start="2">
+<li>Rate of change on web pages</li>
+</ol>
+<ul>
+<li>web pages on the internet change very frequently</li>
+<li>by the time the crawler is downloading the last page from a site, the page may change, or a new page may be added to the site.</li>
+</ul>
+<ol start="3">
+<li>A bare minimum crawler needs at least these components</li>
+</ol>
+<ul>
+<li>URL frontier<ul>
+<li>store the list of URLs to download </li>
+<li>prioritize which URLs should be crawled first</li>
+</ul>
+</li>
+<li>HTML Fetcher<ul>
+<li>retrieve a web page from the server</li>
+</ul>
+</li>
+<li>Extractor<ul>
+<li>extract links from HTML documents</li>
+</ul>
+</li>
+<li>Duplicate Eliminator<ul>
+<li>make sure the same content is not extracted twice unintentionally</li>
+</ul>
+</li>
+<li>Datastore<ul>
+<li>To store retrieved pages, URLs, and other metadata.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><img src="/images/crawler_high_level_design.png" alt="image"></li>
+</ul>
+<h1 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h1><ol>
+<li>Assume crawler is running on one server</li>
+<li>multiple working threads: each working thread performs all the steps needed to download and process a document in a loop</li>
+<li>Inside the loop<ul>
+<li>Remove an absolute URL from the shared URL frontier for downloading.</li>
+<li>absolute URL begins with a scheme (e.g., “HTTP”) which identifies the network protocol that should be used to download it.</li>
+<li>implement these protocols in a modular way for extensibility, so that later if our crawler needs to support more protocols, so it can be easily done</li>
+<li>Based on the URL’s scheme, the worker calls the appropriate protocol module to download the document.</li>
+<li>After downloading, the document is placed into a Document Input Stream (DIS).</li>
+<li>Putting documents into DIS will enable other modules to re-read the document multiple times.</li>
+<li>Once the document has been written to the DIS, the worker thread invokes the dedupe test to determine whether this document (associated with a different URL) has been seen before<ul>
+<li>If so, the document is not processed any further and the worker thread removes the next URL from the frontier</li>
+</ul>
+</li>
+<li>when process the downloaded document<ul>
+<li>Each document can have a different MIME type like HTML page, Image, Video, etc. </li>
+<li>implement these MIME schemes in a modular way, so that later if our crawler needs to support more types, we can easily implement them</li>
+<li>Based on the downloaded document’s MIME type, the worker invokes the process method of each processing module associated with that MIME type.</li>
+</ul>
+</li>
+<li>our HTML processing module will extract all links from the page.<ul>
+<li>Each link is converted into an absolute URL and tested against a user-supplied URL filter to determine if it should be downloaded</li>
+<li>If the URL passes the filter, the worker performs the URL-seen test, which checks if the URL has been seen before, namely, if it is in the URL frontier or has already been downloaded.</li>
+<li>If the URL is new, it is added to the frontier.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><img src="/images/detailed_design_crawler.png" alt="image"></li>
+</ul>
+<h2 id="Details-on-the-component"><a href="#Details-on-the-component" class="headerlink" title="Details on the component"></a>Details on the component</h2><h3 id="The-URL-frontier"><a href="#The-URL-frontier" class="headerlink" title="The URL frontier"></a>The URL frontier</h3><ol>
+<li>data structure that contains all the URLs that remain to be downloaded.</li>
+<li>crawl by performing a breadth-first traversal of the Web, starting from the pages in the seed set. </li>
+<li>having a huge list of URLs to crawl —–&gt; distribute our URL frontier into multiple servers</li>
+<li>Assume<ul>
+<li>on each server we have multiple worker threads performing the crawling tasks</li>
+<li>our hash function maps each URL to a server which will be responsible for crawling it</li>
+</ul>
+</li>
+<li>Requirements<ul>
+<li>Our crawler should not overload a server by downloading a lot of pages from it.</li>
+<li>should not have multiple machines connecting a web server.</li>
+</ul>
+</li>
+<li>a collection of distinct FIFO sub-queues on each server.<ul>
+<li>Each worker thread will have its separate sub-queue</li>
+<li>When a new URL needs to be added –&gt; FIFO sub-queue in which it is placed will be determined by the URL’s canonical hostname.<ul>
+<li>hash function –&gt; map each hostname to a thread number</li>
+<li>Gurantee: one worker thread will download documents from a given Web server &amp;&amp; using the FIFO queue, it’ll not overload a Web server.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>How big will our URL frontier be?<ul>
+<li>size would be in the hundreds of millions of URLs  —-&gt; store URLs on a disk</li>
+<li>implement queue in such a way(which buffer has)<ul>
+<li>enqueuing —&gt; filled dump to the disk</li>
+<li>dequeuing –&gt;  keep a cache of URLs that need to be visited –&gt;  periodically read from disk to fill the buffer<h3 id="The-fetcher-module"><a href="#The-fetcher-module" class="headerlink" title="The fetcher module"></a>The fetcher module</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>download the document corresponding to a given URL using the appropriate network protocol like HTTP.</li>
+<li>webmasters create robot.txt to make certain parts of their websites off-limits for the crawler<ul>
+<li>avoid downloading this file on every request  —&gt; our crawler’s HTTP protocol module can maintain a fixed-sized cache  —&gt; mapping host-names to their robot’s exclusion rules.<h3 id="Document-input-stream"><a href="#Document-input-stream" class="headerlink" title="Document input stream"></a>Document input stream</h3></li>
+</ul>
+</li>
+<li>design enables the same document to be processed by multiple processing modules</li>
+<li>avoid downloading a document multiple times, we cache the document locally using an abstraction called a Document Input Stream (DIS).<ul>
+<li>DIS provides methods to re-read the document.</li>
+<li>cache small documents (64 KB or less) entirely in memory, while larger documents can be temporarily written to a backing file.</li>
+</ul>
+</li>
+<li>Each worker thread has an associated DIS<ul>
+<li>reuses from document to document</li>
+<li>extract url from frontier –&gt; passes that URL to the relevant protocol module(initializes the DIS from a network connection to contain the document’s contents) –&gt; passes the DIS to all relevant processing modules</li>
+</ul>
+</li>
+</ol>
+<h3 id="Document-Dedupe-test"><a href="#Document-Dedupe-test" class="headerlink" title="Document Dedupe test"></a>Document Dedupe test</h3><ol>
+<li>why has duplication files<ul>
+<li>documents on the Web are available under multiple, different URLs</li>
+<li>many cases in which documents are mirrored on various servers</li>
+<li>etc</li>
+</ul>
+</li>
+<li>a dedupe test on each document to remove duplication<ul>
+<li>calculate a <strong>64-bit checksum</strong> of every processed document –&gt; store to db</li>
+<li>for  new document  –&gt; compare its checksum to all the previously calculated checksums to see the document has been seen before.</li>
+<li><strong>MD5 or SHA to calculate these checksums</strong></li>
+</ul>
+</li>
+<li>How big would the checksum store be?<ul>
+<li>Considering 15 billion distinct web pages, we would need:<ul>
+<li>15B * 8 bytes =&gt; 120 GB</li>
+</ul>
+</li>
+<li>Although this can fit into a modern-day server’s memory, if we don’t have enough memory available, <ul>
+<li>keep smaller LRU based cache on each server with everything backed by persistent storage</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="URL-filters"><a href="#URL-filters" class="headerlink" title="URL filters"></a>URL filters</h3><ol>
+<li>used to blacklist websites so that our crawler can ignore them.</li>
+<li>Before adding each URL to the frontier, the worker thread consults the user-supplied URL filter. </li>
+<li>define filters to restrict URLs by domain, prefix, or protocol type.</li>
+</ol>
+<h3 id="Domain-name-resolution"><a href="#Domain-name-resolution" class="headerlink" title="Domain name resolution"></a>Domain name resolution</h3><ol>
+<li>a Web crawler must use the Domain Name Service (DNS) to map the Web server’s hostname into an IP address</li>
+<li>DNS name resolution will be a big bottleneck of our crawlers given the amount of URLs we will be working with.</li>
+<li>To avoid repeated requests, we can start caching DNS results by building our local DNS server.</li>
+</ol>
+<h3 id="URL-dedupe-test"><a href="#URL-dedupe-test" class="headerlink" title="URL dedupe test"></a>URL dedupe test</h3><ol>
+<li>any Web crawler will encounter multiple links to the same document.</li>
+<li>a URL dedupe test must be performed on each extracted link before adding it to the URL frontier.<ul>
+<li>store all the URLs seen by our crawler in canonical form in a database</li>
+<li>To save space, not store the textual representation of each URL in the URL set  –&gt; fixed-sized checksum</li>
+<li>reduce the number of operations on the database store  —&gt;  keep an in-memory cache of popular URLs on each host shared by all threads</li>
+</ul>
+</li>
+<li>How much storage we would need for URL’s store?<br>15 billion distinct URLs and 4 bytes for checksum, we would need<ul>
+<li>15B * 4 bytes =&gt; 60 GB</li>
+</ul>
+</li>
+<li>Can we use bloom filters for deduping? <ul>
+<li>Bloom filters are a probabilistic data structure: set membership testing that may yield false positive</li>
+<li>A large bit vector represents the set</li>
+<li>computing ‘n’ hash functions of the element  &amp;&amp; setting the corresponding bits –&gt; add to  set</li>
+<li>An element is deemed to be in the set if the bits at all ‘n’ of the element’s hash locations are set</li>
+<li>a document may incorrectly be deemed to be in the set, but false negatives are not possible.</li>
+<li>The chance of a false positive can be reduced by making the bit vector larger.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Checkpointing"><a href="#Checkpointing" class="headerlink" title="Checkpointing"></a>Checkpointing</h3><ol>
+<li>A crawl of the entire Web takes weeks to complete</li>
+<li>To guard against failures, our crawler can write regular snapshots of its state to the disk</li>
+<li>An interrupted or aborted crawl can easily be restarted from the latest checkpoint.</li>
+</ol>
+<h1 id="Fault-tolerance"><a href="#Fault-tolerance" class="headerlink" title="Fault tolerance"></a>Fault tolerance</h1><ol>
+<li>consistent hashing for distribution among crawling servers.<ul>
+<li>help in replacing a dead host</li>
+<li>distributing load among crawling servers</li>
+</ul>
+</li>
+<li>All our crawling servers will be performing regular checkpointing &amp;&amp;  storing their FIFO queues to disks</li>
+</ol>
+<h1 id="Data-Partitioning"><a href="#Data-Partitioning" class="headerlink" title="Data Partitioning"></a>Data Partitioning</h1><ol>
+<li>deal with 3 kinds of data<ul>
+<li>URLs to visit </li>
+<li>URL checksums for dedupe</li>
+<li>Document checksums for dedupe</li>
+</ul>
+</li>
+<li>distributing URLs based on the hostnames, we can store these data on the same host</li>
+<li>we will be using consistent hashing  —&gt; URLs will be redistributed from overloaded hosts</li>
+</ol>
+<h1 id="Crawler-Traps"><a href="#Crawler-Traps" class="headerlink" title="Crawler Traps"></a>Crawler Traps</h1><ol>
+<li>crawler traps, spam sites, and cloaked content</li>
+<li>crawler traps:<ul>
+<li>a crawler to crawl indefinitely</li>
+</ul>
+</li>
+<li>Anti-spam traps<ul>
+<li>to catch crawlers used by spammers looking for email addresses</li>
+<li>other sites use traps to catch search engine crawlers to boost their search ratings.</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -320,7 +608,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">2.</span> <span class="nav-text">Some Design Considerations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Is-it-a-crawler-for-HTML-pages-only-Or-should-we-fetch-and-store-other-types-of-media-such-as-sound-files-images-videos-etc"><span class="nav-number">2.1.</span> <span class="nav-text">Is it a crawler for HTML pages only? Or should we fetch and store other types of media, such as sound files, images, videos, etc.?</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">2.</span> <span class="nav-text">Some Design Considerations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Is-it-a-crawler-for-HTML-pages-only-Or-should-we-fetch-and-store-other-types-of-media-such-as-sound-files-images-videos-etc"><span class="nav-number">2.1.</span> <span class="nav-text">Is it a crawler for HTML pages only? Or should we fetch and store other types of media, such as sound files, images, videos, etc.?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-protocols-are-we-looking-at-HTTP-What-about-FTP-links-What-different-protocols-should-our-crawler-handle"><span class="nav-number">2.2.</span> <span class="nav-text">What protocols are we looking at? HTTP? What about FTP links? What different protocols should our crawler handle?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-the-expected-number-of-pages-we-will-crawl-How-big-will-the-URL-database-become"><span class="nav-number">2.3.</span> <span class="nav-text">What is the expected number of pages we will crawl? How big will the URL database become?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-‘RobotsExclusion’-and-how-should-we-deal-with-it"><span class="nav-number">2.4.</span> <span class="nav-text">What is ‘RobotsExclusion’ and how should we deal with it?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">2.5.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-about-storage"><span class="nav-number">2.5.1.</span> <span class="nav-text">What about storage?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-design"><span class="nav-number">3.</span> <span class="nav-text">High Level design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">3.1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-crawl"><span class="nav-number">3.2.</span> <span class="nav-text">How to crawl?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Breadth-first-or-depth-first"><span class="nav-number">3.2.1.</span> <span class="nav-text">Breadth-first or depth-first?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Path-ascending-crawling"><span class="nav-number">3.2.2.</span> <span class="nav-text">Path-ascending crawling:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Difficulties-in-implementing-efficient-web-crawler"><span class="nav-number">3.3.</span> <span class="nav-text">Difficulties in implementing efficient web crawler</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">4.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details-on-the-component"><span class="nav-number">4.1.</span> <span class="nav-text">Details on the component</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-URL-frontier"><span class="nav-number">4.1.1.</span> <span class="nav-text">The URL frontier</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-fetcher-module"><span class="nav-number">4.1.2.</span> <span class="nav-text">The fetcher module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document-input-stream"><span class="nav-number">4.1.3.</span> <span class="nav-text">Document input stream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document-Dedupe-test"><span class="nav-number">4.1.4.</span> <span class="nav-text">Document Dedupe test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-filters"><span class="nav-number">4.1.5.</span> <span class="nav-text">URL filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Domain-name-resolution"><span class="nav-number">4.1.6.</span> <span class="nav-text">Domain name resolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#URL-dedupe-test"><span class="nav-number">4.1.7.</span> <span class="nav-text">URL dedupe test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Checkpointing"><span class="nav-number">4.1.8.</span> <span class="nav-text">Checkpointing</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fault-tolerance"><span class="nav-number">5.</span> <span class="nav-text">Fault tolerance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Partitioning"><span class="nav-number">6.</span> <span class="nav-text">Data Partitioning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Crawler-Traps"><span class="nav-number">7.</span> <span class="nav-text">Crawler Traps</span></a></li></ol>
     
     </div>
   </aside>
