@@ -265,6 +265,59 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-547-Friend-Circles"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/547-Friend-Circles/">547. Friend Circles</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/547-Friend-Circles/" class="article-date">
+	  <time datetime="2020-10-06T03:01:29.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Union Find
+123456789101112131415161718192021222324252627282930class DSU:    def __init__(self, N):        self.parent = range(N)        def find(self, x):        if self.parent[x] != x:            self.parent[x] = self.find(self.parent[x])        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/547-Friend-Circles/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-131-Palindrome-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -728,59 +781,6 @@ Solution – Rotate 4 rectangles in one single loop12345678910111213141516171819
         </p>
         <p class="article-more-link">
           <a href="/2020/10/04/92-Reverse-Linked-List-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-442-Find-All-Duplicates-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/">442. Find All Duplicates in an Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/" class="article-date">
-	  <time datetime="2020-10-04T23:54:24.000Z" itemprop="datePublished">2020-10-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1Bit Mask
-1234567891011121314class Solution(object):    def findDuplicates(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        mask, n = 1, len(nums)        res = []        for num in nums:     ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/#more">Read More</a>
         </p>
       
     </div>
