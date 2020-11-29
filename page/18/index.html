@@ -265,6 +265,112 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/31/889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal/">889. Construct Binary Tree from Preorder and Postorder Traversal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/31/889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal/" class="article-date">
+	  <time datetime="2020-10-31T23:00:41.000Z" itemprop="datePublished">2020-10-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          通过length来左recursive find pre/pos list of subtree
+12345678910111213141516171819202122# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = l...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/31/889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1233-Remove-Sub-Folders-from-the-Filesystem"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/31/1233-Remove-Sub-Folders-from-the-Filesystem/">1233. Remove Sub-Folders from the Filesystem </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/31/1233-Remove-Sub-Folders-from-the-Filesystem/" class="article-date">
+	  <time datetime="2020-10-31T21:50:42.000Z" itemprop="datePublished">2020-10-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          cornor case: startswith(f + ‘/‘)a/b, a/bc
+1234567891011class Solution(object):    def removeSubfolders(self, folder):        """        :type folder: List[str]        :rtype: List[str]        """        res = []        for f in sorted(folder):    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/31/1233-Remove-Sub-Folders-from-the-Filesystem/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-467-Unique-Substrings-in-Wraparound-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -680,116 +786,6 @@ se...
         </p>
         <p class="article-more-link">
           <a href="/2020/10/30/1166-Design-File-System/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/">1296. Divide Array in Sets of K Consecutive Numbers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/" class="article-date">
-	  <time datetime="2020-10-30T21:19:01.000Z" itemprop="datePublished">2020-10-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-1234567891011121314151617181920class Solution(object):    def isPossibleDivide(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: bool        """        counter = collections.Counter(nums)        starts =...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-450-Delete-Node-in-a-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/450-Delete-Node-in-a-BST/">450. Delete Node in a BST</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/29/450-Delete-Node-in-a-BST/" class="article-date">
-	  <time datetime="2020-10-30T04:26:51.000Z" itemprop="datePublished">2020-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-recursive to solve it
-不是就return current node
-是的话 就delete node and return new node12345678910111213141516171819202122232425262728293031323334# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, ri...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/29/450-Delete-Node-in-a-BST/#more">Read More</a>
         </p>
       
     </div>

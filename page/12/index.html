@@ -265,6 +265,121 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-920-Number-of-Music-Playlists"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/09/920-Number-of-Music-Playlists/">920. Number of Music Playlists </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/09/920-Number-of-Music-Playlists/" class="article-date">
+	  <time datetime="2020-11-09T17:58:44.000Z" itemprop="datePublished">2020-11-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i][j]: the number of playlists with length i that have exactly j unique songs
+dp[i][j] =
+
+dp[i-1][j-1]*(N-j+1)表示我们添加一个新的歌曲在里面dp[i-1][j-1]中没有用过
+
+
+
+dp[i-1][j]*max(j-K, 0):表示添加一个已经用过的歌曲12345678910111213141516class Solution(object):    def numMusi...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/09/920-Number-of-Music-Playlists/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-465-Optimal-Account-Balancing"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/08/465-Optimal-Account-Balancing/">465. Optimal Account Balancing</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/08/465-Optimal-Account-Balancing/" class="article-date">
+	  <time datetime="2020-11-09T04:58:27.000Z" itemprop="datePublished">2020-11-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+an array of non-zero numbers, which sums to be zero. For example[4, -2, -2, 6, -6]
+converted into finding the minimal clique such that the elements sum up to be zero. Minimal means there is no subset which sums up to zero.[4, -2, -2] and [6, -6]
+...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/08/465-Optimal-Account-Balancing/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-363-Max-Sum-of-Rectangle-No-Larger-Than-K"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -673,113 +788,6 @@ split to prefix &amp; suffix to backtrack123456789101112131415161718192021222324
         </p>
         <p class="article-more-link">
           <a href="/2020/11/06/493-Reverse-Pairs/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-132-Palindrome-Partitioning-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/132-Palindrome-Partitioning-II/">132. Palindrome Partitioning II </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/06/132-Palindrome-Partitioning-II/" class="article-date">
-	  <time datetime="2020-11-06T22:48:16.000Z" itemprop="datePublished">2020-11-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          初始化： cut[0] = -1, if a string is palindropme, we need cut[0] to be -1, then if the string is palindrome, there is no need to be cutcut[i]: the minuimum cut made for palindrome with length i
-1234567891011121314151617181920class Solution(object):   ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/06/132-Palindrome-Partitioning-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-214-Shortest-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/214-Shortest-Palindrome/">214. Shortest Palindrome</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/06/214-Shortest-Palindrome/" class="article-date">
-	  <time datetime="2020-11-06T21:38:21.000Z" itemprop="datePublished">2020-11-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          longest Palindrome for s: s + reversed(s) –&gt; a
-if we can find longest prefix == lonest suffice in a –&gt; we get the longest subtring which is palindrome in s –&gt; b
-what we need is find substring c which is exlucde b from s, then reverse c an...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/06/214-Shortest-Palindrome/#more">Read More</a>
         </p>
       
     </div>
