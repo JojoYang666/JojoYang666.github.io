@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>post794. valid tic-tac-toe state | Jojo&#39;s Blog</title>
+  <title>1000. minimum cost to merge stones | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Ad-hoc —&gt; 排除所有不可能&#x2F;找到必要条件  diff between count of x and o is 1 if x win, count(x) &#x3D; count(o)+1 if o win, count(x) &#x3D;&#x3D; count(o)凡事不满足1, 2,3的都是false 其余均为true1234567891011121314151617181920212223class Sol">
+  <meta name="description" content="3D dpdp[i][j][m]: cost needed to merge stones[i]~stones[j] into m pilesinitial: dp[i][i][1] &#x3D; 0 dp[i][i][m]&#x3D;infinity dp[i][j][1] &#x3D; dp[i][j][k]  + sum of cost from stome[i] to stone[j]dp[i][j][m]: min(">
 <meta property="og:type" content="article">
-<meta property="og:title" content="post794. Valid Tic-Tac-Toe State">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/12/01/post794-Valid-Tic-Tac-Toe-State/index.html">
+<meta property="og:title" content="1000. Minimum Cost to Merge Stones">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Ad-hoc —&gt; 排除所有不可能&#x2F;找到必要条件  diff between count of x and o is 1 if x win, count(x) &#x3D; count(o)+1 if o win, count(x) &#x3D;&#x3D; count(o)凡事不满足1, 2,3的都是false 其余均为true1234567891011121314151617181920212223class Sol">
+<meta property="og:description" content="3D dpdp[i][j][m]: cost needed to merge stones[i]~stones[j] into m pilesinitial: dp[i][i][1] &#x3D; 0 dp[i][i][m]&#x3D;infinity dp[i][j][1] &#x3D; dp[i][j][k]  + sum of cost from stome[i] to stone[j]dp[i][j][m]: min(">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-02T03:59:16.000Z">
-<meta property="article:modified_time" content="2020-12-02T04:03:00.571Z">
+<meta property="article:published_time" content="2020-12-02T05:28:51.000Z">
+<meta property="article:modified_time" content="2020-12-02T06:24:38.119Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-post794-Valid-Tic-Tac-Toe-State" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-1000-Minimum-Cost-to-Merge-Stones" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      post794. Valid Tic-Tac-Toe State
+      1000. Minimum Cost to Merge Stones
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/" class="article-date">
-	  <time datetime="2020-12-02T03:59:16.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/" class="article-date">
+	  <time datetime="2020-12-02T05:28:51.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -206,12 +206,22 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Ad-hoc —&gt; 排除所有不可能/找到必要条件</p>
+        <h1 id="3D-dp"><a href="#3D-dp" class="headerlink" title="3D dp"></a>3D dp</h1><p>dp[i][j][m]: cost needed to merge stones[i]~stones[j] into m piles<br>initial: dp[i][i][1] = 0 dp[i][i][m]=infinity</p>
+<p>dp[i][j][1] = dp[i][j][k]  + sum of cost from stome[i] to stone[j]<br>dp[i][j][m]: min(dp[i][mid][1]+dp[mid+1][j][m-1])</p>
 <ol>
-<li>diff between count of x and o is 1</li>
-<li>if x win, count(x) = count(o)+1</li>
-<li>if o win, count(x) == count(o)<br>凡事不满足1, 2,3的都是false 其余均为true<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">validTicTacToe</span><span class="params">(self, board)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type board: List[str]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        FIRST, SECOND = <span class="string">'X'</span>, <span class="string">"O"</span></span><br><span class="line">        </span><br><span class="line">        x_count = sum(row.count(FIRST) <span class="keyword">for</span> row <span class="keyword">in</span> board)</span><br><span class="line">        o_count = sum(row.count(SECOND) <span class="keyword">for</span> row <span class="keyword">in</span> board)</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">win</span><span class="params">(board, player)</span>:</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> xrange(<span class="number">3</span>):</span><br><span class="line">                <span class="keyword">if</span> all(board[i][j] == player <span class="keyword">for</span> j <span class="keyword">in</span> xrange(<span class="number">3</span>)):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">                <span class="keyword">if</span> all(board[j][i] == player <span class="keyword">for</span> j <span class="keyword">in</span> xrange(<span class="number">3</span>)):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">return</span> (player == board[<span class="number">1</span>][<span class="number">1</span>] == board[<span class="number">0</span>][<span class="number">0</span>] == board[<span class="number">2</span>][<span class="number">2</span>]) <span class="keyword">or</span> (player == board[<span class="number">1</span>][<span class="number">1</span>]  == board[<span class="number">0</span>][<span class="number">2</span>] == board[<span class="number">2</span>][<span class="number">0</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> o_count <span class="keyword">not</span> <span class="keyword">in</span> (x_count<span class="number">-1</span>, x_count): <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> win(board, FIRST) <span class="keyword">and</span> x_count<span class="number">-1</span> != o_count: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> win(board, SECOND) <span class="keyword">and</span> x_count != o_count: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure></li>
+<li>Why mid jump at step K - 1</li>
 </ol>
+<ul>
+<li>We can merge K piles into one pile,</li>
+<li>we can’t merge K + 1 piles into one pile.</li>
+<li>We can merge K + K - 1 piles into on pile,</li>
+<li>K + (K - 1) * steps</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeStones</span><span class="params">(self, stones, K)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type stones: List[int]</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        n, inf = len(stones), float(<span class="string">'inf'</span>)</span><br><span class="line">        prefix = [<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            prefix[i + <span class="number">1</span>] = prefix[i] + stones[i]</span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dp</span><span class="params">(i, j, m)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> (i, j, m) <span class="keyword">in</span> memo: <span class="keyword">return</span> memo[(i, j, m)]</span><br><span class="line">            <span class="keyword">if</span> (j-i+<span class="number">1</span>-m)%(K<span class="number">-1</span>): <span class="keyword">return</span> inf <span class="comment">#merge i~j to m piles, for each step merge exactly K piles, thus after remove m piles from i to j, the ramaing one needed to be dividsivable by (K-1), because we can merge these K-1 to together with mth piles to a new mth pile, etc</span></span><br><span class="line">            <span class="keyword">if</span> i == j:</span><br><span class="line">                memo[(i, j, m)] = <span class="number">0</span> <span class="keyword">if</span> m == <span class="number">1</span> <span class="keyword">else</span> inf</span><br><span class="line">            <span class="keyword">elif</span> m == <span class="number">1</span>:</span><br><span class="line">                memo[(i, j, m)] = dp(i, j, K) + prefix[j+<span class="number">1</span>] - prefix[i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                memo[(i, j, m)] = min(dp(i, mid, <span class="number">1</span>) + dp(mid+<span class="number">1</span>, j, m<span class="number">-1</span>) <span class="keyword">for</span> mid <span class="keyword">in</span> range(i, j, K<span class="number">-1</span>))</span><br><span class="line">            <span class="keyword">return</span> memo[(i, j, m)]</span><br><span class="line">        res = dp(<span class="number">0</span>, n<span class="number">-1</span>, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> res <span class="keyword">if</span> res &lt; inf <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2D-DP"><a href="#2D-DP" class="headerlink" title="2D DP"></a>2D DP</h1><p>stones[i] ~ stones[j] will merge as much as possible.<br>(j - i) % (K - 1) + 1 will be left<br>It’s less than K piles and no more merger happens.<br>dp[i][j] means the minimum cost needed to merge stones[i] ~ stones[j].</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mergeStones</span><span class="params">(self, stones, K)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type stones: List[int]</span></span><br><span class="line"><span class="string">        :type K: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># dp[i][j] means the minimum cost needed to merge stones[i] ~ stones[j]. dp[i][j] doesn't mean that stone[i]-stone[j] must can be merged into 1 pile. It's just try to merge as much as it can.</span></span><br><span class="line">        n = len(stones)</span><br><span class="line">        <span class="keyword">if</span> (n - <span class="number">1</span>) % (K - <span class="number">1</span>): <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        prefix = [<span class="number">0</span>]*(n+<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            prefix[i + <span class="number">1</span>] = prefix[i] + stones[i]</span><br><span class="line">        </span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dp</span><span class="params">(i, j)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> (i, j) <span class="keyword">in</span> memo: <span class="keyword">return</span> memo[(i, j)]</span><br><span class="line">            <span class="keyword">if</span> j - i +<span class="number">1</span> &lt; K: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            </span><br><span class="line">            res = min(dp(i, mid) + dp(mid+<span class="number">1</span>, j) <span class="keyword">for</span> mid <span class="keyword">in</span> range(i, j, K<span class="number">-1</span>))</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (j - i)%(K<span class="number">-1</span>) == <span class="number">0</span>:</span><br><span class="line">                res += prefix[j+<span class="number">1</span>] - prefix[i]</span><br><span class="line">            memo[i, j] = res</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">return</span> dp(<span class="number">0</span>, n<span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -240,7 +250,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/" target="_blank" title="post794. Valid Tic-Tac-Toe State">https://jojoyang666.github.io/2020/12/01/post794-Valid-Tic-Tac-Toe-State/</a>
+          <a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/" target="_blank" title="1000. Minimum Cost to Merge Stones">https://jojoyang666.github.io/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -288,19 +298,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          1000. Minimum Cost to Merge Stones
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/12/01/Morris-Tranversal/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Morris Tranversal</div>
+      <div class="article-nav-title">post794. Valid Tic-Tac-Toe State</div>
     </a>
   
 </nav>
@@ -314,7 +315,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#3D-dp"><span class="nav-number">1.</span> <span class="nav-text">3D dp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2D-DP"><span class="nav-number">2.</span> <span class="nav-text">2D DP</span></a></li></ol>
     
     </div>
   </aside>
