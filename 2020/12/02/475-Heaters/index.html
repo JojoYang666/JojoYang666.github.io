@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="123456789101112131415161718class Solution(object):    def findRadius(self, houses, heaters):        &quot;&quot;&quot;        :type houses: List[int]        :type heaters: List[int]        :rtype: int        &quot;&quot;&quot;">
+  <meta name="description" content="using greedy –&gt; sort add two fake heaters, one at the begining of it, one at the end of the heaters place the house in two heaters123456789101112131415161718class Solution(object):    def findRadi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="475. Heaters">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/02/475-Heaters/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="123456789101112131415161718class Solution(object):    def findRadius(self, houses, heaters):        &quot;&quot;&quot;        :type houses: List[int]        :type heaters: List[int]        :rtype: int        &quot;&quot;&quot;">
+<meta property="og:description" content="using greedy –&gt; sort add two fake heaters, one at the begining of it, one at the end of the heaters place the house in two heaters123456789101112131415161718class Solution(object):    def findRadi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-03T05:17:29.000Z">
-<meta property="article:modified_time" content="2020-12-03T05:17:46.648Z">
+<meta property="article:modified_time" content="2020-12-03T05:20:13.216Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -206,7 +206,12 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findRadius</span><span class="params">(self, houses, heaters)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type houses: List[int]</span></span><br><span class="line"><span class="string">        :type heaters: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        houses.sort()</span><br><span class="line">        heaters.sort()</span><br><span class="line">        heaters = [float(<span class="string">'-inf'</span>)] + heaters + [float(<span class="string">'inf'</span>)]</span><br><span class="line">        ans, i = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> house <span class="keyword">in</span> houses:</span><br><span class="line">            <span class="keyword">while</span> house &gt; heaters[i+<span class="number">1</span>]:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            dis = min(house-heaters[i], heaters[i+<span class="number">1</span>]-house)</span><br><span class="line">            ans = max(dis, ans)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+        <ol>
+<li>using greedy –&gt; sort</li>
+<li>add two fake heaters, one at the begining of it, one at the end of the heaters</li>
+<li>place the house in two heaters<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findRadius</span><span class="params">(self, houses, heaters)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type houses: List[int]</span></span><br><span class="line"><span class="string">        :type heaters: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        houses.sort()</span><br><span class="line">        heaters.sort()</span><br><span class="line">        heaters = [float(<span class="string">'-inf'</span>)] + heaters + [float(<span class="string">'inf'</span>)]</span><br><span class="line">        ans, i = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> house <span class="keyword">in</span> houses:</span><br><span class="line">            <span class="keyword">while</span> house &gt; heaters[i+<span class="number">1</span>]:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            dis = min(house-heaters[i], heaters[i+<span class="number">1</span>]-house)</span><br><span class="line">            ans = max(dis, ans)</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -281,6 +286,15 @@ var a = new Donate({
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/12/02/1145-Binary-Tree-Coloring-Game/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          1145. Binary Tree Coloring Game
+        
+      </div>
+    </a>
   
   
     <a href="/2020/12/02/776-Split-BST/" id="article-nav-older" class="article-nav-link-wrap">

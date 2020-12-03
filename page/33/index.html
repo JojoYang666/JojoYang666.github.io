@@ -265,6 +265,62 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-368-Largest-Divisible-Subset"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/10/368-Largest-Divisible-Subset/">368. Largest Divisible Subset</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/10/368-Largest-Divisible-Subset/" class="article-date">
+	  <time datetime="2020-10-10T16:34:59.000Z" itemprop="datePublished">2020-10-10</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          DP
+Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较难/复杂， 所以我们要对原数组排序， 这样只用考虑后面大的值
+用DP解决， dp[i] = set() &lt;- b set b是所有i能整除的数即i%b == 0, 那么一个新数m%i == 0,肯定会有m%b == 0
+
+1234567891011class Solution(object):    def largestDivisibleSubset(self, nums):      ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/10/368-Largest-Divisible-Subset/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-86-Partition-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -729,66 +785,6 @@ cornor case 2, do no...
         </p>
         <p class="article-more-link">
           <a href="/2020/10/08/909-Snakes-and-Ladders/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-443-String-Compression"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/443-String-Compression/">443. String Compression</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/443-String-Compression/" class="article-date">
-	  <time datetime="2020-10-07T04:17:11.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-cornor case
-read -&gt; 当前读到哪儿
-write -&gt; 当前写到哪儿
-ancor -&gt; 连续字符的起点 -》会大于10所以记得同时更新write的值
-
-
-
-1234567891011121314151617class Solution(object):    def compress(self, chars):        """        :type chars: List[str]        :rtype: int        """  ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/443-String-Compression/#more">Read More</a>
         </p>
       
     </div>

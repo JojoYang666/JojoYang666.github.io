@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>category: leetcode | Jojo&#39;s Blog</title>
+  <title>1145. binary tree coloring game | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jojo&#39;s Blog">
-<meta property="og:url" content="https://jojoyang666.github.io/categories/Leetcode/page/37/index.html">
+  <meta name="description" content="1234567891011121314151617181920212223# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val&#x3D;0, left&#x3D;None, right&#x3D;None):#         self.val &#x3D; val#         self.left &#x3D; l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1145. Binary Tree Coloring Game">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/12/02/1145-Binary-Tree-Coloring-Game/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="1234567891011121314151617181920212223# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val&#x3D;0, left&#x3D;None, right&#x3D;None):#         self.val &#x3D; val#         self.left &#x3D; l">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-03T05:41:45.000Z">
+<meta property="article:modified_time" content="2020-12-03T05:42:05.442Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -64,8 +68,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
     <link rel="stylesheet" href="/css/vdonate.css" >
@@ -75,7 +77,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -98,7 +100,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
               </a>
             
@@ -169,237 +171,138 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;">
-  
-  
-  
+          <section id="main" style="float:none;"><article id="post-1145-Binary-Tree-Coloring-Game" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2020" class="archive-year">2020</a></h1>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/" class="archive-article-date">
-	  <time datetime="2020-09-18T19:30:03.000Z" itemprop="datePublished">2020-09-18</time>
-	</a>
-
-      
+      <header class="article-header">
+        
   
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/18/659-Split-Array-into-Consecutive-Subsequences/">659. Split Array into Consecutive Subsequences</a>
+    <h1 class="thumb" class="article-title" itemprop="name">
+      1145. Binary Tree Coloring Game
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+    <div class="article-meta">
       
-	<a href="/2020/09/18/320-Generalized-Abbreviation/" class="archive-article-date">
-	  <time datetime="2020-09-18T16:25:34.000Z" itemprop="datePublished">2020-09-18</time>
+	<a href="/2020/12/02/1145-Binary-Tree-Coloring-Game/" class="article-date">
+	  <time datetime="2020-12-03T05:41:45.000Z" itemprop="datePublished">2020-12-02</time>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/18/320-Generalized-Abbreviation/">320. Generalized Abbreviation</a>
-    </h1>
-  
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
       
-	<a href="/2020/09/17/406-Queue-Reconstruction-by-Height/" class="archive-article-date">
-	  <time datetime="2020-09-17T16:40:09.000Z" itemprop="datePublished">2020-09-17</time>
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/17/406-Queue-Reconstruction-by-Height/">406. Queue Reconstruction by Height</a>
-    </h1>
-  
 
-    </header>
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">btreeGameWinningMove</span><span class="params">(self, root, n, x)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :type x: int</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        c = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(node)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            l, r = count(node.left),count(node.right)</span><br><span class="line">            <span class="keyword">if</span> node.val == x:</span><br><span class="line">                c[<span class="number">0</span>], c[<span class="number">1</span>] = l, r</span><br><span class="line">            <span class="keyword">return</span> l + r + <span class="number">1</span></span><br><span class="line">        count(root)</span><br><span class="line">        <span class="keyword">return</span> n/<span class="number">2</span> &lt; max(max(c), n - sum(c) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/12/02/1145-Binary-Tree-Coloring-Game/" target="_blank" title="1145. Binary Tree Coloring Game">https://jojoyang666.github.io/2020/12/02/1145-Binary-Tree-Coloring-Game/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/02/475-Heaters/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">475. Heaters</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
+        <ol class="nav">None</ol>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/16/362-Design-Hit-Counter/" class="archive-article-date">
-	  <time datetime="2020-09-17T04:57:32.000Z" itemprop="datePublished">2020-09-16</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/16/362-Design-Hit-Counter/">362. Design Hit Counter</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/16/1066-Campus-Bikes-II/" class="archive-article-date">
-	  <time datetime="2020-09-16T18:24:26.000Z" itemprop="datePublished">2020-09-16</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/16/1066-Campus-Bikes-II/">1066. Campus Bikes II</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/15/833-Find-And-Replace-in-String/" class="archive-article-date">
-	  <time datetime="2020-09-16T03:21:10.000Z" itemprop="datePublished">2020-09-15</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/15/833-Find-And-Replace-in-String/">833. Find And Replace in String</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/15/731-My-Calendar-II/" class="archive-article-date">
-	  <time datetime="2020-09-16T02:57:02.000Z" itemprop="datePublished">2020-09-15</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/15/731-My-Calendar-II/">731. My Calendar II</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/15/837-New-21-Game/" class="archive-article-date">
-	  <time datetime="2020-09-15T20:54:36.000Z" itemprop="datePublished">2020-09-15</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/15/837-New-21-Game/">837. New 21 Game</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/15/911-Online-Election/" class="archive-article-date">
-	  <time datetime="2020-09-15T14:40:02.000Z" itemprop="datePublished">2020-09-15</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/15/911-Online-Election/">911. Online Election</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2020/09/14/259-3Sum-Smaller/" class="archive-article-date">
-	  <time datetime="2020-09-15T03:11:54.000Z" itemprop="datePublished">2020-09-14</time>
-	</a>
-
-      
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2020/09/14/259-3Sum-Smaller/">259. 3Sum Smaller</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/categories/Leetcode/page/36/">&amp;laquo; Prev</a><a class="page-number" href="/categories/Leetcode/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/Leetcode/page/35/">35</a><a class="page-number" href="/categories/Leetcode/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/categories/Leetcode/page/38/">38</a><a class="page-number" href="/categories/Leetcode/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/categories/Leetcode/page/42/">42</a><a class="extend next" rel="next" href="/categories/Leetcode/page/38/">Next &amp;raquo;</a>
-  </nav>
+    </div>
+  </aside>
 
 </section>
         
@@ -503,6 +406,10 @@
 
 
 
+  
+<script src="/js/dialog.js"></script>
+
+
 
 
 
@@ -586,6 +493,8 @@
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
 </body>
 </html>
