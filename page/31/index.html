@@ -265,6 +265,286 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-356-Line-Reflection"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/16/356-Line-Reflection/">356. Line Reflection</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/16/356-Line-Reflection/" class="article-date">
+	  <time datetime="2020-10-16T17:13:25.000Z" itemprop="datePublished">2020-10-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+找到所有点的横坐标的最大值和最小值, 那么二者的平均值就是中间直线的横坐标
+我们遍历每个点，如果都能找到直线对称的另一个点, 则返回true，反之返回false
+
+12345678910111213141516171819class Solution(object):    def isReflected(self, points):        """        :type points: List[List[int]]        :rtype: bool        ""...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/16/356-Line-Reflection/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-539-Minimum-Time-Difference"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/16/539-Minimum-Time-Difference/">539. Minimum Time Difference</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/16/539-Minimum-Time-Difference/" class="article-date">
+	  <time datetime="2020-10-16T16:43:53.000Z" itemprop="datePublished">2020-10-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          corner case: 最小的也可以和最大的diff 因为可能是来自第二天
+123456789class Solution(object):    def findMinDifference(self, timePoints):        """        :type timePoints: List[str]        :rtype: int        """        minutes = sorted(int(time[:2]) * 60 + int(time[3...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/16/539-Minimum-Time-Difference/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-969-Pancake-Sorting"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/16/969-Pancake-Sorting/">969. Pancake Sorting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/16/969-Pancake-Sorting/" class="article-date">
+	  <time datetime="2020-10-16T15:17:31.000Z" itemprop="datePublished">2020-10-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+注意题目的输入特点
+有没有什么限制
+
+Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the x will be at A[0]Reverse x numbers, so that x will be at A[x - 1].Repeat this process N times.
+12345678910111213141516class Solution(object):    d...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/16/969-Pancake-Sorting/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1314-Matrix-Block-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/15/1314-Matrix-Block-Sum/">1314. Matrix Block Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/15/1314-Matrix-Block-Sum/" class="article-date">
+	  <time datetime="2020-10-16T03:37:22.000Z" itemprop="datePublished">2020-10-15</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+重点我们左上角的r1,c1， 其实是 i - k - 1, j - k - 1(in mat array), 因为我们的和里面要有 i - k, j - k
+123456789101112131415161718192021class Solution(object):    def matrixBlockSum(self, mat, K):        """        :type mat: List[List[int]]        :type K: int       ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/15/1314-Matrix-Block-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-range-prefix-sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/15/range-prefix-sum/">range/prefix sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/15/range-prefix-sum/" class="article-date">
+	  <time datetime="2020-10-16T03:32:56.000Z" itemprop="datePublished">2020-10-15</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+Range Sum Query 2D - Immutable
+Range Sum Query - Mutable
+Range Sum Query 2D - Mutable: Premium
+Matrix Block Sum
+
+
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/15/range-prefix-sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-983-Minimum-Cost-For-Tickets"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -526,275 +806,11 @@
 
 
   
-    <article id="post-694-Number-of-Distinct-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/694-Number-of-Distinct-Islands/">694. Number of Distinct Islands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/694-Number-of-Distinct-Islands/" class="article-date">
-	  <time datetime="2020-10-14T21:15:48.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          When we start a depth-first search on the top-left square of some island, the path taken by our depth-first search will be the same if and only if the shape is the same.
-1234567891011121314151617181920212223242526class Solution(object):    def num...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/694-Number-of-Distinct-Islands/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-187-Repeated-DNA-Sequences"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/187-Repeated-DNA-Sequences/">187. Repeated DNA Sequences</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/187-Repeated-DNA-Sequences/" class="article-date">
-	  <time datetime="2020-10-14T19:42:33.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Linear-time Slice Using Substring + HashSet123456789101112131415class Solution(object):    def findRepeatedDnaSequences(self, s):        """        :type s: str        :rtype: List[str]        """        L, n = 10, len(s)        seen, output = set...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/187-Repeated-DNA-Sequences/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-581-Shortest-Unsorted-Continuous-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/581-Shortest-Unsorted-Continuous-Subarray/">581. Shortest Unsorted Continuous Subarray</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/581-Shortest-Unsorted-Continuous-Subarray/" class="article-date">
-	  <time datetime="2020-10-14T18:21:22.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Using sort1234567891011121314151617class Solution(object):    def findUnsortedSubarray(self, nums):        """        :type nums: List[int]        :rtype: int        """        snums = list(nums)        snums.sort()                start, end = len...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/581-Shortest-Unsorted-Continuous-Subarray/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-535-Encode-and-Decode-TinyURL"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/535-Encode-and-Decode-TinyURL/">535. Encode and Decode TinyURL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/535-Encode-and-Decode-TinyURL/" class="article-date">
-	  <time datetime="2020-10-14T17:12:32.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1Using Simple Counter，如果接受到多次同一url地址，仍然会当做不同的url来处理。计数器编码另一个缺点就是数字会不断的增大，那么编码的长度也就不是确定的了
-1234567891011121314151617181920212223242526272829class Codec:    def __init__(self):        self.i = 0        self.dict = &#123;&#125;            def...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/535-Encode-and-Decode-TinyURL/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-36-Valid-Sudoku"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/36-Valid-Sudoku/">36. Valid Sudoku</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/36-Valid-Sudoku/" class="article-date">
-	  <time datetime="2020-10-14T16:47:42.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-用三个数组of dict来存储次数
-重点是要用 (i/3)*3 + j/3转化成box index12345678910111213141516171819202122232425class Solution(object):    def isValidSudoku(self, board):        """        :type board: List[List[str]]        :rtype: bool        """        rows = [defa...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/36-Valid-Sudoku/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/30/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/49/">49</a><a class="extend next" rel="next" href="/page/32/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/30/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="page-number current">31</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="space">&hellip;</span><a class="page-number" href="/page/50/">50</a><a class="extend next" rel="next" href="/page/32/">Next &amp;raquo;</a>
   </nav>
 
 </section>
