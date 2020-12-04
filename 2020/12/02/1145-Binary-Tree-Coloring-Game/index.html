@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="1234567891011121314151617181920212223# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val&#x3D;0, left&#x3D;None, right&#x3D;None):#         self.val &#x3D; val#         self.left &#x3D; l">
+  <meta name="description" content="这个题目的意思是： 在第一个&amp;第二个player 选择开始位置后，开始轮流染色， 每次只能选择染色当前节点的neighbor（parent, left, right), 问是否有一个位置能够保证第二个player赢得比赛 第一个player选择node x后， 第二个player能阻断player 1尽可能多染色的位置是： parent of x left child of x righ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1145. Binary Tree Coloring Game">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/02/1145-Binary-Tree-Coloring-Game/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val&#x3D;0, left&#x3D;None, right&#x3D;None):#         self.val &#x3D; val#         self.left &#x3D; l">
+<meta property="og:description" content="这个题目的意思是： 在第一个&amp;第二个player 选择开始位置后，开始轮流染色， 每次只能选择染色当前节点的neighbor（parent, left, right), 问是否有一个位置能够保证第二个player赢得比赛 第一个player选择node x后， 第二个player能阻断player 1尽可能多染色的位置是： parent of x left child of x righ">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-03T05:41:45.000Z">
-<meta property="article:modified_time" content="2020-12-03T05:42:05.442Z">
+<meta property="article:modified_time" content="2020-12-03T05:50:25.754Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -206,7 +206,23 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">btreeGameWinningMove</span><span class="params">(self, root, n, x)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :type x: int</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        c = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(node)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            l, r = count(node.left),count(node.right)</span><br><span class="line">            <span class="keyword">if</span> node.val == x:</span><br><span class="line">                c[<span class="number">0</span>], c[<span class="number">1</span>] = l, r</span><br><span class="line">            <span class="keyword">return</span> l + r + <span class="number">1</span></span><br><span class="line">        count(root)</span><br><span class="line">        <span class="keyword">return</span> n/<span class="number">2</span> &lt; max(max(c), n - sum(c) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+        <ol>
+<li>这个题目的意思是： 在第一个&amp;第二个player 选择开始位置后，开始轮流染色， 每次只能选择染色当前节点的neighbor（parent, left, right), 问是否有一个位置能够保证第二个player赢得比赛</li>
+<li>第一个player选择node x后， 第二个player能阻断player 1尽可能多染色的位置是：<ul>
+<li>parent of x</li>
+<li>left child of x</li>
+<li>right child of x</li>
+</ul>
+</li>
+<li>then<ul>
+<li>计算count number of nodes in left subtree x —&gt; a</li>
+<li>计算count number of nodes in right subtree x —&gt; b</li>
+<li>计算count number of nodes in subtree of parent node of x (not including subtree x) —&gt; c = n - a - b -1</li>
+<li>if max(a, b, c) &gt; n/2就说明这三种选择中其中一种能保证player 2然更多的色<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"># class TreeNode(object):</span></span><br><span class="line"><span class="comment">#     def __init__(self, val=0, left=None, right=None):</span></span><br><span class="line"><span class="comment">#         self.val = val</span></span><br><span class="line"><span class="comment">#         self.left = left</span></span><br><span class="line"><span class="comment">#         self.right = right</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">btreeGameWinningMove</span><span class="params">(self, root, n, x)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type root: TreeNode</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :type x: int</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        c = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">count</span><span class="params">(node)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> node: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">            l, r = count(node.left),count(node.right)</span><br><span class="line">            <span class="keyword">if</span> node.val == x:</span><br><span class="line">                c[<span class="number">0</span>], c[<span class="number">1</span>] = l, r</span><br><span class="line">            <span class="keyword">return</span> l + r + <span class="number">1</span></span><br><span class="line">        count(root)</span><br><span class="line">        <span class="keyword">return</span> n/<span class="number">2</span> &lt; max(max(c), n - sum(c) - <span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -281,6 +297,15 @@ var a = new Donate({
   
     
 <nav id="article-nav">
+  
+    <a href="/2020/12/03/855-Exam-Room/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          855. Exam Room
+        
+      </div>
+    </a>
   
   
     <a href="/2020/12/02/475-Heaters/" id="article-nav-older" class="article-nav-link-wrap">
