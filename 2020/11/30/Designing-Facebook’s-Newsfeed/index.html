@@ -16,10 +16,13 @@
 <meta property="og:site_name" content="Jojo&#39;s Blog">
 <meta property="og:description" content="Requirements and Goals of the SystemFunctional requirements: Newsfeed will be generated based on the posts from the people, pages, and groups that a user follows. A user may have many friends and foll">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Designing-Facebook%E2%80%99s-Newsfeed-db-schema.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Facebook-Newsfeed-Architecture.png">
 <meta property="article:published_time" content="2020-12-01T05:14:51.000Z">
-<meta property="article:modified_time" content="2020-12-01T19:01:19.499Z">
+<meta property="article:modified_time" content="2020-12-05T20:09:40.552Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/Designing-Facebook%E2%80%99s-Newsfeed-db-schema.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -223,7 +226,229 @@
 <li>300M * 5 = 1.5B requests/day —&gt; approximately 17,500 requests/s</li>
 </ul>
 </li>
-<li>Storage estimates<br> * </li>
+<li>Storage estimates<ul>
+<li>Assume 500 posts/user’s feed that we want to keep in memory for a quick fetch</li>
+<li>1KB/post</li>
+<li>store for all user need: 500 * 300M = 150TB of memory</li>
+<li>if a server can hold 100 GB —&gt; 1500 machines to keep the top 500 posts in memory for all active users.</li>
+</ul>
+</li>
+</ol>
+<h1 id="System-APIs"><a href="#System-APIs" class="headerlink" title="System APIs"></a>System APIs</h1><p>getUserFeed(api_dev_key, user_id, since_id, count, max_id, exclude_replies)</p>
+<ul>
+<li>api_dev_key(string)：throttle users based on their allocated quota</li>
+<li>user_id(number):  The ID of the user for whom the system will generate the newsfeed.</li>
+<li>since_id(number): returns results with an ID higher than (that is, more recent than) the specified ID.</li>
+<li>count(number): specifies the number of feed items to try and retrieve up to a maximum of 200 per distinct request.</li>
+<li>max_id(number): returns results with an ID less than (that is, older than) or equal to the specified ID.</li>
+<li>exclude_replies(boolean): this parameter will prevent replies from appearing in the returned timeline.</li>
+</ul>
+<p>return: JSON–&gt; containing a list of feed items.</p>
+<h1 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h1><ol>
+<li>Three Primary Objects<ul>
+<li>User</li>
+<li>Entity(like: page, group)</li>
+<li>FeedItem/Post</li>
+</ul>
+</li>
+<li>Replationships</li>
+</ol>
+<ul>
+<li>A User can follow other entities and can become friends with other users.</li>
+<li>Both users and entities can post FeedItems which can contain text, images, or videos.</li>
+<li>Each FeedItem will have a UserID which will point to the User who created it.<ul>
+<li>For simplicity, let’s assume that only users can create feed items, although, on Facebook Pages can post feed item too.</li>
+</ul>
+</li>
+<li>Each FeedItem can optionally have an EntityID pointing to the page or the group where that post was created.</li>
+</ul>
+<ol start="3">
+<li>Two Relations</li>
+</ol>
+<ul>
+<li>User-Entity relation<ul>
+<li>store this relation in a separate table.</li>
+<li>“Type” column in “UserFollow” identifies if the entity being followed is a User or Entity.</li>
+</ul>
+</li>
+<li>FeedItem-Media relation<ul>
+<li>similiar with User-Entity relation</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><img src="/images/Designing-Facebook%E2%80%99s-Newsfeed-db-schema.png" alt="image"></li>
+</ul>
+<h1 id="High-Level-System-Design"><a href="#High-Level-System-Design" class="headerlink" title="High Level System Design"></a>High Level System Design</h1><h2 id="Feed-generation"><a href="#Feed-generation" class="headerlink" title="Feed generation"></a>Feed generation</h2><ol>
+<li>whenever our system receives a request to generate the feed for a user(Jane), perform following steps<ul>
+<li>Retrieve IDs of all users and entities that Jane follows.</li>
+<li>Retrieve latest, most popular and relevant posts for those IDs. These are the potential posts that we can show in Jane’s newsfeed.</li>
+<li>Rank these posts based on the relevance to Jane. This represents Jane’s current feed.</li>
+<li>Store this feed in the cache and return top posts (say 20) to be rendered on Jane’s feed.</li>
+<li>On the front-end, when Jane reaches the end of her current feed, she can fetch the next 20 posts from the server and so on.   </li>
+</ul>
+</li>
+<li>Problem<br>Since we generated the feed once and stored it in the cache. What about new incoming posts from people that Jane follows?</li>
+</ol>
+<ul>
+<li>If Jane is online, we should have a mechanism to rank </li>
+<li>add those new posts to her feed.</li>
+<li>can periodically (say every five minutes) perform the above steps to rank and add the newer posts to her feed. </li>
+<li>Jane can then be notified that there are newer items in her feed that she can fetch.</li>
+</ul>
+<h2 id="Feed-publishing"><a href="#Feed-publishing" class="headerlink" title="Feed publishing"></a>Feed publishing</h2><ol>
+<li>Components needed to Newsfeed service:</li>
+</ol>
+<ul>
+<li>Web servers:  transfer data between the user and the server.</li>
+<li>Application server: Need some application servers to retrieve and to push the newsfeed to the end user</li>
+<li>Metadata database and cache: store the metadata about Users, Pages, and Groups.</li>
+<li>Posts database and cache: store metadata about posts and their contents.</li>
+<li>Video and photo storage, and cache: Blob storage, to store all the media included in the posts.</li>
+<li>Newsfeed generation service<ul>
+<li>To gather and rank all the relevant posts for a user to generate newsfeed</li>
+<li>store it in the cache</li>
+<li>receive live updates and will add these newer feed items to any user’s timeline.</li>
+</ul>
+</li>
+<li>Feed notification service<ul>
+<li>To notify the user that there are newer items available for their newsfeed.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><img src="/images/Facebook-Newsfeed-Architecture.png" alt="image"></li>
+</ul>
+<h1 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h1><h2 id="Feed-generation-1"><a href="#Feed-generation-1" class="headerlink" title="Feed generation"></a>Feed generation</h2><ol>
+<li>fetching most recent posts from all the users and entities that Jane follows<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">SELECT</span> FeedItemID <span class="keyword">FROM</span> FeedItem <span class="keyword">WHERE</span> UserID <span class="keyword">in</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> EntityOrFriendID <span class="keyword">FROM</span> UserFollow <span class="keyword">WHERE</span> UserID = &lt;current_user_id&gt; <span class="keyword">and</span> <span class="keyword">type</span> = <span class="number">0</span>(<span class="keyword">user</span>))</span><br><span class="line">)</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line">(<span class="keyword">SELECT</span> FeedItemID <span class="keyword">FROM</span> FeedItem <span class="keyword">WHERE</span> EntityID <span class="keyword">in</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> EntityOrFriendID <span class="keyword">FROM</span> UserFollow <span class="keyword">WHERE</span> UserID = &lt;current_user_id&gt; <span class="keyword">and</span> <span class="keyword">type</span> = <span class="number">1</span>(entity))</span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> CreationDate <span class="keyword">DESC</span> </span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">100</span></span><br></pre></td></tr></table></figure></li>
+<li>Issues</li>
+</ol>
+<ul>
+<li>Crazy slow for users with a lot of friends/follows as we have to perform sorting/merging/ranking of a huge number of posts.</li>
+<li>We generate the timeline when a user loads their page. This would be quite slow and have a high latency.</li>
+<li>For live updates, each status update will result in feed updates for all followers. This could result in high backlogs in our Newsfeed Generation Service.</li>
+<li>For live updates, the server pushing (or notifying about) newer posts to users could lead to very heavy loads, especially for people or pages that have a lot of followers. To improve the efficiency, we can pre-generate the timeline and store it in a memory.</li>
+</ul>
+<h2 id="Offline-generation-for-newsfeed"><a href="#Offline-generation-for-newsfeed" class="headerlink" title="Offline generation for newsfeed"></a>Offline generation for newsfeed</h2><ol>
+<li>Dedicated servers that are continuously generating users’ newsfeed and storing them in memory. </li>
+<li></li>
+</ol>
+<ul>
+<li>first query to see what was the last time the feed was generated for that user</li>
+<li>new feed data would be generated from that time onwards</li>
+<li>store this data in a hash table<ul>
+<li>key: USERID</li>
+<li>value: struct like this<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Struct &#123;</span><br><span class="line">    LinkedHashMap&lt;FeedItemID, FeedItem&gt; feedItems;</span><br><span class="line">    DateTime lastGenerated;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li>using LinkedHashMap<ul>
+<li>Whenever users want to fetch more feed items, they can send the last FeedItemID they currently see in their newsfeed</li>
+<li>we can then jump to that FeedItemID in our hash-map and return next batch/page of feed items from there.</li>
+</ul>
+</li>
+</ul>
+<h3 id="How-many-feed-items-should-we-store-in-memory-for-a-user’s-feed"><a href="#How-many-feed-items-should-we-store-in-memory-for-a-user’s-feed" class="headerlink" title="How many feed items should we store in memory for a user’s feed?"></a>How many feed items should we store in memory for a user’s feed?</h3><ul>
+<li>Initially, store 500 feed items/user</li>
+<li>Number adjusted based on usage pattern</li>
+<li>assume that one page of a user’s feed has 20 posts and most of the users never browse more than ten pages of their feed, we can decide to store only 200 posts per user.<ul>
+<li>For any user who wants to see more posts (more than what is stored in memory), we can always query backend servers.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Should-we-generate-and-keep-in-memory-newsfeeds-for-all-users"><a href="#Should-we-generate-and-keep-in-memory-newsfeeds-for-all-users" class="headerlink" title="Should we generate (and keep in memory) newsfeeds for all users?"></a>Should we generate (and keep in memory) newsfeeds for all users?</h3><ul>
+<li>Use an LRU based cache that can remove users from memory that haven’t accessed their newsfeed for a long time </li>
+<li>a smarter solution can figure out the login pattern of users to pre-generate their newsfeed<ul>
+<li>at what time of the day a user is active and which days of the week does a user access their newsfeed? etc.</li>
+</ul>
+</li>
+</ul>
+<h2 id="Feed-publishing-1"><a href="#Feed-publishing-1" class="headerlink" title="Feed publishing"></a>Feed publishing</h2><h2 id="In-general"><a href="#In-general" class="headerlink" title="In general"></a>In general</h2><ol>
+<li>Push approach   —&gt; fanout-on-write<ul>
+<li>once a user has published a post, we can immediately push this post to all the followers</li>
+<li>advantage：<ul>
+<li>when fetching feed you don’t need to go through your friend’s list and get feeds for each of them</li>
+<li>Reduces read operations</li>
+</ul>
+</li>
+<li>Maintain a <strong>Long Poll</strong> request with the server for receiving the updates</li>
+<li>Possible problem<ul>
+<li>when a user has millions of followers (a celebrity-user) the server has to push updates to a lot of people. —&gt;(hot user)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Pull approach   —-&gt; fanout-on-load<ul>
+<li>keeping all the recent feed data in memory</li>
+<li>users can pull it from the server whenever they need it</li>
+<li>Clients can pull the feed data on a regular basis or manually whenever they need it.</li>
+<li>Possible problems with this approach<ul>
+<li>New data might not be shown to the users until they issue a pull request</li>
+<li>It’s hard to find the right pull cadence, as most of the time pull requests will result in an empty response if there is no new data, causing waste of resources.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hybrid<ul>
+<li>Stop pushing posts from users with a high number of followers (a celebrity user)<ul>
+<li>for celebrity: we can let the followers pull the updates</li>
+</ul>
+</li>
+<li>only push data for those users who have a few hundred (or thousand) followers</li>
+<li>Another alternate approach<ul>
+<li>once a user publishes a post, we can limit the fanout to only her online friends</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="How-many-feed-items-can-we-return-to-the-client-in-each-request"><a href="#How-many-feed-items-can-we-return-to-the-client-in-each-request" class="headerlink" title="How many feed items can we return to the client in each request?"></a>How many feed items can we return to the client in each request?</h3><ol>
+<li>Have a maximum limit for the number of items a user can fetch in one request (say 20). </li>
+<li>Should let the client specify how many feed items they want with each request as the user may like to fetch a different number of posts depending on the device (mobile vs. desktop).</li>
+</ol>
+<h3 id="Should-we-always-notify-users-if-there-are-new-posts-available-for-their-newsfeed"><a href="#Should-we-always-notify-users-if-there-are-new-posts-available-for-their-newsfeed" class="headerlink" title="Should we always notify users if there are new posts available for their newsfeed?"></a>Should we always notify users if there are new posts available for their newsfeed?</h3><ul>
+<li>be useful for users to get notified whenever new data is available</li>
+<li>However, on mobile devices, where data usage is relatively expensive, it can consume unnecessary bandwidth<ul>
+<li>at least for mobile devices, we can choose not to push data, instead, let users “Pull to Refresh” to get new posts.</li>
+</ul>
+</li>
+</ul>
+<h1 id="Feed-Ranking"><a href="#Feed-Ranking" class="headerlink" title="Feed Ranking"></a>Feed Ranking</h1><ol>
+<li>straightforward: rank posts in a newsfeed is by the <strong>creation time</strong> of the posts</li>
+<li>But need to ensure “important” posts are ranked higher<ul>
+<li>ranking is first to select key “signals” that make a post important</li>
+<li>find out how to combine them to calculate a final ranking score.</li>
+</ul>
+</li>
+<li>select features that are relevant to the importance of any feed item<ul>
+<li>number of likes, comments, shares, time of the update, whether the post has images/videos, etc</li>
+<li>a score can be calculated using these features.</li>
+</ul>
+</li>
+<li>A better ranking system<ul>
+<li>constantly evaluating if we are making progress in user stickiness, retention, ads revenue, etc.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Data-Partitioning"><a href="#Data-Partitioning" class="headerlink" title="Data Partitioning"></a>Data Partitioning</h1><h2 id="Sharding-posts-and-metadata"><a href="#Sharding-posts-and-metadata" class="headerlink" title="Sharding posts and metadata"></a>Sharding posts and metadata</h2><ol>
+<li>a huge number of new posts every day and our read load is extremely high</li>
+<li>distribute our data onto multiple machines such that we can read/write it efficiently</li>
+<li>referring to <a href="/2020/11/17/Designing-Twitter/" title="Designing Twitter">Designing Twitter</a></li>
+</ol>
+<h2 id="Sharding-feed-data"><a href="#Sharding-feed-data" class="headerlink" title="Sharding feed data"></a>Sharding feed data</h2><ol>
+<li>feed data, which is being stored in memory<ul>
+<li>partition it based on UserID</li>
+</ul>
+</li>
+<li>try storing all the data of a user on one server.<ul>
+<li>use usrid in hash function</li>
+<li>because the limit of not storing more than 500 FeedItemIDs<ul>
+<li>not run into a scenario where feed data for a user doesn’t fit on a single server</li>
+<li>get the feed of a user, we would always have to query only one server</li>
+</ul>
+</li>
+<li>For future growth and replication, we must use Consistent Hashing.</li>
+</ul>
+</li>
 </ol>
 
       
@@ -327,7 +552,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-requirements"><span class="nav-number">1.1.</span> <span class="nav-text">Functional requirements:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-functional-requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Non-functional requirements:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">2.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-requirements"><span class="nav-number">1.1.</span> <span class="nav-text">Functional requirements:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-functional-requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Non-functional requirements:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">2.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-APIs"><span class="nav-number">3.</span> <span class="nav-text">System APIs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Design"><span class="nav-number">4.</span> <span class="nav-text">Database Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-System-Design"><span class="nav-number">5.</span> <span class="nav-text">High Level System Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Feed-generation"><span class="nav-number">5.1.</span> <span class="nav-text">Feed generation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feed-publishing"><span class="nav-number">5.2.</span> <span class="nav-text">Feed publishing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">6.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Feed-generation-1"><span class="nav-number">6.1.</span> <span class="nav-text">Feed generation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Offline-generation-for-newsfeed"><span class="nav-number">6.2.</span> <span class="nav-text">Offline generation for newsfeed</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-many-feed-items-should-we-store-in-memory-for-a-user’s-feed"><span class="nav-number">6.2.1.</span> <span class="nav-text">How many feed items should we store in memory for a user’s feed?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Should-we-generate-and-keep-in-memory-newsfeeds-for-all-users"><span class="nav-number">6.2.2.</span> <span class="nav-text">Should we generate (and keep in memory) newsfeeds for all users?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feed-publishing-1"><span class="nav-number">6.3.</span> <span class="nav-text">Feed publishing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#In-general"><span class="nav-number">6.4.</span> <span class="nav-text">In general</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-many-feed-items-can-we-return-to-the-client-in-each-request"><span class="nav-number">6.4.1.</span> <span class="nav-text">How many feed items can we return to the client in each request?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Should-we-always-notify-users-if-there-are-new-posts-available-for-their-newsfeed"><span class="nav-number">6.4.2.</span> <span class="nav-text">Should we always notify users if there are new posts available for their newsfeed?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Feed-Ranking"><span class="nav-number">7.</span> <span class="nav-text">Feed Ranking</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Partitioning"><span class="nav-number">8.</span> <span class="nav-text">Data Partitioning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sharding-posts-and-metadata"><span class="nav-number">8.1.</span> <span class="nav-text">Sharding posts and metadata</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sharding-feed-data"><span class="nav-number">8.2.</span> <span class="nav-text">Sharding feed data</span></a></li></ol></li></ol>
     
     </div>
   </aside>
