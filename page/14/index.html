@@ -265,6 +265,116 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Rabin-Karp-algorithm"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/Rabin-Karp-algorithm/">Rabin-Karp algorithm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/Rabin-Karp-algorithm/" class="article-date">
+	  <time datetime="2020-11-12T20:31:21.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Rabin-Karp algorithmsearch(L)
+
+compute the has of substring(0, L) and initiate the hashset of already seen substring with this value
+Iterate over the start position of substring from 1 to N-L
+Compute rolling hash based on the previous hash value
+R...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/Rabin-Karp-algorithm/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden/">1326. Minimum Number of Taps to Open to Water a Garden</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden/" class="article-date">
+	  <time datetime="2020-11-12T19:00:48.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          dp[i]: is the minimum number of taps to water [0, i]
+1234567891011121314class Solution(object):    def minTaps(self, n, ranges):        """        :type n: int        :type ranges: List[int]        :rtype: int        """        dp = [0] + [n+2]*n ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-466-Count-The-Repetitions"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -697,110 +807,6 @@ find the depth from set ...
         </p>
         <p class="article-more-link">
           <a href="/2020/11/11/815-Bus-Routes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-354-Russian-Doll-Envelopes"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/354-Russian-Doll-Envelopes/">354. Russian Doll Envelopes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/354-Russian-Doll-Envelopes/" class="article-date">
-	  <time datetime="2020-11-11T19:16:51.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617181920class Solution(object):    def maxEnvelopes(self, envelopes):        """        :type envelopes: List[List[int]]        :rtype: int        """        envelopes = sorted(envelopes, key=lambda x: (x[0], -x[1]))        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/354-Russian-Doll-Envelopes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-300-Longest-Increasing-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/300-Longest-Increasing-Subsequence/">300. Longest Increasing Subsequence </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/300-Longest-Increasing-Subsequence/" class="article-date">
-	  <time datetime="2020-11-11T18:43:44.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          O(n*n)1234567891011121314class Solution(object):    def lengthOfLIS(self, nums):        """        :type nums: List[int]        :rtype: int        """        if not nums: return 0        dp = [1] * len(nums)                for i in range(len(nums)...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/300-Longest-Increasing-Subsequence/#more">Read More</a>
         </p>
       
     </div>
