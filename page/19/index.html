@@ -778,8 +778,8 @@
 
 
 
-1192-Critical-Connections-in-a-Network.png
-1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        """        :type n: int        :type connections: List[List[int]]     ...
+rank[n]其实表示的是到达n的时间戳， 如果rank[next] &lt; rank[cur] + 1,说明有其他的node能到达这个node, 这个边不是critical connection
+1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        """        :t...
         </p>
         <p class="article-more-link">
           <a href="/2020/11/04/1192-Critical-Connections-in-a-Network/#more">Read More</a>
