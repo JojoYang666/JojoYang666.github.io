@@ -9,19 +9,20 @@
   
   
   
-  <meta name="description" content="1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        &quot;&quot;&quot;        :type n: int        :type connections: List[List[int]]">
+  <meta name="description" content="1192-Critical-Connections-in-a-Network.png 1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        &quot;&quot;&quot;        :type n: int">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1192. Critical Connections in a Network ">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/11/04/1192-Critical-Connections-in-a-Network/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        &quot;&quot;&quot;        :type n: int        :type connections: List[List[int]]">
+<meta property="og:description" content="1192-Critical-Connections-in-a-Network.png 1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        &quot;&quot;&quot;        :type n: int">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jojoyang666.github.io/images/1192-Critical-Connections-in-a-Network">
+<meta property="og:image" content="https://jojoyang666.github.io/images/1192-Critical-Connections-in-a-Network.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/1192-Critical-Connections-in-a-Network.PNG">
 <meta property="article:published_time" content="2020-11-05T04:08:45.000Z">
-<meta property="article:modified_time" content="2020-11-05T04:10:33.567Z">
+<meta property="article:modified_time" content="2020-12-09T06:38:54.442Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jojoyang666.github.io/images/1192-Critical-Connections-in-a-Network">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/1192-Critical-Connections-in-a-Network.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -209,8 +210,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><img src="/images/1192-Critical-Connections-in-a-Network" alt="image"></li>
+<li><img src="/images/1192-Critical-Connections-in-a-Network.png" alt="image"></li>
+<li><img src="/images/1192-Critical-Connections-in-a-Network.PNG" alt="image"></li>
 </ul>
+<p>1192-Critical-Connections-in-a-Network.png</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">criticalConnections</span><span class="params">(self, n, connections)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type n: int</span></span><br><span class="line"><span class="string">        :type connections: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        graph = [[] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> first, second <span class="keyword">in</span> connections:</span><br><span class="line">            graph[first].append(second)</span><br><span class="line">            graph[second].append(first)</span><br><span class="line">            </span><br><span class="line">        visited, rank, res = [<span class="literal">False</span>]*n, range(n), []</span><br><span class="line">        self.dfs(graph, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>, visited, rank, res)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(self, graph, node, prev, currank, visited, rank, res)</span>:</span></span><br><span class="line">        visited[node] = <span class="literal">True</span></span><br><span class="line">        rank[node] = currank</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> nxt <span class="keyword">in</span> graph[node]:</span><br><span class="line">            <span class="keyword">if</span> nxt == prev: <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> visited[nxt]:</span><br><span class="line">                self.dfs(graph, nxt, node, currank+<span class="number">1</span>, visited, rank, res)</span><br><span class="line">            </span><br><span class="line">            rank[node] = min(rank[node], rank[nxt])</span><br><span class="line">            <span class="keyword">if</span> currank + <span class="number">1</span> &lt;= rank[nxt]:</span><br><span class="line">                res.append([node, nxt])</span><br></pre></td></tr></table></figure>
       
     </div>

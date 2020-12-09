@@ -265,6 +265,340 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1145-Binary-Tree-Coloring-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/02/1145-Binary-Tree-Coloring-Game/">1145. Binary Tree Coloring Game</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/02/1145-Binary-Tree-Coloring-Game/" class="article-date">
+	  <time datetime="2020-12-03T05:41:45.000Z" itemprop="datePublished">2020-12-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+这个题目的意思是： 在第一个&amp;第二个player 选择开始位置后，开始轮流染色， 每次只能选择染色当前节点的neighbor（parent, left, right), 问是否有一个位置能够保证第二个player赢得比赛
+第一个player选择node x后， 第二个player能阻断player 1尽可能多染色的位置是：
+parent of x
+left child of x
+right child of x
+
+
+then
+计算count number of nodes in ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/02/1145-Binary-Tree-Coloring-Game/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-475-Heaters"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/02/475-Heaters/">475. Heaters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/02/475-Heaters/" class="article-date">
+	  <time datetime="2020-12-03T05:17:29.000Z" itemprop="datePublished">2020-12-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+using greedy –&gt; sort
+add two fake heaters, one at the begining of it, one at the end of the heaters
+place the house in two heaters123456789101112131415161718class Solution(object):    def findRadius(self, houses, heaters):        """        :t...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/02/475-Heaters/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-776-Split-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/02/776-Split-BST/">776. Split BST</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/02/776-Split-BST/" class="article-date">
+	  <time datetime="2020-12-03T04:58:56.000Z" itemprop="datePublished">2020-12-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/02/776-Split-BST/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-591-Tag-Validator"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/02/591-Tag-Validator/">591. Tag Validator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/02/591-Tag-Validator/" class="article-date">
+	  <time datetime="2020-12-02T22:17:26.000Z" itemprop="datePublished">2020-12-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          using state machine
+
+state = [plain, open, close, cdata]
+state-restriction:{open: [“only upper case”]close: [“only upper case”]cdata: NO restrictionplain: [‘if idx &gt; 0, then stack must be non-empty’] # reason is all plain text must be wrapped b...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/02/591-Tag-Validator/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1000-Minimum-Cost-to-Merge-Stones"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/">1000. Minimum Cost to Merge Stones</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/" class="article-date">
+	  <time datetime="2020-12-02T05:28:51.000Z" itemprop="datePublished">2020-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          3D dpdp[i][j][m]: cost needed to merge stones[i]~stones[j] into m pilesinitial: dp[i][i][1] = 0 dp[i][i][m]=infinity
+dp[i][j][1] = dp[i][j][k]  + sum of cost from stome[i] to stone[j]dp[i][j][m]: min(dp[i][mid][1]+dp[mid+1][j][m-1])
+
+Why mid jump ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-post794-Valid-Tic-Tac-Toe-State"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/">post794. Valid Tic-Tac-Toe State</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/" class="article-date">
+	  <time datetime="2020-12-02T03:59:16.000Z" itemprop="datePublished">2020-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Ad-hoc —&gt; 排除所有不可能/找到必要条件
+
+diff between count of x and o is 1
+if x win, count(x) = count(o)+1
+if o win, count(x) == count(o)凡事不满足1, 2,3的都是false 其余均为true1234567891011121314151617181920212223class Solution(object):    def validTicTacToe(self, boar...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-Morris-Tranversal"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -482,342 +816,11 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
 
 
   
-    <article id="post-156-Binary-Tree-Upside-Down"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/156-Binary-Tree-Upside-Down/">156. Binary Tree Upside Down</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/01/156-Binary-Tree-Upside-Down/" class="article-date">
-	  <time datetime="2020-12-01T18:16:37.000Z" itemprop="datePublished">2020-12-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          keep finding the left most node, make it upside-down, then make its parent to be its right most subtree recursivelyconnect the root to the right most subtree, make sure not copying the original root, otherwisr it become cyclic
-12345678910111213141...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/01/156-Binary-Tree-Upside-Down/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-244-Shortest-Word-Distance-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/244-Shortest-Word-Distance-II/">244. Shortest Word Distance II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/01/244-Shortest-Word-Distance-II/" class="article-date">
-	  <time datetime="2020-12-01T17:35:49.000Z" itemprop="datePublished">2020-12-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          min diff in two list, if two list is sorted we can do it in one pass instead of n*n
-123456789101112131415161718192021222324252627282930313233class WordDistance(object):    def __init__(self, words):        """        :type words: List[str]        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/01/244-Shortest-Word-Distance-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Designing-Facebook’s-Newsfeed"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/">Designing Facebook’s Newsfeed </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/" class="article-date">
-	  <time datetime="2020-12-01T05:14:51.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Requirements and Goals of the SystemFunctional requirements:
-Newsfeed will be generated based on the posts from the people, pages, and groups that a user follows.
-A user may have many friends and follow a large number of pages/groups.
-Feeds may co...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-711-Number-of-Distinct-Islands-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/711-Number-of-Distinct-Islands-II/">711. Number of Distinct Islands II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/711-Number-of-Distinct-Islands-II/" class="article-date">
-	  <time datetime="2020-12-01T04:33:13.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-Scan the matrix, each time when 1 is found, search the nearby 1, push them inside a queue and mark them as -1.
-he queue stands for a specific shape of an island
-Push the island to the left upper corner by subtracting the original data with its mi...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/711-Number-of-Distinct-Islands-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-510-Inorder-Successor-in-BST-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/510-Inorder-Successor-in-BST-II/">510. Inorder Successor in BST II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/510-Inorder-Successor-in-BST-II/" class="article-date">
-	  <time datetime="2020-12-01T03:41:59.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425"""# Definition for a Node.class Node:    def __init__(self, val):        self.val = val        self.left = None        self.right = None        self.parent = None"""class Solution(object):    def inorderSu...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/510-Inorder-Successor-in-BST-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-61-Rotate-List"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/61-Rotate-List/">61. Rotate List</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/61-Rotate-List/" class="article-date">
-	  <time datetime="2020-12-01T03:00:00.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution(object):
-    def rotateRight(self, head, k):
-        """
-        :type...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/61-Rotate-List/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/51/">51</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/52/">52</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
   </nav>
 
 </section>
