@@ -265,6 +265,224 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-76-Minimum-Window-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/09/76-Minimum-Window-Substring/">76. Minimum Window Substring</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/09/76-Minimum-Window-Substring/" class="article-date">
+	  <time datetime="2020-12-10T04:42:23.000Z" itemprop="datePublished">2020-12-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          先找到合适的candidate， 再慢慢收缩， 排除不合适的candidate，update res
+123456789101112131415161718192021222324252627282930313233343536class Solution(object):    def minWindow(self, s, t):        """        :type s: str        :type t: str        :rtype: str        ""...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/09/76-Minimum-Window-Substring/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-10-Regular-Expression-Matching"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/09/10-Regular-Expression-Matching/">10. Regular Expression Matching</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/09/10-Regular-Expression-Matching/" class="article-date">
+	  <time datetime="2020-12-10T04:31:30.000Z" itemprop="datePublished">2020-12-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+如果当前的字符是*有两种情况
+p中的当前字符match前面的一个字符至少一次，–&gt; s[i-1] === p[j-2] || p[j-2] === ‘.’) &amp;&amp; dp[i-1][j]
+p中的当前字符不match任何字符 —&gt; dp[i][j-2]
+
+
+else
+前面的字符要match 同时当前的字符要match1234567891011121314151617181920212223242526/** * @param &#123;string&#125; ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/09/10-Regular-Expression-Matching/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-273-Integer-to-English-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/09/273-Integer-to-English-Words/">273. Integer to English Words</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/09/273-Integer-to-English-Words/" class="article-date">
+	  <time datetime="2020-12-10T03:21:00.000Z" itemprop="datePublished">2020-12-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          thousand, million, billion之间的difference is 1000, thus covert to hundredcornor case 1: 1000 –&gt; remove the ‘ ‘ at the end of stringcornor case 2: 0
+12345678910111213141516171819202122232425262728293031323334/** * @param &#123;number&#125; num * @...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/09/273-Integer-to-English-Words/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-380-Insert-Delete-GetRandom-O-1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/">380. Insert Delete GetRandom O(1)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/" class="article-date">
+	  <time datetime="2020-12-09T23:45:16.000Z" itemprop="datePublished">2020-12-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          map + list + replace with last element
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960/** * Initialize your data structure here. */var RandomizedSet = function() &#123;    this.map = ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-139-Word-Break"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -559,223 +777,6 @@
         </p>
         <p class="article-more-link">
           <a href="/2020/12/07/973-K-Closest-Points-to-Origin/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-31-Next-Permutation"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/31-Next-Permutation/">31. Next Permutation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/07/31-Next-Permutation/" class="article-date">
-	  <time datetime="2020-12-08T03:30:23.000Z" itemprop="datePublished">2020-12-07</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-从后到前： 找到第一个不满足升序的字符
-和后面第一个比他大的字符swap
-知道后面部分变成降序 –》 reverse将其变成升序
-
-如果这个数列本就是降序数列， reverse 变成升序
-1234567891011121314151617181920212223242526272829303132/** * @param &#123;number[]&#125; nums * @return &#123;void&#125; Do not return anything, modify ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/07/31-Next-Permutation/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-253-Meeting-Rooms-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/253-Meeting-Rooms-II/">253. Meeting Rooms II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/07/253-Meeting-Rooms-II/" class="article-date">
-	  <time datetime="2020-12-08T02:58:54.000Z" itemprop="datePublished">2020-12-07</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          基本思想： 按照开始时间排序， 然后遍历interval根据当前interval 的开始值来决定和之前的房子是替换还是加入新的房子， 所以pq里是end time of the interval
-Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125; intervals * @return &#123;number&#125; */var minMeetingRooms = funct...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/07/253-Meeting-Rooms-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-56-Merge-Intervals"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/56-Merge-Intervals/">56. Merge Intervals</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/07/56-Merge-Intervals/" class="article-date">
-	  <time datetime="2020-12-08T02:25:21.000Z" itemprop="datePublished">2020-12-07</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          when overlapped happens at start == end, we still need to merge it
-123456789101112131415161718192021/** * @param &#123;number[][]&#125; intervals * @return &#123;number[][]&#125; */var merge = function(intervals) &#123;    if (!intervals || !inter...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/07/56-Merge-Intervals/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-23-Merge-k-Sorted-Lists"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/23-Merge-k-Sorted-Lists/">23. Merge k Sorted Lists</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/07/23-Merge-k-Sorted-Lists/" class="article-date">
-	  <time datetime="2020-12-07T22:34:41.000Z" itemprop="datePublished">2020-12-07</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          divide it in two two parts, merge the first item in the two parts recursivly
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354/** * Definition for singly-linked list. * function ListNode(val, next)...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/07/23-Merge-k-Sorted-Lists/#more">Read More</a>
         </p>
       
     </div>
