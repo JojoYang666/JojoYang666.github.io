@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>49. group anagrams | Jojo&#39;s Blog</title>
+  <title>981. time based key-value store | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="123456789101112131415var groupAnagrams &#x3D; function(strs) &amp;#123;    const map &#x3D; &amp;#123;&amp;#125;        for (let str of strs) &amp;#123;        const key &#x3D; [...str].sort().join(&#39;&#39;);                if (!map[key]">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&#x2F;** * Initialize your data structure here. *&#x2F;var TimeMap &#x3D; function() &amp;#123;    this.map &#x3D; &amp;#123;&amp;#12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="49. Group Anagrams">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/12/12/49-Group-Anagrams/index.html">
+<meta property="og:title" content="981. Time Based Key-Value Store">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/12/13/981-Time-Based-Key-Value-Store/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="123456789101112131415var groupAnagrams &#x3D; function(strs) &amp;#123;    const map &#x3D; &amp;#123;&amp;#125;        for (let str of strs) &amp;#123;        const key &#x3D; [...str].sort().join(&#39;&#39;);                if (!map[key]">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354&#x2F;** * Initialize your data structure here. *&#x2F;var TimeMap &#x3D; function() &amp;#123;    this.map &#x3D; &amp;#123;&amp;#12">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-12T23:01:56.000Z">
-<meta property="article:modified_time" content="2020-12-12T23:05:10.225Z">
+<meta property="article:published_time" content="2020-12-14T02:33:05.000Z">
+<meta property="article:modified_time" content="2020-12-14T03:34:24.959Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-49-Group-Anagrams" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-981-Time-Based-Key-Value-Store" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      49. Group Anagrams
+      981. Time Based Key-Value Store
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/12/49-Group-Anagrams/" class="article-date">
-	  <time datetime="2020-12-12T23:01:56.000Z" itemprop="datePublished">2020-12-12</time>
+	<a href="/2020/12/13/981-Time-Based-Key-Value-Store/" class="article-date">
+	  <time datetime="2020-12-14T02:33:05.000Z" itemprop="datePublished">2020-12-13</time>
 	</a>
 
       
@@ -206,10 +206,9 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> groupAnagrams = <span class="function"><span class="keyword">function</span>(<span class="params">strs</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> map = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> str <span class="keyword">of</span> strs) &#123;</span><br><span class="line">        <span class="keyword">const</span> key = [...str].sort().join(<span class="string">''</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (!map[key])&#123;</span><br><span class="line">            map[key] = [];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        map[key].push(str);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.values(map);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Initialize your data structure here.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> TimeMap = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.map = &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> </span>key </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> </span>value </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">timestamp</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;void&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">TimeMap.prototype.set = <span class="function"><span class="keyword">function</span>(<span class="params">key, value, timestamp</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.map[key]) &#123;</span><br><span class="line">        <span class="keyword">this</span>.map[key] = [&#123;value, timestamp&#125;]</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.map[key].push(&#123;value, timestamp&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> </span>key </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">timestamp</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">TimeMap.prototype.get = <span class="function"><span class="keyword">function</span>(<span class="params">key, timestamp</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> list = <span class="keyword">this</span>.map[key] || []</span><br><span class="line">    <span class="keyword">return</span> binarySearch(list, timestamp)</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> binarySearch = <span class="function">(<span class="params">list, timestamp</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!list.length) <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>, right = list.length</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">let</span> mid = left + <span class="built_in">Math</span>.floor((right - left)/<span class="number">2</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (list[mid].timestamp &lt;= timestamp) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right = mid</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> right &gt; <span class="number">0</span> ? list[right<span class="number">-1</span>].value : <span class="string">""</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/** </span></span><br><span class="line"><span class="comment"> * Your TimeMap object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * var obj = new TimeMap()</span></span><br><span class="line"><span class="comment"> * obj.set(key,value,timestamp)</span></span><br><span class="line"><span class="comment"> * var param_2 = obj.get(key,timestamp)</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">groupAnagrams</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type strs: List[str]</span></span><br><span class="line"><span class="string">        :rtype: List[List[str]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        ans = collections.defaultdict(list)</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> strs:</span><br><span class="line">            count = [<span class="number">0</span>] * <span class="number">26</span></span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">                count[ord(c) - ord(<span class="string">'a'</span>)] += <span class="number">1</span></span><br><span class="line">            ans[tuple(count)].append(s)</span><br><span class="line">        <span class="keyword">return</span> ans.values()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeMap</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        Initialize your data structure here.</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.M = collections.defaultdict(list)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set</span><span class="params">(self, key, value, timestamp)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type key: str</span></span><br><span class="line"><span class="string">        :type value: str</span></span><br><span class="line"><span class="string">        :type timestamp: int</span></span><br><span class="line"><span class="string">        :rtype: None</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.M[key].append((timestamp, value))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self, key, timestamp)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type key: str</span></span><br><span class="line"><span class="string">        :type timestamp: int</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> key <span class="keyword">in</span> self.M:</span><br><span class="line">            A = self.M[key]</span><br><span class="line">            i = bisect.bisect(A, (timestamp, chr(<span class="number">127</span>))) <span class="comment"># used for there are multiple such values, it returns the one with the largest timestamp_prev,  timestamp_prev == timestamp</span></span><br><span class="line">            <span class="keyword">return</span> A[i<span class="number">-1</span>][<span class="number">1</span>] <span class="keyword">if</span> i <span class="keyword">else</span> <span class="string">""</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Your TimeMap object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = TimeMap()</span></span><br><span class="line"><span class="comment"># obj.set(key,value,timestamp)</span></span><br><span class="line"><span class="comment"># param_2 = obj.get(key,timestamp)</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -237,7 +236,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/12/12/49-Group-Anagrams/" target="_blank" title="49. Group Anagrams">https://jojoyang666.github.io/2020/12/12/49-Group-Anagrams/</a>
+          <a href="/2020/12/13/981-Time-Based-Key-Value-Store/" target="_blank" title="981. Time Based Key-Value Store">https://jojoyang666.github.io/2020/12/13/981-Time-Based-Key-Value-Store/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -285,19 +284,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/12/13/981-Time-Based-Key-Value-Store/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          981. Time Based Key-Value Store
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/12/12/347-Top-K-Frequent-Elements/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/12/12/49-Group-Anagrams/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">347. Top K Frequent Elements</div>
+      <div class="article-nav-title">49. Group Anagrams</div>
     </a>
   
 </nav>
