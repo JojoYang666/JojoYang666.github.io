@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="Conclusion dummy node is very common, especially head dummy Node Reverse LinkedList code:123456789101112&#x2F;&#x2F; prev is the dummy head, next is nullconst reverseOneGroup &#x3D; (pre, next) &#x3D;&gt; &amp;#123;    let l">
+  <meta name="description" content="Conclusion dummy node is very common, especially head dummy Node Reverse LinkedList code:  Method 1 last: the first node in the list cur: the second node in the list prev: dummy node insert cur to pre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LinkedList">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/07/15/LinkedList/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Conclusion dummy node is very common, especially head dummy Node Reverse LinkedList code:123456789101112&#x2F;&#x2F; prev is the dummy head, next is nullconst reverseOneGroup &#x3D; (pre, next) &#x3D;&gt; &amp;#123;    let l">
+<meta property="og:description" content="Conclusion dummy node is very common, especially head dummy Node Reverse LinkedList code:  Method 1 last: the first node in the list cur: the second node in the list prev: dummy node insert cur to pre">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-16T04:56:04.000Z">
-<meta property="article:modified_time" content="2020-07-16T05:10:29.038Z">
+<meta property="article:modified_time" content="2020-12-15T15:49:59.275Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -208,7 +208,15 @@
       
         <h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><ol>
 <li>dummy node is very common, especially head dummy Node</li>
-<li><strong>Reverse LinkedList</strong> code:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// prev is the dummy head, next is null</span></span><br><span class="line"><span class="keyword">const</span> reverseOneGroup = <span class="function">(<span class="params">pre, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> last = pre.next, cur = last.next;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (cur != next) &#123;</span><br><span class="line">        last.next = cur.next</span><br><span class="line">        cur.next = pre.next</span><br><span class="line">        pre.next = cur</span><br><span class="line">        cur = last.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> last</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>Reverse LinkedList</strong> code:</li>
+</ol>
+<h1 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h1><ol>
+<li>last: the first node in the list</li>
+<li>cur: the second node in the list</li>
+<li>prev: dummy node</li>
+<li>insert cur to prev &amp; last everytime, and update cur</li>
+<li>if cur != null, last become last</li>
+<li>prev is dummy node, next is null<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// prev is the dummy head, next is null</span></span><br><span class="line"><span class="keyword">const</span> reverseOneGroup = <span class="function">(<span class="params">pre, next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> last = pre.next, cur = last.next;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (cur != next) &#123;</span><br><span class="line">        last.next = cur.next</span><br><span class="line">        cur.next = pre.next</span><br><span class="line">        pre.next = cur</span><br><span class="line">        cur = last.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> last</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -316,7 +324,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.</span> <span class="nav-text">Conclusion</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Conclusion"><span class="nav-number">1.</span> <span class="nav-text">Conclusion</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Method-1"><span class="nav-number">2.</span> <span class="nav-text">Method 1</span></a></li></ol>
     
     </div>
   </aside>
