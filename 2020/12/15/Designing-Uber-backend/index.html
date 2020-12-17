@@ -17,7 +17,7 @@
 <meta property="og:description" content="Requirements and Goals of the System two types of user Drivers Customers   Drivers need to regularly notify the service about their current location and their availability to pick passengers. Passenge">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-16T05:35:29.000Z">
-<meta property="article:modified_time" content="2020-12-16T20:57:02.638Z">
+<meta property="article:modified_time" content="2020-12-16T22:23:24.029Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -215,6 +215,84 @@
 <li>Drivers need to regularly notify the service about their current location and their availability to pick passengers.</li>
 <li>Passengers get to see all the nearby available drivers.</li>
 <li>Customer can request a ride; nearby drivers are notified that a customer is ready to be picked up.</li>
+<li>Once a driver and a customer accept a ride, they can constantly see each other’s current location until the trip finishes.</li>
+<li>Upon reaching the destination, the driver marks the journey complete to become available for the next ride.</li>
+</ol>
+<h1 id="Capacity-Estimation-and-Constraints"><a href="#Capacity-Estimation-and-Constraints" class="headerlink" title="Capacity Estimation and Constraints"></a>Capacity Estimation and Constraints</h1><ol>
+<li>Assume:<ul>
+<li>300M customers</li>
+<li>1M drivers with 1M daily active customers</li>
+<li>500K daily active drivers</li>
+<li>1M daily rides.</li>
+<li>all active drivers notify their current location every three seconds.</li>
+<li>Once a customer puts in a request for a ride, the system should be able to contact drivers in real-time.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Basic-System-Design-and-Algorithm"><a href="#Basic-System-Design-and-Algorithm" class="headerlink" title="Basic System Design and Algorithm"></a>Basic System Design and Algorithm</h1><ol>
+<li>same solution with Designing Yelp, the difference is <strong>we need to update frequently in QuadTree</strong><ul>
+<li>update the QuadTree for every change in the driver’s position –&gt; take a lot of time and resources<ul>
+<li>update a driver to its new location  –&gt; is new position in the current grid?<ul>
+<li>no –&gt; remove it &amp; insert it into the correct grid –&gt; if new grid reaches the limit –&gt; repartition it</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>a quick mechanism to propagate the current location of all the nearby drivers to any active customer in that area</li>
+<li>when a ride is in progress, our system needs to notify both the driver and passenger about the current location of the car</li>
+</ul>
+</li>
+</ol>
+<h2 id="Do-we-need-to-modify-our-QuadTree-every-time-a-driver-reports-their-location"><a href="#Do-we-need-to-modify-our-QuadTree-every-time-a-driver-reports-their-location" class="headerlink" title="Do we need to modify our QuadTree every time a driver reports their location?"></a>Do we need to modify our QuadTree every time a driver reports their location?</h2><ol>
+<li>there will be a lot more updates happening to our tree than querying for nearby drivers.</li>
+<li>DriverLocationHT: a hash table keeping the latest position reported by all drivers<ul>
+<li>update the QuadTree within 15 seconds</li>
+</ul>
+</li>
+</ol>
+<h2 id="How-much-memory-we-need-for-DriverLocationHT"><a href="#How-much-memory-we-need-for-DriverLocationHT" class="headerlink" title="How much memory we need for DriverLocationHT?"></a>How much memory we need for DriverLocationHT?</h2><ol>
+<li>key: DriverID（3 bytes - 1 million drivers）</li>
+<li>value:<ul>
+<li>Old latitude (8 bytes)</li>
+<li>Old longitude (8 bytes)</li>
+<li>New latitude (8 bytes)</li>
+<li>New longitude (8 bytes) Total = 35 bytes</li>
+</ul>
+</li>
+<li>Ignoreing hash table overhead:<ul>
+<li>1 million * 35 bytes =&gt; 35 MB</li>
+</ul>
+</li>
+</ol>
+<h3 id="How-much-bandwidth-will-our-service-consume-to-receive-location-updates-from-all-drivers"><a href="#How-much-bandwidth-will-our-service-consume-to-receive-location-updates-from-all-drivers" class="headerlink" title="How much bandwidth will our service consume to receive location updates from all drivers?"></a>How much bandwidth will our service consume to receive location updates from all drivers?</h3><p>If DriverID and their location  –&gt; 3+16 =&gt; 19 bytes —&gt; receiving in every 3 seconds from 500K daily active drivers –&gt; 500K * 19 = 9.5MB/3seconds</p>
+<h3 id="Do-we-need-to-distribute-DriverLocationHT-onto-multiple-servers"><a href="#Do-we-need-to-distribute-DriverLocationHT-onto-multiple-servers" class="headerlink" title="Do we need to distribute DriverLocationHT onto multiple servers?"></a>Do we need to distribute DriverLocationHT onto multiple servers?</h3><ol>
+<li>for scalability, performance, and fault tolerance —&gt; should distribute DriverLocationHT onto multiple servers</li>
+<li>can distribute based on the DriverID   —&gt; make the distribution completely random</li>
+<li>To holding DriverLocationHT the Driver Location server<ul>
+<li>holding driver’s location</li>
+<li>As soon as the server receives an update for a driver’s location —&gt; broadcast that information to all the interested customers.</li>
+<li>server needs to notify the respective QuadTree server to refresh the driver’s location –&gt; this can happen every 10s</li>
+</ul>
+</li>
+</ol>
+<h3 id="How-can-we-efficiently-broadcast-the-driver’s-location-to-customers"><a href="#How-can-we-efficiently-broadcast-the-driver’s-location-to-customers" class="headerlink" title="How can we efficiently broadcast the driver’s location to customers?"></a>How can we efficiently broadcast the driver’s location to customers?</h3><ol>
+<li>push model</li>
+<li>have a <strong>dedicated Notification</strong> Service that can broadcast the current location of drivers to all the interested customers</li>
+<li>build our Notification service on a publisher/subscriber model</li>
+<li>a customer opens the Uber app on their cell phone –&gt; query the server to find nearby drivers<ul>
+<li>On the server side: subscribe the customer for all the updates from those drivers –&gt; returning the list of drivers to the customer</li>
+<li>maintain a list of customers (subscribers) interested in knowing the location of a driver<ul>
+<li>update in DriverLocationHT for that driver –&gt;  broadcast the current location of the driver to all subscribed customers. <h3 id="How-much-memory-will-we-need-to-store-all-these-subscriptions"><a href="#How-much-memory-will-we-need-to-store-all-these-subscriptions" class="headerlink" title="How much memory will we need to store all these subscriptions?"></a>How much memory will we need to store all these subscriptions?</h3></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>1M daily active customers , 500K daily active drivers</li>
+<li>Assume: five customers subscribe to one driver &amp; store in the hash table</li>
+<li>DriverID: 3bytes CustomerID: 8bytes<ul>
+<li>(500K * 3) + (500K * 5 * 8 ) ~= 21 MB<h3 id="How-much-bandwidth-will-we-need-to-broadcast-the-driver’s-location-to-customers"><a href="#How-much-bandwidth-will-we-need-to-broadcast-the-driver’s-location-to-customers" class="headerlink" title="How much bandwidth will we need to broadcast the driver’s location to customers?"></a>How much bandwidth will we need to broadcast the driver’s location to customers?</h3></li>
+</ul>
+</li>
 </ol>
 
       
@@ -292,6 +370,15 @@ var a = new Donate({
     
 <nav id="article-nav">
   
+    <a href="/2020/12/16/Javascript-Common-Problem/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript Common Problem
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/12/15/Common-Issues-needed-to-consider-in-the-system-design/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
@@ -309,7 +396,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation-and-Constraints"><span class="nav-number">2.</span> <span class="nav-text">Capacity Estimation and Constraints</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Basic-System-Design-and-Algorithm"><span class="nav-number">3.</span> <span class="nav-text">Basic System Design and Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Do-we-need-to-modify-our-QuadTree-every-time-a-driver-reports-their-location"><span class="nav-number">3.1.</span> <span class="nav-text">Do we need to modify our QuadTree every time a driver reports their location?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-much-memory-we-need-for-DriverLocationHT"><span class="nav-number">3.2.</span> <span class="nav-text">How much memory we need for DriverLocationHT?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-much-bandwidth-will-our-service-consume-to-receive-location-updates-from-all-drivers"><span class="nav-number">3.2.1.</span> <span class="nav-text">How much bandwidth will our service consume to receive location updates from all drivers?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Do-we-need-to-distribute-DriverLocationHT-onto-multiple-servers"><span class="nav-number">3.2.2.</span> <span class="nav-text">Do we need to distribute DriverLocationHT onto multiple servers?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-can-we-efficiently-broadcast-the-driver’s-location-to-customers"><span class="nav-number">3.2.3.</span> <span class="nav-text">How can we efficiently broadcast the driver’s location to customers?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-much-memory-will-we-need-to-store-all-these-subscriptions"><span class="nav-number">3.2.4.</span> <span class="nav-text">How much memory will we need to store all these subscriptions?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-much-bandwidth-will-we-need-to-broadcast-the-driver’s-location-to-customers"><span class="nav-number">3.2.5.</span> <span class="nav-text">How much bandwidth will we need to broadcast the driver’s location to customers?</span></a></li></ol></li></ol></li></ol>
     
     </div>
   </aside>
