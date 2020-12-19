@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>design ticketmaster | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Requirements and Goals of the SystemFunctional Requirements list different cities where its affiliate cinemas are located. user selects the city –&gt; the service display the movies released in that p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Design Ticketmaster">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/12/18/Design-Ticketmaster/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Requirements and Goals of the SystemFunctional Requirements list different cities where its affiliate cinemas are located. user selects the city –&gt; the service display the movies released in that p">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Design-Ticketmaster-db.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Design-Ticketmaster-high-level-design.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Design-Ticketmaster-detailed-design.png">
+<meta property="article:published_time" content="2020-12-18T23:24:34.000Z">
+<meta property="article:modified_time" content="2020-12-19T02:09:00.085Z">
+<meta property="article:author" content="Jojo Yang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/Design-Ticketmaster-db.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Design-Ticketmaster" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Design Ticketmaster
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/18/Design-Ticketmaster/" class="article-date">
+	  <time datetime="2020-12-18T23:24:34.000Z" itemprop="datePublished">2020-12-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Requirements-and-Goals-of-the-System"><a href="#Requirements-and-Goals-of-the-System" class="headerlink" title="Requirements and Goals of the System"></a>Requirements and Goals of the System</h1><h2 id="Functional-Requirements"><a href="#Functional-Requirements" class="headerlink" title="Functional Requirements"></a>Functional Requirements</h2><ol>
+<li>list different cities where its affiliate cinemas are located.</li>
+<li>user selects the city –&gt; the service display the movies released in that particular city.</li>
+<li>user selects a movie  –&gt; the service display the cinemas running that movie and its available showtimes.</li>
+<li>user should be able to choose a show at a particular cinema and book their tickets.</li>
+<li>service should be able to show the user the seating arrangement of the cinema hall.<ul>
+<li>The user should be able to select multiple seats according to their preference.</li>
+</ul>
+</li>
+<li>The user should be able to distinguish available seats from booked ones.</li>
+<li>Users should be able to put a hold on the seats for five minutes before they make a payment to finalize the booking.</li>
+<li>The user should be able to wait if there is a chance that the seats might become available, e.g., when holds by other users expire.</li>
+<li>Waiting customers should be serviced in a fair, first come, first serve manner.</li>
+</ol>
+<h2 id="Non-Functional-Requirements"><a href="#Non-Functional-Requirements" class="headerlink" title="Non-Functional Requirements:"></a>Non-Functional Requirements:</h2><ol>
+<li>would need to be highly concurrent –&gt; multiple requestes comming —&gt; service should handle this gracefully and fairly.</li>
+<li>this is a financial transactions –&gt; system should be secure and the database ACID compliant.</li>
+</ol>
+<h1 id="Some-Design-Considerations"><a href="#Some-Design-Considerations" class="headerlink" title="Some Design Considerations"></a>Some Design Considerations</h1><ol>
+<li>assume our service does not require any user authentication.</li>
+<li>not handle partial ticket orders<ul>
+<li>user gets all the tickets they want </li>
+<li>get nothing</li>
+</ul>
+</li>
+<li>Fairness is mandatory for the system.</li>
+<li>To stop system abuse, we can restrict users from booking more than ten seats at a time.</li>
+<li>assume that traffic would spike on popular/much-awaited movie releases and the seats would fill up pretty fast. <ul>
+<li>should be scalable and highly available to keep up with the surge in traffic.</li>
+</ul>
+</li>
+</ol>
+<h1 id="Capacity-Estimation"><a href="#Capacity-Estimation" class="headerlink" title="Capacity Estimation"></a>Capacity Estimation</h1><ol>
+<li>Traffic estimates<ul>
+<li>service has 3 billion page views per month   </li>
+<li>sells 10 million tickets a month.</li>
+</ul>
+</li>
+<li>Storage estimates<ul>
+<li>500 cities</li>
+<li>on average each city has ten cinemas</li>
+<li>2000 seats in each cinema </li>
+<li>on average, there are two shows every day</li>
+<li>each seat booking needs 50 bytes (IDs, NumberOfSeats, ShowID, MovieID, SeatNumbers, SeatStatus, Timestamp, etc.) to store in db</li>
+<li>same for movies &amp; cinemas, also assume 50 bytes </li>
+<li>500 cities * 10 cinemas * 2000 seats * 2 shows * (50+50) bytes = 2GB / day</li>
+</ul>
+</li>
+<li>To store five years of this data, we would need around 3.6TB.</li>
+</ol>
+<h1 id="System-APIs"><a href="#System-APIs" class="headerlink" title="System APIs"></a>System APIs</h1><ol>
+<li><p>SearchMovies(api_dev_key, keyword, city, lat_long, radius, start_datetime, end_datetime, postal_code, includeSpellcheck, results_per_page, sorting_order)<br>api_dev_key(string): The API developer key of a registered account to throttle users based on their allocated quota.<br>keyword (string): Keyword to search on.<br>city (string): City to filter movies by.<br>lat_long (string): Latitude and longitude to filter by.<br>radius (number): Radius of the area in which we want to search for events.<br>start_datetime (string): Filter movies with a starting datetime.<br>end_datetime (string): Filter movies with an ending datetime.<br>postal_code (string): Filter movies by postal code / zipcode.<br>includeSpellcheck (Enum: “yes” or “no”): Yes, to include spell check suggestions in the response.<br>results_per_page (number): Number of results to return per page. Maximum is 30.<br>sorting_order (string): Sorting order of the search result. Some allowable values : ‘name,asc’, ‘name,desc’, ‘date,asc’, ‘date,desc’, ‘distance,asc’, ‘name,date,asc’, ‘name,date,desc’, ‘date,name,asc’, ‘date,name,desc’<br>Returns: (JSON)<br>Here is a sample list of movies and their shows:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"MovieID"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"ShowID"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"Title"</span>: <span class="string">"Cars 2"</span>,</span><br><span class="line">    <span class="attr">"Description"</span>: <span class="string">"About cars"</span>,</span><br><span class="line">    <span class="attr">"Duration"</span>: <span class="number">120</span>,</span><br><span class="line">    <span class="attr">"Genre"</span>: <span class="string">"Animation"</span>,</span><br><span class="line">    <span class="attr">"Language"</span>: <span class="string">"English"</span>,</span><br><span class="line">    <span class="attr">"ReleaseDate"</span>: <span class="string">"8th Oct. 2014"</span>,</span><br><span class="line">    <span class="attr">"Country"</span>: USA,</span><br><span class="line">    <span class="attr">"StartTime"</span>: <span class="string">"14:00"</span>,</span><br><span class="line">    <span class="attr">"EndTime"</span>: <span class="string">"16:00"</span>,</span><br><span class="line">    <span class="attr">"Seats"</span>: </span><br><span class="line">    [</span><br><span class="line">      &#123;  </span><br><span class="line">        <span class="attr">"Type"</span>: <span class="string">"Regular"</span></span><br><span class="line">        <span class="string">"Price"</span>: <span class="number">14.99</span></span><br><span class="line">        <span class="string">"Status: "</span>Almost Full<span class="string">"</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">      &#123;  </span></span><br><span class="line"><span class="string">        "</span>Type<span class="string">": "</span>Premium<span class="string">"</span></span><br><span class="line"><span class="string">        "</span>Price<span class="string">": 24.99</span></span><br><span class="line"><span class="string">        "</span>Status: <span class="string">"Available"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"MovieID"</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">"ShowID"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">"Title"</span>: <span class="string">"Cars 2"</span>,</span><br><span class="line">    <span class="attr">"Description"</span>: <span class="string">"About cars"</span>,</span><br><span class="line">    <span class="attr">"Duration"</span>: <span class="number">120</span>,</span><br><span class="line">    <span class="attr">"Genre"</span>: <span class="string">"Animation"</span>,</span><br><span class="line">    <span class="attr">"Language"</span>: <span class="string">"English"</span>,</span><br><span class="line">    <span class="attr">"ReleaseDate"</span>: <span class="string">"8th Oct. 2014"</span>,</span><br><span class="line">    <span class="attr">"Country"</span>: USA,</span><br><span class="line">    <span class="attr">"StartTime"</span>: <span class="string">"16:30"</span>,</span><br><span class="line">    <span class="attr">"EndTime"</span>: <span class="string">"18:30"</span>,</span><br><span class="line">    <span class="attr">"Seats"</span>: </span><br><span class="line">    [</span><br><span class="line">        &#123;  </span><br><span class="line">          <span class="attr">"Type"</span>: <span class="string">"Regular"</span></span><br><span class="line">          <span class="string">"Price"</span>: <span class="number">14.99</span></span><br><span class="line">          <span class="string">"Status: "</span>Full<span class="string">"</span></span><br><span class="line"><span class="string">      &#125;,</span></span><br><span class="line"><span class="string">        &#123;  </span></span><br><span class="line"><span class="string">          "</span>Type<span class="string">": "</span>Premium<span class="string">"</span></span><br><span class="line"><span class="string">        "</span>Price<span class="string">": 24.99</span></span><br><span class="line"><span class="string">        "</span>Status: <span class="string">"Almost Full"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ReserveSeats(api_dev_key, session_id, movie_id, show_id, seats_to_reserve[])<br>Parameters:</p>
+</li>
+</ol>
+<ul>
+<li>api_dev_key (string): same as above</li>
+<li>session_id (string): User’s session ID to track this reservation. Once the reservation time expires, user’s reservation on the server will be removed using this ID.</li>
+<li>movie_id (string): Movie to reserve.</li>
+<li>show_id (string): Show to reserve.</li>
+<li>seats_to_reserve (number): An array containing seat IDs to reserve.</li>
+</ul>
+<p>Returns:<br>Returns the status of the reservation</p>
+<ul>
+<li>Reservation Successful</li>
+<li>Reservation Failed - Show Full</li>
+<li>Reservation Failed - Retry, as other users are holding reserved seats</li>
+</ul>
+<h1 id="Database-Design"><a href="#Database-Design" class="headerlink" title="Database Design"></a>Database Design</h1><ol>
+<li>Each City can have multiple Cinemas.</li>
+<li>Each Cinema will have multiple halls.</li>
+<li>Each Movie will have many Shows and each Show will have multiple Bookings.</li>
+<li>A user can have multiple bookings.</li>
+</ol>
+<ul>
+<li><img src="/images/Design-Ticketmaster-db.png" alt="image"></li>
+</ul>
+<h1 id="High-Level-Design"><a href="#High-Level-Design" class="headerlink" title="High Level Design"></a>High Level Design</h1><ol>
+<li>web servers will manage users’ sessions</li>
+<li>application servers will handle all the ticket management, storing data in the databases as well as working with the cache servers to process reservations.</li>
+</ol>
+<ul>
+<li><img src="/images/Design-Ticketmaster-high-level-design.png" alt="image"></li>
+</ul>
+<h1 id="Detailed-Component-Design"><a href="#Detailed-Component-Design" class="headerlink" title="Detailed Component Design"></a>Detailed Component Design</h1><h2 id="Ticket-Booking-Workflow"><a href="#Ticket-Booking-Workflow" class="headerlink" title="Ticket Booking Workflow"></a>Ticket Booking Workflow</h2><ol>
+<li>The user searches for a movie -&gt; The user selects a movie -&gt; The user is shown the available shows of the movie. -&gt; The user selects a show. -&gt; The user selects the number of seats to be reserved</li>
+<li>if the required number of seats are available<ul>
+<li>yes: shown a map of the theater to select seats  –&gt; Once the user selects the seat, the system will try to reserve those selected seats.</li>
+<li>no: thehere are 3 options<ul>
+<li>Show is full; the user is shown the error message.</li>
+<li>The seats the user wants to reserve are no longer available, but there are other seats available –&gt; user is taken back to the theater map to choose different seats</li>
+<li>There are no seats available to reserve, but all the seats are not booked yet –&gt; The user will be taken to a waiting page where they can wait until the required seats get freed from the reservation pool, it has following option for this waiting<ul>
+<li>the required number of seats become available –&gt; the user is taken to the theater map page where they can choose seats.</li>
+<li>While waiting: all seats get booked / there are fewer seats in the reservation pool than the user intends to book –&gt; the user is shown the error message</li>
+<li>At maximum, a user can wait one hour –&gt; that user’s session gets expired and the user is taken back to the movie search page.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If seats are reserved successfully, the user has five minutes to pay for the reservation.<ul>
+<li>After payment, the booking is marked complete. </li>
+<li>If the user is not able to pay within five minutes, all their reserved seats are freed to become available to other users.</li>
+</ul>
+</li>
+</ol>
+<h2 id="How-would-the-server-keep-track-of-all-the-active-reservations-that-haven’t-been-booked-yet-And-how-would-the-server-keep-track-of-all-the-waiting-customers"><a href="#How-would-the-server-keep-track-of-all-the-active-reservations-that-haven’t-been-booked-yet-And-how-would-the-server-keep-track-of-all-the-waiting-customers" class="headerlink" title="How would the server keep track of all the active reservations that haven’t been booked yet? And how would the server keep track of all the waiting customers?"></a>How would the server keep track of all the active reservations that haven’t been booked yet? And how would the server keep track of all the waiting customers?</h2><p>two daemon services</p>
+<ul>
+<li>ActiveReservationService: keep track of all active reservations and remove any expired reservation from the system</li>
+<li>WaitingUserService: be keeping track of all the waiting user requests, as soon as the required number of seats become available, it will notify the (the longest waiting) user to choose the seats</li>
+</ul>
+<ul>
+<li><img src="/images/Design-Ticketmaster-detailed-design.png" alt="image"></li>
+</ul>
+<h2 id="ActiveReservationsService"><a href="#ActiveReservationsService" class="headerlink" title="ActiveReservationsService"></a>ActiveReservationsService</h2><ol>
+<li>keep all the reservations of a ‘show’ in memory by Linked HashMap/TreeMap, also keep all the data in the database</li>
+<li>special data structure(linked hash map):<ul>
+<li>allows us to jump to any reservation to remove it when the booking is complete</li>
+<li>expiry time associated with each reservation –&gt; head of the HashMap will always point to the oldest reservation record so that the reservation can be expired when the timeout is reached.</li>
+</ul>
+</li>
+<li>store reservation for every show:<br>HashTable:<ul>
+<li>key: ShowID</li>
+<li>value: Linked HashMap<ul>
+<li>for Linked HashMap: BookingID &amp; creation ‘Timestamp’</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>in db: store reservation in Booking table<ul>
+<li>int Timestamp column –&gt; expiry time</li>
+<li>Status： / /Expired（3）<ul>
+<li>Reserved（1）</li>
+<li>Booked（2） –&gt; also remove it from the Linked HashMap of the relevant show.</li>
+<li>Expired (3)/ remove if from table: reservation is expired &amp; remove from the linked hashmap</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>also work with external financial service to process user payments<ul>
+<li>when done, WaitingUsersService will get a signal so that any waiting customer can be served.</li>
+</ul>
+</li>
+</ol>
+<h2 id="WaitingUsersService"><a href="#WaitingUsersService" class="headerlink" title="WaitingUsersService"></a>WaitingUsersService</h2><ol>
+<li>liked ActiveReservationsService: keep all the waiting users of a ‘show’ in memory by Linked HashMap/TreeMap</li>
+<li>the head of the Linked HashMap would always be pointing to the longest waiting user, so that whenever seats become available, we can serve users in a fair manner.</li>
+<li>HashTable to store all the waiting users for every Show<ul>
+<li>key: ShowID</li>
+<li>value: Linked HashMap containing ‘UserIDs’ and their wait-start-time.</li>
+</ul>
+</li>
+<li>Clients can use Long Polling for keeping themselves updated for their reservation status. <ul>
+<li>Whenever seats become available, the server can use this request to notify the user.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Reservation-Expiration"><a href="#Reservation-Expiration" class="headerlink" title="Reservation Expiration"></a>Reservation Expiration</h2><ol>
+<li>ActiveReservationsService: keeps track of expiry (based on reservation time) of active reservations.</li>
+<li>the client will be shown a timer (for the expiration time) —&gt; a little out of sync with the server</li>
+<li>add a buffer of five seconds on the server to safeguard from a broken experience –&gt; such that the client never times out after the server, preventing a successful purchase</li>
+</ol>
+<h1 id="Concurrency"><a href="#Concurrency" class="headerlink" title="Concurrency"></a>Concurrency</h1><h2 id="How-to-handle-concurrency-such-that-no-two-users-are-able-to-book-the-same-seat"><a href="#How-to-handle-concurrency-such-that-no-two-users-are-able-to-book-the-same-seat" class="headerlink" title="How to handle concurrency, such that no two users are able to book the same seat."></a>How to handle concurrency, such that no two users are able to book the same seat.</h2><p>using transactions in SQL databases to avoid any clashes</p>
+<ul>
+<li>using an SQL server we can utilize Transaction Isolation Levels to lock the rows before we can update them<br><a href="https://docs.microsoft.com/en-us/sql/odbc/reference/develop-app/transaction-isolation-levels?view=sql-server-ver15" target="_blank" rel="noopener">Transaction Isolation Levels</a>.</li>
+</ul>
+<p>Here is the sample code:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> <span class="keyword">TRANSACTION</span> <span class="keyword">ISOLATION</span> <span class="keyword">LEVEL</span> <span class="keyword">SERIALIZABLE</span>:</span><br><span class="line"><span class="keyword">BEGIN</span> <span class="keyword">TRANSACTION</span>:</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Suppose we intend to reserve three seats (IDs: 54, 55, 56) for ShowID=99 </span></span><br><span class="line">    <span class="keyword">Select</span> * <span class="keyword">From</span> Show_Seat <span class="keyword">where</span> ShowID=<span class="number">99</span> &amp;&amp; ShowSeatID <span class="keyword">in</span> (<span class="number">54</span>, <span class="number">55</span>, <span class="number">56</span>) &amp;&amp; <span class="keyword">Status</span>=<span class="number">0</span> <span class="comment">-- free </span></span><br><span class="line">    <span class="comment">-- if the number of rows returned by the above statement is three, we can update to </span></span><br><span class="line">    <span class="comment">-- return success otherwise return failure to the user.</span></span><br><span class="line">    <span class="keyword">update</span> Show_Seat ...</span><br><span class="line">    <span class="keyword">update</span> Booking ...</span><br><span class="line"><span class="keyword">COMMIT</span> <span class="keyword">TRANSACTION</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>‘Serializable’ is the highest isolation level and guarantees safety from <ul>
+<li>Dirty: occurs when a transaction is allowed to read data from a row that has been modified by another running transaction and not yet committed</li>
+<li>Nonrepeatable: when, during the course of a transaction, a row is retrieved twice and the values within the row differ between reads.</li>
+<li>Phantoms reads. new rows are added or removed by another transaction to the records being read</li>
+</ul>
+</li>
+<li><em>within a transaction, if we read rows, we get a write lock on them so that they can’t be updated by anyone else.*</em></li>
+</ul>
+<p>Once the above database transaction is successful, we can start tracking the reservation in ActiveReservationService.</p>
+<h1 id="Fault-Tolerance"><a href="#Fault-Tolerance" class="headerlink" title="Fault Tolerance"></a>Fault Tolerance</h1><h2 id="What-happens-when-ActiveReservationsService-or-WaitingUsersService-crashes"><a href="#What-happens-when-ActiveReservationsService-or-WaitingUsersService-crashes" class="headerlink" title="What happens when ActiveReservationsService or WaitingUsersService crashes?"></a>What happens when ActiveReservationsService or WaitingUsersService crashes?</h2><ol>
+<li><p>ActiveReservationsService crashes</p>
+<ul>
+<li>recover from Booking table</li>
+<li>or if we have primary-secondary configuration, we can use it</li>
+</ul>
+</li>
+<li><p>WaitingUsersService</p>
+<ul>
+<li>if we do not have primary-secondary configuration, we cannot recover it</li>
+</ul>
+</li>
+<li><p>we’ll have a primary-secondary setup for databases to make them fault-tolerant.</p>
+</li>
+</ol>
+<h1 id="Data-Partitioning"><a href="#Data-Partitioning" class="headerlink" title="Data Partitioning"></a>Data Partitioning</h1><h2 id="Database-partitioning"><a href="#Database-partitioning" class="headerlink" title="Database partitioning"></a>Database partitioning</h2><ol>
+<li>partition by MovieID<ul>
+<li>all the Shows of a movie will be on a single server</li>
+<li>a very hot movie, this could cause a lot of load on that server</li>
+</ul>
+</li>
+<li>partition by ShowID<ul>
+<li>the load gets distributed among different servers</li>
+</ul>
+</li>
+</ol>
+<h2 id="ActiveReservationService-and-WaitingUserService-partitioning"><a href="#ActiveReservationService-and-WaitingUserService-partitioning" class="headerlink" title="ActiveReservationService and WaitingUserService partitioning"></a>ActiveReservationService and WaitingUserService partitioning</h2><ol>
+<li>web servers: manage all the active users’ sessions and handle all the communication with the users</li>
+<li>use the Consistent Hashing to allocate application servers for both ActiveReservationService and WaitingUserService based upon the ‘ShowID’. </li>
+<li>whenever a reservation is expired, the server holding that reservation will do the following things:</li>
+</ol>
+<ul>
+<li>Update the database to remove the Booking (or mark it expired) and update the seats’ Status in ‘Show_Seats’ table.</li>
+<li>Remove the reservation from the Linked HashMap.</li>
+<li>Notify the user that their reservation has expired.</li>
+<li>Broadcast a message to all WaitingUserService servers that are holding waiting users of that Show to figure out the longest waiting user. Consistent Hashing scheme will tell what servers are holding these users.</li>
+<li>Send a message to the WaitingUserService server holding the longest waiting user to process their request if required seats have become available.</li>
+</ul>
+<ol start="4">
+<li>Whenever a reservation is successful, following things will happen:</li>
+</ol>
+<ul>
+<li>server holding that reservation sends a message to all servers holding the waiting users of that Show –&gt; hose servers can expire all the waiting users that need more seats than the available seats. </li>
+<li>pon receiving the above message, –&gt; all servers holding the waiting users will query the database to find how many free seats are available now.-&gt; A database cache would greatly help here to run this query only once.</li>
+<li>Expire all waiting users who want to reserve more seats than the available seats. <ul>
+<li>WaitingUserService has to iterate through the Linked HashMap of all the waiting users.</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2020/12/18/Design-Ticketmaster/" target="_blank" title="Design Ticketmaster">https://jojoyang666.github.io/2020/12/18/Design-Ticketmaster/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/12/18/Additional-Resources/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Additional Resources
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/16/224-Basic-Calculator/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">224. Basic Calculator</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Requirements-and-Goals-of-the-System"><span class="nav-number">1.</span> <span class="nav-text">Requirements and Goals of the System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functional-Requirements"><span class="nav-number">1.1.</span> <span class="nav-text">Functional Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-Functional-Requirements"><span class="nav-number">1.2.</span> <span class="nav-text">Non-Functional Requirements:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Design-Considerations"><span class="nav-number">2.</span> <span class="nav-text">Some Design Considerations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capacity-Estimation"><span class="nav-number">3.</span> <span class="nav-text">Capacity Estimation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-APIs"><span class="nav-number">4.</span> <span class="nav-text">System APIs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Design"><span class="nav-number">5.</span> <span class="nav-text">Database Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-Level-Design"><span class="nav-number">6.</span> <span class="nav-text">High Level Design</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detailed-Component-Design"><span class="nav-number">7.</span> <span class="nav-text">Detailed Component Design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ticket-Booking-Workflow"><span class="nav-number">7.1.</span> <span class="nav-text">Ticket Booking Workflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-would-the-server-keep-track-of-all-the-active-reservations-that-haven’t-been-booked-yet-And-how-would-the-server-keep-track-of-all-the-waiting-customers"><span class="nav-number">7.2.</span> <span class="nav-text">How would the server keep track of all the active reservations that haven’t been booked yet? And how would the server keep track of all the waiting customers?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveReservationsService"><span class="nav-number">7.3.</span> <span class="nav-text">ActiveReservationsService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WaitingUsersService"><span class="nav-number">7.4.</span> <span class="nav-text">WaitingUsersService</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reservation-Expiration"><span class="nav-number">7.5.</span> <span class="nav-text">Reservation Expiration</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Concurrency"><span class="nav-number">8.</span> <span class="nav-text">Concurrency</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-handle-concurrency-such-that-no-two-users-are-able-to-book-the-same-seat"><span class="nav-number">8.1.</span> <span class="nav-text">How to handle concurrency, such that no two users are able to book the same seat.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fault-Tolerance"><span class="nav-number">9.</span> <span class="nav-text">Fault Tolerance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-happens-when-ActiveReservationsService-or-WaitingUsersService-crashes"><span class="nav-number">9.1.</span> <span class="nav-text">What happens when ActiveReservationsService or WaitingUsersService crashes?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Partitioning"><span class="nav-number">10.</span> <span class="nav-text">Data Partitioning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Database-partitioning"><span class="nav-number">10.1.</span> <span class="nav-text">Database partitioning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveReservationService-and-WaitingUserService-partitioning"><span class="nav-number">10.2.</span> <span class="nav-text">ActiveReservationService and WaitingUserService partitioning</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2020 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>
