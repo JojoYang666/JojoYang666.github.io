@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-539-Minimum-Time-Difference"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-787-Cheapest-Flights-Within-K-Stops"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/539-Minimum-Time-Difference/">539. Minimum Time Difference</a>
+      <a class="article-title" href="/2020/10/20/787-Cheapest-Flights-Within-K-Stops/">787. Cheapest Flights Within K Stops</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/16/539-Minimum-Time-Difference/" class="article-date">
-	  <time datetime="2020-10-16T16:43:53.000Z" itemprop="datePublished">2020-10-16</time>
+	<a href="/2020/10/20/787-Cheapest-Flights-Within-K-Stops/" class="article-date">
+	  <time datetime="2020-10-20T17:21:48.000Z" itemprop="datePublished">2020-10-20</time>
 	</a>
 
       
@@ -295,11 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          corner case: 最小的也可以和最大的diff 因为可能是来自第二天
-123456789class Solution(object):    def findMinDifference(self, timePoints):        """        :type timePoints: List[str]        :rtype: int        """        minutes = sorted(int(time[:2]) * 60 + int(time[3...
+          运用Dijkstra算法， 同时对step和距离进行收缩
+123456789101112131415161718192021222324252627282930313233343536373839404142class Solution(object):    def findCheapestPrice(self, n, flights, src, dst, K):        """        :type n: int        :type flights: List[List...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/16/539-Minimum-Time-Difference/#more">Read More</a>
+          <a href="/2020/10/20/787-Cheapest-Flights-Within-K-Stops/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +318,7 @@
 
 
   
-    <article id="post-969-Pancake-Sorting"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-264-Ugly-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/16/969-Pancake-Sorting/">969. Pancake Sorting</a>
+      <a class="article-title" href="/2020/10/20/264-Ugly-Number-II/">264. Ugly Number II</a>
     </h1>
   
 
@@ -334,65 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/16/969-Pancake-Sorting/" class="article-date">
-	  <time datetime="2020-10-16T15:17:31.000Z" itemprop="datePublished">2020-10-16</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-注意题目的输入特点
-有没有什么限制
-
-Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the x will be at A[0]Reverse x numbers, so that x will be at A[x - 1].Repeat this process N times.
-12345678910111213141516class Solution(object):    d...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/16/969-Pancake-Sorting/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1314-Matrix-Block-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/15/1314-Matrix-Block-Sum/">1314. Matrix Block Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/15/1314-Matrix-Block-Sum/" class="article-date">
-	  <time datetime="2020-10-16T03:37:22.000Z" itemprop="datePublished">2020-10-15</time>
+	<a href="/2020/10/20/264-Ugly-Number-II/" class="article-date">
+	  <time datetime="2020-10-20T15:41:42.000Z" itemprop="datePublished">2020-10-20</time>
 	</a>
 
       
@@ -406,13 +349,13 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
       
         <p class="article-excerpt-content">
           
+通过观察可以知道， 每一个ugly number is coming from previous ugly number *2/3/5,
+thus, Choose the smallest number among nums[i2] * 2, nums[i3] * 3, and nums[i5] * 5 and add it into nums –&gt; record the right i2/i3/i5 pos
 
-
-重点我们左上角的r1,c1， 其实是 i - k - 1, j - k - 1(in mat array), 因为我们的和里面要有 i - k, j - k
-123456789101112131415161718192021class Solution(object):    def matrixBlockSum(self, mat, K):        """        :type mat: List[List[int]]        :type K: int       ...
+12345678910111213141516171819202122...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/15/1314-Matrix-Block-Sum/#more">Read More</a>
+          <a href="/2020/10/20/264-Ugly-Number-II/#more">Read More</a>
         </p>
       
     </div>
@@ -431,7 +374,7 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
 
 
   
-    <article id="post-range-prefix-sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-718-Maximum-Length-of-Repeated-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -439,7 +382,7 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/15/range-prefix-sum/">range/prefix sum</a>
+      <a class="article-title" href="/2020/10/20/718-Maximum-Length-of-Repeated-Subarray/">718. Maximum Length of Repeated Subarray</a>
     </h1>
   
 
@@ -447,8 +390,280 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
     
     <div class="article-meta">
       
-	<a href="/2020/10/15/range-prefix-sum/" class="article-date">
-	  <time datetime="2020-10-16T03:32:56.000Z" itemprop="datePublished">2020-10-15</time>
+	<a href="/2020/10/20/718-Maximum-Length-of-Repeated-Subarray/" class="article-date">
+	  <time datetime="2020-10-20T15:05:38.000Z" itemprop="datePublished">2020-10-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314class Solution(object):    def findLength(self, A, B):        """        :type A: List[int]        :type B: List[int]        :rtype: int        """        memo = [[0]*(len(B) + 1) for _ in range(len(A) + 1)]        for i in rang...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/20/718-Maximum-Length-of-Repeated-Subarray/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/20/1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/">1239. Maximum Length of a Concatenated String with Unique Characters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/20/1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/" class="article-date">
+	  <time datetime="2020-10-20T14:15:50.000Z" itemprop="datePublished">2020-10-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Set Operation1234567891011121314151617class Solution(object):    def maxLength(self, arr):        """        :type arr: List[str]        :rtype: int        """        dp = [set()]                for a in arr:#             skip the word which has t...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/20/1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1143-Longest-Common-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/19/1143-Longest-Common-Subsequence/">1143. Longest Common Subsequence</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/19/1143-Longest-Common-Subsequence/" class="article-date">
+	  <time datetime="2020-10-20T04:21:25.000Z" itemprop="datePublished">2020-10-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516class Solution(object):    def longestCommonSubsequence(self, text1, text2):        """        :type text1: str        :type text2: str        :rtype: int        """        dp = [[0] * (len(text2) + 1) for _ in range(len(tex...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/19/1143-Longest-Common-Subsequence/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1041-Robot-Bounded-In-Circle"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/19/1041-Robot-Bounded-In-Circle/">1041. Robot Bounded In Circle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/19/1041-Robot-Bounded-In-Circle/" class="article-date">
+	  <time datetime="2020-10-20T03:23:33.000Z" itemprop="datePublished">2020-10-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+12345678910111213141516171819class Solution(object):    def isRobotBounded(self, instructions):        """        :type instructions: str        :rtype: bool        """#         north, west, sorth, east        x = y = 0        dirctions = [[0, 1]...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/19/1041-Robot-Bounded-In-Circle/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-371-Sum-of-Two-Integers"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/19/371-Sum-of-Two-Integers/">371. Sum of Two Integers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/19/371-Sum-of-Two-Integers/" class="article-date">
+	  <time datetime="2020-10-19T23:06:44.000Z" itemprop="datePublished">2020-10-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+例子 759+674
+如果不考虑进位，可以得到 323
+如果只考虑进位，可以得到 1110
+把上面两个数字假期 323+1110=1433 就是最终结果了
+
+
+如果得到上面的第一第二种情况，在二进制下来看，不考虑进位的加，0+0=0，0+1=1, 1+0=1，1+1=0，这就是异或的运算规则
+如果只考虑进位的加 0+0=0, 0+1=0, 1+0=0, 1+1=1，而这其实这就是’与’的运算，
+第三步在将两者相加时，再递归调用这个算法，终止条件是当进位为0时
+
+Python has no...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/19/371-Sum-of-Two-Integers/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Bit-Manipulation"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/17/Bit-Manipulation/">Bit Manipulation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/17/Bit-Manipulation/" class="article-date">
+	  <time datetime="2020-10-17T15:54:05.000Z" itemprop="datePublished">2020-10-17</time>
 	</a>
 
       
@@ -462,15 +677,20 @@ Find the index i of the next maximum number x.Reverse i + 1 numbers, so that the
       
         <p class="article-excerpt-content">
           
-Range Sum Query 2D - Immutable
-Range Sum Query - Mutable
-Range Sum Query 2D - Mutable: Premium
-Matrix Block Sum
 
 
+优先级
+位运算 &lt; 算术运算
+按位与、按位或及异或低于比较运算符
+
+~ 把  的补码中的 0 和 1 全部取反（0 变为 1，1 变为 0）。有符号整数的符号位在 ~ 运算中同样会取反。
+一些常见数字的二进制
+-1 —-&gt; 11111111 11111111 11111111 11111111
+
+判断一个数是不是 2 的非负整数次幂bool isPowerOfTwo(int n) { return n &gt; 0 &amp;&amp; (n &amp; (n - 1))...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/15/range-prefix-sum/#more">Read More</a>
+          <a href="/2020/10/17/Bit-Manipulation/#more">Read More</a>
         </p>
       
     </div>
@@ -489,7 +709,7 @@ Matrix Block Sum
 
 
   
-    <article id="post-983-Minimum-Cost-For-Tickets"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-137-Single-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -497,7 +717,7 @@ Matrix Block Sum
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/15/983-Minimum-Cost-For-Tickets/">983. Minimum Cost For Tickets</a>
+      <a class="article-title" href="/2020/10/16/137-Single-Number-II/">137. Single Number II</a>
     </h1>
   
 
@@ -505,8 +725,8 @@ Matrix Block Sum
     
     <div class="article-meta">
       
-	<a href="/2020/10/15/983-Minimum-Cost-For-Tickets/" class="article-date">
-	  <time datetime="2020-10-16T03:17:13.000Z" itemprop="datePublished">2020-10-15</time>
+	<a href="/2020/10/16/137-Single-Number-II/" class="article-date">
+	  <time datetime="2020-10-17T02:26:04.000Z" itemprop="datePublished">2020-10-16</time>
 	</a>
 
       
@@ -519,10 +739,14 @@ Matrix Block Sum
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def mincostTickets(self, days, costs):        """        :type days: List[int]        :type costs: List[int]        :rtype: int        """        dp = [0 for i in range(days[-1] + 1)]        for i ...
+          
+
+~x&amp;x = 0
+
+123456789101112class Solution(object):    def singleNumber(self, nums):        """        :type nums: List[int]        :rtype: int        """        seen_once, seen_twice = 0, 0                for num in nums:            seen_once ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/15/983-Minimum-Cost-For-Tickets/#more">Read More</a>
+          <a href="/2020/10/16/137-Single-Number-II/#more">Read More</a>
         </p>
       
     </div>
@@ -541,7 +765,7 @@ Matrix Block Sum
 
 
   
-    <article id="post-150-Evaluate-Reverse-Polish-Notation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-356-Line-Reflection"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -549,7 +773,7 @@ Matrix Block Sum
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/150-Evaluate-Reverse-Polish-Notation/">150. Evaluate Reverse Polish Notation</a>
+      <a class="article-title" href="/2020/10/16/356-Line-Reflection/">356. Line Reflection</a>
     </h1>
   
 
@@ -557,8 +781,8 @@ Matrix Block Sum
     
     <div class="article-meta">
       
-	<a href="/2020/10/14/150-Evaluate-Reverse-Polish-Notation/" class="article-date">
-	  <time datetime="2020-10-15T04:18:45.000Z" itemprop="datePublished">2020-10-14</time>
+	<a href="/2020/10/16/356-Line-Reflection/" class="article-date">
+	  <time datetime="2020-10-16T17:13:25.000Z" itemprop="datePublished">2020-10-16</time>
 	</a>
 
       
@@ -571,220 +795,14 @@ Matrix Block Sum
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324class Solution(object):    def evalRPN(self, tokens):        """        :type tokens: List[str]        :rtype: int        """        operations = &#123;            "+": lambda a, b: a + b,            "-": lam...
+          
+找到所有点的横坐标的最大值和最小值, 那么二者的平均值就是中间直线的横坐标
+我们遍历每个点，如果都能找到直线对称的另一个点, 则返回true，反之返回false
+
+12345678910111213141516171819class Solution(object):    def isReflected(self, points):        """        :type points: List[List[int]]        :rtype: bool        ""...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/14/150-Evaluate-Reverse-Polish-Notation/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1423-Maximum-Points-You-Can-Obtain-from-Cards"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/1423-Maximum-Points-You-Can-Obtain-from-Cards/">1423. Maximum Points You Can Obtain from Cards</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/1423-Maximum-Points-You-Can-Obtain-from-Cards/" class="article-date">
-	  <time datetime="2020-10-15T03:43:45.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1Problem Tranlation:    * find the smallest sum of subarray with length is equal to len(cardPoints) - k
-12345678910111213141516171819202122class Solution(object):    def maxScore(self, cardPoints, k):        """        :type cardPoints: L...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/1423-Maximum-Points-You-Can-Obtain-from-Cards/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-94-Binary-Tree-Inorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/94-Binary-Tree-Inorder-Traversal/">94. Binary Tree Inorder Traversal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/94-Binary-Tree-Inorder-Traversal/" class="article-date">
-	  <time datetime="2020-10-15T01:53:58.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(objec...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/94-Binary-Tree-Inorder-Traversal/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-556-Next-Greater-Element-III"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/556-Next-Greater-Element-III/">556. Next Greater Element III</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/556-Next-Greater-Element-III/" class="article-date">
-	  <time datetime="2020-10-15T01:34:01.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324class Solution(object):    def nextGreaterElement(self, n):        """        :type n: int        :rtype: int        """        s = list(map(int, str(n)))        i = len(s) - 1                while i - 1 &gt;...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/556-Next-Greater-Element-III/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-694-Number-of-Distinct-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/14/694-Number-of-Distinct-Islands/">694. Number of Distinct Islands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/14/694-Number-of-Distinct-Islands/" class="article-date">
-	  <time datetime="2020-10-14T21:15:48.000Z" itemprop="datePublished">2020-10-14</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          When we start a depth-first search on the top-left square of some island, the path taken by our depth-first search will be the same if and only if the shape is the same.
-1234567891011121314151617181920212223242526class Solution(object):    def num...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/14/694-Number-of-Distinct-Islands/#more">Read More</a>
+          <a href="/2020/10/16/356-Line-Reflection/#more">Read More</a>
         </p>
       
     </div>
@@ -807,7 +825,7 @@ Matrix Block Sum
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/35/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="extend next" rel="next" href="/page/37/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/35/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="extend next" rel="next" href="/page/37/">Next &amp;raquo;</a>
   </nav>
 
 </section>

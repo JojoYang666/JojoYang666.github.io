@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-887-Super-Egg-Drop"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-803-Bricks-Falling-When-Hit"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/23/887-Super-Egg-Drop/">887. Super Egg Drop</a>
+      <a class="article-title" href="/2020/11/24/803-Bricks-Falling-When-Hit/">803. Bricks Falling When Hit</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/23/887-Super-Egg-Drop/" class="article-date">
-	  <time datetime="2020-11-24T01:59:16.000Z" itemprop="datePublished">2020-11-23</time>
+	<a href="/2020/11/24/803-Bricks-Falling-When-Hit/" class="article-date">
+	  <time datetime="2020-11-25T05:45:01.000Z" itemprop="datePublished">2020-11-24</time>
 	</a>
 
       
@@ -296,12 +296,13 @@
       
         <p class="article-excerpt-content">
           
-
-
-12345678910111213141516171819202122232425262728293031323334class Solution(object):    def superEggDrop(self, K, N):        """        :type K: int        :type N: int        :rtype: int        """        memo = &#123;&#125;                def d...
+先把所有的hits里面的操作， 从1到0
+从top开始找到所有的stable bricks &amp;&amp; updat the value to 2
+reverse from the hit, recover it from 0 to 1, to see how many bricks become stable
+cornor case: hit position is 0, then there is no operation123456789101112131415161718...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/23/887-Super-Egg-Drop/#more">Read More</a>
+          <a href="/2020/11/24/803-Bricks-Falling-When-Hit/#more">Read More</a>
         </p>
       
     </div>
@@ -320,7 +321,7 @@
 
 
   
-    <article id="post-Designing-Twitter-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-857-Minimum-Cost-to-Hire-K-Workers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -328,7 +329,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/20/Designing-Twitter-Search/">Designing Twitter Search</a>
+      <a class="article-title" href="/2020/11/24/857-Minimum-Cost-to-Hire-K-Workers/">857. Minimum Cost to Hire K Workers </a>
     </h1>
   
 
@@ -336,8 +337,62 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/20/Designing-Twitter-Search/" class="article-date">
-	  <time datetime="2020-11-20T20:30:18.000Z" itemprop="datePublished">2020-11-20</time>
+	<a href="/2020/11/24/857-Minimum-Cost-to-Hire-K-Workers/" class="article-date">
+	  <time datetime="2020-11-25T04:22:23.000Z" itemprop="datePublished">2020-11-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Every worker in the paid group should be paid in the ratio of their quality compared to other workers in the paid group
+
+quality[i]:qulity[j] = wage[i]:wage[j](the wage here is the wage payed in the group, not in the input) ===&gt; wage[i]:quality...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/24/857-Minimum-Cost-to-Hire-K-Workers/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Designing-a-Web-Crawler"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/24/Designing-a-Web-Crawler/">Designing a Web Crawler</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/24/Designing-a-Web-Crawler/" class="article-date">
+	  <time datetime="2020-11-24T22:43:35.000Z" itemprop="datePublished">2020-11-24</time>
 	</a>
 
       
@@ -351,15 +406,16 @@
       
         <p class="article-excerpt-content">
           Requirements and Goals of the System
-Total users: 1.5 billion 
-Daily active users: 800 million
-On average, Twitter gets 400 million tweets / day
-The average size of a tweet: 300 bytes.
-Assume: 500M searches/day
-Query will consist of multiple words...
+Scalability
+be scalable such that it can crawl the entire Web
+be used to fetch hundreds of millions of Web documents
+
+
+Extensibility
+designed in a modular way with the expectation that new functionality will be...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/20/Designing-Twitter-Search/#more">Read More</a>
+          <a href="/2020/11/24/Designing-a-Web-Crawler/#more">Read More</a>
         </p>
       
     </div>
@@ -378,7 +434,7 @@ Query will consist of multiple words...
 
 
   
-    <article id="post-post"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-774-Minimize-Max-Distance-to-Gas-Station"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -386,7 +442,7 @@ Query will consist of multiple words...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/20/post/">post</a>
+      <a class="article-title" href="/2020/11/24/774-Minimize-Max-Distance-to-Gas-Station/">774. Minimize Max Distance to Gas Station</a>
     </h1>
   
 
@@ -394,112 +450,8 @@ Query will consist of multiple words...
     
     <div class="article-meta">
       
-	<a href="/2020/11/20/post/" class="article-date">
-	  <time datetime="2020-11-20T20:29:49.000Z" itemprop="datePublished">2020-11-20</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/20/post/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Designing-an-API-Rate-Limiter"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/20/Designing-an-API-Rate-Limiter/">Designing an API Rate Limiter</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/20/Designing-an-API-Rate-Limiter/" class="article-date">
-	  <time datetime="2020-11-20T15:50:45.000Z" itemprop="datePublished">2020-11-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Why do we need API rate limiting
-helps to protect services against abusive behaviors targeting the application layer like Denial-of-service (DOS) attacks, brute-force password attempts, brute-force credit card transactions, etc
-a barrage of HTTP/S...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/20/Designing-an-API-Rate-Limiter/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-786-K-th-Smallest-Prime-Fraction"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/19/786-K-th-Smallest-Prime-Fraction/">786. K-th Smallest Prime Fraction</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/19/786-K-th-Smallest-Prime-Fraction/" class="article-date">
-	  <time datetime="2020-11-20T05:37:19.000Z" itemprop="datePublished">2020-11-19</time>
+	<a href="/2020/11/24/774-Minimize-Max-Distance-to-Gas-Station/" class="article-date">
+	  <time datetime="2020-11-24T20:10:37.000Z" itemprop="datePublished">2020-11-24</time>
 	</a>
 
       
@@ -512,11 +464,10 @@ a barrage of HTTP/S...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          注意： A is a sorted array
-pq1234567891011121314151617class Solution(object):    def kthSmallestPrimeFraction(self, A, K):        """        :type A: List[int]        :type K: int        :rtype: List[int]        """        pq = [(A[0]/float(A[i]), 0,...
+          1234567891011121314151617181920class Solution(object):    def minmaxGasDist(self, stations, K):        """        :type stations: List[int]        :type K: int        :rtype: float        """        def possible(D):            return sum(int((stat...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/19/786-K-th-Smallest-Prime-Fraction/#more">Read More</a>
+          <a href="/2020/11/24/774-Minimize-Max-Distance-to-Gas-Station/#more">Read More</a>
         </p>
       
     </div>
@@ -535,7 +486,7 @@ pq1234567891011121314151617class Solution(object):    def kthSmallestPrimeFracti
 
 
   
-    <article id="post-757-Set-Intersection-Size-At-Least-Two"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1231-Divide-Chocolate"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -543,7 +494,7 @@ pq1234567891011121314151617class Solution(object):    def kthSmallestPrimeFracti
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/19/757-Set-Intersection-Size-At-Least-Two/">757. Set Intersection Size At Least Two</a>
+      <a class="article-title" href="/2020/11/24/1231-Divide-Chocolate/">1231. Divide Chocolate</a>
     </h1>
   
 
@@ -551,8 +502,62 @@ pq1234567891011121314151617class Solution(object):    def kthSmallestPrimeFracti
     
     <div class="article-meta">
       
-	<a href="/2020/11/19/757-Set-Intersection-Size-At-Least-Two/" class="article-date">
-	  <time datetime="2020-11-20T04:39:40.000Z" itemprop="datePublished">2020-11-19</time>
+	<a href="/2020/11/24/1231-Divide-Chocolate/" class="article-date">
+	  <time datetime="2020-11-24T18:28:07.000Z" itemprop="datePublished">2020-11-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          using binary searchmaximum sweetnees is sum(A)/(k+1)
+key is the cuts must &gt;= K + 1, it will be possible solution 
+123456789101112131415161718192021222324252627282930313233class Solution(object):    def maximizeSweetness(self, sweetness, K):    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/24/1231-Divide-Chocolate/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-568-Maximum-Vacation-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/24/568-Maximum-Vacation-Days/">568. Maximum Vacation Days</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/24/568-Maximum-Vacation-Days/" class="article-date">
+	  <time datetime="2020-11-24T17:21:22.000Z" itemprop="datePublished">2020-11-24</time>
 	</a>
 
       
@@ -566,14 +571,17 @@ pq1234567891011121314151617class Solution(object):    def kthSmallestPrimeFracti
       
         <p class="article-excerpt-content">
           
-sort by endpoint
-the earlist end comes first
-when we met an interval a, a ends before any pending intervals
-if there is no result or the biggest time is less than start of current interval –&gt; need to add 2 value of current interval
-if there is...
+best[i]: the most vacation days you can have ending in city i on week t
+the result will be max(best)
+for each flight i -&gt; j(including staying in the same city –&gt; i == j)
+best[j] = best[i] + days[j][t]
+
+
+
+12345678910111213141516171819class S...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/19/757-Set-Intersection-Size-At-Least-Two/#more">Read More</a>
+          <a href="/2020/11/24/568-Maximum-Vacation-Days/#more">Read More</a>
         </p>
       
     </div>
@@ -592,7 +600,7 @@ if there is...
 
 
   
-    <article id="post-From-Entering-a-URL-to-Receiving-Root-File"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-975-Odd-Even-Jump"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -600,7 +608,7 @@ if there is...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/19/From-Entering-a-URL-to-Receiving-Root-File/">From Entering a URL to Receiving Root File</a>
+      <a class="article-title" href="/2020/11/24/975-Odd-Even-Jump/">975. Odd Even Jump</a>
     </h1>
   
 
@@ -608,63 +616,8 @@ if there is...
     
     <div class="article-meta">
       
-	<a href="/2020/11/19/From-Entering-a-URL-to-Receiving-Root-File/" class="article-date">
-	  <time datetime="2020-11-19T23:11:50.000Z" itemprop="datePublished">2020-11-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Network/">Network</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          DNS
-DNS is used to find IP addresses from domain names.
-Domain name to IP address mappings are called ‘DNS records.’
-These DNS records are part of a distributed database, which means that all the records are not stored at any one server, but are d...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/19/From-Entering-a-URL-to-Receiving-Root-File/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-770-Basic-Calculator-IV"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/19/770-Basic-Calculator-IV/">770. Basic Calculator IV </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/19/770-Basic-Calculator-IV/" class="article-date">
-	  <time datetime="2020-11-19T21:35:31.000Z" itemprop="datePublished">2020-11-19</time>
+	<a href="/2020/11/24/975-Odd-Even-Jump/" class="article-date">
+	  <time datetime="2020-11-24T16:55:44.000Z" itemprop="datePublished">2020-11-24</time>
 	</a>
 
       
@@ -677,10 +630,28 @@ These DNS records are part of a distributed database, which means that all the r
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394# in Poly: digit is presented by () &lt;- key# Poly that knows a map...
+          Explanation
+
+Jump higher and lower alternately to the end
+example[5, 1,3,4,2]
+
+
+start at 2:
+higher[2] = true
+lower[2] = true
+
+
+start at 4
+higher[4] = false
+lower[4] = higher[2] = true
+
+
+start at 3
+higher[3] = lower[4] = true
+lower[3] = higher[2] =...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/19/770-Basic-Calculator-IV/#more">Read More</a>
+          <a href="/2020/11/24/975-Odd-Even-Jump/#more">Read More</a>
         </p>
       
     </div>
@@ -699,7 +670,7 @@ These DNS records are part of a distributed database, which means that all the r
 
 
   
-    <article id="post-1345-Jump-Game-IV"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-683-K-Empty-Slots"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -707,7 +678,7 @@ These DNS records are part of a distributed database, which means that all the r
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/19/1345-Jump-Game-IV/">1345. Jump Game IV</a>
+      <a class="article-title" href="/2020/11/23/683-K-Empty-Slots/">683. K Empty Slots</a>
     </h1>
   
 
@@ -715,8 +686,8 @@ These DNS records are part of a distributed database, which means that all the r
     
     <div class="article-meta">
       
-	<a href="/2020/11/19/1345-Jump-Game-IV/" class="article-date">
-	  <time datetime="2020-11-19T20:40:38.000Z" itemprop="datePublished">2020-11-19</time>
+	<a href="/2020/11/23/683-K-Empty-Slots/" class="article-date">
+	  <time datetime="2020-11-24T05:33:36.000Z" itemprop="datePublished">2020-11-23</time>
 	</a>
 
       
@@ -729,11 +700,15 @@ These DNS records are part of a distributed database, which means that all the r
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Using BFS
-1234567891011121314151617181920212223242526272829303132333435363738class Solution(object):    def minJumps(self, arr):        """        :type arr: List[int]        :rtype: int        """        n = len(arr)                if n &lt;= 1: ...
+          
+days[x] = i: the bulb x will be on at ith day
+goal: need to find the interval [left, right]
+days[left], days[right] are two smallest values among days[left], days[left+1],…, days[right]
+right - left = k + 1
+checkling every possible intervals usin...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/19/1345-Jump-Game-IV/#more">Read More</a>
+          <a href="/2020/11/23/683-K-Empty-Slots/#more">Read More</a>
         </p>
       
     </div>
@@ -752,7 +727,7 @@ These DNS records are part of a distributed database, which means that all the r
 
 
   
-    <article id="post-1520-Maximum-Number-of-Non-Overlapping-Substrings"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1136-Parallel-Courses"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -760,7 +735,7 @@ These DNS records are part of a distributed database, which means that all the r
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/19/1520-Maximum-Number-of-Non-Overlapping-Substrings/">1520. Maximum Number of Non-Overlapping Substrings</a>
+      <a class="article-title" href="/2020/11/23/1136-Parallel-Courses/">1136. Parallel Courses</a>
     </h1>
   
 
@@ -768,8 +743,8 @@ These DNS records are part of a distributed database, which means that all the r
     
     <div class="article-meta">
       
-	<a href="/2020/11/19/1520-Maximum-Number-of-Non-Overlapping-Substrings/" class="article-date">
-	  <time datetime="2020-11-19T20:17:03.000Z" itemprop="datePublished">2020-11-19</time>
+	<a href="/2020/11/23/1136-Parallel-Courses/" class="article-date">
+	  <time datetime="2020-11-24T05:01:05.000Z" itemprop="datePublished">2020-11-23</time>
 	</a>
 
       
@@ -782,11 +757,62 @@ These DNS records are part of a distributed database, which means that all the r
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Interval Scheduling Maximization (ISMP)
-123456789101112131415161718192021222324252627282930class Solution(object):    def maxNumOfSubstrings(self, s):        """        :type s: str        :rtype: List[str]        """        fst = &#123;c: s.index...
+          123456789101112131415161718192021222324252627282930class Solution(object):    def minimumSemesters(self, N, relations):        """        :type N: int        :type relations: List[List[int]]        :rtype: int        """        graph = collections...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/19/1520-Maximum-Number-of-Non-Overlapping-Substrings/#more">Read More</a>
+          <a href="/2020/11/23/1136-Parallel-Courses/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-726-Number-of-Atoms"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/23/726-Number-of-Atoms/">726. Number of Atoms</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/23/726-Number-of-Atoms/" class="article-date">
+	  <time datetime="2020-11-24T03:23:23.000Z" itemprop="datePublished">2020-11-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627class Solution(object):    def countOfAtoms(self, formula):        """        :type formula: str        :rtype: str        """        dic, coeff, stack, elem, cnt, i = collections.defaultdict(int), 1, [...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/23/726-Number-of-Atoms/#more">Read More</a>
         </p>
       
     </div>
@@ -809,7 +835,7 @@ These DNS records are part of a distributed database, which means that all the r
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/11/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="extend next" rel="next" href="/page/13/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/11/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="extend next" rel="next" href="/page/13/">Next &amp;raquo;</a>
   </nav>
 
 </section>
