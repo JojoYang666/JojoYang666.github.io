@@ -9,13 +9,15 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Ajax Polling the client repeatedly polls (or requests) a server for data.  The client makes a request and waits for the server to respond with data. If no data is available, an empty response is retur">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Long-Polling vs WebSockets vs Server-Sent Events">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/18/Long-Polling-vs-WebSockets-vs-Server-Sent-Events/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Ajax Polling the client repeatedly polls (or requests) a server for data.  The client makes a request and waits for the server to respond with data. If no data is available, an empty response is retur">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-19T05:01:10.000Z">
-<meta property="article:modified_time" content="2020-12-19T05:01:21.262Z">
+<meta property="article:modified_time" content="2020-12-20T14:45:41.797Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -204,7 +206,75 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Ajax-Polling"><a href="#Ajax-Polling" class="headerlink" title="Ajax Polling"></a>Ajax Polling</h1><ol>
+<li>the client repeatedly polls (or requests) a server for data. <ul>
+<li>The client makes a request and waits for the server to respond with data.</li>
+<li>If no data is available, an empty response is returned.</li>
+</ul>
+</li>
+<li>steps<ul>
+<li>The client opens a connection and requests data from the server using regular HTTP.</li>
+<li>The requested webpage sends requests to the server at regular intervals (e.g., 0.5 seconds)</li>
+<li>The server calculates the response and sends it back, just like regular HTTP traffic.</li>
+<li>The client repeats the above three steps periodically to get updates from the server.</li>
+</ul>
+</li>
+<li>problem<ul>
+<li>client has to keep asking the server for any new data. –&gt; a lot of responses are empty, creating HTTP overhead.</li>
+</ul>
+</li>
+</ol>
+<h1 id="HTTP-Long-Polling"><a href="#HTTP-Long-Polling" class="headerlink" title="HTTP Long-Polling"></a>HTTP Long-Polling</h1><ol>
+<li>It allows the server to push information to a client whenever the data is available. </li>
+<li>With Long-Polling, the client requests information from the server exactly as in normal polling, but with the expectation that the server may not respond immediately<ul>
+<li>If the server does not have any data available for the client –&gt; server holds the request and waits until some data becomes available.</li>
+<li>Once the data becomes available –&gt; a full response is sent to the client. –&gt; The client then immediately re-request information from the server –&gt;  the server will almost always have an available waiting request that it can use to deliver data in response to an event.</li>
+</ul>
+</li>
+<li>steps<ul>
+<li>The client makes an initial request using regular HTTP and then waits for a response.</li>
+<li>The server delays its response until an update is available or a timeout has occurred.</li>
+<li>When an update is available, the server sends a full response to the client.</li>
+<li>The client typically sends a new long-poll request, either immediately upon receiving a response or after a pause to allow an acceptable latency period.</li>
+<li>Each Long-Poll request has a timeout. The client has to reconnect periodically after the connection is closed due to timeouts.</li>
+</ul>
+</li>
+</ol>
+<h1 id="WebSockets"><a href="#WebSockets" class="headerlink" title="WebSockets"></a>WebSockets</h1><ol>
+<li>WebSocket provides Full duplex communication channels over a single TCP connection.</li>
+<li>It provides a persistent connection between a client and a server that both parties can use to start sending data at any time.</li>
+<li>client establishes a WebSocket connection by WebSocket handshake<ul>
+<li>the server and client can exchange data in both directions at any time</li>
+</ul>
+</li>
+<li>with lower overheads, facilitating real-time data transfer from and to the server.<ul>
+<li>by providing a standardized way for the server to send content to the browser without being asked by the client</li>
+<li>allowing for messages to be passed back and forth while keeping the connection open. </li>
+</ul>
+</li>
+</ol>
+<h1 id="Server-Sent-Events-SSEs"><a href="#Server-Sent-Events-SSEs" class="headerlink" title="Server-Sent Events (SSEs)"></a>Server-Sent Events (SSEs)</h1><ol>
+<li><p>client establishes a persistent and long-term connection with the server.</p>
+<ul>
+<li>server uses this connection to send data to a client</li>
+<li>If the client wants to send data to the server, it would require the use of another technology/protocol to do so.</li>
+</ul>
+</li>
+<li><p>step</p>
+<ul>
+<li>Client requests data from a server using regular HTTP.</li>
+<li>The requested webpage opens a connection to the server.</li>
+<li>The server sends the data to the client whenever there’s new information available.</li>
+</ul>
+</li>
+<li><p>scenario</p>
+<ul>
+<li>SSEs are best when we need real-time traffic from the server to the client </li>
+<li>if the server is generating data in a loop and will be sending multiple events to the client.</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -306,7 +376,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax-Polling"><span class="nav-number">1.</span> <span class="nav-text">Ajax Polling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-Long-Polling"><span class="nav-number">2.</span> <span class="nav-text">HTTP Long-Polling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WebSockets"><span class="nav-number">3.</span> <span class="nav-text">WebSockets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Server-Sent-Events-SSEs"><span class="nav-number">4.</span> <span class="nav-text">Server-Sent Events (SSEs)</span></a></li></ol>
     
     </div>
   </aside>

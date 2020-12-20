@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-Lowest-Common-Ancestor-of-a-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-78-Subsets"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/19/Lowest-Common-Ancestor-of-a-Binary-Tree/">Lowest Common Ancestor of a Binary Tree</a>
+      <a class="article-title" href="/2020/12/20/78-Subsets/">78. Subsets</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/19/Lowest-Common-Ancestor-of-a-Binary-Tree/" class="article-date">
-	  <time datetime="2020-12-19T20:33:44.000Z" itemprop="datePublished">2020-12-19</time>
+	<a href="/2020/12/20/78-Subsets/" class="article-date">
+	  <time datetime="2020-12-20T23:13:00.000Z" itemprop="datePublished">2020-12-20</time>
 	</a>
 
       
@@ -295,10 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Ancestor1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** * Definition for a binary tree node. * function TreeNode(val) &#123; *     this.val = val; *     this.left = this.right = null; * &#125; *//** * @para...
+          because there is no duplicate items, no need to sort重点这里必需这样而不是 for *** in res, 因为res在不断增加  会死循环
+123456789101112131415161718/** * @param &#123;number[]&#125; nums * @return &#123;number[][]&#125; */var subsets = function(nums) &#123;    const res ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/19/Lowest-Common-Ancestor-of-a-Binary-Tree/#more">Read More</a>
+          <a href="/2020/12/20/78-Subsets/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +318,7 @@
 
 
   
-    <article id="post-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-348-Design-Tic-Tac-Toe"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/19/105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">105. Construct Binary Tree from Preorder and Inorder Traversal</a>
+      <a class="article-title" href="/2020/12/20/348-Design-Tic-Tac-Toe/">348. Design Tic-Tac-Toe </a>
     </h1>
   
 
@@ -333,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/19/105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/" class="article-date">
-	  <time datetime="2020-12-19T19:18:04.000Z" itemprop="datePublished">2020-12-19</time>
+	<a href="/2020/12/20/348-Design-Tic-Tac-Toe/" class="article-date">
+	  <time datetime="2020-12-20T22:29:12.000Z" itemprop="datePublished">2020-12-20</time>
 	</a>
 
       
@@ -347,13 +348,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          recursive create it
-null –&gt; when left == right
-always remeber to increase preorder index
-1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, ri...
+          正方形， 最长的对角线
+
+顺方向： row == col
+逆方向: row + col + 1 == n
+
+其余对角线： 
+
+同一对角线上面的元素： 横坐标和纵坐标之和
+12345678910111213141516171819202122232425262728293031323334353637383940414243/** * Initialize your data structure here. * @param &#123;number&#125; n */var TicTac...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/19/105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/#more">Read More</a>
+          <a href="/2020/12/20/348-Design-Tic-Tac-Toe/#more">Read More</a>
         </p>
       
     </div>
@@ -372,7 +378,7 @@ always remeber to increase preorder index
 
 
   
-    <article id="post-621-Task-Scheduler"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-695-Max-Area-of-Island"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -380,7 +386,7 @@ always remeber to increase preorder index
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/621-Task-Scheduler/">621. Task Scheduler</a>
+      <a class="article-title" href="/2020/12/20/695-Max-Area-of-Island/">695. Max Area of Island</a>
     </h1>
   
 
@@ -388,8 +394,8 @@ always remeber to increase preorder index
     
     <div class="article-meta">
       
-	<a href="/2020/12/18/621-Task-Scheduler/" class="article-date">
-	  <time datetime="2020-12-19T06:03:36.000Z" itemprop="datePublished">2020-12-18</time>
+	<a href="/2020/12/20/695-Max-Area-of-Island/" class="article-date">
+	  <time datetime="2020-12-20T22:08:28.000Z" itemprop="datePublished">2020-12-20</time>
 	</a>
 
       
@@ -402,14 +408,15 @@ always remeber to increase preorder index
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Greedykey point: severl items with same max frequency
+          
+by changing input as visited
+update grid to visited
+count inital 0 -&gt; meeting condition count += 1 &amp; + neighbors
 
-
-
-1234567891011121314151617181920class Solution(object):    def leastInterval(self, tasks, n):        """        :type tasks: List[str]        :type n: int        :rtype: int        """       ...
+12345678910111213141516171819202122232425262728293031323334353637/** * @param &#123;number[][]&#125; grid * @return &#123;num...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/18/621-Task-Scheduler/#more">Read More</a>
+          <a href="/2020/12/20/695-Max-Area-of-Island/#more">Read More</a>
         </p>
       
     </div>
@@ -428,7 +435,7 @@ always remeber to increase preorder index
 
 
   
-    <article id="post-152-Maximum-Product-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-98-Validate-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -436,7 +443,7 @@ always remeber to increase preorder index
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/152-Maximum-Product-Subarray/">152. Maximum Product Subarray</a>
+      <a class="article-title" href="/2020/12/20/98-Validate-Binary-Search-Tree/">98. Validate Binary Search Tree</a>
     </h1>
   
 
@@ -444,8 +451,8 @@ always remeber to increase preorder index
     
     <div class="article-meta">
       
-	<a href="/2020/12/18/152-Maximum-Product-Subarray/" class="article-date">
-	  <time datetime="2020-12-19T05:32:17.000Z" itemprop="datePublished">2020-12-18</time>
+	<a href="/2020/12/20/98-Validate-Binary-Search-Tree/" class="article-date">
+	  <time datetime="2020-12-20T21:35:13.000Z" itemprop="datePublished">2020-12-20</time>
 	</a>
 
       
@@ -458,11 +465,11 @@ always remeber to increase preorder index
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          using dp, global max &amp; cur_min &amp; cur_max, all is ending with cur num
-12345678910111213141516171819class Solution(object):    def maxProduct(self, nums):        """        :type nums: List[int]        :rtype: int        """        if len(nu...
+          recursive + upper bound &amp; lower bound
+123456789101112131415161718192021/** * Definition for a binary tree node. * function TreeNode(val, left, right) &#123; *     this.val = (val===undefined ? 0 : val) *     this.left = (left===undefined ? nul...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/18/152-Maximum-Product-Subarray/#more">Read More</a>
+          <a href="/2020/12/20/98-Validate-Binary-Search-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -481,7 +488,7 @@ always remeber to increase preorder index
 
 
   
-    <article id="post-394-Decode-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-AJAX"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -489,7 +496,7 @@ always remeber to increase preorder index
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/394-Decode-String/">394. Decode String</a>
+      <a class="article-title" href="/2020/12/20/AJAX/">AJAX</a>
     </h1>
   
 
@@ -497,13 +504,11 @@ always remeber to increase preorder index
     
     <div class="article-meta">
       
-	<a href="/2020/12/18/394-Decode-String/" class="article-date">
-	  <time datetime="2020-12-19T05:03:43.000Z" itemprop="datePublished">2020-12-18</time>
+	<a href="/2020/12/20/AJAX/" class="article-date">
+	  <time datetime="2020-12-20T15:07:15.000Z" itemprop="datePublished">2020-12-20</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
       
 
@@ -511,10 +516,10 @@ always remeber to increase preorder index
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Stack1234567891011121314151617181920212223/** * @param &#123;string&#125; s * @return &#123;string&#125; */var decodeString = function(s) &#123;  let multiply = [], multi = 0, reapeatStr = [], solution = ''    for (let c of s) &#123;      if (/\d/...
+          
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/18/394-Decode-String/#more">Read More</a>
+          <a href="/2020/12/20/AJAX/#more">Read More</a>
         </p>
       
     </div>
@@ -533,7 +538,7 @@ always remeber to increase preorder index
 
 
   
-    <article id="post-Long-Polling-vs-WebSockets-vs-Server-Sent-Events"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Exercise-Looking-at-Real-HTTP-Response-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -541,7 +546,7 @@ always remeber to increase preorder index
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/Long-Polling-vs-WebSockets-vs-Server-Sent-Events/">Long-Polling vs WebSockets vs Server-Sent Events</a>
+      <a class="article-title" href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/">Exercise: Looking at Real HTTP Response Messages</a>
     </h1>
   
 
@@ -549,12 +554,162 @@ always remeber to increase preorder index
     
     <div class="article-meta">
       
-	<a href="/2020/12/18/Long-Polling-vs-WebSockets-vs-Server-Sent-Events/" class="article-date">
-	  <time datetime="2020-12-19T05:01:10.000Z" itemprop="datePublished">2020-12-18</time>
+	<a href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/" class="article-date">
+	  <time datetime="2020-12-20T15:06:19.000Z" itemprop="datePublished">2020-12-20</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-HTTP-Response-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/20/HTTP-Response-Messages/">HTTP: Response Messages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/20/HTTP-Response-Messages/" class="article-date">
+	  <time datetime="2020-12-20T15:05:45.000Z" itemprop="datePublished">2020-12-20</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/20/HTTP-Response-Messages/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-HTTP-Request-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/20/HTTP-Request-Messages/">HTTP: Request Messages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/20/HTTP-Request-Messages/" class="article-date">
+	  <time datetime="2020-12-20T15:05:24.000Z" itemprop="datePublished">2020-12-20</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/20/HTTP-Request-Messages/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-HTTP-is-a-Request-Response-Protocol"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/">HTTP is a Request-Response Protocol</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/" class="article-date">
+	  <time datetime="2020-12-20T15:04:59.000Z" itemprop="datePublished">2020-12-20</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
 
       
       
@@ -566,7 +721,7 @@ always remeber to increase preorder index
           
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/18/Long-Polling-vs-WebSockets-vs-Server-Sent-Events/#more">Read More</a>
+          <a href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/#more">Read More</a>
         </p>
       
     </div>
@@ -585,7 +740,7 @@ always remeber to increase preorder index
 
 
   
-    <article id="post-Consistent-Hashing"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-The-Anatomy-of-a-URL"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -593,7 +748,7 @@ always remeber to increase preorder index
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/Consistent-Hashing/">Consistent Hashing</a>
+      <a class="article-title" href="/2020/12/20/The-Anatomy-of-a-URL/">The Anatomy of a URL</a>
     </h1>
   
 
@@ -601,198 +756,12 @@ always remeber to increase preorder index
     
     <div class="article-meta">
       
-	<a href="/2020/12/18/Consistent-Hashing/" class="article-date">
-	  <time datetime="2020-12-19T05:00:18.000Z" itemprop="datePublished">2020-12-18</time>
+	<a href="/2020/12/20/The-Anatomy-of-a-URL/" class="article-date">
+	  <time datetime="2020-12-20T15:04:27.000Z" itemprop="datePublished">2020-12-20</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Overall
-Distributed Hash Table (DHT): one of the fundamental components used in distributed scalable systems
-Drawback of intuitive hash function: key % n
-
-
-It is NOT horizontally scalable
-It may NOT be load balanced, especially for non-uniformly d...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/18/Consistent-Hashing/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-CAP-Theorem"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/CAP-Theorem/">CAP Theorem</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/18/CAP-Theorem/" class="article-date">
-	  <time datetime="2020-12-19T04:59:57.000Z" itemprop="datePublished">2020-12-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          overall
-CAP theorem states that it is impossible for a distributed software system to simultaneously provide more than two out of three of the following guarantees (CAP): Consistency, Availability, and Partition tolerance.          
-
-Consistency
-A...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/18/CAP-Theorem/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-SQL-vs-NoSQL"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/SQL-vs-NoSQL/">SQL vs. NoSQL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/18/SQL-vs-NoSQL/" class="article-date">
-	  <time datetime="2020-12-19T04:59:27.000Z" itemprop="datePublished">2020-12-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          SQL
-most popular relational databases
-MySQL
-Oracle
-MS SQL Server
-SQLite
-Postgres
-MariaDB
-
-
-
-NoSQLthe most common types of NoSQLKey-Value Stores
-The ‘key’ is an attribute name which is linked to a ‘value’. 
-key-value db:
-Redis
-Voldemort
-Dynamo
-
-
-
-D...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/18/SQL-vs-NoSQL/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Redundancy-and-Replication"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/Redundancy-and-Replication/">Redundancy and Replication</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/18/Redundancy-and-Replication/" class="article-date">
-	  <time datetime="2020-12-19T04:58:57.000Z" itemprop="datePublished">2020-12-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
 
       
       
@@ -802,17 +771,9 @@ D...
       
         <p class="article-excerpt-content">
           
-Redundancy plays a key role
-
-duplication of critical components or functions of a system with the intention of increasing the reliability of the system
-removing the single points of failure in the system
-provides backups if needed in a crisis.
-
-
-...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/18/Redundancy-and-Replication/#more">Read More</a>
+          <a href="/2020/12/20/The-Anatomy-of-a-URL/#more">Read More</a>
         </p>
       
     </div>
@@ -835,7 +796,7 @@ provides backups if needed in a crisis.
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/56/">56</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/57/">57</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>

@@ -16,10 +16,14 @@
 <meta property="og:site_name" content="Jojo&#39;s Blog">
 <meta property="og:description" content="DNS DNS is used to find IP addresses from domain names. Domain name to IP address mappings are called ‘DNS records.’ These DNS records are part of a distributed database, which means that all the reco">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/DNS_servers_1.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/DNS_servers_2.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/DNS_servers_3.png">
 <meta property="article:published_time" content="2020-11-19T23:11:50.000Z">
-<meta property="article:modified_time" content="2020-11-19T23:27:56.844Z">
+<meta property="article:modified_time" content="2020-12-20T15:03:10.722Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/DNS_servers_1.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -192,7 +196,7 @@
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Network/">Network</a>
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
 
       
 	<a class="article-views">
@@ -211,7 +215,36 @@
 <li>Domain name to IP address mappings are called ‘DNS records.’</li>
 <li>These DNS records are part of a distributed database, which means that all the records are not stored at any one server, but are distributed amongst several servers.</li>
 </ol>
-<h1 id="Checking-locally"><a href="#Checking-locally" class="headerlink" title="Checking locally"></a>Checking locally</h1><p>Tend to revisit websites, so DNS entries can be locally cached to prevent latency arising from DNS requests over the network.</p>
+<h1 id="Checking-locally"><a href="#Checking-locally" class="headerlink" title="Checking locally"></a>Checking locally</h1><ol>
+<li>Tend to revisit websites, so DNS entries can be locally cached to prevent latency arising from DNS requests over the network.</li>
+<li>steps<ul>
+<li>The browser’s local cache is checked.</li>
+<li>If the browser’s local cache does not have the record, the OS’s cache is checked.</li>
+<li>If the record does not reside in the OS’s cache either, the DNS server configured on the system is checked, which may be the DNS server in the <strong>home router</strong>, <strong>the ISP (Internet Service Provider)</strong>, or the <strong>public DNS server</strong>.</li>
+</ul>
+</li>
+</ol>
+<h1 id="DNS-servers"><a href="#DNS-servers" class="headerlink" title="DNS servers"></a>DNS servers</h1><ol>
+<li>The servers at the top are called ‘root servers’</li>
+<li>top-level domain servers: store the IP addresses of other DNS servers<ul>
+<li>divided by type, e.g. .com, .edu, .org, etc.</li>
+</ul>
+</li>
+<li>if the record cannot be found locally, a full DNS resolution is conducted as follows:<ul>
+<li>The first point of contact for a full resolution is a root server. </li>
+<li>The root server returns the IP address of the relevant top-level domain server.</li>
+<li>The top-level domain server returns the IP address of the second-level domain server.</li>
+<li>The second-level domain server contains the DNS record of the server we are looking for. The second-level domain server returns the IP address to the browser.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><img src="/images/DNS_servers_1.png" alt="image"></li>
+<li><img src="/images/DNS_servers_2.png" alt="image"></li>
+<li><img src="/images/DNS_servers_3.png" alt="image"></li>
+</ul>
+<h1 id="Sending-the-request"><a href="#Sending-the-request" class="headerlink" title="Sending the request"></a>Sending the request</h1><p>using http</p>
+<h1 id="Making-requests-to-other-assets"><a href="#Making-requests-to-other-assets" class="headerlink" title="Making requests to other assets"></a>Making requests to other assets</h1><p>In response to a request to the home page of a website –&gt; get a root HTML file that subsequently makes requests to the other assets that are needed, such as images. –&gt;  These requests are also made via HTTP, but the browser fulfills these requests automatically.</p>
 
       
     </div>
@@ -314,7 +347,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS"><span class="nav-number">1.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Checking-locally"><span class="nav-number">2.</span> <span class="nav-text">Checking locally</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS"><span class="nav-number">1.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Checking-locally"><span class="nav-number">2.</span> <span class="nav-text">Checking locally</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNS-servers"><span class="nav-number">3.</span> <span class="nav-text">DNS servers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sending-the-request"><span class="nav-number">4.</span> <span class="nav-text">Sending the request</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Making-requests-to-other-assets"><span class="nav-number">5.</span> <span class="nav-text">Making requests to other assets</span></a></li></ol>
     
     </div>
   </aside>
