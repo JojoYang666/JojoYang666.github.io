@@ -9,13 +9,15 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Redundancy plays a key role  duplication of critical components or functions of a system with the intention of increasing the reliability of the system removing the single points of failure in the sy">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Redundancy and Replication">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/18/Redundancy-and-Replication/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Redundancy plays a key role  duplication of critical components or functions of a system with the intention of increasing the reliability of the system removing the single points of failure in the sy">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-19T04:58:57.000Z">
-<meta property="article:modified_time" content="2020-12-19T04:59:06.273Z">
+<meta property="article:modified_time" content="2020-12-19T23:38:06.605Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -204,7 +206,29 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <ol>
+<li><p>Redundancy plays a key role</p>
+<ul>
+<li>duplication of critical components or functions of a system with the intention of increasing the reliability of the system</li>
+<li>removing the single points of failure in the system</li>
+<li>provides backups if needed in a crisis.</li>
+</ul>
+</li>
+<li><p>Replication</p>
+<ul>
+<li>sharing information to ensure consistency between redundant resources, such as software or hardware components, to improve reliability, fault-tolerance, or accessibility.</li>
+<li>widely used in many database management systems (DBMS)<ul>
+<li>primary server gets all the updates –&gt; then ripple through to the replica servers</li>
+<li>Each replica outputs a message<ul>
+<li>stating that it has received the update successfully, thus allowing the sending of subsequent updates</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">

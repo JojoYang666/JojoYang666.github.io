@@ -265,6 +265,119 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Morris-Tranversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/01/Morris-Tranversal/">Morris Tranversal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/01/Morris-Tranversal/" class="article-date">
+	  <time datetime="2020-12-02T02:38:09.000Z" itemprop="datePublished">2020-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Morris遍历的实现原则记作当前节点为cur
+
+如果cur无左孩子， cur向右移动(cur=cur.right)
+如果cur有左孩子，找到cur左子树上最右的节点, 记为most_right
+if most_right.right==null, most_right.right=cur, cur=cur.left
+if most_right.right == cur, most_right.right =null, cur = cur.right
+
+
+
+—&gt;实质： 对于没有左子树...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/01/Morris-Tranversal/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-99-Recover-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/01/99-Recover-Binary-Search-Tree/">99. Recover Binary Search Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/01/99-Recover-Binary-Search-Tree/" class="article-date">
+	  <time datetime="2020-12-01T23:57:47.000Z" itemprop="datePublished">2020-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          O(n)12345678910111213141516171819202122232425262728# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightcl...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/01/99-Recover-Binary-Search-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-675-Cut-Off-Trees-for-Golf-Event"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -682,116 +795,6 @@ class Solution(object):
         </p>
         <p class="article-more-link">
           <a href="/2020/11/30/61-Rotate-List/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-186-Reverse-Words-in-a-String-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/186-Reverse-Words-in-a-String-II/">186. Reverse Words in a String II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/186-Reverse-Words-in-a-String-II/" class="article-date">
-	  <time datetime="2020-11-30T23:32:09.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-reverse the  whole string
-then reverse each word
-how to do reverse
-l[left], l[right] = l[right], l[left] –&gt;  最后的char和第一个交换， 倒数第二个和第二个交换，…..12345678910111213141516171819202122class Solution(object):    def reverse(self, l, left, right):        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/186-Reverse-Words-in-a-String-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-261-Graph-Valid-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/261-Graph-Valid-Tree/">261. Graph Valid Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/261-Graph-Valid-Tree/" class="article-date">
-	  <time datetime="2020-11-30T19:08:49.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          DFS
-node == edges + 1
-从一个结点dfs, 遍历过的结点个数应该等于所有的结点
-
-1234567891011121314151617181920212223class Solution(object):    def validTree(self, n, edges):        """        :type n: int        :type edges: List[List[int]]        :rtype: bool        """    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/261-Graph-Valid-Tree/#more">Read More</a>
         </p>
       
     </div>

@@ -9,13 +9,15 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Overall proxy server: a piece of software or hardware that acts as an intermediary for requests from clients seeking resources from other servers. usage of proxies filter requests log requests sometim">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Proxies">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/18/Proxies/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Overall proxy server: a piece of software or hardware that acts as an intermediary for requests from clients seeking resources from other servers. usage of proxies filter requests log requests sometim">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-19T04:58:18.000Z">
-<meta property="article:modified_time" content="2020-12-19T04:58:28.978Z">
+<meta property="article:modified_time" content="2020-12-19T23:19:21.450Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -204,7 +206,44 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Overall"><a href="#Overall" class="headerlink" title="Overall"></a>Overall</h1><ol>
+<li>proxy server: a piece of software or hardware that acts as an intermediary for requests from clients seeking resources from other servers.</li>
+<li>usage of proxies<ul>
+<li>filter requests</li>
+<li>log requests</li>
+<li>sometimes transform requests (by adding/removing headers, encrypting/decrypting, or compressing a resource)</li>
+<li>its cache can serve a lot of requests</li>
+</ul>
+</li>
+</ol>
+<h1 id="Proxy-Server-Types"><a href="#Proxy-Server-Types" class="headerlink" title="Proxy Server Types"></a>Proxy Server Types</h1><h2 id="Open-Proxy"><a href="#Open-Proxy" class="headerlink" title="Open Proxy"></a>Open Proxy</h2><ol>
+<li>a proxy server that is accessible by any Internet user</li>
+<li>In general, a proxy server only allows users within a network group (i.e. a closed proxy)<ul>
+<li>to store and forward Internet services such as DNS or web pages to reduce and control the bandwidth used by the group. </li>
+</ul>
+</li>
+<li>With an open proxy —&gt; any user on the Internet is able to use this forwarding service. </li>
+<li>two famous open proxy types<ul>
+<li>Anonymous Proxy:<ul>
+<li>reveаls іts іdentіty аs а server but does not dіsclose the іnіtіаl IP аddress.</li>
+<li>іt cаn be benefіcіаl for some users аs іt hіdes their IP аddress.</li>
+</ul>
+</li>
+<li>Trаnspаrent Proxy <ul>
+<li>іdentіfіes іtself</li>
+<li>wіth the support of HTTP heаders, the fіrst IP аddress cаn be vіewed</li>
+<li>The mаіn benefіt of usіng thіs sort of server іs іts аbіlіty to cаche the websіtes.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Reverse Proxy</li>
+</ol>
+<ul>
+<li>retrieves resources on behalf of a client from one or more servers</li>
+<li>resources are then returned to the client, appearing as if they originated from the proxy server itself</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -306,7 +345,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overall"><span class="nav-number">1.</span> <span class="nav-text">Overall</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Proxy-Server-Types"><span class="nav-number">2.</span> <span class="nav-text">Proxy Server Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-Proxy"><span class="nav-number">2.1.</span> <span class="nav-text">Open Proxy</span></a></li></ol></li></ol>
     
     </div>
   </aside>

@@ -9,13 +9,15 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="SQL most popular relational databases MySQL Oracle MS SQL Server SQLite Postgres MariaDB    NoSQLthe most common types of NoSQLKey-Value Stores The ‘key’ is an attribute name which is linked to a ‘val">
+<meta property="og:type" content="article">
 <meta property="og:title" content="SQL vs. NoSQL">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/18/SQL-vs-NoSQL/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="SQL most popular relational databases MySQL Oracle MS SQL Server SQLite Postgres MariaDB    NoSQLthe most common types of NoSQLKey-Value Stores The ‘key’ is an attribute name which is linked to a ‘val">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-19T04:59:27.000Z">
-<meta property="article:modified_time" content="2020-12-19T04:59:36.747Z">
+<meta property="article:modified_time" content="2020-12-20T07:17:07.947Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -204,7 +206,124 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><ol>
+<li>most popular relational databases<ul>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>MS SQL Server</li>
+<li>SQLite</li>
+<li>Postgres</li>
+<li>MariaDB</li>
+</ul>
+</li>
+</ol>
+<h1 id="NoSQL"><a href="#NoSQL" class="headerlink" title="NoSQL"></a>NoSQL</h1><h2 id="the-most-common-types-of-NoSQL"><a href="#the-most-common-types-of-NoSQL" class="headerlink" title="the most common types of NoSQL"></a>the most common types of NoSQL</h2><h3 id="Key-Value-Stores"><a href="#Key-Value-Stores" class="headerlink" title="Key-Value Stores"></a>Key-Value Stores</h3><ol>
+<li>The ‘key’ is an attribute name which is linked to a ‘value’. </li>
+<li>key-value db:<ul>
+<li>Redis</li>
+<li>Voldemort</li>
+<li>Dynamo</li>
+</ul>
+</li>
+</ol>
+<h3 id="Document-Databases"><a href="#Document-Databases" class="headerlink" title="Document Databases:"></a>Document Databases:</h3><ol>
+<li>data is stored in documents</li>
+<li>these documents are grouped together in collections</li>
+<li>Each document can have an entirely different structure</li>
+<li>Document databases:<ul>
+<li>CouchDB</li>
+<li>MongoDB</li>
+</ul>
+</li>
+</ol>
+<h3 id="Wide-Column-Databases"><a href="#Wide-Column-Databases" class="headerlink" title="Wide-Column Databases"></a>Wide-Column Databases</h3><ol>
+<li>have column families, which are containers for rows<ul>
+<li>not need to know all the columns up front</li>
+<li>each row doesn’t have to have the same number of columns. </li>
+</ul>
+</li>
+<li>best suited for analyzing large datasets - big names include <strong>Cassandra and HBase.</strong></li>
+</ol>
+<h3 id="Graph-Databases"><a href="#Graph-Databases" class="headerlink" title="Graph Databases"></a>Graph Databases</h3><ol>
+<li>used to store data whose relations are best represented in a graph</li>
+<li>Data is saved in graph structures<ul>
+<li>with nodes (entities), properties (information about the entities)</li>
+<li>lines (connections between the entities)</li>
+</ul>
+</li>
+<li>graph:<ul>
+<li>Neo4J</li>
+<li>InfiniteGraph</li>
+</ul>
+</li>
+</ol>
+<h1 id="High-level-differences-between-SQL-and-NoSQL"><a href="#High-level-differences-between-SQL-and-NoSQL" class="headerlink" title="High level differences between SQL and NoSQL"></a>High level differences between SQL and NoSQL</h1><h2 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h2><ol>
+<li>SQL stores data in tables </li>
+<li>NoSQL databases have different data storage models</li>
+</ol>
+<h2 id="Schema"><a href="#Schema" class="headerlink" title="Schema"></a>Schema</h2><ol>
+<li><p>SQL</p>
+<ul>
+<li>columns must be decided and chosen before data entry</li>
+<li>each row must have data for each column</li>
+<li>schema can be altered later, but it involves modifying the whole database and going offline.</li>
+</ul>
+</li>
+<li><p>nosql:</p>
+<ul>
+<li>schemas are dynamic</li>
+<li>Columns can be added on the fly</li>
+<li>each ‘row’ (or equivalent) doesn’t have to contain data for each ‘column.’</li>
+</ul>
+</li>
+</ol>
+<h2 id="Querying"><a href="#Querying" class="headerlink" title="Querying"></a>Querying</h2><ol>
+<li>sql<ul>
+<li>use SQL (structured query language) for defining and manipulating the data</li>
+</ul>
+</li>
+<li>nosql:<ul>
+<li>queries are focused on a collection of documents.</li>
+<li>also called UnQL (Unstructured Query Language).</li>
+<li>Different databases have different syntax for using UnQL.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Scalability"><a href="#Scalability" class="headerlink" title="Scalability"></a>Scalability</h2><ol>
+<li><p>SQL</p>
+<ul>
+<li>vertically scalable –&gt; expensive</li>
+<li>possible to scale a relational database across multiple servers, but this is a challenging and time-consuming process.</li>
+</ul>
+</li>
+<li><p>nosql</p>
+<ul>
+<li>horizontally scalable</li>
+<li>cheap commodity hardware or cloud instances </li>
+<li>more cost-effective than vertical scaling</li>
+</ul>
+</li>
+</ol>
+<h2 id="Reliability-or-ACID-Compliancy-Atomicity-Consistency-Isolation-Durability"><a href="#Reliability-or-ACID-Compliancy-Atomicity-Consistency-Isolation-Durability" class="headerlink" title="Reliability or ACID Compliancy (Atomicity, Consistency, Isolation, Durability)"></a>Reliability or ACID Compliancy (Atomicity, Consistency, Isolation, Durability)</h2><ol>
+<li>sql –&gt; ACID compliant</li>
+<li>Most of the NoSQL solutions <strong>sacrifice ACID</strong> compliance for performance and scalability.</li>
+</ol>
+<h1 id="SQL-VS-NoSQL-Which-one-to-use"><a href="#SQL-VS-NoSQL-Which-one-to-use" class="headerlink" title="SQL VS. NoSQL - Which one to use?"></a>SQL VS. NoSQL - Which one to use?</h1><h2 id="Reasons-to-use-SQL-database"><a href="#Reasons-to-use-SQL-database" class="headerlink" title="Reasons to use SQL database"></a>Reasons to use SQL database</h2><ol>
+<li>need to ensure ACID compliance –&gt; for many e-commerce and financial applications</li>
+<li>data is structured and unchanging —&gt;  business is not experiencing massive growth</li>
+</ol>
+<h2 id="Reasons-to-use-NoSQL-database"><a href="#Reasons-to-use-NoSQL-database" class="headerlink" title="Reasons to use NoSQL database"></a>Reasons to use NoSQL database</h2><ol>
+<li>Storing large volumes of data that often have little to no structures</li>
+<li>Making the most of cloud computing and storage<ul>
+<li>d NoSQL databases like Cassandra are designed to be scaled across multiple data centers out of the box, without a lot of headaches.</li>
+</ul>
+</li>
+<li>Rapid development.<ul>
+<li>system which require making frequent updates to the data structure without a lot of downtime between versions, a relational database will slow you down.</li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -306,7 +425,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number">1.</span> <span class="nav-text">SQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NoSQL"><span class="nav-number">2.</span> <span class="nav-text">NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-most-common-types-of-NoSQL"><span class="nav-number">2.1.</span> <span class="nav-text">the most common types of NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-Value-Stores"><span class="nav-number">2.1.1.</span> <span class="nav-text">Key-Value Stores</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Document-Databases"><span class="nav-number">2.1.2.</span> <span class="nav-text">Document Databases:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wide-Column-Databases"><span class="nav-number">2.1.3.</span> <span class="nav-text">Wide-Column Databases</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Graph-Databases"><span class="nav-number">2.1.4.</span> <span class="nav-text">Graph Databases</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#High-level-differences-between-SQL-and-NoSQL"><span class="nav-number">3.</span> <span class="nav-text">High level differences between SQL and NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Storage"><span class="nav-number">3.1.</span> <span class="nav-text">Storage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Schema"><span class="nav-number">3.2.</span> <span class="nav-text">Schema</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Querying"><span class="nav-number">3.3.</span> <span class="nav-text">Querying</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalability"><span class="nav-number">3.4.</span> <span class="nav-text">Scalability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reliability-or-ACID-Compliancy-Atomicity-Consistency-Isolation-Durability"><span class="nav-number">3.5.</span> <span class="nav-text">Reliability or ACID Compliancy (Atomicity, Consistency, Isolation, Durability)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-VS-NoSQL-Which-one-to-use"><span class="nav-number">4.</span> <span class="nav-text">SQL VS. NoSQL - Which one to use?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Reasons-to-use-SQL-database"><span class="nav-number">4.1.</span> <span class="nav-text">Reasons to use SQL database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reasons-to-use-NoSQL-database"><span class="nav-number">4.2.</span> <span class="nav-text">Reasons to use NoSQL database</span></a></li></ol></li></ol>
     
     </div>
   </aside>

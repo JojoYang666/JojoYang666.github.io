@@ -9,15 +9,23 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Overall Distributed Hash Table (DHT): one of the fundamental components used in distributed scalable systems Drawback of intuitive hash function: key % n   It is NOT horizontally scalable It may NOT b">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Consistent Hashing">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/18/Consistent-Hashing/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Overall Distributed Hash Table (DHT): one of the fundamental components used in distributed scalable systems Drawback of intuitive hash function: key % n   It is NOT horizontally scalable It may NOT b">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Consistent-Hashing-1.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Consistent-Hashing-2.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Consistent-Hashing-3.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Consistent-Hashing-4.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Consistent-Hashing-5.png">
 <meta property="article:published_time" content="2020-12-19T05:00:18.000Z">
-<meta property="article:modified_time" content="2020-12-19T05:00:26.407Z">
+<meta property="article:modified_time" content="2020-12-20T14:13:22.252Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/Consistent-Hashing-1.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -204,7 +212,55 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Overall"><a href="#Overall" class="headerlink" title="Overall"></a>Overall</h1><ol>
+<li>Distributed Hash Table (DHT): one of the fundamental components used in distributed scalable systems</li>
+<li>Drawback of intuitive hash function: key % n</li>
+</ol>
+<ul>
+<li>It is NOT horizontally scalable</li>
+<li>It may NOT be load balanced, especially for non-uniformly distributed data</li>
+</ul>
+<h1 id="What-is-Consistent-Hashing"><a href="#What-is-Consistent-Hashing" class="headerlink" title="What is Consistent Hashing?"></a>What is Consistent Hashing?</h1><ol>
+<li>distribute data across a cluster in such a way that will minimize reorganization when nodes are added or removed</li>
+<li>caching system will be easier to scale up or scale down.</li>
+<li>when the hash table is resized<ul>
+<li>only ‘k/n’ keys need to be remapped </li>
+<li>k: the total number of keys </li>
+<li>n: the total number of servers</li>
+</ul>
+</li>
+<li>objects are mapped to the same host if possible<ul>
+<li>a host is removed from the system –&gt; the objects on that host are shared by other hosts</li>
+<li>when a new host is added -&gt; takes its share from a few hosts without touching other’s shares.</li>
+</ul>
+</li>
+</ol>
+<h1 id="How-does-it-work"><a href="#How-does-it-work" class="headerlink" title="How does it work?"></a>How does it work?</h1><ol>
+<li>Given a list of cache servers, hash them to integers in the range.</li>
+<li>Hash it to a single integer.</li>
+<li>Move clockwise on the ring until finding the first cache it encounters.</li>
+<li>That cache is the one that contains the key. See animation below as an example: key1 maps to cache A; key2 maps to cache C.</li>
+<li>To add a new server, say D –&gt; keys that were originally residing at C will be split –&gt; Some of them will be shifted to D, while other keys will not be touched.</li>
+<li>To remove a cache or, if a cache fails, say A –&gt; all keys that were originally mapped to A will fall into B –&gt; only those keys need to be moved to B; other keys will not be affected.</li>
+<li>For load balancing –&gt; may make the keys on caches unbalanced<ul>
+<li>solution<ul>
+<li>add “virtual replicas” for caches</li>
+<li>Instead of mapping each cache to a single point on the ring, we map it to multiple points on the ring,</li>
+<li>each cache is associated with multiple portions of the ring.</li>
+<li>If the hash function “mixes well,” –&gt; as the number of replicas increases –&gt; the keys will be more balanced.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><img src="/images/Consistent-Hashing-1.png" alt="image"></li>
+<li><img src="/images/Consistent-Hashing-2.png" alt="image"></li>
+<li><img src="/images/Consistent-Hashing-3.png" alt="image"></li>
+<li><img src="/images/Consistent-Hashing-4.png" alt="image"></li>
+<li><img src="/images/Consistent-Hashing-5.png" alt="image"></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -306,7 +362,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overall"><span class="nav-number">1.</span> <span class="nav-text">Overall</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-is-Consistent-Hashing"><span class="nav-number">2.</span> <span class="nav-text">What is Consistent Hashing?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-does-it-work"><span class="nav-number">3.</span> <span class="nav-text">How does it work?</span></a></li></ol>
     
     </div>
   </aside>

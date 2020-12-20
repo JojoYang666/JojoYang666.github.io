@@ -265,6 +265,114 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/">1477. Find Two Non-overlapping Sub-arrays Each With Target Sum </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/" class="article-date">
+	  <time datetime="2020-10-29T16:34:03.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          using another premin[i] array to store the min length of subarray which sum is equal is target in the array which starts with 0 ends with i, premin保证了不会overlap
+数组越界in python可能是是a[-1] 不会越界， 但是有时候考虑是否有效的what we want 
+12345678910111213141516171819202...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1405-Longest-Happy-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/1405-Longest-Happy-String/">1405. Longest Happy String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/1405-Longest-Happy-String/" class="article-date">
+	  <time datetime="2020-10-29T15:54:16.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+为了简化， 要做个默认的设置a &gt;= b &gt;= c, 所以helper函数中， 先对大小进行调整
+当大小调整好了我们只用来计算a,b能组成的字符串， 因为当b &lt; c时 c会被交换到b位置12345678910111213141516171819202122class Solution(object):    def longestDiverseString(self, a, b, c):        """        :type a: int        :t...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/1405-Longest-Happy-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-593-Valid-Square"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -682,115 +790,6 @@ cornor case 每次遍历一个到c时一定要重置head[c] = []， 因为可能
         </p>
         <p class="article-more-link">
           <a href="/2020/10/28/260-Single-Number-III/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-82-Remove-Duplicates-from-Sorted-List-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/">82. Remove Duplicates from Sorted List II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/" class="article-date">
-	  <time datetime="2020-10-28T19:54:00.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def deleteDuplicates(...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-comparator"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/comparator/">comparator</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/comparator/" class="article-date">
-	  <time datetime="2020-10-28T17:15:33.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Classes and Objects
-Objects are an encapsulation of variables and functions into a single entity. 
-Objects get their variables and functions from classes.
-Classes are essentially a template to create your objects.
-
-class built in comparaobject.lt(...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/comparator/#more">Read More</a>
         </p>
       
     </div>
