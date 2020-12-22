@@ -265,6 +265,117 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-738-Monotone-Increasing-Digits"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/24/738-Monotone-Increasing-Digits/">738. Monotone Increasing Digits</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/24/738-Monotone-Increasing-Digits/" class="article-date">
+	  <time datetime="2020-10-25T04:23:26.000Z" itemprop="datePublished">2020-10-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          例子是 332，最后一位2小于之前的3，那么此时将前面位减1，先变成322，再往前看，还是小于前面的3，那么再将前面位减1，就变成了 222，此时 222 不是最大的单调递增数，可以将后面两位变成9，于是乎就有了 299，
+1234567891011121314151617class Solution(object):    def monotoneIncreasingDigits(self, N):        """        :type N: int        :rtype...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/24/738-Monotone-Increasing-Digits/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-979-Distribute-Coins-in-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/24/979-Distribute-Coins-in-Binary-Tree/">979. Distribute Coins in Binary Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/24/979-Distribute-Coins-in-Binary-Tree/" class="article-date">
+	  <time datetime="2020-10-25T03:25:43.000Z" itemprop="datePublished">2020-10-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+每一个node 有一个val表示已此node为根节点的子树还需要多少coin
+正数表示 有多余的， 可以像上运输
+负数表示需要， 需要父节点像下运输
+
+
+最终结果就是+上这些绝对值12345678910111213141516171819202122# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/24/979-Distribute-Coins-in-Binary-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1008-Construct-Binary-Search-Tree-from-Preorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -680,112 +791,6 @@ Entries from j up to (but not inclusi...
         </p>
         <p class="article-more-link">
           <a href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-324-Wiggle-Sort-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/21/324-Wiggle-Sort-II/">324. Wiggle Sort II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/21/324-Wiggle-Sort-II/" class="article-date">
-	  <time datetime="2020-10-22T05:52:05.000Z" itemprop="datePublished">2020-10-21</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          time: nlogn space: n
-1234567891011121314151617181920class Solution(object):    def wiggleSort(self, nums):        """        :type nums: List[int]        :rtype: None Do not return anything, modify nums in-place instead.        """        tmp = so...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/21/324-Wiggle-Sort-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-435-Non-overlapping-Intervals"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/21/435-Non-overlapping-Intervals/">435. Non-overlapping Intervals</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/21/435-Non-overlapping-Intervals/" class="article-date">
-	  <time datetime="2020-10-22T05:20:03.000Z" itemprop="datePublished">2020-10-21</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Using Greedy Approach based on end pointssort based on end time not start time
-1234567891011121314class Solution(object):    def eraseOverlapIntervals(self, intervals):        """        :type intervals: List[List[int]]        :rtype: int        "...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/21/435-Non-overlapping-Intervals/#more">Read More</a>
         </p>
       
     </div>

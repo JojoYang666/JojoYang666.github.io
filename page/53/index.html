@@ -265,6 +265,114 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-809-Expressive-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/03/809-Expressive-Words/">809. Expressive Words</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/03/809-Expressive-Words/" class="article-date">
+	  <time datetime="2020-09-03T21:10:22.000Z" itemprop="datePublished">2020-09-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 112345678910111213141516class Solution(object):    def expressiveWords(self, S, words):        def RLE(S):            return zip(*[(k, len(list(grp)))                         for k, grp in itertools.groupby(S)])        if not S:          ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/03/809-Expressive-Words/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Graph"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/03/Graph/">Graph</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/03/Graph/" class="article-date">
+	  <time datetime="2020-09-03T19:51:10.000Z" itemprop="datePublished">2020-09-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          拓扑排序–&gt;有向无环图union find/dfs –&gt;无向有环图
+
+法一
+node == edges + 1
+从一个结点dfs, 遍历过的结点个数应该等于所有的结点1234567891011121314151617181920212223class Solution(object):    def validTree(self, n, edges):        """        :type n: int        :type edges: List[List[in...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/03/Graph/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-UNION-FIND"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -663,117 +771,6 @@ Sorted by column12345678910111213141516171819202122class Solution(object):    de
         </p>
         <p class="article-more-link">
           <a href="/2020/08/28/939-Minimum-Area-Rectangle/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-288-Unique-Word-Abbreviation-exiyexit"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/19/288-Unique-Word-Abbreviation-exiyexit/">288. Unique Word Abbreviation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/19/288-Unique-Word-Abbreviation-exiyexit/" class="article-date">
-	  <time datetime="2020-08-19T23:43:36.000Z" itemprop="datePublished">2020-08-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132333435363738/** * @param &#123;string[]&#125; dictionary */var ValidWordAbbr = function(dictionary) &#123;    this.map = &#123;&#125;    this.set = new Set(dictionary)        for (let word of ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/19/288-Unique-Word-Abbreviation-exiyexit/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Difference-Among-Unicode-ASCII-and-UTF-8"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/">Difference Among Unicode, ASCII, and UTF-8</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/" class="article-date">
-	  <time datetime="2020-08-19T17:24:06.000Z" itemprop="datePublished">2020-08-19</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          ASCII
-ASCII码使用指定的7位或8位二进制数组合来表示128/256种可能的字符
-ASCII是单字节编码（1 byte = 8 bits）， 无法用来表示中文（中文编码至少需要2个字节）
-
-Unicode
-ASCII编码 是1个字节， 而Unicode编码通常是2个字节
-
-UTF8
-把Unicode编码转化为可变长编码的UTF-8编码
-UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， 常用的英文字母被编码成一个字节， 汉字通常是3个字节。 如果要传输的文本包...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/19/Difference-Among-Unicode-ASCII-and-UTF-8/#more">Read More</a>
         </p>
       
     </div>
