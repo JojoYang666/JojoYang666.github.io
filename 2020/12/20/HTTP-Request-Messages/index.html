@@ -9,15 +9,25 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="HTTP request messages Example  GET &#x2F;path&#x2F;to&#x2F;file&#x2F;index.html HTTP&#x2F;1.1Host: www.educative.ioConnection: closeUser-agent: Mozilla&#x2F;5.0Accept-language: frAccept: text&#x2F;html  Note   HTTP messages are in plai">
+<meta property="og:type" content="article">
 <meta property="og:title" content="HTTP: Request Messages">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/20/HTTP-Request-Messages/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="HTTP request messages Example  GET &#x2F;path&#x2F;to&#x2F;file&#x2F;index.html HTTP&#x2F;1.1Host: www.educative.ioConnection: closeUser-agent: Mozilla&#x2F;5.0Accept-language: frAccept: text&#x2F;html  Note   HTTP messages are in plai">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/http_header_lines__overall.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/http_header_lines__connection.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/http_header_lines__host.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/http_header_lines__rename.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/http_header_lines_accept.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/http_header_lines_accept_lanaguage.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/http_header_lines_agent.png">
 <meta property="article:published_time" content="2020-12-20T15:05:24.000Z">
-<meta property="article:modified_time" content="2020-12-20T15:05:24.893Z">
+<meta property="article:modified_time" content="2020-12-22T04:42:13.521Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/http_header_lines__overall.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -190,6 +200,8 @@
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -202,7 +214,65 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="HTTP-request-messages"><a href="#HTTP-request-messages" class="headerlink" title="HTTP request messages"></a>HTTP request messages</h1><ol>
+<li>Example</li>
+</ol>
+<p>GET /path/to/file/index.html HTTP/1.1<br>Host: <a href="http://www.educative.io" target="_blank" rel="noopener">www.educative.io</a><br>Connection: close<br>User-agent: Mozilla/5.0<br>Accept-language: fr<br>Accept: text/html</p>
+<ol start="2">
+<li>Note</li>
+</ol>
+<ul>
+<li>HTTP messages are in <strong>plain ASCII text</strong>.</li>
+<li>each line of the message ends with two control characters<ul>
+<li>carriage return: <code>\r</code></li>
+<li>line feed: <code>\n</code></li>
+<li>The last line of the message also ends with a carriage return and a line feed!</li>
+</ul>
+</li>
+<li>The first line is called the request line, while the rest are called header lines.</li>
+</ul>
+<h1 id="The-anatomy-of-an-HTTP-request-line"><a href="#The-anatomy-of-an-HTTP-request-line" class="headerlink" title="The anatomy of an HTTP request line"></a>The anatomy of an HTTP request line</h1><p>3 parts:</p>
+<ul>
+<li>Method</li>
+<li>URL</li>
+<li>Version</li>
+</ul>
+<h1 id="HTTP-methods"><a href="#HTTP-methods" class="headerlink" title="HTTP methods"></a>HTTP methods</h1><ol>
+<li>GET</li>
+<li>POST</li>
+<li>HEAD<ul>
+<li>similar to the GET method, except that <strong>the resource requested does not get sent in the response</strong>. <strong>Only the HTTP headers are sent instead.</strong></li>
+<li>quickly retrieving meta-information written in response headers without transporting their entire content</li>
+<li>useful for testing and debugging.</li>
+<li>check with minimal traffic if a certain object still exists<ul>
+<li>object’s meta-data, like the last modified date.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>PUT<ul>
+<li>uploads an enclosed entity under a supplied URI.</li>
+</ul>
+</li>
+<li>Delete</li>
+</ol>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><ol>
+<li>url: the location that any HTTP method is referring to.</li>
+<li>uri: more general than URLs in that they can locate fragments within objects, </li>
+</ol>
+<ul>
+<li><img src="/images/http_header_lines__overall.png" alt="image"></li>
+<li><img src="/images/http_header_lines__connection.png" alt="image"></li>
+<li><img src="/images/http_header_lines__host.png" alt="image"></li>
+<li><img src="/images/http_header_lines__rename.png" alt="image"></li>
+<li><img src="/images/http_header_lines_accept.png" alt="image"></li>
+<li><img src="/images/http_header_lines_accept_lanaguage.png" alt="image"></li>
+<li><img src="/images/http_header_lines_agent.png" alt="image"><ul>
+<li>useful when the server has different web pages that exist for different devices and browsers.</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -304,7 +374,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-request-messages"><span class="nav-number">1.</span> <span class="nav-text">HTTP request messages</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-anatomy-of-an-HTTP-request-line"><span class="nav-number">2.</span> <span class="nav-text">The anatomy of an HTTP request line</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-methods"><span class="nav-number">3.</span> <span class="nav-text">HTTP methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URL"><span class="nav-number">4.</span> <span class="nav-text">URL</span></a></li></ol>
     
     </div>
   </aside>

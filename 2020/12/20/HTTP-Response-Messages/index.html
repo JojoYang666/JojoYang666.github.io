@@ -9,13 +9,15 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Overall exampleHTTP&#x2F;1.1 200 OKConnection: closeDate: Tue, 18 Aug 2015 15: 44 : 04 GMTServer: Apache&#x2F;2.2.3 (CentOS)Last-Modified: Tue, 18 Aug 2015 15:11:03 GMTContent-Length: 6821Content-Type: text&#x2F;htm">
+<meta property="og:type" content="article">
 <meta property="og:title" content="HTTP: Response Messages">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/20/HTTP-Response-Messages/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Overall exampleHTTP&#x2F;1.1 200 OKConnection: closeDate: Tue, 18 Aug 2015 15: 44 : 04 GMTServer: Apache&#x2F;2.2.3 (CentOS)Last-Modified: Tue, 18 Aug 2015 15:11:03 GMTContent-Length: 6821Content-Type: text&#x2F;htm">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-20T15:05:45.000Z">
-<meta property="article:modified_time" content="2020-12-20T15:05:45.854Z">
+<meta property="article:modified_time" content="2020-12-22T04:42:32.767Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -190,6 +192,8 @@
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
       
 	<a class="article-views">
 	<span id="busuanzi_container_page_pv">
@@ -202,7 +206,86 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Overall"><a href="#Overall" class="headerlink" title="Overall"></a>Overall</h1><ol>
+<li>example<br>HTTP/1.1 200 OK<br>Connection: close<br>Date: Tue, 18 Aug 2015 15: 44 : 04 GMT<br>Server: Apache/2.2.3 (CentOS)<br>Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT<br>Content-Length: 6821<br>Content-Type: text/html</li>
+</ol>
+<p>[The object that was requested]</p>
+<ol start="2">
+<li>3 parts<ul>
+<li>status line<ul>
+<li>start with the HTTP version. + Status code </li>
+</ul>
+</li>
+<li>header lines</li>
+<li>entity body</li>
+</ul>
+</li>
+</ol>
+<h1 id="Status-code"><a href="#Status-code" class="headerlink" title="Status code"></a>Status code</h1><ol>
+<li>overall<ul>
+<li>1xx codes fall in the informational category</li>
+<li>2xx codes fall in the success category<ul>
+<li>200 OK: the request was successful, and the result is appended with the response message.</li>
+</ul>
+</li>
+<li>3xx codes are for redirection</li>
+<li>4xx is a client error<ul>
+<li>404 File Not Found: the requested object doesn’t exist on the server.</li>
+<li>400 Bad Request: a generic error code that indicates that the request was in a format that the server could not comprehend.</li>
+</ul>
+</li>
+<li>5xx is a server error<ul>
+<li>500 HTTP Internal Server Error: the request could not be completed because the server encountered some unexpected error.</li>
+<li>505 HTTP Version Not Supported: the requested HTTP version is not supported by the server.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Cache-control-in-header-line"><a href="#Cache-control-in-header-line" class="headerlink" title="Cache-control in header line"></a><code>Cache-control</code> in header line</h1><ol>
+<li>Cache-Control: must-revalidate: caches can absolutely never use a stale copy of the resource.</li>
+<li>Cache-Control: no-cache: <ul>
+<li>the resource can be cached, even if it’s not ‘cacheable’.</li>
+<li>these cached versions of the resource cannot be used without making sure the resource is not updated. </li>
+</ul>
+</li>
+<li>Cache-Control: no-store<ul>
+<li>the resource must not ever be cached</li>
+</ul>
+</li>
+<li>Cache-Control: no-transform<ul>
+<li>a proxy or intermediate cache cannot change the response body, the Content-Encoding, Content-Range, or the Content-Type</li>
+</ul>
+</li>
+<li>Cache-Control: public   <ul>
+<li>the resource can be cached anywhere by any cache.</li>
+</ul>
+</li>
+<li>Cache-Control: private<ul>
+<li>the resource may only be cached on browsers. So, no proxies or non-browsers should cache it.</li>
+</ul>
+</li>
+<li>Cache-Control: max-age=<seconds><ul>
+<li>how long until the cached resource expires and must be requested from the server again.</li>
+</ul>
+</li>
+</ol>
+<h1 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h1><ol>
+<li>an identifier for a resource</li>
+<li>used to check the freshness of a cached resource<ul>
+<li>browser request the latest Etag from the server <ul>
+<li>matches the Etag of the cached version of the resource –&gt; browser leep it</li>
+<li>not match, fresh version of the resource must be requested.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Transfer-Encoding"><a href="#Transfer-Encoding" class="headerlink" title="Transfer-Encoding"></a>Transfer-Encoding</h1><ol>
+<li>how the message body has been encoded</li>
+</ol>
+<h1 id="X-Frame-Options"><a href="#X-Frame-Options" class="headerlink" title="X-Frame-Options"></a>X-Frame-Options</h1><p>used to tell a browser if it can render a page in a <frame>, <iframe>, <embed>, or <object> tag.<br>to prevent clickjacking attacks that are trying to get users to click on things on a page that are purposely hidden.</p>
+
       
     </div>
     <footer class="article-footer">
@@ -304,7 +387,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overall"><span class="nav-number">1.</span> <span class="nav-text">Overall</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Status-code"><span class="nav-number">2.</span> <span class="nav-text">Status code</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cache-control-in-header-line"><span class="nav-number">3.</span> <span class="nav-text">Cache-control in header line</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ETag"><span class="nav-number">4.</span> <span class="nav-text">ETag</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Transfer-Encoding"><span class="nav-number">5.</span> <span class="nav-text">Transfer-Encoding</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#X-Frame-Options"><span class="nav-number">6.</span> <span class="nav-text">X-Frame-Options</span></a></li></ol>
     
     </div>
   </aside>

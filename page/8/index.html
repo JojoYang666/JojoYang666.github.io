@@ -265,60 +265,6 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-91-Decode-Ways"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/06/91-Decode-Ways/">91. Decode Ways</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/06/91-Decode-Ways/" class="article-date">
-	  <time datetime="2020-12-06T23:22:26.000Z" itemprop="datePublished">2020-12-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          dp[i]: s中前i个字符组成的子串的解码方法的个数，长度比输入数组长多多1dp[0] =1if 当前字符不等于0: dp[i] = dp[i-1] otherwise dp[i] = 0if 当前字符和前一个字符能组成valid decode way –&gt; dp[i] += dp[i-2]
-to reduce the space, using a, b in coding
-1234567891011121314151617class Solution(object):    de...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/06/91-Decode-Ways/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
     <article id="post-2-Add-Two-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -776,6 +722,66 @@ if: self.weights.append(weight/s)  —&gt; sum of self.weights == 1 but, we use 
         </p>
         <p class="article-more-link">
           <a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-375-Guess-Number-Higher-or-Lower-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/">375. Guess Number Higher or Lower II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/" class="article-date">
+	  <time datetime="2020-12-04T04:10:39.000Z" itemprop="datePublished">2020-12-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i][j]: 最小的cost需要猜对 from i to j(inclusive)
+dp[i][j] = min(k + max(dp[i][k-1], dp[k+1][j]))
+
+
+因为我们要保证一定能取到所以在dp[i][k-1], dp[k+1][j]中， 取最大
+计算dp[i][j], 我们需要知道dp[i][k-1], dp[k+1][j]
+所以我们需要一个len —&gt; 2, n(inclusive)
+每次计算from start to len+start-1(in...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/#more">Read More</a>
         </p>
       
     </div>
