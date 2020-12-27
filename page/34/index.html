@@ -265,6 +265,326 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-542-01-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/542-01-Matrix/">542. 01 Matrix</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/542-01-Matrix/" class="article-date">
+	  <time datetime="2020-10-27T22:49:32.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+当前的值可能是上方， 左方（从左上角遍历）， 下方， 右方（从右下角）里面选取最小的值+1  —&gt; 所以要遍历两次
+range(len(matrix)-1, -1, -1) 最后一个step -1不能少， 要不然不会遍历， 因为default是112345678910111213141516171819202122232425262728class Solution(object):    def updateMatrix(self, matrix):        """    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/542-01-Matrix/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1381-Design-a-Stack-With-Increment-Operation"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/">1381. Design a Stack With Increment Operation</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/" class="article-date">
+	  <time datetime="2020-10-27T22:36:32.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Lazy IncrementLazy is a wayinc[i] means for all elements stack[0] ~ stack[i],we should plus inc[i] when popped from the stack.Then inc[i-1]+=inc[i],so that we can accumulate the increment inc[i]for the bottom elements and the following pops.
+12345...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1329-Sort-the-Matrix-Diagonally"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/">1329. Sort the Matrix Diagonally</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/" class="article-date">
+	  <time datetime="2020-10-27T20:41:55.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021class Solution(object):    def diagonalSort(self, mat):        """        :type mat: List[List[int]]        :rtype: List[List[int]]        """        n, m = len(mat), len(mat[0])        res = []        dic = collec...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-General"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/General/">General</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/General/" class="article-date">
+	  <time datetime="2020-10-27T20:34:11.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+同意对角线上的元素特点： i-j相同
+对于str转化int/str表示数字的问题： corner case 考虑preceding is zero或者说这个数字本来就是0的情况（many 0 in preceding）
+Index as a hash key
+
+
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/General/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-366-Find-Leaves-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/">366. Find Leaves of Binary Tree </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/" class="article-date">
+	  <time datetime="2020-10-27T20:11:04.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass So...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-797-All-Paths-From-Source-to-Target"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/797-All-Paths-From-Source-to-Target/">797. All Paths From Source to Target </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/797-All-Paths-From-Source-to-Target/" class="article-date">
+	  <time datetime="2020-10-27T19:48:30.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223class Solution(object):    def allPathsSourceTarget(self, graph):        """        :type graph: List[List[int]]        :rtype: List[List[int]]        """        target = len(graph)-1        res = []           ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/797-All-Paths-From-Source-to-Target/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-373-Find-K-Pairs-with-Smallest-Sums"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -467,328 +787,6 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         </p>
         <p class="article-more-link">
           <a href="/2020/10/27/959-Regions-Cut-By-Slashes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-116-Populating-Next-Right-Pointers-in-Each-Node"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/">116. Populating Next Right Pointers in Each Node</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/" class="article-date">
-	  <time datetime="2020-10-27T04:57:21.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          BFS1234567891011121314151617181920212223242526272829303132333435"""# Definition for a Node.class Node(object):    def __init__(self, val=0, left=None, right=None, next=None):        self.val = val        self.left = left        self.right = right ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1254-Number-of-Closed-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1254-Number-of-Closed-Islands/">1254. Number of Closed Islands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1254-Number-of-Closed-Islands/" class="article-date">
-	  <time datetime="2020-10-27T04:46:56.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          本质上就是找到连续的island
-然后排除从边界开始的island
-123456789101112131415161718192021222324252627282930class Solution(object):    def closedIsland(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        if not grid or not gri...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1254-Number-of-Closed-Islands/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1155-Number-of-Dice-Rolls-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/">1155. Number of Dice Rolls With Target Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/" class="article-date">
-	  <time datetime="2020-10-27T04:20:22.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          DFS + MemoThe general relation is:dp(d, f, target) = dp(d-1, f, target-1) + dp(d-1, f, target-2) + … + dp(d-1, f, target-f)
-The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing else.So dp(0, f, t) = 0 iff t != 0, and dp(0...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-229-Majority-Element-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/229-Majority-Element-II/">229. Majority Element II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/229-Majority-Element-II/" class="article-date">
-	  <time datetime="2020-10-27T03:39:28.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031class Solution(object):    def majorityElement(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        if not nums: return []                count1, count...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/229-Majority-Element-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Boyer-Moore算法"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/">Boyer-Moore算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2020-10-27T03:30:23.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          基本思想：比较直观的解释：在数组中找到两个不相同的元素并删除它们，不断重复此过程，直到数组中元素都相同，那么剩下的元素就是主要元素。
-先随意确定一个候选元素，count是候选元素的计数，当遇到一个跟候选元素不同的元素时，两者数量上抵消一个，count减1。一旦count变成0，就重新找一个候选元素。当遇到一个与候选元素不同的元素时，就要抵消。对于候选元素和当前元素，可能存在两种情况：
-
-1）两者中有一个正好是主要元素；
-2）两者都不是主要元素。对于情况1)，抵消过后，主要元素还是主要元素；...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1277-Count-Square-Submatrices-with-All-Ones"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/">1277. Count Square Submatrices with All Ones</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/" class="article-date">
-	  <time datetime="2020-10-27T03:05:36.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-123456789101112class Solution(object):    def countSquares(self, matrix):        """        :type matrix: List[List[int]]        :rtype: int        """        for i in range(1, len(matrix)):            for j in range(1, len(matrix[0])):        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/#more">Read More</a>
         </p>
       
     </div>
