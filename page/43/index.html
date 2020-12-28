@@ -265,6 +265,167 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-368-Largest-Divisible-Subset"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/10/368-Largest-Divisible-Subset/">368. Largest Divisible Subset</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/10/368-Largest-Divisible-Subset/" class="article-date">
+	  <time datetime="2020-10-10T16:34:59.000Z" itemprop="datePublished">2020-10-10</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          DP
+Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较难/复杂， 所以我们要对原数组排序， 这样只用考虑后面大的值
+用DP解决， dp[i] = set() &lt;- b set b是所有i能整除的数即i%b == 0, 那么一个新数m%i == 0,肯定会有m%b == 0
+
+1234567891011class Solution(object):    def largestDivisibleSubset(self, nums):      ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/10/368-Largest-Divisible-Subset/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-86-Partition-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/09/86-Partition-List/">86. Partition List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/09/86-Partition-List/" class="article-date">
+	  <time datetime="2020-10-09T22:52:51.000Z" itemprop="datePublished">2020-10-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def partition(self, h...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/09/86-Partition-List/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1344-Angle-Between-Hands-of-a-Clock"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/">1344. Angle Between Hands of a Clock</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/" class="article-date">
+	  <time datetime="2020-10-09T22:19:48.000Z" itemprop="datePublished">2020-10-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          MathIt is a math problem
+123456789101112131415class Solution(object):    def angleClock(self, hour, minutes):        """        :type hour: int        :type minutes: int        :rtype: float        """        one_minute_angel = 6        one_hour_a...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-24-Swap-Nodes-in-Pairs"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -642,186 +803,11 @@ cornor case 2, do no...
 
 
   
-    <article id="post-443-String-Compression"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/443-String-Compression/">443. String Compression</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/443-String-Compression/" class="article-date">
-	  <time datetime="2020-10-07T04:17:11.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-cornor case
-
-read -&gt; 当前读到哪儿
-write -&gt; 当前写到哪儿z
-ancor -&gt; 连续字符的起点 -》会大于10所以记得同时更新write的值
-
-
-cornor case
-
-最后的结尾字符也是连续的
-
-
-
-1234567891011121314151617class Solution(object):    def compress(self, chars):        """        :type chars: List[str]  ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/443-String-Compression/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1152-Analyze-User-Website-Visit-Pattern"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/1152-Analyze-User-Website-Visit-Pattern/">1152. Analyze User Website Visit Pattern</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/1152-Analyze-User-Website-Visit-Pattern/" class="article-date">
-	  <time datetime="2020-10-07T03:54:39.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Using many built python functions
-
-题目的意思： 找到sequence
-sequece: 是一个人按照时间顺序访问的website， 但是sequence 长度是3
-返回是很多人都用过这个sequence， 如果次数相同就返回字母顺序上升12345678910111213141516171819class Solution(object):    def mostVisitedPattern(self, username, timestamp, websi...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/1152-Analyze-User-Website-Visit-Pattern/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-957-Prison-Cells-After-N-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/957-Prison-Cells-After-N-Days/">957. Prison Cells After N Days</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/957-Prison-Cells-After-N-Days/" class="article-date">
-	  <time datetime="2020-10-07T03:16:56.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Fast-forward直觉 这个题目会有周期 -》 hashmap来找到这个周期
-1234567891011121314151617class Solution(object):    def prisonAfterNDays(self, cells, N):        """        :type cells: List[int]        :type N: int        :rtype: List[int]        """        seen = &#12...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/957-Prison-Cells-After-N-Days/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/42/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/page/58/">58</a><a class="extend next" rel="next" href="/page/44/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/42/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><span class="page-number current">43</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="extend next" rel="next" href="/page/44/">Next &amp;raquo;</a>
   </nav>
 
 </section>

@@ -265,6 +265,165 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-3-Longest-Substring-Without-Repeating-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/06/3-Longest-Substring-Without-Repeating-Characters/">3. Longest Substring Without Repeating Characters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/06/3-Longest-Substring-Without-Repeating-Characters/" class="article-date">
+	  <time datetime="2020-12-07T02:47:52.000Z" itemprop="datePublished">2020-12-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          滑动窗口， 左指针update 每次取最大， 存入map的是next pos
+1234567891011121314151617181920/** * @param &#123;string&#125; s * @return &#123;number&#125; */var lengthOfLongestSubstring = function(s) &#123;    let ans = 0, i = 0, map = &#123;&#125;        for (let j = ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/06/3-Longest-Substring-Without-Repeating-Characters/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-5-Longest-Palindromic-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/06/5-Longest-Palindromic-Substring/">5. Longest Palindromic Substring</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/06/5-Longest-Palindromic-Substring/" class="article-date">
+	  <time datetime="2020-12-07T02:25:09.000Z" itemprop="datePublished">2020-12-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223242526/** * @param &#123;string&#125; s * @return &#123;string&#125; */var longestPalindrome = function(s) &#123;    if (!s || !s.length) &#123;        return ""    &#125;        let n = s.length, left = 0, len...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/06/5-Longest-Palindromic-Substring/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-91-Decode-Ways"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/06/91-Decode-Ways/">91. Decode Ways</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/06/91-Decode-Ways/" class="article-date">
+	  <time datetime="2020-12-06T23:22:26.000Z" itemprop="datePublished">2020-12-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          dp[i]: s中前i个字符组成的子串的解码方法的个数，长度比输入数组长多多1dp[0] =1if 当前字符不等于0: dp[i] = dp[i-1] otherwise dp[i] = 0if 当前字符和前一个字符能组成valid decode way –&gt; dp[i] += dp[i-2]
+to reduce the space, using a, b in coding
+1234567891011121314151617class Solution(object):    de...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/06/91-Decode-Ways/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-2-Add-Two-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -634,177 +793,11 @@ Users should be able to ...
 
 
   
-    <article id="post-835-Image-Overlap"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/03/835-Image-Overlap/">835. Image Overlap</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/03/835-Image-Overlap/" class="article-date">
-	  <time datetime="2020-12-04T06:16:00.000Z" itemprop="datePublished">2020-12-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011class Solution(object):    def largestOverlap(self, img1, img2):        """        :type img1: List[List[int]]        :type img2: List[List[int]]        :rtype: int        """        A = [(i, j) for i, row in enumerate(img1) for j, it...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/03/835-Image-Overlap/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-497-Random-Point-in-Non-overlapping-Rectangles"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/">497. Random Point in Non-overlapping Rectangles</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/" class="article-date">
-	  <time datetime="2020-12-04T05:24:42.000Z" itemprop="datePublished">2020-12-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          reason for prefix sum:这样才能找到准确的idx,
-
-if: self.weights.append(weight/s)  —&gt; sum of self.weights == 1 but, we use random.random(), which is from 0 to 1, thus need to have prefix sum1234567891011121314151617181920212223242526272829import itertools...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-375-Guess-Number-Higher-or-Lower-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/">375. Guess Number Higher or Lower II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/" class="article-date">
-	  <time datetime="2020-12-04T04:10:39.000Z" itemprop="datePublished">2020-12-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-dp[i][j]: 最小的cost需要猜对 from i to j(inclusive)
-dp[i][j] = min(k + max(dp[i][k-1], dp[k+1][j]))
-
-
-因为我们要保证一定能取到所以在dp[i][k-1], dp[k+1][j]中， 取最大
-计算dp[i][j], 我们需要知道dp[i][k-1], dp[k+1][j]
-所以我们需要一个len —&gt; 2, n(inclusive)
-每次计算from start to len+start-1(in...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/58/">58</a><a class="extend next" rel="next" href="/page/10/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="extend next" rel="next" href="/page/10/">Next &amp;raquo;</a>
   </nav>
 
 </section>
