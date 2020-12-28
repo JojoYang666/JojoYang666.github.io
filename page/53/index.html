@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-221-Maximal-Square"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-bfs-dfs-backtracking-Dijkstra"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/221-Maximal-Square/">221. Maximal Square</a>
+      <a class="article-title" href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/">bfs, dfs, backtracking, Dijkstra</a>
     </h1>
   
 
@@ -281,12 +281,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/221-Maximal-Square/" class="article-date">
-	  <time datetime="2020-09-12T00:33:54.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/" class="article-date">
+	  <time datetime="2020-09-16T19:11:13.000Z" itemprop="datePublished">2020-09-16</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
       
       
@@ -295,11 +295,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1这种方法的机理就是就是把数组中每一个点都当成正方形的左顶点来向右下方扫描，来寻找最大正方形。具体的扫描方法是，确定了左顶点后，再往下扫的时候，正方形的竖边长度就确定了，只需要找到横边即可，这时候我们使用直方图的原理，从其累加值能反映出上面的值是否全为1
-12345678910111213141516171819202122232425262728293031323334/** * @param &#123;character[][]&#125; matrix * @re...
+          General
+可以用掩码token &amp; (1 &lt;&lt; i)和token | (1 &lt;&lt; i)来看这个ith item是否用过， 并且更新他的状态
+
+BFS + DFS
+add visited set
+考虑是否 有重复情况， 如果有可以用memo
+
+Backtracking
+find all the possible solutions
+used-thing —-&gt; 123used(flag -&gt; true)recursivefuncition()...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/221-Maximal-Square/#more">Read More</a>
+          <a href="/2020/09/16/bfs-dfs-backtracking-Dijkstra/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +326,7 @@
 
 
   
-    <article id="post-279-Perfect-Squares"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1066-Campus-Bikes-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +334,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/279-Perfect-Squares/">279. Perfect Squares</a>
+      <a class="article-title" href="/2020/09/16/1066-Campus-Bikes-II/">1066. Campus Bikes II</a>
     </h1>
   
 
@@ -334,8 +342,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/279-Perfect-Squares/" class="article-date">
-	  <time datetime="2020-09-11T21:54:05.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/16/1066-Campus-Bikes-II/" class="article-date">
+	  <time datetime="2020-09-16T18:24:26.000Z" itemprop="datePublished">2020-09-16</time>
 	</a>
 
       
@@ -348,12 +356,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          for loop i should start from 0 not 1
-Solution 1dp
-123456789101112131415/** * @param &#123;number&#125; n * @return &#123;number&#125; */var numSquares = function(n) &#123;    const dp = new Array(n+1).fill(Number.MAX_VALUE)    dp[0] = 0    for (le...
+          
+bfs + pq
+12345678910111213141516171819202122232425class Solution(object):    def assignBikes(self, workers, bikes):        """        :type workers: List[List[int]]        :type bikes: List[List[int]]        :rtype: int        """        def dis(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/279-Perfect-Squares/#more">Read More</a>
+          <a href="/2020/09/16/1066-Campus-Bikes-II/#more">Read More</a>
         </p>
       
     </div>
@@ -372,7 +380,7 @@ Solution 1dp
 
 
   
-    <article id="post-562-Longest-Line-of-Consecutive-One-in-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-833-Find-And-Replace-in-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -380,7 +388,7 @@ Solution 1dp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/">562. Longest Line of Consecutive One in Matrix</a>
+      <a class="article-title" href="/2020/09/15/833-Find-And-Replace-in-String/">833. Find And Replace in String</a>
     </h1>
   
 
@@ -388,8 +396,8 @@ Solution 1dp
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/" class="article-date">
-	  <time datetime="2020-09-11T21:12:53.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/15/833-Find-And-Replace-in-String/" class="article-date">
+	  <time datetime="2020-09-16T03:21:10.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -402,11 +410,11 @@ Solution 1dp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1DP SolutionThree Dimensional dp Array 
-1234567891011121314151617181920212223242526272829/** * @param &#123;number[][]&#125; M * @return &#123;number&#125; */var longestLine = function(M) &#123;    if (!M.length || !M[0].length) return 0;...
+          
+reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse sorted  123456789101112131415class Solution(object):    def findReplaceString(self, S, indexes, sources, targets):        """        :type S: str        :type indexes: List[int]        :type sources: ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/562-Longest-Line-of-Consecutive-One-in-Matrix/#more">Read More</a>
+          <a href="/2020/09/15/833-Find-And-Replace-in-String/#more">Read More</a>
         </p>
       
     </div>
@@ -425,7 +433,7 @@ Solution 1dp
 
 
   
-    <article id="post-544-Output-Contest-Matches"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-731-My-Calendar-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -433,7 +441,7 @@ Solution 1dp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/544-Output-Contest-Matches/">544. Output Contest Matches</a>
+      <a class="article-title" href="/2020/09/15/731-My-Calendar-II/">731. My Calendar II</a>
     </h1>
   
 
@@ -441,8 +449,8 @@ Solution 1dp
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/544-Output-Contest-Matches/" class="article-date">
-	  <time datetime="2020-09-11T20:45:07.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/15/731-My-Calendar-II/" class="article-date">
+	  <time datetime="2020-09-16T02:57:02.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -455,11 +463,12 @@ Solution 1dp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1dfs
-1234567891011121314151617181920/** * @param &#123;number&#125; n * @return &#123;string&#125; */var findContestMatch = function(n) &#123;    const res = [...new Array(n)].map((item, idx) =&gt; idx+1)        helper(n, res)    return r...
+          
+filtered by overlaps list
+add overlap list contents12345678910111213141516171819202122232425262728class MyCalendarTwo(object):    def __init__(self):        self.overlaps = []        self.calender = []    def book(self, start, end):        """   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/544-Output-Contest-Matches/#more">Read More</a>
+          <a href="/2020/09/15/731-My-Calendar-II/#more">Read More</a>
         </p>
       
     </div>
@@ -478,7 +487,7 @@ Solution 1dp
 
 
   
-    <article id="post-294-Flip-Game-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-274-H-Index"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -486,7 +495,7 @@ Solution 1dp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/294-Flip-Game-II/">294. Flip Game II</a>
+      <a class="article-title" href="/2020/09/15/274-H-Index/">274. H-Index</a>
     </h1>
   
 
@@ -494,13 +503,11 @@ Solution 1dp
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/294-Flip-Game-II/" class="article-date">
-	  <time datetime="2020-09-11T19:58:30.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/15/274-H-Index/" class="article-date">
+	  <time datetime="2020-09-15T23:02:41.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
       
 
@@ -508,10 +515,10 @@ Solution 1dp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 112345678910111213/** * @param &#123;string&#125; s * @return &#123;boolean&#125; */var canWin = function(s) &#123;    for(let i = 1; i &lt; s.length; i++) &#123;        if (s.charAt(i) === '+' &amp;&amp; s.charAt(i-1) === '+' &amp;&amp; ...
+          12345678910111213/** * @param &#123;number[]&#125; citations * @return &#123;number&#125; */var hIndex = function(citations) &#123;    citations.sort((a, b) =&gt; b - a)        for (let i = 0; i &lt; citations.length; i++) &#123;        if (citati...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/294-Flip-Game-II/#more">Read More</a>
+          <a href="/2020/09/15/274-H-Index/#more">Read More</a>
         </p>
       
     </div>
@@ -530,7 +537,7 @@ Solution 1dp
 
 
   
-    <article id="post-280-Wiggle-Sort"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-837-New-21-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -538,7 +545,7 @@ Solution 1dp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/11/280-Wiggle-Sort/">280. Wiggle Sort</a>
+      <a class="article-title" href="/2020/09/15/837-New-21-Game/">837. New 21 Game</a>
     </h1>
   
 
@@ -546,8 +553,8 @@ Solution 1dp
     
     <div class="article-meta">
       
-	<a href="/2020/09/11/280-Wiggle-Sort/" class="article-date">
-	  <time datetime="2020-09-11T16:32:04.000Z" itemprop="datePublished">2020-09-11</time>
+	<a href="/2020/09/15/837-New-21-Game/" class="article-date">
+	  <time datetime="2020-09-15T20:54:36.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -560,13 +567,12 @@ Solution 1dp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-Sort + swamp
+          Thinking: 
 
-12345678910111213141516/** * @param &#123;number[]&#125; nums * @return &#123;void&#125; Do not return anything, modify nums in-place instead. */var wiggleSort = function(nums) &#123;    nums.sort((a, b) =&gt; a - b)    co...
+12345678910111213141516171819class Solution(object):    def new21Game(self, N, K, W):        """        :type N: int        :type K: int        :type W: int        :rtype: float        """        dp = [0.0] * (N + W + 1)               ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/11/280-Wiggle-Sort/#more">Read More</a>
+          <a href="/2020/09/15/837-New-21-Game/#more">Read More</a>
         </p>
       
     </div>
@@ -585,7 +591,7 @@ Sort + swamp
 
 
   
-    <article id="post-1087-Brace-Expansion"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-911-Online-Election"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -593,7 +599,7 @@ Sort + swamp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/10/1087-Brace-Expansion/">1087. Brace Expansion</a>
+      <a class="article-title" href="/2020/09/15/911-Online-Election/">911. Online Election</a>
     </h1>
   
 
@@ -601,8 +607,8 @@ Sort + swamp
     
     <div class="article-meta">
       
-	<a href="/2020/09/10/1087-Brace-Expansion/" class="article-date">
-	  <time datetime="2020-09-10T21:03:39.000Z" itemprop="datePublished">2020-09-10</time>
+	<a href="/2020/09/15/911-Online-Election/" class="article-date">
+	  <time datetime="2020-09-15T14:40:02.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -615,11 +621,11 @@ Sort + swamp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Backtracking
-123456789101112131415161718192021class Solution(object):    def expand(self, S):        """        :type S: str        :rtype: List[str]        """        self.res = []                def helper(s, word):            if not s...
+          Counter + Binary Search
+1234567891011121314151617181920212223242526272829303132class TopVotedCandidate(object):    def __init__(self, persons, times):        """        :type persons: List[int]        :type times: List[int]        """        self....
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/10/1087-Brace-Expansion/#more">Read More</a>
+          <a href="/2020/09/15/911-Online-Election/#more">Read More</a>
         </p>
       
     </div>
@@ -638,7 +644,7 @@ Sort + swamp
 
 
   
-    <article id="post-524-Longest-Word-in-Dictionary-through-Deleting"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-259-3Sum-Smaller"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -646,7 +652,7 @@ Sort + swamp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/">524. Longest Word in Dictionary through Deleting</a>
+      <a class="article-title" href="/2020/09/14/259-3Sum-Smaller/">259. 3Sum Smaller</a>
     </h1>
   
 
@@ -654,8 +660,8 @@ Sort + swamp
     
     <div class="article-meta">
       
-	<a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/" class="article-date">
-	  <time datetime="2020-09-10T06:05:45.000Z" itemprop="datePublished">2020-09-09</time>
+	<a href="/2020/09/14/259-3Sum-Smaller/" class="article-date">
+	  <time datetime="2020-09-15T03:11:54.000Z" itemprop="datePublished">2020-09-14</time>
 	</a>
 
       
@@ -668,10 +674,10 @@ Sort + swamp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1123456789101112131415161718192021222324/** * @param &#123;string&#125; s * @param &#123;string[]&#125; d * @return &#123;string&#125; */var findLongestWord = function(s, d) &#123;    let res = ""        for (let str of d) &#123;        l...
+          12345678910111213141516171819202122232425262728293031/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var threeSumSmaller = function(nums, target) &#123;    nums.sort((a, b) =&gt; a - b);    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/#more">Read More</a>
+          <a href="/2020/09/14/259-3Sum-Smaller/#more">Read More</a>
         </p>
       
     </div>
@@ -690,7 +696,7 @@ Sort + swamp
 
 
   
-    <article id="post-777-Swap-Adjacent-in-LR-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-846-Hand-of-Straights"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -698,7 +704,7 @@ Sort + swamp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/09/777-Swap-Adjacent-in-LR-String/">777. Swap Adjacent in LR String</a>
+      <a class="article-title" href="/2020/09/14/846-Hand-of-Straights/">846. Hand of Straights</a>
     </h1>
   
 
@@ -706,8 +712,8 @@ Sort + swamp
     
     <div class="article-meta">
       
-	<a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/" class="article-date">
-	  <time datetime="2020-09-10T03:50:48.000Z" itemprop="datePublished">2020-09-09</time>
+	<a href="/2020/09/14/846-Hand-of-Straights/" class="article-date">
+	  <time datetime="2020-09-14T17:08:24.000Z" itemprop="datePublished">2020-09-14</time>
 	</a>
 
       
@@ -720,13 +726,11 @@ Sort + swamp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-一种是把 “XL” 变成 “LX”，另一种是把 “RX” 变成 “XR”。
-每次分别找到 start 和 end 中非X的字符，如果二者不相同的话，直接返回 false，想想问什么？这是因为不论是L还是R，其只能跟X交换位置，L和R之间是不能改变相对顺序的，所以如果分别将 start 和 end 中所有的X去掉后的字符串不相等的话，那么就永远无法让 start 和 end 相等了。
-这个判断完之后，就来验证L只能前移，R只能后移这个限制条件吧，当i指向 start 中...
+          Greedy
+1234567891011121314151617181920class Solution(object):    def isNStraightHand(self, hand, W):        """        :type hand: List[int]        :type W: int        :rtype: bool        """        count = collections.Counter(hand)        while c...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/#more">Read More</a>
+          <a href="/2020/09/14/846-Hand-of-Straights/#more">Read More</a>
         </p>
       
     </div>
@@ -745,7 +749,7 @@ Sort + swamp
 
 
   
-    <article id="post-1055-Shortest-Way-to-Form-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1146-Snapshot-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -753,7 +757,7 @@ Sort + swamp
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/06/1055-Shortest-Way-to-Form-String/">1055. Shortest Way to Form String</a>
+      <a class="article-title" href="/2020/09/13/1146-Snapshot-Array/">1146. Snapshot Array</a>
     </h1>
   
 
@@ -761,13 +765,11 @@ Sort + swamp
     
     <div class="article-meta">
       
-	<a href="/2020/09/06/1055-Shortest-Way-to-Form-String/" class="article-date">
-	  <time datetime="2020-09-07T00:21:20.000Z" itemprop="datePublished">2020-09-06</time>
+	<a href="/2020/09/13/1146-Snapshot-Array/" class="article-date">
+	  <time datetime="2020-09-13T21:35:43.000Z" itemprop="datePublished">2020-09-13</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
       
       
 
@@ -775,11 +777,10 @@ Sort + swamp
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-Greedy123456789101112131415161718192021222324252627282930313233/** * @param &#123;string&#125; source * @param &#123;string&#125; target * @return &#123;number&#125; */var shortestWay = function(source, target) &#123;    const map = new...
+          123456789101112131415161718192021222324252627282930313233343536373839class SnapshotArray(object):    def __init__(self, length):        """        :type length: int        """        self.A = [[[-1, 0]] for _ in xrange(length)]        self.snap_id...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/06/1055-Shortest-Way-to-Form-String/#more">Read More</a>
+          <a href="/2020/09/13/1146-Snapshot-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -802,7 +803,7 @@ Greedy123456789101112131415161718192021222324252627282930313233/** * @param &#12
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/52/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="page-number current">53</span><a class="page-number" href="/page/54/">54</a><a class="page-number" href="/page/55/">55</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="extend next" rel="next" href="/page/54/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/52/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="page-number current">53</span><a class="page-number" href="/page/54/">54</a><a class="page-number" href="/page/55/">55</a><span class="space">&hellip;</span><a class="page-number" href="/page/60/">60</a><a class="extend next" rel="next" href="/page/54/">Next &amp;raquo;</a>
   </nav>
 
 </section>

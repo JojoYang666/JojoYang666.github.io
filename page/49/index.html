@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-1438-Longest-Continuous-Subarray-With-Absolute-Diff-Less-Than-or-Equal-to-Limit"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-209-Minimum-Size-Subarray-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/25/1438-Longest-Continuous-Subarray-With-Absolute-Diff-Less-Than-or-Equal-to-Limit/">1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit</a>
+      <a class="article-title" href="/2020/09/29/209-Minimum-Size-Subarray-Sum/">209. Minimum Size Subarray Sum</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/25/1438-Longest-Continuous-Subarray-With-Absolute-Diff-Less-Than-or-Equal-to-Limit/" class="article-date">
-	  <time datetime="2020-09-25T21:17:16.000Z" itemprop="datePublished">2020-09-25</time>
+	<a href="/2020/09/29/209-Minimum-Size-Subarray-Sum/" class="article-date">
+	  <time datetime="2020-09-29T20:02:55.000Z" itemprop="datePublished">2020-09-29</time>
 	</a>
 
       
@@ -295,11 +295,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Two heaps
-12345678910111213141516171819class Solution(object):    def longestSubarray(self, nums, limit):        """        :type nums: List[int]        :type limit: int        :rtype: int        """        maxq, minq = [], []        res...
+          Solution 1
+注意这个题目862. Shortest Subarray with Sum at Least K      与不同， 因为其输入都是正数， 不包含负数
+sliding window1234567891011121314151617class Solution(object):    def minSubArrayLen(self, s, nums):        """        :type s: int        :type nums: List[int]...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/25/1438-Longest-Continuous-Subarray-With-Absolute-Diff-Less-Than-or-Equal-to-Limit/#more">Read More</a>
+          <a href="/2020/09/29/209-Minimum-Size-Subarray-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +319,7 @@
 
 
   
-    <article id="post-1048-Longest-String-Chain"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-862-Shortest-Subarray-with-Sum-at-Least-K"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +327,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/25/1048-Longest-String-Chain/">1048. Longest String Chain</a>
+      <a class="article-title" href="/2020/09/29/862-Shortest-Subarray-with-Sum-at-Least-K/">862. Shortest Subarray with Sum at Least K</a>
     </h1>
   
 
@@ -334,8 +335,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/25/1048-Longest-String-Chain/" class="article-date">
-	  <time datetime="2020-09-25T18:59:59.000Z" itemprop="datePublished">2020-09-25</time>
+	<a href="/2020/09/29/862-Shortest-Subarray-with-Sum-at-Least-K/" class="article-date">
+	  <time datetime="2020-09-29T19:52:38.000Z" itemprop="datePublished">2020-09-29</time>
 	</a>
 
       
@@ -348,11 +349,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          DP
-1234567891011class Solution(object):    def longestStrChain(self, words):        """        :type words: List[str]        :rtype: int        """        dp = &#123;&#125;                for w in sorted(words, key=len):            dp[w] = max(dp....
+          Montonic queue
+12345678910111213141516171819202122class Solution(object):    def shortestSubarray(self, A, K):        """        :type A: List[int]        :type K: int        :rtype: int        """        d = collections.deque([[0, 0]])        res...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/25/1048-Longest-String-Chain/#more">Read More</a>
+          <a href="/2020/09/29/862-Shortest-Subarray-with-Sum-at-Least-K/#more">Read More</a>
         </p>
       
     </div>
@@ -371,7 +372,7 @@
 
 
   
-    <article id="post-801-Minimum-Swaps-To-Make-Sequences-Increasing"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-930-Binary-Subarrays-With-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -379,7 +380,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/801-Minimum-Swaps-To-Make-Sequences-Increasing/">801. Minimum Swaps To Make Sequences Increasing</a>
+      <a class="article-title" href="/2020/09/29/930-Binary-Subarrays-With-Sum/">930. Binary Subarrays With Sum</a>
     </h1>
   
 
@@ -387,8 +388,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/801-Minimum-Swaps-To-Make-Sequences-Increasing/" class="article-date">
-	  <time datetime="2020-09-25T05:36:26.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/29/930-Binary-Subarrays-With-Sum/" class="article-date">
+	  <time datetime="2020-09-29T18:21:10.000Z" itemprop="datePublished">2020-09-29</time>
 	</a>
 
       
@@ -401,11 +402,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          DP Solution –&gt; one represents ith swap case, another represents ith not swap
-Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** * @param &#123;number[]&#125; A * @param &#123;number[]&#125; B * @return &#123;number&#1...
+          Solution 1这个题和 1248. Count Number of Nice Subarrays 不太一样的点是： 遇到1后还可能重新开始， 所以需要update S and left， 也就是说可以不算当前的1，但是1248如果遇到了奇数是， 如果subarray有肯定是包括这个1的
+123456789101112131415161718192021class Solution(object):    def numSubarraysWithSum(self, A, S):    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/801-Minimum-Swaps-To-Make-Sequences-Increasing/#more">Read More</a>
+          <a href="/2020/09/29/930-Binary-Subarrays-With-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -424,7 +425,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
 
   
-    <article id="post-722-Remove-Comments"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1004-Max-Consecutive-Ones-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -432,7 +433,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/722-Remove-Comments/">722. Remove Comments</a>
+      <a class="article-title" href="/2020/09/28/1004-Max-Consecutive-Ones-III/">1004. Max Consecutive Ones III</a>
     </h1>
   
 
@@ -440,8 +441,8 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/722-Remove-Comments/" class="article-date">
-	  <time datetime="2020-09-25T04:50:32.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/28/1004-Max-Consecutive-Ones-III/" class="article-date">
+	  <time datetime="2020-09-29T05:58:34.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -454,10 +455,10 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728class Solution(object):    def removeComments(self, source):        """        :type source: List[str]        :rtype: List[str]        """        in_block = False        ans = []                for li...
+          1234567891011121314151617class Solution(object):    def longestOnes(self, A, K):        """        :type A: List[int]        :type K: int        :rtype: int        """        left = 0        for right, num in enumerate(A):            K -= 1 - num ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/722-Remove-Comments/#more">Read More</a>
+          <a href="/2020/09/28/1004-Max-Consecutive-Ones-III/#more">Read More</a>
         </p>
       
     </div>
@@ -476,7 +477,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
 
   
-    <article id="post-299-Bulls-and-Cows"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1234-Replace-the-Substring-for-Balanced-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -484,7 +485,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/299-Bulls-and-Cows/">299. Bulls and Cows</a>
+      <a class="article-title" href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/">1234. Replace the Substring for Balanced String</a>
     </h1>
   
 
@@ -492,8 +493,8 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/299-Bulls-and-Cows/" class="article-date">
-	  <time datetime="2020-09-24T23:48:48.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/" class="article-date">
+	  <time datetime="2020-09-29T04:59:10.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -506,11 +507,15 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Two Pass
-1234567891011121314151617181920212223242526272829303132/** * @param &#123;string&#125; secret * @param &#123;string&#125; guess * @return &#123;string&#125; */var getHint = function(secret, guess) &#123;    const map = &#123;&#1...
+          
+首先输入保证了是4的倍数
+我们更加的关注滑动窗口外的counter, 因为只有滑动窗口外的字母count &lt;= n/4时，我们对滑动窗口内部的字符更改， 才能满足条件
+i &lt; n,保证其不要越界， 如果i &gt; j只有一个case 就是， counter[c] == n/4, 同时保证了 j == i + 1, 然后退出循环因为all(counter[c] &lt;= n/4 for c in &quot;QWER&quot;)条件不再满足
+
+12345678910111...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/299-Bulls-and-Cows/#more">Read More</a>
+          <a href="/2020/09/28/1234-Replace-the-Substring-for-Balanced-String/#more">Read More</a>
         </p>
       
     </div>
@@ -529,7 +534,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
 
   
-    <article id="post-490-The-Maze"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1248-Count-Number-of-Nice-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -537,7 +542,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/490-The-Maze/">490. The Maze</a>
+      <a class="article-title" href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/">1248. Count Number of Nice Subarrays</a>
     </h1>
   
 
@@ -545,8 +550,8 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/490-The-Maze/" class="article-date">
-	  <time datetime="2020-09-24T22:29:34.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/" class="article-date">
+	  <time datetime="2020-09-29T00:15:18.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -559,10 +564,10 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          DFS12345678910111213141516171819202122232425class Solution(object):    def hasPath(self, maze, start, destination):        """        :type maze: List[List[int]]        :type start: List[int]        :type destination: List[int]        :rtype: bool...
+          Solution 112345678910111213141516171819class Solution(object):    def numberOfSubarrays(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: int        """        return self.atMost(nums, k) - self.atMost(nums...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/490-The-Maze/#more">Read More</a>
+          <a href="/2020/09/28/1248-Count-Number-of-Nice-Subarrays/#more">Read More</a>
         </p>
       
     </div>
@@ -581,7 +586,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
 
   
-    <article id="post-817-Linked-List-Components"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-992-Subarrays-with-K-Different-Integers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -589,7 +594,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/817-Linked-List-Components/">817. Linked List Components</a>
+      <a class="article-title" href="/2020/09/28/992-Subarrays-with-K-Different-Integers/">992. Subarrays with K Different Integers</a>
     </h1>
   
 
@@ -597,8 +602,8 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/817-Linked-List-Components/" class="article-date">
-	  <time datetime="2020-09-24T21:39:12.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/28/992-Subarrays-with-K-Different-Integers/" class="article-date">
+	  <time datetime="2020-09-28T22:51:06.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -611,10 +616,15 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def numComponents(self, head, G):...
+          Solution 1Explanition
+
+Write/copy a helper function of sliding window, to get the number of subarrays with at most K distinct elements.
+exactly(K) = atMost(K) - atMost(K-1)
+
+Way to understande res += j - i + 1    * you contract the range by increm...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/817-Linked-List-Components/#more">Read More</a>
+          <a href="/2020/09/28/992-Subarrays-with-K-Different-Integers/#more">Read More</a>
         </p>
       
     </div>
@@ -633,7 +643,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
 
   
-    <article id="post-729-My-Calendar-I"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1358-Number-of-Substrings-Containing-All-Three-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -641,7 +651,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/729-My-Calendar-I/">729. My Calendar I</a>
+      <a class="article-title" href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/">1358. Number of Substrings Containing All Three Characters</a>
     </h1>
   
 
@@ -649,8 +659,8 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/729-My-Calendar-I/" class="article-date">
-	  <time datetime="2020-09-24T19:50:01.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/" class="article-date">
+	  <time datetime="2020-09-28T20:06:38.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -663,10 +673,10 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132class MyCalendar(object):    def __init__(self):        self.intervals = []    def book(self, start, end):        """        :type start: int        :type end: int        :rtype: bool        "...
+          Solution 11234567891011121314151617class Solution(object):    def numberOfSubstrings(self, s):        """        :type s: str        :rtype: int        """        res = i = 0        count = &#123;c: 0 for c in 'abc'&#125;                for j in x...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/729-My-Calendar-I/#more">Read More</a>
+          <a href="/2020/09/28/1358-Number-of-Substrings-Containing-All-Three-Characters/#more">Read More</a>
         </p>
       
     </div>
@@ -685,7 +695,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
 
   
-    <article id="post-400-Nth-Digit"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Sliding-Window-Montonic-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -693,7 +703,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/24/400-Nth-Digit/">400. Nth Digit</a>
+      <a class="article-title" href="/2020/09/28/Sliding-Window-Montonic-List/">Sliding Window/Montonic List</a>
     </h1>
   
 
@@ -701,12 +711,12 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     
     <div class="article-meta">
       
-	<a href="/2020/09/24/400-Nth-Digit/" class="article-date">
-	  <time datetime="2020-09-24T18:24:41.000Z" itemprop="datePublished">2020-09-24</time>
+	<a href="/2020/09/28/Sliding-Window-Montonic-List/" class="article-date">
+	  <time datetime="2020-09-28T17:35:10.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
       
       
@@ -715,10 +725,16 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617/** * @param &#123;number&#125; n * @return &#123;number&#125; */var findNthDigit = function(n) &#123;  let start = 1, len = 1, cnt = 9    while (n &gt; cnt * len) &#123;      n -= cnt *len      cnt *= 10      len++      s...
+          
+1425. Constrained Subseque
+1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
+1358. Number of Substrings Containing All Three Characters
+992. Subarrays with K Different Integers
+1248. Count Number of Nice Subarrays
+1...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/24/400-Nth-Digit/#more">Read More</a>
+          <a href="/2020/09/28/Sliding-Window-Montonic-List/#more">Read More</a>
         </p>
       
     </div>
@@ -737,7 +753,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
 
   
-    <article id="post-723-Candy-Crush"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1425-Constrained-Subseque"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -745,7 +761,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/23/723-Candy-Crush/">723. Candy Crush</a>
+      <a class="article-title" href="/2020/09/28/1425-Constrained-Subseque/">1425. Constrained Subsequence Sum</a>
     </h1>
   
 
@@ -753,8 +769,8 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     
     <div class="article-meta">
       
-	<a href="/2020/09/23/723-Candy-Crush/" class="article-date">
-	  <time datetime="2020-09-23T23:15:48.000Z" itemprop="datePublished">2020-09-23</time>
+	<a href="/2020/09/28/1425-Constrained-Subseque/" class="article-date">
+	  <time datetime="2020-09-28T17:26:54.000Z" itemprop="datePublished">2020-09-28</time>
 	</a>
 
       
@@ -767,10 +783,13 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627class Solution(object):    def candyCrush(self, M):        """        :type board: List[List[int]]        :rtype: List[List[int]]        """        while True:            # 1. check            crush = s...
+          Solution
+res[i] represent the current maximum sum if we count the A[i], thus, the result is the maxmum value in array A
+deque is a non decreasing array
+deque is the maximun value from i-k to i12345678910111213141516class Solution(object):    def c...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/23/723-Candy-Crush/#more">Read More</a>
+          <a href="/2020/09/28/1425-Constrained-Subseque/#more">Read More</a>
         </p>
       
     </div>
@@ -793,7 +812,7 @@ Solution 1 O(n) –&gt; space12345678910111213141516171819202122232425262728/** 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/48/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="page-number current">49</span><a class="page-number" href="/page/50/">50</a><a class="page-number" href="/page/51/">51</a><span class="space">&hellip;</span><a class="page-number" href="/page/59/">59</a><a class="extend next" rel="next" href="/page/50/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/48/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="page-number current">49</span><a class="page-number" href="/page/50/">50</a><a class="page-number" href="/page/51/">51</a><span class="space">&hellip;</span><a class="page-number" href="/page/60/">60</a><a class="extend next" rel="next" href="/page/50/">Next &amp;raquo;</a>
   </nav>
 
 </section>
