@@ -265,6 +265,58 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-526-Beautiful-Arrangement"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/08/526-Beautiful-Arrangement/">526. Beautiful Arrangement</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/08/526-Beautiful-Arrangement/" class="article-date">
+	  <time datetime="2020-10-08T19:14:18.000Z" itemprop="datePublished">2020-10-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Backtracking1234567891011121314151617181920class Solution(object):    def countArrangement(self, N):        """        :type N: int        :rtype: int        """                return self.cal(1, N, 0, 0)    def cal(self, pos, N, mask, count):    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/08/526-Beautiful-Arrangement/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-395-Longest-Substring-with-At-Least-K-Repeating-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -743,63 +795,6 @@ p(i) = sum(A[0],…, A[i])%k
         </p>
         <p class="article-more-link">
           <a href="/2020/10/06/55-Jump-Game/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-96-Unique-Binary-Search-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/96-Unique-Binary-Search-Trees/">96. Unique Binary Search Trees</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/96-Unique-Binary-Search-Trees/" class="article-date">
-	  <time datetime="2020-10-06T23:01:49.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          n = 2dp[2] =  dp[0] * dp[1]　　　(1为根的情况，则左子树一定不存在，右子树可以有一个数字) 
-
-dp[1] * dp[0]　　  (2为根的情况，则左子树可以有一个数字，右子树一定不存在)
-
-同理可写出 n = 3 的计算方法：
-dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在，右子树可以有两个数字)
-　　　　+ dp[1] * dp[1]　　  (2为根的情况，则左右子树都可以各有一个数字)
- 　　　  + dp[2] * ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/96-Unique-Binary-Search-Trees/#more">Read More</a>
         </p>
       
     </div>

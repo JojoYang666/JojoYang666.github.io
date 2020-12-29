@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>974. subarray sums divisible by k | Jojo&#39;s Blog</title>
+  <title>721. accounts merge | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="Cornor case: 开始要给P给0， for the case: a single num is equal to the K p(i) &#x3D; sum(A[0],…, A[i])%k 这样在拿到dict: key is p(i), value: account of p(i), 也就是说有相同余数的， 他们一减 就可以拿到一个(sum of sub array )&#x2F;k &#x3D; 0 有多少种这个情">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031class Solution(object):    def accountsMerge(self, accounts):        &quot;&quot;&quot;        :type accounts: List[List[str]]        :rtype: List[List[str]]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="974. Subarray Sums Divisible by K">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/10/06/974-Subarray-Sums-Divisible-by-K/index.html">
+<meta property="og:title" content="721. Accounts Merge">
+<meta property="og:url" content="https://jojoyang666.github.io/2020/12/29/721-Accounts-Merge/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Cornor case: 开始要给P给0， for the case: a single num is equal to the K p(i) &#x3D; sum(A[0],…, A[i])%k 这样在拿到dict: key is p(i), value: account of p(i), 也就是说有相同余数的， 他们一减 就可以拿到一个(sum of sub array )&#x2F;k &#x3D; 0 有多少种这个情">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031class Solution(object):    def accountsMerge(self, accounts):        &quot;&quot;&quot;        :type accounts: List[List[str]]        :rtype: List[List[str]]">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-07T02:37:23.000Z">
-<meta property="article:modified_time" content="2020-12-29T23:51:10.297Z">
+<meta property="article:published_time" content="2020-12-29T23:25:31.000Z">
+<meta property="article:modified_time" content="2020-12-29T23:31:52.342Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-974-Subarray-Sums-Divisible-by-K" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-721-Accounts-Merge" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      974. Subarray Sums Divisible by K
+      721. Accounts Merge
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/" class="article-date">
-	  <time datetime="2020-10-07T02:37:23.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/12/29/721-Accounts-Merge/" class="article-date">
+	  <time datetime="2020-12-29T23:25:31.000Z" itemprop="datePublished">2020-12-29</time>
 	</a>
 
       
@@ -206,16 +206,10 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>Cornor case: 开始要给P给0， for the case: a single num is equal to the K</li>
-<li>p(i) = sum(A[0],…, A[i])%k</li>
-<li>这样在拿到dict: key is p(i), value: account of p(i), 也就是说有相同余数的， 他们一减 就可以拿到一个(sum of sub array )/k = 0</li>
-<li>有多少种这个情况呢吗就是 在count 中取2个， 他们一减就可以拿到一个subarray – v*(v-1)/2个subarray<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subarraysDivByK</span><span class="params">(self, A, K)</span>:</span></span><br><span class="line">        P = [<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> A:</span><br><span class="line">            P.append((P[<span class="number">-1</span>] + x) % K)</span><br><span class="line"></span><br><span class="line">        count = collections.Counter(P)</span><br><span class="line">        <span class="keyword">return</span> sum(v*(v<span class="number">-1</span>)/<span class="number">2</span> <span class="keyword">for</span> v <span class="keyword">in</span> count.values())</span><br></pre></td></tr></table></figure>
+        <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">accountsMerge</span><span class="params">(self, accounts)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type accounts: List[List[str]]</span></span><br><span class="line"><span class="string">        :rtype: List[List[str]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        em_to_name = &#123;&#125;</span><br><span class="line">        graph = collections.defaultdict(set)</span><br><span class="line">        <span class="keyword">for</span> acc <span class="keyword">in</span> accounts:</span><br><span class="line">            name = acc[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">for</span> email <span class="keyword">in</span> acc[<span class="number">1</span>:]:</span><br><span class="line">                graph[acc[<span class="number">1</span>]].add(email)</span><br><span class="line">                graph[email].add(acc[<span class="number">1</span>])</span><br><span class="line">                em_to_name[email] = name</span><br><span class="line">        </span><br><span class="line">        seen = set()</span><br><span class="line">        ans = []</span><br><span class="line">        <span class="keyword">for</span> email <span class="keyword">in</span> graph:</span><br><span class="line">            <span class="keyword">if</span> email <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">                seen.add(email)</span><br><span class="line">                stack = [email]</span><br><span class="line">                component = []</span><br><span class="line">                <span class="keyword">while</span> stack:</span><br><span class="line">                    node = stack.pop()</span><br><span class="line">                    component.append(node)</span><br><span class="line">                    <span class="keyword">for</span> nei <span class="keyword">in</span> graph[node]:</span><br><span class="line">                        <span class="keyword">if</span> nei <span class="keyword">not</span> <span class="keyword">in</span> seen:</span><br><span class="line">                            seen.add(nei)</span><br><span class="line">                            stack.append(nei)</span><br><span class="line">                ans.append([em_to_name[email]] + sorted(component))</span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[][]&#125;</span> <span class="variable">accounts</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> accountsMerge = <span class="function"><span class="keyword">function</span>(<span class="params">accounts</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//dfs</span></span><br><span class="line">    <span class="keyword">let</span> graph = &#123;&#125;</span><br><span class="line">    <span class="keyword">let</span> emailToName = &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    accounts.forEach(<span class="function"><span class="params">account</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> [name, ...emails] = account;</span><br><span class="line">        </span><br><span class="line">        emails.forEach(<span class="function">(<span class="params">email</span>) =&gt;</span> &#123;</span><br><span class="line">            graph[email] = graph[email] || []</span><br><span class="line">            graph[emails[<span class="number">0</span>]] = graph[emails[<span class="number">0</span>]] || []</span><br><span class="line">            </span><br><span class="line">            graph[email].push(emails[<span class="number">0</span>]);</span><br><span class="line">            graph[emails[<span class="number">0</span>]].push(email);</span><br><span class="line">            </span><br><span class="line">            emailToName[email] = name;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> seen = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="keyword">let</span> res = []</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">Object</span>.keys(graph).forEach(<span class="function">(<span class="params">email</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (!seen.has(email)) &#123;</span><br><span class="line">            <span class="keyword">let</span> children = []</span><br><span class="line">            dfs(graph, seen, email, children);</span><br><span class="line">            children.unshift(emailToName[email])</span><br><span class="line">            res.push(children.sort())</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dfs = <span class="function">(<span class="params">graph, seen, cur, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (seen.has(cur)) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    res.push(cur);</span><br><span class="line">    seen.add(cur);</span><br><span class="line">    <span class="keyword">let</span> neighbors = graph[cur];</span><br><span class="line">        </span><br><span class="line">    neighbors.forEach(<span class="function">(<span class="params">nei</span>) =&gt;</span> &#123;</span><br><span class="line">        dfs(graph, seen, nei,res);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">A</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">K</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> subarraysDivByK = <span class="function"><span class="keyword">function</span>(<span class="params">A, K</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> prefixSum = [<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">const</span> count = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; A.length; i++) &#123;</span><br><span class="line">        prefixSum.push(((prefixSum[i] + A[i])%K + K )%K)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> k <span class="keyword">of</span> prefixSum) &#123;</span><br><span class="line">        count[k] = (count[k] || <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> combination = <span class="built_in">Object</span>.values(count).map(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">Math</span>.floor(item*(item<span class="number">-1</span>)/<span class="number">2</span>))</span><br><span class="line">    <span class="keyword">return</span> combination.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -243,7 +237,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/" target="_blank" title="974. Subarray Sums Divisible by K">https://jojoyang666.github.io/2020/10/06/974-Subarray-Sums-Divisible-by-K/</a>
+          <a href="/2020/12/29/721-Accounts-Merge/" target="_blank" title="721. Accounts Merge">https://jojoyang666.github.io/2020/12/29/721-Accounts-Merge/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -291,19 +285,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/10/06/957-Prison-Cells-After-N-Days/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          957. Prison Cells After N Days
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/12/29/399-Evaluate-Division/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">1209. Remove All Adjacent Duplicates in String II</div>
+      <div class="article-nav-title">399. Evaluate Division</div>
     </a>
   
 </nav>
