@@ -265,6 +265,162 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-686-Repeated-String-Match"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/686-Repeated-String-Match/">686. Repeated String Match</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/686-Repeated-String-Match/" class="article-date">
+	  <time datetime="2020-09-01T22:49:44.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345const repeatedStringMatch = (A, B) =&gt; &#123;    const count = Math.ceil(B.length / A.length)    const str = A.repeat(count)    return str.includes(B) ? count : (str + A).includes(B) ? count + 1 : -1 &#125;;
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/686-Repeated-String-Match/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-947-Most-Stones-Removed-with-Same-Row-or-Column"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/">947. Most Stones Removed with Same Row or Column</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/" class="article-date">
+	  <time datetime="2020-09-01T22:02:02.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 112345678910111213141516171819202122232425262728293031323334class Solution(object):    def removeStones(self, stones):        """        :type stones: List[List[int]]        :rtype: int        """        graph = collections.defaultdict(li...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-228-Summary-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/228-Summary-Ranges/">228. Summary Ranges</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/228-Summary-Ranges/" class="article-date">
+	  <time datetime="2020-09-01T21:51:35.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution123456789101112131415161718192021222324/** * @param &#123;number[]&#125; nums * @return &#123;string[]&#125; */var summaryRanges = function(nums) &#123;    let i = 0;    const res = []        while (i &lt; nums.length) &#123;        let di...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/228-Summary-Ranges/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-904-Fruit-Into-Baskets"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -639,167 +795,6 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
 
 
   
-    <article id="post-163-Missing-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/163-Missing-Ranges/">163. Missing Ranges</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/163-Missing-Ranges/" class="article-date">
-	  <time datetime="2020-08-18T17:55:42.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          SolutionCornor Case:整形溢出， 当数组中有整形最大值时， 此时lower更新为num+1时就会溢出， 所以再更新前要判断一下， 若num已经时整形最大值了 直接返回结果
-123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; lower * @param &#123;number&#125; upper ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/163-Missing-Ranges/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1057-Campus-Bikes"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/1057-Campus-Bikes/">1057. Campus Bikes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/17/1057-Campus-Bikes/" class="article-date">
-	  <time datetime="2020-08-18T02:55:33.000Z" itemprop="datePublished">2020-08-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances = []     # distances[worker] is tuple of (distance, worker, bike) for each bike         for i, (x, y) in enumerate(wo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/17/1057-Campus-Bikes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Python"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/Python/">Common Python Methods</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Base Data Type
-heapq
-
-heapq.heapify(x): transform list x into a heap, in-place, in linear time.
-heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To acc...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/17/Python/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
@@ -942,7 +937,7 @@ heapq.heappop(heap): pop and return the smallest item from the heap, maintaining
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
       </div>
       <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
       <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
@@ -951,12 +946,12 @@ heapq.heappop(heap): pop and return the smallest item from the heap, maintaining
       <div class="modal-body">
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
+              Front Size
             </a>
           </div>
           <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            您已调整页面字体大小
+            You already change font size
           </div>
         </div>
       
@@ -964,12 +959,12 @@ heapq.heappop(heap): pop and return the smallest item from the heap, maintaining
 
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
+              Night eye protection mode
             </a>
         </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
+            Night eye protection mode has turned on, click again to turn off
           </div>
         </div>
 

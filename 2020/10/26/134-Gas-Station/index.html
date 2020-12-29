@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="实际上是用greedy的方法 一旦不满足就更新cur_index 最终的判定就是你的汽油是否能支持你走完全程  123456789101112131415161718192021class Solution(object):    def canCompleteCircuit(self, gas, cost):        &quot;&quot;&quot;        :type gas: List[int]">
+  <meta name="description" content="实际上是用greedy的方法 一旦不满足就更新cur_index 最终的判定就是你的汽油是否能支持你走完全程 注意题目的先决条件： 如果有结果， 那么必定是独一无二的  123456789101112131415161718192021class Solution(object):    def canCompleteCircuit(self, gas, cost):        &quot;&quot;&quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="134. Gas Station">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/10/26/134-Gas-Station/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="实际上是用greedy的方法 一旦不满足就更新cur_index 最终的判定就是你的汽油是否能支持你走完全程  123456789101112131415161718192021class Solution(object):    def canCompleteCircuit(self, gas, cost):        &quot;&quot;&quot;        :type gas: List[int]">
+<meta property="og:description" content="实际上是用greedy的方法 一旦不满足就更新cur_index 最终的判定就是你的汽油是否能支持你走完全程 注意题目的先决条件： 如果有结果， 那么必定是独一无二的  123456789101112131415161718192021class Solution(object):    def canCompleteCircuit(self, gas, cost):        &quot;&quot;&quot;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-26T22:12:28.000Z">
-<meta property="article:modified_time" content="2020-10-26T22:15:21.360Z">
+<meta property="article:modified_time" content="2020-12-29T07:22:56.080Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -210,6 +210,7 @@
 <li>实际上是用greedy的方法</li>
 <li>一旦不满足就更新cur_index</li>
 <li>最终的判定就是你的汽油是否能支持你走完全程</li>
+<li>注意题目的先决条件： 如果有结果， 那么必定是独一无二的</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canCompleteCircuit</span><span class="params">(self, gas, cost)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type gas: List[int]</span></span><br><span class="line"><span class="string">        :type cost: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        n = len(gas)</span><br><span class="line">        </span><br><span class="line">        total_tank, curr_tank = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        starting_position = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">            total_tank += gas[i] - cost[i]</span><br><span class="line">            curr_tank += gas[i] - cost[i]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> curr_tank &lt; <span class="number">0</span>:</span><br><span class="line">                starting_position = i + <span class="number">1</span></span><br><span class="line">                curr_tank = <span class="number">0</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> starting_position <span class="keyword">if</span> total_tank &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">-1</span></span><br></pre></td></tr></table></figure>
       
@@ -451,7 +452,7 @@ var a = new Donate({
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
       </div>
       <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
       <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
@@ -460,12 +461,12 @@ var a = new Donate({
       <div class="modal-body">
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
+              Front Size
             </a>
           </div>
           <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            您已调整页面字体大小
+            You already change font size
           </div>
         </div>
       
@@ -473,12 +474,12 @@ var a = new Donate({
 
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
+              Night eye protection mode
             </a>
         </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
+            Night eye protection mode has turned on, click again to turn off
           </div>
         </div>
 

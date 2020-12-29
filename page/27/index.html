@@ -265,6 +265,176 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-Interval"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/06/Interval/">Interval</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/06/Interval/" class="article-date">
+	  <time datetime="2020-11-07T06:29:12.000Z" itemprop="datePublished">2020-11-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+sort based on start/end time
+
+when update pointer, max()/min()
+
+759. Employee Free Time
+
+
+
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/06/Interval/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-759-Employee-Free-Time"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/06/759-Employee-Free-Time/">759. Employee Free Time</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/06/759-Employee-Free-Time/" class="article-date">
+	  <time datetime="2020-11-07T06:23:27.000Z" itemprop="datePublished">2020-11-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Method 1
+put interval in the format of (timestamp, end/open) in to the array
+sort them
+using prev, cur, occuppied to track it
+if it is open, occuppied += 1 othervise -=1
+add new interval to the result only when occuppied == 01234567891011121314151...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/06/759-Employee-Free-Time/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-115-Distinct-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/06/115-Distinct-Subsequences/">115. Distinct Subsequences </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/06/115-Distinct-Subsequences/" class="article-date">
+	  <time datetime="2020-11-07T05:54:22.000Z" itemprop="datePublished">2020-11-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          s: i, t: jdp[i][j]: the number of distinct subsenquences in s[0, i] &amp; t[0:j]at first, must initialize dp[i][j] = sp[i-1][j] then if s[i] == t[j], we can update dp[i][j] by adding dp[i-1][j-1]
+123456789101112131415161718192021class Solution(obj...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/06/115-Distinct-Subsequences/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-472-Concatenated-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -642,171 +812,6 @@ define variables:
 
 
   
-    <article id="post-1235-Maximum-Profit-in-Job-Scheduling"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/">1235. Maximum Profit in Job Scheduling</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/" class="article-date">
-	  <time datetime="2020-11-06T06:36:29.000Z" itemprop="datePublished">2020-11-05</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          dp: [[endTime, the max profit can made at endTime]]sorted by end time
-for each job, There are two choices:
-
-pick this one
-find the largest profit we can make before the start time s
-
-
-not pick this one 
-
-Kind of knapack algorithm, along with binar...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-329-Longest-Increasing-Path-in-a-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/">329. Longest Increasing Path in a Matrix</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/" class="article-date">
-	  <time datetime="2020-11-06T06:20:25.000Z" itemprop="datePublished">2020-11-05</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def longestIncreasingPath(self, matrix):        """        :type matrix: List[List[int]]        :rtype: int        """        def dfs(i, j):            if not dp[i][j]:                val = m...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-37-Sudoku-Solver"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/05/37-Sudoku-Solver/">37. Sudoku Solver</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/05/37-Sudoku-Solver/" class="article-date">
-	  <time datetime="2020-11-06T05:26:57.000Z" itemprop="datePublished">2020-11-05</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Solution(object):    def solveSudoku(self, board):        """        :type board: List[List[str]]        :rtype: None Do not return anything, mo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/05/37-Sudoku-Solver/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
@@ -949,7 +954,7 @@ Kind of knapack algorithm, along with binar...
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
       </div>
       <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
       <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
@@ -958,12 +963,12 @@ Kind of knapack algorithm, along with binar...
       <div class="modal-body">
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
+              Front Size
             </a>
           </div>
           <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            您已调整页面字体大小
+            You already change font size
           </div>
         </div>
       
@@ -971,12 +976,12 @@ Kind of knapack algorithm, along with binar...
 
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
+              Night eye protection mode
             </a>
         </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
+            Night eye protection mode has turned on, click again to turn off
           </div>
         </div>
 

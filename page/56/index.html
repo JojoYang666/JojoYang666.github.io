@@ -265,6 +265,166 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-524-Longest-Word-in-Dictionary-through-Deleting"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/">524. Longest Word in Dictionary through Deleting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/" class="article-date">
+	  <time datetime="2020-09-10T06:05:45.000Z" itemprop="datePublished">2020-09-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1123456789101112131415161718192021222324/** * @param &#123;string&#125; s * @param &#123;string[]&#125; d * @return &#123;string&#125; */var findLongestWord = function(s, d) &#123;    let res = ""        for (let str of d) &#123;        l...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/09/524-Longest-Word-in-Dictionary-through-Deleting/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-777-Swap-Adjacent-in-LR-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/09/777-Swap-Adjacent-in-LR-String/">777. Swap Adjacent in LR String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/" class="article-date">
+	  <time datetime="2020-09-10T03:50:48.000Z" itemprop="datePublished">2020-09-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+一种是把 “XL” 变成 “LX”，另一种是把 “RX” 变成 “XR”。
+每次分别找到 start 和 end 中非X的字符，如果二者不相同的话，直接返回 false，想想问什么？这是因为不论是L还是R，其只能跟X交换位置，L和R之间是不能改变相对顺序的，所以如果分别将 start 和 end 中所有的X去掉后的字符串不相等的话，那么就永远无法让 start 和 end 相等了。
+这个判断完之后，就来验证L只能前移，R只能后移这个限制条件吧，当i指向 start 中...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/09/777-Swap-Adjacent-in-LR-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1055-Shortest-Way-to-Form-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/06/1055-Shortest-Way-to-Form-String/">1055. Shortest Way to Form String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/06/1055-Shortest-Way-to-Form-String/" class="article-date">
+	  <time datetime="2020-09-07T00:21:20.000Z" itemprop="datePublished">2020-09-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+Greedy123456789101112131415161718192021222324252627282930313233/** * @param &#123;string&#125; source * @param &#123;string&#125; target * @return &#123;number&#125; */var shortestWay = function(source, target) &#123;    const map = new...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/06/1055-Shortest-Way-to-Form-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-289-Game-of-Life"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -640,162 +800,6 @@ node == edges + 1
 
 
   
-    <article id="post-686-Repeated-String-Match"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/01/686-Repeated-String-Match/">686. Repeated String Match</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/01/686-Repeated-String-Match/" class="article-date">
-	  <time datetime="2020-09-01T22:49:44.000Z" itemprop="datePublished">2020-09-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345const repeatedStringMatch = (A, B) =&gt; &#123;    const count = Math.ceil(B.length / A.length)    const str = A.repeat(count)    return str.includes(B) ? count : (str + A).includes(B) ? count + 1 : -1 &#125;;
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/01/686-Repeated-String-Match/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-947-Most-Stones-Removed-with-Same-Row-or-Column"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/">947. Most Stones Removed with Same Row or Column</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/" class="article-date">
-	  <time datetime="2020-09-01T22:02:02.000Z" itemprop="datePublished">2020-09-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 112345678910111213141516171819202122232425262728293031323334class Solution(object):    def removeStones(self, stones):        """        :type stones: List[List[int]]        :rtype: int        """        graph = collections.defaultdict(li...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-228-Summary-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/01/228-Summary-Ranges/">228. Summary Ranges</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/01/228-Summary-Ranges/" class="article-date">
-	  <time datetime="2020-09-01T21:51:35.000Z" itemprop="datePublished">2020-09-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution123456789101112131415161718192021222324/** * @param &#123;number[]&#125; nums * @return &#123;string[]&#125; */var summaryRanges = function(nums) &#123;    let i = 0;    const res = []        while (i &lt; nums.length) &#123;        let di...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/01/228-Summary-Ranges/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
@@ -938,7 +942,7 @@ node == edges + 1
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
       </div>
       <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
       <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
@@ -947,12 +951,12 @@ node == edges + 1
       <div class="modal-body">
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
+              Front Size
             </a>
           </div>
           <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            您已调整页面字体大小
+            You already change font size
           </div>
         </div>
       
@@ -960,12 +964,12 @@ node == edges + 1
 
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
+              Night eye protection mode
             </a>
         </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
+            Night eye protection mode has turned on, click again to turn off
           </div>
         </div>
 

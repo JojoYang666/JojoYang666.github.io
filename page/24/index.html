@@ -265,6 +265,173 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden/">1326. Minimum Number of Taps to Open to Water a Garden</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden/" class="article-date">
+	  <time datetime="2020-11-12T19:00:48.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          dp[i]: is the minimum number of taps to water [0, i]
+1234567891011121314class Solution(object):    def minTaps(self, n, ranges):        """        :type n: int        :type ranges: List[int]        :rtype: int        """        dp = [0] + [n+2]*n ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-466-Count-The-Repetitions"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/466-Count-The-Repetitions/">466. Count The Repetitions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/466-Count-The-Repetitions/" class="article-date">
+	  <time datetime="2020-11-12T17:46:13.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+records[i] = (a, b)
+a: the number of times s1 matched to s2 which starting from s2[i:]
+b: After this matches done, what is the position in the s2 for next matches
+
+
+After getting the records, calculate res which is the number of matches with n1 o...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/466-Count-The-Repetitions/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-980-Unique-Paths-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/11/980-Unique-Paths-III/">980. Unique Paths III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/11/980-Unique-Paths-III/" class="article-date">
+	  <time datetime="2020-11-12T05:57:24.000Z" itemprop="datePublished">2020-11-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+不能有memo是因为题目要求要走过每一个非障碍
+所以 每一次到pos可能经过的障碍节点不一样所以不能memo
+但是要记住用visited
+本题目在原数组上面进行更改来作为visited， 最后记得还原12345678910111213141516171819202122232425262728293031323334353637383940414243class Solution(object):    def uniquePathsIII(self, grid):        """...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/11/980-Unique-Paths-III/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1240-Tiling-a-Rectangle-with-the-Fewest-Squares"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -653,166 +820,6 @@ find the depth from set ...
 
 
   
-    <article id="post-300-Longest-Increasing-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/300-Longest-Increasing-Subsequence/">300. Longest Increasing Subsequence </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/300-Longest-Increasing-Subsequence/" class="article-date">
-	  <time datetime="2020-11-11T18:43:44.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          O(n*n) –&gt; return max dp1234567891011121314class Solution(object):    def lengthOfLIS(self, nums):        """        :type nums: List[int]        :rtype: int        """        if not nums: return 0        dp = [1] * len(nums)                for ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/300-Longest-Increasing-Subsequence/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-135-Candy"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/135-Candy/">135. Candy</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/10/135-Candy/" class="article-date">
-	  <time datetime="2020-11-11T06:20:04.000Z" itemprop="datePublished">2020-11-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718class Solution(object):    def candy(self, ratings):        """        :type ratings: List[int]        :rtype: int        """        left2right = [1] * len(ratings)        right2left = [1] * len(ratings)                f...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/10/135-Candy/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1359-Count-All-Valid-Pickup-and-Delivery-Options"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/1359-Count-All-Valid-Pickup-and-Delivery-Options/">1359. Count All Valid Pickup and Delivery Options</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/10/1359-Count-All-Valid-Pickup-and-Delivery-Options/" class="article-date">
-	  <time datetime="2020-11-11T05:45:36.000Z" itemprop="datePublished">2020-11-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-Assume we already have n-1 pairs, now we need to insert the  nth pair
-To insert the first element, there are 2*(n-1) + 1 = 2n - 1 choices of the position
-To insert the second element, there are 2*(n-1)+1 + = 2n choices of the position
-because sec...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/10/1359-Count-All-Valid-Pickup-and-Delivery-Options/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
@@ -955,7 +962,7 @@ because sec...
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
       </div>
       <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
       <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
@@ -964,12 +971,12 @@ because sec...
       <div class="modal-body">
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
+              Front Size
             </a>
           </div>
           <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            您已调整页面字体大小
+            You already change font size
           </div>
         </div>
       
@@ -977,12 +984,12 @@ because sec...
 
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
+              Night eye protection mode
             </a>
         </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
+            Night eye protection mode has turned on, click again to turn off
           </div>
         </div>
 

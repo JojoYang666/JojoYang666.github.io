@@ -265,6 +265,176 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-611-Valid-Triangle-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/31/611-Valid-Triangle-Number/">611. Valid Triangle Number </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/31/611-Valid-Triangle-Number/" class="article-date">
+	  <time datetime="2020-10-31T20:19:22.000Z" itemprop="datePublished">2020-10-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+sort
+kind of liking 3sum
+
+12345678910111213141516class Solution(object):    def triangleNumber(self, nums):        """        :type nums: List[int]        :rtype: int        """        res = 0        nums.sort()        for i in range(0, len(nums)...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/31/611-Valid-Triangle-Number/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1262-Greatest-Sum-Divisible-by-Three"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/">1262. Greatest Sum Divisible by Three</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/" class="article-date">
+	  <time datetime="2020-10-31T18:55:36.000Z" itemprop="datePublished">2020-10-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i] (i: 0, 1, 2): represent the greatest sum which module 3 is 0, 1, 2(in current array a)
+formula: (num is the current last number in a) val = (dp[i] + num)%3 dp[i] = max(dp[val], dp[i] + num)
+Cornor case:
+
+
+当前更新的值可能影响后面的值， 所以要new tmp array
+se...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-853-Car-Fleet"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/31/853-Car-Fleet/">853. Car Fleet</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/31/853-Car-Fleet/" class="article-date">
+	  <time datetime="2020-10-31T17:41:33.000Z" itemprop="datePublished">2020-10-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+12345678910111213141516171819202122class Solution(object):    def carFleet(self, target, position, speed):        """        :type target: int        :type position: List[int]        :type speed: List[int]        :rtype: int        """        c...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/31/853-Car-Fleet/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-838-Push-Dominoes"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -637,167 +807,6 @@ recursive to solve it
 
 
   
-    <article id="post-333-Largest-BST-Subtree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/333-Largest-BST-Subtree/">333. Largest BST Subtree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/29/333-Largest-BST-Subtree/" class="article-date">
-	  <time datetime="2020-10-30T02:36:58.000Z" itemprop="datePublished">2020-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          当前节点是BST的一个重要条件是： 当前节点的值一定要比左节点的最大节点的值要大， 比右子树的最小节点要小
-1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#   ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/29/333-Largest-BST-Subtree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-898-Bitwise-ORs-of-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/">898. Bitwise ORs of Subarrays</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/" class="article-date">
-	  <time datetime="2020-10-30T01:02:39.000Z" itemprop="datePublished">2020-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-12345678910111213class Solution(object):    def subarrayBitwiseORs(self, A):        """        :type A: List[int]        :rtype: int        """        ans = set()        cur = set()                for num in A:            cur = &#123;num | x fo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-95-Unique-Binary-Search-Trees-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/95-Unique-Binary-Search-Trees-II/">95. Unique Binary Search Trees II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/29/95-Unique-Binary-Search-Trees-II/" class="article-date">
-	  <time datetime="2020-10-29T22:44:12.000Z" itemprop="datePublished">2020-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Recursive tp find allsubproblem
-123456789101112131415161718192021222324252627282930# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = le...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/29/95-Unique-Binary-Search-Trees-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
@@ -940,7 +949,7 @@ recursive to solve it
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="myModalLabel">设置</h2>
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
       </div>
       <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
       <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
@@ -949,12 +958,12 @@ recursive to solve it
       <div class="modal-body">
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
-              正文字号大小
+              Front Size
             </a>
           </div>
           <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            您已调整页面字体大小
+            You already change font size
           </div>
         </div>
       
@@ -962,12 +971,12 @@ recursive to solve it
 
           <div style="margin:6px;">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
-              夜间护眼模式
+              Night eye protection mode
             </a>
         </div>
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
           <div class="panel-body">
-            夜间模式已经开启，再次单击按钮即可关闭 
+            Night eye protection mode has turned on, click again to turn off
           </div>
         </div>
 
