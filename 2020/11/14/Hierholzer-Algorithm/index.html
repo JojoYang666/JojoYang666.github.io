@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="Jojo&#39;s Blog">
 <meta property="og:description" content="Euler path: a path visiting every edge exactly once Euler circuit: an Euler path ending where it started. Any connected directed graph where all nodes have equal in-degree and out-degree has an Euler">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/Hierholzer-Algorithm.png">
 <meta property="article:published_time" content="2020-11-15T05:36:53.000Z">
-<meta property="article:modified_time" content="2020-11-15T05:48:52.023Z">
+<meta property="article:modified_time" content="2020-12-28T23:12:50.090Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/Hierholzer-Algorithm.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -222,6 +224,18 @@
 <li>Starting from a vertex u, we walk through (unwalked) edges until we get stuck. Because the in-degrees and out-degrees of each node are equal, we can only get stuck at u, which forms a cycle.</li>
 <li>Now, for any node v we had visited that has unwalked edges, we start a new cycle from v with the same procedure as above, and then merge the cycles together to form a new cycle u \rightarrow \dots \rightarrow v \rightarrow \dots \rightarrow v \rightarrow \dots \rightarrow uu→⋯→v→⋯→v→⋯→u.</li>
 </ol>
+<h1 id="Eulerian-path"><a href="#Eulerian-path" class="headerlink" title="Eulerian path"></a>Eulerian path</h1><p>In graph theory, an Eulerian trail (or Eulerian path) is a trail in a finite graph that visits every edge exactly once (allowing for revisiting vertices).</p>
+<h1 id="Eulerian-circuit-Eulerian-cycle"><a href="#Eulerian-circuit-Eulerian-cycle" class="headerlink" title="Eulerian circuit / Eulerian cycle"></a>Eulerian circuit / Eulerian cycle</h1><p>an Eulerian trail that starts and ends on the same vertex.</p>
+<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><ol>
+<li>starts with a random node –&gt; follows an arbitrary unvisited edge to a neighbor. –&gt; repeated until one returns to the starting node. –&gt; This yields a first circle in the graph.</li>
+<li>If this circle covers all nodes it is an Eulerian cycle and the algorithm is finished.<ul>
+<li>Otherwise: one chooses another node among the cycles’ nodes with unvisited edges and constructs another circle, called subtour.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><img src="/images/Hierholzer-Algorithm.png" alt="image"></li>
+</ul>
 
       
     </div>
@@ -324,7 +338,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hierholzer’s-algorithm"><span class="nav-number">1.</span> <span class="nav-text">Hierholzer’s algorithm</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hierholzer’s-algorithm"><span class="nav-number">1.</span> <span class="nav-text">Hierholzer’s algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Eulerian-path"><span class="nav-number">2.</span> <span class="nav-text">Eulerian path</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Eulerian-circuit-Eulerian-cycle"><span class="nav-number">3.</span> <span class="nav-text">Eulerian circuit &#x2F; Eulerian cycle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">4.</span> <span class="nav-text">Algorithm</span></a></li></ol>
     
     </div>
   </aside>

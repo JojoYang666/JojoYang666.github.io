@@ -9,15 +9,20 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Client-side rendering will have the server send a mostly empty HTML file to begin with  have links to CSS in the .   It will also have links to JavaScript in the  just before the closing  tag. ---&gt; Th">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Client-side Rendering vs. Server-side Rendering ">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/27/Client-side-Rendering-vs-Server-side-Rendering/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Client-side rendering will have the server send a mostly empty HTML file to begin with  have links to CSS in the .   It will also have links to JavaScript in the  just before the closing  tag. ---&gt; Th">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jojoyang666.github.io/images/client_rendering.png">
+<meta property="og:image" content="https://jojoyang666.github.io/images/server_rendering.png">
 <meta property="article:published_time" content="2020-12-28T07:28:58.000Z">
-<meta property="article:modified_time" content="2020-12-28T07:29:29.064Z">
+<meta property="article:modified_time" content="2020-12-28T07:41:17.943Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jojoyang666.github.io/images/client_rendering.png">
   
     <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
   
@@ -190,7 +195,7 @@
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
 
       
 	<a class="article-views">
@@ -204,7 +209,43 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Client-side-rendering"><a href="#Client-side-rendering" class="headerlink" title="Client-side rendering"></a>Client-side rendering</h1><ol>
+<li><p>will have the server send a mostly empty HTML file to begin with</p>
+</li>
+<li><p>have links to CSS in the <head>. </p>
+</li>
+<li><p>It will also have links to JavaScript in the <script> just before the closing </body> tag. ---> The <body> will otherwise be empty. -->  to stop JavaScript loading from blocking content loading. So, the content is loaded and the scripts are loaded next.</p>
+</li>
+<li><p>async attribute tells the browser to load the file asynchronously.<br><code>&lt;script src=”main.js” async&gt;&lt;/script&gt;</code></p>
+</li>
+<li><p>recommended to put links to CSS style sheets in <head><meta name="generator" content="Hexo 4.2.1"></head>, otherwise will rerender</p>
+</li>
+<li><p>in-lining styles  not recommend</p>
+</li>
+</ol>
+<ul>
+<li><img src="/images/client_rendering.png" alt="image"></li>
+</ul>
+<h2 id="Pros"><a href="#Pros" class="headerlink" title="Pros"></a>Pros</h2><ol>
+<li>JavaScript bundles can be cached to speed things up in the future.<h1 id="Cons"><a href="#Cons" class="headerlink" title="Cons"></a>Cons</h1></li>
+<li>Loading content may take a while because requests have to travel all the way to the server, which can be very far away</li>
+<li>SEO takes a hit because all search engines see is an empty HTML file.</li>
+</ol>
+<h1 id="Server-side-rendering"><a href="#Server-side-rendering" class="headerlink" title="Server-side rendering"></a>Server-side rendering</h1><ol>
+<li>the whole web page is compiled on the server. The HTML is completely populated with the content, which is sent to the client</li>
+<li>Next.js and Gatsby use this technique</li>
+</ol>
+<ul>
+<li><img src="/images/server_rendering.png" alt="image"></li>
+</ul>
+<h2 id="Pros-1"><a href="#Pros-1" class="headerlink" title="Pros"></a>Pros</h2><ol>
+<li>Search engines will be able to crawl the site, resulting in better SEO because the pages will be populated with content.</li>
+</ol>
+<h2 id="Cons-1"><a href="#Cons-1" class="headerlink" title="Cons"></a>Cons</h2><ol>
+<li>A page will have to be rendered on the server and reloaded every time a new page on the site is visited, which will lead to full page reloads.</li>
+<li>The server will receive frequent requests, which can easily lead to the server getting flooded with requests and slowing down.</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
@@ -280,6 +321,15 @@ var a = new Donate({
     
 <nav id="article-nav">
   
+    <a href="/2020/12/27/Progressive-Rendering/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Progressive Rendering 
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/12/27/Content-Delivery-Networks/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
@@ -297,7 +347,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Client-side-rendering"><span class="nav-number">1.</span> <span class="nav-text">Client-side rendering</span></a></li></ol>
     
     </div>
   </aside>

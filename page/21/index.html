@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-Hierholzer-Algorithm"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Segment-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/Hierholzer-Algorithm/">Hierholzer Algorithm</a>
+      <a class="article-title" href="/2020/11/16/Segment-Tree/">Segment Tree</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/Hierholzer-Algorithm/" class="article-date">
-	  <time datetime="2020-11-15T05:36:53.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/16/Segment-Tree/" class="article-date">
+	  <time datetime="2020-11-17T05:17:30.000Z" itemprop="datePublished">2020-11-16</time>
 	</a>
 
       
@@ -296,16 +296,16 @@
       
         <p class="article-excerpt-content">
           
-Euler path: a path visiting every edge exactly once
-Euler circuit: an Euler path ending where it started.
-Any connected directed graph where all nodes have equal in-degree and out-degree has an Euler circuit 
+线段树可以在O(logn) 的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求区间最大值，求区间最小值）等操作。
 
-欧拉图判定定理：
 
-含有欧拉回路的图称为欧拉图，含有欧拉路径的图称为半欧...
+
+
+
+Code12345678910111213141516171819202122232425262728293031323334class SegmentTree:    def __init__(self, length):        self.nodes = [0]*(length*4)# --&gt; length *4        self.n...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/Hierholzer-Algorithm/#more">Read More</a>
+          <a href="/2020/11/16/Segment-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -324,7 +324,7 @@ Any connected directed graph where all nodes have equal in-degree and out-degree
 
 
   
-    <article id="post-730-Count-Different-Palindromic-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1505-Minimum-Possible-Integer-After-at-Most-K-Adjacent-Swaps-On-Digits"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -332,7 +332,7 @@ Any connected directed graph where all nodes have equal in-degree and out-degree
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/">730. Count Different Palindromic Subsequences</a>
+      <a class="article-title" href="/2020/11/16/1505-Minimum-Possible-Integer-After-at-Most-K-Adjacent-Swaps-On-Digits/">1505. Minimum Possible Integer After at Most K Adjacent Swaps On Digits</a>
     </h1>
   
 
@@ -340,8 +340,8 @@ Any connected directed graph where all nodes have equal in-degree and out-degree
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/" class="article-date">
-	  <time datetime="2020-11-15T05:18:03.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/16/1505-Minimum-Possible-Integer-After-at-Most-K-Adjacent-Swaps-On-Digits/" class="article-date">
+	  <time datetime="2020-11-17T05:10:27.000Z" itemprop="datePublished">2020-11-16</time>
 	</a>
 
       
@@ -355,12 +355,11 @@ Any connected directed graph where all nodes have equal in-degree and out-degree
       
         <p class="article-excerpt-content">
           
-using memo + dfs
-因为只有4个不一样的字符， 所以我们只用考虑4种情况
-如果s[i] == S[j], 那么就有a, aa, a*a, * represent memo[i+1][j] otherwise it would be 112345678910111213141516171819202122232425262728class Solution(object):    def countPalindromicSubsequences(self, S):      ...
+when we move a digit to left, other digit are shifted to right. i.e 432 got shifted to right by 1.
+to calculate the correct number of shifts, we will need to also store how many elements before d already shifted. We will use segment tree for this...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/#more">Read More</a>
+          <a href="/2020/11/16/1505-Minimum-Possible-Integer-After-at-Most-K-Adjacent-Swaps-On-Digits/#more">Read More</a>
         </p>
       
     </div>
@@ -379,7 +378,7 @@ using memo + dfs
 
 
   
-    <article id="post-864-Shortest-Path-to-Get-All-Keys"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-827-Making-A-Large-Island"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -387,7 +386,7 @@ using memo + dfs
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/">864. Shortest Path to Get All Keys</a>
+      <a class="article-title" href="/2020/11/16/827-Making-A-Large-Island/">827. Making A Large Island</a>
     </h1>
   
 
@@ -395,8 +394,232 @@ using memo + dfs
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/" class="article-date">
-	  <time datetime="2020-11-14T23:55:32.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/16/827-Making-A-Large-Island/" class="article-date">
+	  <time datetime="2020-11-16T22:59:25.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          cornor case all is 1
+123456789101112131415161718192021222324252627282930313233343536373839class Solution(object):    def largestIsland(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        N = len(grid)   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/827-Making-A-Large-Island/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-913-Cat-and-Mouse"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/913-Cat-and-Mouse/">913. Cat and Mouse</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/913-Cat-and-Mouse/" class="article-date">
+	  <time datetime="2020-11-16T21:14:27.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Thinking
+state of the game (m, c, t)
+
+m is the location of the mouse
+c is the location of the cat
+t is 1 if it’s mouse’s move
+t is 2 if it is cat’s move
+
+
+States forms a graph:
+
+the player whose turn it has vaious moves which can be considered as ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/913-Cat-and-Mouse/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-MIN-MAX"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/MIN-MAX/">MIN-MAX</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/MIN-MAX/" class="article-date">
+	  <time datetime="2020-11-16T20:44:44.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          适合的游戏
+零和游戏（Zero-sum Game）：意思就是你死我活，一方的胜利代表另一方的失败，比如，象棋，五子棋等。
+完全信息（Perfect Information）：玩家知道之前所有的步骤。象棋就是完全信息，因为玩家是交替着落子，且之前的步骤都能在棋盘上体现，但是石头剪子布就不是。这样的游戏通常可以把他们看作一个树状图，把每一种可能性列出来。比如下面这个井字棋游戏，Max代表你自己，Min代表你的对手。
+
+剪枝
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/MIN-MAX/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-174-Dungeon-Game-1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/174-Dungeon-Game-1/">174. Dungeon Game</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/174-Dungeon-Game-1/" class="article-date">
+	  <time datetime="2020-11-16T20:13:03.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425262728class Solution(object):    def calculateMinimumHP(self, dungeon):        """        :type dungeon: List[List[int]]        :rtype: int        """        rows, cols = len(dungeon), len(dungeon[0])      ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/174-Dungeon-Game-1/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1473-Paint-House-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/1473-Paint-House-III/">1473. Paint House III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/1473-Paint-House-III/" class="article-date">
+	  <time datetime="2020-11-16T20:04:58.000Z" itemprop="datePublished">2020-11-16</time>
 	</a>
 
       
@@ -410,13 +633,13 @@ using memo + dfs
       
         <p class="article-excerpt-content">
           
-用BFS node用位置+current key来表示
-corner case: 最优解可能从起点出发同时再路过起点
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Solution(object):    def shortestPathAllKeys(self, grid):        """        :type g...
+dp[color, blocks]: the minimum cost with current house are painted in color and blocks neighbors up to now
+For each cell, calculate the range of possible neighborhoods number
+To reduce the space, thus when iterate to each house, update the space
+...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/#more">Read More</a>
+          <a href="/2020/11/16/1473-Paint-House-III/#more">Read More</a>
         </p>
       
     </div>
@@ -435,7 +658,7 @@ corner case: 最优解可能从起点出发同时再路过起点
 
 
   
-    <article id="post-1274-Number-of-Ships-in-a-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-642-Design-Search-Autocomplete-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -443,7 +666,7 @@ corner case: 最优解可能从起点出发同时再路过起点
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/">1274. Number of Ships in a Rectangle</a>
+      <a class="article-title" href="/2020/11/16/642-Design-Search-Autocomplete-System/">642. Design Search Autocomplete System</a>
     </h1>
   
 
@@ -451,8 +674,60 @@ corner case: 最优解可能从起点出发同时再路过起点
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/" class="article-date">
-	  <time datetime="2020-11-14T22:26:38.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/16/642-Design-Search-Autocomplete-System/" class="article-date">
+	  <time datetime="2020-11-16T18:03:53.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364class TrieNode(object):    def __init__(self):        self.children = &#123;&#125;        self.isEnd = False        self.data = ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/642-Design-Search-Autocomplete-System/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-715-Range-Module"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/15/715-Range-Module/">715. Range Module</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/15/715-Range-Module/" class="article-date">
+	  <time datetime="2020-11-16T07:05:59.000Z" itemprop="datePublished">2020-11-15</time>
 	</a>
 
       
@@ -466,13 +741,13 @@ corner case: 最优解可能从起点出发同时再路过起点
       
         <p class="article-excerpt-content">
           
-Divide to 4 quaters
-recursive to find it and sum of it
+self.X: is the coordinates where track might start/stop
+self.track: whether tracking is on the coordinate to its right
 
-123456789101112131415161718192021222324252627282930313233343536# """# This is Sea's API interface.# You should not implement it, or speculate about its implementation# """#class Sea(object):...
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960class RangeModu...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/#more">Read More</a>
+          <a href="/2020/11/15/715-Range-Module/#more">Read More</a>
         </p>
       
     </div>
@@ -491,7 +766,7 @@ recursive to find it and sum of it
 
 
   
-    <article id="post-1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-753-Cracking-the-Safe"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -499,7 +774,7 @@ recursive to find it and sum of it
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/">1368. Minimum Cost to Make at Least One Valid Path in a Grid</a>
+      <a class="article-title" href="/2020/11/14/753-Cracking-the-Safe/">753. Cracking the Safe</a>
     </h1>
   
 
@@ -507,8 +782,8 @@ recursive to find it and sum of it
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/" class="article-date">
-	  <time datetime="2020-11-14T21:01:19.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/14/753-Cracking-the-Safe/" class="article-date">
+	  <time datetime="2020-11-15T06:30:45.000Z" itemprop="datePublished">2020-11-14</time>
 	</a>
 
       
@@ -522,303 +797,15 @@ recursive to find it and sum of it
       
         <p class="article-excerpt-content">
           
-dfs and bfs combination
-using bfs to find the minimum path(cost) to the target –&gt; in this problem: the length of path is k
-using dfs to update the node for the next level
-dfs to find the current node can reach to(if change current node)
-update...
+there are k ** n possible password, thus for loop from 0 to k ** n
+try to create new password from previuos one, and add to visited
+Cornor case
+initial state is 000
+we need to tranvse from back to end: k-1, k-2, …0
+if we tranverse from 0 to k, we...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-773-Sliding-Puzzle"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/773-Sliding-Puzzle/">773. Sliding Puzzle</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/13/773-Sliding-Puzzle/" class="article-date">
-	  <time datetime="2020-11-14T00:21:25.000Z" itemprop="datePublished">2020-11-13</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-convert it to graph
-using BFS to find the minimun path
-Cornor Case
-if nei/C != pos/C and nei%C != pos%C: continue &lt;—- this happens because we convert to dismension to 1 dimension
-Considering the case [[1,2,3], [0,4,5]]. If the next move is to ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/13/773-Sliding-Puzzle/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-dropbox"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/dropbox/">dropbox</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/13/dropbox/" class="article-date">
-	  <time datetime="2020-11-13T21:38:42.000Z" itemprop="datePublished">2020-11-13</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Why Cloud Storage
-Availability: 
-Have data availability anywhere, anytime
-Access their files/photos from any device whenever and wherever they like.
-
-
-Reliability and Durability
-Offers  100% reliability and durability of data
-Never lose their data...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/13/dropbox/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1411-Number-of-Ways-to-Paint-N-×-3-Grid"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/">1411. Number of Ways to Paint N × 3 Grid</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/" class="article-date">
-	  <time datetime="2020-11-13T18:25:54.000Z" itemprop="datePublished">2020-11-13</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-In each row, there are two patterns:
-
-
-121: the first color same as the third in the row
-Initial the pattern has 6 states: 121, 323, 212, 313, 131,232
-
-
-123: one row has three different colors
-Initial the pattern has 6 states: 123, 132, 213, 231,...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-174-Dungeon-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/174-Dungeon-Game/">174. Dungeon Game</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/13/174-Dungeon-Game/" class="article-date">
-	  <time datetime="2020-11-13T17:39:10.000Z" itemprop="datePublished">2020-11-13</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-dp[i][j]: the minimum health needed to reach the princess at the pos i, j
-记得 如果不需要的话 初始化是112345678910111213141516171819202122232425262728class Solution(object):    def calculateMinimumHP(self, dungeon):        """        :type dungeon: List[List[...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/13/174-Dungeon-Game/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-471-Encode-String-with-Shortest-Length"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/12/471-Encode-String-with-Shortest-Length/">471. Encode String with Shortest Length </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/12/471-Encode-String-with-Shortest-Length/" class="article-date">
-	  <time datetime="2020-11-13T07:46:49.000Z" itemprop="datePublished">2020-11-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-using dp[i][j]: shortest length from i to j, but i must from end to start
-because when update dp[i][j]: will using dp[k+1][j], k+1 &gt; i —&gt; split
-
-
-also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + ‘[‘ + dp[i][k] ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/12/471-Encode-String-with-Shortest-Length/#more">Read More</a>
+          <a href="/2020/11/14/753-Cracking-the-Safe/#more">Read More</a>
         </p>
       
     </div>
@@ -841,7 +828,7 @@ also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + �
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/20/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/60/">60</a><a class="extend next" rel="next" href="/page/22/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/20/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="extend next" rel="next" href="/page/22/">Next &amp;raquo;</a>
   </nav>
 
 </section>

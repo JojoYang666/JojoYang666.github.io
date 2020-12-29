@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-368-Largest-Divisible-Subset"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Fisher-Yates-Shuffle算法"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/10/368-Largest-Divisible-Subset/">368. Largest Divisible Subset</a>
+      <a class="article-title" href="/2020/10/11/Fisher-Yates-Shuffle%E7%AE%97%E6%B3%95/">Fisher-Yates Shuffle算法</a>
     </h1>
   
 
@@ -281,12 +281,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/10/368-Largest-Divisible-Subset/" class="article-date">
-	  <time datetime="2020-10-10T16:34:59.000Z" itemprop="datePublished">2020-10-10</time>
+	<a href="/2020/10/11/Fisher-Yates-Shuffle%E7%AE%97%E6%B3%95/" class="article-date">
+	  <time datetime="2020-10-11T21:09:15.000Z" itemprop="datePublished">2020-10-11</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
       
       
@@ -295,14 +295,19 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          DP
-Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较难/复杂， 所以我们要对原数组排序， 这样只用考虑后面大的值
-用DP解决， dp[i] = set() &lt;- b set b是所有i能整除的数即i%b == 0, 那么一个新数m%i == 0,肯定会有m%b == 0
+          
+高效和等概率的洗牌算法
+一个用来将一个有限集合生成一个随机排列的算法（数组随机排序）。这个算法生成的随机排列是等概率的。同时这个算法非常高效。
+核心思想
+从1到n之间随机出一个数和最后一个数n交换
+从1到n-1之间随机出一个数和倒数第二个数n-1交换
 
-1234567891011class Solution(object):    def largestDivisibleSubset(self, nums):      ...
+
+
+
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/10/368-Largest-Divisible-Subset/#more">Read More</a>
+          <a href="/2020/10/11/Fisher-Yates-Shuffle%E7%AE%97%E6%B3%95/#more">Read More</a>
         </p>
       
     </div>
@@ -321,7 +326,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
 
 
   
-    <article id="post-86-Partition-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-437-Path-Sum-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -329,7 +334,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/09/86-Partition-List/">86. Partition List</a>
+      <a class="article-title" href="/2020/10/11/437-Path-Sum-III/">437. Path Sum III</a>
     </h1>
   
 
@@ -337,8 +342,8 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     
     <div class="article-meta">
       
-	<a href="/2020/10/09/86-Partition-List/" class="article-date">
-	  <time datetime="2020-10-09T22:52:51.000Z" itemprop="datePublished">2020-10-09</time>
+	<a href="/2020/10/11/437-Path-Sum-III/" class="article-date">
+	  <time datetime="2020-10-11T20:25:02.000Z" itemprop="datePublished">2020-10-11</time>
 	</a>
 
       
@@ -351,10 +356,15 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def partition(self, h...
+          Prefix Sum
+currPathSum: 表示sum of vals from root node to cur node
+oldPathSum = currPathSum - target, 在cache里面找到值为oldPathSum 有多少个也就说明了， sum 为target的有多少个
+迭代完后不要忘记-1， 说明到了另外的branch， 别的branch是不会考虑当前node的值的
+
+123456789101112131415161718192021222324252627...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/09/86-Partition-List/#more">Read More</a>
+          <a href="/2020/10/11/437-Path-Sum-III/#more">Read More</a>
         </p>
       
     </div>
@@ -373,7 +383,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
 
 
   
-    <article id="post-1344-Angle-Between-Hands-of-a-Clock"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-735-Asteroid-Collision"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -381,7 +391,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/">1344. Angle Between Hands of a Clock</a>
+      <a class="article-title" href="/2020/10/11/735-Asteroid-Collision/">735. Asteroid Collision</a>
     </h1>
   
 
@@ -389,8 +399,8 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     
     <div class="article-meta">
       
-	<a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/" class="article-date">
-	  <time datetime="2020-10-09T22:19:48.000Z" itemprop="datePublished">2020-10-09</time>
+	<a href="/2020/10/11/735-Asteroid-Collision/" class="article-date">
+	  <time datetime="2020-10-11T19:24:52.000Z" itemprop="datePublished">2020-10-11</time>
 	</a>
 
       
@@ -403,11 +413,11 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          MathIt is a math problem
-123456789101112131415class Solution(object):    def angleClock(self, hour, minutes):        """        :type hour: int        :type minutes: int        :rtype: float        """        one_minute_angel = 6        one_hour_a...
+          while ... else statement in python
+12345678910111213141516171819class Solution(object):    def asteroidCollision(self, asteroids):        """        :type asteroids: List[int]        :rtype: List[int]        """        stack = []                fo...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/#more">Read More</a>
+          <a href="/2020/10/11/735-Asteroid-Collision/#more">Read More</a>
         </p>
       
     </div>
@@ -426,7 +436,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
 
 
   
-    <article id="post-24-Swap-Nodes-in-Pairs"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1029-Two-City-Scheduling"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -434,7 +444,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/09/24-Swap-Nodes-in-Pairs/">24. Swap Nodes in Pairs</a>
+      <a class="article-title" href="/2020/10/10/1029-Two-City-Scheduling/">1029. Two City Scheduling</a>
     </h1>
   
 
@@ -442,8 +452,8 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     
     <div class="article-meta">
       
-	<a href="/2020/10/09/24-Swap-Nodes-in-Pairs/" class="article-date">
-	  <time datetime="2020-10-09T21:52:35.000Z" itemprop="datePublished">2020-10-09</time>
+	<a href="/2020/10/10/1029-Two-City-Scheduling/" class="article-date">
+	  <time datetime="2020-10-11T05:04:14.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -456,16 +466,13 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Recursive
-凡事有重复逻辑操作，并且 一些结果 要由 其他的重复操作的结果来完成， 那么就可以用recursive的方法来解决
-重点：触底条件， 也就是base case
+          
+Greedy problems usually look like “Find minimum number of something to do something” or “Find maximum number of something to fit in some conditions”, and typically propose an unsorted input.
 
-
-
-1234567891011121314151617181920# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val ...
+The idea of greedy algorithm is to pick the locally op...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/09/24-Swap-Nodes-in-Pairs/#more">Read More</a>
+          <a href="/2020/10/10/1029-Two-City-Scheduling/#more">Read More</a>
         </p>
       
     </div>
@@ -484,7 +491,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
 
 
   
-    <article id="post-540-Single-Element-in-a-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-934-Shortest-Bridge"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -492,7 +499,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/">540. Single Element in a Sorted Array</a>
+      <a class="article-title" href="/2020/10/10/934-Shortest-Bridge/">934. Shortest Bridge</a>
     </h1>
   
 
@@ -500,8 +507,8 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/" class="article-date">
-	  <time datetime="2020-10-09T04:59:54.000Z" itemprop="datePublished">2020-10-08</time>
+	<a href="/2020/10/10/934-Shortest-Bridge/" class="article-date">
+	  <time datetime="2020-10-11T04:41:58.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -514,10 +521,11 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          BST12345678910111213141516171819202122232425class Solution(object):    def singleNonDuplicate(self, nums):        """        :type nums: List[int]        :rtype: int        """        low, high = 0, len(nums) - 1                while low &lt; high...
+          找到一个岛的所有的点后同时向外扩张（BFS）
+12345678910111213141516171819202122232425262728293031323334class Solution(object):    def shortestBridge(self, A):        """        :type A: List[List[int]]        :rtype: int        """        res, step, bfs = 0, 0, deque(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/#more">Read More</a>
+          <a href="/2020/10/10/934-Shortest-Bridge/#more">Read More</a>
         </p>
       
     </div>
@@ -536,7 +544,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
 
 
   
-    <article id="post-402-Remove-K-Digits"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-430-Flatten-a-Multilevel-Doubly-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -544,7 +552,7 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/402-Remove-K-Digits/">402. Remove K Digits</a>
+      <a class="article-title" href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/">430. Flatten a Multilevel Doubly Linked List</a>
     </h1>
   
 
@@ -552,8 +560,8 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/402-Remove-K-Digits/" class="article-date">
-	  <time datetime="2020-10-09T04:03:02.000Z" itemprop="datePublished">2020-10-08</time>
+	<a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/" class="article-date">
+	  <time datetime="2020-10-11T04:12:08.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -566,14 +574,10 @@ Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Greedy + Stack
-maintain one stack, the result would be the join the value in the stack
-should maintain a increasing stack
-cornor case 1, after tranverse the string, k is still there, we should truncate the last remaining chars
-cornor case 2, do no...
+          DFS Recursive12345678910111213141516171819202122232425262728293031323334"""# Definition for a Node.class Node(object):    def __init__(self, val, prev, next, child):        self.val = val        self.prev = prev        self.next = next        self...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/08/402-Remove-K-Digits/#more">Read More</a>
+          <a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/#more">Read More</a>
         </p>
       
     </div>
@@ -592,7 +596,7 @@ cornor case 2, do no...
 
 
   
-    <article id="post-526-Beautiful-Arrangement"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -600,7 +604,7 @@ cornor case 2, do no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/526-Beautiful-Arrangement/">526. Beautiful Arrangement</a>
+      <a class="article-title" href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">309. Best Time to Buy and Sell Stock with Cooldown</a>
     </h1>
   
 
@@ -608,8 +612,8 @@ cornor case 2, do no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/526-Beautiful-Arrangement/" class="article-date">
-	  <time datetime="2020-10-08T19:14:18.000Z" itemprop="datePublished">2020-10-08</time>
+	<a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/" class="article-date">
+	  <time datetime="2020-10-11T03:16:35.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -622,10 +626,13 @@ cornor case 2, do no...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Backtracking1234567891011121314151617181920class Solution(object):    def countArrangement(self, N):        """        :type N: int        :rtype: int        """                return self.cal(1, N, 0, 0)    def cal(self, pos, N, mask, count):    ...
+          
+
+
+1234567891011121314class Solution(object):    def maxProfit(self, prices):        """        :type prices: List[int]        :rtype: int        """        sold, held, reset = float('-inf'), float('-inf'), 0                for price in prices:   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/08/526-Beautiful-Arrangement/#more">Read More</a>
+          <a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/#more">Read More</a>
         </p>
       
     </div>
@@ -644,7 +651,7 @@ cornor case 2, do no...
 
 
   
-    <article id="post-395-Longest-Substring-with-At-Least-K-Repeating-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -652,7 +659,7 @@ cornor case 2, do no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/395-Longest-Substring-with-At-Least-K-Repeating-Characters/">395. Longest Substring with At Least K Repeating Characters</a>
+      <a class="article-title" href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/">1031. Maximum Sum of Two Non-Overlapping Subarrays</a>
     </h1>
   
 
@@ -660,8 +667,8 @@ cornor case 2, do no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/395-Longest-Substring-with-At-Least-K-Repeating-Characters/" class="article-date">
-	  <time datetime="2020-10-08T17:22:40.000Z" itemprop="datePublished">2020-10-08</time>
+	<a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/" class="article-date">
+	  <time datetime="2020-10-11T02:35:51.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -674,11 +681,11 @@ cornor case 2, do no...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Recursive way, 当遍历到某个位置i, 如果s[i]在整个string中出现的次数少于k,那就可以分段考虑s[start:i], s[i+1:end]这两个分段中得到的结果取最大， 以这种recursive的方法解决他
-12345678910111213141516171819class Solution(object):    def longestSubstring(self, s, k):        """        :type s: str ...
+          
+12345678910111213141516171819class Solution(object):    def maxSumTwoNoOverlap(self, A, L, M):        """        :type A: List[int]        :type L: int        :type M: int        :rtype: int        """        for i in range(1, len(A)):           ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/08/395-Longest-Substring-with-At-Least-K-Repeating-Characters/#more">Read More</a>
+          <a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/#more">Read More</a>
         </p>
       
     </div>
@@ -697,7 +704,7 @@ cornor case 2, do no...
 
 
   
-    <article id="post-12-Integer-to-Roman"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-120-Triangle"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -705,7 +712,7 @@ cornor case 2, do no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/12-Integer-to-Roman/">12. Integer to Roman</a>
+      <a class="article-title" href="/2020/10/10/120-Triangle/">120. Triangle</a>
     </h1>
   
 
@@ -713,8 +720,8 @@ cornor case 2, do no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/12-Integer-to-Roman/" class="article-date">
-	  <time datetime="2020-10-08T16:01:28.000Z" itemprop="datePublished">2020-10-08</time>
+	<a href="/2020/10/10/120-Triangle/" class="article-date">
+	  <time datetime="2020-10-11T01:54:57.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -727,11 +734,11 @@ cornor case 2, do no...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Greedy
-123456789101112131415class Solution(object):    def intToRoman(self, num):        """        :type num: int        :rtype: str        """        digits = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), ...
+          
+123456789101112class Solution(object):    def minimumTotal(self, triangle):        """        :type triangle: List[List[int]]        :rtype: int        """        dp = triangle[-1]                for i in xrange(len(triangle)-2, -1, -1):         ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/08/12-Integer-to-Roman/#more">Read More</a>
+          <a href="/2020/10/10/120-Triangle/#more">Read More</a>
         </p>
       
     </div>
@@ -750,7 +757,7 @@ cornor case 2, do no...
 
 
   
-    <article id="post-909-Snakes-and-Ladders"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-698-Partition-to-K-Equal-Sum-Subsets"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -758,7 +765,7 @@ cornor case 2, do no...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/909-Snakes-and-Ladders/">909. Snakes and Ladders</a>
+      <a class="article-title" href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/">698. Partition to K Equal Sum Subsets</a>
     </h1>
   
 
@@ -766,8 +773,8 @@ cornor case 2, do no...
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/909-Snakes-and-Ladders/" class="article-date">
-	  <time datetime="2020-10-08T15:53:07.000Z" itemprop="datePublished">2020-10-08</time>
+	<a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/" class="article-date">
+	  <time datetime="2020-10-10T18:16:45.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -780,11 +787,14 @@ cornor case 2, do no...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Min steps –&gt; bfs not dfs
-123456789101112131415161718192021222324252627282930class Solution(object):    def snakesAndLadders(self, board):        """        :type board: List[List[int]]        :rtype: int        """        N = len(board)        ...
+          Solution 1Brute Force: Backtracking
+几个加速的key point:
+
+backtracking 的时候倒序 加入数字， 也就是先考虑最大的值， 这样会减小subset的size 降低recursive的次数
+加入if not group: break的判断， 当前group开始是0， 通过这种方式recursive 并没有找到结果， 那么这个group的下一个group开始也是0， 同样的recursive再走一遍 肯定是依旧找不到结果的 所以避免rep...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/08/909-Snakes-and-Ladders/#more">Read More</a>
+          <a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/#more">Read More</a>
         </p>
       
     </div>
@@ -807,7 +817,7 @@ cornor case 2, do no...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/43/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="space">&hellip;</span><a class="page-number" href="/page/60/">60</a><a class="extend next" rel="next" href="/page/45/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/43/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="extend next" rel="next" href="/page/45/">Next &amp;raquo;</a>
   </nav>
 
 </section>
