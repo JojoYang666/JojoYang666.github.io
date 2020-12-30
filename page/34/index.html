@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-1268-Search-Suggestions-System"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-467-Unique-Substrings-in-Wraparound-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/1268-Search-Suggestions-System/">1268. Search Suggestions System</a>
+      <a class="article-title" href="/2020/10/31/467-Unique-Substrings-in-Wraparound-String/">467. Unique Substrings in Wraparound String</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/1268-Search-Suggestions-System/" class="article-date">
-	  <time datetime="2020-10-30T03:57:56.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/31/467-Unique-Substrings-in-Wraparound-String/" class="article-date">
+	  <time datetime="2020-10-31T21:29:08.000Z" itemprop="datePublished">2020-10-31</time>
 	</a>
 
       
@@ -295,11 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          if word.startswith(prefix)])这个判断不能少
-12345678910111213141516class Solution(object):    def suggestedProducts(self, products, searchWord):        """        :type products: List[str]        :type searchWord: str        :rtype: List[List[str]]       ...
+          res表示以i结尾的最长substring -&gt; length is a, then final res_val += a
+12345678910111213141516class Solution(object):    def findSubstringInWraproundString(self, p):        """        :type p: str        :rtype: int        """        res = &#123;i: 1 fo...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/1268-Search-Suggestions-System/#more">Read More</a>
+          <a href="/2020/10/31/467-Unique-Substrings-in-Wraparound-String/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +318,7 @@
 
 
   
-    <article id="post-713-Subarray-Product-Less-Than-K"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1026-Maximum-Difference-Between-Node-and-Ancestor"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/713-Subarray-Product-Less-Than-K/">713. Subarray Product Less Than K</a>
+      <a class="article-title" href="/2020/10/31/1026-Maximum-Difference-Between-Node-and-Ancestor/">1026. Maximum Difference Between Node and Ancestor </a>
     </h1>
   
 
@@ -334,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/713-Subarray-Product-Less-Than-K/" class="article-date">
-	  <time datetime="2020-10-30T03:15:16.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/31/1026-Maximum-Difference-Between-Node-and-Ancestor/" class="article-date">
+	  <time datetime="2020-10-31T20:51:10.000Z" itemprop="datePublished">2020-10-31</time>
 	</a>
 
       
@@ -348,10 +348,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def numSubarrayProductLessThanK(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: int        """        if k &lt;= 1: return 0        left, res, produ...
+          因为是ancestor所以要从上到下而不是从下到上 找到最大的
+12345678910111213141516171819# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/713-Subarray-Product-Less-Than-K/#more">Read More</a>
+          <a href="/2020/10/31/1026-Maximum-Difference-Between-Node-and-Ancestor/#more">Read More</a>
         </p>
       
     </div>
@@ -370,7 +371,7 @@
 
 
   
-    <article id="post-333-Largest-BST-Subtree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-611-Valid-Triangle-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -378,7 +379,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/333-Largest-BST-Subtree/">333. Largest BST Subtree</a>
+      <a class="article-title" href="/2020/10/31/611-Valid-Triangle-Number/">611. Valid Triangle Number </a>
     </h1>
   
 
@@ -386,8 +387,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/333-Largest-BST-Subtree/" class="article-date">
-	  <time datetime="2020-10-30T02:36:58.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/31/611-Valid-Triangle-Number/" class="article-date">
+	  <time datetime="2020-10-31T20:19:22.000Z" itemprop="datePublished">2020-10-31</time>
 	</a>
 
       
@@ -400,11 +401,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          当前节点是BST的一个重要条件是： 当前节点的值一定要比左节点的最大节点的值要大， 比右子树的最小节点要小
-1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#   ...
+          
+sort
+kind of liking 3sum
+
+12345678910111213141516class Solution(object):    def triangleNumber(self, nums):        """        :type nums: List[int]        :rtype: int        """        res = 0        nums.sort()        for i in range(0, len(nums)...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/333-Largest-BST-Subtree/#more">Read More</a>
+          <a href="/2020/10/31/611-Valid-Triangle-Number/#more">Read More</a>
         </p>
       
     </div>
@@ -423,7 +427,7 @@
 
 
   
-    <article id="post-898-Bitwise-ORs-of-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1262-Greatest-Sum-Divisible-by-Three"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -431,7 +435,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/">898. Bitwise ORs of Subarrays</a>
+      <a class="article-title" href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/">1262. Greatest Sum Divisible by Three</a>
     </h1>
   
 
@@ -439,8 +443,67 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/" class="article-date">
-	  <time datetime="2020-10-30T01:02:39.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/" class="article-date">
+	  <time datetime="2020-10-31T18:55:36.000Z" itemprop="datePublished">2020-10-31</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i] (i: 0, 1, 2): represent the greatest sum which module 3 is 0, 1, 2(in current array a)
+formula: (num is the current last number in a) val = (dp[i] + num)%3 dp[i] = max(dp[val], dp[i] + num)
+Cornor case:
+
+
+当前更新的值可能影响后面的值， 所以要new tmp array
+se...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-853-Car-Fleet"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/31/853-Car-Fleet/">853. Car Fleet</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/31/853-Car-Fleet/" class="article-date">
+	  <time datetime="2020-10-31T17:41:33.000Z" itemprop="datePublished">2020-10-31</time>
 	</a>
 
       
@@ -456,10 +519,10 @@
           
 
 
-12345678910111213class Solution(object):    def subarrayBitwiseORs(self, A):        """        :type A: List[int]        :rtype: int        """        ans = set()        cur = set()                for num in A:            cur = &#123;num | x fo...
+12345678910111213141516171819202122class Solution(object):    def carFleet(self, target, position, speed):        """        :type target: int        :type position: List[int]        :type speed: List[int]        :rtype: int        """        c...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/#more">Read More</a>
+          <a href="/2020/10/31/853-Car-Fleet/#more">Read More</a>
         </p>
       
     </div>
@@ -478,7 +541,7 @@
 
 
   
-    <article id="post-95-Unique-Binary-Search-Trees-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-838-Push-Dominoes"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -486,7 +549,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/95-Unique-Binary-Search-Trees-II/">95. Unique Binary Search Trees II</a>
+      <a class="article-title" href="/2020/10/30/838-Push-Dominoes/">838. Push Dominoes</a>
     </h1>
   
 
@@ -494,8 +557,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/95-Unique-Binary-Search-Trees-II/" class="article-date">
-	  <time datetime="2020-10-29T22:44:12.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/30/838-Push-Dominoes/" class="article-date">
+	  <time datetime="2020-10-31T02:58:50.000Z" itemprop="datePublished">2020-10-30</time>
 	</a>
 
       
@@ -508,11 +571,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Recursive tp find allsubproblem
-123456789101112131415161718192021222324252627282930# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = le...
+          12345678910111213141516171819202122232425class Solution(object):    def pushDominoes(self, dominoes):        """        :type dominoes: str        :rtype: str        """        dominoes = list(dominoes)        cnt = [0] * len(dominoes)        n = ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/95-Unique-Binary-Search-Trees-II/#more">Read More</a>
+          <a href="/2020/10/30/838-Push-Dominoes/#more">Read More</a>
         </p>
       
     </div>
@@ -531,7 +593,7 @@
 
 
   
-    <article id="post-47-Permutations-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1570-Dot-Product-of-Two-Sparse-Vectors"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -539,7 +601,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/47-Permutations-II/">47. Permutations II</a>
+      <a class="article-title" href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/">1570. Dot Product of Two Sparse Vectors</a>
     </h1>
   
 
@@ -547,8 +609,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/47-Permutations-II/" class="article-date">
-	  <time datetime="2020-10-29T21:58:12.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/" class="article-date">
+	  <time datetime="2020-10-30T21:51:22.000Z" itemprop="datePublished">2020-10-30</time>
 	</a>
 
       
@@ -561,10 +623,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122class Solution(object):    def permuteUnique(self, nums):        """        :type nums: List[int]        :rtype: List[List[int]]        """        res = []                def backtrack(comb, counter):            ...
+          12345678910111213141516171819class SparseVector:    def __init__(self, nums):        """        :type nums: List[int]        """        self.map = &#123;i: num for i, num in enumerate(nums) if num&#125;    # Return the dotProduct of two sparse vec...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/47-Permutations-II/#more">Read More</a>
+          <a href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/#more">Read More</a>
         </p>
       
     </div>
@@ -583,7 +645,7 @@
 
 
   
-    <article id="post-1019-Next-Greater-Node-In-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1166-Design-File-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -591,7 +653,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/1019-Next-Greater-Node-In-Linked-List/">1019. Next Greater Node In Linked List</a>
+      <a class="article-title" href="/2020/10/30/1166-Design-File-System/">1166. Design File System</a>
     </h1>
   
 
@@ -599,8 +661,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/1019-Next-Greater-Node-In-Linked-List/" class="article-date">
-	  <time datetime="2020-10-29T21:50:22.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/30/1166-Design-File-System/" class="article-date">
+	  <time datetime="2020-10-30T21:39:29.000Z" itemprop="datePublished">2020-10-30</time>
 	</a>
 
       
@@ -613,10 +675,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def nextLargerNodes(self, head)...
+          hashmap
+1234567891011121314151617181920212223242526272829class FileSystem(object):    def __init__(self):        self.d = &#123;"": -1&#125;    def createPath(self, path, value):        """        :type path: str        :type value: int        :rt...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/1019-Next-Greater-Node-In-Linked-List/#more">Read More</a>
+          <a href="/2020/10/30/1166-Design-File-System/#more">Read More</a>
         </p>
       
     </div>
@@ -635,7 +698,7 @@
 
 
   
-    <article id="post-918-Maximum-Sum-Circular-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -643,7 +706,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/918-Maximum-Sum-Circular-Subarray/">918. Maximum Sum Circular Subarray</a>
+      <a class="article-title" href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/">1296. Divide Array in Sets of K Consecutive Numbers</a>
     </h1>
   
 
@@ -651,8 +714,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/918-Maximum-Sum-Circular-Subarray/" class="article-date">
-	  <time datetime="2020-10-29T20:13:27.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/" class="article-date">
+	  <time datetime="2020-10-30T21:19:01.000Z" itemprop="datePublished">2020-10-30</time>
 	</a>
 
       
@@ -666,10 +729,12 @@
       
         <p class="article-excerpt-content">
           
-1234567891011121314151617181920212223class Solution(object):    def maxSubarraySumCircular(self, A):        """        :type A: List[int]        :rtype: int        """        max_sum, min_sum, s, min_s = float('-inf'), float('inf'), 0, 0         ...
+
+
+1234567891011121314151617181920class Solution(object):    def isPossibleDivide(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: bool        """        counter = collections.Counter(nums)        starts =...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/918-Maximum-Sum-Circular-Subarray/#more">Read More</a>
+          <a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/#more">Read More</a>
         </p>
       
     </div>
@@ -688,7 +753,7 @@
 
 
   
-    <article id="post-1366-Rank-Teams-by-Votes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-450-Delete-Node-in-a-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -696,7 +761,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/1366-Rank-Teams-by-Votes/">1366. Rank Teams by Votes</a>
+      <a class="article-title" href="/2020/10/29/450-Delete-Node-in-a-BST/">450. Delete Node in a BST</a>
     </h1>
   
 
@@ -704,8 +769,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/1366-Rank-Teams-by-Votes/" class="article-date">
-	  <time datetime="2020-10-29T19:22:58.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/10/29/450-Delete-Node-in-a-BST/" class="article-date">
+	  <time datetime="2020-10-30T04:26:51.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 
       
@@ -718,64 +783,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          given the sequence and sort based on thatbecause we want from highest to lowest so count[v][i] -= 1 -1 not +1
-12345678910111213class Solution(object):    def rankTeams(self, votes):        """        :type votes: List[str]        :rtype: str      ...
+          
+recursive to solve it
+不是就return current node
+是的话 就delete node and return new node12345678910111213141516171819202122232425262728293031323334# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, ri...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/1366-Rank-Teams-by-Votes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-646-Maximum-Length-of-Pair-Chain"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/646-Maximum-Length-of-Pair-Chain/">646. Maximum Length of Pair Chain</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/29/646-Maximum-Length-of-Pair-Chain/" class="article-date">
-	  <time datetime="2020-10-29T18:47:40.000Z" itemprop="datePublished">2020-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Greedy: 重点一定要知道what should be sorting based on 
-12345678910111213class Solution(object):    def findLongestChain(self, pairs):        """        :type pairs: List[List[int]]        :rtype: int        """        cur, ans = float('-inf'), 0         ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/29/646-Maximum-Length-of-Pair-Chain/#more">Read More</a>
+          <a href="/2020/10/29/450-Delete-Node-in-a-BST/#more">Read More</a>
         </p>
       
     </div>
@@ -798,7 +812,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/33/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="extend next" rel="next" href="/page/35/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/33/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="extend next" rel="next" href="/page/35/">Next &amp;raquo;</a>
   </nav>
 
 </section>

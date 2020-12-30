@@ -9,13 +9,15 @@
   
   
   
-  <meta property="og:type" content="article">
+  <meta name="description" content="Use requestAnimationFrame() for visual changes benefits   Less CPU consumption Animations in inactive tabs stop Saves battery  123456789&#x2F;** * If run as a requestAnimationFrame callback, this * will be">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Optimize JavaScript Animations">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/12/28/Optimize-JavaScript-Animations/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Use requestAnimationFrame() for visual changes benefits   Less CPU consumption Animations in inactive tabs stop Saves battery  123456789&#x2F;** * If run as a requestAnimationFrame callback, this * will be">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-12-28T20:32:55.000Z">
-<meta property="article:modified_time" content="2020-12-28T20:33:05.814Z">
+<meta property="article:modified_time" content="2020-12-30T04:04:57.642Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -204,7 +206,24 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Use-requestAnimationFrame-for-visual-changes"><a href="#Use-requestAnimationFrame-for-visual-changes" class="headerlink" title="Use requestAnimationFrame() for visual changes"></a>Use <code>requestAnimationFrame()</code> for visual changes</h1><ol>
+<li>benefits</li>
+</ol>
+<ul>
+<li>Less CPU consumption</li>
+<li>Animations in inactive tabs stop</li>
+<li>Saves battery</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * If run as a requestAnimationFrame callback, this</span></span><br><span class="line"><span class="comment"> * will be run at the start of the frame.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateScreen</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Make visual updates here.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">requestAnimationFrame(updateScreen);</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Frameworks or samples may use setTimeout() or setInterval() to do visual changes<br>the effect of causing us to miss a frame, resulting in jank.</li>
+</ol>
+<h1 id="Promoting-elements-to-the-GPU"><a href="#Promoting-elements-to-the-GPU" class="headerlink" title="Promoting elements to the GPU"></a>Promoting elements to the GPU</h1><p> css –&gt; GPU<br>using it has its own overhead</p>
+<ul>
+<li>The GPU is a separate computer, much like a server, except the GPU isn’t remote, and data needs to be sent to it and received from it in a certain format.<br>JavaScript animations also often perform just as well or even better than CSS-based animations.</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
@@ -306,7 +325,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav">None</ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Use-requestAnimationFrame-for-visual-changes"><span class="nav-number">1.</span> <span class="nav-text">Use requestAnimationFrame() for visual changes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Promoting-elements-to-the-GPU"><span class="nav-number">2.</span> <span class="nav-text">Promoting elements to the GPU</span></a></li></ol>
     
     </div>
   </aside>
