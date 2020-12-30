@@ -265,6 +265,59 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1155-Number-of-Dice-Rolls-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/">1155. Number of Dice Rolls With Target Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/" class="article-date">
+	  <time datetime="2020-10-27T04:20:22.000Z" itemprop="datePublished">2020-10-26</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          DFS + MemoThe general relation is:dp(d, f, target) = dp(d-1, f, target-1) + dp(d-1, f, target-2) + … + dp(d-1, f, target-f)
+The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing else.So dp(0, f, t) = 0 iff t != 0, and dp(0...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-229-Majority-Element-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -742,58 +795,6 @@
         </p>
         <p class="article-more-link">
           <a href="/2020/10/25/592-Fraction-Addition-and-Subtraction/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-545-Boundary-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/25/545-Boundary-of-Binary-Tree/">545. Boundary of Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/25/545-Boundary-of-Binary-Tree/" class="article-date">
-	  <time datetime="2020-10-25T19:50:40.000Z" itemprop="datePublished">2020-10-25</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = right...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/25/545-Boundary-of-Binary-Tree/#more">Read More</a>
         </p>
       
     </div>
