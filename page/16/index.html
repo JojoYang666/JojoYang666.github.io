@@ -265,6 +265,274 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-156-Binary-Tree-Upside-Down"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/01/156-Binary-Tree-Upside-Down/">156. Binary Tree Upside Down</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/01/156-Binary-Tree-Upside-Down/" class="article-date">
+	  <time datetime="2020-12-01T18:16:37.000Z" itemprop="datePublished">2020-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          keep finding the left most node, make it upside-down, then make its parent to be its right most subtree recursivelyconnect the root to the right most subtree, make sure not copying the original root, otherwisr it become cyclic
+12345678910111213141...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/01/156-Binary-Tree-Upside-Down/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-244-Shortest-Word-Distance-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/01/244-Shortest-Word-Distance-II/">244. Shortest Word Distance II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/01/244-Shortest-Word-Distance-II/" class="article-date">
+	  <time datetime="2020-12-01T17:35:49.000Z" itemprop="datePublished">2020-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          min diff in two list, if two list is sorted we can do it in one pass instead of n*n
+123456789101112131415161718192021222324252627282930313233class WordDistance(object):    def __init__(self, words):        """        :type words: List[str]        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/01/244-Shortest-Word-Distance-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Designing-Facebook’s-Newsfeed"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/">Designing Facebook’s Newsfeed </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/" class="article-date">
+	  <time datetime="2020-12-01T05:14:51.000Z" itemprop="datePublished">2020-11-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Requirements and Goals of the SystemFunctional requirements:
+Newsfeed will be generated based on the posts from the people, pages, and groups that a user follows.
+A user may have many friends and follow a large number of pages/groups.
+Feeds may co...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-711-Number-of-Distinct-Islands-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/30/711-Number-of-Distinct-Islands-II/">711. Number of Distinct Islands II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/30/711-Number-of-Distinct-Islands-II/" class="article-date">
+	  <time datetime="2020-12-01T04:33:13.000Z" itemprop="datePublished">2020-11-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+Scan the matrix, each time when 1 is found, search the nearby 1, push them inside a queue and mark them as -1.
+he queue stands for a specific shape of an island
+Push the island to the left upper corner by subtracting the original data with its mi...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/30/711-Number-of-Distinct-Islands-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-510-Inorder-Successor-in-BST-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/30/510-Inorder-Successor-in-BST-II/">510. Inorder Successor in BST II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/30/510-Inorder-Successor-in-BST-II/" class="article-date">
+	  <time datetime="2020-12-01T03:41:59.000Z" itemprop="datePublished">2020-11-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425"""# Definition for a Node.class Node:    def __init__(self, val):        self.val = val        self.left = None        self.right = None        self.parent = None"""class Solution(object):    def inorderSu...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/30/510-Inorder-Successor-in-BST-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-61-Rotate-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -552,286 +820,11 @@ dp(i, k-1) + dp(k+1, j-1) —&gt;不用加1， 因为可以和k, k+1,…, j-1, j
 
 
   
-    <article id="post-quick-select"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/quick-select/">quick select</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/quick-select/" class="article-date">
-	  <time datetime="2020-11-30T13:40:57.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930def partition(pivot_idx, left, right):            #  three step            # move pivot to end            # move more close elements to the left            # move pivot to its final place         ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/quick-select/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-272-Closest-Binary-Search-Tree-Value-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/272-Closest-Binary-Search-Tree-Value-II/">272. Closest Binary Search Tree Value II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/272-Closest-Binary-Search-Tree-Value-II/" class="article-date">
-	  <time datetime="2020-11-30T12:57:31.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          O(nlogk)1234567891011121314151617181920212223242526# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightcl...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/272-Closest-Binary-Search-Tree-Value-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-685-Redundant-Connection-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/29/685-Redundant-Connection-II/">685. Redundant Connection II </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/29/685-Redundant-Connection-II/" class="article-date">
-	  <time datetime="2020-11-29T23:39:12.000Z" itemprop="datePublished">2020-11-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-123456789101112131415161718192021222324252627282930313233343536373839class DisjoinSet:    def __init__(self, n):        self.parent = list(range(n))        def find(self, x):        if self.parent[x] == x:            return x                ret...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/29/685-Redundant-Connection-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-736-Parse-Lisp-Expression"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/28/736-Parse-Lisp-Expression/">736. Parse Lisp Expression</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/28/736-Parse-Lisp-Expression/" class="article-date">
-	  <time datetime="2020-11-29T04:59:35.000Z" itemprop="datePublished">2020-11-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          stack: tokens &amp;&amp; dict pairdict:
-
-key: value —&gt; variable, digit
-key: value —&gt; digit: digittokens:
-
-
-add/multi: followed by two number/variable
-let followed by variable &amp; number —&gt; using the ‘ ‘ as seperation in the expression, ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/28/736-Parse-Lisp-Expression/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-411-Minimum-Unique-Word-Abbreviation"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/28/411-Minimum-Unique-Word-Abbreviation/">411. Minimum Unique Word Abbreviation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/28/411-Minimum-Unique-Word-Abbreviation/" class="article-date">
-	  <time datetime="2020-11-29T04:35:21.000Z" itemprop="datePublished">2020-11-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-generate all the abbrevation for the target
-using pq to get the smallest every time
-if it is also a valid abbrevation for word in the dict
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/28/411-Minimum-Unique-Word-Abbreviation/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/15/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="extend next" rel="next" href="/page/17/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/15/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/63/">63</a><a class="extend next" rel="next" href="/page/17/">Next &amp;raquo;</a>
   </nav>
 
 </section>
