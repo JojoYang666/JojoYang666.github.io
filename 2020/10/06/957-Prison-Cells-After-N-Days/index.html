@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="Fast-forward直觉 这个题目会有周期 -》 hashmap来找到这个周期 1234567891011121314151617class Solution(object):    def prisonAfterNDays(self, cells, N):        &quot;&quot;&quot;        :type cells: List[int]        :type N: int">
+  <meta name="description" content="staright-forward直觉 这个题目会有周期 -》 hashmap来找到这个周期  cells[i-1] ^ cells[i+1] ^ 1  N %&#x3D; (seen[str(cells)] - N)1234567891011121314151617class Solution(object):    def prisonAfterNDays(self, cells, N):">
 <meta property="og:type" content="article">
 <meta property="og:title" content="957. Prison Cells After N Days">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/10/06/957-Prison-Cells-After-N-Days/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="Fast-forward直觉 这个题目会有周期 -》 hashmap来找到这个周期 1234567891011121314151617class Solution(object):    def prisonAfterNDays(self, cells, N):        &quot;&quot;&quot;        :type cells: List[int]        :type N: int">
+<meta property="og:description" content="staright-forward直觉 这个题目会有周期 -》 hashmap来找到这个周期  cells[i-1] ^ cells[i+1] ^ 1  N %&#x3D; (seen[str(cells)] - N)1234567891011121314151617class Solution(object):    def prisonAfterNDays(self, cells, N):">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-07T03:16:56.000Z">
-<meta property="article:modified_time" content="2020-10-07T03:55:00.626Z">
+<meta property="article:modified_time" content="2021-01-03T01:36:51.176Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -206,8 +206,18 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Fast-forward<br>直觉 这个题目会有周期 -》 hashmap来找到这个周期</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prisonAfterNDays</span><span class="params">(self, cells, N)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type cells: List[int]</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        seen = &#123;&#125;</span><br><span class="line">        <span class="keyword">while</span> N:</span><br><span class="line">            seen.setdefault(str(cells), N)</span><br><span class="line">            </span><br><span class="line">            N -= <span class="number">1</span></span><br><span class="line">            cells = [<span class="number">0</span>] + [cells[i<span class="number">-1</span>] ^ cells[i+<span class="number">1</span>] ^ <span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(cells)<span class="number">-1</span>)] + [<span class="number">0</span>]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> str(cells) <span class="keyword">in</span> seen:</span><br><span class="line">                N %= (seen[str(cells)] - N)</span><br><span class="line">        <span class="keyword">return</span> cells</span><br></pre></td></tr></table></figure>
+        <p>staright-forward<br>直觉 这个题目会有周期 -》 hashmap来找到这个周期</p>
+<ol>
+<li>cells[i-1] ^ cells[i+1] ^ 1 </li>
+<li>N %= (seen[str(cells)] - N)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prisonAfterNDays</span><span class="params">(self, cells, N)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type cells: List[int]</span></span><br><span class="line"><span class="string">        :type N: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        seen = &#123;&#125;</span><br><span class="line">        <span class="keyword">while</span> N:</span><br><span class="line">            seen.setdefault(str(cells), N)</span><br><span class="line">            </span><br><span class="line">            N -= <span class="number">1</span></span><br><span class="line">            cells = [<span class="number">0</span>] + [cells[i<span class="number">-1</span>] ^ cells[i+<span class="number">1</span>] ^ <span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(cells)<span class="number">-1</span>)] + [<span class="number">0</span>]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> str(cells) <span class="keyword">in</span> seen:</span><br><span class="line">                N %= (seen[str(cells)] - N)</span><br><span class="line">        <span class="keyword">return</span> cells</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>重点：</p>
+<ol>
+<li>when update the cells, need a tmp, otherwise we will use the new generated data rather than old data to update cells </li>
+<li>also must remeber to update the first cell last cell to 0, because it is possible is 1 in input cells<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">cells</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">N</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> prisonAfterNDays = <span class="function"><span class="keyword">function</span>(<span class="params">cells, N</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> map = &#123;&#125;</span><br><span class="line">    <span class="keyword">const</span> encode = <span class="function">(<span class="params">array</span>) =&gt;</span> array.join(<span class="string">','</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (N) &#123;</span><br><span class="line">        <span class="keyword">const</span> key = encode(cells)</span><br><span class="line">        map[key] = N</span><br><span class="line">        N--</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> tmp = [...cells]</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; cells.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            cells[i] = tmp[i - <span class="number">1</span>] ^ tmp[i + <span class="number">1</span>] ^ <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">        cells[<span class="number">0</span>] = <span class="number">0</span>, cells[cells.length<span class="number">-1</span>] = <span class="number">0</span> </span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (map[encode(cells)] !== <span class="literal">undefined</span>)</span><br><span class="line">            N %= (map[encode(cells)] - N)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> cells</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -325,7 +335,7 @@ var a = new Donate({
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Jojo&#39;s Blog All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -487,7 +497,7 @@ var a = new Donate({
             Jojo&#39;s Blog
           </div>
           <div class="panel-body">
-            Copyright © 2020 Jojo Yang All Rights Reserved.
+            Copyright © 2021 Jojo Yang All Rights Reserved.
           </div>
         </div>
       </div>

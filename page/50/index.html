@@ -265,6 +265,390 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-131-Palindrome-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/131-Palindrome-Partitioning/">131. Palindrome Partitioning</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/131-Palindrome-Partitioning/" class="article-date">
+	  <time datetime="2020-10-06T00:44:58.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122class Solution(object):    def partition(self, s):        """        :type s: str        :rtype: List[List[str]]        """        res = []        self.dfs(s, [], res)        return res    def dfs(self, s, path, ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/131-Palindrome-Partitioning/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-148-Sort-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/148-Sort-List/">148. Sort List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/148-Sort-List/" class="article-date">
+	  <time datetime="2020-10-05T22:38:57.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          key point: update prev to null, when  divide the linkedlist to two parts –&gt; otherwise it will mass up &amp; not endMerge Sort
+12345678910111213141516171819202122232425262728293031323334353637# Definition for singly-linked list.# class ListNode(...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/148-Sort-List/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-518-Coin-Change-2"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/518-Coin-Change-2/">518. Coin Change 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/518-Coin-Change-2/" class="article-date">
+	  <time datetime="2020-10-05T22:03:44.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          difference with Coin Change 1
+
+that is minimum coin used, thus amoint is the outer for loop
+this is all the possible combination
+coin is the outer for loop
+
+
+
+1234567891011121314class Solution(object):    def change(self, amount, coins):        ""...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/518-Coin-Change-2/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-445-Add-Two-Numbers-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/445-Add-Two-Numbers-II/">445. Add Two Numbers II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/445-Add-Two-Numbers-II/" class="article-date">
+	  <time datetime="2020-10-05T16:29:26.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          这个题目可以发现要走到最后才能算出， 然后根据后面的值 一步步往前传递得到前面的值递归的特点， 所以要用递归同时递归说明了可以用stack来做
+Solution 1Stack
+12345678910111213141516171819202122232425262728293031323334# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=No...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/445-Add-Two-Numbers-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-48-Rotate-Image"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/48-Rotate-Image/">48. Rotate Image</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/48-Rotate-Image/" class="article-date">
+	  <time datetime="2020-10-05T11:18:48.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+
+Solution – Rotate 4 rectangles in one single loop12345678910111213141516171819202122232425class Solution(object):    def rotate(self, matrix):        """        :type matrix: List[List[int]]        :rtype: None Do not return anything, modify m...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/48-Rotate-Image/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1283-Find-the-Smallest-Divisor-Given-a-Threshold"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/1283-Find-the-Smallest-Divisor-Given-a-Threshold/">1283. Find the Smallest Divisor Given a Threshold</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/1283-Find-the-Smallest-Divisor-Given-a-Threshold/" class="article-date">
+	  <time datetime="2020-10-05T10:16:19.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Binary Search(num + m - 1)/m
+123456789101112131415161718class Solution(object):    def smallestDivisor(self, nums, threshold):        """        :type nums: List[int]        :type threshold: int        :rtype: int        """        # l is 1, not 0...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/1283-Find-the-Smallest-Divisor-Given-a-Threshold/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-64-Minimum-Path-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/64-Minimum-Path-Sum/">64. Minimum Path Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/64-Minimum-Path-Sum/" class="article-date">
+	  <time datetime="2020-10-05T09:47:11.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1 – extra space
+二维数组的创建：[[0 for j in range(n)] for i in range(m)]
+[[0] * m] * n不能这么创建 因为这样 n rows指向同一个array
+
+12345678910111213141516171819202122class Solution(object):    def minPathSum(self, grid):        """        :type grid: List[List...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/64-Minimum-Path-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1396-Design-Underground-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -425,384 +809,6 @@
 
 
   
-    <article id="post-6-ZigZag-Conversion"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/04/6-ZigZag-Conversion/">6. ZigZag Conversion</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/04/6-ZigZag-Conversion/" class="article-date">
-	  <time datetime="2020-10-04T21:59:20.000Z" itemprop="datePublished">2020-10-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          按照规律给rows里面填写chars， 然后再join
-12345678910111213141516171819202122class Solution(object):    def convert(self, s, numRows):        """        :type s: str        :type numRows: int        :rtype: str        """        if numRows &lt;= 1: return s    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/04/6-ZigZag-Conversion/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-994-Rotting-Oranges"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/04/994-Rotting-Oranges/">994. Rotting Oranges</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/04/994-Rotting-Oranges/" class="article-date">
-	  <time datetime="2020-10-04T21:13:31.000Z" itemprop="datePublished">2020-10-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          in place, using recusrsive to do bfs + time stamp
-Solution 1In Place
-123456789101112131415161718192021222324252627282930313233class Solution(object):    def orangesRotting(self, grid):        """        :type grid: List[List[int]]        :rtype: i...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/04/994-Rotting-Oranges/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-763-Partition-Labels"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/04/763-Partition-Labels/">763. Partition Labels</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/04/763-Partition-Labels/" class="article-date">
-	  <time datetime="2020-10-04T20:33:09.000Z" itemprop="datePublished">2020-10-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-Figure out the rightmost index first and use it to denote the start of the next section.
-Reset the left pointer at the start of each new section.
-Store the difference of right and left pointers + 1 as in the result for each section.12345678910111...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/04/763-Partition-Labels/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-322-Coin-Change"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/04/322-Coin-Change/">322. Coin Change</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/04/322-Coin-Change/" class="article-date">
-	  <time datetime="2020-10-04T19:08:36.000Z" itemprop="datePublished">2020-10-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213class Solution(object):    def coinChange(self, coins, amount):        """        :type coins: List[int]        :type amount: int        :rtype: int        """        MAX = float('inf')        dp = [0] + [MAX]*amount              ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/04/322-Coin-Change/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-11-Container-With-Most-Water"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/03/11-Container-With-Most-Water/">11. Container With Most Water</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/03/11-Container-With-Most-Water/" class="article-date">
-	  <time datetime="2020-10-03T22:52:30.000Z" itemprop="datePublished">2020-10-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          the maxmum area is determined by the lower height, so every time move the lower height
-12345678910111213141516class Solution(object):    def maxArea(self, height):        """        :type height: List[int]        :rtype: int        """        l, r...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/03/11-Container-With-Most-Water/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1-on-1-with-Manager"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/02/1-on-1-with-Manager/">1 on 1 with Manager</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/02/1-on-1-with-Manager/" class="article-date">
-	  <time datetime="2020-10-03T00:02:42.000Z" itemprop="datePublished">2020-10-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Work/">Work</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          How To Talk About the Promotions
-This procress happens during the whole 1 on 1 process among the one promotion cycle
-Bring the topic, like how do I / what should I do for the next level? 
-Before this bring topic, 一定要列出 在这个阶段中自己都有什么achievement, gap...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/02/1-on-1-with-Manager/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-891-Sum-of-Subsequence-Widths"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/891-Sum-of-Subsequence-Widths/">891. Sum of Subsequence Widths</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/01/891-Sum-of-Subsequence-Widths/" class="article-date">
-	  <time datetime="2020-10-02T01:12:19.000Z" itemprop="datePublished">2020-10-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1
-The order of the input does not matter
-There are i smaller numbers,so there are 2 ^ i sequences in which A[i] is maximum.we should do res += A[i] * (2 ^ i)
-
-There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/01/891-Sum-of-Subsequence-Widths/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
@@ -822,7 +828,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Jojo&#39;s Blog All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -984,7 +990,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
             Jojo&#39;s Blog
           </div>
           <div class="panel-body">
-            Copyright © 2020 Jojo Yang All Rights Reserved.
+            Copyright © 2021 Jojo Yang All Rights Reserved.
           </div>
         </div>
       </div>

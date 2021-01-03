@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="sort by the hight(reversed), insert by the index1234567891011class Solution(object):    def reconstructQueue(self, people):        &quot;&quot;&quot;        :type people: List[List[int]]        :rtype: List[List[in">
+  <meta name="description" content="sort by the hight(reversed), insert by the index  splcie operate in place 1234567891011class Solution(object):    def reconstructQueue(self, people):        &quot;&quot;&quot;        :type people: List[List[int]]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="406. Queue Reconstruction by Height">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/09/17/406-Queue-Reconstruction-by-Height/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="sort by the hight(reversed), insert by the index1234567891011class Solution(object):    def reconstructQueue(self, people):        &quot;&quot;&quot;        :type people: List[List[int]]        :rtype: List[List[in">
+<meta property="og:description" content="sort by the hight(reversed), insert by the index  splcie operate in place 1234567891011class Solution(object):    def reconstructQueue(self, people):        &quot;&quot;&quot;        :type people: List[List[int]]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-17T16:40:09.000Z">
-<meta property="article:modified_time" content="2020-09-17T16:52:17.083Z">
+<meta property="article:modified_time" content="2021-01-03T04:28:09.776Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -207,10 +207,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ol>
-<li>sort by the hight(reversed), insert by the index<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reconstructQueue</span><span class="params">(self, people)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type people: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        people.sort(key=<span class="keyword">lambda</span> x: (-x[<span class="number">0</span>], x[<span class="number">1</span>]))</span><br><span class="line">        output = []</span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> people:</span><br><span class="line">            output.insert(p[<span class="number">1</span>], p)</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>sort by the hight(reversed), insert by the index</li>
 </ol>
+<p>splcie operate in place</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reconstructQueue</span><span class="params">(self, people)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type people: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        people.sort(key=<span class="keyword">lambda</span> x: (-x[<span class="number">0</span>], x[<span class="number">1</span>]))</span><br><span class="line">        output = []</span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> people:</span><br><span class="line">            output.insert(p[<span class="number">1</span>], p)</span><br><span class="line">        <span class="keyword">return</span> output</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">people</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> reconstructQueue = <span class="function"><span class="keyword">function</span>(<span class="params">people</span>) </span>&#123;</span><br><span class="line">    people.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[<span class="number">0</span>] !== b[<span class="number">0</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> b[<span class="number">0</span>] - a[<span class="number">0</span>]</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> res = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> person <span class="keyword">of</span> people) &#123;</span><br><span class="line">        <span class="comment">// or right in this way: res.splice(person[1], 0, person)</span></span><br><span class="line">        res = [...res.slice(<span class="number">0</span>, person[<span class="number">1</span>]), person, ...res.slice(person[<span class="number">1</span>])]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -328,7 +329,7 @@ var a = new Donate({
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2020 Jojo&#39;s Blog All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Jojo&#39;s Blog All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -490,7 +491,7 @@ var a = new Donate({
             Jojo&#39;s Blog
           </div>
           <div class="panel-body">
-            Copyright © 2020 Jojo Yang All Rights Reserved.
+            Copyright © 2021 Jojo Yang All Rights Reserved.
           </div>
         </div>
       </div>
