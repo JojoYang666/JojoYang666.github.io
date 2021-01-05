@@ -265,6 +265,325 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-15-3Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/07/15-3Sum/">15. 3Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/07/15-3Sum/" class="article-date">
+	  <time datetime="2020-12-07T20:16:48.000Z" itemprop="datePublished">2020-12-07</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627282930/** * @param &#123;number[]&#125; nums * @return &#123;number[][]&#125; */var threeSum = function(nums) &#123;    nums.sort((a, b) =&gt; a - b)    if (nums.length == 0 || nums[0] &gt; 0 || nums[nu...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/07/15-3Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Basic-concept-for-kubernetes"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/07/Basic-concept-for-kubernetes/">Basic concept for kubernetes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/07/Basic-concept-for-kubernetes/" class="article-date">
+	  <time datetime="2020-12-07T15:12:27.000Z" itemprop="datePublished">2020-12-07</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Kubernetes/">Kubernetes</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          why Decprecate Docker in the KubernetesBad things on the docker:
+
+docker is just for single machine
+how to run container in multiple machine and communicate with each other —&gt; cross-host networking
+state/volume is hard to manage —&gt; multiple ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/07/Basic-concept-for-kubernetes/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-238-Product-of-Array-Except-Self"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/06/238-Product-of-Array-Except-Self/">238. Product of Array Except Self </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/06/238-Product-of-Array-Except-Self/" class="article-date">
+	  <time datetime="2020-12-07T03:17:07.000Z" itemprop="datePublished">2020-12-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718/** * @param &#123;number[]&#125; nums * @return &#123;number[]&#125; */var productExceptSelf = function(nums) &#123;    let output = [], left = 1, right = 1        for (let i = nums.length - 1; i &gt;= 0; i--) &#123;   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/06/238-Product-of-Array-Except-Self/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-3-Longest-Substring-Without-Repeating-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/06/3-Longest-Substring-Without-Repeating-Characters/">3. Longest Substring Without Repeating Characters</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/06/3-Longest-Substring-Without-Repeating-Characters/" class="article-date">
+	  <time datetime="2020-12-07T02:47:52.000Z" itemprop="datePublished">2020-12-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          滑动窗口， 左指针update 每次取最大， 存入map的是next pos
+1234567891011121314151617181920/** * @param &#123;string&#125; s * @return &#123;number&#125; */var lengthOfLongestSubstring = function(s) &#123;    let ans = 0, i = 0, map = &#123;&#125;        for (let j = ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/06/3-Longest-Substring-Without-Repeating-Characters/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-5-Longest-Palindromic-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/06/5-Longest-Palindromic-Substring/">5. Longest Palindromic Substring</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/06/5-Longest-Palindromic-Substring/" class="article-date">
+	  <time datetime="2020-12-07T02:25:09.000Z" itemprop="datePublished">2020-12-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223242526/** * @param &#123;string&#125; s * @return &#123;string&#125; */var longestPalindrome = function(s) &#123;    if (!s || !s.length) &#123;        return ""    &#125;        let n = s.length, left = 0, len...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/06/5-Longest-Palindromic-Substring/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-91-Decode-Ways"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/06/91-Decode-Ways/">91. Decode Ways</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/06/91-Decode-Ways/" class="article-date">
+	  <time datetime="2020-12-06T23:22:26.000Z" itemprop="datePublished">2020-12-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          dp[i]: s中前i个字符组成的子串的解码方法的个数，长度比输入数组长多多1dp[0] =1if 当前字符不等于0: dp[i] = dp[i-1] otherwise dp[i] = 0if 当前字符和前一个字符能组成valid decode way –&gt; dp[i] += dp[i-2]
+to reduce the space, using a, b in coding
+1234567891011121314151617class Solution(object):    de...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/06/91-Decode-Ways/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-2-Add-Two-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -478,333 +797,11 @@ Users should be able to ...
 
 
   
-    <article id="post-640-Solve-the-Equation"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/04/640-Solve-the-Equation/">640. Solve the Equation </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/04/640-Solve-the-Equation/" class="article-date">
-	  <time datetime="2020-12-04T22:20:19.000Z" itemprop="datePublished">2020-12-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637383940414243444546class Solution(object):    def solveEquation(self, equation):        """        :type equation: str        :rtype: str        """        def helper(s):            s...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/04/640-Solve-the-Equation/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-866-Prime-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/04/866-Prime-Palindrome/">866. Prime Palindrome</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/04/866-Prime-Palindrome/" class="article-date">
-	  <time datetime="2020-12-04T16:18:18.000Z" itemprop="datePublished">2020-12-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425class Solution(object):    def primePalindrome(self, N):        """        :type N: int        :rtype: int        """        def is_prime(n):            return n &gt; 1 and all(n%d for d in xrange(2, int(n*...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/04/866-Prime-Palindrome/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/">558. Logical OR of Two Binary Grids Represented as Quad-Trees</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/" class="article-date">
-	  <time datetime="2020-12-04T15:11:12.000Z" itemprop="datePublished">2020-12-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132333435"""# Definition for a QuadTree node.class Node(object):    def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):        self.val = val        self.isLeaf = isLeaf ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-835-Image-Overlap"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/03/835-Image-Overlap/">835. Image Overlap</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/03/835-Image-Overlap/" class="article-date">
-	  <time datetime="2020-12-04T06:16:00.000Z" itemprop="datePublished">2020-12-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011class Solution(object):    def largestOverlap(self, img1, img2):        """        :type img1: List[List[int]]        :type img2: List[List[int]]        :rtype: int        """        A = [(i, j) for i, row in enumerate(img1) for j, it...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/03/835-Image-Overlap/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-497-Random-Point-in-Non-overlapping-Rectangles"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/">497. Random Point in Non-overlapping Rectangles</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/" class="article-date">
-	  <time datetime="2020-12-04T05:24:42.000Z" itemprop="datePublished">2020-12-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          reason for prefix sum:这样才能找到准确的idx,
-
-if: self.weights.append(weight/s)  —&gt; sum of self.weights == 1 but, we use random.random(), which is from 0 to 1, thus need to have prefix sum1234567891011121314151617181920212223242526272829import itertools...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-375-Guess-Number-Higher-or-Lower-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/">375. Guess Number Higher or Lower II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/" class="article-date">
-	  <time datetime="2020-12-04T04:10:39.000Z" itemprop="datePublished">2020-12-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-dp[i][j]: 最小的cost需要猜对 from i to j(inclusive)
-dp[i][j] = min(k + max(dp[i][k-1], dp[k+1][j]))
-
-
-因为我们要保证一定能取到所以在dp[i][k-1], dp[k+1][j]中， 取最大
-计算dp[i][j], 我们需要知道dp[i][k-1], dp[k+1][j]
-所以我们需要一个len —&gt; 2, n(inclusive)
-每次计算from start to len+start-1(in...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/13/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/63/">63</a><a class="extend next" rel="next" href="/page/15/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/13/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/64/">64</a><a class="extend next" rel="next" href="/page/15/">Next &amp;raquo;</a>
   </nav>
 
 </section>
