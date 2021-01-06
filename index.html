@@ -265,6 +265,372 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-53-Maximum-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/53-Maximum-Subarray/">53. Maximum Subarray</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/53-Maximum-Subarray/" class="article-date">
+	  <time datetime="2021-01-06T02:06:54.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213class Solution(object):    def maxSubArray(self, nums):        """        :type nums: List[int]        :rtype: int        """        n = len(nums)        curr_sum = max_sum = nums[0]                for i in range(1, n):           ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/53-Maximum-Subarray/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-38-Count-and-Say"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/38-Count-and-Say/">38. Count and Say</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/38-Count-and-Say/" class="article-date">
+	  <time datetime="2021-01-06T02:04:52.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122class Solution(object):    def countAndSay(self, n):        """        :type n: int        :rtype: str        """        if n == 1: return '1'                s = self.countAndSay(n - 1)                ret = ''   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/38-Count-and-Say/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-345-Reverse-Vowels-of-a-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/345-Reverse-Vowels-of-a-String/">345. Reverse Vowels of a String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/345-Reverse-Vowels-of-a-String/" class="article-date">
+	  <time datetime="2021-01-05T23:41:28.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223class Solution(object):    def reverseVowels(self, s):        """        :type s: str        :rtype: str        """        vowels = set(list("aeiouAEIOU"))        s = list(s)                p1, p2 = 0, len(s) -...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/345-Reverse-Vowels-of-a-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-459-Repeated-Substring-Pattern"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/459-Repeated-Substring-Pattern/">459. Repeated Substring Pattern</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/459-Repeated-Substring-Pattern/" class="article-date">
+	  <time datetime="2021-01-05T21:27:55.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          \1 —&gt; backreference to the group #1pattern = re.compile(reg expression)pattern.match(s)
+12345678class Solution(object):    def repeatedSubstringPattern(self, s):        """        :type s: str        :rtype: bool        """        pattern = re....
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/459-Repeated-Substring-Pattern/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-20-Valid-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/20-Valid-Parentheses/">20. Valid Parentheses</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/20-Valid-Parentheses/" class="article-date">
+	  <time datetime="2021-01-05T17:32:54.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617class Solution(object):    def isValid(self, s):        """        :type s: str        :rtype: bool        """        stack = []        mapping = &#123;")": "(", "&#125;": "&#123;", "]": "["&#125;                for char i...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/20-Valid-Parentheses/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-66-Plus-One"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/04/66-Plus-One/">66. Plus One</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/04/66-Plus-One/" class="article-date">
+	  <time datetime="2021-01-05T06:01:07.000Z" itemprop="datePublished">2021-01-04</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516class Solution(object):    def plusOne(self, digits):        """        :type digits: List[int]        :rtype: List[int]        """        n = len(digits)                for i in range(n):            idx = n - 1 - i         ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/04/66-Plus-One/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-162-Find-Peak-Element"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/04/162-Find-Peak-Element/">162. Find Peak Element</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/04/162-Find-Peak-Element/" class="article-date">
+	  <time datetime="2021-01-05T05:54:06.000Z" itemprop="datePublished">2021-01-04</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Binary search
+1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var findPeakElement = function(nums) &#123;    return search(nums, 0, nums.length-1);&#125;;var search = function (nums, l, r) &#123...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/04/162-Find-Peak-Element/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-769-Max-Chunks-To-Make-Sorted"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -424,380 +790,11 @@
 
 
   
-    <article id="post-226-Invert-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/226-Invert-Binary-Tree/">226. Invert Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/226-Invert-Binary-Tree/" class="article-date">
-	  <time datetime="2021-01-05T00:39:05.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(object):    d...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/226-Invert-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-543-Diameter-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/543-Diameter-of-Binary-Tree/">543. Diameter of Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/543-Diameter-of-Binary-Tree/" class="article-date">
-	  <time datetime="2021-01-05T00:15:34.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(objec...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/543-Diameter-of-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1-Two-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/1-Two-Sum/">1. Two Sum </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/1-Two-Sum/" class="article-date">
-	  <time datetime="2021-01-05T00:07:01.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314class Solution(object):    def twoSum(self, nums, target):        """        :type nums: List[int]        :type target: int        :rtype: List[int]        """        d = &#123;&#125;        for i, n in enumerate(nums):         ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/1-Two-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-341-Flatten-Nested-List-Iterator"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/341-Flatten-Nested-List-Iterator/">341. Flatten Nested List Iterator</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/02/341-Flatten-Nested-List-Iterator/" class="article-date">
-	  <time datetime="2021-01-03T04:29:41.000Z" itemprop="datePublished">2021-01-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          stack12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182/** * // This is the interface that allows for creating nested lists. * // You should n...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/02/341-Flatten-Nested-List-Iterator/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-133-Clone-Graph"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/133-Clone-Graph/">133. Clone Graph</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/02/133-Clone-Graph/" class="article-date">
-	  <time datetime="2021-01-03T03:56:57.000Z" itemprop="datePublished">2021-01-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          node is None
-1234567891011121314151617181920212223242526272829303132/** * // Definition for a Node. * function Node(val, neighbors) &#123; *    this.val = val === undefined ? 0 : val; *    this.neighbors = neighbors === undefined ? [] : neighbors;...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/02/133-Clone-Graph/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-438-Find-All-Anagrams-in-a-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/438-Find-All-Anagrams-in-a-String/">438. Find All Anagrams in a String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/02/438-Find-All-Anagrams-in-a-String/" class="article-date">
-	  <time datetime="2021-01-03T03:48:16.000Z" itemprop="datePublished">2021-01-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Sliding window
-if end point at index: idx1if start point at index: idx0if the length between idx1 and idx0 is: a
-a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
-123456789101112131415161718192021222324252627/** * @param &#123;string&#125; ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/02/438-Find-All-Anagrams-in-a-String/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-636-Exclusive-Time-of-Functions"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/636-Exclusive-Time-of-Functions/">636. Exclusive Time of Functions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/02/636-Exclusive-Time-of-Functions/" class="article-date">
-	  <time datetime="2021-01-03T02:32:01.000Z" itemprop="datePublished">2021-01-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          when pop a, need to update the second time of item before item a, using this to update time interval
-1234567891011121314151617181920212223242526/** * @param &#123;number&#125; n * @param &#123;string[]&#125; logs * @return &#123;number[]&#125; */v...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/02/636-Exclusive-Time-of-Functions/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/64/">64</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
