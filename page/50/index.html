@@ -265,6 +265,112 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-12-Integer-to-Roman"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/08/12-Integer-to-Roman/">12. Integer to Roman</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/08/12-Integer-to-Roman/" class="article-date">
+	  <time datetime="2020-10-08T16:01:28.000Z" itemprop="datePublished">2020-10-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1Greedy
+123456789101112131415class Solution(object):    def intToRoman(self, num):        """        :type num: int        :rtype: str        """        digits = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/08/12-Integer-to-Roman/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-909-Snakes-and-Ladders"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/08/909-Snakes-and-Ladders/">909. Snakes and Ladders</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/08/909-Snakes-and-Ladders/" class="article-date">
+	  <time datetime="2020-10-08T15:53:07.000Z" itemprop="datePublished">2020-10-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Min steps –&gt; bfs not dfs
+123456789101112131415161718192021222324252627282930class Solution(object):    def snakesAndLadders(self, board):        """        :type board: List[List[int]]        :rtype: int        """        N = len(board)        ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/08/909-Snakes-and-Ladders/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-443-String-Compression"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -694,111 +800,6 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         </p>
         <p class="article-more-link">
           <a href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-210-Course-Schedule-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/210-Course-Schedule-II/">210. Course Schedule II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/210-Course-Schedule-II/" class="article-date">
-	  <time datetime="2020-10-06T21:47:06.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          不能用这个题目 207. Course Schedule 里面的方法是因为， 这个是用来判断是否存在环的， 也就是说如果里面有若干个独立节点是返回true，但是不知道这个独立节点是谁， 而本题是要图没有环的同时还没有独立节点， 所以要通过知道所有节点的方式来找到入度为0的节点
-12345678910111213141516171819202122232425262728class Solution(object):    def findOrder(self, numCourses, pr...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/210-Course-Schedule-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-207-Course-Schedule"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/207-Course-Schedule/">207. Course Schedule</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/207-Course-Schedule/" class="article-date">
-	  <time datetime="2020-10-06T16:58:42.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839class GNode(object):    def __init__(self):        self.inDegrees = 0        self.outNodes = []        class Solution(object):    def canFinish(self, numCourses, prerequisites): ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/207-Course-Schedule/#more">Read More</a>
         </p>
       
     </div>

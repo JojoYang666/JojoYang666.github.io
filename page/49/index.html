@@ -265,6 +265,115 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-120-Triangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/10/120-Triangle/">120. Triangle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/10/120-Triangle/" class="article-date">
+	  <time datetime="2020-10-11T01:54:57.000Z" itemprop="datePublished">2020-10-10</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+123456789101112class Solution(object):    def minimumTotal(self, triangle):        """        :type triangle: List[List[int]]        :rtype: int        """        dp = triangle[-1]                for i in xrange(len(triangle)-2, -1, -1):         ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/10/120-Triangle/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-698-Partition-to-K-Equal-Sum-Subsets"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/">698. Partition to K Equal Sum Subsets</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/" class="article-date">
+	  <time datetime="2020-10-10T18:16:45.000Z" itemprop="datePublished">2020-10-10</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1Brute Force: Backtracking
+几个加速的key point:
+
+backtracking 的时候倒序 加入数字， 也就是先考虑最大的值， 这样会减小subset的size 降低recursive的次数
+加入if not group: break的判断， 当前group开始是0， 通过这种方式recursive 并没有找到结果， 那么这个group的下一个group开始也是0， 同样的recursive再走一遍 肯定是依旧找不到结果的 所以避免rep...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-368-Largest-Divisible-Subset"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -680,112 +789,6 @@ cornor case 2, do no...
         </p>
         <p class="article-more-link">
           <a href="/2020/10/08/395-Longest-Substring-with-At-Least-K-Repeating-Characters/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-12-Integer-to-Roman"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/12-Integer-to-Roman/">12. Integer to Roman</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/08/12-Integer-to-Roman/" class="article-date">
-	  <time datetime="2020-10-08T16:01:28.000Z" itemprop="datePublished">2020-10-08</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1Greedy
-123456789101112131415class Solution(object):    def intToRoman(self, num):        """        :type num: int        :rtype: str        """        digits = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/08/12-Integer-to-Roman/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-909-Snakes-and-Ladders"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/909-Snakes-and-Ladders/">909. Snakes and Ladders</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/08/909-Snakes-and-Ladders/" class="article-date">
-	  <time datetime="2020-10-08T15:53:07.000Z" itemprop="datePublished">2020-10-08</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Min steps –&gt; bfs not dfs
-123456789101112131415161718192021222324252627282930class Solution(object):    def snakesAndLadders(self, board):        """        :type board: List[List[int]]        :rtype: int        """        N = len(board)        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/08/909-Snakes-and-Ladders/#more">Read More</a>
         </p>
       
     </div>

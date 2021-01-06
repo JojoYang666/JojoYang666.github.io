@@ -265,6 +265,117 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-174-Dungeon-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/13/174-Dungeon-Game/">174. Dungeon Game</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/13/174-Dungeon-Game/" class="article-date">
+	  <time datetime="2020-11-13T17:39:10.000Z" itemprop="datePublished">2020-11-13</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i][j]: the minimum health needed to reach the princess at the pos i, j
+记得 如果不需要的话 初始化是112345678910111213141516171819202122232425262728class Solution(object):    def calculateMinimumHP(self, dungeon):        """        :type dungeon: List[List[...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/13/174-Dungeon-Game/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-471-Encode-String-with-Shortest-Length"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/471-Encode-String-with-Shortest-Length/">471. Encode String with Shortest Length </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/471-Encode-String-with-Shortest-Length/" class="article-date">
+	  <time datetime="2020-11-13T07:46:49.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+using dp[i][j]: shortest length from i to j, but i must from end to start
+because when update dp[i][j]: will using dp[k+1][j], k+1 &gt; i —&gt; split
+
+
+also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + ‘[‘ + dp[i][k] ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/471-Encode-String-with-Shortest-Length/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-440-K-th-Smallest-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -691,120 +802,6 @@ R...
         </p>
         <p class="article-more-link">
           <a href="/2020/11/12/1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-466-Count-The-Repetitions"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/12/466-Count-The-Repetitions/">466. Count The Repetitions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/12/466-Count-The-Repetitions/" class="article-date">
-	  <time datetime="2020-11-12T17:46:13.000Z" itemprop="datePublished">2020-11-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-records[i] = (a, b)
-a: the number of times s1 matched to s2 which starting from s2[i:]
-b: After this matches done, what is the position in the s2 for next matches
-
-
-After getting the records, calculate res which is the number of matches with n1 o...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/12/466-Count-The-Repetitions/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-980-Unique-Paths-III"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/11/980-Unique-Paths-III/">980. Unique Paths III</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/11/980-Unique-Paths-III/" class="article-date">
-	  <time datetime="2020-11-12T05:57:24.000Z" itemprop="datePublished">2020-11-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-不能有memo是因为题目要求要走过每一个非障碍
-所以 每一次到pos可能经过的障碍节点不一样所以不能memo
-但是要记住用visited
-本题目在原数组上面进行更改来作为visited， 最后记得还原12345678910111213141516171819202122232425262728293031323334353637383940414243class Solution(object):    def uniquePathsIII(self, grid):        """...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/11/980-Unique-Paths-III/#more">Read More</a>
         </p>
       
     </div>
