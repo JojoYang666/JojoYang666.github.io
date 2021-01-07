@@ -265,6 +265,486 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-986-Interval-List-Intersections"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/24/986-Interval-List-Intersections/">986. Interval List Intersections </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/24/986-Interval-List-Intersections/" class="article-date">
+	  <time datetime="2020-12-24T21:00:04.000Z" itemprop="datePublished">2020-12-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122class Solution(object):    def intervalIntersection(self, A, B):        """        :type A: List[List[int]]        :type B: List[List[int]]        :rtype: List[List[int]]        """        ans = []        i = j =...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/24/986-Interval-List-Intersections/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-239-Sliding-Window-Maximum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/23/239-Sliding-Window-Maximum/">239. Sliding Window Maximum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/23/239-Sliding-Window-Maximum/" class="article-date">
+	  <time datetime="2020-12-23T21:08:13.000Z" itemprop="datePublished">2020-12-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+
+left[j] is a maximum element from the beginning of the block to index j, direction left-&gt;right.
+right[j] is a maximum element from the end of the block to index j, direction right-&gt;left.
+
+—&gt; every k 做一次隔断， update the left &amp; right ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/23/239-Sliding-Window-Maximum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-18-4Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/23/18-4Sum/">18. 4Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/23/18-4Sum/" class="article-date">
+	  <time datetime="2020-12-23T20:30:22.000Z" itemprop="datePublished">2020-12-23</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+sort
+repeate ones continue1234567891011121314151617181920212223242526272829303132333435363738/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[][]&#125; */var fourSum = function(nums, target) &#123; ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/23/18-4Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-647-Palindromic-Substrings"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/22/647-Palindromic-Substrings/">647. Palindromic Substrings </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/22/647-Palindromic-Substrings/" class="article-date">
+	  <time datetime="2020-12-23T04:05:01.000Z" itemprop="datePublished">2020-12-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425/** * @param &#123;string&#125; s * @return &#123;number&#125; */var countSubstrings = function(s) &#123;    let count = 0        for (let i = 0; i &lt; s.length; i++) &#123;             count += helper(i, ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/22/647-Palindromic-Substrings/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Floyds"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/22/Floyds/">Floyds </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/22/Floyds/" class="article-date">
+	  <time datetime="2020-12-23T02:59:33.000Z" itemprop="datePublished">2020-12-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          find a start of the cycle
+
+hare = nums[nums[hare]] is twice as fast as tortoise = nums[tortoise]. –&gt;  make speed of hares is two times of tortoise –&gt; when they meet, stop
+hare start again from the start point and tortoise start from where th...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/22/Floyds/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-287-Find-the-Duplicate-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/22/287-Find-the-Duplicate-Number/">287. Find the Duplicate Number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/22/287-Find-the-Duplicate-Number/" class="article-date">
+	  <time datetime="2020-12-22T22:24:23.000Z" itemprop="datePublished">2020-12-22</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920class Solution(object):    def findDuplicate(self, nums):        """        :type nums: List[int]        :rtype: int        """        tortoise = hare = nums[0]                while True:            tortoise = nums[t...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/22/287-Find-the-Duplicate-Number/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-301-Remove-Invalid-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/21/301-Remove-Invalid-Parentheses/">301. Remove Invalid Parentheses</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/21/301-Remove-Invalid-Parentheses/" class="article-date">
+	  <time datetime="2020-12-22T05:18:29.000Z" itemprop="datePublished">2020-12-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          BFS
+12345678910111213141516171819202122class Solution(object):    def removeInvalidParentheses(self, s):        """        :type s: str        :rtype: List[str]        """        def isvalid(s):            ctr = 0            for c in s:           ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/21/301-Remove-Invalid-Parentheses/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-987-Vertical-Order-Traversal-of-a-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/21/987-Vertical-Order-Traversal-of-a-Binary-Tree/">987. Vertical Order Traversal of a Binary Tree </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/21/987-Vertical-Order-Traversal-of-a-Binary-Tree/" class="article-date">
+	  <time datetime="2020-12-21T21:22:37.000Z" itemprop="datePublished">2020-12-21</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          may be multiple items with same level on the same col –&gt; the reason for sortbfs + map + set flag
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * Definition for a binary tree node. * function TreeNode(val...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/21/987-Vertical-Order-Traversal-of-a-Binary-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-post-1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/21/post-1/">post</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/21/post-1/" class="article-date">
+	  <time datetime="2020-12-21T21:22:30.000Z" itemprop="datePublished">2020-12-21</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/21/post-1/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-211-Design-Add-and-Search-Words-Data-Structure"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -317,526 +797,11 @@
 
 
   
-    <article id="post-78-Subsets"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/78-Subsets/">78. Subsets</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/78-Subsets/" class="article-date">
-	  <time datetime="2020-12-20T23:13:00.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          because there is no duplicate items, no need to sort重点这里必需这样而不是 for *** in res, 因为res在不断增加  会死循环
-123456789101112131415161718/** * @param &#123;number[]&#125; nums * @return &#123;number[][]&#125; */var subsets = function(nums) &#123;    const res ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/78-Subsets/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-348-Design-Tic-Tac-Toe"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/348-Design-Tic-Tac-Toe/">348. Design Tic-Tac-Toe </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/348-Design-Tic-Tac-Toe/" class="article-date">
-	  <time datetime="2020-12-20T22:29:12.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          正方形， 最长的对角线
-
-顺方向： row == col
-逆方向: row + col + 1 == n
-
-其余对角线： 
-
-同一对角线上面的元素： 横坐标和纵坐标之和
-
-hill diagonals: row + column = constdale diagomals: row - column = const
-12345678910111213141516171819202122232425262728293031323334353637383940414243/** * Initi...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/348-Design-Tic-Tac-Toe/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-695-Max-Area-of-Island"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/695-Max-Area-of-Island/">695. Max Area of Island</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/695-Max-Area-of-Island/" class="article-date">
-	  <time datetime="2020-12-20T22:08:28.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-by changing input as visited
-update grid to visited
-count inital 0 -&gt; meeting condition count += 1 &amp; + neighbors
-
-12345678910111213141516171819202122232425262728293031323334353637/** * @param &#123;number[][]&#125; grid * @return &#123;num...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/695-Max-Area-of-Island/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-98-Validate-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/98-Validate-Binary-Search-Tree/">98. Validate Binary Search Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/98-Validate-Binary-Search-Tree/" class="article-date">
-	  <time datetime="2020-12-20T21:35:13.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          recursive + upper bound &amp; lower bound
-123456789101112131415161718192021/** * Definition for a binary tree node. * function TreeNode(val, left, right) &#123; *     this.val = (val===undefined ? 0 : val) *     this.left = (left===undefined ? nul...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/98-Validate-Binary-Search-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-AJAX"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/AJAX/">AJAX</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/AJAX/" class="article-date">
-	  <time datetime="2020-12-20T15:07:15.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Long polling
-
-
-WebSocketstheir URLs starts with ‘ws’ or ‘wss’ allow bi-directional communication between clients and servers
-Server-sent-eventsmessages are delivered in one direction: from the server to the client.like social media news feeds, sto...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/AJAX/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Exercise-Looking-at-Real-HTTP-Response-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/">Exercise: Looking at Real HTTP Response Messages</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/" class="article-date">
-	  <time datetime="2020-12-20T15:06:19.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-curl is the name of the program that tells the terminal that this is a curl command.
-The –head flag, or -I in short, tells cURL to send an HTTP request with the head method. In other words, instead of fetching the requested resource, just the res...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-HTTP-Response-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/HTTP-Response-Messages/">HTTP: Response Messages</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/HTTP-Response-Messages/" class="article-date">
-	  <time datetime="2020-12-20T15:05:45.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Overall
-exampleHTTP/1.1 200 OKConnection: closeDate: Tue, 18 Aug 2015 15: 44 : 04 GMTServer: Apache/2.2.3 (CentOS)Last-Modified: Tue, 18 Aug 2015 15:11:03 GMTContent-Length: 6821Content-Type: text/html
-
-[The object that was requested]
-
-3 parts
-sta...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/HTTP-Response-Messages/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-HTTP-Request-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/HTTP-Request-Messages/">HTTP: Request Messages</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/HTTP-Request-Messages/" class="article-date">
-	  <time datetime="2020-12-20T15:05:24.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          HTTP request messages
-Example
-
-GET /path/to/file/index.html HTTP/1.1Host: www.educative.ioConnection: closeUser-agent: Mozilla/5.0Accept-language: frAccept: text/html
-
-Note
-
-
-HTTP messages are in plain ASCII text.
-each line of the message ends wit...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/HTTP-Request-Messages/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-HTTP-is-a-Request-Response-Protocol"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/">HTTP is a Request-Response Protocol</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/" class="article-date">
-	  <time datetime="2020-12-20T15:04:59.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          HTTP
-stateless protocol
-
-TCP
-before an HTTP request can be sent, the host first needs to establish a ‘TCP connection’ with the server
-handshake
-at least three back and forth messages between the client and the server
-
-
-Any further messages can be ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
   </nav>
 
 </section>
