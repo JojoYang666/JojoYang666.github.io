@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-22-Generate-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-767-Reorganize-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/10/22-Generate-Parentheses/">22. Generate Parentheses</a>
+      <a class="article-title" href="/2020/12/15/767-Reorganize-String/">767. Reorganize String</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/10/22-Generate-Parentheses/" class="article-date">
-	  <time datetime="2020-12-10T23:50:19.000Z" itemprop="datePublished">2020-12-10</time>
+	<a href="/2020/12/15/767-Reorganize-String/" class="article-date">
+	  <time datetime="2020-12-15T16:38:19.000Z" itemprop="datePublished">2020-12-15</time>
 	</a>
 
       
@@ -295,11 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          backtracking
-123456789101112131415161718192021222324/** * @param &#123;number&#125; n * @return &#123;string[]&#125; */var generateParenthesis = function(n) &#123;  const res = []  go(n, n, '', res)    return res&#125;;const go = (l, r, s, res) =&...
+          pq
+1234567891011121314151617181920class Solution(object):    def reorganizeString(self, S):        """        :type S: str        :rtype: str        """        pq = [(-S.count(x), x) for x in set(S)]        heapq.heapify(pq)                if any(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/10/22-Generate-Parentheses/#more">Read More</a>
+          <a href="/2020/12/15/767-Reorganize-String/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +318,7 @@
 
 
   
-    <article id="post-79-Word-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-33-Search-in-Rotated-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/10/79-Word-Search/">79. Word Search</a>
+      <a class="article-title" href="/2020/12/14/33-Search-in-Rotated-Sorted-Array/">33. Search in Rotated Sorted Array</a>
     </h1>
   
 
@@ -334,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/10/79-Word-Search/" class="article-date">
-	  <time datetime="2020-12-10T23:15:21.000Z" itemprop="datePublished">2020-12-10</time>
+	<a href="/2020/12/14/33-Search-in-Rotated-Sorted-Array/" class="article-date">
+	  <time datetime="2020-12-15T06:10:14.000Z" itemprop="datePublished">2020-12-14</time>
 	</a>
 
       
@@ -348,10 +348,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/** * @param &#123;character[][]&#125; board * @param &#123;string&#125; word * @return &#123;bool...
+          search in sorted part
+12345678910111213141516171819202122232425262728293031/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var search = function(nums, target) &#123;    let left = 0, right =...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/10/79-Word-Search/#more">Read More</a>
+          <a href="/2020/12/14/33-Search-in-Rotated-Sorted-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -370,7 +371,7 @@
 
 
   
-    <article id="post-692-Top-K-Frequent-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-528-Random-Pick-with-Weight"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -378,7 +379,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/10/692-Top-K-Frequent-Words/">692. Top K Frequent Words </a>
+      <a class="article-title" href="/2020/12/14/528-Random-Pick-with-Weight/">528. Random Pick with Weight</a>
     </h1>
   
 
@@ -386,8 +387,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/10/692-Top-K-Frequent-Words/" class="article-date">
-	  <time datetime="2020-12-10T22:00:31.000Z" itemprop="datePublished">2020-12-10</time>
+	<a href="/2020/12/14/528-Random-Pick-with-Weight/" class="article-date">
+	  <time datetime="2020-12-15T03:48:38.000Z" itemprop="datePublished">2020-12-14</time>
 	</a>
 
       
@@ -400,11 +401,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          没有办法用快选是因为对于相等的情况还需要按照字符大小排序
-123456789101112131415161718/** * @param &#123;string[]&#125; words * @param &#123;number&#125; k * @return &#123;string[]&#125; */var topKFrequent = function(words, k) &#123;    let map = &#123;&#125;        for (let w...
+          1234567891011121314151617181920212223242526272829303132333435363738/** * @param &#123;number[]&#125; w */var Solution = function(w) &#123;    this.psum = []    this.sum = 0        w.forEach(weight =&gt; &#123;        this.sum += weight        this...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/10/692-Top-K-Frequent-Words/#more">Read More</a>
+          <a href="/2020/12/14/528-Random-Pick-with-Weight/#more">Read More</a>
         </p>
       
     </div>
@@ -423,7 +423,7 @@
 
 
   
-    <article id="post-138-Copy-List-with-Random-Pointer"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-140-Word-Break-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -431,7 +431,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/10/138-Copy-List-with-Random-Pointer/">138. Copy List with Random Pointer </a>
+      <a class="article-title" href="/2020/12/14/140-Word-Break-II/">140. Word Break II</a>
     </h1>
   
 
@@ -439,8 +439,61 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/10/138-Copy-List-with-Random-Pointer/" class="article-date">
-	  <time datetime="2020-12-10T20:18:04.000Z" itemprop="datePublished">2020-12-10</time>
+	<a href="/2020/12/14/140-Word-Break-II/" class="article-date">
+	  <time datetime="2020-12-15T03:02:17.000Z" itemprop="datePublished">2020-12-14</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          top down dp
+1234567891011121314151617181920212223242526272829/** * @param &#123;string&#125; s * @param &#123;string[]&#125; wordDict * @return &#123;string[]&#125; */var wordBreak = function(s, wordDict) &#123;    return helper(s, wordDict, &#123...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/14/140-Word-Break-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-269-Alien-Dictionary"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/14/269-Alien-Dictionary/">269. Alien Dictionary</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/14/269-Alien-Dictionary/" class="article-date">
+	  <time datetime="2020-12-14T20:06:40.000Z" itemprop="datePublished">2020-12-14</time>
 	</a>
 
       
@@ -454,15 +507,12 @@
       
         <p class="article-excerpt-content">
           
-create new node with value, next pointer pointing to the next node in the original list
-update the original node next pointer to the new created node
-
-
-update the new random pointer of new created node, by using the cur.next
-update the next point...
+build graph –&gt; 第一个不同的字符have higher priority
+拓扑排序
+when update indegree –&gt; only when there is no such edge, if this edge has added to the graph, do nothing12345678910111213141516171819202122232425262728293031class Solution(object):    def ali...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/10/138-Copy-List-with-Random-Pointer/#more">Read More</a>
+          <a href="/2020/12/14/269-Alien-Dictionary/#more">Read More</a>
         </p>
       
     </div>
@@ -481,7 +531,7 @@ update the next point...
 
 
   
-    <article id="post-127-Word-Ladder"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-124-Binary-Tree-Maximum-Path-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -489,7 +539,7 @@ update the next point...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/10/127-Word-Ladder/">127. Word Ladder</a>
+      <a class="article-title" href="/2020/12/13/124-Binary-Tree-Maximum-Path-Sum/">124. Binary Tree Maximum Path Sum</a>
     </h1>
   
 
@@ -497,8 +547,8 @@ update the next point...
     
     <div class="article-meta">
       
-	<a href="/2020/12/10/127-Word-Ladder/" class="article-date">
-	  <time datetime="2020-12-10T19:56:18.000Z" itemprop="datePublished">2020-12-10</time>
+	<a href="/2020/12/13/124-Binary-Tree-Maximum-Path-Sum/" class="article-date">
+	  <time datetime="2020-12-14T06:01:28.000Z" itemprop="datePublished">2020-12-13</time>
 	</a>
 
       
@@ -512,10 +562,10 @@ update the next point...
       
         <p class="article-excerpt-content">
           
-find matched word in the list, must remove it to avoid cycle12345678910111213141516171819202122232425262728293031323334353637/** * @param &#123;string&#125; beginWord * @param &#123;string&#125; endWord * @param &#123;string[]&#125; wordList * @r...
+这个题目的重点是： node value is possible to less than 0, thus after we can the recursive function, we need to compare the left &amp; right with 0, we only discard negative value1234567891011121314151617181920212223242526272829/** * Definition for a binar...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/10/127-Word-Ladder/#more">Read More</a>
+          <a href="/2020/12/13/124-Binary-Tree-Maximum-Path-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -534,7 +584,7 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
 
 
   
-    <article id="post-76-Minimum-Window-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-297-Serialize-and-Deserialize-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -542,7 +592,7 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/09/76-Minimum-Window-Substring/">76. Minimum Window Substring</a>
+      <a class="article-title" href="/2020/12/13/297-Serialize-and-Deserialize-Binary-Tree/">297. Serialize and Deserialize Binary Tree</a>
     </h1>
   
 
@@ -550,8 +600,8 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
     
     <div class="article-meta">
       
-	<a href="/2020/12/09/76-Minimum-Window-Substring/" class="article-date">
-	  <time datetime="2020-12-10T04:42:23.000Z" itemprop="datePublished">2020-12-09</time>
+	<a href="/2020/12/13/297-Serialize-and-Deserialize-Binary-Tree/" class="article-date">
+	  <time datetime="2020-12-14T05:44:27.000Z" itemprop="datePublished">2020-12-13</time>
 	</a>
 
       
@@ -564,11 +614,11 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          先找到合适的candidate， 再慢慢收缩， 排除不合适的candidate，update res
-123456789101112131415161718192021222324252627282930313233343536class Solution(object):    def minWindow(self, s, t):        """        :type s: str        :type t: str        :rtype: str        ""...
+          DFS
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758/** * Definition for a binary tree node. * function TreeNode(val) &#123; *     this.val = val; *     this.left = this.right = null; * &#...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/09/76-Minimum-Window-Substring/#more">Read More</a>
+          <a href="/2020/12/13/297-Serialize-and-Deserialize-Binary-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -587,7 +637,7 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
 
 
   
-    <article id="post-10-Regular-Expression-Matching"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-981-Time-Based-Key-Value-Store"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -595,7 +645,7 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/09/10-Regular-Expression-Matching/">10. Regular Expression Matching</a>
+      <a class="article-title" href="/2020/12/13/981-Time-Based-Key-Value-Store/">981. Time Based Key-Value Store</a>
     </h1>
   
 
@@ -603,8 +653,8 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
     
     <div class="article-meta">
       
-	<a href="/2020/12/09/10-Regular-Expression-Matching/" class="article-date">
-	  <time datetime="2020-12-10T04:31:30.000Z" itemprop="datePublished">2020-12-09</time>
+	<a href="/2020/12/13/981-Time-Based-Key-Value-Store/" class="article-date">
+	  <time datetime="2020-12-14T02:33:05.000Z" itemprop="datePublished">2020-12-13</time>
 	</a>
 
       
@@ -617,17 +667,10 @@ find matched word in the list, must remove it to avoid cycle12345678910111213141
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-如果当前的字符是*有两种情况
-p中的当前字符match前面的一个字符至少一次，–&gt; s[i-1] === p[j-2] || p[j-2] === ‘.’) &amp;&amp; dp[i-1][j]
-p中的当前字符不match任何字符 —&gt; dp[i][j-2]
-
-
-else
-前面的字符要match 同时当前的字符要match1234567891011121314151617181920212223242526/** * @param &#123;string&#125; ...
+          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354/** * Initialize your data structure here. */var TimeMap = function() &#123;    this.map = &#123;&#125;&#125;;/**  * @param &#123;string&#125; key  ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/09/10-Regular-Expression-Matching/#more">Read More</a>
+          <a href="/2020/12/13/981-Time-Based-Key-Value-Store/#more">Read More</a>
         </p>
       
     </div>
@@ -646,7 +689,7 @@ else
 
 
   
-    <article id="post-273-Integer-to-English-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-49-Group-Anagrams"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -654,7 +697,7 @@ else
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/09/273-Integer-to-English-Words/">273. Integer to English Words</a>
+      <a class="article-title" href="/2020/12/12/49-Group-Anagrams/">49. Group Anagrams</a>
     </h1>
   
 
@@ -662,8 +705,8 @@ else
     
     <div class="article-meta">
       
-	<a href="/2020/12/09/273-Integer-to-English-Words/" class="article-date">
-	  <time datetime="2020-12-10T03:21:00.000Z" itemprop="datePublished">2020-12-09</time>
+	<a href="/2020/12/12/49-Group-Anagrams/" class="article-date">
+	  <time datetime="2020-12-12T23:01:56.000Z" itemprop="datePublished">2020-12-12</time>
 	</a>
 
       
@@ -676,11 +719,10 @@ else
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          thousand, million, billion之间的difference is 1000, thus covert to hundredcornor case 1: 1000 –&gt; remove the ‘ ‘ at the end of stringcornor case 2: 0
-12345678910111213141516171819202122232425262728293031323334/** * @param &#123;number&#125; num * @...
+          123456789101112131415var groupAnagrams = function(strs) &#123;    const map = &#123;&#125;        for (let str of strs) &#123;        const key = [...str].sort().join('');                if (!map[key])&#123;            map[key] = [];        &#125;...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/09/273-Integer-to-English-Words/#more">Read More</a>
+          <a href="/2020/12/12/49-Group-Anagrams/#more">Read More</a>
         </p>
       
     </div>
@@ -699,7 +741,7 @@ else
 
 
   
-    <article id="post-380-Insert-Delete-GetRandom-O-1"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-347-Top-K-Frequent-Elements"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -707,7 +749,7 @@ else
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/">380. Insert Delete GetRandom O(1)</a>
+      <a class="article-title" href="/2020/12/12/347-Top-K-Frequent-Elements/">347. Top K Frequent Elements</a>
     </h1>
   
 
@@ -715,8 +757,8 @@ else
     
     <div class="article-meta">
       
-	<a href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/" class="article-date">
-	  <time datetime="2020-12-09T23:45:16.000Z" itemprop="datePublished">2020-12-09</time>
+	<a href="/2020/12/12/347-Top-K-Frequent-Elements/" class="article-date">
+	  <time datetime="2020-12-12T21:47:53.000Z" itemprop="datePublished">2020-12-12</time>
 	</a>
 
       
@@ -729,63 +771,10 @@ else
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          map + list + replace with last element
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960/** * Initialize your data structure here. */var RandomizedSet = function() &#123;    this.map = ...
+          Bucket Sort12345678910111213141516171819202122232425262728/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number[]&#125; */var topKFrequent = function(nums, k) &#123;    const bucket = new Array(nums.length), r...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-139-Word-Break"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/09/139-Word-Break/">139. Word Break</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/09/139-Word-Break/" class="article-date">
-	  <time datetime="2020-12-09T20:56:58.000Z" itemprop="datePublished">2020-12-09</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021/** * @param &#123;string&#125; s * @param &#123;string[]&#125; wordDict * @return &#123;boolean&#125; */var wordBreak = function(s, wordDict) &#123;    let wordSet = new Set(wordDict);    let dp = new Array(s.leng...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/09/139-Word-Break/#more">Read More</a>
+          <a href="/2020/12/12/347-Top-K-Frequent-Elements/#more">Read More</a>
         </p>
       
     </div>
@@ -808,7 +797,7 @@ else
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/12/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><a class="extend next" rel="next" href="/page/14/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/12/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="extend next" rel="next" href="/page/14/">Next &amp;raquo;</a>
   </nav>
 
 </section>

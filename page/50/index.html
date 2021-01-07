@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-12-Integer-to-Roman"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-430-Flatten-a-Multilevel-Doubly-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/12-Integer-to-Roman/">12. Integer to Roman</a>
+      <a class="article-title" href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/">430. Flatten a Multilevel Doubly Linked List</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/12-Integer-to-Roman/" class="article-date">
-	  <time datetime="2020-10-08T16:01:28.000Z" itemprop="datePublished">2020-10-08</time>
+	<a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/" class="article-date">
+	  <time datetime="2020-10-11T04:12:08.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -295,11 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Greedy
-123456789101112131415class Solution(object):    def intToRoman(self, num):        """        :type num: int        :rtype: str        """        digits = [(1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"), (90, "XC"), ...
+          DFS Recursive12345678910111213141516171819202122232425262728293031323334"""# Definition for a Node.class Node(object):    def __init__(self, val, prev, next, child):        self.val = val        self.prev = prev        self.next = next        self...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/08/12-Integer-to-Roman/#more">Read More</a>
+          <a href="/2020/10/10/430-Flatten-a-Multilevel-Doubly-Linked-List/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +317,7 @@
 
 
   
-    <article id="post-909-Snakes-and-Ladders"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/08/909-Snakes-and-Ladders/">909. Snakes and Ladders</a>
+      <a class="article-title" href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/">309. Best Time to Buy and Sell Stock with Cooldown</a>
     </h1>
   
 
@@ -334,61 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/08/909-Snakes-and-Ladders/" class="article-date">
-	  <time datetime="2020-10-08T15:53:07.000Z" itemprop="datePublished">2020-10-08</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Min steps –&gt; bfs not dfs
-123456789101112131415161718192021222324252627282930class Solution(object):    def snakesAndLadders(self, board):        """        :type board: List[List[int]]        :rtype: int        """        N = len(board)        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/08/909-Snakes-and-Ladders/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-443-String-Compression"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/443-String-Compression/">443. String Compression</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/443-String-Compression/" class="article-date">
-	  <time datetime="2020-10-07T04:17:11.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/" class="article-date">
+	  <time datetime="2020-10-11T03:16:35.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -402,23 +348,12 @@
       
         <p class="article-excerpt-content">
           
-cornor case
-
-read -&gt; 当前读到哪儿
-write -&gt; 当前写到哪儿z
-ancor -&gt; 连续字符的起点 -》会大于10所以记得同时更新write的值
 
 
-cornor case
-
-最后的结尾字符也是连续的
-
-
-
-1234567891011121314151617class Solution(object):    def compress(self, chars):        """        :type chars: List[str]  ...
+1234567891011121314class Solution(object):    def maxProfit(self, prices):        """        :type prices: List[int]        :rtype: int        """        sold, held, reset = float('-inf'), float('-inf'), 0                for price in prices:   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/443-String-Compression/#more">Read More</a>
+          <a href="/2020/10/10/309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/#more">Read More</a>
         </p>
       
     </div>
@@ -437,7 +372,7 @@ cornor case
 
 
   
-    <article id="post-1152-Analyze-User-Website-Visit-Pattern"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -445,7 +380,7 @@ cornor case
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/1152-Analyze-User-Website-Visit-Pattern/">1152. Analyze User Website Visit Pattern</a>
+      <a class="article-title" href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/">1031. Maximum Sum of Two Non-Overlapping Subarrays</a>
     </h1>
   
 
@@ -453,119 +388,8 @@ cornor case
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/1152-Analyze-User-Website-Visit-Pattern/" class="article-date">
-	  <time datetime="2020-10-07T03:54:39.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Using many built python functions
-
-题目的意思： 找到sequence
-sequece: 是一个人按照时间顺序访问的website， 但是sequence 长度是3
-返回是很多人都用过这个sequence， 如果次数相同就返回字母顺序上升12345678910111213141516171819class Solution(object):    def mostVisitedPattern(self, username, timestamp, websi...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/1152-Analyze-User-Website-Visit-Pattern/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-957-Prison-Cells-After-N-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/957-Prison-Cells-After-N-Days/">957. Prison Cells After N Days</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/957-Prison-Cells-After-N-Days/" class="article-date">
-	  <time datetime="2020-10-07T03:16:56.000Z" itemprop="datePublished">2020-10-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          staright-forward直觉 这个题目会有周期 -》 hashmap来找到这个周期
-
-cells[i-1] ^ cells[i+1] ^ 1 
-N %= (seen[str(cells)] - N)1234567891011121314151617class Solution(object):    def prisonAfterNDays(self, cells, N):        """        :type cells: List[int]        :type ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/06/957-Prison-Cells-After-N-Days/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-974-Subarray-Sums-Divisible-by-K"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/">974. Subarray Sums Divisible by K</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/" class="article-date">
-	  <time datetime="2020-10-07T02:37:23.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/" class="article-date">
+	  <time datetime="2020-10-11T02:35:51.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -579,13 +403,10 @@ N %= (seen[str(cells)] - N)1234567891011121314151617class Solution(object):    d
       
         <p class="article-excerpt-content">
           
-Cornor case: 开始要给P给0， for the case: a single num is equal to the K
-p(i) = sum(A[0],…, A[i])%k
-这样在拿到dict: key is p(i), value: account of p(i), 也就是说有相同余数的， 他们一减 就可以拿到一个(sum of sub array )/k = 0
-有多少种这个情况呢吗就是 在count 中取2个， 他们一减就可以拿到一个subarray – v*(v-1...
+12345678910111213141516171819class Solution(object):    def maxSumTwoNoOverlap(self, A, L, M):        """        :type A: List[int]        :type L: int        :type M: int        :rtype: int        """        for i in range(1, len(A)):           ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/974-Subarray-Sums-Divisible-by-K/#more">Read More</a>
+          <a href="/2020/10/10/1031-Maximum-Sum-of-Two-Non-Overlapping-Subarrays/#more">Read More</a>
         </p>
       
     </div>
@@ -604,7 +425,7 @@ p(i) = sum(A[0],…, A[i])%k
 
 
   
-    <article id="post-1209-Remove-All-Adjacent-Duplicates-in-String-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-120-Triangle"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -612,7 +433,7 @@ p(i) = sum(A[0],…, A[i])%k
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/">1209. Remove All Adjacent Duplicates in String II</a>
+      <a class="article-title" href="/2020/10/10/120-Triangle/">120. Triangle</a>
     </h1>
   
 
@@ -620,8 +441,8 @@ p(i) = sum(A[0],…, A[i])%k
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/" class="article-date">
-	  <time datetime="2020-10-06T23:40:04.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/120-Triangle/" class="article-date">
+	  <time datetime="2020-10-11T01:54:57.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -634,11 +455,11 @@ p(i) = sum(A[0],…, A[i])%k
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          涉及到后进来/后处理的中间值， 可以最后拿到结果的话， 就可以用stack
-1234567891011121314151617class Solution(object):    def removeDuplicates(self, s, k):        """        :type s: str        :type k: int        :rtype: str        """        stack = [['#', 0]]        for j, c ...
+          
+123456789101112class Solution(object):    def minimumTotal(self, triangle):        """        :type triangle: List[List[int]]        :rtype: int        """        dp = triangle[-1]                for i in xrange(len(triangle)-2, -1, -1):         ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/1209-Remove-All-Adjacent-Duplicates-in-String-II/#more">Read More</a>
+          <a href="/2020/10/10/120-Triangle/#more">Read More</a>
         </p>
       
     </div>
@@ -657,7 +478,7 @@ p(i) = sum(A[0],…, A[i])%k
 
 
   
-    <article id="post-55-Jump-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-698-Partition-to-K-Equal-Sum-Subsets"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -665,7 +486,7 @@ p(i) = sum(A[0],…, A[i])%k
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/55-Jump-Game/">55. Jump Game</a>
+      <a class="article-title" href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/">698. Partition to K Equal Sum Subsets</a>
     </h1>
   
 
@@ -673,8 +494,8 @@ p(i) = sum(A[0],…, A[i])%k
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/55-Jump-Game/" class="article-date">
-	  <time datetime="2020-10-06T23:13:47.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/" class="article-date">
+	  <time datetime="2020-10-10T18:16:45.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
@@ -687,11 +508,14 @@ p(i) = sum(A[0],…, A[i])%k
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Greedy
-1234567891011121314class Solution(object):    def canJump(self, nums):        """        :type nums: List[int]        :rtype: bool        """        m = nums[0]                for i, num in enumerate(nums):            if i &lt;= m:         ...
+          Solution 1Brute Force: Backtracking
+几个加速的key point:
+
+backtracking 的时候倒序 加入数字， 也就是先考虑最大的值， 这样会减小subset的size 降低recursive的次数
+加入if not group: break的判断， 当前group开始是0， 通过这种方式recursive 并没有找到结果， 那么这个group的下一个group开始也是0， 同样的recursive再走一遍 肯定是依旧找不到结果的 所以避免rep...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/55-Jump-Game/#more">Read More</a>
+          <a href="/2020/10/10/698-Partition-to-K-Equal-Sum-Subsets/#more">Read More</a>
         </p>
       
     </div>
@@ -710,7 +534,7 @@ p(i) = sum(A[0],…, A[i])%k
 
 
   
-    <article id="post-96-Unique-Binary-Search-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-368-Largest-Divisible-Subset"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -718,7 +542,7 @@ p(i) = sum(A[0],…, A[i])%k
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/96-Unique-Binary-Search-Trees/">96. Unique Binary Search Trees</a>
+      <a class="article-title" href="/2020/10/10/368-Largest-Divisible-Subset/">368. Largest Divisible Subset</a>
     </h1>
   
 
@@ -726,11 +550,13 @@ p(i) = sum(A[0],…, A[i])%k
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/96-Unique-Binary-Search-Trees/" class="article-date">
-	  <time datetime="2020-10-06T23:01:49.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/10/368-Largest-Divisible-Subset/" class="article-date">
+	  <time datetime="2020-10-10T16:34:59.000Z" itemprop="datePublished">2020-10-10</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
       
       
 
@@ -738,17 +564,14 @@ p(i) = sum(A[0],…, A[i])%k
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          n = 2dp[2] =  dp[0] * dp[1]　　　(1为根的情况，则左子树一定不存在，右子树可以有一个数字) 
+          DP
+Si % Sj = 0 or Sj % Si = 0. 对于这个条件我们要判断谁大谁小比较难/复杂， 所以我们要对原数组排序， 这样只用考虑后面大的值
+用DP解决， dp[i] = set() &lt;- b set b是所有i能整除的数即i%b == 0, 那么一个新数m%i == 0,肯定会有m%b == 0
 
-dp[1] * dp[0]　　  (2为根的情况，则左子树可以有一个数字，右子树一定不存在)
-
-同理可写出 n = 3 的计算方法：
-dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在，右子树可以有两个数字)
-　　　　+ dp[1] * dp[1]　　  (2为根的情况，则左右子树都可以各有一个数字)
- 　　　  + dp[2] * ...
+1234567891011class Solution(object):    def largestDivisibleSubset(self, nums):      ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/96-Unique-Binary-Search-Trees/#more">Read More</a>
+          <a href="/2020/10/10/368-Largest-Divisible-Subset/#more">Read More</a>
         </p>
       
     </div>
@@ -767,7 +590,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
 
   
-    <article id="post-19-Remove-Nth-Node-From-End-of-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-86-Partition-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -775,7 +598,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/">19. Remove Nth Node From End of List</a>
+      <a class="article-title" href="/2020/10/09/86-Partition-List/">86. Partition List</a>
     </h1>
   
 
@@ -783,11 +606,13 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     
     <div class="article-meta">
       
-	<a href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/" class="article-date">
-	  <time datetime="2020-10-06T21:59:05.000Z" itemprop="datePublished">2020-10-06</time>
+	<a href="/2020/10/09/86-Partition-List/" class="article-date">
+	  <time datetime="2020-10-09T22:52:51.000Z" itemprop="datePublished">2020-10-09</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
       
       
 
@@ -795,11 +620,174 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          one pass means two pointers will be one option
-123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextc...
+          two meaningful poointers 
+123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object)...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/06/19-Remove-Nth-Node-From-End-of-List/#more">Read More</a>
+          <a href="/2020/10/09/86-Partition-List/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1344-Angle-Between-Hands-of-a-Clock"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/">1344. Angle Between Hands of a Clock</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/" class="article-date">
+	  <time datetime="2020-10-09T22:19:48.000Z" itemprop="datePublished">2020-10-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          MathIt is a math problem
+123456789101112131415class Solution(object):    def angleClock(self, hour, minutes):        """        :type hour: int        :type minutes: int        :rtype: float        """        one_minute_angel = 6        one_hour_a...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/09/1344-Angle-Between-Hands-of-a-Clock/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-24-Swap-Nodes-in-Pairs"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/09/24-Swap-Nodes-in-Pairs/">24. Swap Nodes in Pairs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/09/24-Swap-Nodes-in-Pairs/" class="article-date">
+	  <time datetime="2020-10-09T21:52:35.000Z" itemprop="datePublished">2020-10-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Recursive
+凡事有重复逻辑操作，并且 一些结果 要由 其他的重复操作的结果来完成， 那么就可以用recursive的方法来解决
+重点：触底条件， 也就是base case
+
+
+
+1234567891011121314151617181920# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/09/24-Swap-Nodes-in-Pairs/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-540-Single-Element-in-a-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/">540. Single Element in a Sorted Array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/" class="article-date">
+	  <time datetime="2020-10-09T04:59:54.000Z" itemprop="datePublished">2020-10-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          BST12345678910111213141516171819202122232425class Solution(object):    def singleNonDuplicate(self, nums):        """        :type nums: List[int]        :rtype: int        """        low, high = 0, len(nums) - 1                while low &lt; high...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/08/540-Single-Element-in-a-Sorted-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -822,7 +810,7 @@ dp[3] =  dp[0] * dp[2]　　　(1为根的情况，则左子树一定不存在�
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/49/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="page-number" href="/page/49/">49</a><span class="page-number current">50</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><a class="extend next" rel="next" href="/page/51/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/49/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="page-number" href="/page/49/">49</a><span class="page-number current">50</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="extend next" rel="next" href="/page/51/">Next &amp;raquo;</a>
   </nav>
 
 </section>
