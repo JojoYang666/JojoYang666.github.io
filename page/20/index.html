@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-Morris-Tranversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/Morris-Tranversal/">Morris Tranversal</a>
+      <a class="article-title" href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/">558. Logical OR of Two Binary Grids Represented as Quad-Trees</a>
     </h1>
   
 
@@ -281,69 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/Morris-Tranversal/" class="article-date">
-	  <time datetime="2020-12-02T02:38:09.000Z" itemprop="datePublished">2020-12-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Morris遍历的实现原则记作当前节点为cur
-
-如果cur无左孩子， cur向右移动(cur=cur.right)
-如果cur有左孩子，找到cur左子树上最右的节点, 记为most_right
-if most_right.right==null, most_right.right=cur, cur=cur.left
-if most_right.right == cur, most_right.right =null, cur = cur.right
-
-
-
-—&gt;实质： 对于没有左子树...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/01/Morris-Tranversal/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-99-Recover-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/99-Recover-Binary-Search-Tree/">99. Recover Binary Search Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/01/99-Recover-Binary-Search-Tree/" class="article-date">
-	  <time datetime="2020-12-01T23:57:47.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/" class="article-date">
+	  <time datetime="2020-12-04T15:11:12.000Z" itemprop="datePublished">2020-12-04</time>
 	</a>
 
       
@@ -356,10 +295,10 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          O(n)12345678910111213141516171819202122232425262728# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightcl...
+          1234567891011121314151617181920212223242526272829303132333435"""# Definition for a QuadTree node.class Node(object):    def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):        self.val = val        self.isLeaf = isLeaf ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/01/99-Recover-Binary-Search-Tree/#more">Read More</a>
+          <a href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/#more">Read More</a>
         </p>
       
     </div>
@@ -378,7 +317,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
 
 
   
-    <article id="post-675-Cut-Off-Trees-for-Golf-Event"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-835-Image-Overlap"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -386,7 +325,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/">675. Cut Off Trees for Golf Event</a>
+      <a class="article-title" href="/2020/12/03/835-Image-Overlap/">835. Image Overlap</a>
     </h1>
   
 
@@ -394,8 +333,8 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/" class="article-date">
-	  <time datetime="2020-12-01T20:39:05.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/03/835-Image-Overlap/" class="article-date">
+	  <time datetime="2020-12-04T06:16:00.000Z" itemprop="datePublished">2020-12-03</time>
 	</a>
 
       
@@ -408,10 +347,10 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930class Solution(object):    def cutOffTree(self, forest):        """        :type forest: List[List[int]]        :rtype: int        """        def bfs(forest, sr, sc, tr, tc):            R, C = len...
+          1234567891011class Solution(object):    def largestOverlap(self, img1, img2):        """        :type img1: List[List[int]]        :type img2: List[List[int]]        :rtype: int        """        A = [(i, j) for i, row in enumerate(img1) for j, it...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/#more">Read More</a>
+          <a href="/2020/12/03/835-Image-Overlap/#more">Read More</a>
         </p>
       
     </div>
@@ -430,7 +369,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
 
 
   
-    <article id="post-245-Shortest-Word-Distance-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-497-Random-Point-in-Non-overlapping-Rectangles"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -438,7 +377,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/245-Shortest-Word-Distance-III/">245. Shortest Word Distance III</a>
+      <a class="article-title" href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/">497. Random Point in Non-overlapping Rectangles</a>
     </h1>
   
 
@@ -446,8 +385,8 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/245-Shortest-Word-Distance-III/" class="article-date">
-	  <time datetime="2020-12-01T19:46:47.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/" class="article-date">
+	  <time datetime="2020-12-04T05:24:42.000Z" itemprop="datePublished">2020-12-03</time>
 	</a>
 
       
@@ -460,10 +399,12 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021class Solution(object):    def shortestWordDistance(self, words, word1, word2):        """        :type words: List[str]        :type word1: str        :type word2: str        :rtype: int        """        n = len(...
+          reason for prefix sum:这样才能找到准确的idx,
+
+if: self.weights.append(weight/s)  —&gt; sum of self.weights == 1 but, we use random.random(), which is from 0 to 1, thus need to have prefix sum1234567891011121314151617181920212223242526272829import itertools...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/01/245-Shortest-Word-Distance-III/#more">Read More</a>
+          <a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/#more">Read More</a>
         </p>
       
     </div>
@@ -482,7 +423,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
 
 
   
-    <article id="post-156-Binary-Tree-Upside-Down"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-375-Guess-Number-Higher-or-Lower-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -490,7 +431,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/156-Binary-Tree-Upside-Down/">156. Binary Tree Upside Down</a>
+      <a class="article-title" href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/">375. Guess Number Higher or Lower II</a>
     </h1>
   
 
@@ -498,169 +439,8 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/156-Binary-Tree-Upside-Down/" class="article-date">
-	  <time datetime="2020-12-01T18:16:37.000Z" itemprop="datePublished">2020-12-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          keep finding the left most node, make it upside-down, then make its parent to be its right most subtree recursivelyconnect the root to the right most subtree, make sure not copying the original root, otherwisr it become cyclic
-12345678910111213141...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/01/156-Binary-Tree-Upside-Down/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-244-Shortest-Word-Distance-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/244-Shortest-Word-Distance-II/">244. Shortest Word Distance II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/01/244-Shortest-Word-Distance-II/" class="article-date">
-	  <time datetime="2020-12-01T17:35:49.000Z" itemprop="datePublished">2020-12-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          min diff in two list, if two list is sorted we can do it in one pass instead of n*n
-123456789101112131415161718192021222324252627282930313233class WordDistance(object):    def __init__(self, words):        """        :type words: List[str]        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/01/244-Shortest-Word-Distance-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Designing-Facebook’s-Newsfeed"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/">Designing Facebook’s Newsfeed </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/" class="article-date">
-	  <time datetime="2020-12-01T05:14:51.000Z" itemprop="datePublished">2020-11-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Requirements and Goals of the SystemFunctional requirements:
-Newsfeed will be generated based on the posts from the people, pages, and groups that a user follows.
-A user may have many friends and follow a large number of pages/groups.
-Feeds may co...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-711-Number-of-Distinct-Islands-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/711-Number-of-Distinct-Islands-II/">711. Number of Distinct Islands II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/30/711-Number-of-Distinct-Islands-II/" class="article-date">
-	  <time datetime="2020-12-01T04:33:13.000Z" itemprop="datePublished">2020-11-30</time>
+	<a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/" class="article-date">
+	  <time datetime="2020-12-04T04:10:39.000Z" itemprop="datePublished">2020-12-03</time>
 	</a>
 
       
@@ -674,12 +454,17 @@ Feeds may co...
       
         <p class="article-excerpt-content">
           
-Scan the matrix, each time when 1 is found, search the nearby 1, push them inside a queue and mark them as -1.
-he queue stands for a specific shape of an island
-Push the island to the left upper corner by subtracting the original data with its mi...
+dp[i][j]: 最小的cost需要猜对 from i to j(inclusive)
+dp[i][j] = min(k + max(dp[i][k-1], dp[k+1][j]))
+
+
+因为我们要保证一定能取到所以在dp[i][k-1], dp[k+1][j]中， 取最大
+计算dp[i][j], 我们需要知道dp[i][k-1], dp[k+1][j]
+所以我们需要一个len —&gt; 2, n(inclusive)
+每次计算from start to len+start-1(in...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/30/711-Number-of-Distinct-Islands-II/#more">Read More</a>
+          <a href="/2020/12/03/375-Guess-Number-Higher-or-Lower-II/#more">Read More</a>
         </p>
       
     </div>
@@ -698,7 +483,7 @@ Push the island to the left upper corner by subtracting the original data with i
 
 
   
-    <article id="post-510-Inorder-Successor-in-BST-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-687-Longest-Univalue-Path"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -706,7 +491,7 @@ Push the island to the left upper corner by subtracting the original data with i
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/510-Inorder-Successor-in-BST-II/">510. Inorder Successor in BST II</a>
+      <a class="article-title" href="/2020/12/03/687-Longest-Univalue-Path/">687. Longest Univalue Path</a>
     </h1>
   
 
@@ -714,8 +499,8 @@ Push the island to the left upper corner by subtracting the original data with i
     
     <div class="article-meta">
       
-	<a href="/2020/11/30/510-Inorder-Successor-in-BST-II/" class="article-date">
-	  <time datetime="2020-12-01T03:41:59.000Z" itemprop="datePublished">2020-11-30</time>
+	<a href="/2020/12/03/687-Longest-Univalue-Path/" class="article-date">
+	  <time datetime="2020-12-04T03:32:53.000Z" itemprop="datePublished">2020-12-03</time>
 	</a>
 
       
@@ -728,10 +513,10 @@ Push the island to the left upper corner by subtracting the original data with i
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425"""# Definition for a Node.class Node:    def __init__(self, val):        self.val = val        self.left = None        self.right = None        self.parent = None"""class Solution(object):    def inorderSu...
+          1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclas...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/30/510-Inorder-Successor-in-BST-II/#more">Read More</a>
+          <a href="/2020/12/03/687-Longest-Univalue-Path/#more">Read More</a>
         </p>
       
     </div>
@@ -750,7 +535,7 @@ Push the island to the left upper corner by subtracting the original data with i
 
 
   
-    <article id="post-61-Rotate-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-538-Convert-BST-to-Greater-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -758,7 +543,7 @@ Push the island to the left upper corner by subtracting the original data with i
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/61-Rotate-List/">61. Rotate List</a>
+      <a class="article-title" href="/2020/12/03/538-Convert-BST-to-Greater-Tree/">538. Convert BST to Greater Tree</a>
     </h1>
   
 
@@ -766,8 +551,165 @@ Push the island to the left upper corner by subtracting the original data with i
     
     <div class="article-meta">
       
-	<a href="/2020/11/30/61-Rotate-List/" class="article-date">
-	  <time datetime="2020-12-01T03:00:00.000Z" itemprop="datePublished">2020-11-30</time>
+	<a href="/2020/12/03/538-Convert-BST-to-Greater-Tree/" class="article-date">
+	  <time datetime="2020-12-04T03:03:53.000Z" itemprop="datePublished">2020-12-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Recursive123456789101112131415161718192021# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solut...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/03/538-Convert-BST-to-Greater-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/03/1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60/">1010. Pairs of Songs With Total Durations Divisible by 60 </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/03/1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60/" class="article-date">
+	  <time datetime="2020-12-04T02:23:34.000Z" itemprop="datePublished">2020-12-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          cornor case: reminder is 0
+12345678910111213141516class Solution(object):    def numPairsDivisibleBy60(self, time):        """        :type time: List[int]        :rtype: int        """        remainders = collections.defaultdict(int)        ret =...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/03/1010-Pairs-of-Songs-With-Total-Durations-Divisible-by-60/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-223-Rectangle-Area"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/03/223-Rectangle-Area/">223. Rectangle Area</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/03/223-Rectangle-Area/" class="article-date">
+	  <time datetime="2020-12-03T20:36:17.000Z" itemprop="datePublished">2020-12-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819class Solution(object):    def computeArea(self, A, B, C, D, E, F, G, H):        """        :type A: int        :type B: int        :type C: int        :type D: int        :type E: int        :type F: int        :type ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/03/223-Rectangle-Area/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1102-Path-With-Maximum-Minimum-Value"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/03/1102-Path-With-Maximum-Minimum-Value/">1102. Path With Maximum Minimum Value</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/03/1102-Path-With-Maximum-Minimum-Value/" class="article-date">
+	  <time datetime="2020-12-03T20:14:09.000Z" itemprop="datePublished">2020-12-03</time>
 	</a>
 
       
@@ -781,20 +723,63 @@ Push the island to the left upper corner by subtracting the original data with i
       
         <p class="article-excerpt-content">
           
-
-
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution(object):
-    def rotateRight(self, head, k):
-        """
-        :type...
+binary to search all the possible values
+dfs to verify it1234567891011121314151617181920212223242526272829303132333435363738394041class Solution(object):    def maximumMinimumPath(self, A):        """        :type A: List[List[int]]        :rtype...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/30/61-Rotate-List/#more">Read More</a>
+          <a href="/2020/12/03/1102-Path-With-Maximum-Minimum-Value/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-447-Number-of-Boomerangs"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/03/447-Number-of-Boomerangs/">447. Number of Boomerangs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/03/447-Number-of-Boomerangs/" class="article-date">
+	  <time datetime="2020-12-03T18:17:11.000Z" itemprop="datePublished">2020-12-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718class Solution(object):    def numberOfBoomerangs(self, points):        """        :type points: List[List[int]]        :rtype: int        """        res = 0                for p in points:            cmap = collections....
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/03/447-Number-of-Boomerangs/#more">Read More</a>
         </p>
       
     </div>
@@ -817,7 +802,7 @@ class Solution(object):
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/19/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="extend next" rel="next" href="/page/21/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/19/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="extend next" rel="next" href="/page/21/">Next &amp;raquo;</a>
   </nav>
 
 </section>
