@@ -265,6 +265,59 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-416-Partition-Equal-Subset-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/12/416-Partition-Equal-Subset-Sum/">416. Partition Equal Subset Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/12/416-Partition-Equal-Subset-Sum/" class="article-date">
+	  <time datetime="2021-01-13T07:01:50.000Z" itemprop="datePublished">2021-01-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          dp[i][j] = dp[i-1][s] or (s &gt;= nums[i] and dp[i-1][s-nums[i]])
+DP from bottom up123456789101112131415class Solution(object):    def canPartition(self, nums):        """        :type nums: List[int]        :rtype: bool        """        target, ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/12/416-Partition-Equal-Subset-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-727-Minimum-Window-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -295,7 +348,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233class Solution(object):    def minWindow(self, S, T):        """        :type S: str        :type T: str        :rtype: str        """        sidx, tidx = 0, 0        slen, tlen = len(S), le...
+          brute forcewhen find it, backward to find the start pos of s, it must be shortest one &amp; remove the possible not valid answereg: s: aaaaaabbbb t: ab
+123456789101112131415161718192021222324252627282930313233class Solution(object):    def minWind...
         </p>
         <p class="article-more-link">
           <a href="/2021/01/12/727-Minimum-Window-Subsequence/#more">Read More</a>
@@ -718,58 +772,6 @@ thus, it will be one root.children == [] base case: return 1
         </p>
         <p class="article-more-link">
           <a href="/2021/01/12/652-Find-Duplicate-Subtrees/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-449-Serialize-and-Deserialize-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/11/449-Serialize-and-Deserialize-BST/">449. Serialize and Deserialize BST</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/11/449-Serialize-and-Deserialize-BST/" class="article-date">
-	  <time datetime="2021-01-12T01:51:44.000Z" itemprop="datePublished">2021-01-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839404142# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, x):#         self.val = x#         self.left = None#         self.right = Noneclass Co...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/11/449-Serialize-and-Deserialize-BST/#more">Read More</a>
         </p>
       
     </div>

@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>727. minimum window subsequence | Jojo&#39;s Blog</title>
+  <title>416. partition equal subset sum | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="brute forcewhen find it, backward to find the start pos of s, it must be shortest one &amp; remove the possible not valid answereg: s: aaaaaabbbb t: ab 123456789101112131415161718192021222324252627282">
+  <meta name="description" content="dp[i][j] &#x3D; dp[i-1][s] or (s &gt;&#x3D; nums[i] and dp[i-1][s-nums[i]]) DP from bottom up123456789101112131415class Solution(object):    def canPartition(self, nums):        &quot;&quot;&quot;        :type nums: List[int]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="727. Minimum Window Subsequence">
-<meta property="og:url" content="https://jojoyang666.github.io/2021/01/12/727-Minimum-Window-Subsequence/index.html">
+<meta property="og:title" content="416. Partition Equal Subset Sum">
+<meta property="og:url" content="https://jojoyang666.github.io/2021/01/12/416-Partition-Equal-Subset-Sum/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="brute forcewhen find it, backward to find the start pos of s, it must be shortest one &amp; remove the possible not valid answereg: s: aaaaaabbbb t: ab 123456789101112131415161718192021222324252627282">
+<meta property="og:description" content="dp[i][j] &#x3D; dp[i-1][s] or (s &gt;&#x3D; nums[i] and dp[i-1][s-nums[i]]) DP from bottom up123456789101112131415class Solution(object):    def canPartition(self, nums):        &quot;&quot;&quot;        :type nums: List[int]">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-13T05:33:09.000Z">
-<meta property="article:modified_time" content="2021-01-13T05:54:09.630Z">
+<meta property="article:published_time" content="2021-01-13T07:01:50.000Z">
+<meta property="article:modified_time" content="2021-01-13T07:22:24.281Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +171,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-727-Minimum-Window-Subsequence" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-416-Partition-Equal-Subset-Sum" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +179,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      727. Minimum Window Subsequence
+      416. Partition Equal Subset Sum
     </h1>
   
 
@@ -187,8 +187,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/12/727-Minimum-Window-Subsequence/" class="article-date">
-	  <time datetime="2021-01-13T05:33:09.000Z" itemprop="datePublished">2021-01-12</time>
+	<a href="/2021/01/12/416-Partition-Equal-Subset-Sum/" class="article-date">
+	  <time datetime="2021-01-13T07:01:50.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -206,12 +206,10 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="brute-force"><a href="#brute-force" class="headerlink" title="brute force"></a>brute force</h1><p>when find it, backward to find the start pos of s, it must be shortest one &amp; remove the possible not valid answer<br>eg: s: aaaaaabbbb t: ab</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minWindow</span><span class="params">(self, S, T)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type S: str</span></span><br><span class="line"><span class="string">        :type T: str</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        sidx, tidx = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        slen, tlen = len(S), len(T)</span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        max_len = float(<span class="string">'inf'</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> sidx &lt; slen:</span><br><span class="line">            sc, tc = S[sidx], T[tidx]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> sc == tc <span class="keyword">and</span> (tidx + <span class="number">1</span>) == tlen:</span><br><span class="line">                end = sidx</span><br><span class="line">                <span class="keyword">while</span> tidx &gt;= <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">while</span> S[sidx] != T[tidx]:</span><br><span class="line">                        sidx -= <span class="number">1</span></span><br><span class="line">                    </span><br><span class="line">                    tidx -= <span class="number">1</span></span><br><span class="line">                    sidx -= <span class="number">1</span></span><br><span class="line">                tidx += <span class="number">1</span></span><br><span class="line">                sidx += <span class="number">1</span></span><br><span class="line">                <span class="keyword">if</span> end - sidx + <span class="number">1</span> &lt; max_len:</span><br><span class="line">                    max_len = end - sidx + <span class="number">1</span></span><br><span class="line">                    left = sidx</span><br><span class="line">            <span class="keyword">elif</span> sc == tc:</span><br><span class="line">                tidx += <span class="number">1</span></span><br><span class="line">                </span><br><span class="line">            sidx += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> S[left:left + max_len] <span class="keyword">if</span> max_len &lt; float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="string">""</span></span><br></pre></td></tr></table></figure>
+        <p>dp[i][j] = dp[i-1][s] or (s &gt;= nums[i] and dp[i-1][s-nums[i]])</p>
+<h1 id="DP-from-bottom-up"><a href="#DP-from-bottom-up" class="headerlink" title="DP from bottom up"></a>DP from bottom up</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canPartition</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        target, n = sum(nums), len(nums)</span><br><span class="line">        <span class="keyword">if</span> target &amp; <span class="number">1</span>: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        target &gt;&gt;= <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">        dp = [<span class="literal">True</span>] + [<span class="literal">False</span>]*target</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> nums:</span><br><span class="line">            dp = [dp[s] <span class="keyword">or</span> (s &gt;= x <span class="keyword">and</span> dp[s-x]) <span class="keyword">for</span> s <span class="keyword">in</span> range(target+<span class="number">1</span>)]</span><br><span class="line">            <span class="keyword">if</span> dp[target]: <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
 
-
-<h1 id="dp"><a href="#dp" class="headerlink" title="dp"></a>dp</h1><p>dp[i][j]: 表示范围S中前i个字符包含范围T中前j个字符的子串的起始位置<br>base case:<br>for i in range(m+1):<br>            dp[i][0] = i</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minWindow</span><span class="params">(self, S, T)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type S: str</span></span><br><span class="line"><span class="string">        :type T: str</span></span><br><span class="line"><span class="string">        :rtype: str</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        m, n = len(S), len(T)</span><br><span class="line">        dp = [[<span class="number">-1</span>] * (n+<span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(m+<span class="number">1</span>)]</span><br><span class="line">        min_len = float(<span class="string">'inf'</span>)</span><br><span class="line">        start = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(m+<span class="number">1</span>):</span><br><span class="line">            dp[i][<span class="number">0</span>] = i</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, m + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, min(i, n) + <span class="number">1</span>):</span><br><span class="line">                dp[i][j] = dp[i<span class="number">-1</span>][j<span class="number">-1</span>] <span class="keyword">if</span> S[i<span class="number">-1</span>] == T[j<span class="number">-1</span>] <span class="keyword">else</span> dp[i<span class="number">-1</span>][j]</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> dp[i][n] != <span class="number">-1</span>:</span><br><span class="line">                cur_len = i - dp[i][n]</span><br><span class="line">                <span class="keyword">if</span> min_len &gt; cur_len:</span><br><span class="line">                    min_len = cur_len</span><br><span class="line">                    start = dp[i][n]</span><br><span class="line">        <span class="keyword">return</span> S[start:start + min_len] <span class="keyword">if</span> min_len &lt; float(<span class="string">'inf'</span>) <span class="keyword">else</span> <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<h1 id="DP-from-top-down-–-gt-DFS-memo"><a href="#DP-from-top-down-–-gt-DFS-memo" class="headerlink" title="DP from top down –&gt; DFS + memo"></a>DP from top down –&gt; DFS + memo</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">canPartition</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        target, n = sum(nums), len(nums)</span><br><span class="line">        <span class="keyword">if</span> target &amp; <span class="number">1</span>: <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span><span class="params">(i, sub_sum)</span>:</span></span><br><span class="line">            <span class="keyword">if</span> sub_sum == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="keyword">if</span> sub_sum &lt; <span class="number">0</span> <span class="keyword">or</span> i == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> (i, sub_sum) <span class="keyword">in</span> memo: <span class="keyword">return</span> memo[i, sub_sum]</span><br><span class="line">            </span><br><span class="line">            memo[i, sub_sum] = dfs(i - <span class="number">1</span>, sub_sum - nums[i]) <span class="keyword">or</span> dfs(i<span class="number">-1</span>, sub_sum)</span><br><span class="line">            <span class="keyword">return</span> memo[i, sub_sum]</span><br><span class="line">        <span class="keyword">return</span> dfs(n<span class="number">-1</span>, target&gt;&gt;<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
@@ -239,7 +237,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2021/01/12/727-Minimum-Window-Subsequence/" target="_blank" title="727. Minimum Window Subsequence">https://jojoyang666.github.io/2021/01/12/727-Minimum-Window-Subsequence/</a>
+          <a href="/2021/01/12/416-Partition-Equal-Subset-Sum/" target="_blank" title="416. Partition Equal Subset Sum">https://jojoyang666.github.io/2021/01/12/416-Partition-Equal-Subset-Sum/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -287,19 +285,10 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2021/01/12/416-Partition-Equal-Subset-Sum/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          416. Partition Equal Subset Sum
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/01/12/830-Positions-of-Large-Groups/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/01/12/727-Minimum-Window-Subsequence/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">830. Positions of Large Groups</div>
+      <div class="article-nav-title">727. Minimum Window Subsequence</div>
     </a>
   
 </nav>
@@ -313,7 +302,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#brute-force"><span class="nav-number">1.</span> <span class="nav-text">brute force</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dp"><span class="nav-number">2.</span> <span class="nav-text">dp</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DP-from-bottom-up"><span class="nav-number">1.</span> <span class="nav-text">DP from bottom up</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DP-from-top-down-–-gt-DFS-memo"><span class="nav-number">2.</span> <span class="nav-text">DP from top down –&gt; DFS + memo</span></a></li></ol>
     
     </div>
   </aside>
