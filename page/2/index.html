@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-701-Insert-into-a-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-772-Basic-Calculator-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/701-Insert-into-a-Binary-Search-Tree/">701. Insert into a Binary Search Tree </a>
+      <a class="article-title" href="/2021/01/11/772-Basic-Calculator-III/">772. Basic Calculator III </a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/701-Insert-into-a-Binary-Search-Tree/" class="article-date">
-	  <time datetime="2021-01-08T02:52:13.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/11/772-Basic-Calculator-III/" class="article-date">
+	  <time datetime="2021-01-12T01:00:57.000Z" itemprop="datePublished">2021-01-11</time>
 	</a>
 
       
@@ -295,11 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Insert it as a leaf node
-123456789101112class Solution:    def insertIntoBST(self, root: TreeNode, val: int) -&gt; TreeNode:        if not root:            return TreeNode(val)                if val &gt; root.val:            # insert into the righ...
+          1234567891011121314151617181920212223242526272829class Solution:    def calculate(self, s):        stack, sign, num = [], '+', 0        for i, c in enumerate(s + '+'):            if c.isdigit():                num = num * 10 + ord(c) - ord('0')   ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/701-Insert-into-a-Binary-Search-Tree/#more">Read More</a>
+          <a href="/2021/01/11/772-Basic-Calculator-III/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +317,7 @@
 
 
   
-    <article id="post-230-Kth-Smallest-Element-in-a-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-349-Intersection-of-Two-Arrays"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/230-Kth-Smallest-Element-in-a-BST/">230. Kth Smallest Element in a BST</a>
+      <a class="article-title" href="/2021/01/11/349-Intersection-of-Two-Arrays/">349. Intersection of Two Arrays</a>
     </h1>
   
 
@@ -334,8 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/230-Kth-Smallest-Element-in-a-BST/" class="article-date">
-	  <time datetime="2021-01-08T02:47:33.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/11/349-Intersection-of-Two-Arrays/" class="article-date">
+	  <time datetime="2021-01-12T00:34:22.000Z" itemprop="datePublished">2021-01-11</time>
 	</a>
 
       
@@ -348,10 +347,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Soluti...
+          12345678910class Solution(object):    def intersection(self, nums1, nums2):        """        :type nums1: List[int]        :type nums2: List[int]        :rtype: List[int]        """        set1 = set(nums1)        set2 = set(nums2)        return ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/230-Kth-Smallest-Element-in-a-BST/#more">Read More</a>
+          <a href="/2021/01/11/349-Intersection-of-Two-Arrays/#more">Read More</a>
         </p>
       
     </div>
@@ -370,7 +369,7 @@
 
 
   
-    <article id="post-658-Find-K-Closest-Elements"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-977-Squares-of-a-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -378,7 +377,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/658-Find-K-Closest-Elements/">658. Find K Closest Elements</a>
+      <a class="article-title" href="/2021/01/11/977-Squares-of-a-Sorted-Array/">977. Squares of a Sorted Array</a>
     </h1>
   
 
@@ -386,8 +385,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/658-Find-K-Closest-Elements/" class="article-date">
-	  <time datetime="2021-01-08T02:21:09.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/11/977-Squares-of-a-Sorted-Array/" class="article-date">
+	  <time datetime="2021-01-12T00:33:05.000Z" itemprop="datePublished">2021-01-11</time>
 	</a>
 
       
@@ -400,10 +399,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617class Solution(object):    def findClosestElements(self, arr, k, x):        """        :type arr: List[int]        :type k: int        :type x: int        :rtype: List[int]        """        left, right = 0, len(arr) - k  ...
+          123456789101112131415161718192021222324252627282930class Solution(object):    def sortedSquares(self, A):        """        :type nums: List[int]        :rtype: List[int]        """        N = len(A)        j = 0                while j &lt; N and ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/658-Find-K-Closest-Elements/#more">Read More</a>
+          <a href="/2021/01/11/977-Squares-of-a-Sorted-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -422,7 +421,7 @@
 
 
   
-    <article id="post-9-Palindrome-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-114-Flatten-Binary-Tree-to-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -430,7 +429,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/9-Palindrome-Number/">9. Palindrome Number</a>
+      <a class="article-title" href="/2021/01/11/114-Flatten-Binary-Tree-to-Linked-List/">114. Flatten Binary Tree to Linked List</a>
     </h1>
   
 
@@ -438,8 +437,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/9-Palindrome-Number/" class="article-date">
-	  <time datetime="2021-01-08T01:54:33.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/11/114-Flatten-Binary-Tree-to-Linked-List/" class="article-date">
+	  <time datetime="2021-01-11T22:05:24.000Z" itemprop="datePublished">2021-01-11</time>
 	</a>
 
       
@@ -452,10 +451,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122class Solution(object):    def isPalindrome(self, x):        """        :type x: int        :rtype: bool        """        if x &lt; 0: return False                ranger = 1                while x/ranger &gt;= 1...
+          123456789101112131415161718192021222324252627# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass So...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/9-Palindrome-Number/#more">Read More</a>
+          <a href="/2021/01/11/114-Flatten-Binary-Tree-to-Linked-List/#more">Read More</a>
         </p>
       
     </div>
@@ -474,7 +473,7 @@
 
 
   
-    <article id="post-346-Moving-Average-from-Data-Stream"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-167-Two-Sum-II-Input-array-is-sorted"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -482,7 +481,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/346-Moving-Average-from-Data-Stream/">346. Moving Average from Data Stream</a>
+      <a class="article-title" href="/2021/01/11/167-Two-Sum-II-Input-array-is-sorted/">167. Two Sum II - Input array is sorted </a>
     </h1>
   
 
@@ -490,8 +489,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/346-Moving-Average-from-Data-Stream/" class="article-date">
-	  <time datetime="2021-01-08T00:33:01.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/11/167-Two-Sum-II-Input-array-is-sorted/" class="article-date">
+	  <time datetime="2021-01-11T21:24:24.000Z" itemprop="datePublished">2021-01-11</time>
 	</a>
 
       
@@ -504,10 +503,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526cclass MovingAverage(object):    def __init__(self, size):        """        Initialize your data structure here.        :type size: int        """        self.size = size        self.queue = deque()     ...
+          12345678910111213141516class Solution(object):    def twoSum(self, numbers, target):        """        :type numbers: List[int]        :type target: int        :rtype: List[int]        """        l, r = 0, len(numbers)-1        while l &lt; r:    ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/346-Moving-Average-from-Data-Stream/#more">Read More</a>
+          <a href="/2021/01/11/167-Two-Sum-II-Input-array-is-sorted/#more">Read More</a>
         </p>
       
     </div>
@@ -526,7 +525,7 @@
 
 
   
-    <article id="post-286-Walls-and-Gates"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-160-Intersection-of-Two-Linked-Lists"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -534,7 +533,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/286-Walls-and-Gates/">286. Walls and Gates</a>
+      <a class="article-title" href="/2021/01/11/160-Intersection-of-Two-Linked-Lists/">160. Intersection of Two Linked Lists</a>
     </h1>
   
 
@@ -542,8 +541,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/286-Walls-and-Gates/" class="article-date">
-	  <time datetime="2021-01-07T22:59:00.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/11/160-Intersection-of-Two-Linked-Lists/" class="article-date">
+	  <time datetime="2021-01-11T21:16:55.000Z" itemprop="datePublished">2021-01-11</time>
 	</a>
 
       
@@ -556,10 +555,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718class Solution(object):    def wallsAndGates(self, rooms):        if not rooms:            return         r, c= len(rooms), len(rooms[0])        for i in xrange(r):            for j in xrange(c):                if rooms[...
+          
+
+
+123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, x):#         self.val = x#         self.next = Noneclass Solution(object):    def getIntersectionNode(self, headA...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/286-Walls-and-Gates/#more">Read More</a>
+          <a href="/2021/01/11/160-Intersection-of-Two-Linked-Lists/#more">Read More</a>
         </p>
       
     </div>
@@ -578,7 +580,7 @@
 
 
   
-    <article id="post-340-Longest-Substring-with-At-Most-K-Distinct-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-219-Contains-Duplicate-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -586,7 +588,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/">340. Longest Substring with At Most K Distinct Characters</a>
+      <a class="article-title" href="/2021/01/08/219-Contains-Duplicate-II/">219. Contains Duplicate II</a>
     </h1>
   
 
@@ -594,8 +596,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/" class="article-date">
-	  <time datetime="2021-01-07T22:57:29.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/08/219-Contains-Duplicate-II/" class="article-date">
+	  <time datetime="2021-01-09T05:33:31.000Z" itemprop="datePublished">2021-01-08</time>
 	</a>
 
       
@@ -608,10 +610,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314class Solution(object):    def lengthOfLongestSubstringKDistinct(self, s, k):        d = collections.defaultdict(int)        i, res = 0, 0        for j in range(len(s)):            d[s[j]] += 1            # while have more than ...
+          12345678910111213class Solution(object):    def containsNearbyDuplicate(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: bool        """        dic = &#123;&#125;        for i, v in enumerate(nums):       ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/#more">Read More</a>
+          <a href="/2021/01/08/219-Contains-Duplicate-II/#more">Read More</a>
         </p>
       
     </div>
@@ -630,7 +632,7 @@
 
 
   
-    <article id="post-304-Range-Sum-Query-2D-Immutable"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-222-Count-Complete-Tree-Nodes"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -638,7 +640,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/">304. Range Sum Query 2D - Immutable </a>
+      <a class="article-title" href="/2021/01/08/222-Count-Complete-Tree-Nodes/">222. Count Complete Tree Nodes </a>
     </h1>
   
 
@@ -646,8 +648,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/" class="article-date">
-	  <time datetime="2021-01-07T08:01:01.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/08/222-Count-Complete-Tree-Nodes/" class="article-date">
+	  <time datetime="2021-01-09T04:48:37.000Z" itemprop="datePublished">2021-01-08</time>
 	</a>
 
       
@@ -660,10 +662,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031class NumMatrix(object):    def __init__(self, matrix):        """        :type matrix: List[List[int]]        """        if matrix is None or not matrix: return        n, m = len(matrix), len(m...
+          
+
+
+因为我们计算了d 所以最后一行/on level d, must have node
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):# ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/#more">Read More</a>
+          <a href="/2021/01/08/222-Count-Complete-Tree-Nodes/#more">Read More</a>
         </p>
       
     </div>
@@ -682,7 +688,7 @@
 
 
   
-    <article id="post-155-Min-Stack"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-21-Merge-Two-Sorted-Lists"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -690,7 +696,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/155-Min-Stack/">155. Min Stack</a>
+      <a class="article-title" href="/2021/01/08/21-Merge-Two-Sorted-Lists/">21. Merge Two Sorted Lists </a>
     </h1>
   
 
@@ -698,8 +704,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/155-Min-Stack/" class="article-date">
-	  <time datetime="2021-01-07T07:37:07.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/08/21-Merge-Two-Sorted-Lists/" class="article-date">
+	  <time datetime="2021-01-09T03:02:40.000Z" itemprop="datePublished">2021-01-08</time>
 	</a>
 
       
@@ -712,10 +718,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637383940414243class MinStack(object):    def __init__(self):        """        initialize your data structure here.        """        self.stack = []    def push(self, x):        """  ...
+          12345678910111213141516171819202122# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def mergeTwoLists(self, l1, l2)...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/155-Min-Stack/#more">Read More</a>
+          <a href="/2021/01/08/21-Merge-Two-Sorted-Lists/#more">Read More</a>
         </p>
       
     </div>
@@ -734,7 +740,7 @@
 
 
   
-    <article id="post-337-House-Robber-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-168-Excel-Sheet-Column-Title"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -742,7 +748,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/337-House-Robber-III/">337. House Robber III</a>
+      <a class="article-title" href="/2021/01/08/168-Excel-Sheet-Column-Title/">168. Excel Sheet Column Title </a>
     </h1>
   
 
@@ -750,8 +756,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/337-House-Robber-III/" class="article-date">
-	  <time datetime="2021-01-07T07:26:13.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/08/168-Excel-Sheet-Column-Title/" class="article-date">
+	  <time datetime="2021-01-09T02:43:49.000Z" itemprop="datePublished">2021-01-08</time>
 	</a>
 
       
@@ -764,10 +770,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(object)...
+          get the last letter for each time
+123456789101112131415class Solution(object):    def convertToTitle(self, n):        """        :type n: int        :rtype: str        """        result = ''        distance = ord('A')                 while n &gt; ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/337-House-Robber-III/#more">Read More</a>
+          <a href="/2021/01/08/168-Excel-Sheet-Column-Title/#more">Read More</a>
         </p>
       
     </div>
@@ -790,7 +797,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
   </nav>
 
 </section>

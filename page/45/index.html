@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-373-Find-K-Pairs-with-Smallest-Sums"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1219-Path-with-Maximum-Gold"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/">373. Find K Pairs with Smallest Sums</a>
+      <a class="article-title" href="/2020/10/28/1219-Path-with-Maximum-Gold/">1219. Path with Maximum Gold</a>
     </h1>
   
 
@@ -281,8 +281,61 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/" class="article-date">
-	  <time datetime="2020-10-27T18:16:16.000Z" itemprop="datePublished">2020-10-27</time>
+	<a href="/2020/10/28/1219-Path-with-Maximum-Gold/" class="article-date">
+	  <time datetime="2020-10-28T22:27:47.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          结果是由递归结果组成 则先递归 最后计算并return
+12345678910111213141516171819class Solution(object):    def getMaximumGold(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        def findMaxGold(r, c):            if 0 &lt;= r &...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/1219-Path-with-Maximum-Gold/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-886-Possible-Bipartition"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/886-Possible-Bipartition/">886. Possible Bipartition</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/886-Possible-Bipartition/" class="article-date">
+	  <time datetime="2020-10-28T22:00:28.000Z" itemprop="datePublished">2020-10-28</time>
 	</a>
 
       
@@ -296,12 +349,11 @@
       
         <p class="article-excerpt-content">
           
-
-
-1234567891011121314151617181920212223class Solution(object):    def kSmallestPairs(self, nums1, nums2, k):        """        :type nums1: List[int]        :type nums2: List[int]        :type k: int        :rtype: List[List[int]]        """     ...
+红蓝标记法
+用dfs12345678910111213141516171819202122class Solution(object):    def possibleBipartition(self, N, dislikes):        """        :type N: int        :type dislikes: List[List[int]]        :rtype: bool        """        graph = defaultdict(li...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/#more">Read More</a>
+          <a href="/2020/10/28/886-Possible-Bipartition/#more">Read More</a>
         </p>
       
     </div>
@@ -320,7 +372,7 @@
 
 
   
-    <article id="post-1353-Maximum-Number-of-Events-That-Can-Be-Attended"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-260-Single-Number-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -328,7 +380,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/">1353. Maximum Number of Events That Can Be Attended </a>
+      <a class="article-title" href="/2020/10/28/260-Single-Number-III/">260. Single Number III</a>
     </h1>
   
 
@@ -336,8 +388,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/" class="article-date">
-	  <time datetime="2020-10-27T16:10:27.000Z" itemprop="datePublished">2020-10-27</time>
+	<a href="/2020/10/28/260-Single-Number-III/" class="article-date">
+	  <time datetime="2020-10-28T21:37:23.000Z" itemprop="datePublished">2020-10-28</time>
 	</a>
 
       
@@ -350,10 +402,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324class Solution(object):    def maxEvents(self, events):        """        :type events: List[List[int]]        :rtype: int        """        events.sort(reverse=1)        h = []                res = d = 0    ...
+          通过找到不一样的那个位数， 再进行一次异或
+123456789101112131415161718class Solution(object):    def singleNumber(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        bitmask = 0                for num in nums:            bit...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/#more">Read More</a>
+          <a href="/2020/10/28/260-Single-Number-III/#more">Read More</a>
         </p>
       
     </div>
@@ -372,7 +425,7 @@
 
 
   
-    <article id="post-813-Largest-Sum-of-Averages"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-82-Remove-Duplicates-from-Sorted-List-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -380,7 +433,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/813-Largest-Sum-of-Averages/">813. Largest Sum of Averages</a>
+      <a class="article-title" href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/">82. Remove Duplicates from Sorted List II</a>
     </h1>
   
 
@@ -388,8 +441,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/27/813-Largest-Sum-of-Averages/" class="article-date">
-	  <time datetime="2020-10-27T14:08:14.000Z" itemprop="datePublished">2020-10-27</time>
+	<a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/" class="article-date">
+	  <time datetime="2020-10-28T19:54:00.000Z" itemprop="datePublished">2020-10-28</time>
 	</a>
 
       
@@ -402,18 +455,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
-[i, n-1]范围内的子数组分成k组，那么suppose我们已经知道了任意范围内分成k-1组的最大分数
-要求状态k，一定要先求出所有的状态k-1
-在范围[i, n-1]多分出一组，实际上就是将其分成两部分
-一部分是一组，另一部分是k-1组
-就用一个变量j，遍历范围(i, n-1)中的每一个位置
-第一部分[i, j)，由于是一组，那么直接求出平均值即可
-另一部分由于是k-1组，由于我们已经知道了所有k-1的情况，可以直...
+          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def deleteDuplicates(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/27/813-Largest-Sum-of-Averages/#more">Read More</a>
+          <a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/#more">Read More</a>
         </p>
       
     </div>
@@ -432,7 +477,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
 
 
   
-    <article id="post-959-Regions-Cut-By-Slashes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-comparator"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -440,7 +485,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/959-Regions-Cut-By-Slashes/">959. Regions Cut By Slashes</a>
+      <a class="article-title" href="/2020/10/28/comparator/">comparator</a>
     </h1>
   
 
@@ -448,272 +493,8 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     
     <div class="article-meta">
       
-	<a href="/2020/10/27/959-Regions-Cut-By-Slashes/" class="article-date">
-	  <time datetime="2020-10-27T13:13:30.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Solution(object):    def regionsBySlashes(self, grid):        """        :type grid: List[str]        :rtype: int        """        N = len(grid)        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/959-Regions-Cut-By-Slashes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-116-Populating-Next-Right-Pointers-in-Each-Node"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/">116. Populating Next Right Pointers in Each Node</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/" class="article-date">
-	  <time datetime="2020-10-27T04:57:21.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          BFS1234567891011121314151617181920212223242526272829303132333435"""# Definition for a Node.class Node(object):    def __init__(self, val=0, left=None, right=None, next=None):        self.val = val        self.left = left        self.right = right ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1254-Number-of-Closed-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1254-Number-of-Closed-Islands/">1254. Number of Closed Islands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1254-Number-of-Closed-Islands/" class="article-date">
-	  <time datetime="2020-10-27T04:46:56.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          本质上就是找到连续的island
-然后排除从边界开始的island
-123456789101112131415161718192021222324252627282930class Solution(object):    def closedIsland(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        if not grid or not gri...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1254-Number-of-Closed-Islands/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1155-Number-of-Dice-Rolls-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/">1155. Number of Dice Rolls With Target Sum</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/" class="article-date">
-	  <time datetime="2020-10-27T04:20:22.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          DFS + MemoThe general relation is:dp(d, f, target) = dp(d-1, f, target-1) + dp(d-1, f, target-2) + … + dp(d-1, f, target-f)
-The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing else.So dp(0, f, t) = 0 iff t != 0, and dp(0...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-229-Majority-Element-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/229-Majority-Element-II/">229. Majority Element II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/229-Majority-Element-II/" class="article-date">
-	  <time datetime="2020-10-27T03:39:28.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031class Solution(object):    def majorityElement(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        if not nums: return []                count1, count...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/229-Majority-Element-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Boyer-Moore算法"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/">Boyer-Moore算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2020-10-27T03:30:23.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/28/comparator/" class="article-date">
+	  <time datetime="2020-10-28T17:15:33.000Z" itemprop="datePublished">2020-10-28</time>
 	</a>
 
       
@@ -726,14 +507,15 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          基本思想：比较直观的解释：在数组中找到两个不相同的元素并删除它们，不断重复此过程，直到数组中元素都相同，那么剩下的元素就是主要元素。
-先随意确定一个候选元素，count是候选元素的计数，当遇到一个跟候选元素不同的元素时，两者数量上抵消一个，count减1。一旦count变成0，就重新找一个候选元素。当遇到一个与候选元素不同的元素时，就要抵消。对于候选元素和当前元素，可能存在两种情况：
+          Classes and Objects
+Objects are an encapsulation of variables and functions into a single entity. 
+Objects get their variables and functions from classes.
+Classes are essentially a template to create your objects.
 
-1）两者中有一个正好是主要元素；
-2）两者都不是主要元素。对于情况1)，抵消过后，主要元素还是主要元素；...
+class built in comparaobject.lt(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/#more">Read More</a>
+          <a href="/2020/10/28/comparator/#more">Read More</a>
         </p>
       
     </div>
@@ -752,7 +534,7 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
 
 
   
-    <article id="post-1277-Count-Square-Submatrices-with-All-Ones"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-179-Largest-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -760,7 +542,7 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/">1277. Count Square Submatrices with All Ones</a>
+      <a class="article-title" href="/2020/10/28/179-Largest-Number/">179. Largest Number</a>
     </h1>
   
 
@@ -768,8 +550,64 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
     
     <div class="article-meta">
       
-	<a href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/" class="article-date">
-	  <time datetime="2020-10-27T03:05:36.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/28/179-Largest-Number/" class="article-date">
+	  <time datetime="2020-10-28T17:03:01.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          cornor case: number is 0
+
+(a, b) –&gt; return -1 means a is ahead of b
+30, 3 –&gt; thus comp must is a + b and b + a, not compare a &amp; b in the format of string 
+javascript must to string can not be a + ‘’123456789101112class LargetKey(str):   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/179-Largest-Number/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-935-Knight-Dialer"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/935-Knight-Dialer/">935. Knight Dialer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/935-Knight-Dialer/" class="article-date">
+	  <time datetime="2020-10-28T16:34:43.000Z" itemprop="datePublished">2020-10-28</time>
 	</a>
 
       
@@ -783,12 +621,172 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
       
         <p class="article-excerpt-content">
           
+using dp method
+dp[i][j] 表示骑士第i次跳到数字j时组成的不同号码的个数
+那么最终所求的就是将 dp[N-1][j] 累加起来
 
-
-123456789101112class Solution(object):    def countSquares(self, matrix):        """        :type matrix: List[List[int]]        :rtype: int        """        for i in range(1, len(matrix)):            for j in range(1, len(matrix[0])):        ...
+This way is reduce the memory
+1234567891011121314151617class Solution(object):    def knightDialer(self, n):        """        :type n: int        :rtype: int        """...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/#more">Read More</a>
+          <a href="/2020/10/28/935-Knight-Dialer/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-165-Compare-Version-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/165-Compare-Version-Numbers/">165. Compare Version Numbers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/165-Compare-Version-Numbers/" class="article-date">
+	  <time datetime="2020-10-28T16:16:37.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819class Solution(object):    def compareVersion(self, version1, version2):        """        :type version1: str        :type version2: str        :rtype: int        """        versions1 = [int(version) for version in ve...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/165-Compare-Version-Numbers/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1236-Web-Crawler"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/1236-Web-Crawler/">1236. Web Crawler</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/1236-Web-Crawler/" class="article-date">
+	  <time datetime="2020-10-28T05:35:49.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627282930# """# This is HtmlParser's API interface.# You should not implement it, or speculate about its implementation# """#class HtmlParser(object):#    def getUrls(self, url):#        """#        :type ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1236-Web-Crawler/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1011-Capacity-To-Ship-Packages-Within-D-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/1011-Capacity-To-Ship-Packages-Within-D-Days/">1011. Capacity To Ship Packages Within D Days</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/1011-Capacity-To-Ship-Packages-Within-D-Days/" class="article-date">
+	  <time datetime="2020-10-28T04:24:02.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Binary Search
+1234567891011121314151617181920212223242526class Solution(object):    def shipWithinDays(self, weights, D):        """        :type weights: List[int]        :type D: int        :rtype: int        """        left, right = max(weights...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1011-Capacity-To-Ship-Packages-Within-D-Days/#more">Read More</a>
         </p>
       
     </div>
@@ -811,7 +809,7 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
   </nav>
 
 </section>

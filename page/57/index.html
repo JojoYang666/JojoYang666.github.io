@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-891-Sum-of-Subsequence-Widths"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-131-Palindrome-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/891-Sum-of-Subsequence-Widths/">891. Sum of Subsequence Widths</a>
+      <a class="article-title" href="/2020/10/05/131-Palindrome-Partitioning/">131. Palindrome Partitioning</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/891-Sum-of-Subsequence-Widths/" class="article-date">
-	  <time datetime="2020-10-02T01:12:19.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/05/131-Palindrome-Partitioning/" class="article-date">
+	  <time datetime="2020-10-06T00:44:58.000Z" itemprop="datePublished">2020-10-05</time>
 	</a>
 
       
@@ -295,14 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-The order of the input does not matter
-There are i smaller numbers,so there are 2 ^ i sequences in which A[i] is maximum.we should do res += A[i] * (2 ^ i)
-
-There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh...
+          12345678910111213141516171819202122class Solution(object):    def partition(self, s):        """        :type s: str        :rtype: List[List[str]]        """        res = []        self.dfs(s, [], res)        return res    def dfs(self, s, path, ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/891-Sum-of-Subsequence-Widths/#more">Read More</a>
+          <a href="/2020/10/05/131-Palindrome-Partitioning/#more">Read More</a>
         </p>
       
     </div>
@@ -321,7 +317,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
 
   
-    <article id="post-828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-148-Sort-List"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -329,7 +325,7 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/">828. Count Unique Characters of All Substrings of a Given String</a>
+      <a class="article-title" href="/2020/10/05/148-Sort-List/">148. Sort List</a>
     </h1>
   
 
@@ -337,8 +333,178 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/" class="article-date">
-	  <time datetime="2020-10-02T01:11:22.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/05/148-Sort-List/" class="article-date">
+	  <time datetime="2020-10-05T22:38:57.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          key point: update prev to null, when  divide the linkedlist to two parts –&gt; otherwise it will mass up &amp; not endMerge Sort
+12345678910111213141516171819202122232425262728293031323334353637# Definition for singly-linked list.# class ListNode(...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/148-Sort-List/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-518-Coin-Change-2"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/518-Coin-Change-2/">518. Coin Change 2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/518-Coin-Change-2/" class="article-date">
+	  <time datetime="2020-10-05T22:03:44.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          difference with Coin Change 1
+
+that is minimum coin used, thus amoint is the outer for loop
+this is all the possible combination
+coin is the outer for loop
+
+
+
+
+
+
+1234567891011121314class Solution(object):    def change(self, amount, coins):       ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/518-Coin-Change-2/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-445-Add-Two-Numbers-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/445-Add-Two-Numbers-II/">445. Add Two Numbers II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/445-Add-Two-Numbers-II/" class="article-date">
+	  <time datetime="2020-10-05T16:29:26.000Z" itemprop="datePublished">2020-10-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          这个题目可以发现要走到最后才能算出， 然后根据后面的值 一步步往前传递得到前面的值递归的特点， 所以要用递归同时递归说明了可以用stack来做
+Solution 1Stack
+12345678910111213141516171819202122232425262728293031323334# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=No...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/05/445-Add-Two-Numbers-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-48-Rotate-Image"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/05/48-Rotate-Image/">48. Rotate Image</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/05/48-Rotate-Image/" class="article-date">
+	  <time datetime="2020-10-05T11:18:48.000Z" itemprop="datePublished">2020-10-05</time>
 	</a>
 
       
@@ -355,11 +521,10 @@ There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh.
 
 
 
-find the pos to place (/) –&gt; the char in the () is a possible substring
-123456789101112131415161718class Solution(object):    def uniqueLetterString(self, s):        """        :type s: str        :rtype: int        """        index = &#123...
+Solution – Rotate 4 rectangles in one single loop12345678910111213141516171819202122232425class Solution(object):    def rotate(self, matrix):        """        :type matrix: List[List[int]]        :rtype: None Do not return anything, modify m...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/#more">Read More</a>
+          <a href="/2020/10/05/48-Rotate-Image/#more">Read More</a>
         </p>
       
     </div>
@@ -378,7 +543,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
 
 
   
-    <article id="post-739-Daily-Temperatures"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1283-Find-the-Smallest-Divisor-Given-a-Threshold"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -386,7 +551,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/739-Daily-Temperatures/">739. Daily Temperatures</a>
+      <a class="article-title" href="/2020/10/05/1283-Find-the-Smallest-Divisor-Given-a-Threshold/">1283. Find the Smallest Divisor Given a Threshold</a>
     </h1>
   
 
@@ -394,8 +559,8 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/739-Daily-Temperatures/" class="article-date">
-	  <time datetime="2020-10-02T01:10:04.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/05/1283-Find-the-Smallest-Divisor-Given-a-Threshold/" class="article-date">
+	  <time datetime="2020-10-05T10:16:19.000Z" itemprop="datePublished">2020-10-05</time>
 	</a>
 
       
@@ -408,10 +573,11 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def dailyTemperatures(self, T):        """        :type T: List[int]        :rtype: List[int]        """        n = len(T)        stack, res = [], [0] * n                        for i, cur in enume...
+          Binary Search(num + m - 1)/m
+123456789101112131415161718class Solution(object):    def smallestDivisor(self, nums, threshold):        """        :type nums: List[int]        :type threshold: int        :rtype: int        """        # l is 1, not 0...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/739-Daily-Temperatures/#more">Read More</a>
+          <a href="/2020/10/05/1283-Find-the-Smallest-Divisor-Given-a-Threshold/#more">Read More</a>
         </p>
       
     </div>
@@ -430,7 +596,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
 
 
   
-    <article id="post-42-Trapping-Rain-Water"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-64-Minimum-Path-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -438,7 +604,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/42-Trapping-Rain-Water/">42. Trapping Rain Water</a>
+      <a class="article-title" href="/2020/10/05/64-Minimum-Path-Sum/">64. Minimum Path Sum</a>
     </h1>
   
 
@@ -446,8 +612,8 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/42-Trapping-Rain-Water/" class="article-date">
-	  <time datetime="2020-10-01T19:24:21.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/05/64-Minimum-Path-Sum/" class="article-date">
+	  <time datetime="2020-10-05T09:47:11.000Z" itemprop="datePublished">2020-10-05</time>
 	</a>
 
       
@@ -460,12 +626,14 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Stack
+          Solution 1 – extra space
+二维数组的创建：[[0 for j in range(n)] for i in range(m)]
+[[0] * m] * n不能这么创建 因为这样 n rows指向同一个array
 
-123456789101112131415161718class Solution(object):    def trap(self, height):        """        :type height: List[int]        :rtype: int        """        stack, res = [], 0                for i, h in enumerate(height):         ...
+12345678910111213141516171819202122class Solution(object):    def minPathSum(self, grid):        """        :type grid: List[List...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/42-Trapping-Rain-Water/#more">Read More</a>
+          <a href="/2020/10/05/64-Minimum-Path-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -484,7 +652,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
 
 
   
-    <article id="post-84-Largest-Rectangle-in-Histogram"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1396-Design-Underground-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -492,7 +660,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/84-Largest-Rectangle-in-Histogram/">84. Largest Rectangle in Histogram</a>
+      <a class="article-title" href="/2020/10/04/1396-Design-Underground-System/">1396. Design Underground System</a>
     </h1>
   
 
@@ -500,8 +668,8 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/84-Largest-Rectangle-in-Histogram/" class="article-date">
-	  <time datetime="2020-10-01T19:23:28.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/04/1396-Design-Underground-System/" class="article-date">
+	  <time datetime="2020-10-05T05:19:33.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -515,12 +683,11 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
       
         <p class="article-excerpt-content">
           
-
-
-12345678910111213141516class Solution(object):    def largestRectangleArea(self, heights):        """        :type heights: List[int]        :rtype: int        """        stack, res = [], 0        heights = [0] + heights + [0]        for i, hei...
+一个dict记录登陆时间
+在游客出站后， 就立马可以确定分子分母， 所以可以及时更新数值1234567891011121314151617181920212223242526272829303132333435363738394041class UndergroundSystem(object):    def __init__(self):        self.check_in_data = &#123;&#125;        self.journey_data = colle...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/84-Largest-Rectangle-in-Histogram/#more">Read More</a>
+          <a href="/2020/10/04/1396-Design-Underground-System/#more">Read More</a>
         </p>
       
     </div>
@@ -539,7 +706,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
 
 
   
-    <article id="post-856-Score-of-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-92-Reverse-Linked-List-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -547,7 +714,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/01/856-Score-of-Parentheses/">856. Score of Parentheses</a>
+      <a class="article-title" href="/2020/10/04/92-Reverse-Linked-List-II/">92. Reverse Linked List II</a>
     </h1>
   
 
@@ -555,8 +722,8 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     
     <div class="article-meta">
       
-	<a href="/2020/10/01/856-Score-of-Parentheses/" class="article-date">
-	  <time datetime="2020-10-01T17:45:45.000Z" itemprop="datePublished">2020-10-01</time>
+	<a href="/2020/10/04/92-Reverse-Linked-List-II/" class="article-date">
+	  <time datetime="2020-10-05T01:12:06.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -569,11 +736,11 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-123456789101112131415class Solution(object):    def scoreOfParentheses(self, S):        """        :type S: str        :rtype: int        """        stack, cur = [], 0                for c in S:            if c == '(':                st...
+          firt moving, find prev pos –&gt; for i in range(m-1)
+1234567891011121314151617181920212223242526272829# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.ne...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/01/856-Score-of-Parentheses/#more">Read More</a>
+          <a href="/2020/10/04/92-Reverse-Linked-List-II/#more">Read More</a>
         </p>
       
     </div>
@@ -592,7 +759,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
 
 
   
-    <article id="post-907-Sum-of-Subarray-Minimums"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-442-Find-All-Duplicates-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -600,7 +767,7 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/30/907-Sum-of-Subarray-Minimums/">907. Sum of Subarray Minimums</a>
+      <a class="article-title" href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/">442. Find All Duplicates in an Array</a>
     </h1>
   
 
@@ -608,8 +775,8 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     
     <div class="article-meta">
       
-	<a href="/2020/09/30/907-Sum-of-Subarray-Minimums/" class="article-date">
-	  <time datetime="2020-10-01T04:41:04.000Z" itemprop="datePublished">2020-09-30</time>
+	<a href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/" class="article-date">
+	  <time datetime="2020-10-04T23:54:24.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -622,168 +789,11 @@ find the pos to place (/) –&gt; the char in the () is a possible substring
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          注意Input的特点， input都是正数
-Solution 112345678910111213141516171819202122232425262728class Solution(object):    def sumSubarrayMins(self, A):        """        :type A: List[int]        :rtype: int        """        n, mod = len(A), 10**9+7        left,...
+          Solution 1Bit Mask
+1234567891011121314class Solution(object):    def findDuplicates(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        mask, n = 1, len(nums)        res = []        for num in nums:     ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/30/907-Sum-of-Subarray-Minimums/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-901-Online-Stock-Span"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/30/901-Online-Stock-Span/">901. Online Stock Span</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/30/901-Online-Stock-Span/" class="article-date">
-	  <time datetime="2020-10-01T02:51:12.000Z" itemprop="datePublished">2020-09-30</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Write a class StockSpanner which collects daily price quotes for some stock, and returns the span of that stock’s price for the current day.
-The span of the stock’s price today is defined as the maximum number of consecutive days (starting from to...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/30/901-Online-Stock-Span/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-503-Next-Greater-Element-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/29/503-Next-Greater-Element-II/">503. Next Greater Element II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/29/503-Next-Greater-Element-II/" class="article-date">
-	  <time datetime="2020-09-30T04:26:50.000Z" itemprop="datePublished">2020-09-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213class Solution(object):    def nextGreaterElements(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        stack, res = [], [-1]*len(nums)                for i in range(len(nums))*2:        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/29/503-Next-Greater-Element-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-496-Next-Greater-Element-I"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/29/496-Next-Greater-Element-I/">496. Next Greater Element I </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/29/496-Next-Greater-Element-I/" class="article-date">
-	  <time datetime="2020-09-30T03:40:58.000Z" itemprop="datePublished">2020-09-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617181920class Solution(object):    def nextGreaterElement(self, nums1, nums2):        """        :type nums1: List[int]        :type nums2: List[int]        :rtype: List[int]        """        stack, m, res = [], &#123;&#125...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/29/496-Next-Greater-Element-I/#more">Read More</a>
+          <a href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -806,7 +816,7 @@ The span of the stock’s price today is defined as the maximum number of consec
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/56/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="page-number current">57</span><a class="page-number" href="/page/58/">58</a><a class="page-number" href="/page/59/">59</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="extend next" rel="next" href="/page/58/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/56/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/55/">55</a><a class="page-number" href="/page/56/">56</a><span class="page-number current">57</span><a class="page-number" href="/page/58/">58</a><a class="page-number" href="/page/59/">59</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/58/">Next &amp;raquo;</a>
   </nav>
 
 </section>

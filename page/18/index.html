@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-17-Letter-Combinations-of-a-Phone-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-49-Group-Anagrams"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/09/17-Letter-Combinations-of-a-Phone-Number/">17. Letter Combinations of a Phone Number</a>
+      <a class="article-title" href="/2020/12/12/49-Group-Anagrams/">49. Group Anagrams</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/09/17-Letter-Combinations-of-a-Phone-Number/" class="article-date">
-	  <time datetime="2020-12-09T20:05:51.000Z" itemprop="datePublished">2020-12-09</time>
+	<a href="/2020/12/12/49-Group-Anagrams/" class="article-date">
+	  <time datetime="2020-12-12T23:01:56.000Z" itemprop="datePublished">2020-12-12</time>
 	</a>
 
       
@@ -295,10 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627/** * @param &#123;string&#125; digits * @return &#123;string[]&#125; */var letterCombinations = function(digits) &#123;    if (!digits) &#123;        return []    &#125;    const map = ["", "", "abc", ...
+          123456789101112131415var groupAnagrams = function(strs) &#123;    const map = &#123;&#125;        for (let str of strs) &#123;        const key = [...str].sort().join('');                if (!map[key])&#123;            map[key] = [];        &#125;...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/09/17-Letter-Combinations-of-a-Phone-Number/#more">Read More</a>
+          <a href="/2020/12/12/49-Group-Anagrams/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +317,7 @@
 
 
   
-    <article id="post-54-Spiral-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-347-Top-K-Frequent-Elements"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/08/54-Spiral-Matrix/">54. Spiral Matrix</a>
+      <a class="article-title" href="/2020/12/12/347-Top-K-Frequent-Elements/">347. Top K Frequent Elements</a>
     </h1>
   
 
@@ -333,8 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/08/54-Spiral-Matrix/" class="article-date">
-	  <time datetime="2020-12-09T06:20:45.000Z" itemprop="datePublished">2020-12-08</time>
+	<a href="/2020/12/12/347-Top-K-Frequent-Elements/" class="article-date">
+	  <time datetime="2020-12-12T21:47:53.000Z" itemprop="datePublished">2020-12-12</time>
 	</a>
 
       
@@ -347,10 +347,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031/** * @param &#123;number[][]&#125; matrix * @return &#123;number[]&#125; */var spiralOrder = function(matrix) &#123;    if (!matrix || !matrix.length) return []    let res = [], r1 = 0, r2 = ma...
+          Bucket Sort12345678910111213141516171819202122232425262728/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number[]&#125; */var topKFrequent = function(nums, k) &#123;    const bucket = new Array(nums.length), r...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/08/54-Spiral-Matrix/#more">Read More</a>
+          <a href="/2020/12/12/347-Top-K-Frequent-Elements/#more">Read More</a>
         </p>
       
     </div>
@@ -369,7 +369,7 @@
 
 
   
-    <article id="post-560-Subarray-Sum-Equals-K"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1197-Minimum-Knight-Moves"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -377,7 +377,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/08/560-Subarray-Sum-Equals-K/">560. Subarray Sum Equals K</a>
+      <a class="article-title" href="/2020/12/11/1197-Minimum-Knight-Moves/">1197. Minimum Knight Moves</a>
     </h1>
   
 
@@ -385,8 +385,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/08/560-Subarray-Sum-Equals-K/" class="article-date">
-	  <time datetime="2020-12-09T05:55:13.000Z" itemprop="datePublished">2020-12-08</time>
+	<a href="/2020/12/11/1197-Minimum-Knight-Moves/" class="article-date">
+	  <time datetime="2020-12-12T00:58:25.000Z" itemprop="datePublished">2020-12-11</time>
 	</a>
 
       
@@ -399,10 +399,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number&#125; */var subarraySum = function(nums, k) &#123;    const map = new Map([[0, 1]])    let sum = 0, total = 0    for (let num of nums)...
+          DP
+
+
+12345678910111213141516171819202122232425262728293031/** * @param &#123;number&#125; x * @param &#123;number&#125; y * @return &#123;number&#125; */var minKnightMoves = function(x, y) &#123;    let map = &#123;&#125;        const dp = (x, y) ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/08/560-Subarray-Sum-Equals-K/#more">Read More</a>
+          <a href="/2020/12/11/1197-Minimum-Knight-Moves/#more">Read More</a>
         </p>
       
     </div>
@@ -421,7 +424,7 @@
 
 
   
-    <article id="post-973-K-Closest-Points-to-Origin"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-199-Binary-Tree-Right-Side-View"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -429,7 +432,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/973-K-Closest-Points-to-Origin/">973. K Closest Points to Origin</a>
+      <a class="article-title" href="/2020/12/11/199-Binary-Tree-Right-Side-View/">199. Binary Tree Right Side View</a>
     </h1>
   
 
@@ -437,8 +440,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/973-K-Closest-Points-to-Origin/" class="article-date">
-	  <time datetime="2020-12-08T04:03:28.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2020/12/11/199-Binary-Tree-Right-Side-View/" class="article-date">
+	  <time datetime="2020-12-11T22:10:56.000Z" itemprop="datePublished">2020-12-11</time>
 	</a>
 
       
@@ -451,10 +454,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          quick select1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** * @param &#123;number[][]&#125; points * @param &#123;number&#125; K * @return &#123;number[][]&#125; */var kClosest = function(points, K) &#123; ...
+          dfs —&gt; 先遍历右子树
+123456789101112131415161718192021222324252627/** * Definition for a binary tree node. * function TreeNode(val, left, right) &#123; *     this.val = (val===undefined ? 0 : val) *     this.left = (left===undefined ? null : left) *  ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/07/973-K-Closest-Points-to-Origin/#more">Read More</a>
+          <a href="/2020/12/11/199-Binary-Tree-Right-Side-View/#more">Read More</a>
         </p>
       
     </div>
@@ -473,7 +477,7 @@
 
 
   
-    <article id="post-31-Next-Permutation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-46-Permutations"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -481,7 +485,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/31-Next-Permutation/">31. Next Permutation</a>
+      <a class="article-title" href="/2020/12/10/46-Permutations/">46. Permutations </a>
     </h1>
   
 
@@ -489,8 +493,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/31-Next-Permutation/" class="article-date">
-	  <time datetime="2020-12-08T03:30:23.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2020/12/10/46-Permutations/" class="article-date">
+	  <time datetime="2020-12-11T07:14:00.000Z" itemprop="datePublished">2020-12-10</time>
 	</a>
 
       
@@ -504,18 +508,11 @@
       
         <p class="article-excerpt-content">
           
-从后到前： 找到第一个不满足升序的字符
-和后面第一个比他大的字符swap
-知道后面部分变成降序 –》 reverse将其变成升序
-
-
-从后向前找， 找到第一个 i, nums[i] &lt; nums[i+1]  ==&gt; 因为是第一个 所以这个就是next permuation 的转折点
-说明了 nums[i+1] &gt; nums[i+2] &gt; nums[i+3] –&gt;降序序列
-在 i+1 到 nums的结尾中找到第一一个大于nums[i] at index j
-s...
+item in input is unique
+重点array of array记得创建新的array for backtrack, 要不然存的都是一个数组， 最后array of array, inner array的结果是一样的12345678910111213141516171819202122/** * @param &#123;number[]&#125; nums * @return &#123;number[][]&#125; */var permute = functio...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/07/31-Next-Permutation/#more">Read More</a>
+          <a href="/2020/12/10/46-Permutations/#more">Read More</a>
         </p>
       
     </div>
@@ -534,7 +531,7 @@ s...
 
 
   
-    <article id="post-253-Meeting-Rooms-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-22-Generate-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -542,7 +539,7 @@ s...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/253-Meeting-Rooms-II/">253. Meeting Rooms II</a>
+      <a class="article-title" href="/2020/12/10/22-Generate-Parentheses/">22. Generate Parentheses</a>
     </h1>
   
 
@@ -550,8 +547,8 @@ s...
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/253-Meeting-Rooms-II/" class="article-date">
-	  <time datetime="2020-12-08T02:58:54.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2020/12/10/22-Generate-Parentheses/" class="article-date">
+	  <time datetime="2020-12-10T23:50:19.000Z" itemprop="datePublished">2020-12-10</time>
 	</a>
 
       
@@ -564,11 +561,11 @@ s...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          基本思想： 按照开始时间排序， 然后遍历interval根据当前interval 的开始值来决定和之前的房子是替换还是加入新的房子， 所以pq里是end time of the interval
-Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125; intervals * @return &#123;number&#125; */var minMeetingRooms = funct...
+          backtracking
+123456789101112131415161718192021222324/** * @param &#123;number&#125; n * @return &#123;string[]&#125; */var generateParenthesis = function(n) &#123;  const res = []  go(n, n, '', res)    return res&#125;;const go = (l, r, s, res) =&...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/07/253-Meeting-Rooms-II/#more">Read More</a>
+          <a href="/2020/12/10/22-Generate-Parentheses/#more">Read More</a>
         </p>
       
     </div>
@@ -587,7 +584,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
 
 
   
-    <article id="post-56-Merge-Intervals"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-79-Word-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -595,7 +592,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/56-Merge-Intervals/">56. Merge Intervals</a>
+      <a class="article-title" href="/2020/12/10/79-Word-Search/">79. Word Search</a>
     </h1>
   
 
@@ -603,8 +600,8 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/56-Merge-Intervals/" class="article-date">
-	  <time datetime="2020-12-08T02:25:21.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2020/12/10/79-Word-Search/" class="article-date">
+	  <time datetime="2020-12-10T23:15:21.000Z" itemprop="datePublished">2020-12-10</time>
 	</a>
 
       
@@ -617,11 +614,10 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          when overlapped happens at start == end, we still need to merge it
-123456789101112131415161718192021/** * @param &#123;number[][]&#125; intervals * @return &#123;number[][]&#125; */var merge = function(intervals) &#123;    if (!intervals || !inter...
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879/** * @param &#123;character[][]&#125; board * @param &#123;string&#125; word * @return &#123;bool...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/07/56-Merge-Intervals/#more">Read More</a>
+          <a href="/2020/12/10/79-Word-Search/#more">Read More</a>
         </p>
       
     </div>
@@ -640,7 +636,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
 
 
   
-    <article id="post-23-Merge-k-Sorted-Lists"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-692-Top-K-Frequent-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -648,7 +644,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/23-Merge-k-Sorted-Lists/">23. Merge k Sorted Lists</a>
+      <a class="article-title" href="/2020/12/10/692-Top-K-Frequent-Words/">692. Top K Frequent Words </a>
     </h1>
   
 
@@ -656,8 +652,8 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/23-Merge-k-Sorted-Lists/" class="article-date">
-	  <time datetime="2020-12-07T22:34:41.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2020/12/10/692-Top-K-Frequent-Words/" class="article-date">
+	  <time datetime="2020-12-10T22:00:31.000Z" itemprop="datePublished">2020-12-10</time>
 	</a>
 
       
@@ -670,11 +666,11 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          divide it in two two parts, merge the first item in the two parts recursivly
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354/** * Definition for singly-linked list. * function ListNode(val, next)...
+          没有办法用快选是因为对于相等的情况还需要按照字符大小排序
+123456789101112131415161718/** * @param &#123;string[]&#125; words * @param &#123;number&#125; k * @return &#123;string[]&#125; */var topKFrequent = function(words, k) &#123;    let map = &#123;&#125;        for (let w...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/07/23-Merge-k-Sorted-Lists/#more">Read More</a>
+          <a href="/2020/12/10/692-Top-K-Frequent-Words/#more">Read More</a>
         </p>
       
     </div>
@@ -693,7 +689,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
 
 
   
-    <article id="post-15-3Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-138-Copy-List-with-Random-Pointer"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -701,7 +697,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/15-3Sum/">15. 3Sum</a>
+      <a class="article-title" href="/2020/12/10/138-Copy-List-with-Random-Pointer/">138. Copy List with Random Pointer </a>
     </h1>
   
 
@@ -709,8 +705,8 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/15-3Sum/" class="article-date">
-	  <time datetime="2020-12-07T20:16:48.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2020/12/10/138-Copy-List-with-Random-Pointer/" class="article-date">
+	  <time datetime="2020-12-10T20:18:04.000Z" itemprop="datePublished">2020-12-10</time>
 	</a>
 
       
@@ -723,10 +719,16 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930/** * @param &#123;number[]&#125; nums * @return &#123;number[][]&#125; */var threeSum = function(nums) &#123;    nums.sort((a, b) =&gt; a - b)    if (nums.length == 0 || nums[0] &gt; 0 || nums[nu...
+          
+create new node with value, next pointer pointing to the next node in the original list
+update the original node next pointer to the new created node
+
+
+update the new random pointer of new created node, by using the cur.next
+update the next point...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/07/15-3Sum/#more">Read More</a>
+          <a href="/2020/12/10/138-Copy-List-with-Random-Pointer/#more">Read More</a>
         </p>
       
     </div>
@@ -745,7 +747,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
 
 
   
-    <article id="post-Basic-concept-for-kubernetes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-127-Word-Ladder"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -753,7 +755,7 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/07/Basic-concept-for-kubernetes/">Basic concept for kubernetes</a>
+      <a class="article-title" href="/2020/12/10/127-Word-Ladder/">127. Word Ladder</a>
     </h1>
   
 
@@ -761,12 +763,12 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/Basic-concept-for-kubernetes/" class="article-date">
-	  <time datetime="2020-12-07T15:12:27.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2020/12/10/127-Word-Ladder/" class="article-date">
+	  <time datetime="2020-12-10T19:56:18.000Z" itemprop="datePublished">2020-12-10</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Kubernetes/">Kubernetes</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -775,14 +777,11 @@ Sort12345678910111213141516171819202122232425/** * @param &#123;number[][]&#125;
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          why Decprecate Docker in the KubernetesBad things on the docker:
-
-docker is just for single machine
-how to run container in multiple machine and communicate with each other —&gt; cross-host networking
-state/volume is hard to manage —&gt; multiple ...
+          
+find matched word in the list, must remove it to avoid cycle12345678910111213141516171819202122232425262728293031323334353637/** * @param &#123;string&#125; beginWord * @param &#123;string&#125; endWord * @param &#123;string[]&#125; wordList * @r...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/07/Basic-concept-for-kubernetes/#more">Read More</a>
+          <a href="/2020/12/10/127-Word-Ladder/#more">Read More</a>
         </p>
       
     </div>
@@ -805,7 +804,7 @@ state/volume is hard to manage —&gt; multiple ...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/17/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="extend next" rel="next" href="/page/19/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/17/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/19/">Next &amp;raquo;</a>
   </nav>
 
 </section>

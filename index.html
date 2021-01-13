@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-219-Contains-Duplicate-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-727-Minimum-Window-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/08/219-Contains-Duplicate-II/">219. Contains Duplicate II</a>
+      <a class="article-title" href="/2021/01/12/727-Minimum-Window-Subsequence/">727. Minimum Window Subsequence</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/08/219-Contains-Duplicate-II/" class="article-date">
-	  <time datetime="2021-01-09T05:33:31.000Z" itemprop="datePublished">2021-01-08</time>
+	<a href="/2021/01/12/727-Minimum-Window-Subsequence/" class="article-date">
+	  <time datetime="2021-01-13T05:33:09.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -295,10 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213class Solution(object):    def containsNearbyDuplicate(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: bool        """        dic = &#123;&#125;        for i, v in enumerate(nums):       ...
+          123456789101112131415161718192021222324252627282930313233class Solution(object):    def minWindow(self, S, T):        """        :type S: str        :type T: str        :rtype: str        """        sidx, tidx = 0, 0        slen, tlen = len(S), le...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/08/219-Contains-Duplicate-II/#more">Read More</a>
+          <a href="/2021/01/12/727-Minimum-Window-Subsequence/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +317,7 @@
 
 
   
-    <article id="post-222-Count-Complete-Tree-Nodes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-830-Positions-of-Large-Groups"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/08/222-Count-Complete-Tree-Nodes/">222. Count Complete Tree Nodes </a>
+      <a class="article-title" href="/2021/01/12/830-Positions-of-Large-Groups/">830. Positions of Large Groups</a>
     </h1>
   
 
@@ -333,8 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/08/222-Count-Complete-Tree-Nodes/" class="article-date">
-	  <time datetime="2021-01-09T04:48:37.000Z" itemprop="datePublished">2021-01-08</time>
+	<a href="/2021/01/12/830-Positions-of-Large-Groups/" class="article-date">
+	  <time datetime="2021-01-13T04:54:02.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -347,14 +347,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-
-因为我们计算了d 所以最后一行/on level d, must have node
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):# ...
+          1234567891011121314class Solution(object):    def largeGroupPositions(self, S):        """        :type s: str        :rtype: List[List[int]]        """        ans = []        i = 0         for j in xrange(len(S)):            if j == len(S) - 1 or...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/08/222-Count-Complete-Tree-Nodes/#more">Read More</a>
+          <a href="/2021/01/12/830-Positions-of-Large-Groups/#more">Read More</a>
         </p>
       
     </div>
@@ -373,7 +369,7 @@
 
 
   
-    <article id="post-21-Merge-Two-Sorted-Lists"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-278-First-Bad-Version"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -381,7 +377,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/08/21-Merge-Two-Sorted-Lists/">21. Merge Two Sorted Lists </a>
+      <a class="article-title" href="/2021/01/12/278-First-Bad-Version/">278. First Bad Version</a>
     </h1>
   
 
@@ -389,8 +385,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/08/21-Merge-Two-Sorted-Lists/" class="article-date">
-	  <time datetime="2021-01-09T03:02:40.000Z" itemprop="datePublished">2021-01-08</time>
+	<a href="/2021/01/12/278-First-Bad-Version/" class="article-date">
+	  <time datetime="2021-01-13T04:46:15.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -403,10 +399,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def mergeTwoLists(self, l1, l2)...
+          123456789101112131415161718192021# The isBadVersion API is already defined for you.# @param version, an integer# @return a bool# def isBadVersion(version):class Solution(object):    def firstBadVersion(self, n):        """        :type n: int     ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/08/21-Merge-Two-Sorted-Lists/#more">Read More</a>
+          <a href="/2021/01/12/278-First-Bad-Version/#more">Read More</a>
         </p>
       
     </div>
@@ -425,7 +421,7 @@
 
 
   
-    <article id="post-168-Excel-Sheet-Column-Title"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-419-Battleships-in-a-Board"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -433,7 +429,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/08/168-Excel-Sheet-Column-Title/">168. Excel Sheet Column Title </a>
+      <a class="article-title" href="/2021/01/12/419-Battleships-in-a-Board/">419. Battleships in a Board</a>
     </h1>
   
 
@@ -441,58 +437,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/08/168-Excel-Sheet-Column-Title/" class="article-date">
-	  <time datetime="2021-01-09T02:43:49.000Z" itemprop="datePublished">2021-01-08</time>
-	</a>
-
-      
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/08/168-Excel-Sheet-Column-Title/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-141-Linked-List-Cycle"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/08/141-Linked-List-Cycle/">141. Linked List Cycle </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/08/141-Linked-List-Cycle/" class="article-date">
-	  <time datetime="2021-01-08T21:16:42.000Z" itemprop="datePublished">2021-01-08</time>
+	<a href="/2021/01/12/419-Battleships-in-a-Board/" class="article-date">
+	  <time datetime="2021-01-13T02:35:47.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -505,10 +451,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, x):#         self.val = x#         self.next = Noneclass Solution(object):    def hasCycle(self, head):        """        :type head...
+           prev: board is valid
+123456789101112131415class Solution(object):    def countBattleships(self, board):        """        :type board: List[List[str]]        :rtype: int        """        if len(board) == 0: return 0        m, n = len(board), len...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/08/141-Linked-List-Cycle/#more">Read More</a>
+          <a href="/2021/01/12/419-Battleships-in-a-Board/#more">Read More</a>
         </p>
       
     </div>
@@ -527,7 +474,7 @@
 
 
   
-    <article id="post-136-Single-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-247-Strobogrammatic-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -535,7 +482,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/08/136-Single-Number/">136. Single Number</a>
+      <a class="article-title" href="/2021/01/12/247-Strobogrammatic-Number-II/">247. Strobogrammatic Number II</a>
     </h1>
   
 
@@ -543,8 +490,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/08/136-Single-Number/" class="article-date">
-	  <time datetime="2021-01-08T20:58:01.000Z" itemprop="datePublished">2021-01-08</time>
+	<a href="/2021/01/12/247-Strobogrammatic-Number-II/" class="article-date">
+	  <time datetime="2021-01-13T01:34:15.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -557,10 +504,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910class Solution(object):    def singleNumber(self, nums):        """        :type nums: List[int]        :rtype: int        """        a = 0        for i in nums:            a ^= i        return a
+          1234567891011121314151617181920212223class Solution(object):    def findStrobogrammatic(self, n):        """        :type n: int        :rtype: List[str]        """                return self.strobogrammatic(n, n)            def strobogrammatic(se...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/08/136-Single-Number/#more">Read More</a>
+          <a href="/2021/01/12/247-Strobogrammatic-Number-II/#more">Read More</a>
         </p>
       
     </div>
@@ -579,7 +526,7 @@
 
 
   
-    <article id="post-101-Symmetric-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-559-Maximum-Depth-of-N-ary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -587,7 +534,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/08/101-Symmetric-Tree/">101. Symmetric Tree</a>
+      <a class="article-title" href="/2021/01/12/559-Maximum-Depth-of-N-ary-Tree/">559. Maximum Depth of N-ary Tree</a>
     </h1>
   
 
@@ -595,8 +542,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/08/101-Symmetric-Tree/" class="article-date">
-	  <time datetime="2021-01-08T20:22:58.000Z" itemprop="datePublished">2021-01-08</time>
+	<a href="/2021/01/12/559-Maximum-Depth-of-N-ary-Tree/" class="article-date">
+	  <time datetime="2021-01-13T00:23:38.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -609,10 +556,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Recursive1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = ...
+          [for x in a] –&gt; if a is [], return will [], it will not go in
+thus, it will be one root.children == [] base case: return 1
+1234567891011121314151617181920"""# Definition for a Node.class Node(object):    def __init__(self, val=None, children=No...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/08/101-Symmetric-Tree/#more">Read More</a>
+          <a href="/2021/01/12/559-Maximum-Depth-of-N-ary-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -631,7 +580,7 @@
 
 
   
-    <article id="post-121-Best-Time-to-Buy-and-Sell-Stock"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-110-Balanced-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -639,7 +588,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/121-Best-Time-to-Buy-and-Sell-Stock/">121. Best Time to Buy and Sell Stock </a>
+      <a class="article-title" href="/2021/01/12/110-Balanced-Binary-Tree/">110. Balanced Binary Tree</a>
     </h1>
   
 
@@ -647,60 +596,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/121-Best-Time-to-Buy-and-Sell-Stock/" class="article-date">
-	  <time datetime="2021-01-08T04:55:23.000Z" itemprop="datePublished">2021-01-07</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213class Solution(object):    def maxProfit(self, prices):        """        :type prices: List[int]        :rtype: int        """        max_profit, min_price = 0, float('inf')                for price in prices:            min_pric...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/07/121-Best-Time-to-Buy-and-Sell-Stock/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-250-Count-Univalue-Subtrees"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/250-Count-Univalue-Subtrees/">250. Count Univalue Subtrees </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/07/250-Count-Univalue-Subtrees/" class="article-date">
-	  <time datetime="2021-01-08T04:50:21.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/12/110-Balanced-Binary-Tree/" class="article-date">
+	  <time datetime="2021-01-12T23:39:47.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -716,7 +613,7 @@
           12345678910111213141516171819202122# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(obj...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/250-Count-Univalue-Subtrees/#more">Read More</a>
+          <a href="/2021/01/12/110-Balanced-Binary-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -735,7 +632,7 @@
 
 
   
-    <article id="post-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-100-Same-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -743,7 +640,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/07/BST/">BST</a>
+      <a class="article-title" href="/2021/01/12/100-Same-Tree/">100. Same Tree</a>
     </h1>
   
 
@@ -751,12 +648,12 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/07/BST/" class="article-date">
-	  <time datetime="2021-01-08T03:09:35.000Z" itemprop="datePublished">2021-01-07</time>
+	<a href="/2021/01/12/100-Same-Tree/" class="article-date">
+	  <time datetime="2021-01-12T23:06:40.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -765,14 +662,114 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
-
-
-
-
+          123456789101112131415161718192021222324# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/07/BST/#more">Read More</a>
+          <a href="/2021/01/12/100-Same-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-652-Find-Duplicate-Subtrees"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/12/652-Find-Duplicate-Subtrees/">652. Find Duplicate Subtrees</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/12/652-Find-Duplicate-Subtrees/" class="article-date">
+	  <time datetime="2021-01-12T18:13:58.000Z" itemprop="datePublished">2021-01-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(o...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/12/652-Find-Duplicate-Subtrees/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-449-Serialize-and-Deserialize-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/11/449-Serialize-and-Deserialize-BST/">449. Serialize and Deserialize BST</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/11/449-Serialize-and-Deserialize-BST/" class="article-date">
+	  <time datetime="2021-01-12T01:51:44.000Z" itemprop="datePublished">2021-01-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627282930313233343536373839404142# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, x):#         self.val = x#         self.left = None#         self.right = Noneclass Co...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/11/449-Serialize-and-Deserialize-BST/#more">Read More</a>
         </p>
       
     </div>
@@ -795,7 +792,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/69/">69</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
