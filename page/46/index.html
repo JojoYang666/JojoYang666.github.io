@@ -265,6 +265,333 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-82-Remove-Duplicates-from-Sorted-List-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/">82. Remove Duplicates from Sorted List II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/" class="article-date">
+	  <time datetime="2020-10-28T19:54:00.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def deleteDuplicates(...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-comparator"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/comparator/">comparator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/comparator/" class="article-date">
+	  <time datetime="2020-10-28T17:15:33.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Classes and Objects
+Objects are an encapsulation of variables and functions into a single entity. 
+Objects get their variables and functions from classes.
+Classes are essentially a template to create your objects.
+
+class built in comparaobject.lt(...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/comparator/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-179-Largest-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/179-Largest-Number/">179. Largest Number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/179-Largest-Number/" class="article-date">
+	  <time datetime="2020-10-28T17:03:01.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          cornor case: number is 0
+
+(a, b) –&gt; return -1 means a is ahead of b
+30, 3 –&gt; thus comp must is a + b and b + a, not compare a &amp; b in the format of string 
+javascript must to string can not be a + ‘’123456789101112class LargetKey(str):   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/179-Largest-Number/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-935-Knight-Dialer"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/935-Knight-Dialer/">935. Knight Dialer</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/935-Knight-Dialer/" class="article-date">
+	  <time datetime="2020-10-28T16:34:43.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+using dp method
+dp[i][j] 表示骑士第i次跳到数字j时组成的不同号码的个数
+那么最终所求的就是将 dp[N-1][j] 累加起来
+
+This way is reduce the memory
+1234567891011121314151617class Solution(object):    def knightDialer(self, n):        """        :type n: int        :rtype: int        """...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/935-Knight-Dialer/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-165-Compare-Version-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/165-Compare-Version-Numbers/">165. Compare Version Numbers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/165-Compare-Version-Numbers/" class="article-date">
+	  <time datetime="2020-10-28T16:16:37.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819class Solution(object):    def compareVersion(self, version1, version2):        """        :type version1: str        :type version2: str        :rtype: int        """        versions1 = [int(version) for version in ve...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/165-Compare-Version-Numbers/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1236-Web-Crawler"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/1236-Web-Crawler/">1236. Web Crawler</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/1236-Web-Crawler/" class="article-date">
+	  <time datetime="2020-10-28T05:35:49.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627282930# """# This is HtmlParser's API interface.# You should not implement it, or speculate about its implementation# """#class HtmlParser(object):#    def getUrls(self, url):#        """#        :type ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1236-Web-Crawler/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-1011-Capacity-To-Ship-Packages-Within-D-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -477,339 +804,11 @@ range(len(matrix)-1, -1, -1) 最后一个step -1不能少， 要不然不会遍�
 
 
   
-    <article id="post-General"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/General/">General</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/General/" class="article-date">
-	  <time datetime="2020-10-27T20:34:11.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-同意对角线上的元素特点： i-j相同
-对于str转化int/str表示数字的问题： corner case 考虑preceding is zero或者说这个数字本来就是0的情况（many 0 in preceding）
-Index as a hash key
-
-
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/General/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-366-Find-Leaves-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/">366. Find Leaves of Binary Tree </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/" class="article-date">
-	  <time datetime="2020-10-27T20:11:04.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass So...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-797-All-Paths-From-Source-to-Target"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/797-All-Paths-From-Source-to-Target/">797. All Paths From Source to Target </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/797-All-Paths-From-Source-to-Target/" class="article-date">
-	  <time datetime="2020-10-27T19:48:30.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617181920212223class Solution(object):    def allPathsSourceTarget(self, graph):        """        :type graph: List[List[int]]        :rtype: List[List[int]]        """        target = len(graph)-1        res = []           ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/797-All-Paths-From-Source-to-Target/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-373-Find-K-Pairs-with-Smallest-Sums"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/">373. Find K Pairs with Smallest Sums</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/" class="article-date">
-	  <time datetime="2020-10-27T18:16:16.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-1234567891011121314151617181920212223class Solution(object):    def kSmallestPairs(self, nums1, nums2, k):        """        :type nums1: List[int]        :type nums2: List[int]        :type k: int        :rtype: List[List[int]]        """     ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1353-Maximum-Number-of-Events-That-Can-Be-Attended"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/">1353. Maximum Number of Events That Can Be Attended </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/" class="article-date">
-	  <time datetime="2020-10-27T16:10:27.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324class Solution(object):    def maxEvents(self, events):        """        :type events: List[List[int]]        :rtype: int        """        events.sort(reverse=1)        h = []                res = d = 0    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-813-Largest-Sum-of-Averages"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/813-Largest-Sum-of-Averages/">813. Largest Sum of Averages</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/813-Largest-Sum-of-Averages/" class="article-date">
-	  <time datetime="2020-10-27T14:08:14.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
-[i, n-1]范围内的子数组分成k组，那么suppose我们已经知道了任意范围内分成k-1组的最大分数
-要求状态k，一定要先求出所有的状态k-1
-在范围[i, n-1]多分出一组，实际上就是将其分成两部分
-一部分是一组，另一部分是k-1组
-就用一个变量j，遍历范围(i, n-1)中的每一个位置
-第一部分[i, j)，由于是一组，那么直接求出平均值即可
-另一部分由于是k-1组，由于我们已经知道了所有k-1的情况，可以直...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/813-Largest-Sum-of-Averages/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/45/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/47/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/45/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="page-number" href="/page/45/">45</a><span class="page-number current">46</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="extend next" rel="next" href="/page/47/">Next &amp;raquo;</a>
   </nav>
 
 </section>

@@ -265,6 +265,334 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/">1477. Find Two Non-overlapping Sub-arrays Each With Target Sum </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/" class="article-date">
+	  <time datetime="2020-10-29T16:34:03.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          using another premin[i] array to store the min length of subarray which sum is equal is target in the array which starts with 0 ends with i, premin保证了不会overlap
+数组越界in python可能是是a[-1] 不会越界， 但是有时候考虑是否有效的what we want 
+12345678910111213141516171819202...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/1477-Find-Two-Non-overlapping-Sub-arrays-Each-With-Target-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1405-Longest-Happy-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/1405-Longest-Happy-String/">1405. Longest Happy String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/1405-Longest-Happy-String/" class="article-date">
+	  <time datetime="2020-10-29T15:54:16.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+为了简化， 要做个默认的设置a &gt;= b &gt;= c, 所以helper函数中， 先对大小进行调整
+当大小调整好了我们只用来计算a,b能组成的字符串， 因为当b &lt; c时 c会被交换到b位置12345678910111213141516171819202122class Solution(object):    def longestDiverseString(self, a, b, c):        """        :type a: int        :t...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/1405-Longest-Happy-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-593-Valid-Square"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/593-Valid-Square/">593. Valid Square</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/593-Valid-Square/" class="article-date">
+	  <time datetime="2020-10-29T15:13:42.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          square:
+
+对角线相等
+边相等
+
+–》 任意两点之间的距离 只有两种， 并且不能为0
+12345678910111213141516171819class Solution(object):    def validSquare(self, p1, p2, p3, p4):        """        :type p1: List[int]        :type p2: List[int]        :type p3: List[int]        :type p...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/593-Valid-Square/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-662-Maximum-Width-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/662-Maximum-Width-of-Binary-Tree/">662. Maximum Width of Binary Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/662-Maximum-Width-of-Binary-Tree/" class="article-date">
+	  <time datetime="2020-10-29T04:08:41.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223242526272829303132333435# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/662-Maximum-Width-of-Binary-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1191-K-Concatenation-Maximum-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/1191-K-Concatenation-Maximum-Sum/">1191-K-Concatenation-Maximum-Sum</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/1191-K-Concatenation-Maximum-Sum/" class="article-date">
+	  <time datetime="2020-10-29T03:35:39.748Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+title: 1191. K-Concatenation Maximum Sumdate: 2020-10-28 20:35:39tags:categories: 
+
+Leetcode
+
+
+
+123456789101112131415161718192021222324class Solution(object):    def kConcatenationMaxSum(self, arr, k):        """        :type arr: List[int]      ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/1191-K-Concatenation-Maximum-Sum/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1140-Stone-Game-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/28/1140-Stone-Game-II/">1140. Stone Game II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/28/1140-Stone-Game-II/" class="article-date">
+	  <time datetime="2020-10-29T02:43:25.000Z" itemprop="datePublished">2020-10-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          dfs(p, m):表示从前P位置拿石头，在m的前提下拿到的最大的值这个值是固定的所有可以memo
+1234567891011121314151617181920212223242526272829class Solution(object):    def stoneGameII(self, piles):        """        :type piles: List[int]        :rtype: int        """        n = len(piles...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/28/1140-Stone-Game-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-792-Number-of-Matching-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -480,338 +808,11 @@ cornor case 每次遍历一个到c时一定要重置head[c] = []， 因为可能
 
 
   
-    <article id="post-82-Remove-Duplicates-from-Sorted-List-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/">82. Remove Duplicates from Sorted List II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/" class="article-date">
-	  <time datetime="2020-10-28T19:54:00.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def deleteDuplicates(...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/82-Remove-Duplicates-from-Sorted-List-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-comparator"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/comparator/">comparator</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/comparator/" class="article-date">
-	  <time datetime="2020-10-28T17:15:33.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Classes and Objects
-Objects are an encapsulation of variables and functions into a single entity. 
-Objects get their variables and functions from classes.
-Classes are essentially a template to create your objects.
-
-class built in comparaobject.lt(...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/comparator/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-179-Largest-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/179-Largest-Number/">179. Largest Number</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/179-Largest-Number/" class="article-date">
-	  <time datetime="2020-10-28T17:03:01.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          cornor case: number is 0
-
-(a, b) –&gt; return -1 means a is ahead of b
-30, 3 –&gt; thus comp must is a + b and b + a, not compare a &amp; b in the format of string 
-javascript must to string can not be a + ‘’123456789101112class LargetKey(str):   ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/179-Largest-Number/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-935-Knight-Dialer"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/935-Knight-Dialer/">935. Knight Dialer</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/935-Knight-Dialer/" class="article-date">
-	  <time datetime="2020-10-28T16:34:43.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-using dp method
-dp[i][j] 表示骑士第i次跳到数字j时组成的不同号码的个数
-那么最终所求的就是将 dp[N-1][j] 累加起来
-
-This way is reduce the memory
-1234567891011121314151617class Solution(object):    def knightDialer(self, n):        """        :type n: int        :rtype: int        """...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/935-Knight-Dialer/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-165-Compare-Version-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/28/165-Compare-Version-Numbers/">165. Compare Version Numbers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/28/165-Compare-Version-Numbers/" class="article-date">
-	  <time datetime="2020-10-28T16:16:37.000Z" itemprop="datePublished">2020-10-28</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def compareVersion(self, version1, version2):        """        :type version1: str        :type version2: str        :rtype: int        """        versions1 = [int(version) for version in ve...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/28/165-Compare-Version-Numbers/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1236-Web-Crawler"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/1236-Web-Crawler/">1236. Web Crawler</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/1236-Web-Crawler/" class="article-date">
-	  <time datetime="2020-10-28T05:35:49.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930# """# This is HtmlParser's API interface.# You should not implement it, or speculate about its implementation# """#class HtmlParser(object):#    def getUrls(self, url):#        """#        :type ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/1236-Web-Crawler/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
   </nav>
 
 </section>

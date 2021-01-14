@@ -265,6 +265,323 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-350-Intersection-of-Two-Arrays-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/06/350-Intersection-of-Two-Arrays-II/">350. Intersection of Two Arrays II </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/06/350-Intersection-of-Two-Arrays-II/" class="article-date">
+	  <time datetime="2021-01-06T16:25:43.000Z" itemprop="datePublished">2021-01-06</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          map, elements
+123456789class Solution(object):    def intersect(self, nums1, nums2):        """        :type nums1: List[int]        :type nums2: List[int]        :rtype: List[int]        """        a, b = map(collections.Counter, (nums1, nums2)) ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/06/350-Intersection-of-Two-Arrays-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-387-First-Unique-Character-in-a-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/387-First-Unique-Character-in-a-String/">387. First Unique Character in a String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/387-First-Unique-Character-in-a-String/" class="article-date">
+	  <time datetime="2021-01-06T07:42:25.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011class Solution(object):    def firstUniqChar(self, s):        """        :type s: str        :rtype: int        """        count = collections.Counter(s)        for idx, ch in enumerate(s):            if count[ch] == 1:               ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/387-First-Unique-Character-in-a-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-732-My-Calendar-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/732-My-Calendar-III/">732. My Calendar III </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/732-My-Calendar-III/" class="article-date">
+	  <time datetime="2021-01-06T07:04:48.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+12345678910111213141516171819202122232425262728class MyCalendarThree(object):    def __init__(self):        self.delta = collections.defaultdict(int)    def book(self, start, end):        """        :type start: int        :type end: int       ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/732-My-Calendar-III/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-216-Combination-Sum-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/216-Combination-Sum-III/">216. Combination Sum III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/216-Combination-Sum-III/" class="article-date">
+	  <time datetime="2021-01-06T06:14:16.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          because each  number is used at most once –&gt; no visited and using next_start instead
+123456789101112131415161718192021class Solution(object):    def combinationSum3(self, k, n):        """        :type k: int        :type n: int        :rtype: ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/216-Combination-Sum-III/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-53-Maximum-Subarray"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/53-Maximum-Subarray/">53. Maximum Subarray</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/53-Maximum-Subarray/" class="article-date">
+	  <time datetime="2021-01-06T02:06:54.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213class Solution(object):    def maxSubArray(self, nums):        """        :type nums: List[int]        :rtype: int        """        n = len(nums)        curr_sum = max_sum = nums[0]                for i in range(1, n):           ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/53-Maximum-Subarray/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-38-Count-and-Say"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2021/01/05/38-Count-and-Say/">38. Count and Say</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/01/05/38-Count-and-Say/" class="article-date">
+	  <time datetime="2021-01-06T02:04:52.000Z" itemprop="datePublished">2021-01-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122class Solution(object):    def countAndSay(self, n):        """        :type n: int        :rtype: str        """        if n == 1: return '1'                s = self.countAndSay(n - 1)                ret = ''   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2021/01/05/38-Count-and-Say/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-345-Reverse-Vowels-of-a-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -474,327 +791,11 @@
 
 
   
-    <article id="post-162-Find-Peak-Element"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/162-Find-Peak-Element/">162. Find Peak Element</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/162-Find-Peak-Element/" class="article-date">
-	  <time datetime="2021-01-05T05:54:06.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Binary search
-1234567891011121314151617181920/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */var findPeakElement = function(nums) &#123;    return search(nums, 0, nums.length-1);&#125;;var search = function (nums, l, r) &#123...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/162-Find-Peak-Element/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-769-Max-Chunks-To-Make-Sorted"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/769-Max-Chunks-To-Make-Sorted/">769. Max Chunks To Make Sorted</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/769-Max-Chunks-To-Make-Sorted/" class="article-date">
-	  <time datetime="2021-01-05T05:39:53.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          max number == idx, we can have one more chunk, otherwise not
-1234567891011class Solution(object):    def maxChunksToSorted(self, arr):        """        :type arr: List[int]        :rtype: int        """        ans = ma = 0        for i, x in enum...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/769-Max-Chunks-To-Make-Sorted/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-303-Range-Sum-Query-Immutable"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/303-Range-Sum-Query-Immutable/">303. Range Sum Query - Immutable</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/303-Range-Sum-Query-Immutable/" class="article-date">
-	  <time datetime="2021-01-05T04:04:48.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          two cases:case 1: i = 0case 2: i != 0
-12345678910111213141516171819202122class NumArray(object):    def __init__(self, nums):        """        :type nums: List[int]        """        self.nums = nums        for i in range(1, len(nums)):          ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/303-Range-Sum-Query-Immutable/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-236-Lowest-Common-Ancestor-of-a-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/236-Lowest-Common-Ancestor-of-a-Binary-Tree/">236. Lowest Common Ancestor of a Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/236-Lowest-Common-Ancestor-of-a-Binary-Tree/" class="article-date">
-	  <time datetime="2021-01-05T01:06:50.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          找到的条件是：mid + left + right &gt;= 2
-12345678910111213141516171819202122232425262728293031/** * Definition for a binary tree node. * function TreeNode(val) &#123; *     this.val = val; *     this.left = this.right = null; * &#125; *//** * @param &#12...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/236-Lowest-Common-Ancestor-of-a-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-226-Invert-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/226-Invert-Binary-Tree/">226. Invert Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/226-Invert-Binary-Tree/" class="article-date">
-	  <time datetime="2021-01-05T00:39:05.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(object):    d...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/226-Invert-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-543-Diameter-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/543-Diameter-of-Binary-Tree/">543. Diameter of Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2021/01/04/543-Diameter-of-Binary-Tree/" class="article-date">
-	  <time datetime="2021-01-05T00:15:34.000Z" itemprop="datePublished">2021-01-04</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(objec...
-        </p>
-        <p class="article-more-link">
-          <a href="/2021/01/04/543-Diameter-of-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/6/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/8/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/6/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="extend next" rel="next" href="/page/8/">Next &amp;raquo;</a>
   </nav>
 
 </section>

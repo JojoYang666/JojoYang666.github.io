@@ -265,6 +265,322 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-351-Android-Unlock-Patterns"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/02/351-Android-Unlock-Patterns/">351. Android Unlock Patterns</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/02/351-Android-Unlock-Patterns/" class="article-date">
+	  <time datetime="2020-09-02T15:36:10.000Z" itemprop="datePublished">2020-09-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+Solution 112345678910111213141516171819202122232425262728293031323334class Solution(object):    def numberOfPatterns(self, m, n):        """        :type m: int        :type n: int        :rtype: int        """        skip = &#123;&#125;       ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/02/351-Android-Unlock-Patterns/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-686-Repeated-String-Match"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/686-Repeated-String-Match/">686. Repeated String Match</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/686-Repeated-String-Match/" class="article-date">
+	  <time datetime="2020-09-01T22:49:44.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345const repeatedStringMatch = (A, B) =&gt; &#123;    const count = Math.ceil(B.length / A.length)    const str = A.repeat(count)    return str.includes(B) ? count : (str + A).includes(B) ? count + 1 : -1 &#125;;
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/686-Repeated-String-Match/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-947-Most-Stones-Removed-with-Same-Row-or-Column"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/">947. Most Stones Removed with Same Row or Column</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/" class="article-date">
+	  <time datetime="2020-09-01T22:02:02.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 112345678910111213141516171819202122232425262728293031323334class Solution(object):    def removeStones(self, stones):        """        :type stones: List[List[int]]        :rtype: int        """        graph = collections.defaultdict(li...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/947-Most-Stones-Removed-with-Same-Row-or-Column/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-228-Summary-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/228-Summary-Ranges/">228. Summary Ranges</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/228-Summary-Ranges/" class="article-date">
+	  <time datetime="2020-09-01T21:51:35.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution123456789101112131415161718192021222324/** * @param &#123;number[]&#125; nums * @return &#123;string[]&#125; */var summaryRanges = function(nums) &#123;    let i = 0;    const res = []        while (i &lt; nums.length) &#123;        let di...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/228-Summary-Ranges/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-904-Fruit-Into-Baskets"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/01/904-Fruit-Into-Baskets/">904. Fruit Into Baskets</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/01/904-Fruit-Into-Baskets/" class="article-date">
+	  <time datetime="2020-09-01T17:48:14.000Z" itemprop="datePublished">2020-09-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 11234567891011121314151617class Solution(object):    def totalFruit(self, tree):        """        :type tree: List[int]        :rtype: int        """        ans = i = 0        count = collections.Counter()        for j, x in enumerate(tr...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/01/904-Fruit-Into-Baskets/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-939-Minimum-Area-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/08/28/939-Minimum-Area-Rectangle/">939. Minimum Area Rectangle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/08/28/939-Minimum-Area-Rectangle/" class="article-date">
+	  <time datetime="2020-08-28T22:39:09.000Z" itemprop="datePublished">2020-08-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+Sorted by column12345678910111213141516171819202122class Solution(object):    def minAreaRect(self, points):        """        :type points: List[List[int]]        :rtype: int        """        columns = collections.defaultdict(list)   ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/08/28/939-Minimum-Area-Rectangle/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
     <article id="post-288-Unique-Word-Abbreviation-exiyexit"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
@@ -481,347 +797,11 @@ UTF-8把一个Unicode字符根据不同的数字大小编码成1-6个字节， �
 
 
   
-    <article id="post-281-Zigzag-Iterator"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/281-Zigzag-Iterator/">281. Zigzag Iterator</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/281-Zigzag-Iterator/" class="article-date">
-	  <time datetime="2020-08-18T18:35:40.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution1用i, j的大小关系来判断， 打印哪个数组， diff不能小于1， 到头的话赋最大值
-12345678910111213141516171819202122232425262728293031323334353637/** * @constructor * @param &#123;Integer[]&#125; v1 * @param &#123;Integer[]&#125; v1 */var ZigzagIterator = function ZigzagItera...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/281-Zigzag-Iterator/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-163-Missing-Ranges"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/18/163-Missing-Ranges/">163. Missing Ranges</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/18/163-Missing-Ranges/" class="article-date">
-	  <time datetime="2020-08-18T17:55:42.000Z" itemprop="datePublished">2020-08-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          SolutionCornor Case:整形溢出， 当数组中有整形最大值时， 此时lower更新为num+1时就会溢出， 所以再更新前要判断一下， 若num已经时整形最大值了 直接返回结果
-123456789101112131415161718192021222324252627/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; lower * @param &#123;number&#125; upper ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/18/163-Missing-Ranges/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1057-Campus-Bikes"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/1057-Campus-Bikes/">1057. Campus Bikes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/17/1057-Campus-Bikes/" class="article-date">
-	  <time datetime="2020-08-18T02:55:33.000Z" itemprop="datePublished">2020-08-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution123456789101112131415161718192021222324class Solution(object):    def assignBikes(self, workers, bikes):        distances = []     # distances[worker] is tuple of (distance, worker, bike) for each bike         for i, (x, y) in enumerate(wo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/17/1057-Campus-Bikes/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Python"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/Python/">Common Python Methods</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Base Data Type
-heapq
-
-heapq.heapify(x): transform list x into a heap, in-place, in linear time.
-heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To acc...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/17/Python/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-97-Interleaving-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/12/97-Interleaving-String/">97. Interleaving String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/12/97-Interleaving-String/" class="article-date">
-	  <time datetime="2020-08-13T05:06:10.000Z" itemprop="datePublished">2020-08-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1
-只要是遇到字符串的子序列或是匹配问题， 直接上动态规划
-Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object):    def isInterleave(self, s1, s2, s3):        """        :type s1: str        :type s2: str        :type s3: str        :rtype: ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/12/97-Interleaving-String/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-391-Perfect-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/11/391-Perfect-Rectangle/">391. Perfect Rectangle</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/11/391-Perfect-Rectangle/" class="article-date">
-	  <time datetime="2020-08-11T18:12:17.000Z" itemprop="datePublished">2020-08-11</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Solution 1
-
-
-
-
-所有矩形的4个顶点只会有蓝， 绿， 红三种情况
-
-蓝表示该顶点周围没有其他矩形
-绿点表示两个矩形并排相邻
-红点表示四个矩形相邻
-
-
-在一个完美矩形中， 蓝色的点只能有四个
-
-矩形的四个顶点： 左下， 左上， 右上， 右下的顺序来给顶点标号为1， 2， 4， 8 —》 考虑二进制表示
-
-当一个点是某一个矩形的左下顶点时，这个点就不能是其他矩形的左下顶点了, 这个条件对于这四种顶点都要成立，那么对于每一个点，如果它是某个矩形的四个顶点之一. 我们记录下来，如果在别...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/11/391-Perfect-Rectangle/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/66/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="page-number current">67</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/68/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/66/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="page-number current">67</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="extend next" rel="next" href="/page/68/">Next &amp;raquo;</a>
   </nav>
 
 </section>
