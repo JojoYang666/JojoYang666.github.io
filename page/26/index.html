@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-302-Smallest-Rectangle-Enclosing-Black-Pixels"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-245-Shortest-Word-Distance-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/27/302-Smallest-Rectangle-Enclosing-Black-Pixels/">302. Smallest Rectangle Enclosing Black Pixels </a>
+      <a class="article-title" href="/2020/12/01/245-Shortest-Word-Distance-III/">245. Shortest Word Distance III</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/27/302-Smallest-Rectangle-Enclosing-Black-Pixels/" class="article-date">
-	  <time datetime="2020-11-27T19:42:44.000Z" itemprop="datePublished">2020-11-27</time>
+	<a href="/2020/12/01/245-Shortest-Word-Distance-III/" class="article-date">
+	  <time datetime="2020-12-01T19:46:47.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -295,17 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-key point: there is only one connected dark digit region for problem
-there are only one black pixel region, then in a projected 1D array all the black pixels are connected
-using the binary search to find the boundary
-
-
-
-12345678910111213141516171...
+          123456789101112131415161718192021class Solution(object):    def shortestWordDistance(self, words, word1, word2):        """        :type words: List[str]        :type word1: str        :type word2: str        :rtype: int        """        n = len(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/27/302-Smallest-Rectangle-Enclosing-Black-Pixels/#more">Read More</a>
+          <a href="/2020/12/01/245-Shortest-Word-Distance-III/#more">Read More</a>
         </p>
       
     </div>
@@ -324,7 +317,7 @@ using the binary search to find the boundary
 
 
   
-    <article id="post-1032-Stream-of-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-156-Binary-Tree-Upside-Down"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -332,7 +325,7 @@ using the binary search to find the boundary
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/27/1032-Stream-of-Characters/">1032. Stream of Characters</a>
+      <a class="article-title" href="/2020/12/01/156-Binary-Tree-Upside-Down/">156. Binary Tree Upside Down</a>
     </h1>
   
 
@@ -340,8 +333,8 @@ using the binary search to find the boundary
     
     <div class="article-meta">
       
-	<a href="/2020/11/27/1032-Stream-of-Characters/" class="article-date">
-	  <time datetime="2020-11-27T18:55:57.000Z" itemprop="datePublished">2020-11-27</time>
+	<a href="/2020/12/01/156-Binary-Tree-Upside-Down/" class="article-date">
+	  <time datetime="2020-12-01T18:16:37.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -354,10 +347,11 @@ using the binary search to find the boundary
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132333435class StreamChecker(object):    def __init__(self, words):        """        :type words: List[str]        """        self.trie = &#123;&#125;        self.stream = deque([])        for w...
+          keep finding the left most node, make it upside-down, then make its parent to be its right most subtree recursivelyconnect the root to the right most subtree, make sure not copying the original root, otherwisr it become cyclic
+12345678910111213141...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/27/1032-Stream-of-Characters/#more">Read More</a>
+          <a href="/2020/12/01/156-Binary-Tree-Upside-Down/#more">Read More</a>
         </p>
       
     </div>
@@ -376,7 +370,7 @@ using the binary search to find the boundary
 
 
   
-    <article id="post-745-Prefix-and-Suffix-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-244-Shortest-Word-Distance-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -384,7 +378,7 @@ using the binary search to find the boundary
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/26/745-Prefix-and-Suffix-Search/">745. Prefix and Suffix Search </a>
+      <a class="article-title" href="/2020/12/01/244-Shortest-Word-Distance-II/">244. Shortest Word Distance II</a>
     </h1>
   
 
@@ -392,8 +386,8 @@ using the binary search to find the boundary
     
     <div class="article-meta">
       
-	<a href="/2020/11/26/745-Prefix-and-Suffix-Search/" class="article-date">
-	  <time datetime="2020-11-26T18:36:49.000Z" itemprop="datePublished">2020-11-26</time>
+	<a href="/2020/12/01/244-Shortest-Word-Distance-II/" class="article-date">
+	  <time datetime="2020-12-01T17:35:49.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -406,13 +400,11 @@ using the binary search to find the boundary
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-
-1234567891011121314151617181920212223242526272829303132333435363738Trie = lambda: collections.defaultdict(Trie)WEIGHT = Falseclass WordFilter(object):    def __init__(self, words):        """        :type words: List[str]        """        self...
+          min diff in two list, if two list is sorted we can do it in one pass instead of n*n
+123456789101112131415161718192021222324252627282930313233class WordDistance(object):    def __init__(self, words):        """        :type words: List[str]        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/26/745-Prefix-and-Suffix-Search/#more">Read More</a>
+          <a href="/2020/12/01/244-Shortest-Word-Distance-II/#more">Read More</a>
         </p>
       
     </div>
@@ -431,7 +423,7 @@ using the binary search to find the boundary
 
 
   
-    <article id="post-1096-Brace-Expansion-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Designing-Facebook’s-Newsfeed"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -439,7 +431,7 @@ using the binary search to find the boundary
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/26/1096-Brace-Expansion-II/">1096. Brace Expansion II</a>
+      <a class="article-title" href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/">Designing Facebook’s Newsfeed </a>
     </h1>
   
 
@@ -447,67 +439,8 @@ using the binary search to find the boundary
     
     <div class="article-meta">
       
-	<a href="/2020/11/26/1096-Brace-Expansion-II/" class="article-date">
-	  <time datetime="2020-11-26T16:49:55.000Z" itemprop="datePublished">2020-11-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Stack
-res: the previous list before ‘,’
-cur: the current list is still growing
-Detail
-
-
-when cur_char is ‘,’, cur list can not grow anymore, combine it with the res list &amp;&amp; clear the cur
-when cur_char is alphabet, growing the second list b...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/26/1096-Brace-Expansion-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Caching"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/26/Caching/">Caching</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/26/Caching/" class="article-date">
-	  <time datetime="2020-11-26T15:51:58.000Z" itemprop="datePublished">2020-11-26</time>
+	<a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/" class="article-date">
+	  <time datetime="2020-12-01T05:14:51.000Z" itemprop="datePublished">2020-11-30</time>
 	</a>
 
       
@@ -520,14 +453,13 @@ when cur_char is alphabet, growing the second list b...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-Caches can exist at all levels in architecture, but are often found at the level nearest to the front end where they are implemented to return data quickly without taxing downstream levels.
-
-Application server cache
-Placing a cache directly on a ...
+          Requirements and Goals of the SystemFunctional requirements:
+Newsfeed will be generated based on the posts from the people, pages, and groups that a user follows.
+A user may have many friends and follow a large number of pages/groups.
+Feeds may co...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/26/Caching/#more">Read More</a>
+          <a href="/2020/11/30/Designing-Facebook%E2%80%99s-Newsfeed/#more">Read More</a>
         </p>
       
     </div>
@@ -546,7 +478,7 @@ Placing a cache directly on a ...
 
 
   
-    <article id="post-Load-Balancing"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-711-Number-of-Distinct-Islands-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -554,7 +486,7 @@ Placing a cache directly on a ...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/26/Load-Balancing/">Load Balancing</a>
+      <a class="article-title" href="/2020/11/30/711-Number-of-Distinct-Islands-II/">711. Number of Distinct Islands II</a>
     </h1>
   
 
@@ -562,125 +494,8 @@ Placing a cache directly on a ...
     
     <div class="article-meta">
       
-	<a href="/2020/11/26/Load-Balancing/" class="article-date">
-	  <time datetime="2020-11-26T15:12:19.000Z" itemprop="datePublished">2020-11-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Adding LB
-Between the user and the web server
-Between web servers and an internal platform layer, like application servers or cache servers
-Between internal platform layer and database.
-
-
-Benefits of Load Balancing
-
-
-Users experience faster, unint...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/26/Load-Balancing/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Key-Characteristics-of-Distributed-Systems"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/25/Key-Characteristics-of-Distributed-Systems/">Key Characteristics of Distributed Systems</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/25/Key-Characteristics-of-Distributed-Systems/" class="article-date">
-	  <time datetime="2020-11-26T04:42:19.000Z" itemprop="datePublished">2020-11-25</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Scalability
-the performance of a system, although designed (or claimed) to be scalable, declines with the system size due to the management or environment cost.
-some tasks may not be distributed
-inherent atomic nature
-some flaw in the system desig...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/25/Key-Characteristics-of-Distributed-Systems/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-527-Word-Abbreviation"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/25/527-Word-Abbreviation/">527. Word Abbreviation</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/25/527-Word-Abbreviation/" class="article-date">
-	  <time datetime="2020-11-26T01:51:02.000Z" itemprop="datePublished">2020-11-25</time>
+	<a href="/2020/11/30/711-Number-of-Distinct-Islands-II/" class="article-date">
+	  <time datetime="2020-12-01T04:33:13.000Z" itemprop="datePublished">2020-11-30</time>
 	</a>
 
       
@@ -694,17 +509,12 @@ some flaw in the system desig...
       
         <p class="article-excerpt-content">
           
-group words by length of word, first char and last char
-run trie in the groups
-abbrevation it
-
-
-
-
-12345678910111213141516171819202122232425262728293031class Solution(object):    def wordsAbbreviation(self, words):        """        :type dict: Li...
+Scan the matrix, each time when 1 is found, search the nearby 1, push them inside a queue and mark them as -1.
+he queue stands for a specific shape of an island
+Push the island to the left upper corner by subtracting the original data with its mi...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/25/527-Word-Abbreviation/#more">Read More</a>
+          <a href="/2020/11/30/711-Number-of-Distinct-Islands-II/#more">Read More</a>
         </p>
       
     </div>
@@ -723,7 +533,7 @@ abbrevation it
 
 
   
-    <article id="post-552-Student-Attendance-Record-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-510-Inorder-Successor-in-BST-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -731,7 +541,7 @@ abbrevation it
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/25/552-Student-Attendance-Record-II/">552. Student Attendance Record II</a>
+      <a class="article-title" href="/2020/11/30/510-Inorder-Successor-in-BST-II/">510. Inorder Successor in BST II</a>
     </h1>
   
 
@@ -739,8 +549,60 @@ abbrevation it
     
     <div class="article-meta">
       
-	<a href="/2020/11/25/552-Student-Attendance-Record-II/" class="article-date">
-	  <time datetime="2020-11-25T23:18:25.000Z" itemprop="datePublished">2020-11-25</time>
+	<a href="/2020/11/30/510-Inorder-Successor-in-BST-II/" class="article-date">
+	  <time datetime="2020-12-01T03:41:59.000Z" itemprop="datePublished">2020-11-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425"""# Definition for a Node.class Node:    def __init__(self, val):        self.val = val        self.left = None        self.right = None        self.parent = None"""class Solution(object):    def inorderSu...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/30/510-Inorder-Successor-in-BST-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-61-Rotate-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/30/61-Rotate-List/">61. Rotate List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/30/61-Rotate-List/" class="article-date">
+	  <time datetime="2020-12-01T03:00:00.000Z" itemprop="datePublished">2020-11-30</time>
 	</a>
 
       
@@ -754,11 +616,20 @@ abbrevation it
       
         <p class="article-excerpt-content">
           
-dp[i] the number of all possible attencne without A with length iend with “P”: dp[i-1]end with “PL”: dp[i-2]end with “PLL”: dp[i-3]end with “LLL”: is not alloweddp[i] = dp[i-1]+dp[i-2]+dp[i-3]
-considert Athe number of all possible attendance (wit...
+
+
+# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def rotateRight(self, head, k):
+        """
+        :type...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/25/552-Student-Attendance-Record-II/#more">Read More</a>
+          <a href="/2020/11/30/61-Rotate-List/#more">Read More</a>
         </p>
       
     </div>
@@ -777,7 +648,7 @@ considert Athe number of all possible attendance (wit...
 
 
   
-    <article id="post-425-Word-Squares"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-186-Reverse-Words-in-a-String-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -785,7 +656,7 @@ considert Athe number of all possible attendance (wit...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/25/425-Word-Squares/">425. Word Squares </a>
+      <a class="article-title" href="/2020/11/30/186-Reverse-Words-in-a-String-II/">186. Reverse Words in a String II</a>
     </h1>
   
 
@@ -793,8 +664,8 @@ considert Athe number of all possible attendance (wit...
     
     <div class="article-meta">
       
-	<a href="/2020/11/25/425-Word-Squares/" class="article-date">
-	  <time datetime="2020-11-25T19:56:38.000Z" itemprop="datePublished">2020-11-25</time>
+	<a href="/2020/11/30/186-Reverse-Words-in-a-String-II/" class="article-date">
+	  <time datetime="2020-11-30T23:32:09.000Z" itemprop="datePublished">2020-11-30</time>
 	</a>
 
       
@@ -807,12 +678,130 @@ considert Athe number of all possible attendance (wit...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          why we use prefix to do the backtracking
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950class Solution(object):    def buildTrie(self, words):        self.trie = &#123;&#125;                for idx, wor...
+          
+reverse the  whole string
+then reverse each word
+how to do reverse
+l[left], l[right] = l[right], l[left] –&gt;  最后的char和第一个交换， 倒数第二个和第二个交换，…..12345678910111213141516171819202122class Solution(object):    def reverse(self, l, left, right):        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/25/425-Word-Squares/#more">Read More</a>
+          <a href="/2020/11/30/186-Reverse-Words-in-a-String-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-261-Graph-Valid-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/30/261-Graph-Valid-Tree/">261. Graph Valid Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/30/261-Graph-Valid-Tree/" class="article-date">
+	  <time datetime="2020-11-30T19:08:49.000Z" itemprop="datePublished">2020-11-30</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          DFS
+node == edges + 1
+从一个结点dfs, 遍历过的结点个数应该等于所有的结点
+
+1234567891011121314151617181920212223class Solution(object):    def validTree(self, n, edges):        """        :type n: int        :type edges: List[List[int]]        :rtype: bool        """    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/30/261-Graph-Valid-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1246-Palindrome-Removal"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/30/1246-Palindrome-Removal/">1246. Palindrome Removal </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/30/1246-Palindrome-Removal/" class="article-date">
+	  <time datetime="2020-11-30T16:34:10.000Z" itemprop="datePublished">2020-11-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+base case
+长度为奇数的palindrome
+长度偶数的palindrome
+每一个arr[j]都可能成为中心
+
+
+dp[i, j]
+如果i &lt;k&lt;j and arr[k] == arr[j]===&gt;这个可以像消消乐一样组成新的palindrome
+dp(i, k-1) + dp(k+1, j-1) —&gt;不用加1， 因为可以和k, k+1,…, j-1, j消去
+因为最差可以和k, k+1, j组成palindrome1234567891011121314...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/30/1246-Palindrome-Removal/#more">Read More</a>
         </p>
       
     </div>
@@ -835,7 +824,7 @@ considert Athe number of all possible attendance (wit...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/25/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="extend next" rel="next" href="/page/27/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/25/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/27/">Next &amp;raquo;</a>
   </nav>
 
 </section>

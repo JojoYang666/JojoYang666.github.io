@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-57-Insert-Interval"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-701-Insert-into-a-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/57-Insert-Interval/">57. Insert Interval</a>
+      <a class="article-title" href="/2021/01/07/701-Insert-into-a-Binary-Search-Tree/">701. Insert into a Binary Search Tree </a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/57-Insert-Interval/" class="article-date">
-	  <time datetime="2021-01-07T04:26:00.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/701-Insert-into-a-Binary-Search-Tree/" class="article-date">
+	  <time datetime="2021-01-08T02:52:13.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -295,14 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          input is sorted &amp; not overlapping intervals
-
-put all the intervals which start time is less than insert intervals in to the res
-check if the last interval in the res is overlap with the new interval
-overlap, update the end time of the last int...
+          Insert it as a leaf node
+123456789101112class Solution:    def insertIntoBST(self, root: TreeNode, val: int) -&gt; TreeNode:        if not root:            return TreeNode(val)                if val &gt; root.val:            # insert into the righ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/57-Insert-Interval/#more">Read More</a>
+          <a href="/2021/01/07/701-Insert-into-a-Binary-Search-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -321,7 +318,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-26-Remove-Duplicates-from-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-230-Kth-Smallest-Element-in-a-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -329,7 +326,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/26-Remove-Duplicates-from-Sorted-Array/">26. Remove Duplicates from Sorted Array</a>
+      <a class="article-title" href="/2021/01/07/230-Kth-Smallest-Element-in-a-BST/">230. Kth Smallest Element in a BST</a>
     </h1>
   
 
@@ -337,8 +334,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/26-Remove-Duplicates-from-Sorted-Array/" class="article-date">
-	  <time datetime="2021-01-07T04:15:29.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/230-Kth-Smallest-Element-in-a-BST/" class="article-date">
+	  <time datetime="2021-01-08T02:47:33.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -351,10 +348,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def removeDuplicates(self, A):        """        :type nums: List[int]        :rtype: int        """        if not A:            return 0                newTail = 0                for i in range(1,...
+          12345678910111213141516171819202122232425# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Soluti...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/26-Remove-Duplicates-from-Sorted-Array/#more">Read More</a>
+          <a href="/2021/01/07/230-Kth-Smallest-Element-in-a-BST/#more">Read More</a>
         </p>
       
     </div>
@@ -373,7 +370,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-415-Add-Strings"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-658-Find-K-Closest-Elements"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -381,7 +378,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/415-Add-Strings/">415. Add Strings</a>
+      <a class="article-title" href="/2021/01/07/658-Find-K-Closest-Elements/">658. Find K Closest Elements</a>
     </h1>
   
 
@@ -389,8 +386,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/415-Add-Strings/" class="article-date">
-	  <time datetime="2021-01-07T00:34:17.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/658-Find-K-Closest-Elements/" class="article-date">
+	  <time datetime="2021-01-08T02:21:09.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -403,10 +400,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526class Solution(object):    def addStrings(self, num1, num2):        """        :type num1: str        :type num2: str        :rtype: str        """        res = []        carry = 0                p1 = len...
+          1234567891011121314151617class Solution(object):    def findClosestElements(self, arr, k, x):        """        :type arr: List[int]        :type k: int        :type x: int        :rtype: List[int]        """        left, right = 0, len(arr) - k  ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/415-Add-Strings/#more">Read More</a>
+          <a href="/2021/01/07/658-Find-K-Closest-Elements/#more">Read More</a>
         </p>
       
     </div>
@@ -425,7 +422,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-617-Merge-Two-Binary-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-9-Palindrome-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -433,7 +430,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/617-Merge-Two-Binary-Trees/">617. Merge Two Binary Trees </a>
+      <a class="article-title" href="/2021/01/07/9-Palindrome-Number/">9. Palindrome Number</a>
     </h1>
   
 
@@ -441,8 +438,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/617-Merge-Two-Binary-Trees/" class="article-date">
-	  <time datetime="2021-01-06T23:42:00.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/9-Palindrome-Number/" class="article-date">
+	  <time datetime="2021-01-08T01:54:33.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -455,10 +452,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(object):   ...
+          12345678910111213141516171819202122class Solution(object):    def isPalindrome(self, x):        """        :type x: int        :rtype: bool        """        if x &lt; 0: return False                ranger = 1                while x/ranger &gt;= 1...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/617-Merge-Two-Binary-Trees/#more">Read More</a>
+          <a href="/2021/01/07/9-Palindrome-Number/#more">Read More</a>
         </p>
       
     </div>
@@ -477,7 +474,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-198-House-Robber"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-346-Moving-Average-from-Data-Stream"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -485,7 +482,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/198-House-Robber/">198. House Robber</a>
+      <a class="article-title" href="/2021/01/07/346-Moving-Average-from-Data-Stream/">346. Moving Average from Data Stream</a>
     </h1>
   
 
@@ -493,8 +490,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/198-House-Robber/" class="article-date">
-	  <time datetime="2021-01-06T23:11:39.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/346-Moving-Average-from-Data-Stream/" class="article-date">
+	  <time datetime="2021-01-08T00:33:01.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -507,10 +504,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011class Solution(object):    def rob(self, nums):        """        :type nums: List[int]        :rtype: int        """        last, now = 0, 0                for i in nums:             last, now = now, max(last + i, now)        return ...
+          1234567891011121314151617181920212223242526cclass MovingAverage(object):    def __init__(self, size):        """        Initialize your data structure here.        :type size: int        """        self.size = size        self.queue = deque()     ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/198-House-Robber/#more">Read More</a>
+          <a href="/2021/01/07/346-Moving-Average-from-Data-Stream/#more">Read More</a>
         </p>
       
     </div>
@@ -529,7 +526,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-169-Majority-Element"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-286-Walls-and-Gates"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -537,7 +534,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/169-Majority-Element/">169. Majority Element</a>
+      <a class="article-title" href="/2021/01/07/286-Walls-and-Gates/">286. Walls and Gates</a>
     </h1>
   
 
@@ -545,8 +542,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/169-Majority-Element/" class="article-date">
-	  <time datetime="2021-01-06T19:47:02.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/286-Walls-and-Gates/" class="article-date">
+	  <time datetime="2021-01-07T22:59:00.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -559,10 +556,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678class Solution(object):    def majorityElement(self, nums):        """        :type nums: List[int]        :rtype: int        """        counts = collections.Counter(nums)        return max(counts.keys(), key=counts.get)
+          123456789101112131415161718class Solution(object):    def wallsAndGates(self, rooms):        if not rooms:            return         r, c= len(rooms), len(rooms[0])        for i in xrange(r):            for j in xrange(c):                if rooms[...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/169-Majority-Element/#more">Read More</a>
+          <a href="/2021/01/07/286-Walls-and-Gates/#more">Read More</a>
         </p>
       
     </div>
@@ -581,7 +578,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-14-Longest-Common-Prefix"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-340-Longest-Substring-with-At-Most-K-Distinct-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -589,7 +586,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/14-Longest-Common-Prefix/">14. Longest Common Prefix</a>
+      <a class="article-title" href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/">340. Longest Substring with At Most K Distinct Characters</a>
     </h1>
   
 
@@ -597,8 +594,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/14-Longest-Common-Prefix/" class="article-date">
-	  <time datetime="2021-01-06T19:33:36.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/" class="article-date">
+	  <time datetime="2021-01-07T22:57:29.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -611,10 +608,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415class Solution(object):    def longestCommonPrefix(self, strs):        """        :type strs: List[str]        :rtype: str        """        if not strs: return ""                shortest = min(strs, key = len)                ...
+          1234567891011121314class Solution(object):    def lengthOfLongestSubstringKDistinct(self, s, k):        d = collections.defaultdict(int)        i, res = 0, 0        for j in range(len(s)):            d[s[j]] += 1            # while have more than ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/14-Longest-Common-Prefix/#more">Read More</a>
+          <a href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/#more">Read More</a>
         </p>
       
     </div>
@@ -633,7 +630,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-249-Group-Shifted-Strings"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-304-Range-Sum-Query-2D-Immutable"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -641,7 +638,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/249-Group-Shifted-Strings/">249. Group Shifted Strings</a>
+      <a class="article-title" href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/">304. Range Sum Query 2D - Immutable </a>
     </h1>
   
 
@@ -649,8 +646,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/249-Group-Shifted-Strings/" class="article-date">
-	  <time datetime="2021-01-06T18:59:10.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/" class="article-date">
+	  <time datetime="2021-01-07T08:01:01.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -663,11 +660,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          ( for *** ) –&gt; it is a iterator –&gt; use tuple to convert it
-12345678910111213class Solution(object):    def groupStrings(self, strings):        """        :type strings: List[str]        :rtype: List[List[str]]        """        diff = collec...
+          12345678910111213141516171819202122232425262728293031class NumMatrix(object):    def __init__(self, matrix):        """        :type matrix: List[List[int]]        """        if matrix is None or not matrix: return        n, m = len(matrix), len(m...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/249-Group-Shifted-Strings/#more">Read More</a>
+          <a href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/#more">Read More</a>
         </p>
       
     </div>
@@ -686,7 +682,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-108-Convert-Sorted-Array-to-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-155-Min-Stack"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -694,7 +690,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/108-Convert-Sorted-Array-to-Binary-Search-Tree/">108. Convert Sorted Array to Binary Search Tree </a>
+      <a class="article-title" href="/2021/01/06/155-Min-Stack/">155. Min Stack</a>
     </h1>
   
 
@@ -702,8 +698,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/108-Convert-Sorted-Array-to-Binary-Search-Tree/" class="article-date">
-	  <time datetime="2021-01-06T18:12:32.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/06/155-Min-Stack/" class="article-date">
+	  <time datetime="2021-01-07T07:37:07.000Z" itemprop="datePublished">2021-01-06</time>
 	</a>
 
       
@@ -716,10 +712,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(obj...
+          12345678910111213141516171819202122232425262728293031323334353637383940414243class MinStack(object):    def __init__(self):        """        initialize your data structure here.        """        self.stack = []    def push(self, x):        """  ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/108-Convert-Sorted-Array-to-Binary-Search-Tree/#more">Read More</a>
+          <a href="/2021/01/06/155-Min-Stack/#more">Read More</a>
         </p>
       
     </div>
@@ -738,7 +734,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-317-Shortest-Distance-from-All-Buildings"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-337-House-Robber-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -746,7 +742,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/317-Shortest-Distance-from-All-Buildings/">317. Shortest Distance from All Buildings</a>
+      <a class="article-title" href="/2021/01/06/337-House-Robber-III/">337. House Robber III</a>
     </h1>
   
 
@@ -754,8 +750,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/317-Shortest-Distance-from-All-Buildings/" class="article-date">
-	  <time datetime="2021-01-06T18:03:39.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/06/337-House-Robber-III/" class="article-date">
+	  <time datetime="2021-01-07T07:26:13.000Z" itemprop="datePublished">2021-01-06</time>
 	</a>
 
       
@@ -768,13 +764,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-basic idea is starting from 1 to count the minimum dis among all the 0
-variable we need to use:
-hit[i][j]: if grid[i][j] == 0, ===&gt; hit[i][j] how many times this zero has been hited by 1 –&gt; if hit == # of buildinds –&gt; it is a possible re...
+          1234567891011121314151617181920# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(object)...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/317-Shortest-Distance-from-All-Buildings/#more">Read More</a>
+          <a href="/2021/01/06/337-House-Robber-III/#more">Read More</a>
         </p>
       
     </div>
@@ -797,7 +790,7 @@ hit[i][j]: if grid[i][j] == 0, ===&gt; hit[i][j] how many times this zero has be
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/7/">Next &amp;raquo;</a>
   </nav>
 
 </section>
