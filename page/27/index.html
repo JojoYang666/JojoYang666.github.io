@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-265-Paint-House-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-91-Decode-Ways"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/265-Paint-House-II/">265. Paint House II </a>
+      <a class="article-title" href="/2020/12/06/91-Decode-Ways/">91. Decode Ways</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/30/265-Paint-House-II/" class="article-date">
-	  <time datetime="2020-11-30T13:59:25.000Z" itemprop="datePublished">2020-11-30</time>
+	<a href="/2020/12/06/91-Decode-Ways/" class="article-date">
+	  <time datetime="2020-12-06T23:22:26.000Z" itemprop="datePublished">2020-12-06</time>
 	</a>
 
       
@@ -295,10 +295,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          O(n⋅k^2)1234567891011121314151617181920class Solution(object):    def minCostII(self, costs):        """        :type costs: List[List[int]]        :rtype: int        """        n = len(costs)        if n == 0: return 0        k = len(costs[0])   ...
+          dp[i]: s中前i个字符组成的子串的解码方法的个数，长度比输入数组长多多1dp[0] =1if 当前字符不等于0: dp[i] = dp[i-1] otherwise dp[i] = 0if 当前字符和前一个字符能组成valid decode way –&gt; dp[i] += dp[i-2]
+to reduce the space, using a, b in coding
+1234567891011121314151617class Solution(object):    de...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/30/265-Paint-House-II/#more">Read More</a>
+          <a href="/2020/12/06/91-Decode-Ways/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +319,7 @@
 
 
   
-    <article id="post-quick-select"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-2-Add-Two-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +327,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/quick-select/">quick select</a>
+      <a class="article-title" href="/2020/12/06/2-Add-Two-Numbers/">2. Add Two Numbers</a>
     </h1>
   
 
@@ -333,12 +335,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/30/quick-select/" class="article-date">
-	  <time datetime="2020-11-30T13:40:57.000Z" itemprop="datePublished">2020-11-30</time>
+	<a href="/2020/12/06/2-Add-Two-Numbers/" class="article-date">
+	  <time datetime="2020-12-06T23:17:45.000Z" itemprop="datePublished">2020-12-06</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -347,10 +349,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930def partition(pivot_idx, left, right):            #  three step            # move pivot to end            # move more close elements to the left            # move pivot to its final place         ...
+          12345678910111213141516171819202122232425262728293031323334353637383940/** * Definition for singly-linked list. * function ListNode(val, next) &#123; *     this.val = (val===undefined ? 0 : val) *     this.next = (next===undefined ? null : next) *...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/30/quick-select/#more">Read More</a>
+          <a href="/2020/12/06/2-Add-Two-Numbers/#more">Read More</a>
         </p>
       
     </div>
@@ -369,7 +371,7 @@
 
 
   
-    <article id="post-272-Closest-Binary-Search-Tree-Value-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-200-Number-of-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -377,7 +379,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/30/272-Closest-Binary-Search-Tree-Value-II/">272. Closest Binary Search Tree Value II</a>
+      <a class="article-title" href="/2020/12/06/200-Number-of-Islands/">200. Number of Islands</a>
     </h1>
   
 
@@ -385,8 +387,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/30/272-Closest-Binary-Search-Tree-Value-II/" class="article-date">
-	  <time datetime="2020-11-30T12:57:31.000Z" itemprop="datePublished">2020-11-30</time>
+	<a href="/2020/12/06/200-Number-of-Islands/" class="article-date">
+	  <time datetime="2020-12-06T23:01:37.000Z" itemprop="datePublished">2020-12-06</time>
 	</a>
 
       
@@ -399,10 +401,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          O(nlogk)1234567891011121314151617181920212223242526# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightcl...
+          12345678910111213141516171819202122232425262728293031323334/** * @param &#123;character[][]&#125; grid * @return &#123;number&#125; */var numIslands = function(grid) &#123;    if (!grid|| !grid.length || !grid[0].length) &#123;        return 0    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/30/272-Closest-Binary-Search-Tree-Value-II/#more">Read More</a>
+          <a href="/2020/12/06/200-Number-of-Islands/#more">Read More</a>
         </p>
       
     </div>
@@ -421,7 +423,7 @@
 
 
   
-    <article id="post-685-Redundant-Connection-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-146-LRU-Cache"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -429,7 +431,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/29/685-Redundant-Connection-II/">685. Redundant Connection II </a>
+      <a class="article-title" href="/2020/12/06/146-LRU-Cache/">146. LRU Cache</a>
     </h1>
   
 
@@ -437,8 +439,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/29/685-Redundant-Connection-II/" class="article-date">
-	  <time datetime="2020-11-29T23:39:12.000Z" itemprop="datePublished">2020-11-29</time>
+	<a href="/2020/12/06/146-LRU-Cache/" class="article-date">
+	  <time datetime="2020-12-06T22:03:01.000Z" itemprop="datePublished">2020-12-06</time>
 	</a>
 
       
@@ -451,13 +453,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
+          cornor case:when get, key is not in the cahche
 
-
-123456789101112131415161718192021222324252627282930313233343536373839class DisjoinSet:    def __init__(self, n):        self.parent = list(range(n))        def find(self, x):        if self.parent[x] == x:            return x                ret...
+利用map的特性12345678910111213141516171819202122232425262728293031323334353637383940414243444546/** * @param &#123;number&#125; capacity */var LRUCache = function(capacity) &#123;    this.cache = new Map(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/29/685-Redundant-Connection-II/#more">Read More</a>
+          <a href="/2020/12/06/146-LRU-Cache/#more">Read More</a>
         </p>
       
     </div>
@@ -476,7 +477,7 @@
 
 
   
-    <article id="post-736-Parse-Lisp-Expression"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Designing-Yelp-or-Nearby-Friends"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -484,7 +485,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/28/736-Parse-Lisp-Expression/">736. Parse Lisp Expression</a>
+      <a class="article-title" href="/2020/12/05/Designing-Yelp-or-Nearby-Friends/">Designing Yelp or Nearby Friends</a>
     </h1>
   
 
@@ -492,12 +493,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/28/736-Parse-Lisp-Expression/" class="article-date">
-	  <time datetime="2020-11-29T04:59:35.000Z" itemprop="datePublished">2020-11-28</time>
+	<a href="/2020/12/05/Designing-Yelp-or-Nearby-Friends/" class="article-date">
+	  <time datetime="2020-12-05T20:10:23.000Z" itemprop="datePublished">2020-12-05</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
 
       
       
@@ -506,17 +507,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          stack: tokens &amp;&amp; dict pairdict:
-
-key: value —&gt; variable, digit
-key: value —&gt; digit: digittokens:
-
-
-add/multi: followed by two number/variable
-let followed by variable &amp; number —&gt; using the ‘ ‘ as seperation in the expression, ...
+          Requirements and Goals of the SystemFunctional Requirements
+Users should be able to add/delete/update Places.
+Given their location (longitude/latitude), users should be able to find all nearby places within a given radius.
+Users should be able to ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/28/736-Parse-Lisp-Expression/#more">Read More</a>
+          <a href="/2020/12/05/Designing-Yelp-or-Nearby-Friends/#more">Read More</a>
         </p>
       
     </div>
@@ -535,7 +532,7 @@ let followed by variable &amp; number —&gt; using the ‘ ‘ as seperation in
 
 
   
-    <article id="post-411-Minimum-Unique-Word-Abbreviation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-640-Solve-the-Equation"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -543,7 +540,7 @@ let followed by variable &amp; number —&gt; using the ‘ ‘ as seperation in
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/28/411-Minimum-Unique-Word-Abbreviation/">411. Minimum Unique Word Abbreviation</a>
+      <a class="article-title" href="/2020/12/04/640-Solve-the-Equation/">640. Solve the Equation </a>
     </h1>
   
 
@@ -551,8 +548,8 @@ let followed by variable &amp; number —&gt; using the ‘ ‘ as seperation in
     
     <div class="article-meta">
       
-	<a href="/2020/11/28/411-Minimum-Unique-Word-Abbreviation/" class="article-date">
-	  <time datetime="2020-11-29T04:35:21.000Z" itemprop="datePublished">2020-11-28</time>
+	<a href="/2020/12/04/640-Solve-the-Equation/" class="article-date">
+	  <time datetime="2020-12-04T22:20:19.000Z" itemprop="datePublished">2020-12-04</time>
 	</a>
 
       
@@ -565,15 +562,10 @@ let followed by variable &amp; number —&gt; using the ‘ ‘ as seperation in
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-generate all the abbrevation for the target
-using pq to get the smallest every time
-if it is also a valid abbrevation for word in the dict
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575...
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546class Solution(object):    def solveEquation(self, equation):        """        :type equation: str        :rtype: str        """        def helper(s):            s...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/28/411-Minimum-Unique-Word-Abbreviation/#more">Read More</a>
+          <a href="/2020/12/04/640-Solve-the-Equation/#more">Read More</a>
         </p>
       
     </div>
@@ -592,7 +584,7 @@ if it is also a valid abbrevation for word in the dict
 
 
   
-    <article id="post-850-Rectangle-Area-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-866-Prime-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -600,7 +592,7 @@ if it is also a valid abbrevation for word in the dict
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/28/850-Rectangle-Area-II/">850. Rectangle Area II </a>
+      <a class="article-title" href="/2020/12/04/866-Prime-Palindrome/">866. Prime Palindrome</a>
     </h1>
   
 
@@ -608,8 +600,8 @@ if it is also a valid abbrevation for word in the dict
     
     <div class="article-meta">
       
-	<a href="/2020/11/28/850-Rectangle-Area-II/" class="article-date">
-	  <time datetime="2020-11-28T13:59:37.000Z" itemprop="datePublished">2020-11-28</time>
+	<a href="/2020/12/04/866-Prime-Palindrome/" class="article-date">
+	  <time datetime="2020-12-04T16:18:18.000Z" itemprop="datePublished">2020-12-04</time>
 	</a>
 
       
@@ -622,10 +614,10 @@ if it is also a valid abbrevation for word in the dict
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          O(n*n)1234567891011121314151617181920212223242526272829303132class Solution(object):    def rectangleArea(self, rectangles):        """        :type rectangles: List[List[int]]        :rtype: int        """        # all x points in increasing sequ...
+          12345678910111213141516171819202122232425class Solution(object):    def primePalindrome(self, N):        """        :type N: int        :rtype: int        """        def is_prime(n):            return n &gt; 1 and all(n%d for d in xrange(2, int(n*...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/28/850-Rectangle-Area-II/#more">Read More</a>
+          <a href="/2020/12/04/866-Prime-Palindrome/#more">Read More</a>
         </p>
       
     </div>
@@ -644,7 +636,7 @@ if it is also a valid abbrevation for word in the dict
 
 
   
-    <article id="post-302-Smallest-Rectangle-Enclosing-Black-Pixels"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -652,7 +644,7 @@ if it is also a valid abbrevation for word in the dict
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/27/302-Smallest-Rectangle-Enclosing-Black-Pixels/">302. Smallest Rectangle Enclosing Black Pixels </a>
+      <a class="article-title" href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/">558. Logical OR of Two Binary Grids Represented as Quad-Trees</a>
     </h1>
   
 
@@ -660,8 +652,8 @@ if it is also a valid abbrevation for word in the dict
     
     <div class="article-meta">
       
-	<a href="/2020/11/27/302-Smallest-Rectangle-Enclosing-Black-Pixels/" class="article-date">
-	  <time datetime="2020-11-27T19:42:44.000Z" itemprop="datePublished">2020-11-27</time>
+	<a href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/" class="article-date">
+	  <time datetime="2020-12-04T15:11:12.000Z" itemprop="datePublished">2020-12-04</time>
 	</a>
 
       
@@ -674,17 +666,10 @@ if it is also a valid abbrevation for word in the dict
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-key point: there is only one connected dark digit region for problem
-there are only one black pixel region, then in a projected 1D array all the black pixels are connected
-using the binary search to find the boundary
-
-
-
-12345678910111213141516171...
+          1234567891011121314151617181920212223242526272829303132333435"""# Definition for a QuadTree node.class Node(object):    def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):        self.val = val        self.isLeaf = isLeaf ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/27/302-Smallest-Rectangle-Enclosing-Black-Pixels/#more">Read More</a>
+          <a href="/2020/12/04/558-Logical-OR-of-Two-Binary-Grids-Represented-as-Quad-Trees/#more">Read More</a>
         </p>
       
     </div>
@@ -703,7 +688,7 @@ using the binary search to find the boundary
 
 
   
-    <article id="post-1032-Stream-of-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-835-Image-Overlap"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -711,7 +696,7 @@ using the binary search to find the boundary
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/27/1032-Stream-of-Characters/">1032. Stream of Characters</a>
+      <a class="article-title" href="/2020/12/03/835-Image-Overlap/">835. Image Overlap</a>
     </h1>
   
 
@@ -719,8 +704,8 @@ using the binary search to find the boundary
     
     <div class="article-meta">
       
-	<a href="/2020/11/27/1032-Stream-of-Characters/" class="article-date">
-	  <time datetime="2020-11-27T18:55:57.000Z" itemprop="datePublished">2020-11-27</time>
+	<a href="/2020/12/03/835-Image-Overlap/" class="article-date">
+	  <time datetime="2020-12-04T06:16:00.000Z" itemprop="datePublished">2020-12-03</time>
 	</a>
 
       
@@ -733,10 +718,10 @@ using the binary search to find the boundary
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132333435class StreamChecker(object):    def __init__(self, words):        """        :type words: List[str]        """        self.trie = &#123;&#125;        self.stream = deque([])        for w...
+          1234567891011class Solution(object):    def largestOverlap(self, img1, img2):        """        :type img1: List[List[int]]        :type img2: List[List[int]]        :rtype: int        """        A = [(i, j) for i, row in enumerate(img1) for j, it...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/27/1032-Stream-of-Characters/#more">Read More</a>
+          <a href="/2020/12/03/835-Image-Overlap/#more">Read More</a>
         </p>
       
     </div>
@@ -755,7 +740,7 @@ using the binary search to find the boundary
 
 
   
-    <article id="post-745-Prefix-and-Suffix-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-497-Random-Point-in-Non-overlapping-Rectangles"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -763,7 +748,7 @@ using the binary search to find the boundary
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/26/745-Prefix-and-Suffix-Search/">745. Prefix and Suffix Search </a>
+      <a class="article-title" href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/">497. Random Point in Non-overlapping Rectangles</a>
     </h1>
   
 
@@ -771,8 +756,8 @@ using the binary search to find the boundary
     
     <div class="article-meta">
       
-	<a href="/2020/11/26/745-Prefix-and-Suffix-Search/" class="article-date">
-	  <time datetime="2020-11-26T18:36:49.000Z" itemprop="datePublished">2020-11-26</time>
+	<a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/" class="article-date">
+	  <time datetime="2020-12-04T05:24:42.000Z" itemprop="datePublished">2020-12-03</time>
 	</a>
 
       
@@ -785,13 +770,12 @@ using the binary search to find the boundary
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
+          reason for prefix sum:这样才能找到准确的idx,
 
-
-1234567891011121314151617181920212223242526272829303132333435363738Trie = lambda: collections.defaultdict(Trie)WEIGHT = Falseclass WordFilter(object):    def __init__(self, words):        """        :type words: List[str]        """        self...
+if: self.weights.append(weight/s)  —&gt; sum of self.weights == 1 but, we use random.random(), which is from 0 to 1, thus need to have prefix sum1234567891011121314151617181920212223242526272829import itertools...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/26/745-Prefix-and-Suffix-Search/#more">Read More</a>
+          <a href="/2020/12/03/497-Random-Point-in-Non-overlapping-Rectangles/#more">Read More</a>
         </p>
       
     </div>
@@ -814,7 +798,7 @@ using the binary search to find the boundary
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/26/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/28/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/26/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/28/">Next &amp;raquo;</a>
   </nav>
 
 </section>

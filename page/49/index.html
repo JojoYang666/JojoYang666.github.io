@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-373-Find-K-Pairs-with-Smallest-Sums"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1166-Design-File-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/">373. Find K Pairs with Smallest Sums</a>
+      <a class="article-title" href="/2020/10/30/1166-Design-File-System/">1166. Design File System</a>
     </h1>
   
 
@@ -281,8 +281,61 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/" class="article-date">
-	  <time datetime="2020-10-27T18:16:16.000Z" itemprop="datePublished">2020-10-27</time>
+	<a href="/2020/10/30/1166-Design-File-System/" class="article-date">
+	  <time datetime="2020-10-30T21:39:29.000Z" itemprop="datePublished">2020-10-30</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          hashmap
+1234567891011121314151617181920212223242526272829class FileSystem(object):    def __init__(self):        self.d = &#123;"": -1&#125;    def createPath(self, path, value):        """        :type path: str        :type value: int        :rt...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/30/1166-Design-File-System/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/">1296. Divide Array in Sets of K Consecutive Numbers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/" class="article-date">
+	  <time datetime="2020-10-30T21:19:01.000Z" itemprop="datePublished">2020-10-30</time>
 	</a>
 
       
@@ -298,10 +351,10 @@
           
 
 
-1234567891011121314151617181920212223class Solution(object):    def kSmallestPairs(self, nums1, nums2, k):        """        :type nums1: List[int]        :type nums2: List[int]        :type k: int        :rtype: List[List[int]]        """     ...
+1234567891011121314151617181920class Solution(object):    def isPossibleDivide(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: bool        """        counter = collections.Counter(nums)        starts =...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/#more">Read More</a>
+          <a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/#more">Read More</a>
         </p>
       
     </div>
@@ -320,7 +373,7 @@
 
 
   
-    <article id="post-1353-Maximum-Number-of-Events-That-Can-Be-Attended"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-450-Delete-Node-in-a-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -328,7 +381,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/">1353. Maximum Number of Events That Can Be Attended </a>
+      <a class="article-title" href="/2020/10/29/450-Delete-Node-in-a-BST/">450. Delete Node in a BST</a>
     </h1>
   
 
@@ -336,60 +389,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/" class="article-date">
-	  <time datetime="2020-10-27T16:10:27.000Z" itemprop="datePublished">2020-10-27</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324class Solution(object):    def maxEvents(self, events):        """        :type events: List[List[int]]        :rtype: int        """        events.sort(reverse=1)        h = []                res = d = 0    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-813-Largest-Sum-of-Averages"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/813-Largest-Sum-of-Averages/">813. Largest Sum of Averages</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/27/813-Largest-Sum-of-Averages/" class="article-date">
-	  <time datetime="2020-10-27T14:08:14.000Z" itemprop="datePublished">2020-10-27</time>
+	<a href="/2020/10/29/450-Delete-Node-in-a-BST/" class="article-date">
+	  <time datetime="2020-10-30T04:26:51.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 
       
@@ -403,17 +404,12 @@
       
         <p class="article-excerpt-content">
           
-dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
-[i, n-1]范围内的子数组分成k组，那么suppose我们已经知道了任意范围内分成k-1组的最大分数
-要求状态k，一定要先求出所有的状态k-1
-在范围[i, n-1]多分出一组，实际上就是将其分成两部分
-一部分是一组，另一部分是k-1组
-就用一个变量j，遍历范围(i, n-1)中的每一个位置
-第一部分[i, j)，由于是一组，那么直接求出平均值即可
-另一部分由于是k-1组，由于我们已经知道了所有k-1的情况，可以直...
+recursive to solve it
+不是就return current node
+是的话 就delete node and return new node12345678910111213141516171819202122232425262728293031323334# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, ri...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/27/813-Largest-Sum-of-Averages/#more">Read More</a>
+          <a href="/2020/10/29/450-Delete-Node-in-a-BST/#more">Read More</a>
         </p>
       
     </div>
@@ -432,7 +428,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
 
 
   
-    <article id="post-959-Regions-Cut-By-Slashes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1268-Search-Suggestions-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -440,7 +436,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/27/959-Regions-Cut-By-Slashes/">959. Regions Cut By Slashes</a>
+      <a class="article-title" href="/2020/10/29/1268-Search-Suggestions-System/">1268. Search Suggestions System</a>
     </h1>
   
 
@@ -448,8 +444,8 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     
     <div class="article-meta">
       
-	<a href="/2020/10/27/959-Regions-Cut-By-Slashes/" class="article-date">
-	  <time datetime="2020-10-27T13:13:30.000Z" itemprop="datePublished">2020-10-27</time>
+	<a href="/2020/10/29/1268-Search-Suggestions-System/" class="article-date">
+	  <time datetime="2020-10-30T03:57:56.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 
       
@@ -462,11 +458,11 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class Solution(object):    def regionsBySlashes(self, grid):        """        :type grid: List[str]        :rtype: int        """        N = len(grid)        ...
+          if word.startswith(prefix)])这个判断不能少
+12345678910111213141516class Solution(object):    def suggestedProducts(self, products, searchWord):        """        :type products: List[str]        :type searchWord: str        :rtype: List[List[str]]       ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/27/959-Regions-Cut-By-Slashes/#more">Read More</a>
+          <a href="/2020/10/29/1268-Search-Suggestions-System/#more">Read More</a>
         </p>
       
     </div>
@@ -485,7 +481,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
 
 
   
-    <article id="post-116-Populating-Next-Right-Pointers-in-Each-Node"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-713-Subarray-Product-Less-Than-K"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -493,7 +489,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/">116. Populating Next Right Pointers in Each Node</a>
+      <a class="article-title" href="/2020/10/29/713-Subarray-Product-Less-Than-K/">713. Subarray Product Less Than K</a>
     </h1>
   
 
@@ -501,8 +497,8 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     
     <div class="article-meta">
       
-	<a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/" class="article-date">
-	  <time datetime="2020-10-27T04:57:21.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/29/713-Subarray-Product-Less-Than-K/" class="article-date">
+	  <time datetime="2020-10-30T03:15:16.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 
       
@@ -515,10 +511,10 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          BFS1234567891011121314151617181920212223242526272829303132333435"""# Definition for a Node.class Node(object):    def __init__(self, val=0, left=None, right=None, next=None):        self.val = val        self.left = left        self.right = right ...
+          12345678910111213141516171819class Solution(object):    def numSubarrayProductLessThanK(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: int        """        if k &lt;= 1: return 0        left, res, produ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/116-Populating-Next-Right-Pointers-in-Each-Node/#more">Read More</a>
+          <a href="/2020/10/29/713-Subarray-Product-Less-Than-K/#more">Read More</a>
         </p>
       
     </div>
@@ -537,7 +533,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
 
 
   
-    <article id="post-1254-Number-of-Closed-Islands"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-333-Largest-BST-Subtree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -545,7 +541,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1254-Number-of-Closed-Islands/">1254. Number of Closed Islands</a>
+      <a class="article-title" href="/2020/10/29/333-Largest-BST-Subtree/">333. Largest BST Subtree</a>
     </h1>
   
 
@@ -553,8 +549,8 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     
     <div class="article-meta">
       
-	<a href="/2020/10/26/1254-Number-of-Closed-Islands/" class="article-date">
-	  <time datetime="2020-10-27T04:46:56.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/29/333-Largest-BST-Subtree/" class="article-date">
+	  <time datetime="2020-10-30T02:36:58.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 
       
@@ -567,12 +563,11 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          本质上就是找到连续的island
-然后排除从边界开始的island
-123456789101112131415161718192021222324252627282930class Solution(object):    def closedIsland(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        if not grid or not gri...
+          当前节点是BST的一个重要条件是： 当前节点的值一定要比左节点的最大节点的值要大， 比右子树的最小节点要小
+1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/1254-Number-of-Closed-Islands/#more">Read More</a>
+          <a href="/2020/10/29/333-Largest-BST-Subtree/#more">Read More</a>
         </p>
       
     </div>
@@ -591,7 +586,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
 
 
   
-    <article id="post-1155-Number-of-Dice-Rolls-With-Target-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-898-Bitwise-ORs-of-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -599,7 +594,7 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/">1155. Number of Dice Rolls With Target Sum</a>
+      <a class="article-title" href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/">898. Bitwise ORs of Subarrays</a>
     </h1>
   
 
@@ -607,169 +602,8 @@ dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
     
     <div class="article-meta">
       
-	<a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/" class="article-date">
-	  <time datetime="2020-10-27T04:20:22.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          DFS + MemoThe general relation is:dp(d, f, target) = dp(d-1, f, target-1) + dp(d-1, f, target-2) + … + dp(d-1, f, target-f)
-The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing else.So dp(0, f, t) = 0 iff t != 0, and dp(0...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/1155-Number-of-Dice-Rolls-With-Target-Sum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-229-Majority-Element-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/229-Majority-Element-II/">229. Majority Element II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/229-Majority-Element-II/" class="article-date">
-	  <time datetime="2020-10-27T03:39:28.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031class Solution(object):    def majorityElement(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        if not nums: return []                count1, count...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/229-Majority-Element-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Boyer-Moore算法"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/">Boyer-Moore算法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/" class="article-date">
-	  <time datetime="2020-10-27T03:30:23.000Z" itemprop="datePublished">2020-10-26</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          基本思想：比较直观的解释：在数组中找到两个不相同的元素并删除它们，不断重复此过程，直到数组中元素都相同，那么剩下的元素就是主要元素。
-先随意确定一个候选元素，count是候选元素的计数，当遇到一个跟候选元素不同的元素时，两者数量上抵消一个，count减1。一旦count变成0，就重新找一个候选元素。当遇到一个与候选元素不同的元素时，就要抵消。对于候选元素和当前元素，可能存在两种情况：
-
-1）两者中有一个正好是主要元素；
-2）两者都不是主要元素。对于情况1)，抵消过后，主要元素还是主要元素；...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/26/Boyer-Moore%E7%AE%97%E6%B3%95/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1277-Count-Square-Submatrices-with-All-Ones"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/">1277. Count Square Submatrices with All Ones</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/" class="article-date">
-	  <time datetime="2020-10-27T03:05:36.000Z" itemprop="datePublished">2020-10-26</time>
+	<a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/" class="article-date">
+	  <time datetime="2020-10-30T01:02:39.000Z" itemprop="datePublished">2020-10-29</time>
 	</a>
 
       
@@ -785,10 +619,167 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
           
 
 
-123456789101112class Solution(object):    def countSquares(self, matrix):        """        :type matrix: List[List[int]]        :rtype: int        """        for i in range(1, len(matrix)):            for j in range(1, len(matrix[0])):        ...
+12345678910111213class Solution(object):    def subarrayBitwiseORs(self, A):        """        :type A: List[int]        :rtype: int        """        ans = set()        cur = set()                for num in A:            cur = &#123;num | x fo...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/26/1277-Count-Square-Submatrices-with-All-Ones/#more">Read More</a>
+          <a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-95-Unique-Binary-Search-Trees-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/95-Unique-Binary-Search-Trees-II/">95. Unique Binary Search Trees II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/95-Unique-Binary-Search-Trees-II/" class="article-date">
+	  <time datetime="2020-10-29T22:44:12.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Recursive tp find allsubproblem
+123456789101112131415161718192021222324252627282930# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = le...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/95-Unique-Binary-Search-Trees-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-47-Permutations-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/47-Permutations-II/">47. Permutations II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/47-Permutations-II/" class="article-date">
+	  <time datetime="2020-10-29T21:58:12.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122class Solution(object):    def permuteUnique(self, nums):        """        :type nums: List[int]        :rtype: List[List[int]]        """        res = []                def backtrack(comb, counter):            ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/47-Permutations-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1019-Next-Greater-Node-In-Linked-List"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/29/1019-Next-Greater-Node-In-Linked-List/">1019. Next Greater Node In Linked List</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/29/1019-Next-Greater-Node-In-Linked-List/" class="article-date">
+	  <time datetime="2020-10-29T21:50:22.000Z" itemprop="datePublished">2020-10-29</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122# Definition for singly-linked list.# class ListNode(object):#     def __init__(self, val=0, next=None):#         self.val = val#         self.next = nextclass Solution(object):    def nextLargerNodes(self, head)...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/29/1019-Next-Greater-Node-In-Linked-List/#more">Read More</a>
         </p>
       
     </div>
@@ -811,7 +802,7 @@ The base case occurs when d = 0. We can make target=0 with 0 dice, but nothing e
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/48/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="page-number current">49</span><a class="page-number" href="/page/50/">50</a><a class="page-number" href="/page/51/">51</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/50/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/48/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="page-number" href="/page/48/">48</a><span class="page-number current">49</span><a class="page-number" href="/page/50/">50</a><a class="page-number" href="/page/51/">51</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/50/">Next &amp;raquo;</a>
   </nav>
 
 </section>

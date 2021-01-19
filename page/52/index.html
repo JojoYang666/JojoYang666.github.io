@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-421-Maximum-XOR-of-Two-Numbers-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1011-Capacity-To-Ship-Packages-Within-D-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/">421. Maximum XOR of Two Numbers in an Array</a>
+      <a class="article-title" href="/2020/10/27/1011-Capacity-To-Ship-Packages-Within-D-Days/">1011. Capacity To Ship Packages Within D Days</a>
     </h1>
   
 
@@ -281,8 +281,61 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/" class="article-date">
-	  <time datetime="2020-10-23T18:42:44.000Z" itemprop="datePublished">2020-10-23</time>
+	<a href="/2020/10/27/1011-Capacity-To-Ship-Packages-Within-D-Days/" class="article-date">
+	  <time datetime="2020-10-28T04:24:02.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Binary Search
+1234567891011121314151617181920212223242526class Solution(object):    def shipWithinDays(self, weights, D):        """        :type weights: List[int]        :type D: int        :rtype: int        """        left, right = max(weights...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/1011-Capacity-To-Ship-Packages-Within-D-Days/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-542-01-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/542-01-Matrix/">542. 01 Matrix</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/542-01-Matrix/" class="article-date">
+	  <time datetime="2020-10-27T22:49:32.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -296,11 +349,11 @@
       
         <p class="article-excerpt-content">
           
-这个题目的思路的大前提是: a ^ b = c  &lt;===&gt;  a ^ c = b
-讲解.123456789101112131415class Solution(object):    def findMaximumXOR(self, nums):        """        :type nums: List[int]        :rtype: int        """        max_xor = 0                for i in ra...
+当前的值可能是上方， 左方（从左上角遍历）， 下方， 右方（从右下角）里面选取最小的值+1  —&gt; 所以要遍历两次
+range(len(matrix)-1, -1, -1) 最后一个step -1不能少， 要不然不会遍历， 因为default是112345678910111213141516171819202122232425262728class Solution(object):    def updateMatrix(self, matrix):        """    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/23/421-Maximum-XOR-of-Two-Numbers-in-an-Array/#more">Read More</a>
+          <a href="/2020/10/27/542-01-Matrix/#more">Read More</a>
         </p>
       
     </div>
@@ -319,7 +372,7 @@
 
 
   
-    <article id="post-Three-way-Partitioning"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1381-Design-a-Stack-With-Increment-Operation"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -327,7 +380,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/22/Three-way-Partitioning/">Three-way Partitioning</a>
+      <a class="article-title" href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/">1381. Design a Stack With Increment Operation</a>
     </h1>
   
 
@@ -335,64 +388,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/22/Three-way-Partitioning/" class="article-date">
-	  <time datetime="2020-10-23T03:51:22.000Z" itemprop="datePublished">2020-10-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          i, j, k –&gt; i &lt;= j &lt;= k
-
-Entries from 0 up to (but not including) i are values less than mid –&gt; [0, i) &lt; mid
-Entries from i up to (but not including) j are values equal to mid –&gt; 【i, j) == mid
-Entries from j up to (but not inclusi...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/22/Three-way-Partitioning/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-215-Kth-Largest-Element-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/">215. Kth Largest Element in an Array</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/" class="article-date">
-	  <time datetime="2020-10-22T20:00:03.000Z" itemprop="datePublished">2020-10-22</time>
+	<a href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/" class="article-date">
+	  <time datetime="2020-10-27T22:36:32.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -405,10 +402,11 @@ Entries from j up to (but not inclusi...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          quick select12345678910111213141516171819202122232425262728293031323334353637383940414243/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number&#125; */var findKthLargest = function(nums, k) &#123;    return qu...
+          Lazy IncrementLazy is a wayinc[i] means for all elements stack[0] ~ stack[i],we should plus inc[i] when popped from the stack.Then inc[i-1]+=inc[i],so that we can accumulate the increment inc[i]for the bottom elements and the following pops.
+12345...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/22/215-Kth-Largest-Element-in-an-Array/#more">Read More</a>
+          <a href="/2020/10/27/1381-Design-a-Stack-With-Increment-Operation/#more">Read More</a>
         </p>
       
     </div>
@@ -427,7 +425,7 @@ Entries from j up to (but not inclusi...
 
 
   
-    <article id="post-324-Wiggle-Sort-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1329-Sort-the-Matrix-Diagonally"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -435,7 +433,7 @@ Entries from j up to (but not inclusi...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/21/324-Wiggle-Sort-II/">324. Wiggle Sort II</a>
+      <a class="article-title" href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/">1329. Sort the Matrix Diagonally</a>
     </h1>
   
 
@@ -443,8 +441,8 @@ Entries from j up to (but not inclusi...
     
     <div class="article-meta">
       
-	<a href="/2020/10/21/324-Wiggle-Sort-II/" class="article-date">
-	  <time datetime="2020-10-22T05:52:05.000Z" itemprop="datePublished">2020-10-21</time>
+	<a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/" class="article-date">
+	  <time datetime="2020-10-27T20:41:55.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -457,11 +455,10 @@ Entries from j up to (but not inclusi...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          time: nlogn space: n
-1234567891011121314151617181920class Solution(object):    def wiggleSort(self, nums):        """        :type nums: List[int]        :rtype: None Do not return anything, modify nums in-place instead.        """        tmp = so...
+          123456789101112131415161718192021class Solution(object):    def diagonalSort(self, mat):        """        :type mat: List[List[int]]        :rtype: List[List[int]]        """        n, m = len(mat), len(mat[0])        res = []        dic = collec...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/21/324-Wiggle-Sort-II/#more">Read More</a>
+          <a href="/2020/10/27/1329-Sort-the-Matrix-Diagonally/#more">Read More</a>
         </p>
       
     </div>
@@ -480,7 +477,7 @@ Entries from j up to (but not inclusi...
 
 
   
-    <article id="post-435-Non-overlapping-Intervals"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-General"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -488,7 +485,7 @@ Entries from j up to (but not inclusi...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/21/435-Non-overlapping-Intervals/">435. Non-overlapping Intervals</a>
+      <a class="article-title" href="/2020/10/27/General/">General</a>
     </h1>
   
 
@@ -496,113 +493,8 @@ Entries from j up to (but not inclusi...
     
     <div class="article-meta">
       
-	<a href="/2020/10/21/435-Non-overlapping-Intervals/" class="article-date">
-	  <time datetime="2020-10-22T05:20:03.000Z" itemprop="datePublished">2020-10-21</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Using Greedy Approach based on end pointssort based on end time not start time
-1234567891011121314class Solution(object):    def eraseOverlapIntervals(self, intervals):        """        :type intervals: List[List[int]]        :rtype: int        "...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/21/435-Non-overlapping-Intervals/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1472-Design-Browser-History"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/21/1472-Design-Browser-History/">1472. Design Browser History</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/21/1472-Design-Browser-History/" class="article-date">
-	  <time datetime="2020-10-22T03:00:29.000Z" itemprop="datePublished">2020-10-21</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354class BrowserHistory(object):    def __init__(self, homepage):        """        :type homepage: str        """        self.arr = [homepage]        ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/21/1472-Design-Browser-History/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-GCD"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/20/GCD/">GCD</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/20/GCD/" class="article-date">
-	  <time datetime="2020-10-20T19:27:06.000Z" itemprop="datePublished">2020-10-20</time>
+	<a href="/2020/10/27/General/" class="article-date">
+	  <time datetime="2020-10-27T20:34:11.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -616,12 +508,14 @@ Entries from j up to (but not inclusi...
       
         <p class="article-excerpt-content">
           
-12def gcd(self, A, B):        return A if B == 0 else self.gcd(B, A%B)
+同意对角线上的元素特点： i-j相同
+对于str转化int/str表示数字的问题： corner case 考虑preceding is zero或者说这个数字本来就是0的情况（many 0 in preceding）
+Index as a hash key
 
 
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/20/GCD/#more">Read More</a>
+          <a href="/2020/10/27/General/#more">Read More</a>
         </p>
       
     </div>
@@ -640,7 +534,7 @@ Entries from j up to (but not inclusi...
 
 
   
-    <article id="post-1223-Dice-Roll-Simulation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-366-Find-Leaves-of-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -648,7 +542,7 @@ Entries from j up to (but not inclusi...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/20/1223-Dice-Roll-Simulation/">1223. Dice Roll Simulation</a>
+      <a class="article-title" href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/">366. Find Leaves of Binary Tree </a>
     </h1>
   
 
@@ -656,8 +550,112 @@ Entries from j up to (but not inclusi...
     
     <div class="article-meta">
       
-	<a href="/2020/10/20/1223-Dice-Roll-Simulation/" class="article-date">
-	  <time datetime="2020-10-20T18:58:10.000Z" itemprop="datePublished">2020-10-20</time>
+	<a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/" class="article-date">
+	  <time datetime="2020-10-27T20:11:04.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass So...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/366-Find-Leaves-of-Binary-Tree/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-797-All-Paths-From-Source-to-Target"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/797-All-Paths-From-Source-to-Target/">797. All Paths From Source to Target </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/797-All-Paths-From-Source-to-Target/" class="article-date">
+	  <time datetime="2020-10-27T19:48:30.000Z" itemprop="datePublished">2020-10-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223class Solution(object):    def allPathsSourceTarget(self, graph):        """        :type graph: List[List[int]]        :rtype: List[List[int]]        """        target = len(graph)-1        res = []           ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/27/797-All-Paths-From-Source-to-Target/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-373-Find-K-Pairs-with-Smallest-Sums"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/">373. Find K Pairs with Smallest Sums</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/" class="article-date">
+	  <time datetime="2020-10-27T18:16:16.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -673,10 +671,10 @@ Entries from j up to (but not inclusi...
           
 
 
-1234567891011121314151617class Solution(object):    def dieSimulator(self, n, rollMax):        """        :type n: int        :type rollMax: List[int]        :rtype: int        """        dp = [[1 if i == 1 else 0 for j in range(6)] for i in ra...
+1234567891011121314151617181920212223class Solution(object):    def kSmallestPairs(self, nums1, nums2, k):        """        :type nums1: List[int]        :type nums2: List[int]        :type k: int        :rtype: List[List[int]]        """     ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/20/1223-Dice-Roll-Simulation/#more">Read More</a>
+          <a href="/2020/10/27/373-Find-K-Pairs-with-Smallest-Sums/#more">Read More</a>
         </p>
       
     </div>
@@ -695,7 +693,7 @@ Entries from j up to (but not inclusi...
 
 
   
-    <article id="post-256-Paint-House"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1353-Maximum-Number-of-Events-That-Can-Be-Attended"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -703,7 +701,7 @@ Entries from j up to (but not inclusi...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/20/256-Paint-House/">256. Paint House</a>
+      <a class="article-title" href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/">1353. Maximum Number of Events That Can Be Attended </a>
     </h1>
   
 
@@ -711,8 +709,8 @@ Entries from j up to (but not inclusi...
     
     <div class="article-meta">
       
-	<a href="/2020/10/20/256-Paint-House/" class="article-date">
-	  <time datetime="2020-10-20T18:26:46.000Z" itemprop="datePublished">2020-10-20</time>
+	<a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/" class="article-date">
+	  <time datetime="2020-10-27T16:10:27.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -725,10 +723,10 @@ Entries from j up to (but not inclusi...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213class Solution(object):    def minCost(self, costs):        """        :type costs: List[List[int]]        :rtype: int        """        if not costs: return 0        for i in range(1, len(costs)):            costs[i][0] += min(co...
+          123456789101112131415161718192021222324class Solution(object):    def maxEvents(self, events):        """        :type events: List[List[int]]        :rtype: int        """        events.sort(reverse=1)        h = []                res = d = 0    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/20/256-Paint-House/#more">Read More</a>
+          <a href="/2020/10/27/1353-Maximum-Number-of-Events-That-Can-Be-Attended/#more">Read More</a>
         </p>
       
     </div>
@@ -747,7 +745,7 @@ Entries from j up to (but not inclusi...
 
 
   
-    <article id="post-787-Cheapest-Flights-Within-K-Stops"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-813-Largest-Sum-of-Averages"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -755,7 +753,7 @@ Entries from j up to (but not inclusi...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/20/787-Cheapest-Flights-Within-K-Stops/">787. Cheapest Flights Within K Stops</a>
+      <a class="article-title" href="/2020/10/27/813-Largest-Sum-of-Averages/">813. Largest Sum of Averages</a>
     </h1>
   
 
@@ -763,8 +761,8 @@ Entries from j up to (but not inclusi...
     
     <div class="article-meta">
       
-	<a href="/2020/10/20/787-Cheapest-Flights-Within-K-Stops/" class="article-date">
-	  <time datetime="2020-10-20T17:21:48.000Z" itemprop="datePublished">2020-10-20</time>
+	<a href="/2020/10/27/813-Largest-Sum-of-Averages/" class="article-date">
+	  <time datetime="2020-10-27T14:08:14.000Z" itemprop="datePublished">2020-10-27</time>
 	</a>
 
       
@@ -777,11 +775,18 @@ Entries from j up to (but not inclusi...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          运用Dijkstra算法， 同时对step和距离进行收缩
-123456789101112131415161718192021222324252627282930313233343536373839404142class Solution(object):    def findCheapestPrice(self, n, flights, src, dst, K):        """        :type n: int        :type flights: List[List...
+          
+dp[i][k]表示范围是[i, n-1]的子数组分成k组的最大得分
+[i, n-1]范围内的子数组分成k组，那么suppose我们已经知道了任意范围内分成k-1组的最大分数
+要求状态k，一定要先求出所有的状态k-1
+在范围[i, n-1]多分出一组，实际上就是将其分成两部分
+一部分是一组，另一部分是k-1组
+就用一个变量j，遍历范围(i, n-1)中的每一个位置
+第一部分[i, j)，由于是一组，那么直接求出平均值即可
+另一部分由于是k-1组，由于我们已经知道了所有k-1的情况，可以直...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/20/787-Cheapest-Flights-Within-K-Stops/#more">Read More</a>
+          <a href="/2020/10/27/813-Largest-Sum-of-Averages/#more">Read More</a>
         </p>
       
     </div>
@@ -804,7 +809,7 @@ Entries from j up to (but not inclusi...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/51/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/50/">50</a><a class="page-number" href="/page/51/">51</a><span class="page-number current">52</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/53/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/51/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/50/">50</a><a class="page-number" href="/page/51/">51</a><span class="page-number current">52</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/53/">Next &amp;raquo;</a>
   </nav>
 
 </section>

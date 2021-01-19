@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-855-Exam-Room"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-127-Word-Ladder"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/03/855-Exam-Room/">855. Exam Room</a>
+      <a class="article-title" href="/2020/12/10/127-Word-Ladder/">127. Word Ladder</a>
     </h1>
   
 
@@ -281,66 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/03/855-Exam-Room/" class="article-date">
-	  <time datetime="2020-12-03T17:44:56.000Z" itemprop="datePublished">2020-12-03</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          problem:
-
-让学生坐在离最近的student 最远的位置
-
-Solution
-
-self.students: 哪些位置被学生坐了1234567891011121314151617181920212223242526272829303132333435363738394041class ExamRoom(object):    def __init__(self, N):        """        :type N: int        """        self.N ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/03/855-Exam-Room/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1145-Binary-Tree-Coloring-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/02/1145-Binary-Tree-Coloring-Game/">1145. Binary Tree Coloring Game</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/02/1145-Binary-Tree-Coloring-Game/" class="article-date">
-	  <time datetime="2020-12-03T05:41:45.000Z" itemprop="datePublished">2020-12-02</time>
+	<a href="/2020/12/10/127-Word-Ladder/" class="article-date">
+	  <time datetime="2020-12-10T19:56:18.000Z" itemprop="datePublished">2020-12-10</time>
 	</a>
 
       
@@ -354,18 +296,10 @@ self.students: 哪些位置被学生坐了12345678910111213141516171819202122232
       
         <p class="article-excerpt-content">
           
-这个题目的意思是： 在第一个&amp;第二个player 选择开始位置后，开始轮流染色， 每次只能选择染色当前节点的neighbor（parent, left, right), 问是否有一个位置能够保证第二个player赢得比赛
-第一个player选择node x后， 第二个player能阻断player 1尽可能多染色的位置是：
-parent of x
-left child of x
-right child of x
-
-
-then
-计算count number of nodes in ...
+find matched word in the list, must remove it to avoid cycle12345678910111213141516171819202122232425262728293031323334353637/** * @param &#123;string&#125; beginWord * @param &#123;string&#125; endWord * @param &#123;string[]&#125; wordList * @r...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/02/1145-Binary-Tree-Coloring-Game/#more">Read More</a>
+          <a href="/2020/12/10/127-Word-Ladder/#more">Read More</a>
         </p>
       
     </div>
@@ -384,7 +318,7 @@ then
 
 
   
-    <article id="post-475-Heaters"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-76-Minimum-Window-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -392,7 +326,7 @@ then
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/02/475-Heaters/">475. Heaters</a>
+      <a class="article-title" href="/2020/12/09/76-Minimum-Window-Substring/">76. Minimum Window Substring</a>
     </h1>
   
 
@@ -400,8 +334,61 @@ then
     
     <div class="article-meta">
       
-	<a href="/2020/12/02/475-Heaters/" class="article-date">
-	  <time datetime="2020-12-03T05:17:29.000Z" itemprop="datePublished">2020-12-02</time>
+	<a href="/2020/12/09/76-Minimum-Window-Substring/" class="article-date">
+	  <time datetime="2020-12-10T04:42:23.000Z" itemprop="datePublished">2020-12-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          先找到合适的candidate， 再慢慢收缩， 排除不合适的candidate，update res
+123456789101112131415161718192021222324252627282930313233343536class Solution(object):    def minWindow(self, s, t):        """        :type s: str        :type t: str        :rtype: str        ""...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/09/76-Minimum-Window-Substring/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-10-Regular-Expression-Matching"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/09/10-Regular-Expression-Matching/">10. Regular Expression Matching</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/09/10-Regular-Expression-Matching/" class="article-date">
+	  <time datetime="2020-12-10T04:31:30.000Z" itemprop="datePublished">2020-12-09</time>
 	</a>
 
       
@@ -415,12 +402,23 @@ then
       
         <p class="article-excerpt-content">
           
-using greedy –&gt; sort
-add two fake heaters, one at the begining of it, one at the end of the heaters
-place the house in two heaters123456789101112131415161718class Solution(object):    def findRadius(self, houses, heaters):        """        :t...
+如果当前的字符是*有两种情况
+p中的当前字符match前面的一个字符至少一次，–&gt; s[i-1] === p[j-2] || p[j-2] === ‘.’) &amp;&amp; dp[i-1][j]
+p中的当前字符不match任何字符 —&gt; dp[i][j-2]
+
+
+else
+前面的字符要match 同时当前的字符要match
+
+
+
+
+
+
+1234567891011121314151617181920212223242526/** * @param &#123;string...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/02/475-Heaters/#more">Read More</a>
+          <a href="/2020/12/09/10-Regular-Expression-Matching/#more">Read More</a>
         </p>
       
     </div>
@@ -439,7 +437,7 @@ place the house in two heaters123456789101112131415161718class Solution(object):
 
 
   
-    <article id="post-776-Split-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-273-Integer-to-English-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -447,7 +445,7 @@ place the house in two heaters123456789101112131415161718class Solution(object):
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/02/776-Split-BST/">776. Split BST</a>
+      <a class="article-title" href="/2020/12/09/273-Integer-to-English-Words/">273. Integer to English Words</a>
     </h1>
   
 
@@ -455,8 +453,8 @@ place the house in two heaters123456789101112131415161718class Solution(object):
     
     <div class="article-meta">
       
-	<a href="/2020/12/02/776-Split-BST/" class="article-date">
-	  <time datetime="2020-12-03T04:58:56.000Z" itemprop="datePublished">2020-12-02</time>
+	<a href="/2020/12/09/273-Integer-to-English-Words/" class="article-date">
+	  <time datetime="2020-12-10T03:21:00.000Z" itemprop="datePublished">2020-12-09</time>
 	</a>
 
       
@@ -469,10 +467,11 @@ place the house in two heaters123456789101112131415161718class Solution(object):
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution...
+          thousand, million, billion之间的difference is 1000, thus covert to hundredcornor case 1: 1000 –&gt; remove the ‘ ‘ at the end of stringcornor case 2: 0
+12345678910111213141516171819202122232425262728293031323334/** * @param &#123;number&#125; num * @...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/02/776-Split-BST/#more">Read More</a>
+          <a href="/2020/12/09/273-Integer-to-English-Words/#more">Read More</a>
         </p>
       
     </div>
@@ -491,7 +490,7 @@ place the house in two heaters123456789101112131415161718class Solution(object):
 
 
   
-    <article id="post-591-Tag-Validator"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-380-Insert-Delete-GetRandom-O-1"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -499,7 +498,7 @@ place the house in two heaters123456789101112131415161718class Solution(object):
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/02/591-Tag-Validator/">591. Tag Validator</a>
+      <a class="article-title" href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/">380. Insert Delete GetRandom O(1)</a>
     </h1>
   
 
@@ -507,8 +506,8 @@ place the house in two heaters123456789101112131415161718class Solution(object):
     
     <div class="article-meta">
       
-	<a href="/2020/12/02/591-Tag-Validator/" class="article-date">
-	  <time datetime="2020-12-02T22:17:26.000Z" itemprop="datePublished">2020-12-02</time>
+	<a href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/" class="article-date">
+	  <time datetime="2020-12-09T23:45:16.000Z" itemprop="datePublished">2020-12-09</time>
 	</a>
 
       
@@ -521,13 +520,11 @@ place the house in two heaters123456789101112131415161718class Solution(object):
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          using state machine
-
-state = [plain, open, close, cdata]
-state-restriction:{open: [“only upper case”]close: [“only upper case”]cdata: NO restrictionplain: [‘if idx &gt; 0, then stack must be non-empty’] # reason is all plain text must be wrapped b...
+          map + list + replace with last element
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960/** * Initialize your data structure here. */var RandomizedSet = function() &#123;    this.map = ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/02/591-Tag-Validator/#more">Read More</a>
+          <a href="/2020/12/09/380-Insert-Delete-GetRandom-O-1/#more">Read More</a>
         </p>
       
     </div>
@@ -546,7 +543,7 @@ state-restriction:{open: [“only upper case”]close: [“only upper case”]cd
 
 
   
-    <article id="post-1000-Minimum-Cost-to-Merge-Stones"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-139-Word-Break"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -554,7 +551,7 @@ state-restriction:{open: [“only upper case”]close: [“only upper case”]cd
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/">1000. Minimum Cost to Merge Stones</a>
+      <a class="article-title" href="/2020/12/09/139-Word-Break/">139. Word Break</a>
     </h1>
   
 
@@ -562,8 +559,8 @@ state-restriction:{open: [“only upper case”]close: [“only upper case”]cd
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/" class="article-date">
-	  <time datetime="2020-12-02T05:28:51.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/09/139-Word-Break/" class="article-date">
+	  <time datetime="2020-12-09T20:56:58.000Z" itemprop="datePublished">2020-12-09</time>
 	</a>
 
       
@@ -576,13 +573,10 @@ state-restriction:{open: [“only upper case”]close: [“only upper case”]cd
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          3D dpdp[i][j][m]: cost needed to merge stones[i]~stones[j] into m pilesinitial: dp[i][i][1] = 0 dp[i][i][m]=infinity
-dp[i][j][1] = dp[i][j][k]  + sum of cost from stome[i] to stone[j]dp[i][j][m]: min(dp[i][mid][1]+dp[mid+1][j][m-1])
-
-Why mid jump ...
+          123456789101112131415161718192021/** * @param &#123;string&#125; s * @param &#123;string[]&#125; wordDict * @return &#123;boolean&#125; */var wordBreak = function(s, wordDict) &#123;    let wordSet = new Set(wordDict);    let dp = new Array(s.leng...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/#more">Read More</a>
+          <a href="/2020/12/09/139-Word-Break/#more">Read More</a>
         </p>
       
     </div>
@@ -601,7 +595,7 @@ Why mid jump ...
 
 
   
-    <article id="post-post794-Valid-Tic-Tac-Toe-State"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1249-Minimum-Remove-to-Make-Valid-Parentheses"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -609,7 +603,7 @@ Why mid jump ...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/">post794. Valid Tic-Tac-Toe State</a>
+      <a class="article-title" href="/2020/12/09/1249-Minimum-Remove-to-Make-Valid-Parentheses/">1249. Minimum Remove to Make Valid Parentheses</a>
     </h1>
   
 
@@ -617,8 +611,8 @@ Why mid jump ...
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/" class="article-date">
-	  <time datetime="2020-12-02T03:59:16.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/09/1249-Minimum-Remove-to-Make-Valid-Parentheses/" class="article-date">
+	  <time datetime="2020-12-09T20:37:11.000Z" itemprop="datePublished">2020-12-09</time>
 	</a>
 
       
@@ -631,14 +625,10 @@ Why mid jump ...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Ad-hoc —&gt; 排除所有不可能/找到必要条件
-
-diff between count of x and o is 1
-if x win, count(x) = count(o)+1
-if o win, count(x) == count(o)凡事不满足1, 2,3的都是false 其余均为true1234567891011121314151617181920212223class Solution(object):    def validTicTacToe(self, boar...
+          12345678910111213141516171819202122232425/** * @param &#123;string&#125; s * @return &#123;string&#125; */var minRemoveToMakeValid = function(s) &#123;    let stack = [];    s = [...s]    for(let i = 0; i &lt; s.length; i++) &#123;        if (s[i]...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/#more">Read More</a>
+          <a href="/2020/12/09/1249-Minimum-Remove-to-Make-Valid-Parentheses/#more">Read More</a>
         </p>
       
     </div>
@@ -657,7 +647,7 @@ if o win, count(x) == count(o)凡事不满足1, 2,3的都是false 其余均为tr
 
 
   
-    <article id="post-Morris-Tranversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-17-Letter-Combinations-of-a-Phone-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -665,7 +655,7 @@ if o win, count(x) == count(o)凡事不满足1, 2,3的都是false 其余均为tr
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/Morris-Tranversal/">Morris Tranversal</a>
+      <a class="article-title" href="/2020/12/09/17-Letter-Combinations-of-a-Phone-Number/">17. Letter Combinations of a Phone Number</a>
     </h1>
   
 
@@ -673,69 +663,8 @@ if o win, count(x) == count(o)凡事不满足1, 2,3的都是false 其余均为tr
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/Morris-Tranversal/" class="article-date">
-	  <time datetime="2020-12-02T02:38:09.000Z" itemprop="datePublished">2020-12-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Morris遍历的实现原则记作当前节点为cur
-
-如果cur无左孩子， cur向右移动(cur=cur.right)
-如果cur有左孩子，找到cur左子树上最右的节点, 记为most_right
-if most_right.right==null, most_right.right=cur, cur=cur.left
-if most_right.right == cur, most_right.right =null, cur = cur.right
-
-
-
-—&gt;实质： 对于没有左子树...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/01/Morris-Tranversal/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-99-Recover-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/99-Recover-Binary-Search-Tree/">99. Recover Binary Search Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/01/99-Recover-Binary-Search-Tree/" class="article-date">
-	  <time datetime="2020-12-01T23:57:47.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/09/17-Letter-Combinations-of-a-Phone-Number/" class="article-date">
+	  <time datetime="2020-12-09T20:05:51.000Z" itemprop="datePublished">2020-12-09</time>
 	</a>
 
       
@@ -748,10 +677,10 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          O(n)12345678910111213141516171819202122232425262728# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightcl...
+          123456789101112131415161718192021222324252627/** * @param &#123;string&#125; digits * @return &#123;string[]&#125; */var letterCombinations = function(digits) &#123;    if (!digits) &#123;        return []    &#125;    const map = ["", "", "abc", ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/01/99-Recover-Binary-Search-Tree/#more">Read More</a>
+          <a href="/2020/12/09/17-Letter-Combinations-of-a-Phone-Number/#more">Read More</a>
         </p>
       
     </div>
@@ -770,7 +699,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
 
 
   
-    <article id="post-675-Cut-Off-Trees-for-Golf-Event"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-54-Spiral-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -778,7 +707,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/">675. Cut Off Trees for Golf Event</a>
+      <a class="article-title" href="/2020/12/08/54-Spiral-Matrix/">54. Spiral Matrix</a>
     </h1>
   
 
@@ -786,8 +715,8 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     
     <div class="article-meta">
       
-	<a href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/" class="article-date">
-	  <time datetime="2020-12-01T20:39:05.000Z" itemprop="datePublished">2020-12-01</time>
+	<a href="/2020/12/08/54-Spiral-Matrix/" class="article-date">
+	  <time datetime="2020-12-09T06:20:45.000Z" itemprop="datePublished">2020-12-08</time>
 	</a>
 
       
@@ -800,10 +729,62 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930class Solution(object):    def cutOffTree(self, forest):        """        :type forest: List[List[int]]        :rtype: int        """        def bfs(forest, sr, sc, tr, tc):            R, C = len...
+          12345678910111213141516171819202122232425262728293031/** * @param &#123;number[][]&#125; matrix * @return &#123;number[]&#125; */var spiralOrder = function(matrix) &#123;    if (!matrix || !matrix.length) return []    let res = [], r1 = 0, r2 = ma...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/#more">Read More</a>
+          <a href="/2020/12/08/54-Spiral-Matrix/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-560-Subarray-Sum-Equals-K"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/08/560-Subarray-Sum-Equals-K/">560. Subarray Sum Equals K</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/08/560-Subarray-Sum-Equals-K/" class="article-date">
+	  <time datetime="2020-12-09T05:55:13.000Z" itemprop="datePublished">2020-12-08</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; k * @return &#123;number&#125; */var subarraySum = function(nums, k) &#123;    const map = new Map([[0, 1]])    let sum = 0, total = 0    for (let num of nums)...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/08/560-Subarray-Sum-Equals-K/#more">Read More</a>
         </p>
       
     </div>
@@ -826,7 +807,7 @@ if most_right.right == cur, most_right.right =null, cur = cur.right
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/24/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/26/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/24/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/26/">Next &amp;raquo;</a>
   </nav>
 
 </section>

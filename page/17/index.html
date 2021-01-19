@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-98-Validate-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-332-Reconstruct-Itinerary"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/98-Validate-Binary-Search-Tree/">98. Validate Binary Search Tree</a>
+      <a class="article-title" href="/2020/12/28/332-Reconstruct-Itinerary/">332. Reconstruct Itinerary</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/20/98-Validate-Binary-Search-Tree/" class="article-date">
-	  <time datetime="2020-12-20T21:35:13.000Z" itemprop="datePublished">2020-12-20</time>
+	<a href="/2020/12/28/332-Reconstruct-Itinerary/" class="article-date">
+	  <time datetime="2020-12-28T22:39:41.000Z" itemprop="datePublished">2020-12-28</time>
 	</a>
 
       
@@ -295,11 +295,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          recursive + upper bound &amp; lower bound
-123456789101112131415161718192021/** * Definition for a binary tree node. * function TreeNode(val, left, right) &#123; *     this.val = (val===undefined ? 0 : val) *     this.left = (left===undefined ? nul...
+          
+
+
+12345678910111213141516171819202122232425class Solution(object):    def findItinerary(self, tickets):        """        :type tickets: List[List[str]]        :rtype: List[str]        """                def DFS(origin):            destList = fli...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/20/98-Validate-Binary-Search-Tree/#more">Read More</a>
+          <a href="/2020/12/28/332-Reconstruct-Itinerary/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +320,7 @@
 
 
   
-    <article id="post-AJAX"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-44-Wildcard-Matching"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +328,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/AJAX/">AJAX</a>
+      <a class="article-title" href="/2020/12/28/44-Wildcard-Matching/">44. Wildcard Matching</a>
     </h1>
   
 
@@ -334,8 +336,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/20/AJAX/" class="article-date">
-	  <time datetime="2020-12-20T15:07:15.000Z" itemprop="datePublished">2020-12-20</time>
+	<a href="/2020/12/28/44-Wildcard-Matching/" class="article-date">
+	  <time datetime="2020-12-28T20:47:35.000Z" itemprop="datePublished">2020-12-28</time>
 	</a>
 
       
@@ -348,14 +350,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Long polling
-
-
-WebSocketstheir URLs starts with ‘ws’ or ‘wss’ allow bi-directional communication between clients and servers
-Server-sent-eventsmessages are delivered in one direction: from the server to the client.like social media news feeds, sto...
+          dp: cornor case: s is empty &amp; p is *, base case
+123456789101112131415161718192021222324252627282930/** * @param &#123;string&#125; s * @param &#123;string&#125; p * @return &#123;boolean&#125; */var isMatch = function(s, p) &#123;//     法二：dp/...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/20/AJAX/#more">Read More</a>
+          <a href="/2020/12/28/44-Wildcard-Matching/#more">Read More</a>
         </p>
       
     </div>
@@ -374,7 +373,7 @@ Server-sent-eventsmessages are delivered in one direction: from the server to th
 
 
   
-    <article id="post-Exercise-Looking-at-Real-HTTP-Response-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Optimize-JavaScript-Animations"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -382,7 +381,7 @@ Server-sent-eventsmessages are delivered in one direction: from the server to th
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/">Exercise: Looking at Real HTTP Response Messages</a>
+      <a class="article-title" href="/2020/12/28/Optimize-JavaScript-Animations/">Optimize JavaScript Animations</a>
     </h1>
   
 
@@ -390,8 +389,341 @@ Server-sent-eventsmessages are delivered in one direction: from the server to th
     
     <div class="article-meta">
       
-	<a href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/" class="article-date">
-	  <time datetime="2020-12-20T15:06:19.000Z" itemprop="datePublished">2020-12-20</time>
+	<a href="/2020/12/28/Optimize-JavaScript-Animations/" class="article-date">
+	  <time datetime="2020-12-28T20:32:55.000Z" itemprop="datePublished">2020-12-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Use requestAnimationFrame() for visual changes
+benefits
+
+
+Less CPU consumption
+Animations in inactive tabs stop
+Saves battery
+
+123456789/** * If run as a requestAnimationFrame callback, this * will be run at the start of the frame. */function upda...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/28/Optimize-JavaScript-Animations/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Analyzing-Render-Performance-with-Developer-Tools"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/28/Analyzing-Render-Performance-with-Developer-Tools/">Analyzing Render Performance with Developer Tools</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/28/Analyzing-Render-Performance-with-Developer-Tools/" class="article-date">
+	  <time datetime="2020-12-28T20:15:42.000Z" itemprop="datePublished">2020-12-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          using dev tools to record
+FPS / CPU / NETFrames per secondFPS chartssee a red bar above FPS —&gt; framerate dropped so low –&gt; probably harming the user experience
+CPU
+The colors in the CPU chart correspond to the colors in the Summary tab, at t...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/28/Analyzing-Render-Performance-with-Developer-Tools/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Rendering-Performance"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/28/Rendering-Performance/">Rendering Performance</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/28/Rendering-Performance/" class="article-date">
+	  <time datetime="2020-12-28T19:37:28.000Z" itemprop="datePublished">2020-12-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          JS &gt; Style &gt; Layout &gt; Paint &gt; Compositechange layout –&gt; Any affected areas will need to be repainted, and the final painted elements will need to be composited back together. –&gt; to avoid expensive browser reflows, it is best not ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/28/Rendering-Performance/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Parsing-Page-Rendering"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/28/Parsing-Page-Rendering/">Parsing &amp; Page Rendering </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/28/Parsing-Page-Rendering/" class="article-date">
+	  <time datetime="2020-12-28T08:12:17.000Z" itemprop="datePublished">2020-12-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          60fps and device refresh rates
+devices: refresh their screens sixty times a second –&gt; 60 times/second
+for any animation or transition running  –&gt; need to match the refresh rate
+each of those frames has a budget of just over 16ms (1 second / ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/28/Parsing-Page-Rendering/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Prefetching-Preloading-Resources"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/28/Prefetching-Preloading-Resources/">Prefetching &amp; Preloading Resources</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/28/Prefetching-Preloading-Resources/" class="article-date">
+	  <time datetime="2020-12-28T08:02:23.000Z" itemprop="datePublished">2020-12-28</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Asset / link prefetching
+Assets that may eventually be needed can be preloaded using the HTML  tag
+the prefetch directive as follows.&lt;link rel=&quot;prefetch&quot; href=&quot;/udata/1kMwYObLWGB/blue_logo.png&quot;/&gt;
+
+DNS prefetching + dns-pr...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/28/Prefetching-Preloading-Resources/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Service-Workers"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/27/Service-Workers/">Service Workers</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/27/Service-Workers/" class="article-date">
+	  <time datetime="2020-12-28T07:56:50.000Z" itemprop="datePublished">2020-12-27</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          What is a web worker?
+JavaScript files that run independently of the website off of the main thread of the app
+heavy non-interactive calculation or anything else that can run in parallel to the site can be offloaded to a web worker.
+created using ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/27/Service-Workers/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Progressive-Rendering"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/27/Progressive-Rendering/">Progressive Rendering </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/27/Progressive-Rendering/" class="article-date">
+	  <time datetime="2020-12-28T07:44:09.000Z" itemprop="datePublished">2020-12-27</time>
 	</a>
 
       
@@ -405,11 +737,16 @@ Server-sent-eventsmessages are delivered in one direction: from the server to th
       
         <p class="article-excerpt-content">
           
-curl is the name of the program that tells the terminal that this is a curl command.
-The –head flag, or -I in short, tells cURL to send an HTTP request with the head method. In other words, instead of fetching the requested resource, just the res...
+content can be prioritized is by prioritizing what’s visible. 
+One popular method to do this for images is called ‘lazy loading.’ 
+
+
+
+
+
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/20/Exercise-Looking-at-Real-HTTP-Response-Messages/#more">Read More</a>
+          <a href="/2020/12/27/Progressive-Rendering/#more">Read More</a>
         </p>
       
     </div>
@@ -428,7 +765,7 @@ The –head flag, or -I in short, tells cURL to send an HTTP request with the he
 
 
   
-    <article id="post-HTTP-Response-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Client-side-Rendering-vs-Server-side-Rendering"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -436,7 +773,7 @@ The –head flag, or -I in short, tells cURL to send an HTTP request with the he
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/HTTP-Response-Messages/">HTTP: Response Messages</a>
+      <a class="article-title" href="/2020/12/27/Client-side-Rendering-vs-Server-side-Rendering/">Client-side Rendering vs. Server-side Rendering </a>
     </h1>
   
 
@@ -444,8 +781,8 @@ The –head flag, or -I in short, tells cURL to send an HTTP request with the he
     
     <div class="article-meta">
       
-	<a href="/2020/12/20/HTTP-Response-Messages/" class="article-date">
-	  <time datetime="2020-12-20T15:05:45.000Z" itemprop="datePublished">2020-12-20</time>
+	<a href="/2020/12/27/Client-side-Rendering-vs-Server-side-Rendering/" class="article-date">
+	  <time datetime="2020-12-28T07:28:58.000Z" itemprop="datePublished">2020-12-27</time>
 	</a>
 
       
@@ -458,354 +795,15 @@ The –head flag, or -I in short, tells cURL to send an HTTP request with the he
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Overall
-exampleHTTP/1.1 200 OKConnection: closeDate: Tue, 18 Aug 2015 15: 44 : 04 GMTServer: Apache/2.2.3 (CentOS)Last-Modified: Tue, 18 Aug 2015 15:11:03 GMTContent-Length: 6821Content-Type: text/html
+          Client-side rendering
+will have the server send a mostly empty HTML file to begin with
 
-[The object that was requested]
+have links to CSS in the . 
 
-3 parts
-sta...
+It will also have links to JavaScript in the  just before the closing  tag. ---> The  will otherwise be empty. -->  to stop JavaSc...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/20/HTTP-Response-Messages/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-HTTP-Request-Messages"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/HTTP-Request-Messages/">HTTP: Request Messages</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/HTTP-Request-Messages/" class="article-date">
-	  <time datetime="2020-12-20T15:05:24.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          HTTP request messages
-Example
-
-GET /path/to/file/index.html HTTP/1.1Host: www.educative.ioConnection: closeUser-agent: Mozilla/5.0Accept-language: frAccept: text/html
-
-Note
-
-
-HTTP messages are in plain ASCII text.
-each line of the message ends wit...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/HTTP-Request-Messages/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-HTTP-is-a-Request-Response-Protocol"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/">HTTP is a Request-Response Protocol</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/" class="article-date">
-	  <time datetime="2020-12-20T15:04:59.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          HTTP
-stateless protocol
-
-TCP
-before an HTTP request can be sent, the host first needs to establish a ‘TCP connection’ with the server
-handshake
-at least three back and forth messages between the client and the server
-
-
-Any further messages can be ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/HTTP-is-a-Request-Response-Protocol/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-The-Anatomy-of-a-URL"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/20/The-Anatomy-of-a-URL/">The Anatomy of a URL</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/20/The-Anatomy-of-a-URL/" class="article-date">
-	  <time datetime="2020-12-20T15:04:27.000Z" itemprop="datePublished">2020-12-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          URLs = protocol + hostname + location + arguments
-
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/20/The-Anatomy-of-a-URL/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Lowest-Common-Ancestor-of-a-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/19/Lowest-Common-Ancestor-of-a-Binary-Tree/">Lowest Common Ancestor of a Binary Tree</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/19/Lowest-Common-Ancestor-of-a-Binary-Tree/" class="article-date">
-	  <time datetime="2020-12-19T20:33:44.000Z" itemprop="datePublished">2020-12-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Ancestor1234567891011121314151617181920212223242526272829303132333435363738394041424344454647/** * Definition for a binary tree node. * function TreeNode(val) &#123; *     this.val = val; *     this.left = this.right = null; * &#125; *//** * @para...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/19/Lowest-Common-Ancestor-of-a-Binary-Tree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/19/105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/">105. Construct Binary Tree from Preorder and Inorder Traversal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/19/105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/" class="article-date">
-	  <time datetime="2020-12-19T19:18:04.000Z" itemprop="datePublished">2020-12-19</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          recursive create it
-null –&gt; when left == right
-always remeber to increase preorder index
-1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, ri...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/19/105-Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-621-Task-Scheduler"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/18/621-Task-Scheduler/">621. Task Scheduler</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/12/18/621-Task-Scheduler/" class="article-date">
-	  <time datetime="2020-12-19T06:03:36.000Z" itemprop="datePublished">2020-12-18</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Greedykey point: severl items with same max frequency
-
-
-
-1234567891011121314151617181920class Solution(object):    def leastInterval(self, tasks, n):        """        :type tasks: List[str]        :type n: int        :rtype: int        """       ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/12/18/621-Task-Scheduler/#more">Read More</a>
+          <a href="/2020/12/27/Client-side-Rendering-vs-Server-side-Rendering/#more">Read More</a>
         </p>
       
     </div>
@@ -828,7 +826,7 @@ always remeber to increase preorder index
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/16/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/18/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/16/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/18/">Next &amp;raquo;</a>
   </nav>
 
 </section>

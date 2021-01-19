@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-Python"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-833-Find-And-Replace-in-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/17/Python/">Common Python Methods</a>
+      <a class="article-title" href="/2020/09/15/833-Find-And-Replace-in-String/">833. Find And Replace in String</a>
     </h1>
   
 
@@ -281,64 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/08/17/Python/" class="article-date">
-	  <time datetime="2020-08-18T02:09:04.000Z" itemprop="datePublished">2020-08-17</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/python/">python</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Base Data Type
-heapq
-
-heapq.heapify(x): transform list x into a heap, in-place, in linear time.
-heapq.heappop(heap): pop and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised. To acc...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/08/17/Python/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-97-Interleaving-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/12/97-Interleaving-String/">97. Interleaving String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/08/12/97-Interleaving-String/" class="article-date">
-	  <time datetime="2020-08-13T05:06:10.000Z" itemprop="datePublished">2020-08-12</time>
+	<a href="/2020/09/15/833-Find-And-Replace-in-String/" class="article-date">
+	  <time datetime="2020-09-16T03:21:10.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -351,12 +295,11 @@ heapq.heappop(heap): pop and return the smallest item from the heap, maintaining
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-只要是遇到字符串的子序列或是匹配问题， 直接上动态规划
-Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object):    def isInterleave(self, s1, s2, s3):        """        :type s1: str        :type s2: str        :type s3: str        :rtype: ...
+          
+reverse sort: 因为一旦replace， 会影响后面的结果所以要reverse sorted  123456789101112131415class Solution(object):    def findReplaceString(self, S, indexes, sources, targets):        """        :type S: str        :type indexes: List[int]        :type sources: ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/12/97-Interleaving-String/#more">Read More</a>
+          <a href="/2020/09/15/833-Find-And-Replace-in-String/#more">Read More</a>
         </p>
       
     </div>
@@ -375,7 +318,7 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
 
 
   
-    <article id="post-391-Perfect-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-731-My-Calendar-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -383,7 +326,7 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/11/391-Perfect-Rectangle/">391. Perfect Rectangle</a>
+      <a class="article-title" href="/2020/09/15/731-My-Calendar-II/">731. My Calendar II</a>
     </h1>
   
 
@@ -391,8 +334,8 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
     
     <div class="article-meta">
       
-	<a href="/2020/08/11/391-Perfect-Rectangle/" class="article-date">
-	  <time datetime="2020-08-11T18:12:17.000Z" itemprop="datePublished">2020-08-11</time>
+	<a href="/2020/09/15/731-My-Calendar-II/" class="article-date">
+	  <time datetime="2020-09-16T02:57:02.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -405,26 +348,12 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-
-
-
-
-所有矩形的4个顶点只会有蓝， 绿， 红三种情况
-
-蓝表示该顶点周围没有其他矩形
-绿点表示两个矩形并排相邻
-红点表示四个矩形相邻
-
-
-在一个完美矩形中， 蓝色的点只能有四个
-
-矩形的四个顶点： 左下， 左上， 右上， 右下的顺序来给顶点标号为1， 2， 4， 8 —》 考虑二进制表示
-
-当一个点是某一个矩形的左下顶点时，这个点就不能是其他矩形的左下顶点了, 这个条件对于这四种顶点都要成立，那么对于每一个点，如果它是某个矩形的四个顶点之一. 我们记录下来，如果在别...
+          
+filtered by overlaps list
+add overlap list contents12345678910111213141516171819202122232425262728class MyCalendarTwo(object):    def __init__(self):        self.overlaps = []        self.calender = []    def book(self, start, end):        """   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/11/391-Perfect-Rectangle/#more">Read More</a>
+          <a href="/2020/09/15/731-My-Calendar-II/#more">Read More</a>
         </p>
       
     </div>
@@ -443,7 +372,7 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
 
 
   
-    <article id="post-Binary-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-274-H-Index"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -451,7 +380,7 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/10/Binary-Search/">Binary Search</a>
+      <a class="article-title" href="/2020/09/15/274-H-Index/">274. H-Index</a>
     </h1>
   
 
@@ -459,13 +388,11 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
     
     <div class="article-meta">
       
-	<a href="/2020/08/10/Binary-Search/" class="article-date">
-	  <time datetime="2020-08-11T04:26:32.000Z" itemprop="datePublished">2020-08-10</time>
+	<a href="/2020/09/15/274-H-Index/" class="article-date">
+	  <time datetime="2020-09-15T23:02:41.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
       
       
 
@@ -473,11 +400,10 @@ Code –&gt; O(m*n)123456789101112131415161718192021222324class Solution(object)
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          需要找和目标值完全相等的数
-code 1234567891011const find = (nums, target) =&gt; &#123;    let left = 0, right = nums.length    while (left &lt; right) &#123;        let mid = left + (right - left)&gt;&gt;1        if (nums[mid] === target) return mid;        els...
+          12345678910111213/** * @param &#123;number[]&#125; citations * @return &#123;number&#125; */var hIndex = function(citations) &#123;    citations.sort((a, b) =&gt; b - a)        for (let i = 0; i &lt; citations.length; i++) &#123;        if (citati...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/10/Binary-Search/#more">Read More</a>
+          <a href="/2020/09/15/274-H-Index/#more">Read More</a>
         </p>
       
     </div>
@@ -496,7 +422,7 @@ code 1234567891011const find = (nums, target) =&gt; &#123;    let left = 0, righ
 
 
   
-    <article id="post-1095-Find-in-Mountain-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-837-New-21-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -504,7 +430,7 @@ code 1234567891011const find = (nums, target) =&gt; &#123;    let left = 0, righ
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/10/1095-Find-in-Mountain-Array/">1095. Find in Mountain Array</a>
+      <a class="article-title" href="/2020/09/15/837-New-21-Game/">837. New 21 Game</a>
     </h1>
   
 
@@ -512,8 +438,8 @@ code 1234567891011const find = (nums, target) =&gt; &#123;    let left = 0, righ
     
     <div class="article-meta">
       
-	<a href="/2020/08/10/1095-Find-in-Mountain-Array/" class="article-date">
-	  <time datetime="2020-08-11T03:28:18.000Z" itemprop="datePublished">2020-08-10</time>
+	<a href="/2020/09/15/837-New-21-Game/" class="article-date">
+	  <time datetime="2020-09-15T20:54:36.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -526,12 +452,12 @@ code 1234567891011const find = (nums, target) =&gt; &#123;    let left = 0, righ
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          SolutionBinary Search 的判定条件， 不一定还可以和mid附近的值比较
+          Thinking: 
 
-Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455# """# This is MountainArray's API interface.# You should not implement it, or speculate about ...
+12345678910111213141516171819class Solution(object):    def new21Game(self, N, K, W):        """        :type N: int        :type K: int        :type W: int        :rtype: float        """        dp = [0.0] * (N + W + 1)               ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/10/1095-Find-in-Mountain-Array/#more">Read More</a>
+          <a href="/2020/09/15/837-New-21-Game/#more">Read More</a>
         </p>
       
     </div>
@@ -550,7 +476,7 @@ Code1234567891011121314151617181920212223242526272829303132333435363738394041424
 
 
   
-    <article id="post-681-Next-Closest-Time"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-911-Online-Election"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -558,7 +484,7 @@ Code1234567891011121314151617181920212223242526272829303132333435363738394041424
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/09/681-Next-Closest-Time/">681. Next Closest Time</a>
+      <a class="article-title" href="/2020/09/15/911-Online-Election/">911. Online Election</a>
     </h1>
   
 
@@ -566,8 +492,8 @@ Code1234567891011121314151617181920212223242526272829303132333435363738394041424
     
     <div class="article-meta">
       
-	<a href="/2020/08/09/681-Next-Closest-Time/" class="article-date">
-	  <time datetime="2020-08-10T05:05:15.000Z" itemprop="datePublished">2020-08-09</time>
+	<a href="/2020/09/15/911-Online-Election/" class="article-date">
+	  <time datetime="2020-09-15T14:40:02.000Z" itemprop="datePublished">2020-09-15</time>
 	</a>
 
       
@@ -580,12 +506,11 @@ Code1234567891011121314151617181920212223242526272829303132333435363738394041424
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-时间模拟， 以当下的0为时间起点， 递增模拟
-Code1234567891011121314class Solution(object):    def nextClosestTime(self, time):        """        :type time: str        :rtype: str        """        cur = 60 * int(time[:2]) + int(time[3:])        allowed = &...
+          Counter + Binary Search
+1234567891011121314151617181920212223242526272829303132class TopVotedCandidate(object):    def __init__(self, persons, times):        """        :type persons: List[int]        :type times: List[int]        """        self....
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/09/681-Next-Closest-Time/#more">Read More</a>
+          <a href="/2020/09/15/911-Online-Election/#more">Read More</a>
         </p>
       
     </div>
@@ -604,7 +529,7 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
 
 
   
-    <article id="post-284-Peeking-Iterator"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-259-3Sum-Smaller"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -612,7 +537,7 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/08/284-Peeking-Iterator/">284. Peeking Iterator</a>
+      <a class="article-title" href="/2020/09/14/259-3Sum-Smaller/">259. 3Sum Smaller</a>
     </h1>
   
 
@@ -620,8 +545,8 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
     
     <div class="article-meta">
       
-	<a href="/2020/08/08/284-Peeking-Iterator/" class="article-date">
-	  <time datetime="2020-08-09T00:05:40.000Z" itemprop="datePublished">2020-08-08</time>
+	<a href="/2020/09/14/259-3Sum-Smaller/" class="article-date">
+	  <time datetime="2020-09-15T03:11:54.000Z" itemprop="datePublished">2020-09-14</time>
 	</a>
 
       
@@ -634,10 +559,10 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960# Below is the interface for Iterator, which is already defined for you.## class Iterator(object):#     def __init__(self, nums):#      ...
+          12345678910111213141516171819202122232425262728293031/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number&#125; */var threeSumSmaller = function(nums, target) &#123;    nums.sort((a, b) =&gt; a - b);    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/08/284-Peeking-Iterator/#more">Read More</a>
+          <a href="/2020/09/14/259-3Sum-Smaller/#more">Read More</a>
         </p>
       
     </div>
@@ -656,7 +581,7 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
 
 
   
-    <article id="post-403-Frog-Jump"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-846-Hand-of-Straights"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -664,7 +589,7 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/08/403-Frog-Jump/">403. Frog Jump</a>
+      <a class="article-title" href="/2020/09/14/846-Hand-of-Straights/">846. Hand of Straights</a>
     </h1>
   
 
@@ -672,8 +597,8 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
     
     <div class="article-meta">
       
-	<a href="/2020/08/08/403-Frog-Jump/" class="article-date">
-	  <time datetime="2020-08-08T21:15:00.000Z" itemprop="datePublished">2020-08-08</time>
+	<a href="/2020/09/14/846-Hand-of-Straights/" class="article-date">
+	  <time datetime="2020-09-14T17:08:24.000Z" itemprop="datePublished">2020-09-14</time>
 	</a>
 
       
@@ -686,12 +611,11 @@ Code1234567891011121314class Solution(object):    def nextClosestTime(self, time
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution
-dp[i] 记录跳到stone i, possible steps
-code12345678910111213141516171819202122/** * @param &#123;number[]&#125; stones * @return &#123;boolean&#125; */var canCross = function(stones) &#123;    const dp = [[0]]        for (let i = 1; i &lt; sto...
+          Greedy
+1234567891011121314151617181920class Solution(object):    def isNStraightHand(self, hand, W):        """        :type hand: List[int]        :type W: int        :rtype: bool        """        count = collections.Counter(hand)        while c...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/08/403-Frog-Jump/#more">Read More</a>
+          <a href="/2020/09/14/846-Hand-of-Straights/#more">Read More</a>
         </p>
       
     </div>
@@ -710,7 +634,7 @@ code12345678910111213141516171819202122/** * @param &#123;number[]&#125; stones 
 
 
   
-    <article id="post-1007-Minimum-Domino-Rotations-For-Equal-Row"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1146-Snapshot-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -718,7 +642,7 @@ code12345678910111213141516171819202122/** * @param &#123;number[]&#125; stones 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/04/1007-Minimum-Domino-Rotations-For-Equal-Row/">1007. Minimum Domino Rotations For Equal Row `</a>
+      <a class="article-title" href="/2020/09/13/1146-Snapshot-Array/">1146. Snapshot Array</a>
     </h1>
   
 
@@ -726,8 +650,8 @@ code12345678910111213141516171819202122/** * @param &#123;number[]&#125; stones 
     
     <div class="article-meta">
       
-	<a href="/2020/08/04/1007-Minimum-Domino-Rotations-For-Equal-Row/" class="article-date">
-	  <time datetime="2020-08-04T18:29:23.000Z" itemprop="datePublished">2020-08-04</time>
+	<a href="/2020/09/13/1146-Snapshot-Array/" class="article-date">
+	  <time datetime="2020-09-13T21:35:43.000Z" itemprop="datePublished">2020-09-13</time>
 	</a>
 
       
@@ -740,15 +664,10 @@ code12345678910111213141516171819202122/** * @param &#123;number[]&#125; stones 
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution
-If we take only A[0], the answer wil be wrong for the remaining possible items?
-In the end, the whole A/B row should be equal to A[0]/B[0], so we could arbitrarily choose A[0]/B[0] as the final target number
-
-
-Code123456789101112131415161...
+          1234567891011121314151617class SnapshotArray(object):    def __init__(self, n):        self.A = [[[0, 0]] for _ in xrange(n)]        self.snap_id = 0    def set(self, index, val):        self.A[index].append([self.snap_id, val])    def snap(self):...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/04/1007-Minimum-Domino-Rotations-For-Equal-Row/#more">Read More</a>
+          <a href="/2020/09/13/1146-Snapshot-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -767,7 +686,7 @@ Code123456789101112131415161...
 
 
   
-    <article id="post-418-Sentence-Screen-Fitting"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-221-Maximal-Square"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -775,7 +694,7 @@ Code123456789101112131415161...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/08/03/418-Sentence-Screen-Fitting/">418. Sentence Screen Fitting</a>
+      <a class="article-title" href="/2020/09/11/221-Maximal-Square/">221. Maximal Square</a>
     </h1>
   
 
@@ -783,8 +702,8 @@ Code123456789101112131415161...
     
     <div class="article-meta">
       
-	<a href="/2020/08/03/418-Sentence-Screen-Fitting/" class="article-date">
-	  <time datetime="2020-08-03T17:52:17.000Z" itemprop="datePublished">2020-08-03</time>
+	<a href="/2020/09/11/221-Maximal-Square/" class="article-date">
+	  <time datetime="2020-09-12T00:33:54.000Z" itemprop="datePublished">2020-09-11</time>
 	</a>
 
       
@@ -797,13 +716,65 @@ Code123456789101112131415161...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1
-Thinking
-start is the counter for how many valid characters from _sentence have been put to our screen
-_sentence[start%length] === &#39; &#39; is the situation that we do not need an extra space for current row. THe current row could be...
+          Solution 1这种方法的机理就是就是把数组中每一个点都当成正方形的左顶点来向右下方扫描，来寻找最大正方形。具体的扫描方法是，确定了左顶点后，再往下扫的时候，正方形的竖边长度就确定了，只需要找到横边即可，这时候我们使用直方图的原理，从其累加值能反映出上面的值是否全为1
+12345678910111213141516171819202122232425262728293031323334/** * @param &#123;character[][]&#125; matrix * @re...
         </p>
         <p class="article-more-link">
-          <a href="/2020/08/03/418-Sentence-Screen-Fitting/#more">Read More</a>
+          <a href="/2020/09/11/221-Maximal-Square/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-279-Perfect-Squares"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/09/11/279-Perfect-Squares/">279. Perfect Squares</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/09/11/279-Perfect-Squares/" class="article-date">
+	  <time datetime="2020-09-11T21:54:05.000Z" itemprop="datePublished">2020-09-11</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          for loop i should start from 0 not 1
+Solution 1dp
+123456789101112131415/** * @param &#123;number&#125; n * @return &#123;number&#125; */var numSquares = function(n) &#123;    const dp = new Array(n+1).fill(Number.MAX_VALUE)    dp[0] = 0    for (le...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/09/11/279-Perfect-Squares/#more">Read More</a>
         </p>
       
     </div>
@@ -826,7 +797,7 @@ _sentence[start%length] === &#39; &#39; is the situation that we do not need an 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/69/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="page-number current">70</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/71/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/69/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="page-number" href="/page/69/">69</a><span class="page-number current">70</span><a class="page-number" href="/page/71/">71</a><a class="page-number" href="/page/72/">72</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/71/">Next &amp;raquo;</a>
   </nav>
 
 </section>

@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-853-Car-Fleet"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1348-Tweet-Counts-Per-Frequency"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/853-Car-Fleet/">853. Car Fleet</a>
+      <a class="article-title" href="/2020/11/03/1348-Tweet-Counts-Per-Frequency/">1348. Tweet Counts Per Frequency</a>
     </h1>
   
 
@@ -281,8 +281,60 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/31/853-Car-Fleet/" class="article-date">
-	  <time datetime="2020-10-31T17:41:33.000Z" itemprop="datePublished">2020-10-31</time>
+	<a href="/2020/11/03/1348-Tweet-Counts-Per-Frequency/" class="article-date">
+	  <time datetime="2020-11-04T04:31:05.000Z" itemprop="datePublished">2020-11-03</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          123456789101112131415161718192021222324252627282930313233343536class TweetCounts(object):    def __init__(self):        self.a = defaultdict(list)            def recordTweet(self, tweetName, time):        """        :type tweetName: str        :ty...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/03/1348-Tweet-Counts-Per-Frequency/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-754-Reach-a-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/03/754-Reach-a-Number/">754. Reach a Number</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/03/754-Reach-a-Number/" class="article-date">
+	  <time datetime="2020-11-04T03:46:12.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -296,12 +348,10 @@
       
         <p class="article-excerpt-content">
           
-
-
-12345678910111213141516171819202122class Solution(object):    def carFleet(self, target, position, speed):        """        :type target: int        :type position: List[int]        :type speed: List[int]        :rtype: int        """        c...
+12345678910111213class Solution(object):    def reachNumber(self, target):        """        :type target: int        :rtype: int        """        target = abs(target)        k = 0        while target &gt; 0:            k += 1            target ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/31/853-Car-Fleet/#more">Read More</a>
+          <a href="/2020/11/03/754-Reach-a-Number/#more">Read More</a>
         </p>
       
     </div>
@@ -320,7 +370,7 @@
 
 
   
-    <article id="post-838-Push-Dominoes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -328,7 +378,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/30/838-Push-Dominoes/">838. Push Dominoes</a>
+      <a class="article-title" href="/2020/11/03/1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram/">1347. Minimum Number of Steps to Make Two Strings Anagram</a>
     </h1>
   
 
@@ -336,8 +386,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/30/838-Push-Dominoes/" class="article-date">
-	  <time datetime="2020-10-31T02:58:50.000Z" itemprop="datePublished">2020-10-30</time>
+	<a href="/2020/11/03/1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram/" class="article-date">
+	  <time datetime="2020-11-04T02:27:29.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -350,10 +400,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425class Solution(object):    def pushDominoes(self, dominoes):        """        :type dominoes: str        :rtype: str        """        dominoes = list(dominoes)        cnt = [0] * len(dominoes)        n = ...
+          123456789class Solution(object):    def minSteps(self, s, t):        """        :type s: str        :type t: str        :rtype: int        """        cnt1, cnt2 = map(collections.Counter, (s, t))        return sum((cnt1 - cnt2).values())
+
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/30/838-Push-Dominoes/#more">Read More</a>
+          <a href="/2020/11/03/1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram/#more">Read More</a>
         </p>
       
     </div>
@@ -372,7 +423,7 @@
 
 
   
-    <article id="post-1570-Dot-Product-of-Two-Sparse-Vectors"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-949-Largest-Time-for-Given-Digits"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -380,7 +431,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/">1570. Dot Product of Two Sparse Vectors</a>
+      <a class="article-title" href="/2020/11/03/949-Largest-Time-for-Given-Digits/">949. Largest Time for Given Digits</a>
     </h1>
   
 
@@ -388,8 +439,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/" class="article-date">
-	  <time datetime="2020-10-30T21:51:22.000Z" itemprop="datePublished">2020-10-30</time>
+	<a href="/2020/11/03/949-Largest-Time-for-Given-Digits/" class="article-date">
+	  <time datetime="2020-11-04T02:12:17.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -402,10 +453,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819class SparseVector:    def __init__(self, nums):        """        :type nums: List[int]        """        self.map = &#123;i: num for i, num in enumerate(nums) if num&#125;    # Return the dotProduct of two sparse vec...
+          1234567891011121314151617181920212223class Solution(object):    def largestTimeFromDigits(self, arr):        """        :type arr: List[int]        :rtype: str        """        A = arr        max_time = -1         for i1, D1 in enumerate(A):     ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/#more">Read More</a>
+          <a href="/2020/11/03/949-Largest-Time-for-Given-Digits/#more">Read More</a>
         </p>
       
     </div>
@@ -424,7 +475,7 @@
 
 
   
-    <article id="post-1166-Design-File-System"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1162-As-Far-from-Land-as-Possible"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -432,7 +483,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/30/1166-Design-File-System/">1166. Design File System</a>
+      <a class="article-title" href="/2020/11/03/1162-As-Far-from-Land-as-Possible/">1162. As Far from Land as Possible</a>
     </h1>
   
 
@@ -440,8 +491,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/30/1166-Design-File-System/" class="article-date">
-	  <time datetime="2020-10-30T21:39:29.000Z" itemprop="datePublished">2020-10-30</time>
+	<a href="/2020/11/03/1162-As-Far-from-Land-as-Possible/" class="article-date">
+	  <time datetime="2020-11-04T01:49:30.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -454,11 +505,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          hashmap
-1234567891011121314151617181920212223242526272829class FileSystem(object):    def __init__(self):        self.d = &#123;"": -1&#125;    def createPath(self, path, value):        """        :type path: str        :type value: int        :rt...
+          1234567891011121314151617181920212223242526class Solution(object):    def maxDistance(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        m, n = len(grid), len(grid[0])        q = deque((i, j) for i in r...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/30/1166-Design-File-System/#more">Read More</a>
+          <a href="/2020/11/03/1162-As-Far-from-Land-as-Possible/#more">Read More</a>
         </p>
       
     </div>
@@ -477,7 +527,7 @@
 
 
   
-    <article id="post-1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-451-Sort-Characters-By-Frequency"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -485,7 +535,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/">1296. Divide Array in Sets of K Consecutive Numbers</a>
+      <a class="article-title" href="/2020/11/03/451-Sort-Characters-By-Frequency/">451. Sort Characters By Frequency</a>
     </h1>
   
 
@@ -493,8 +543,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/" class="article-date">
-	  <time datetime="2020-10-30T21:19:01.000Z" itemprop="datePublished">2020-10-30</time>
+	<a href="/2020/11/03/451-Sort-Characters-By-Frequency/" class="article-date">
+	  <time datetime="2020-11-04T01:20:10.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -507,13 +557,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
+          1234567class Solution(object):    def frequencySort(self, s):        """        :type s: str        :rtype: str        """        return ''.join([key * times for key, times in Counter(s).most_common()])
 
-
-1234567891011121314151617181920class Solution(object):    def isPossibleDivide(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: bool        """        counter = collections.Counter(nums)        starts =...
+Bucket sort
+1234567891011121314151617181920...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/30/1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers/#more">Read More</a>
+          <a href="/2020/11/03/451-Sort-Characters-By-Frequency/#more">Read More</a>
         </p>
       
     </div>
@@ -532,7 +582,7 @@
 
 
   
-    <article id="post-450-Delete-Node-in-a-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-355-Design-Twitter"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -540,7 +590,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/450-Delete-Node-in-a-BST/">450. Delete Node in a BST</a>
+      <a class="article-title" href="/2020/11/03/355-Design-Twitter/">355. Design Twitter</a>
     </h1>
   
 
@@ -548,8 +598,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/450-Delete-Node-in-a-BST/" class="article-date">
-	  <time datetime="2020-10-30T04:26:51.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/11/03/355-Design-Twitter/" class="article-date">
+	  <time datetime="2020-11-04T01:13:52.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -562,13 +612,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-recursive to solve it
-不是就return current node
-是的话 就delete node and return new node12345678910111213141516171819202122232425262728293031323334# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, ri...
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152class Twitter(object):    def __init__(self):        """        Initialize your data structure here.        """        self.timer = itertools.count(step...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/450-Delete-Node-in-a-BST/#more">Read More</a>
+          <a href="/2020/11/03/355-Design-Twitter/#more">Read More</a>
         </p>
       
     </div>
@@ -587,7 +634,7 @@ recursive to solve it
 
 
   
-    <article id="post-1268-Search-Suggestions-System"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1177-Can-Make-Palindrome-from-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -595,7 +642,7 @@ recursive to solve it
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/1268-Search-Suggestions-System/">1268. Search Suggestions System</a>
+      <a class="article-title" href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/">1177. Can Make Palindrome from Substring</a>
     </h1>
   
 
@@ -603,8 +650,8 @@ recursive to solve it
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/1268-Search-Suggestions-System/" class="article-date">
-	  <time datetime="2020-10-30T03:57:56.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/" class="article-date">
+	  <time datetime="2020-11-04T00:14:27.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -617,11 +664,11 @@ recursive to solve it
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          if word.startswith(prefix)])这个判断不能少
-12345678910111213141516class Solution(object):    def suggestedProducts(self, products, searchWord):        """        :type products: List[str]        :type searchWord: str        :rtype: List[List[str]]       ...
+          This will Time Limit Exceeded. Thus, we need some memo to aviod repeating counter operation
+123456789101112131415class Solution(object):    def canMakePaliQueries(self, s, queries):        """        :type s: str        :type queries: List[List[in...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/1268-Search-Suggestions-System/#more">Read More</a>
+          <a href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/#more">Read More</a>
         </p>
       
     </div>
@@ -640,7 +687,7 @@ recursive to solve it
 
 
   
-    <article id="post-713-Subarray-Product-Less-Than-K"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-444-Sequence-Reconstruction"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -648,7 +695,7 @@ recursive to solve it
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/713-Subarray-Product-Less-Than-K/">713. Subarray Product Less Than K</a>
+      <a class="article-title" href="/2020/11/03/444-Sequence-Reconstruction/">444. Sequence Reconstruction</a>
     </h1>
   
 
@@ -656,8 +703,8 @@ recursive to solve it
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/713-Subarray-Product-Less-Than-K/" class="article-date">
-	  <time datetime="2020-10-30T03:15:16.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/11/03/444-Sequence-Reconstruction/" class="article-date">
+	  <time datetime="2020-11-03T21:45:31.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -670,10 +717,11 @@ recursive to solve it
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def numSubarrayProductLessThanK(self, nums, k):        """        :type nums: List[int]        :type k: int        :rtype: int        """        if k &lt;= 1: return 0        left, res, produ...
+          each time when queue is pop, we must ensure the length of it is 1, otherwise return false, because the problem is asking if it is the only solutionif the length of queue is longer than 2, which means there are multiple possible solutions
+Topologic...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/713-Subarray-Product-Less-Than-K/#more">Read More</a>
+          <a href="/2020/11/03/444-Sequence-Reconstruction/#more">Read More</a>
         </p>
       
     </div>
@@ -692,7 +740,7 @@ recursive to solve it
 
 
   
-    <article id="post-333-Largest-BST-Subtree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1169-Invalid-Transactions"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -700,7 +748,7 @@ recursive to solve it
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/333-Largest-BST-Subtree/">333. Largest BST Subtree</a>
+      <a class="article-title" href="/2020/11/03/1169-Invalid-Transactions/">1169. Invalid Transactions </a>
     </h1>
   
 
@@ -708,8 +756,8 @@ recursive to solve it
     
     <div class="article-meta">
       
-	<a href="/2020/10/29/333-Largest-BST-Subtree/" class="article-date">
-	  <time datetime="2020-10-30T02:36:58.000Z" itemprop="datePublished">2020-10-29</time>
+	<a href="/2020/11/03/1169-Invalid-Transactions/" class="article-date">
+	  <time datetime="2020-11-03T21:04:30.000Z" itemprop="datePublished">2020-11-03</time>
 	</a>
 
       
@@ -722,66 +770,10 @@ recursive to solve it
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          当前节点是BST的一个重要条件是： 当前节点的值一定要比左节点的最大节点的值要大， 比右子树的最小节点要小
-1234567891011121314151617181920212223242526272829# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#   ...
+          123456789101112131415161718192021222324252627282930313233343536373839class Transaction:    def __init__(self, name, time, amount, city):        self.name = name        self.time = int(time)        self.amount = int(amount)        self.city = cityc...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/29/333-Largest-BST-Subtree/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-898-Bitwise-ORs-of-Subarrays"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/">898. Bitwise ORs of Subarrays</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/" class="article-date">
-	  <time datetime="2020-10-30T01:02:39.000Z" itemprop="datePublished">2020-10-29</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-
-
-12345678910111213class Solution(object):    def subarrayBitwiseORs(self, A):        """        :type A: List[int]        :rtype: int        """        ans = set()        cur = set()                for num in A:            cur = &#123;num | x fo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/29/898-Bitwise-ORs-of-Subarrays/#more">Read More</a>
+          <a href="/2020/11/03/1169-Invalid-Transactions/#more">Read More</a>
         </p>
       
     </div>
@@ -804,7 +796,7 @@ recursive to solve it
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/73/">73</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
   </nav>
 
 </section>
