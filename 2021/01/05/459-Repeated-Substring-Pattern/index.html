@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="\1 —&gt; backreference to the group #1pattern &#x3D; re.compile(reg expression)pattern.match(s) 12345678class Solution(object):    def repeatedSubstringPattern(self, s):        &quot;&quot;&quot;        :type s: str">
+  <meta name="description" content="KMP: buld table –&gt; O(n) \1 —&gt; backreference to the group #1pattern &#x3D; re.compile(reg expression)pattern.match(s) 12345678class Solution(object):    def repeatedSubstringPattern(self, s):        &quot;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="459. Repeated Substring Pattern">
 <meta property="og:url" content="https://jojoyang666.github.io/2021/01/05/459-Repeated-Substring-Pattern/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="\1 —&gt; backreference to the group #1pattern &#x3D; re.compile(reg expression)pattern.match(s) 12345678class Solution(object):    def repeatedSubstringPattern(self, s):        &quot;&quot;&quot;        :type s: str">
+<meta property="og:description" content="KMP: buld table –&gt; O(n) \1 —&gt; backreference to the group #1pattern &#x3D; re.compile(reg expression)pattern.match(s) 12345678class Solution(object):    def repeatedSubstringPattern(self, s):        &quot;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-05T21:27:55.000Z">
-<meta property="article:modified_time" content="2021-01-05T23:33:31.954Z">
+<meta property="article:modified_time" content="2021-01-21T23:23:09.852Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -206,7 +206,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>\1 —&gt; backreference to the group #1<br>pattern = re.compile(reg expression)<br>pattern.match(s)</p>
+        <p>KMP: buld table –&gt; O(n)</p>
+<p>\1 —&gt; backreference to the group #1<br>pattern = re.compile(reg expression)<br>pattern.match(s)</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">repeatedSubstringPattern</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        pattern = re.compile(<span class="string">r'^(.+)\1+$'</span>)</span><br><span class="line">        <span class="keyword">return</span> pattern.match(s)</span><br></pre></td></tr></table></figure>
 
 <h1 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h1><ol>

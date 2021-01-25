@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-63-Unique-Paths-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-588-Design-In-Memory-File-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/01/63-Unique-Paths-II/">63. Unique Paths II</a>
+      <a class="article-title" href="/2020/11/05/588-Design-In-Memory-File-System/">588. Design In-Memory File System</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/01/63-Unique-Paths-II/" class="article-date">
-	  <time datetime="2020-11-02T04:41:01.000Z" itemprop="datePublished">2020-11-01</time>
+	<a href="/2020/11/05/588-Design-In-Memory-File-System/" class="article-date">
+	  <time datetime="2020-11-05T23:26:42.000Z" itemprop="datePublished">2020-11-05</time>
 	</a>
 
       
@@ -295,10 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526class Solution(object):    def uniquePathsWithObstacles(self, obstacleGrid):        """        :type obstacleGrid: List[List[int]]        :rtype: int        """        m, n = len(obstacleGrid), len(obstac...
+          123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263class Node:    def __init__(self):        self.child = collections.defaultdict(Node) # children is type of Node        self.conten...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/01/63-Unique-Paths-II/#more">Read More</a>
+          <a href="/2020/11/05/588-Design-In-Memory-File-System/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +317,7 @@
 
 
   
-    <article id="post-889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-68-Text-Justification"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal/">889. Construct Binary Tree from Preorder and Postorder Traversal</a>
+      <a class="article-title" href="/2020/11/05/68-Text-Justification/">68. Text Justification</a>
     </h1>
   
 
@@ -333,8 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/31/889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal/" class="article-date">
-	  <time datetime="2020-10-31T23:00:41.000Z" itemprop="datePublished">2020-10-31</time>
+	<a href="/2020/11/05/68-Text-Justification/" class="article-date">
+	  <time datetime="2020-11-05T20:03:50.000Z" itemprop="datePublished">2020-11-05</time>
 	</a>
 
       
@@ -347,11 +347,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          通过length来左recursive find pre/pos list of subtree
-12345678910111213141516171819202122# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = l...
+          12345678910111213141516171819202122232425class Solution(object):    def fullJustify(self, words, maxWidth):        """        :type words: List[str]        :type maxWidth: int        :rtype: List[str]        """        res, cur, num_of_letters = [...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/31/889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal/#more">Read More</a>
+          <a href="/2020/11/05/68-Text-Justification/#more">Read More</a>
         </p>
       
     </div>
@@ -370,7 +369,7 @@
 
 
   
-    <article id="post-1233-Remove-Sub-Folders-from-the-Filesystem"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-829-Consecutive-Numbers-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -378,7 +377,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/1233-Remove-Sub-Folders-from-the-Filesystem/">1233. Remove Sub-Folders from the Filesystem </a>
+      <a class="article-title" href="/2020/11/04/829-Consecutive-Numbers-Sum/">829. Consecutive Numbers Sum</a>
     </h1>
   
 
@@ -386,282 +385,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/10/31/1233-Remove-Sub-Folders-from-the-Filesystem/" class="article-date">
-	  <time datetime="2020-10-31T21:50:42.000Z" itemprop="datePublished">2020-10-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          cornor case: startswith(f + ‘/‘)a/b, a/bc
-1234567891011class Solution(object):    def removeSubfolders(self, folder):        """        :type folder: List[str]        :rtype: List[str]        """        res = []        for f in sorted(folder):    ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/31/1233-Remove-Sub-Folders-from-the-Filesystem/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-467-Unique-Substrings-in-Wraparound-String"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/467-Unique-Substrings-in-Wraparound-String/">467. Unique Substrings in Wraparound String</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/31/467-Unique-Substrings-in-Wraparound-String/" class="article-date">
-	  <time datetime="2020-10-31T21:29:08.000Z" itemprop="datePublished">2020-10-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          res表示以i结尾的最长substring -&gt; length is a, then final res_val += a
-12345678910111213141516class Solution(object):    def findSubstringInWraproundString(self, p):        """        :type p: str        :rtype: int        """        res = &#123;i: 1 fo...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/31/467-Unique-Substrings-in-Wraparound-String/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1026-Maximum-Difference-Between-Node-and-Ancestor"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/1026-Maximum-Difference-Between-Node-and-Ancestor/">1026. Maximum Difference Between Node and Ancestor </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/31/1026-Maximum-Difference-Between-Node-and-Ancestor/" class="article-date">
-	  <time datetime="2020-10-31T20:51:10.000Z" itemprop="datePublished">2020-10-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          因为是ancestor所以要从上到下而不是从下到上 找到最大的
-12345678910111213141516171819# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/31/1026-Maximum-Difference-Between-Node-and-Ancestor/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-611-Valid-Triangle-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/611-Valid-Triangle-Number/">611. Valid Triangle Number </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/31/611-Valid-Triangle-Number/" class="article-date">
-	  <time datetime="2020-10-31T20:19:22.000Z" itemprop="datePublished">2020-10-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-sort
-kind of liking 3sum
-
-12345678910111213141516class Solution(object):    def triangleNumber(self, nums):        """        :type nums: List[int]        :rtype: int        """        res = 0        nums.sort()        for i in range(0, len(nums)...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/31/611-Valid-Triangle-Number/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1262-Greatest-Sum-Divisible-by-Three"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/">1262. Greatest Sum Divisible by Three</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/" class="article-date">
-	  <time datetime="2020-10-31T18:55:36.000Z" itemprop="datePublished">2020-10-31</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-dp[i] (i: 0, 1, 2): represent the greatest sum which module 3 is 0, 1, 2(in current array a)
-formula: (num is the current last number in a) val = (dp[i] + num)%3 dp[i] = max(dp[val], dp[i] + num)
-Cornor case:
-
-
-当前更新的值可能影响后面的值， 所以要new tmp array
-se...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/10/31/1262-Greatest-Sum-Divisible-by-Three/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-853-Car-Fleet"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/31/853-Car-Fleet/">853. Car Fleet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/10/31/853-Car-Fleet/" class="article-date">
-	  <time datetime="2020-10-31T17:41:33.000Z" itemprop="datePublished">2020-10-31</time>
+	<a href="/2020/11/04/829-Consecutive-Numbers-Sum/" class="article-date">
+	  <time datetime="2020-11-05T07:34:54.000Z" itemprop="datePublished">2020-11-04</time>
 	</a>
 
       
@@ -677,10 +402,10 @@ se...
           
 
 
-12345678910111213141516171819202122class Solution(object):    def carFleet(self, target, position, speed):        """        :type target: int        :type position: List[int]        :type speed: List[int]        :rtype: int        """        c...
+1234567891011121314class Solution(object):    def consecutiveNumbersSum(self, N):        """        :type N: int        :rtype: int        """        count = 0        # x &gt; 0 --&gt; N/k - (k + 1)/2 &gt; 0        upper_limit = int((2 * ˜N + 0...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/31/853-Car-Fleet/#more">Read More</a>
+          <a href="/2020/11/04/829-Consecutive-Numbers-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -699,7 +424,7 @@ se...
 
 
   
-    <article id="post-838-Push-Dominoes"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-780-Reaching-Points"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -707,7 +432,7 @@ se...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/30/838-Push-Dominoes/">838. Push Dominoes</a>
+      <a class="article-title" href="/2020/11/04/780-Reaching-Points/">780. Reaching Points</a>
     </h1>
   
 
@@ -715,8 +440,8 @@ se...
     
     <div class="article-meta">
       
-	<a href="/2020/10/30/838-Push-Dominoes/" class="article-date">
-	  <time datetime="2020-10-31T02:58:50.000Z" itemprop="datePublished">2020-10-30</time>
+	<a href="/2020/11/04/780-Reaching-Points/" class="article-date">
+	  <time datetime="2020-11-05T06:58:23.000Z" itemprop="datePublished">2020-11-04</time>
 	</a>
 
       
@@ -729,10 +454,10 @@ se...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425class Solution(object):    def pushDominoes(self, dominoes):        """        :type dominoes: str        :rtype: str        """        dominoes = list(dominoes)        cnt = [0] * len(dominoes)        n = ...
+          1234567891011121314151617class Solution(object):    def reachingPoints(self, sx, sy, tx, ty):        """        :type sx: int        :type sy: int        :type tx: int        :type ty: int        :rtype: bool        """        if sx &gt; tx or sy ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/30/838-Push-Dominoes/#more">Read More</a>
+          <a href="/2020/11/04/780-Reaching-Points/#more">Read More</a>
         </p>
       
     </div>
@@ -751,7 +476,7 @@ se...
 
 
   
-    <article id="post-1570-Dot-Product-of-Two-Sparse-Vectors"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-312-Burst-Balloons"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -759,7 +484,7 @@ se...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/">1570. Dot Product of Two Sparse Vectors</a>
+      <a class="article-title" href="/2020/11/04/312-Burst-Balloons/">312. Burst Balloons </a>
     </h1>
   
 
@@ -767,8 +492,8 @@ se...
     
     <div class="article-meta">
       
-	<a href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/" class="article-date">
-	  <time datetime="2020-10-30T21:51:22.000Z" itemprop="datePublished">2020-10-30</time>
+	<a href="/2020/11/04/312-Burst-Balloons/" class="article-date">
+	  <time datetime="2020-11-05T05:39:35.000Z" itemprop="datePublished">2020-11-04</time>
 	</a>
 
       
@@ -781,10 +506,291 @@ se...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819class SparseVector:    def __init__(self, nums):        """        :type nums: List[int]        """        self.map = &#123;i: num for i, num in enumerate(nums) if num&#125;    # Return the dotProduct of two sparse vec...
+          https://www.youtube.com/watch?v=uG_MtaCJIrM
+
+dp
+window size
+among the window size, i is the last one to burst12345678910111213141516class Solution(object):    def maxCoins(self, nums):        """        :type nums: List[int]        :rtype: int    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/10/30/1570-Dot-Product-of-Two-Sparse-Vectors/#more">Read More</a>
+          <a href="/2020/11/04/312-Burst-Balloons/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-45-Jump-Game-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/04/45-Jump-Game-II/">45-Jump-Game-II</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/04/45-Jump-Game-II/" class="article-date">
+	  <time datetime="2020-11-05T04:46:35.300Z" itemprop="datePublished">2020-11-04</time>
+	</a>
+
+      
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+title: ‘45. Jump Game II ‘date: 2020-11-04 20:46:35tags:categories: 
+
+Leetcode
+
+
+Greedy
+max_pos: maximum position it can reach which is starting from pos idx, idx &lt; imax_step: maximum position we can reach within current jumps
+1234567891011121...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/04/45-Jump-Game-II/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Tarjan-algorithm"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/04/Tarjan-algorithm/">Tarjan algorithm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/04/Tarjan-algorithm/" class="article-date">
+	  <time datetime="2020-11-05T04:12:04.000Z" itemprop="datePublished">2020-11-04</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1192. Critical Connections in a Network
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/04/Tarjan-algorithm/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1192-Critical-Connections-in-a-Network"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/04/1192-Critical-Connections-in-a-Network/">1192. Critical Connections in a Network </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/04/1192-Critical-Connections-in-a-Network/" class="article-date">
+	  <time datetime="2020-11-05T04:08:45.000Z" itemprop="datePublished">2020-11-04</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+
+rank[n]其实表示的是到达n的时间戳， 如果rank[next] &lt; rank[cur] + 1,说明有其他的node能到达这个node, 这个边不是critical connection
+1234567891011121314151617181920212223242526272829class Solution(object):    def criticalConnections(self, n, connections):        """        :t...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/04/1192-Critical-Connections-in-a-Network/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-41-First-Missing-Positive"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/04/41-First-Missing-Positive/">41. First Missing Positive</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/04/41-First-Missing-Positive/" class="article-date">
+	  <time datetime="2020-11-05T00:11:55.000Z" itemprop="datePublished">2020-11-04</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          0 –&gt; is the cornor case –&gt; +0 &amp; -0 = 0 –&gt; also if num &gt;= n –&gt; index boundry –&gt; need to resetif nums[i] &lt;= 0 or nums[i] &gt; n:                nums[i] = 1
+
+if 1 not in nums –&gt; min value is 1
+length of nums is n, if not m...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/04/41-First-Missing-Positive/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-85-Maximal-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/04/85-Maximal-Rectangle/">85. Maximal Rectangle</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/04/85-Maximal-Rectangle/" class="article-date">
+	  <time datetime="2020-11-04T23:16:02.000Z" itemprop="datePublished">2020-11-04</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+for each col, calculate the count of collective 1
+for example: dp[i]: how many collective 1 appear in col i
+then we can convert the problem to the max area can trap the water123456789101112131415161718192021222324252627282930class Solution(object...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/04/85-Maximal-Rectangle/#more">Read More</a>
         </p>
       
     </div>
@@ -807,7 +813,7 @@ se...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/47/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="page-number current">48</span><a class="page-number" href="/page/49/">49</a><a class="page-number" href="/page/50/">50</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/49/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/47/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="page-number current">48</span><a class="page-number" href="/page/49/">49</a><a class="page-number" href="/page/50/">50</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/49/">Next &amp;raquo;</a>
   </nav>
 
 </section>

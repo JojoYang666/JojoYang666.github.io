@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-1231-Divide-Chocolate"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-776-Split-BST"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/24/1231-Divide-Chocolate/">1231. Divide Chocolate</a>
+      <a class="article-title" href="/2020/12/02/776-Split-BST/">776. Split BST</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/24/1231-Divide-Chocolate/" class="article-date">
-	  <time datetime="2020-11-24T18:28:07.000Z" itemprop="datePublished">2020-11-24</time>
+	<a href="/2020/12/02/776-Split-BST/" class="article-date">
+	  <time datetime="2020-12-03T04:58:56.000Z" itemprop="datePublished">2020-12-02</time>
 	</a>
 
       
@@ -295,11 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          using binary searchmaximum sweetnees is sum(A)/(k+1)
-12345678910111213141516171819202122232425262728293031class Solution(object):    def maximizeSweetness(self, sweetness, K):        """        :type sweetness: List[int]        :type K: int       ...
+          123456789101112131415161718192021222324# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/24/1231-Divide-Chocolate/#more">Read More</a>
+          <a href="/2020/12/02/776-Split-BST/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +317,7 @@
 
 
   
-    <article id="post-568-Maximum-Vacation-Days"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-591-Tag-Validator"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/24/568-Maximum-Vacation-Days/">568. Maximum Vacation Days</a>
+      <a class="article-title" href="/2020/12/02/591-Tag-Validator/">591. Tag Validator</a>
     </h1>
   
 
@@ -334,8 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/24/568-Maximum-Vacation-Days/" class="article-date">
-	  <time datetime="2020-11-24T17:21:22.000Z" itemprop="datePublished">2020-11-24</time>
+	<a href="/2020/12/02/591-Tag-Validator/" class="article-date">
+	  <time datetime="2020-12-02T22:17:26.000Z" itemprop="datePublished">2020-12-02</time>
 	</a>
 
       
@@ -348,18 +347,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-best[i]: the most vacation days you can have ending in city i on week t
-the result will be max(best)
-for each flight i -&gt; j(including staying in the same city –&gt; i == j)
-best[j] = best[i] + days[j][t]
+          using state machine
 
-
-
-12345678910111213141516171819class S...
+state = [plain, open, close, cdata]
+state-restriction:{open: [“only upper case”]close: [“only upper case”]cdata: NO restrictionplain: [‘if idx &gt; 0, then stack must be non-empty’] # reason is all plain text must be wrapped b...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/24/568-Maximum-Vacation-Days/#more">Read More</a>
+          <a href="/2020/12/02/591-Tag-Validator/#more">Read More</a>
         </p>
       
     </div>
@@ -378,7 +372,7 @@ best[j] = best[i] + days[j][t]
 
 
   
-    <article id="post-975-Odd-Even-Jump"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1000-Minimum-Cost-to-Merge-Stones"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -386,7 +380,7 @@ best[j] = best[i] + days[j][t]
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/24/975-Odd-Even-Jump/">975. Odd Even Jump</a>
+      <a class="article-title" href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/">1000. Minimum Cost to Merge Stones</a>
     </h1>
   
 
@@ -394,8 +388,8 @@ best[j] = best[i] + days[j][t]
     
     <div class="article-meta">
       
-	<a href="/2020/11/24/975-Odd-Even-Jump/" class="article-date">
-	  <time datetime="2020-11-24T16:55:44.000Z" itemprop="datePublished">2020-11-24</time>
+	<a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/" class="article-date">
+	  <time datetime="2020-12-02T05:28:51.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -408,28 +402,13 @@ best[j] = best[i] + days[j][t]
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Explanation
+          3D dpdp[i][j][m]: cost needed to merge stones[i]~stones[j] into m pilesinitial: dp[i][i][1] = 0 dp[i][i][m]=infinity
+dp[i][j][1] = dp[i][j][k]  + sum of cost from stome[i] to stone[j]dp[i][j][m]: min(dp[i][mid][1]+dp[mid+1][j][m-1])
 
-Jump higher and lower alternately to the end
-example[5, 1,3,4,2]
-
-
-start at 2:
-higher[2] = true
-lower[2] = true
-
-
-start at 4
-higher[4] = false
-lower[4] = higher[2] = true
-
-
-start at 3
-higher[3] = lower[4] = true
-lower[3] = higher[2] =...
+Why mid jump ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/24/975-Odd-Even-Jump/#more">Read More</a>
+          <a href="/2020/12/01/1000-Minimum-Cost-to-Merge-Stones/#more">Read More</a>
         </p>
       
     </div>
@@ -448,7 +427,7 @@ lower[3] = higher[2] =...
 
 
   
-    <article id="post-683-K-Empty-Slots"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-post794-Valid-Tic-Tac-Toe-State"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -456,7 +435,7 @@ lower[3] = higher[2] =...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/23/683-K-Empty-Slots/">683. K Empty Slots</a>
+      <a class="article-title" href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/">post794. Valid Tic-Tac-Toe State</a>
     </h1>
   
 
@@ -464,8 +443,8 @@ lower[3] = higher[2] =...
     
     <div class="article-meta">
       
-	<a href="/2020/11/23/683-K-Empty-Slots/" class="article-date">
-	  <time datetime="2020-11-24T05:33:36.000Z" itemprop="datePublished">2020-11-23</time>
+	<a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/" class="article-date">
+	  <time datetime="2020-12-02T03:59:16.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -478,15 +457,14 @@ lower[3] = higher[2] =...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-days[x] = i: the bulb x will be on at ith day
-goal: need to find the interval [left, right]
-days[left], days[right] are two smallest values among days[left], days[left+1],…, days[right]
-right - left = k + 1
-checkling every possible intervals usin...
+          Ad-hoc —&gt; 排除所有不可能/找到必要条件
+
+diff between count of x and o is 1
+if x win, count(x) = count(o)+1
+if o win, count(x) == count(o)凡事不满足1, 2,3的都是false 其余均为true1234567891011121314151617181920212223class Solution(object):    def validTicTacToe(self, boar...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/23/683-K-Empty-Slots/#more">Read More</a>
+          <a href="/2020/12/01/post794-Valid-Tic-Tac-Toe-State/#more">Read More</a>
         </p>
       
     </div>
@@ -505,7 +483,7 @@ checkling every possible intervals usin...
 
 
   
-    <article id="post-1136-Parallel-Courses"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Morris-Tranversal"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -513,7 +491,7 @@ checkling every possible intervals usin...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/23/1136-Parallel-Courses/">1136. Parallel Courses</a>
+      <a class="article-title" href="/2020/12/01/Morris-Tranversal/">Morris Tranversal</a>
     </h1>
   
 
@@ -521,8 +499,69 @@ checkling every possible intervals usin...
     
     <div class="article-meta">
       
-	<a href="/2020/11/23/1136-Parallel-Courses/" class="article-date">
-	  <time datetime="2020-11-24T05:01:05.000Z" itemprop="datePublished">2020-11-23</time>
+	<a href="/2020/12/01/Morris-Tranversal/" class="article-date">
+	  <time datetime="2020-12-02T02:38:09.000Z" itemprop="datePublished">2020-12-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Morris遍历的实现原则记作当前节点为cur
+
+如果cur无左孩子， cur向右移动(cur=cur.right)
+如果cur有左孩子，找到cur左子树上最右的节点, 记为most_right
+if most_right.right==null, most_right.right=cur, cur=cur.left
+if most_right.right == cur, most_right.right =null, cur = cur.right
+
+
+
+—&gt;实质： 对于没有左子树...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/12/01/Morris-Tranversal/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-99-Recover-Binary-Search-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/12/01/99-Recover-Binary-Search-Tree/">99. Recover Binary Search Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/12/01/99-Recover-Binary-Search-Tree/" class="article-date">
+	  <time datetime="2020-12-01T23:57:47.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -535,10 +574,10 @@ checkling every possible intervals usin...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930class Solution(object):    def minimumSemesters(self, N, relations):        """        :type N: int        :type relations: List[List[int]]        :rtype: int        """        graph = collections...
+          O(n)12345678910111213141516171819202122232425262728# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightcl...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/23/1136-Parallel-Courses/#more">Read More</a>
+          <a href="/2020/12/01/99-Recover-Binary-Search-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -557,7 +596,7 @@ checkling every possible intervals usin...
 
 
   
-    <article id="post-726-Number-of-Atoms"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-675-Cut-Off-Trees-for-Golf-Event"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -565,7 +604,7 @@ checkling every possible intervals usin...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/23/726-Number-of-Atoms/">726. Number of Atoms</a>
+      <a class="article-title" href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/">675. Cut Off Trees for Golf Event</a>
     </h1>
   
 
@@ -573,8 +612,8 @@ checkling every possible intervals usin...
     
     <div class="article-meta">
       
-	<a href="/2020/11/23/726-Number-of-Atoms/" class="article-date">
-	  <time datetime="2020-11-24T03:23:23.000Z" itemprop="datePublished">2020-11-23</time>
+	<a href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/" class="article-date">
+	  <time datetime="2020-12-01T20:39:05.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -587,13 +626,10 @@ checkling every possible intervals usin...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-
-123456789101112131415161718192021222324252627class Solution(object):    def countOfAtoms(self, formula):        """        :type formula: str        :rtype: str        """        dic, coeff, stack, elem, cnt, i = collections.defaultdict(int), 1...
+          123456789101112131415161718192021222324252627282930class Solution(object):    def cutOffTree(self, forest):        """        :type forest: List[List[int]]        :rtype: int        """        def bfs(forest, sr, sc, tr, tc):            R, C = len...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/23/726-Number-of-Atoms/#more">Read More</a>
+          <a href="/2020/12/01/675-Cut-Off-Trees-for-Golf-Event/#more">Read More</a>
         </p>
       
     </div>
@@ -612,7 +648,7 @@ checkling every possible intervals usin...
 
 
   
-    <article id="post-887-Super-Egg-Drop"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-245-Shortest-Word-Distance-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -620,7 +656,7 @@ checkling every possible intervals usin...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/23/887-Super-Egg-Drop/">887. Super Egg Drop</a>
+      <a class="article-title" href="/2020/12/01/245-Shortest-Word-Distance-III/">245. Shortest Word Distance III</a>
     </h1>
   
 
@@ -628,8 +664,8 @@ checkling every possible intervals usin...
     
     <div class="article-meta">
       
-	<a href="/2020/11/23/887-Super-Egg-Drop/" class="article-date">
-	  <time datetime="2020-11-24T01:59:16.000Z" itemprop="datePublished">2020-11-23</time>
+	<a href="/2020/12/01/245-Shortest-Word-Distance-III/" class="article-date">
+	  <time datetime="2020-12-01T19:46:47.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
@@ -642,13 +678,10 @@ checkling every possible intervals usin...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-
-
-12345678910111213141516171819202122232425262728293031323334class Solution(object):    def superEggDrop(self, K, N):        """        :type K: int        :type N: int        :rtype: int        """        memo = &#123;&#125;                def d...
+          123456789101112131415161718192021class Solution(object):    def shortestWordDistance(self, words, word1, word2):        """        :type words: List[str]        :type word1: str        :type word2: str        :rtype: int        """        n = len(...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/23/887-Super-Egg-Drop/#more">Read More</a>
+          <a href="/2020/12/01/245-Shortest-Word-Distance-III/#more">Read More</a>
         </p>
       
     </div>
@@ -667,7 +700,7 @@ checkling every possible intervals usin...
 
 
   
-    <article id="post-Designing-Twitter-Search"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-156-Binary-Tree-Upside-Down"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -675,7 +708,7 @@ checkling every possible intervals usin...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/20/Designing-Twitter-Search/">Designing Twitter Search</a>
+      <a class="article-title" href="/2020/12/01/156-Binary-Tree-Upside-Down/">156. Binary Tree Upside Down</a>
     </h1>
   
 
@@ -683,12 +716,12 @@ checkling every possible intervals usin...
     
     <div class="article-meta">
       
-	<a href="/2020/11/20/Designing-Twitter-Search/" class="article-date">
-	  <time datetime="2020-11-20T20:30:18.000Z" itemprop="datePublished">2020-11-20</time>
+	<a href="/2020/12/01/156-Binary-Tree-Upside-Down/" class="article-date">
+	  <time datetime="2020-12-01T18:16:37.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -697,16 +730,11 @@ checkling every possible intervals usin...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Requirements and Goals of the System
-Total users: 1.5 billion 
-Daily active users: 800 million
-On average, Twitter gets 400 million tweets / day
-The average size of a tweet: 300 bytes.
-Assume: 500M searches/day
-Query will consist of multiple words...
+          keep finding the left most node, make it upside-down, then make its parent to be its right most subtree recursivelyconnect the root to the right most subtree, make sure not copying the original root, otherwisr it become cyclic
+12345678910111213141...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/20/Designing-Twitter-Search/#more">Read More</a>
+          <a href="/2020/12/01/156-Binary-Tree-Upside-Down/#more">Read More</a>
         </p>
       
     </div>
@@ -725,7 +753,7 @@ Query will consist of multiple words...
 
 
   
-    <article id="post-post"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-244-Shortest-Word-Distance-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -733,7 +761,7 @@ Query will consist of multiple words...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/20/post/">post</a>
+      <a class="article-title" href="/2020/12/01/244-Shortest-Word-Distance-II/">244. Shortest Word Distance II</a>
     </h1>
   
 
@@ -741,62 +769,12 @@ Query will consist of multiple words...
     
     <div class="article-meta">
       
-	<a href="/2020/11/20/post/" class="article-date">
-	  <time datetime="2020-11-20T20:29:49.000Z" itemprop="datePublished">2020-11-20</time>
+	<a href="/2020/12/01/244-Shortest-Word-Distance-II/" class="article-date">
+	  <time datetime="2020-12-01T17:35:49.000Z" itemprop="datePublished">2020-12-01</time>
 	</a>
 
       
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/20/post/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Designing-an-API-Rate-Limiter"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/20/Designing-an-API-Rate-Limiter/">Designing an API Rate Limiter</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/20/Designing-an-API-Rate-Limiter/" class="article-date">
-	  <time datetime="2020-11-20T15:50:45.000Z" itemprop="datePublished">2020-11-20</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -805,12 +783,11 @@ Query will consist of multiple words...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Why do we need API rate limiting
-helps to protect services against abusive behaviors targeting the application layer like Denial-of-service (DOS) attacks, brute-force password attempts, brute-force credit card transactions, etc
-a barrage of HTTP/S...
+          min diff in two list, if two list is sorted we can do it in one pass instead of n*n
+123456789101112131415161718192021222324252627282930313233class WordDistance(object):    def __init__(self, words):        """        :type words: List[str]        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/20/Designing-an-API-Rate-Limiter/#more">Read More</a>
+          <a href="/2020/12/01/244-Shortest-Word-Distance-II/#more">Read More</a>
         </p>
       
     </div>
@@ -833,7 +810,7 @@ a barrage of HTTP/S...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/32/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/34/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/32/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><span class="page-number current">33</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/34/">Next &amp;raquo;</a>
   </nav>
 
 </section>

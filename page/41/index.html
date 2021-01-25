@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-1220-Count-Vowels-Permutation"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-827-Making-A-Large-Island"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/1220-Count-Vowels-Permutation/">1220. Count Vowels Permutation </a>
+      <a class="article-title" href="/2020/11/16/827-Making-A-Large-Island/">827. Making A Large Island</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/10/1220-Count-Vowels-Permutation/" class="article-date">
-	  <time datetime="2020-11-11T03:09:17.000Z" itemprop="datePublished">2020-11-10</time>
+	<a href="/2020/11/16/827-Making-A-Large-Island/" class="article-date">
+	  <time datetime="2020-11-16T22:59:25.000Z" itemprop="datePublished">2020-11-16</time>
 	</a>
 
       
@@ -295,11 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          My solution keeps track of the number of each vowel at a level in this tree. To calculate say ‘A’, we calculate how many nodes in the previous level produce ‘A’. This is the number of ‘E’, ‘I’, and ‘U’ nodes.
-1234567891011class Solution(object):  ...
+          cornor case all is 1
+123456789101112131415161718192021222324252627282930313233343536373839class Solution(object):    def largestIsland(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        N = len(grid)   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/10/1220-Count-Vowels-Permutation/#more">Read More</a>
+          <a href="/2020/11/16/827-Making-A-Large-Island/#more">Read More</a>
         </p>
       
     </div>
@@ -318,7 +318,7 @@
 
 
   
-    <article id="post-420-Strong-Password-Checker"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-913-Cat-and-Mouse"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -326,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/420-Strong-Password-Checker/">420. Strong Password Checker</a>
+      <a class="article-title" href="/2020/11/16/913-Cat-and-Mouse/">913. Cat and Mouse</a>
     </h1>
   
 
@@ -334,8 +334,179 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/10/420-Strong-Password-Checker/" class="article-date">
-	  <time datetime="2020-11-10T23:56:36.000Z" itemprop="datePublished">2020-11-10</time>
+	<a href="/2020/11/16/913-Cat-and-Mouse/" class="article-date">
+	  <time datetime="2020-11-16T21:14:27.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Thinking
+state of the game (m, c, t)
+
+m is the location of the mouse
+c is the location of the cat
+t is 1 if it’s mouse’s move
+t is 2 if it is cat’s move
+
+
+States forms a graph:
+
+the player whose turn it has vaious moves which can be considered as ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/913-Cat-and-Mouse/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-MIN-MAX"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/MIN-MAX/">MIN-MAX</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/MIN-MAX/" class="article-date">
+	  <time datetime="2020-11-16T20:44:44.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          适合的游戏
+零和游戏（Zero-sum Game）：意思就是你死我活，一方的胜利代表另一方的失败，比如，象棋，五子棋等。
+完全信息（Perfect Information）：玩家知道之前所有的步骤。象棋就是完全信息，因为玩家是交替着落子，且之前的步骤都能在棋盘上体现，但是石头剪子布就不是。这样的游戏通常可以把他们看作一个树状图，把每一种可能性列出来。比如下面这个井字棋游戏，Max代表你自己，Min代表你的对手。
+
+剪枝
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/MIN-MAX/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-174-Dungeon-Game-1"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/174-Dungeon-Game-1/">174. Dungeon Game</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/174-Dungeon-Game-1/" class="article-date">
+	  <time datetime="2020-11-16T20:13:03.000Z" itemprop="datePublished">2020-11-16</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819202122232425262728class Solution(object):    def calculateMinimumHP(self, dungeon):        """        :type dungeon: List[List[int]]        :rtype: int        """        rows, cols = len(dungeon), len(dungeon[0])      ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/16/174-Dungeon-Game-1/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1473-Paint-House-III"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/16/1473-Paint-House-III/">1473. Paint House III</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/16/1473-Paint-House-III/" class="article-date">
+	  <time datetime="2020-11-16T20:04:58.000Z" itemprop="datePublished">2020-11-16</time>
 	</a>
 
       
@@ -349,12 +520,13 @@
       
         <p class="article-excerpt-content">
           
-
-
-123456789101112131415161718192021222324252627282930313233343536373839404142434445class Solution(object):    def strongPasswordChecker(self, s):        """        :type s: str        :rtype: int        """        missing_type = 3                ...
+dp[color, blocks]: the minimum cost with current house are painted in color and blocks neighbors up to now
+For each cell, calculate the range of possible neighborhoods number
+To reduce the space, thus when iterate to each house, update the space
+...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/10/420-Strong-Password-Checker/#more">Read More</a>
+          <a href="/2020/11/16/1473-Paint-House-III/#more">Read More</a>
         </p>
       
     </div>
@@ -373,7 +545,7 @@
 
 
   
-    <article id="post-749-Contain-Virus"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-642-Design-Search-Autocomplete-System"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -381,7 +553,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/749-Contain-Virus/">749. Contain Virus</a>
+      <a class="article-title" href="/2020/11/16/642-Design-Search-Autocomplete-System/">642. Design Search Autocomplete System</a>
     </h1>
   
 
@@ -389,8 +561,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/10/749-Contain-Virus/" class="article-date">
-	  <time datetime="2020-11-10T22:09:24.000Z" itemprop="datePublished">2020-11-10</time>
+	<a href="/2020/11/16/642-Design-Search-Autocomplete-System/" class="article-date">
+	  <time datetime="2020-11-16T18:03:53.000Z" itemprop="datePublished">2020-11-16</time>
 	</a>
 
       
@@ -403,11 +575,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          while Trueregions: connected virus regionfronters: all the non infected place region[i] can reach toperimeters: the perimeters: the primiter of region[i]
-dfs –&gt; update regions, calculate fronters &amp; perimeters of current regionbuild wall on ...
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364class TrieNode(object):    def __init__(self):        self.children = &#123;&#125;        self.isEnd = False        self.data = ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/10/749-Contain-Virus/#more">Read More</a>
+          <a href="/2020/11/16/642-Design-Search-Autocomplete-System/#more">Read More</a>
         </p>
       
     </div>
@@ -426,7 +597,7 @@ dfs –&gt; update regions, calculate fronters &amp; perimeters of current regio
 
 
   
-    <article id="post-87-Scramble-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-715-Range-Module"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -434,7 +605,7 @@ dfs –&gt; update regions, calculate fronters &amp; perimeters of current regio
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/87-Scramble-String/">87. Scramble String</a>
+      <a class="article-title" href="/2020/11/15/715-Range-Module/">715. Range Module</a>
     </h1>
   
 
@@ -442,60 +613,8 @@ dfs –&gt; update regions, calculate fronters &amp; perimeters of current regio
     
     <div class="article-meta">
       
-	<a href="/2020/11/10/87-Scramble-String/" class="article-date">
-	  <time datetime="2020-11-10T19:54:11.000Z" itemprop="datePublished">2020-11-10</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          12345678910111213141516171819class Solution(object):    def isScramble(self, s1, s2):        """        :type s1: str        :type s2: str        :rtype: bool        """        n, m = len(s1), len(s2)                if n != m or sorted(s1) != sort...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/10/87-Scramble-String/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1383-Maximum-Performance-of-a-Team"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/1383-Maximum-Performance-of-a-Team/">1383. Maximum Performance of a Team</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/10/1383-Maximum-Performance-of-a-Team/" class="article-date">
-	  <time datetime="2020-11-10T19:14:28.000Z" itemprop="datePublished">2020-11-10</time>
+	<a href="/2020/11/15/715-Range-Module/" class="article-date">
+	  <time datetime="2020-11-16T07:05:59.000Z" itemprop="datePublished">2020-11-15</time>
 	</a>
 
       
@@ -509,10 +628,16 @@ dfs –&gt; update regions, calculate fronters &amp; perimeters of current regio
       
         <p class="article-excerpt-content">
           
-sort array + heap + update global resGreedy1234567891011121314151617181920class Solution(object):    def maxPerformance(self, n, speed, efficiency, k):        """        :type n: int        :type speed: List[int]        :type efficiency: List[int...
+self.X: is the coordinates where track might start/stop
+self.track: whether tracking is on the coordinate to its right
+
+
+
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960class RangeM...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/10/1383-Maximum-Performance-of-a-Team/#more">Read More</a>
+          <a href="/2020/11/15/715-Range-Module/#more">Read More</a>
         </p>
       
     </div>
@@ -531,7 +656,7 @@ sort array + heap + update global resGreedy1234567891011121314151617181920class 
 
 
   
-    <article id="post-843-Guess-the-Word"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-753-Cracking-the-Safe"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -539,7 +664,7 @@ sort array + heap + update global resGreedy1234567891011121314151617181920class 
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/10/843-Guess-the-Word/">843. Guess the Word </a>
+      <a class="article-title" href="/2020/11/14/753-Cracking-the-Safe/">753. Cracking the Safe</a>
     </h1>
   
 
@@ -547,8 +672,8 @@ sort array + heap + update global resGreedy1234567891011121314151617181920class 
     
     <div class="article-meta">
       
-	<a href="/2020/11/10/843-Guess-the-Word/" class="article-date">
-	  <time datetime="2020-11-10T17:50:26.000Z" itemprop="datePublished">2020-11-10</time>
+	<a href="/2020/11/14/753-Cracking-the-Safe/" class="article-date">
+	  <time datetime="2020-11-15T06:30:45.000Z" itemprop="datePublished">2020-11-14</time>
 	</a>
 
       
@@ -562,15 +687,15 @@ sort array + heap + update global resGreedy1234567891011121314151617181920class 
       
         <p class="article-excerpt-content">
           
-everytime we update the possible list, in the matches list to narrow the range
-
-
-将word在wordlist里面进行两两比较， 计算有多少个字符是相等的 –&gt; list of list
-example: worldist[a, b, c]
-return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] repre...
+there are k ** n possible password, thus for loop from 0 to k ** n
+try to create new password from previuos one, and add to visited
+Cornor case
+initial state is 000
+we need to tranvse from back to end: k-1, k-2, …0
+if we tranverse from 0 to k, we...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/10/843-Guess-the-Word/#more">Read More</a>
+          <a href="/2020/11/14/753-Cracking-the-Safe/#more">Read More</a>
         </p>
       
     </div>
@@ -589,7 +714,7 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
 
 
   
-    <article id="post-1531-String-Compression-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-Hierholzer-Algorithm"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -597,7 +722,7 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/1531-String-Compression-II/">1531. String Compression II</a>
+      <a class="article-title" href="/2020/11/14/Hierholzer-Algorithm/">Hierholzer Algorithm</a>
     </h1>
   
 
@@ -605,12 +730,12 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
     
     <div class="article-meta">
       
-	<a href="/2020/11/09/1531-String-Compression-II/" class="article-date">
-	  <time datetime="2020-11-10T06:39:24.000Z" itemprop="datePublished">2020-11-09</time>
+	<a href="/2020/11/14/Hierholzer-Algorithm/" class="article-date">
+	  <time datetime="2020-11-15T05:36:53.000Z" itemprop="datePublished">2020-11-14</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
       
       
@@ -619,11 +744,17 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          决策最优解可以考虑用DP解决corner case: *9, 进位会增加length by 1
-123456789101112131415161718192021222324252627282930313233class Solution(object):    def getLengthOfOptimalCompression(self, s, k):        """        :type s: str        :type k: int        :rtype: in...
+          
+Euler path: a path visiting every edge exactly once
+Euler circuit: an Euler path ending where it started.
+Any connected directed graph where all nodes have equal in-degree and out-degree has an Euler circuit 
+
+欧拉图判定定理：
+
+含有欧拉回路的图称为欧拉图，含有欧拉路径的图称为半欧...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/09/1531-String-Compression-II/#more">Read More</a>
+          <a href="/2020/11/14/Hierholzer-Algorithm/#more">Read More</a>
         </p>
       
     </div>
@@ -642,7 +773,7 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
 
 
   
-    <article id="post-1163-Last-Substring-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-730-Count-Different-Palindromic-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -650,7 +781,7 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/">1163. Last Substring in Lexicographical Order</a>
+      <a class="article-title" href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/">730. Count Different Palindromic Subsequences</a>
     </h1>
   
 
@@ -658,8 +789,8 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
     
     <div class="article-meta">
       
-	<a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/" class="article-date">
-	  <time datetime="2020-11-10T05:43:47.000Z" itemprop="datePublished">2020-11-09</time>
+	<a href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/" class="article-date">
+	  <time datetime="2020-11-15T05:18:03.000Z" itemprop="datePublished">2020-11-14</time>
 	</a>
 
       
@@ -672,128 +803,13 @@ return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] r
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          two pointer
-
-
-
-i is the res for s[i:]j is the next possible res for Last Substring in Lexicographical Order, while j &gt; i
-
-The mean idea here is to eliminate those candidates we are certain not the solution, at last, the only one left is our sol...
+          
+using memo + dfs
+因为只有4个不一样的字符， 所以我们只用考虑4种情况
+如果s[i] == S[j], 那么就有a, aa, a*a, * represent memo[i+1][j] otherwise it would be 112345678910111213141516171819202122232425262728class Solution(object):    def countPalindromicSubsequences(self, S):      ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1335-Minimum-Difficulty-of-a-Job-Schedule"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/1335-Minimum-Difficulty-of-a-Job-Schedule/">1335. Minimum Difficulty of a Job Schedule</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/09/1335-Minimum-Difficulty-of-a-Job-Schedule/" class="article-date">
-	  <time datetime="2020-11-10T03:59:36.000Z" itemprop="datePublished">2020-11-09</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          TOP Down123456789101112131415161718192021222324class Solution(object):    def minDifficulty(self, jobDifficulty, d):        """        :type jobDifficulty: List[int]        :type d: int        :rtype: int        """        n = len(jobDifficulty)  ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/09/1335-Minimum-Difficulty-of-a-Job-Schedule/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-149-Max-Points-on-a-Line"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/149-Max-Points-on-a-Line/">149. Max Points on a Line</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/09/149-Max-Points-on-a-Line/" class="article-date">
-	  <time datetime="2020-11-09T20:39:40.000Z" itemprop="datePublished">2020-11-09</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          dic: key: 
-
-key: slope, all the other points passing same point x
-value: the number of the points with same slopefind the max value
-
-cornor case
-
-same points
-vertical line123456789101112131415161718192021222324252627282930313233343536class Solutio...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/09/149-Max-Points-on-a-Line/#more">Read More</a>
+          <a href="/2020/11/14/730-Count-Different-Palindromic-Subsequences/#more">Read More</a>
         </p>
       
     </div>
@@ -816,7 +832,7 @@ vertical line123456789101112131415161718192021222324252627282930313233343536clas
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/40/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="page-number current">41</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/42/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/40/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="page-number current">41</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/42/">Next &amp;raquo;</a>
   </nav>
 
 </section>

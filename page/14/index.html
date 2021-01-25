@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-1-Two-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-9-Palindrome-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/04/1-Two-Sum/">1. Two Sum </a>
+      <a class="article-title" href="/2021/01/07/9-Palindrome-Number/">9. Palindrome Number</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/04/1-Two-Sum/" class="article-date">
-	  <time datetime="2021-01-05T00:07:01.000Z" itemprop="datePublished">2021-01-04</time>
+	<a href="/2021/01/07/9-Palindrome-Number/" class="article-date">
+	  <time datetime="2021-01-08T01:54:33.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -295,10 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314class Solution(object):    def twoSum(self, nums, target):        """        :type nums: List[int]        :type target: int        :rtype: List[int]        """        d = &#123;&#125;        for i, n in enumerate(nums):         ...
+          12345678910111213141516171819202122class Solution(object):    def isPalindrome(self, x):        """        :type x: int        :rtype: bool        """        if x &lt; 0: return False                ranger = 1                while x/ranger &gt;= 1...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/04/1-Two-Sum/#more">Read More</a>
+          <a href="/2021/01/07/9-Palindrome-Number/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +317,7 @@
 
 
   
-    <article id="post-341-Flatten-Nested-List-Iterator"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-346-Moving-Average-from-Data-Stream"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/341-Flatten-Nested-List-Iterator/">341. Flatten Nested List Iterator</a>
+      <a class="article-title" href="/2021/01/07/346-Moving-Average-from-Data-Stream/">346. Moving Average from Data Stream</a>
     </h1>
   
 
@@ -333,8 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/02/341-Flatten-Nested-List-Iterator/" class="article-date">
-	  <time datetime="2021-01-03T04:29:41.000Z" itemprop="datePublished">2021-01-02</time>
+	<a href="/2021/01/07/346-Moving-Average-from-Data-Stream/" class="article-date">
+	  <time datetime="2021-01-08T00:33:01.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -347,10 +347,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          stack12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182/** * // This is the interface that allows for creating nested lists. * // You should n...
+          1234567891011121314151617181920212223242526cclass MovingAverage(object):    def __init__(self, size):        """        Initialize your data structure here.        :type size: int        """        self.size = size        self.queue = deque()     ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/02/341-Flatten-Nested-List-Iterator/#more">Read More</a>
+          <a href="/2021/01/07/346-Moving-Average-from-Data-Stream/#more">Read More</a>
         </p>
       
     </div>
@@ -369,7 +369,7 @@
 
 
   
-    <article id="post-133-Clone-Graph"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-286-Walls-and-Gates"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -377,7 +377,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/133-Clone-Graph/">133. Clone Graph</a>
+      <a class="article-title" href="/2021/01/07/286-Walls-and-Gates/">286. Walls and Gates</a>
     </h1>
   
 
@@ -385,8 +385,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/02/133-Clone-Graph/" class="article-date">
-	  <time datetime="2021-01-03T03:56:57.000Z" itemprop="datePublished">2021-01-02</time>
+	<a href="/2021/01/07/286-Walls-and-Gates/" class="article-date">
+	  <time datetime="2021-01-07T22:59:00.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -399,11 +399,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          node is None
-1234567891011121314151617181920212223242526272829303132/** * // Definition for a Node. * function Node(val, neighbors) &#123; *    this.val = val === undefined ? 0 : val; *    this.neighbors = neighbors === undefined ? [] : neighbors;...
+          123456789101112131415161718class Solution(object):    def wallsAndGates(self, rooms):        if not rooms:            return         r, c= len(rooms), len(rooms[0])        for i in xrange(r):            for j in xrange(c):                if rooms[...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/02/133-Clone-Graph/#more">Read More</a>
+          <a href="/2021/01/07/286-Walls-and-Gates/#more">Read More</a>
         </p>
       
     </div>
@@ -422,7 +421,7 @@
 
 
   
-    <article id="post-438-Find-All-Anagrams-in-a-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-340-Longest-Substring-with-At-Most-K-Distinct-Characters"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -430,7 +429,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/438-Find-All-Anagrams-in-a-String/">438. Find All Anagrams in a String</a>
+      <a class="article-title" href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/">340. Longest Substring with At Most K Distinct Characters</a>
     </h1>
   
 
@@ -438,8 +437,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/02/438-Find-All-Anagrams-in-a-String/" class="article-date">
-	  <time datetime="2021-01-03T03:48:16.000Z" itemprop="datePublished">2021-01-02</time>
+	<a href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/" class="article-date">
+	  <time datetime="2021-01-07T22:57:29.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -452,13 +451,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Sliding window
-if end point at index: idx1if start point at index: idx0if the length between idx1 and idx0 is: a
-a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
-123456789101112131415161718192021222324252627/** * @param &#123;string&#125; ...
+          1234567891011121314class Solution(object):    def lengthOfLongestSubstringKDistinct(self, s, k):        d = collections.defaultdict(int)        i, res = 0, 0        for j in range(len(s)):            d[s[j]] += 1            # while have more than ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/02/438-Find-All-Anagrams-in-a-String/#more">Read More</a>
+          <a href="/2021/01/07/340-Longest-Substring-with-At-Most-K-Distinct-Characters/#more">Read More</a>
         </p>
       
     </div>
@@ -477,7 +473,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
 
 
   
-    <article id="post-636-Exclusive-Time-of-Functions"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-304-Range-Sum-Query-2D-Immutable"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -485,7 +481,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/636-Exclusive-Time-of-Functions/">636. Exclusive Time of Functions</a>
+      <a class="article-title" href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/">304. Range Sum Query 2D - Immutable </a>
     </h1>
   
 
@@ -493,8 +489,8 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     
     <div class="article-meta">
       
-	<a href="/2021/01/02/636-Exclusive-Time-of-Functions/" class="article-date">
-	  <time datetime="2021-01-03T02:32:01.000Z" itemprop="datePublished">2021-01-02</time>
+	<a href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/" class="article-date">
+	  <time datetime="2021-01-07T08:01:01.000Z" itemprop="datePublished">2021-01-07</time>
 	</a>
 
       
@@ -507,11 +503,10 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          when pop a, need to update the second time of item before item a, using this to update time interval
-1234567891011121314151617181920212223242526/** * @param &#123;number&#125; n * @param &#123;string[]&#125; logs * @return &#123;number[]&#125; */v...
+          12345678910111213141516171819202122232425262728293031class NumMatrix(object):    def __init__(self, matrix):        """        :type matrix: List[List[int]]        """        if matrix is None or not matrix: return        n, m = len(matrix), len(m...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/02/636-Exclusive-Time-of-Functions/#more">Read More</a>
+          <a href="/2021/01/07/304-Range-Sum-Query-2D-Immutable/#more">Read More</a>
         </p>
       
     </div>
@@ -530,7 +525,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
 
 
   
-    <article id="post-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-155-Min-Stack"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -538,7 +533,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/">34. Find First and Last Position of Element in Sorted Array</a>
+      <a class="article-title" href="/2021/01/06/155-Min-Stack/">155. Min Stack</a>
     </h1>
   
 
@@ -546,8 +541,8 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     
     <div class="article-meta">
       
-	<a href="/2021/01/02/34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/" class="article-date">
-	  <time datetime="2021-01-03T01:37:25.000Z" itemprop="datePublished">2021-01-02</time>
+	<a href="/2021/01/06/155-Min-Stack/" class="article-date">
+	  <time datetime="2021-01-07T07:37:07.000Z" itemprop="datePublished">2021-01-06</time>
 	</a>
 
       
@@ -560,10 +555,10 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var searchRange = function(nums, target) &#123;    let left = 0, right = nu...
+          12345678910111213141516171819202122232425262728293031323334353637383940414243class MinStack(object):    def __init__(self):        """        initialize your data structure here.        """        self.stack = []    def push(self, x):        """  ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/02/34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/#more">Read More</a>
+          <a href="/2021/01/06/155-Min-Stack/#more">Read More</a>
         </p>
       
     </div>
@@ -582,7 +577,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
 
 
   
-    <article id="post-51-N-Queens"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-337-House-Robber-III"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -590,7 +585,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/02/51-N-Queens/">51. N-Queens</a>
+      <a class="article-title" href="/2021/01/06/337-House-Robber-III/">337. House Robber III</a>
     </h1>
   
 
@@ -598,8 +593,8 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     
     <div class="article-meta">
       
-	<a href="/2021/01/02/51-N-Queens/" class="article-date">
-	  <time datetime="2021-01-02T23:40:12.000Z" itemprop="datePublished">2021-01-02</time>
+	<a href="/2021/01/06/337-House-Robber-III/" class="article-date">
+	  <time datetime="2021-01-07T07:26:13.000Z" itemprop="datePublished">2021-01-06</time>
 	</a>
 
       
@@ -612,11 +607,10 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          when backtracking, for each row, we just place a valid chess, then go to next row, ===&gt; do isValid checking, it does not need to check the necessary if two chess on the same row, because it never happen
-12345678910111213141516171819202122232425...
+          1234567891011121314151617181920# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(object)...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/02/51-N-Queens/#more">Read More</a>
+          <a href="/2021/01/06/337-House-Robber-III/#more">Read More</a>
         </p>
       
     </div>
@@ -635,7 +629,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
 
 
   
-    <article id="post-75-Sort-Colors"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-70-Climbing-Stairs"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -643,7 +637,7 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/01/75-Sort-Colors/">75. Sort Colors</a>
+      <a class="article-title" href="/2021/01/06/70-Climbing-Stairs/">70. Climbing Stairs </a>
     </h1>
   
 
@@ -651,12 +645,12 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     
     <div class="article-meta">
       
-	<a href="/2021/01/01/75-Sort-Colors/" class="article-date">
-	  <time datetime="2021-01-02T02:25:11.000Z" itemprop="datePublished">2021-01-01</time>
+	<a href="/2021/01/06/70-Climbing-Stairs/" class="article-date">
+	  <time datetime="2021-01-07T07:13:13.000Z" itemprop="datePublished">2021-01-06</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -665,13 +659,10 @@ a = idx1 - idx0 + 1idx1 = idx0 + a - 1idx0 = id1 - a + 1
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-key point: idx &lt;= p2
-end is p2
-equal: to pass the 1 case1234567891011121314151617181920212223242526/** * @param &#123;number[]&#125; nums * @return &#123;void&#125; Do not return anything, modify nums in-place instead. */var sortColors = funct...
+          12345678910111213class Solution(object):    def climbStairs(self, n):        """        :type n: int        :rtype: int        """        if n == 1: return 1        a, b = 1, 2        for i in xrange(2, n):            tmp = b            b = a+b   ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/01/75-Sort-Colors/#more">Read More</a>
+          <a href="/2021/01/06/70-Climbing-Stairs/#more">Read More</a>
         </p>
       
     </div>
@@ -690,7 +681,7 @@ equal: to pass the 1 case1234567891011121314151617181920212223242526/** * @param
 
 
   
-    <article id="post-Webpack"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-13-Roman-to-Integer"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -698,7 +689,7 @@ equal: to pass the 1 case1234567891011121314151617181920212223242526/** * @param
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/30/Webpack/">Webpack</a>
+      <a class="article-title" href="/2021/01/06/13-Roman-to-Integer/">13. Roman to Integer</a>
     </h1>
   
 
@@ -706,12 +697,12 @@ equal: to pass the 1 case1234567891011121314151617181920212223242526/** * @param
     
     <div class="article-meta">
       
-	<a href="/2020/12/30/Webpack/" class="article-date">
-	  <time datetime="2020-12-30T09:30:44.000Z" itemprop="datePublished">2020-12-30</time>
+	<a href="/2021/01/06/13-Roman-to-Integer/" class="article-date">
+	  <time datetime="2021-01-07T07:06:57.000Z" itemprop="datePublished">2021-01-06</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -720,21 +711,10 @@ equal: to pass the 1 case1234567891011121314151617181920212223242526/** * @param
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-Webpack is a static module bundler for JavaScript applications. 
-webpack-dev-server
-Live reloading
-hot reloading
-
-
-
-
-
-
-LoadersBy default, Webpack can only bundle JavaScript and JSON files. –&gt;  if you have dependencies on any other file types, ...
+          1234567891011121314151617181920212223242526values = &#123;    "I": 1,    "V": 5,    "X": 10,    "L": 50,    "C": 100,    "D": 500,    "M": 1000,&#125;class Solution(object):    def romanToInt(self, s):        """        :type s: str        :rtype:...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/30/Webpack/#more">Read More</a>
+          <a href="/2021/01/06/13-Roman-to-Integer/#more">Read More</a>
         </p>
       
     </div>
@@ -753,7 +733,7 @@ LoadersBy default, Webpack can only bundle JavaScript and JSON files. –&gt;  i
 
 
   
-    <article id="post-Running-Prebuilt-Tasks-with-Grunt"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-359-Logger-Rate-Limiter"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -761,7 +741,7 @@ LoadersBy default, Webpack can only bundle JavaScript and JSON files. –&gt;  i
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/12/30/Running-Prebuilt-Tasks-with-Grunt/">Running Prebuilt Tasks with Grunt</a>
+      <a class="article-title" href="/2021/01/06/359-Logger-Rate-Limiter/">359. Logger Rate Limiter </a>
     </h1>
   
 
@@ -769,12 +749,12 @@ LoadersBy default, Webpack can only bundle JavaScript and JSON files. –&gt;  i
     
     <div class="article-meta">
       
-	<a href="/2020/12/30/Running-Prebuilt-Tasks-with-Grunt/" class="article-date">
-	  <time datetime="2020-12-30T09:20:53.000Z" itemprop="datePublished">2020-12-30</time>
+	<a href="/2021/01/06/359-Logger-Rate-Limiter/" class="article-date">
+	  <time datetime="2021-01-07T07:03:07.000Z" itemprop="datePublished">2021-01-06</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
 
       
       
@@ -783,11 +763,10 @@ LoadersBy default, Webpack can only bundle JavaScript and JSON files. –&gt;  i
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Load the plugingrunt.loadNpmTasks(&#39;grunt-contrib-uglify&#39;);Example in Gruntfile
-123456789101112131415module.exports = function(grunt) &#123;	grunt.initConfig(&#123;  	uglify: &#123;    	my_target: &#123;      	files: &#123;        	'/userco...
+          123456789101112131415161718192021222324252627282930class Logger(object):    def __init__(self):        """        Initialize your data structure here.        """        self._msg_dict = &#123;&#125;    def shouldPrintMessage(self, timestamp, messa...
         </p>
         <p class="article-more-link">
-          <a href="/2020/12/30/Running-Prebuilt-Tasks-with-Grunt/#more">Read More</a>
+          <a href="/2021/01/06/359-Logger-Rate-Limiter/#more">Read More</a>
         </p>
       
     </div>
@@ -810,7 +789,7 @@ LoadersBy default, Webpack can only bundle JavaScript and JSON files. –&gt;  i
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/13/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/15/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/13/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/15/">Next &amp;raquo;</a>
   </nav>
 
 </section>

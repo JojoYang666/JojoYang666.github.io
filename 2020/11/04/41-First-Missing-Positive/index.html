@@ -9,15 +9,15 @@
   
   
   
-  <meta name="description" content="if 1 not in nums –&gt; min value is 1 length of nums is n, if not meet the condition above, there are 2 possible answers min missing value is in [2, n] n + 1   we can use idx to find the min missing">
+  <meta name="description" content="0 –&gt; is the cornor case –&gt; +0 &amp; -0 &#x3D; 0 –&gt; also if num &gt;&#x3D; n –&gt; index boundry –&gt; need to resetif nums[i] &lt;&#x3D; 0 or nums[i] &gt; n:                nums[i] &#x3D; 1  if 1 not in nums –&amp;g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="41. First Missing Positive">
 <meta property="og:url" content="https://jojoyang666.github.io/2020/11/04/41-First-Missing-Positive/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="if 1 not in nums –&gt; min value is 1 length of nums is n, if not meet the condition above, there are 2 possible answers min missing value is in [2, n] n + 1   we can use idx to find the min missing">
+<meta property="og:description" content="0 –&gt; is the cornor case –&gt; +0 &amp; -0 &#x3D; 0 –&gt; also if num &gt;&#x3D; n –&gt; index boundry –&gt; need to resetif nums[i] &lt;&#x3D; 0 or nums[i] &gt; n:                nums[i] &#x3D; 1  if 1 not in nums –&amp;g">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-05T00:11:55.000Z">
-<meta property="article:modified_time" content="2020-12-10T21:55:03.984Z">
+<meta property="article:modified_time" content="2021-01-22T01:33:44.576Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -206,7 +206,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
+        <p>0 –&gt; is the cornor case –&gt; +0 &amp; -0 = 0 –&gt; also if num &gt;= n –&gt; index boundry –&gt; need to reset<br>if nums[i] &lt;= 0 or nums[i] &gt; n:<br>                nums[i] = 1</p>
+<ol>
 <li>if 1 not in nums –&gt; min value is 1</li>
 <li>length of nums is n, if not meet the condition above, there are 2 possible answers<ul>
 <li>min missing value is in [2, n]</li>

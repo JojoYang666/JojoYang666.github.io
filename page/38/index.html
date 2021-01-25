@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-864-Shortest-Path-to-Get-All-Keys"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-786-K-th-Smallest-Prime-Fraction"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/">864. Shortest Path to Get All Keys</a>
+      <a class="article-title" href="/2020/11/19/786-K-th-Smallest-Prime-Fraction/">786. K-th Smallest Prime Fraction</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/" class="article-date">
-	  <time datetime="2020-11-14T23:55:32.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/19/786-K-th-Smallest-Prime-Fraction/" class="article-date">
+	  <time datetime="2020-11-20T05:37:19.000Z" itemprop="datePublished">2020-11-19</time>
 	</a>
 
       
@@ -295,14 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-用BFS node用位置+current key来表示
-corner case: 最优解可能从起点出发同时再路过起点
-
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Solution(object):    def shortestPathAllKeys(self, grid):        """        :type g...
+          注意： A is a sorted array
+pq1234567891011121314151617class Solution(object):    def kthSmallestPrimeFraction(self, A, K):        """        :type A: List[int]        :type K: int        :rtype: List[int]        """        pq = [(A[0]/float(A[i]), 0,...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/#more">Read More</a>
+          <a href="/2020/11/19/786-K-th-Smallest-Prime-Fraction/#more">Read More</a>
         </p>
       
     </div>
@@ -321,7 +318,7 @@ corner case: 最优解可能从起点出发同时再路过起点
 
 
   
-    <article id="post-1274-Number-of-Ships-in-a-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-757-Set-Intersection-Size-At-Least-Two"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -329,7 +326,7 @@ corner case: 最优解可能从起点出发同时再路过起点
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/">1274. Number of Ships in a Rectangle</a>
+      <a class="article-title" href="/2020/11/19/757-Set-Intersection-Size-At-Least-Two/">757. Set Intersection Size At Least Two</a>
     </h1>
   
 
@@ -337,8 +334,8 @@ corner case: 最优解可能从起点出发同时再路过起点
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/" class="article-date">
-	  <time datetime="2020-11-14T22:26:38.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/19/757-Set-Intersection-Size-At-Least-Two/" class="article-date">
+	  <time datetime="2020-11-20T04:39:40.000Z" itemprop="datePublished">2020-11-19</time>
 	</a>
 
       
@@ -352,13 +349,14 @@ corner case: 最优解可能从起点出发同时再路过起点
       
         <p class="article-excerpt-content">
           
-Divide to 4 quaters
-recursive to find it and sum of it
-
-123456789101112131415161718192021222324252627282930313233343536# """# This is Sea's API interface.# You should not implement it, or speculate about its implementation# """#class Sea(object):...
+sort by endpoint
+the earlist end comes first
+when we met an interval a, a ends before any pending intervals
+if there is no result or the biggest time is less than start of current interval –&gt; need to add 2 value of current interval
+if there is...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/#more">Read More</a>
+          <a href="/2020/11/19/757-Set-Intersection-Size-At-Least-Two/#more">Read More</a>
         </p>
       
     </div>
@@ -377,7 +375,7 @@ recursive to find it and sum of it
 
 
   
-    <article id="post-1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-From-Entering-a-URL-to-Receiving-Root-File"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -385,7 +383,7 @@ recursive to find it and sum of it
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/">1368. Minimum Cost to Make at Least One Valid Path in a Grid</a>
+      <a class="article-title" href="/2020/11/19/From-Entering-a-URL-to-Receiving-Root-File/">From Entering a URL to Receiving Root File</a>
     </h1>
   
 
@@ -393,12 +391,12 @@ recursive to find it and sum of it
     
     <div class="article-meta">
       
-	<a href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/" class="article-date">
-	  <time datetime="2020-11-14T21:01:19.000Z" itemprop="datePublished">2020-11-14</time>
+	<a href="/2020/11/19/From-Entering-a-URL-to-Receiving-Root-File/" class="article-date">
+	  <time datetime="2020-11-19T23:11:50.000Z" itemprop="datePublished">2020-11-19</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
 
       
       
@@ -407,15 +405,13 @@ recursive to find it and sum of it
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-dfs and bfs combination
-using bfs to find the minimum path(cost) to the target –&gt; in this problem: the length of path is k
-using dfs to update the node for the next level
-dfs to find the current node can reach to(if change current node)
-update...
+          DNS
+DNS is used to find IP addresses from domain names.
+Domain name to IP address mappings are called ‘DNS records.’
+These DNS records are part of a distributed database, which means that all the records are not stored at any one server, but are d...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/#more">Read More</a>
+          <a href="/2020/11/19/From-Entering-a-URL-to-Receiving-Root-File/#more">Read More</a>
         </p>
       
     </div>
@@ -434,7 +430,7 @@ update...
 
 
   
-    <article id="post-773-Sliding-Puzzle"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-770-Basic-Calculator-IV"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -442,7 +438,7 @@ update...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/773-Sliding-Puzzle/">773. Sliding Puzzle</a>
+      <a class="article-title" href="/2020/11/19/770-Basic-Calculator-IV/">770. Basic Calculator IV </a>
     </h1>
   
 
@@ -450,8 +446,8 @@ update...
     
     <div class="article-meta">
       
-	<a href="/2020/11/13/773-Sliding-Puzzle/" class="article-date">
-	  <time datetime="2020-11-14T00:21:25.000Z" itemprop="datePublished">2020-11-13</time>
+	<a href="/2020/11/19/770-Basic-Calculator-IV/" class="article-date">
+	  <time datetime="2020-11-19T21:35:31.000Z" itemprop="datePublished">2020-11-19</time>
 	</a>
 
       
@@ -464,15 +460,10 @@ update...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-convert it to graph
-using BFS to find the minimun path
-Cornor Case
-if nei/C != pos/C and nei%C != pos%C: continue &lt;—- this happens because we convert to dismension to 1 dimension
-Considering the case [[1,2,3], [0,4,5]]. If the next move is to ...
+          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394# in Poly: digit is presented by () &lt;- key# Poly that knows a map...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/13/773-Sliding-Puzzle/#more">Read More</a>
+          <a href="/2020/11/19/770-Basic-Calculator-IV/#more">Read More</a>
         </p>
       
     </div>
@@ -491,7 +482,7 @@ Considering the case [[1,2,3], [0,4,5]]. If the next move is to ...
 
 
   
-    <article id="post-dropbox"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1345-Jump-Game-IV"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -499,7 +490,7 @@ Considering the case [[1,2,3], [0,4,5]]. If the next move is to ...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/dropbox/">dropbox</a>
+      <a class="article-title" href="/2020/11/19/1345-Jump-Game-IV/">1345. Jump Game IV</a>
     </h1>
   
 
@@ -507,8 +498,170 @@ Considering the case [[1,2,3], [0,4,5]]. If the next move is to ...
     
     <div class="article-meta">
       
-	<a href="/2020/11/13/dropbox/" class="article-date">
-	  <time datetime="2020-11-13T21:38:42.000Z" itemprop="datePublished">2020-11-13</time>
+	<a href="/2020/11/19/1345-Jump-Game-IV/" class="article-date">
+	  <time datetime="2020-11-19T20:40:38.000Z" itemprop="datePublished">2020-11-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Using BFS
+after visit graph[arr[node]], reset graph[arr[node]] to [] to speed up, remove redant check
+1234567891011121314151617181920212223242526272829303132333435363738class Solution(object):    def minJumps(self, arr):        """        :type ar...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/19/1345-Jump-Game-IV/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1520-Maximum-Number-of-Non-Overlapping-Substrings"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/19/1520-Maximum-Number-of-Non-Overlapping-Substrings/">1520. Maximum Number of Non-Overlapping Substrings</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/19/1520-Maximum-Number-of-Non-Overlapping-Substrings/" class="article-date">
+	  <time datetime="2020-11-19T20:17:03.000Z" itemprop="datePublished">2020-11-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Interval Scheduling Maximization (ISMP)
+123456789101112131415161718192021222324252627282930class Solution(object):    def maxNumOfSubstrings(self, s):        """        :type s: str        :rtype: List[str]        """        fst = &#123;c: s.index...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/19/1520-Maximum-Number-of-Non-Overlapping-Substrings/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Interval-scheduling"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/19/Interval-scheduling/">Interval scheduling</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/19/Interval-scheduling/" class="article-date">
+	  <time datetime="2020-11-19T19:09:14.000Z" itemprop="datePublished">2020-11-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          interval scheduling maximization problem (ISMP)ProblemFind a largest compatible set - a set of non-overlapping intervals of maximum size. The goal here is to execute as many tasks as possible
+SolutionGreedy
+
+Select the interval, x, with the earlie...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/19/Interval-scheduling/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-Designing-Typeahead-Suggestion"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/19/Designing-Typeahead-Suggestion/">Designing Typeahead Suggestion</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/19/Designing-Typeahead-Suggestion/" class="article-date">
+	  <time datetime="2020-11-19T17:14:43.000Z" itemprop="datePublished">2020-11-19</time>
 	</a>
 
       
@@ -521,18 +674,15 @@ Considering the case [[1,2,3], [0,4,5]]. If the next move is to ...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Why Cloud Storage
-Availability: 
-Have data availability anywhere, anytime
-Access their files/photos from any device whenever and wherever they like.
+          Requirements and Goals of the SystemFunctional Requirements
+As the user types in their query, our service should suggest top 10 terms starting with whatever the user has typed.
 
-
-Reliability and Durability
-Offers  100% reliability and durability of data
-Never lose their data...
+Non-function Requirements
+The suggestions should appear in real-time
+...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/13/dropbox/#more">Read More</a>
+          <a href="/2020/11/19/Designing-Typeahead-Suggestion/#more">Read More</a>
         </p>
       
     </div>
@@ -551,7 +701,7 @@ Never lose their data...
 
 
   
-    <article id="post-1411-Number-of-Ways-to-Paint-N-×-3-Grid"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-943-Find-the-Shortest-Superstring"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -559,7 +709,7 @@ Never lose their data...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/">1411. Number of Ways to Paint N × 3 Grid</a>
+      <a class="article-title" href="/2020/11/18/943-Find-the-Shortest-Superstring/">943. Find the Shortest Superstring</a>
     </h1>
   
 
@@ -567,8 +717,8 @@ Never lose their data...
     
     <div class="article-meta">
       
-	<a href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/" class="article-date">
-	  <time datetime="2020-11-13T18:25:54.000Z" itemprop="datePublished">2020-11-13</time>
+	<a href="/2020/11/18/943-Find-the-Shortest-Superstring/" class="article-date">
+	  <time datetime="2020-11-19T04:55:06.000Z" itemprop="datePublished">2020-11-18</time>
 	</a>
 
       
@@ -581,19 +731,11 @@ Never lose their data...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
-In each row, there are two patterns:
-
-
-121: the first color same as the third in the row
-Initial the pattern has 6 states: 121, 323, 212, 313, 131,232
-
-
-123: one row has three different colors
-Initial the pattern has 6 states: 123, 132, 213, 231,...
+          讲解
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051class Solution(object):    def shortestSuperstring(self, A):        """        :type A: List[str]        :rtype: str        """        # return the len...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/#more">Read More</a>
+          <a href="/2020/11/18/943-Find-the-Shortest-Superstring/#more">Read More</a>
         </p>
       
     </div>
@@ -612,7 +754,7 @@ Initial the pattern has 6 states: 123, 132, 213, 231,...
 
 
   
-    <article id="post-174-Dungeon-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-188-Best-Time-to-Buy-and-Sell-Stock-IV"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -620,7 +762,7 @@ Initial the pattern has 6 states: 123, 132, 213, 231,...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/13/174-Dungeon-Game/">174. Dungeon Game</a>
+      <a class="article-title" href="/2020/11/18/188-Best-Time-to-Buy-and-Sell-Stock-IV/">188. Best Time to Buy and Sell Stock IV</a>
     </h1>
   
 
@@ -628,119 +770,8 @@ Initial the pattern has 6 states: 123, 132, 213, 231,...
     
     <div class="article-meta">
       
-	<a href="/2020/11/13/174-Dungeon-Game/" class="article-date">
-	  <time datetime="2020-11-13T17:39:10.000Z" itemprop="datePublished">2020-11-13</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-dp[i][j]: the minimum health needed to reach the princess at the pos i, j
-记得 如果不需要的话 初始化是112345678910111213141516171819202122232425262728class Solution(object):    def calculateMinimumHP(self, dungeon):        """        :type dungeon: List[List[...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/13/174-Dungeon-Game/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-471-Encode-String-with-Shortest-Length"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/12/471-Encode-String-with-Shortest-Length/">471. Encode String with Shortest Length </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/12/471-Encode-String-with-Shortest-Length/" class="article-date">
-	  <time datetime="2020-11-13T07:46:49.000Z" itemprop="datePublished">2020-11-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-using dp[i][j]: shortest length from i to j, but i must from end to start
-because when update dp[i][j]: will using dp[k+1][j], k+1 &gt; i —&gt; split
-
-
-also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + ‘[‘ + dp[i][k] ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/12/471-Encode-String-with-Shortest-Length/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-440-K-th-Smallest-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/">440. K-th Smallest in Lexicographical Order</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/" class="article-date">
-	  <time datetime="2020-11-13T05:23:28.000Z" itemprop="datePublished">2020-11-12</time>
+	<a href="/2020/11/18/188-Best-Time-to-Buy-and-Sell-Stock-IV/" class="article-date">
+	  <time datetime="2020-11-19T03:46:03.000Z" itemprop="datePublished">2020-11-18</time>
 	</a>
 
       
@@ -756,67 +787,10 @@ also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + �
           
 
 
-12345678910111213141516171819202122232425class Solution(object):    def findKthNumber(self, n, k):        """        :type n: int        :type k: int        :rtype: int        """        result = 1        k -= 1                while k &gt; 0:  ...
+123456789101112131415161718192021222324252627282930313233343536class Solution(object):    def maxProfit(self, k, prices):        """        :type k: int        :type prices: List[int]        :rtype: int        """        n = len(prices)        ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/">1312. Minimum Insertion Steps to Make a String Palindrome</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/" class="article-date">
-	  <time datetime="2020-11-13T04:43:28.000Z" itemprop="datePublished">2020-11-12</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          convert the problem to find the longest common sequence
-
-find the longest common sequences between s and reversed(s) -&gt; m
-then the chars needed to add is len(s) - m
-
-12345678910111213class Solution(object):    def minInsertions(self, s):       ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/#more">Read More</a>
+          <a href="/2020/11/18/188-Best-Time-to-Buy-and-Sell-Stock-IV/#more">Read More</a>
         </p>
       
     </div>
@@ -839,7 +813,7 @@ then the chars needed to add is len(s) - m
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/37/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="page-number current">38</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/39/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/37/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="page-number current">38</span><a class="page-number" href="/page/39/">39</a><a class="page-number" href="/page/40/">40</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/39/">Next &amp;raquo;</a>
   </nav>
 
 </section>

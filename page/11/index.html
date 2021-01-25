@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-69-Sqrt-x"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-416-Partition-Equal-Subset-Sum"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/69-Sqrt-x/">69. Sqrt(x) </a>
+      <a class="article-title" href="/2021/01/12/416-Partition-Equal-Subset-Sum/">416. Partition Equal Subset Sum</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/69-Sqrt-x/" class="article-date">
-	  <time datetime="2021-01-07T05:51:52.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/416-Partition-Equal-Subset-Sum/" class="article-date">
+	  <time datetime="2021-01-13T07:01:50.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -295,10 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718class Solution:    def mySqrt(self, x):        if x &lt; 2:            return x                left, right = 2, x // 2                while left &lt;= right:            pivot = left + (right - left) // 2            num =...
+          dp[i][j] = dp[i-1][s] or (s &gt;= nums[i] and dp[i-1][s-nums[i]])
+DP from bottom up123456789101112131415class Solution(object):    def canPartition(self, nums):        """        :type nums: List[int]        :rtype: bool        """        target, ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/69-Sqrt-x/#more">Read More</a>
+          <a href="/2021/01/12/416-Partition-Equal-Subset-Sum/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +318,7 @@
 
 
   
-    <article id="post-post-2"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-727-Minimum-Window-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/post-2/">post</a>
+      <a class="article-title" href="/2021/01/12/727-Minimum-Window-Subsequence/">727. Minimum Window Subsequence</a>
     </h1>
   
 
@@ -333,11 +334,13 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/post-2/" class="article-date">
-	  <time datetime="2021-01-07T05:51:33.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/727-Minimum-Window-Subsequence/" class="article-date">
+	  <time datetime="2021-01-13T05:33:09.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
       
       
 
@@ -345,10 +348,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          
+          brute forcewhen find it, backward to find the start pos of s, it must be shortest one &amp; remove the possible not valid answereg: s: aaaaaabbbb t: ab
+123456789101112131415161718192021222324252627282930313233class Solution(object):    def minWind...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/post-2/#more">Read More</a>
+          <a href="/2021/01/12/727-Minimum-Window-Subsequence/#more">Read More</a>
         </p>
       
     </div>
@@ -367,7 +371,7 @@
 
 
   
-    <article id="post-844-Backspace-String-Compare"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-830-Positions-of-Large-Groups"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -375,7 +379,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/844-Backspace-String-Compare/">844. Backspace String Compare</a>
+      <a class="article-title" href="/2021/01/12/830-Positions-of-Large-Groups/">830. Positions of Large Groups</a>
     </h1>
   
 
@@ -383,8 +387,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/844-Backspace-String-Compare/" class="article-date">
-	  <time datetime="2021-01-07T04:54:32.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/830-Positions-of-Large-Groups/" class="article-date">
+	  <time datetime="2021-01-13T04:54:02.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -397,10 +401,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718class Solution(object):    def backspaceCompare(self, S, T):        """        :type S: str        :type T: str        :rtype: bool        """        def F(s):            skip = 0                        for x in reversed...
+          1234567891011121314class Solution(object):    def largeGroupPositions(self, S):        """        :type s: str        :rtype: List[List[int]]        """        ans = []        i = 0         for j in xrange(len(S)):            if j == len(S) - 1 or...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/844-Backspace-String-Compare/#more">Read More</a>
+          <a href="/2021/01/12/830-Positions-of-Large-Groups/#more">Read More</a>
         </p>
       
     </div>
@@ -419,7 +423,7 @@
 
 
   
-    <article id="post-334-Increasing-Triplet-Subsequence"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-278-First-Bad-Version"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -427,7 +431,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/334-Increasing-Triplet-Subsequence/">334. Increasing Triplet Subsequence</a>
+      <a class="article-title" href="/2021/01/12/278-First-Bad-Version/">278. First Bad Version</a>
     </h1>
   
 
@@ -435,8 +439,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/334-Increasing-Triplet-Subsequence/" class="article-date">
-	  <time datetime="2021-01-07T04:34:00.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/278-First-Bad-Version/" class="article-date">
+	  <time datetime="2021-01-13T04:46:15.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -449,10 +453,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617class Solution(object):    def increasingTriplet(self, nums):        """        :type nums: List[int]        :rtype: bool        """        first_num = float("inf")        second_num = float("inf")                for n in ...
+          123456789101112131415161718192021# The isBadVersion API is already defined for you.# @param version, an integer# @return a bool# def isBadVersion(version):class Solution(object):    def firstBadVersion(self, n):        """        :type n: int     ...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/334-Increasing-Triplet-Subsequence/#more">Read More</a>
+          <a href="/2021/01/12/278-First-Bad-Version/#more">Read More</a>
         </p>
       
     </div>
@@ -471,7 +475,7 @@
 
 
   
-    <article id="post-57-Insert-Interval"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-419-Battleships-in-a-Board"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -479,7 +483,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/57-Insert-Interval/">57. Insert Interval</a>
+      <a class="article-title" href="/2021/01/12/419-Battleships-in-a-Board/">419. Battleships in a Board</a>
     </h1>
   
 
@@ -487,8 +491,8 @@
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/57-Insert-Interval/" class="article-date">
-	  <time datetime="2021-01-07T04:26:00.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/419-Battleships-in-a-Board/" class="article-date">
+	  <time datetime="2021-01-13T02:35:47.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -501,14 +505,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          input is sorted &amp; not overlapping intervals
-
-put all the intervals which start time is less than insert intervals in to the res
-check if the last interval in the res is overlap with the new interval
-overlap, update the end time of the last int...
+           prev: board is valid
+123456789101112131415class Solution(object):    def countBattleships(self, board):        """        :type board: List[List[str]]        :rtype: int        """        if len(board) == 0: return 0        m, n = len(board), len...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/57-Insert-Interval/#more">Read More</a>
+          <a href="/2021/01/12/419-Battleships-in-a-Board/#more">Read More</a>
         </p>
       
     </div>
@@ -527,7 +528,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-26-Remove-Duplicates-from-Sorted-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-247-Strobogrammatic-Number-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -535,7 +536,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/26-Remove-Duplicates-from-Sorted-Array/">26. Remove Duplicates from Sorted Array</a>
+      <a class="article-title" href="/2021/01/12/247-Strobogrammatic-Number-II/">247. Strobogrammatic Number II</a>
     </h1>
   
 
@@ -543,8 +544,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/26-Remove-Duplicates-from-Sorted-Array/" class="article-date">
-	  <time datetime="2021-01-07T04:15:29.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/247-Strobogrammatic-Number-II/" class="article-date">
+	  <time datetime="2021-01-13T01:34:15.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -557,10 +558,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516class Solution(object):    def removeDuplicates(self, A):        """        :type nums: List[int]        :rtype: int        """        if not A:            return 0                newTail = 0                for i in range(1,...
+          1234567891011121314151617181920212223class Solution(object):    def findStrobogrammatic(self, n):        """        :type n: int        :rtype: List[str]        """                return self.strobogrammatic(n, n)            def strobogrammatic(se...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/26-Remove-Duplicates-from-Sorted-Array/#more">Read More</a>
+          <a href="/2021/01/12/247-Strobogrammatic-Number-II/#more">Read More</a>
         </p>
       
     </div>
@@ -579,7 +580,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-415-Add-Strings"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-559-Maximum-Depth-of-N-ary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -587,7 +588,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/415-Add-Strings/">415. Add Strings</a>
+      <a class="article-title" href="/2021/01/12/559-Maximum-Depth-of-N-ary-Tree/">559. Maximum Depth of N-ary Tree</a>
     </h1>
   
 
@@ -595,8 +596,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/415-Add-Strings/" class="article-date">
-	  <time datetime="2021-01-07T00:34:17.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/559-Maximum-Depth-of-N-ary-Tree/" class="article-date">
+	  <time datetime="2021-01-13T00:23:38.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -609,10 +610,12 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526class Solution(object):    def addStrings(self, num1, num2):        """        :type num1: str        :type num2: str        :rtype: str        """        res = []        carry = 0                p1 = len...
+          [for x in a] –&gt; if a is [], return will [], it will not go in
+thus, it will be one root.children == [] base case: return 1
+1234567891011121314151617181920"""# Definition for a Node.class Node(object):    def __init__(self, val=None, children=No...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/415-Add-Strings/#more">Read More</a>
+          <a href="/2021/01/12/559-Maximum-Depth-of-N-ary-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -631,7 +634,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-617-Merge-Two-Binary-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-110-Balanced-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -639,7 +642,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/617-Merge-Two-Binary-Trees/">617. Merge Two Binary Trees </a>
+      <a class="article-title" href="/2021/01/12/110-Balanced-Binary-Tree/">110. Balanced Binary Tree</a>
     </h1>
   
 
@@ -647,8 +650,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/617-Merge-Two-Binary-Trees/" class="article-date">
-	  <time datetime="2021-01-06T23:42:00.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/110-Balanced-Binary-Tree/" class="article-date">
+	  <time datetime="2021-01-12T23:39:47.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -661,10 +664,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(object):   ...
+          12345678910111213141516171819202122# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(obj...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/617-Merge-Two-Binary-Trees/#more">Read More</a>
+          <a href="/2021/01/12/110-Balanced-Binary-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -683,7 +686,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-198-House-Robber"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-100-Same-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -691,7 +694,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/198-House-Robber/">198. House Robber</a>
+      <a class="article-title" href="/2021/01/12/100-Same-Tree/">100. Same Tree</a>
     </h1>
   
 
@@ -699,8 +702,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/198-House-Robber/" class="article-date">
-	  <time datetime="2021-01-06T23:11:39.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/100-Same-Tree/" class="article-date">
+	  <time datetime="2021-01-12T23:06:40.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -713,10 +716,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011class Solution(object):    def rob(self, nums):        """        :type nums: List[int]        :rtype: int        """        last, now = 0, 0                for i in nums:             last, now = now, max(last + i, now)        return ...
+          123456789101112131415161718192021222324# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/198-House-Robber/#more">Read More</a>
+          <a href="/2021/01/12/100-Same-Tree/#more">Read More</a>
         </p>
       
     </div>
@@ -735,7 +738,7 @@ overlap, update the end time of the last int...
 
 
   
-    <article id="post-169-Majority-Element"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-652-Find-Duplicate-Subtrees"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -743,7 +746,7 @@ overlap, update the end time of the last int...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2021/01/06/169-Majority-Element/">169. Majority Element</a>
+      <a class="article-title" href="/2021/01/12/652-Find-Duplicate-Subtrees/">652. Find Duplicate Subtrees</a>
     </h1>
   
 
@@ -751,8 +754,8 @@ overlap, update the end time of the last int...
     
     <div class="article-meta">
       
-	<a href="/2021/01/06/169-Majority-Element/" class="article-date">
-	  <time datetime="2021-01-06T19:47:02.000Z" itemprop="datePublished">2021-01-06</time>
+	<a href="/2021/01/12/652-Find-Duplicate-Subtrees/" class="article-date">
+	  <time datetime="2021-01-12T18:13:58.000Z" itemprop="datePublished">2021-01-12</time>
 	</a>
 
       
@@ -765,10 +768,10 @@ overlap, update the end time of the last int...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678class Solution(object):    def majorityElement(self, nums):        """        :type nums: List[int]        :rtype: int        """        counts = collections.Counter(nums)        return max(counts.keys(), key=counts.get)
+          1234567891011121314151617181920212223# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Solution(o...
         </p>
         <p class="article-more-link">
-          <a href="/2021/01/06/169-Majority-Element/#more">Read More</a>
+          <a href="/2021/01/12/652-Find-Duplicate-Subtrees/#more">Read More</a>
         </p>
       
     </div>
@@ -791,7 +794,7 @@ overlap, update the end time of the last int...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/10/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/12/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/10/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/12/">Next &amp;raquo;</a>
   </nav>
 
 </section>

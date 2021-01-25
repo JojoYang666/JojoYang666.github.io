@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-1348-Tweet-Counts-Per-Frequency"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1220-Count-Vowels-Permutation"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/1348-Tweet-Counts-Per-Frequency/">1348. Tweet Counts Per Frequency</a>
+      <a class="article-title" href="/2020/11/10/1220-Count-Vowels-Permutation/">1220. Count Vowels Permutation </a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/1348-Tweet-Counts-Per-Frequency/" class="article-date">
-	  <time datetime="2020-11-04T04:31:05.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/10/1220-Count-Vowels-Permutation/" class="article-date">
+	  <time datetime="2020-11-11T03:09:17.000Z" itemprop="datePublished">2020-11-10</time>
 	</a>
 
       
@@ -295,10 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536class TweetCounts(object):    def __init__(self):        self.a = defaultdict(list)            def recordTweet(self, tweetName, time):        """        :type tweetName: str        :ty...
+          My solution keeps track of the number of each vowel at a level in this tree. To calculate say ‘A’, we calculate how many nodes in the previous level produce ‘A’. This is the number of ‘E’, ‘I’, and ‘U’ nodes.
+1234567891011class Solution(object):  ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/1348-Tweet-Counts-Per-Frequency/#more">Read More</a>
+          <a href="/2020/11/10/1220-Count-Vowels-Permutation/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +318,7 @@
 
 
   
-    <article id="post-754-Reach-a-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-420-Strong-Password-Checker"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/754-Reach-a-Number/">754. Reach a Number</a>
+      <a class="article-title" href="/2020/11/10/420-Strong-Password-Checker/">420. Strong Password Checker</a>
     </h1>
   
 
@@ -333,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/754-Reach-a-Number/" class="article-date">
-	  <time datetime="2020-11-04T03:46:12.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/10/420-Strong-Password-Checker/" class="article-date">
+	  <time datetime="2020-11-10T23:56:36.000Z" itemprop="datePublished">2020-11-10</time>
 	</a>
 
       
@@ -348,10 +349,12 @@
       
         <p class="article-excerpt-content">
           
-12345678910111213class Solution(object):    def reachNumber(self, target):        """        :type target: int        :rtype: int        """        target = abs(target)        k = 0        while target &gt; 0:            k += 1            target ...
+
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434445class Solution(object):    def strongPasswordChecker(self, s):        """        :type s: str        :rtype: int        """        missing_type = 3                ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/754-Reach-a-Number/#more">Read More</a>
+          <a href="/2020/11/10/420-Strong-Password-Checker/#more">Read More</a>
         </p>
       
     </div>
@@ -370,7 +373,7 @@
 
 
   
-    <article id="post-1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-749-Contain-Virus"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -378,7 +381,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram/">1347. Minimum Number of Steps to Make Two Strings Anagram</a>
+      <a class="article-title" href="/2020/11/10/749-Contain-Virus/">749. Contain Virus</a>
     </h1>
   
 
@@ -386,8 +389,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram/" class="article-date">
-	  <time datetime="2020-11-04T02:27:29.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/10/749-Contain-Virus/" class="article-date">
+	  <time datetime="2020-11-10T22:09:24.000Z" itemprop="datePublished">2020-11-10</time>
 	</a>
 
       
@@ -400,11 +403,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789class Solution(object):    def minSteps(self, s, t):        """        :type s: str        :type t: str        :rtype: int        """        cnt1, cnt2 = map(collections.Counter, (s, t))        return sum((cnt1 - cnt2).values())
-
+          while Trueregions: connected virus regionfronters: all the non infected place region[i] can reach toperimeters: the perimeters: the primiter of region[i]
+dfs –&gt; update regions, calculate fronters &amp; perimeters of current regionbuild wall on ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram/#more">Read More</a>
+          <a href="/2020/11/10/749-Contain-Virus/#more">Read More</a>
         </p>
       
     </div>
@@ -423,7 +426,7 @@
 
 
   
-    <article id="post-949-Largest-Time-for-Given-Digits"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-87-Scramble-String"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -431,7 +434,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/949-Largest-Time-for-Given-Digits/">949. Largest Time for Given Digits</a>
+      <a class="article-title" href="/2020/11/10/87-Scramble-String/">87. Scramble String</a>
     </h1>
   
 
@@ -439,8 +442,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/949-Largest-Time-for-Given-Digits/" class="article-date">
-	  <time datetime="2020-11-04T02:12:17.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/10/87-Scramble-String/" class="article-date">
+	  <time datetime="2020-11-10T19:54:11.000Z" itemprop="datePublished">2020-11-10</time>
 	</a>
 
       
@@ -453,10 +456,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223class Solution(object):    def largestTimeFromDigits(self, arr):        """        :type arr: List[int]        :rtype: str        """        A = arr        max_time = -1         for i1, D1 in enumerate(A):     ...
+          12345678910111213141516171819class Solution(object):    def isScramble(self, s1, s2):        """        :type s1: str        :type s2: str        :rtype: bool        """        n, m = len(s1), len(s2)                if n != m or sorted(s1) != sort...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/949-Largest-Time-for-Given-Digits/#more">Read More</a>
+          <a href="/2020/11/10/87-Scramble-String/#more">Read More</a>
         </p>
       
     </div>
@@ -475,7 +478,7 @@
 
 
   
-    <article id="post-1162-As-Far-from-Land-as-Possible"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1383-Maximum-Performance-of-a-Team"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -483,7 +486,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/1162-As-Far-from-Land-as-Possible/">1162. As Far from Land as Possible</a>
+      <a class="article-title" href="/2020/11/10/1383-Maximum-Performance-of-a-Team/">1383. Maximum Performance of a Team</a>
     </h1>
   
 
@@ -491,8 +494,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/1162-As-Far-from-Land-as-Possible/" class="article-date">
-	  <time datetime="2020-11-04T01:49:30.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/10/1383-Maximum-Performance-of-a-Team/" class="article-date">
+	  <time datetime="2020-11-10T19:14:28.000Z" itemprop="datePublished">2020-11-10</time>
 	</a>
 
       
@@ -505,10 +508,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526class Solution(object):    def maxDistance(self, grid):        """        :type grid: List[List[int]]        :rtype: int        """        m, n = len(grid), len(grid[0])        q = deque((i, j) for i in r...
+          
+sort array + heap + update global resGreedy1234567891011121314151617181920class Solution(object):    def maxPerformance(self, n, speed, efficiency, k):        """        :type n: int        :type speed: List[int]        :type efficiency: List[int...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/1162-As-Far-from-Land-as-Possible/#more">Read More</a>
+          <a href="/2020/11/10/1383-Maximum-Performance-of-a-Team/#more">Read More</a>
         </p>
       
     </div>
@@ -527,7 +531,7 @@
 
 
   
-    <article id="post-451-Sort-Characters-By-Frequency"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-843-Guess-the-Word"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -535,7 +539,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/451-Sort-Characters-By-Frequency/">451. Sort Characters By Frequency</a>
+      <a class="article-title" href="/2020/11/10/843-Guess-the-Word/">843. Guess the Word </a>
     </h1>
   
 
@@ -543,8 +547,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/451-Sort-Characters-By-Frequency/" class="article-date">
-	  <time datetime="2020-11-04T01:20:10.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/10/843-Guess-the-Word/" class="article-date">
+	  <time datetime="2020-11-10T17:50:26.000Z" itemprop="datePublished">2020-11-10</time>
 	</a>
 
       
@@ -557,13 +561,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567class Solution(object):    def frequencySort(self, s):        """        :type s: str        :rtype: str        """        return ''.join([key * times for key, times in Counter(s).most_common()])
+          
+everytime we update the possible list, in the matches list to narrow the range
 
-Bucket sort
-1234567891011121314151617181920...
+
+将word在wordlist里面进行两两比较， 计算有多少个字符是相等的 –&gt; list of list
+example: worldist[a, b, c]
+return [[1, 0, 0], [1, 0, 0], [1, 0, 0]] –&gt; each item at idx j in list[i] repre...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/451-Sort-Characters-By-Frequency/#more">Read More</a>
+          <a href="/2020/11/10/843-Guess-the-Word/#more">Read More</a>
         </p>
       
     </div>
@@ -582,7 +589,7 @@ Bucket sort
 
 
   
-    <article id="post-355-Design-Twitter"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1531-String-Compression-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -590,7 +597,7 @@ Bucket sort
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/355-Design-Twitter/">355. Design Twitter</a>
+      <a class="article-title" href="/2020/11/09/1531-String-Compression-II/">1531. String Compression II</a>
     </h1>
   
 
@@ -598,8 +605,8 @@ Bucket sort
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/355-Design-Twitter/" class="article-date">
-	  <time datetime="2020-11-04T01:13:52.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/09/1531-String-Compression-II/" class="article-date">
+	  <time datetime="2020-11-10T06:39:24.000Z" itemprop="datePublished">2020-11-09</time>
 	</a>
 
       
@@ -612,10 +619,11 @@ Bucket sort
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152class Twitter(object):    def __init__(self):        """        Initialize your data structure here.        """        self.timer = itertools.count(step...
+          决策最优解可以考虑用DP解决corner case: *9, 进位会增加length by 1
+123456789101112131415161718192021222324252627282930313233class Solution(object):    def getLengthOfOptimalCompression(self, s, k):        """        :type s: str        :type k: int        :rtype: in...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/355-Design-Twitter/#more">Read More</a>
+          <a href="/2020/11/09/1531-String-Compression-II/#more">Read More</a>
         </p>
       
     </div>
@@ -634,7 +642,7 @@ Bucket sort
 
 
   
-    <article id="post-1177-Can-Make-Palindrome-from-Substring"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1163-Last-Substring-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -642,7 +650,7 @@ Bucket sort
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/">1177. Can Make Palindrome from Substring</a>
+      <a class="article-title" href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/">1163. Last Substring in Lexicographical Order</a>
     </h1>
   
 
@@ -650,8 +658,8 @@ Bucket sort
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/" class="article-date">
-	  <time datetime="2020-11-04T00:14:27.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/" class="article-date">
+	  <time datetime="2020-11-10T05:43:47.000Z" itemprop="datePublished">2020-11-09</time>
 	</a>
 
       
@@ -664,11 +672,16 @@ Bucket sort
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          This will Time Limit Exceeded. Thus, we need some memo to aviod repeating counter operation
-123456789101112131415class Solution(object):    def canMakePaliQueries(self, s, queries):        """        :type s: str        :type queries: List[List[in...
+          two pointer
+
+
+
+i is the res for s[i:]j is the next possible res for Last Substring in Lexicographical Order, while j &gt; i
+
+The mean idea here is to eliminate those candidates we are certain not the solution, at last, the only one left is our sol...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/1177-Can-Make-Palindrome-from-Substring/#more">Read More</a>
+          <a href="/2020/11/09/1163-Last-Substring-in-Lexicographical-Order/#more">Read More</a>
         </p>
       
     </div>
@@ -687,7 +700,7 @@ Bucket sort
 
 
   
-    <article id="post-444-Sequence-Reconstruction"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1335-Minimum-Difficulty-of-a-Job-Schedule"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -695,7 +708,7 @@ Bucket sort
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/444-Sequence-Reconstruction/">444. Sequence Reconstruction</a>
+      <a class="article-title" href="/2020/11/09/1335-Minimum-Difficulty-of-a-Job-Schedule/">1335. Minimum Difficulty of a Job Schedule</a>
     </h1>
   
 
@@ -703,8 +716,8 @@ Bucket sort
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/444-Sequence-Reconstruction/" class="article-date">
-	  <time datetime="2020-11-03T21:45:31.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/09/1335-Minimum-Difficulty-of-a-Job-Schedule/" class="article-date">
+	  <time datetime="2020-11-10T03:59:36.000Z" itemprop="datePublished">2020-11-09</time>
 	</a>
 
       
@@ -717,11 +730,10 @@ Bucket sort
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          each time when queue is pop, we must ensure the length of it is 1, otherwise return false, because the problem is asking if it is the only solutionif the length of queue is longer than 2, which means there are multiple possible solutions
-Topologic...
+          TOP Down123456789101112131415161718192021222324class Solution(object):    def minDifficulty(self, jobDifficulty, d):        """        :type jobDifficulty: List[int]        :type d: int        :rtype: int        """        n = len(jobDifficulty)  ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/444-Sequence-Reconstruction/#more">Read More</a>
+          <a href="/2020/11/09/1335-Minimum-Difficulty-of-a-Job-Schedule/#more">Read More</a>
         </p>
       
     </div>
@@ -740,7 +752,7 @@ Topologic...
 
 
   
-    <article id="post-1169-Invalid-Transactions"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-149-Max-Points-on-a-Line"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -748,7 +760,7 @@ Topologic...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/03/1169-Invalid-Transactions/">1169. Invalid Transactions </a>
+      <a class="article-title" href="/2020/11/09/149-Max-Points-on-a-Line/">149. Max Points on a Line</a>
     </h1>
   
 
@@ -756,8 +768,8 @@ Topologic...
     
     <div class="article-meta">
       
-	<a href="/2020/11/03/1169-Invalid-Transactions/" class="article-date">
-	  <time datetime="2020-11-03T21:04:30.000Z" itemprop="datePublished">2020-11-03</time>
+	<a href="/2020/11/09/149-Max-Points-on-a-Line/" class="article-date">
+	  <time datetime="2020-11-09T20:39:40.000Z" itemprop="datePublished">2020-11-09</time>
 	</a>
 
       
@@ -770,10 +782,18 @@ Topologic...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          123456789101112131415161718192021222324252627282930313233343536373839class Transaction:    def __init__(self, name, time, amount, city):        self.name = name        self.time = int(time)        self.amount = int(amount)        self.city = cityc...
+          dic: key: 
+
+key: slope, all the other points passing same point x
+value: the number of the points with same slopefind the max value
+
+cornor case
+
+same points
+vertical line123456789101112131415161718192021222324252627282930313233343536class Solutio...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/03/1169-Invalid-Transactions/#more">Read More</a>
+          <a href="/2020/11/09/149-Max-Points-on-a-Line/#more">Read More</a>
         </p>
       
     </div>
@@ -796,7 +816,7 @@ Topologic...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/44/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="page-number current">45</span><a class="page-number" href="/page/46/">46</a><a class="page-number" href="/page/47/">47</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/46/">Next &amp;raquo;</a>
   </nav>
 
 </section>

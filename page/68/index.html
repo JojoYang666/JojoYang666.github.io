@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-963-Minimum-Area-Rectangle-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-442-Find-All-Duplicates-in-an-Array"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/23/963-Minimum-Area-Rectangle-II/">963. Minimum Area Rectangle II</a>
+      <a class="article-title" href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/">442. Find All Duplicates in an Array</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/23/963-Minimum-Area-Rectangle-II/" class="article-date">
-	  <time datetime="2020-09-23T15:29:33.000Z" itemprop="datePublished">2020-09-23</time>
+	<a href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/" class="article-date">
+	  <time datetime="2020-10-04T23:54:24.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -295,12 +295,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 1Iterate centers
-
-123456789101112131415161718class Solution(object):    def minAreaFreeRect(self, points):        """        :type points: List[List[int]]        :rtype: float        """        points = [complex(*z) for z in points]      ...
+          Solution 1Bit Mask
+1234567891011121314class Solution(object):    def findDuplicates(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        mask, n = 1, len(nums)        res = []        for num in nums:     ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/23/963-Minimum-Area-Rectangle-II/#more">Read More</a>
+          <a href="/2020/10/04/442-Find-All-Duplicates-in-an-Array/#more">Read More</a>
         </p>
       
     </div>
@@ -319,7 +318,7 @@
 
 
   
-    <article id="post-353-Design-Snake-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-6-ZigZag-Conversion"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -327,7 +326,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/353-Design-Snake-Game/">353. Design Snake Game </a>
+      <a class="article-title" href="/2020/10/04/6-ZigZag-Conversion/">6. ZigZag Conversion</a>
     </h1>
   
 
@@ -335,8 +334,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/353-Design-Snake-Game/" class="article-date">
-	  <time datetime="2020-09-23T04:20:09.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/10/04/6-ZigZag-Conversion/" class="article-date">
+	  <time datetime="2020-10-04T21:59:20.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -349,14 +348,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Deque
-
-
-
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class SnakeGame(object):    def __init__(self, width, height, food):        """        Initialize your data structure here.        @param width - scree...
+          按照规律给rows里面填写chars， 然后再join
+12345678910111213141516171819202122class Solution(object):    def convert(self, s, numRows):        """        :type s: str        :type numRows: int        :rtype: str        """        if numRows &lt;= 1: return s    ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/353-Design-Snake-Game/#more">Read More</a>
+          <a href="/2020/10/04/6-ZigZag-Conversion/#more">Read More</a>
         </p>
       
     </div>
@@ -375,7 +371,7 @@
 
 
   
-    <article id="post-951-Flip-Equivalent-Binary-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-994-Rotting-Oranges"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -383,7 +379,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/951-Flip-Equivalent-Binary-Trees/">951. Flip Equivalent Binary Trees</a>
+      <a class="article-title" href="/2020/10/04/994-Rotting-Oranges/">994. Rotting Oranges</a>
     </h1>
   
 
@@ -391,8 +387,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/951-Flip-Equivalent-Binary-Trees/" class="article-date">
-	  <time datetime="2020-09-23T00:32:32.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/10/04/994-Rotting-Oranges/" class="article-date">
+	  <time datetime="2020-10-04T21:13:31.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -405,10 +401,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Solution 11234567891011121314151617181920# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.right = rightclass Soluti...
+          in place, using recusrsive to do bfs + time stamp
+Solution 1In Place
+123456789101112131415161718192021222324252627282930313233class Solution(object):    def orangesRotting(self, grid):        """        :type grid: List[List[int]]        :rtype: i...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/951-Flip-Equivalent-Binary-Trees/#more">Read More</a>
+          <a href="/2020/10/04/994-Rotting-Oranges/#more">Read More</a>
         </p>
       
     </div>
@@ -427,7 +425,7 @@
 
 
   
-    <article id="post-applyMiddleware"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-763-Partition-Labels"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -435,7 +433,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/applyMiddleware/">applyMiddleware</a>
+      <a class="article-title" href="/2020/10/04/763-Partition-Labels/">763. Partition Labels</a>
     </h1>
   
 
@@ -443,236 +441,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/applyMiddleware/" class="article-date">
-	  <time datetime="2020-09-22T22:45:57.000Z" itemprop="datePublished">2020-09-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/Redux/">Redux</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Function: applyMiddleware(…middleware)
-Arguments ...middleware
-Functions that conform to the Redux middleware API
-Each middleware receives Store‘s dispatch and getState functions as named argument, and returns a function
-That function will be give...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/22/applyMiddleware/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Apollo"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/Apollo/">Apollo</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/22/Apollo/" class="article-date">
-	  <time datetime="2020-09-22T19:09:34.000Z" itemprop="datePublished">2020-09-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/GraphQL/">GraphQL</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Intro
-A comprehensive state management library for Javascript that enables you to manage both local and remote data with GraphQL
-
-Appollo Client
-Cache – what we can configure
-Specify custom primary key fields
-Customize the storage and retrival of ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/22/Apollo/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-RectDom"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/RectDom/">RectDom</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/22/RectDom/" class="article-date">
-	  <time datetime="2020-09-22T18:51:21.000Z" itemprop="datePublished">2020-09-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Front-End/">Front End</a><a class="article-category-link" href="/categories/Front-End/React/">React</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Overall
-If load react from a &lt;script&gt; tag, these top-level APIs are available on the ReactDOM global
-
-unmountComponentAtNode()ReactDOM.unmountComponentAtNode(container)
-
-Remove a mounted React component from the DOM and clean up its event he...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/22/RectDom/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-System-Design-Step-Guide"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/System-Design-Step-Guide/">System Design Step Guide</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/22/System-Design-Step-Guide/" class="article-date">
-	  <time datetime="2020-09-22T15:34:59.000Z" itemprop="datePublished">2020-09-22</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Step 1: Requirements clarifications
-Ask questions about the exact scope of the problem we are solving
-clarify the ambiguities early
-should clarify what parts of the system we will be focusing on
-Example of Twitter should be answered:
-will users of...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/09/22/System-Design-Step-Guide/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-318-Maximum-Product-of-Word-Lengths"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/318-Maximum-Product-of-Word-Lengths/">318. Maximum Product of Word Lengths</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/09/22/318-Maximum-Product-of-Word-Lengths/" class="article-date">
-	  <time datetime="2020-09-22T14:44:44.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/10/04/763-Partition-Labels/" class="article-date">
+	  <time datetime="2020-10-04T20:33:09.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -685,11 +455,13 @@ will users of...
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Bit Mask
-Solution 112345678910111213141516171819202122232425class Solution(object):    def maxProduct(self, words):        """        :type words: List[str]        :rtype: int        """        n = len(words)        masks = [0] * n        lens = [...
+          
+Figure out the rightmost index first and use it to denote the start of the next section.
+Reset the left pointer at the start of each new section.
+Store the difference of right and left pointers + 1 as in the result for each section.12345678910111...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/318-Maximum-Product-of-Word-Lengths/#more">Read More</a>
+          <a href="/2020/10/04/763-Partition-Labels/#more">Read More</a>
         </p>
       
     </div>
@@ -708,7 +480,7 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
 
 
   
-    <article id="post-946-Validate-Stack-Sequences-1"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-322-Coin-Change"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -716,7 +488,7 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/22/946-Validate-Stack-Sequences-1/">946. Validate Stack Sequences</a>
+      <a class="article-title" href="/2020/10/04/322-Coin-Change/">322. Coin Change</a>
     </h1>
   
 
@@ -724,8 +496,8 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
     
     <div class="article-meta">
       
-	<a href="/2020/09/22/946-Validate-Stack-Sequences-1/" class="article-date">
-	  <time datetime="2020-09-22T14:05:34.000Z" itemprop="datePublished">2020-09-22</time>
+	<a href="/2020/10/04/322-Coin-Change/" class="article-date">
+	  <time datetime="2020-10-04T19:08:36.000Z" itemprop="datePublished">2020-10-04</time>
 	</a>
 
       
@@ -738,11 +510,10 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Greedy
-123456789101112131415class Solution(object):    def validateStackSequences(self, pushed, popped):        """        :type pushed: List[int]        :type popped: List[int]        :rtype: bool        """        j = 0        stack = []        ...
+          12345678910111213class Solution(object):    def coinChange(self, coins, amount):        """        :type coins: List[int]        :type amount: int        :rtype: int        """        MAX = float('inf')        dp = [0] + [MAX]*amount              ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/22/946-Validate-Stack-Sequences-1/#more">Read More</a>
+          <a href="/2020/10/04/322-Coin-Change/#more">Read More</a>
         </p>
       
     </div>
@@ -761,7 +532,7 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
 
 
   
-    <article id="post-505-The-Maze-II"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-11-Container-With-Most-Water"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -769,7 +540,7 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/09/21/505-The-Maze-II/">505. The Maze II</a>
+      <a class="article-title" href="/2020/10/03/11-Container-With-Most-Water/">11. Container With Most Water</a>
     </h1>
   
 
@@ -777,8 +548,8 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
     
     <div class="article-meta">
       
-	<a href="/2020/09/21/505-The-Maze-II/" class="article-date">
-	  <time datetime="2020-09-22T05:15:21.000Z" itemprop="datePublished">2020-09-21</time>
+	<a href="/2020/10/03/11-Container-With-Most-Water/" class="article-date">
+	  <time datetime="2020-10-03T22:52:30.000Z" itemprop="datePublished">2020-10-03</time>
 	</a>
 
       
@@ -791,11 +562,231 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          Dijistra
-123456789101112131415161718192021222324252627class Solution(object):    def shortestDistance(self, maze, start, destination):        """        :type maze: List[List[int]]        :type start: List[int]        :type destination: List[int] ...
+          the maxmum area is determined by the lower height, so every time move the lower height
+12345678910111213141516class Solution(object):    def maxArea(self, height):        """        :type height: List[int]        :rtype: int        """        l, r...
         </p>
         <p class="article-more-link">
-          <a href="/2020/09/21/505-The-Maze-II/#more">Read More</a>
+          <a href="/2020/10/03/11-Container-With-Most-Water/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1-on-1-with-Manager"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/02/1-on-1-with-Manager/">1 on 1 with Manager</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/02/1-on-1-with-Manager/" class="article-date">
+	  <time datetime="2020-10-03T00:02:42.000Z" itemprop="datePublished">2020-10-02</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Work/">Work</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          How To Talk About the Promotions
+This procress happens during the whole 1 on 1 process among the one promotion cycle
+Bring the topic, like how do I / what should I do for the next level? 
+Before this bring topic, 一定要列出 在这个阶段中自己都有什么achievement, gap...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/02/1-on-1-with-Manager/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-891-Sum-of-Subsequence-Widths"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/01/891-Sum-of-Subsequence-Widths/">891. Sum of Subsequence Widths</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/01/891-Sum-of-Subsequence-Widths/" class="article-date">
+	  <time datetime="2020-10-02T01:12:19.000Z" itemprop="datePublished">2020-10-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          Solution 1
+The order of the input does not matter
+There are i smaller numbers,so there are 2 ^ i sequences in which A[i] is maximum.we should do res += A[i] * (2 ^ i)
+
+There are n - i - 1 bigger numbers,so there are 2 ^ (n - i - 1) sequences in wh...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/01/891-Sum-of-Subsequence-Widths/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/">828. Count Unique Characters of All Substrings of a Given String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/" class="article-date">
+	  <time datetime="2020-10-02T01:11:22.000Z" itemprop="datePublished">2020-10-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+
+find the pos to place (/) –&gt; the char in the () is a possible substring
+123456789101112131415161718class Solution(object):    def uniqueLetterString(self, s):        """        :type s: str        :rtype: int        """        index = &#123...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/01/828-Count-Unique-Characters-of-All-Substrings-of-a-Given-String/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-739-Daily-Temperatures"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/10/01/739-Daily-Temperatures/">739. Daily Temperatures</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/10/01/739-Daily-Temperatures/" class="article-date">
+	  <time datetime="2020-10-02T01:10:04.000Z" itemprop="datePublished">2020-10-01</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516class Solution(object):    def dailyTemperatures(self, T):        """        :type T: List[int]        :rtype: List[int]        """        n = len(T)        stack, res = [], [0] * n                        for i, cur in enume...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/10/01/739-Daily-Temperatures/#more">Read More</a>
         </p>
       
     </div>
@@ -818,7 +809,7 @@ Solution 112345678910111213141516171819202122232425class Solution(object):    de
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/67/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="page-number current">68</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/69/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/67/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="page-number" href="/page/67/">67</a><span class="page-number current">68</span><a class="page-number" href="/page/69/">69</a><a class="page-number" href="/page/70/">70</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/69/">Next &amp;raquo;</a>
   </nav>
 
 </section>

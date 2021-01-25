@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-742-Closest-Leaf-in-a-Binary-Tree"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-493-Reverse-Pairs"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/742-Closest-Leaf-in-a-Binary-Tree/">742. Closest Leaf in a Binary Tree</a>
+      <a class="article-title" href="/2020/11/06/493-Reverse-Pairs/">493. Reverse Pairs </a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/02/742-Closest-Leaf-in-a-Binary-Tree/" class="article-date">
-	  <time datetime="2020-11-03T05:04:59.000Z" itemprop="datePublished">2020-11-02</time>
+	<a href="/2020/11/06/493-Reverse-Pairs/" class="article-date">
+	  <time datetime="2020-11-07T02:13:10.000Z" itemprop="datePublished">2020-11-06</time>
 	</a>
 
       
@@ -295,10 +295,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637# Definition for a binary tree node.# class TreeNode(object):#     def __init__(self, val=0, left=None, right=None):#         self.val = val#         self.left = left#         self.r...
+          123456789101112131415161718192021222324252627282930313233343536class Solution(object):    def reversePairs(self, nums):        """        :type nums: List[int]        :rtype: int        """        self.res = 0        def sort(enums):            ha...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/02/742-Closest-Leaf-in-a-Binary-Tree/#more">Read More</a>
+          <a href="/2020/11/06/493-Reverse-Pairs/#more">Read More</a>
         </p>
       
     </div>
@@ -317,7 +317,7 @@
 
 
   
-    <article id="post-1429-First-Unique-Number"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-132-Palindrome-Partitioning-II"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -325,7 +325,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/1429-First-Unique-Number/">1429. First Unique Number </a>
+      <a class="article-title" href="/2020/11/06/132-Palindrome-Partitioning-II/">132. Palindrome Partitioning II </a>
     </h1>
   
 
@@ -333,8 +333,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/02/1429-First-Unique-Number/" class="article-date">
-	  <time datetime="2020-11-03T04:41:54.000Z" itemprop="datePublished">2020-11-02</time>
+	<a href="/2020/11/06/132-Palindrome-Partitioning-II/" class="article-date">
+	  <time datetime="2020-11-06T22:48:16.000Z" itemprop="datePublished">2020-11-06</time>
 	</a>
 
       
@@ -347,10 +347,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031323334353637class FirstUnique(object):    def __init__(self, nums):        """        :type nums: List[int]        """        self._queue = deque()        self._is_unique = &#123;&#125;         ...
+          初始化： cut[0] = -1, if a string is palindropme, we need cut[0] to be -1, then if the string is palindrome, there is no need to be cutcut[i]: the minuimum cut made for palindrome with length i
+1234567891011121314151617181920class Solution(object):   ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/02/1429-First-Unique-Number/#more">Read More</a>
+          <a href="/2020/11/06/132-Palindrome-Partitioning-II/#more">Read More</a>
         </p>
       
     </div>
@@ -369,7 +370,7 @@
 
 
   
-    <article id="post-323-Number-of-Connected-Components-in-an-Undirected-Graph"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-214-Shortest-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -377,7 +378,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/323-Number-of-Connected-Components-in-an-Undirected-Graph/">323. Number of Connected Components in an Undirected Graph</a>
+      <a class="article-title" href="/2020/11/06/214-Shortest-Palindrome/">214. Shortest Palindrome</a>
     </h1>
   
 
@@ -385,8 +386,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/02/323-Number-of-Connected-Components-in-an-Undirected-Graph/" class="article-date">
-	  <time datetime="2020-11-03T04:27:58.000Z" itemprop="datePublished">2020-11-02</time>
+	<a href="/2020/11/06/214-Shortest-Palindrome/" class="article-date">
+	  <time datetime="2020-11-06T21:38:21.000Z" itemprop="datePublished">2020-11-06</time>
 	</a>
 
       
@@ -399,10 +400,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          12345678910111213141516171819202122232425262728293031class Solution(object):    def countComponents(self, n, edges):        """        :type n: int        :type edges: List[List[int]]        :rtype: int        """        uf = UF(n)                ...
+          longest Palindrome for s: s + reversed(s) –&gt; a
+if we can find longest prefix == lonest suffice in a –&gt; we get the longest subtring which is palindrome in s –&gt; b
+what we need is find substring c which is exlucde b from s, then reverse c an...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/02/323-Number-of-Connected-Components-in-an-Undirected-Graph/#more">Read More</a>
+          <a href="/2020/11/06/214-Shortest-Palindrome/#more">Read More</a>
         </p>
       
     </div>
@@ -421,7 +424,7 @@
 
 
   
-    <article id="post-310-Minimum-Height-Trees"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-KMP"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -429,7 +432,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/310-Minimum-Height-Trees/">310. Minimum Height Trees </a>
+      <a class="article-title" href="/2020/11/06/KMP/">KMP</a>
     </h1>
   
 
@@ -437,12 +440,12 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/02/310-Minimum-Height-Trees/" class="article-date">
-	  <time datetime="2020-11-03T04:13:37.000Z" itemprop="datePublished">2020-11-02</time>
+	<a href="/2020/11/06/KMP/" class="article-date">
+	  <time datetime="2020-11-06T20:39:17.000Z" itemprop="datePublished">2020-11-06</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
 
       
       
@@ -451,10 +454,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          1234567891011121314151617181920212223242526272829303132333435class Solution(object):    def findMinHeightTrees(self, n, edges):        """        :type n: int        :type edges: List[List[int]]        :rtype: List[int]        """                i...
+          
+
+
+input:        an array of characters, W (the word to be analyzed)    output:        an array of integers, T (the table to be filled)
+define variables:
+    an integer, pos ← 1 (the current position we are computing in T)
+    an integer, cnd ← 0 ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/02/310-Minimum-Height-Trees/#more">Read More</a>
+          <a href="/2020/11/06/KMP/#more">Read More</a>
         </p>
       
     </div>
@@ -473,7 +482,7 @@
 
 
   
-    <article id="post-Designing-Instagram"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-315-Count-of-Smaller-Numbers-After-Self"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -481,7 +490,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/Designing-Instagram/">Designing Instagram</a>
+      <a class="article-title" href="/2020/11/06/315-Count-of-Smaller-Numbers-After-Self/">315. Count of Smaller Numbers After Self </a>
     </h1>
   
 
@@ -489,282 +498,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/02/Designing-Instagram/" class="article-date">
-	  <time datetime="2020-11-02T22:20:49.000Z" itemprop="datePublished">2020-11-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Requirements and Goals of the System
-Functional Requirements
-
-
-Users should be able to upload/download/view photos.
-Users can perform searches based on photo/video titles.
-Users can follow other users.
-The system should generate and display a user...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/02/Designing-Instagram/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-Designing-Pastebin"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/02/Designing-Pastebin/">Designing Pastebin</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/02/Designing-Pastebin/" class="article-date">
-	  <time datetime="2020-11-02T17:30:32.000Z" itemprop="datePublished">2020-11-02</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          What is Pastebin?
-Services enable users to store plain text or images over the network(typically the internet)
-generate unique URLs to access the uploaded data
-
-Requirements and GoalsFunctional Requirements
-Users should be able to upload or ‘paste...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/02/Designing-Pastebin/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-1202-Smallest-String-With-Swaps"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/01/1202-Smallest-String-With-Swaps/">1202. Smallest String With Swaps </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/01/1202-Smallest-String-With-Swaps/" class="article-date">
-	  <time datetime="2020-11-02T06:17:44.000Z" itemprop="datePublished">2020-11-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          You can swap the characters at any pair of indices in the given pairs any number of times. –&gt; using union find
-1234567891011121314151617181920212223242526272829303132333435class UF:    def __init__(self, N):        self.parent = range(N)       ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/01/1202-Smallest-String-With-Swaps/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-795-Number-of-Subarrays-with-Bounded-Maximum"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/01/795-Number-of-Subarrays-with-Bounded-Maximum/">795. Number of Subarrays with Bounded Maximum </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/01/795-Number-of-Subarrays-with-Bounded-Maximum/" class="article-date">
-	  <time datetime="2020-11-02T06:00:07.000Z" itemprop="datePublished">2020-11-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          1234567891011121314151617class Solution(object):    def numSubarrayBoundedMax(self, A, L, R):        """        :type A: List[int]        :type L: int        :type R: int        :rtype: int        """        # Find  the number of sub arrays that h...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/01/795-Number-of-Subarrays-with-Bounded-Maximum/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-454-4Sum-II"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/01/454-4Sum-II/">454. 4Sum II</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/01/454-4Sum-II/" class="article-date">
-	  <time datetime="2020-11-02T05:41:27.000Z" itemprop="datePublished">2020-11-01</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          4sum ==&gt; 2sum
-1234567891011121314151617181920class Solution(object):    def fourSumCount(self, A, B, C, D):        """        :type A: List[int]        :type B: List[int]        :type C: List[int]        :type D: List[int]        :rtype: int   ...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/01/454-4Sum-II/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-386-Lexicographical-Numbers"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/01/386-Lexicographical-Numbers/">386. Lexicographical Numbers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/01/386-Lexicographical-Numbers/" class="article-date">
-	  <time datetime="2020-11-02T05:16:40.000Z" itemprop="datePublished">2020-11-01</time>
+	<a href="/2020/11/06/315-Count-of-Smaller-Numbers-After-Self/" class="article-date">
+	  <time datetime="2020-11-06T18:35:52.000Z" itemprop="datePublished">2020-11-06</time>
 	</a>
 
       
@@ -778,14 +513,293 @@ Users should be able to upload or ‘paste...
       
         <p class="article-excerpt-content">
           
-这种思路是按个位数遍历
-在遍历下一个个位数之前，先遍历十位数，十位数的高位为之前的个位数，只要这个多位数并没有超过n，就可以一直往后遍历，
-如果超过了，我们除以10，然后再加1，如果加1后末尾形成了很多0，那么我们要用个while循环把0都去掉，然后继续运算，
 
-12345678910111213141516171819202122class Solution(object):    def lexicalOrder(self, n):        """        :type n...
+
+123456789101112131415161718192021222324class Solution(object):    def countSmaller(self, nums):        """        :type nums: List[int]        :rtype: List[int]        """        def sort(enum):            half = len(enum)/2            if half:...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/01/386-Lexicographical-Numbers/#more">Read More</a>
+          <a href="/2020/11/06/315-Count-of-Smaller-Numbers-After-Self/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1235-Maximum-Profit-in-Job-Scheduling"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/">1235. Maximum Profit in Job Scheduling</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/" class="article-date">
+	  <time datetime="2020-11-06T06:36:29.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          dp: [[endTime, the max profit can made at endTime]]sorted by end time
+for each job, There are two choices:
+
+pick this one
+find the largest profit we can make before the start time s
+
+
+not pick this one 
+
+Kind of knapack algorithm, along with binar...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/1235-Maximum-Profit-in-Job-Scheduling/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-329-Longest-Increasing-Path-in-a-Matrix"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/">329. Longest Increasing Path in a Matrix</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/" class="article-date">
+	  <time datetime="2020-11-06T06:20:25.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          12345678910111213141516171819class Solution(object):    def longestIncreasingPath(self, matrix):        """        :type matrix: List[List[int]]        :rtype: int        """        def dfs(i, j):            if not dp[i][j]:                val = m...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/329-Longest-Increasing-Path-in-a-Matrix/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-37-Sudoku-Solver"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/37-Sudoku-Solver/">37. Sudoku Solver</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/37-Sudoku-Solver/" class="article-date">
+	  <time datetime="2020-11-06T05:26:57.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Solution(object):    def solveSudoku(self, board):        """        :type board: List[List[str]]        :rtype: None Do not return anything, mo...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/37-Sudoku-Solver/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-72-Edit-Distance"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/72-Edit-Distance/">72. Edit Distance</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/72-Edit-Distance/" class="article-date">
+	  <time datetime="2020-11-06T04:10:57.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          cornor case: word1/word2 is empty string –&gt; return the length of no empty stringbase case
+
+word1/word2 is empty string –&gt; inital value is the length of not empty stribg
+
+
+
+
+12345678910111213141516171819202122232425class Solution(object):    ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/72-Edit-Distance/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-460-LFU-Cache"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/05/460-LFU-Cache/">460. LFU Cache</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/05/460-LFU-Cache/" class="article-date">
+	  <time datetime="2020-11-06T02:37:28.000Z" itemprop="datePublished">2020-11-05</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+
+
+
+len –&gt; override the length12def __len__(self):    return self._size
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/05/460-LFU-Cache/#more">Read More</a>
         </p>
       
     </div>
@@ -808,7 +822,7 @@ Users should be able to upload or ‘paste...
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/46/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/page/48/">48</a><a class="page-number" href="/page/49/">49</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/48/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/46/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/page/48/">48</a><a class="page-number" href="/page/49/">49</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/48/">Next &amp;raquo;</a>
   </nav>
 
 </section>

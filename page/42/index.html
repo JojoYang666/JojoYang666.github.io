@@ -265,7 +265,7 @@
         
           <section id="main" style="float:none;">
   
-    <article id="post-741-Cherry-Pickup"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-864-Shortest-Path-to-Get-All-Keys"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -273,7 +273,7 @@
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/741-Cherry-Pickup/">741. Cherry Pickup</a>
+      <a class="article-title" href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/">864. Shortest Path to Get All Keys</a>
     </h1>
   
 
@@ -281,8 +281,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/11/09/741-Cherry-Pickup/" class="article-date">
-	  <time datetime="2020-11-09T18:57:08.000Z" itemprop="datePublished">2020-11-09</time>
+	<a href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/" class="article-date">
+	  <time datetime="2020-11-14T23:55:32.000Z" itemprop="datePublished">2020-11-14</time>
 	</a>
 
       
@@ -296,15 +296,13 @@
       
         <p class="article-excerpt-content">
           
-Person moves from [0, 0] to [N-1, N-1], then moves back from [N-1, N-1] to [0,0]
+用BFS node用位置+current key来表示
+corner case: 最优解可能从起点出发同时再路过起点
 
-Then we can convert the problem to 2 person moves from [0,0] to [N-1, N-1] at the same time
-
-p1, p2 cannot arrive at the pos with the cherry at same time
-grid[r1][c...
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253class Solution(object):    def shortestPathAllKeys(self, grid):        """        :type g...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/09/741-Cherry-Pickup/#more">Read More</a>
+          <a href="/2020/11/14/864-Shortest-Path-to-Get-All-Keys/#more">Read More</a>
         </p>
       
     </div>
@@ -323,7 +321,7 @@ grid[r1][c...
 
 
   
-    <article id="post-920-Number-of-Music-Playlists"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1274-Number-of-Ships-in-a-Rectangle"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -331,7 +329,7 @@ grid[r1][c...
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/09/920-Number-of-Music-Playlists/">920. Number of Music Playlists </a>
+      <a class="article-title" href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/">1274. Number of Ships in a Rectangle</a>
     </h1>
   
 
@@ -339,8 +337,8 @@ grid[r1][c...
     
     <div class="article-meta">
       
-	<a href="/2020/11/09/920-Number-of-Music-Playlists/" class="article-date">
-	  <time datetime="2020-11-09T17:58:44.000Z" itemprop="datePublished">2020-11-09</time>
+	<a href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/" class="article-date">
+	  <time datetime="2020-11-14T22:26:38.000Z" itemprop="datePublished">2020-11-14</time>
 	</a>
 
       
@@ -354,17 +352,13 @@ grid[r1][c...
       
         <p class="article-excerpt-content">
           
-dp[i][j]: the number of playlists with length i that have exactly j unique songs
-dp[i][j] =
+Divide to 4 quaters
+recursive to find it and sum of it
 
-dp[i-1][j-1]*(N-j+1)表示我们添加一个新的歌曲在里面dp[i-1][j-1]中没有用过
-
-
-
-dp[i-1][j]*max(j-K, 0):表示添加一个已经用过的歌曲12345678910111213141516class Solution(object):    def numMusi...
+123456789101112131415161718192021222324252627282930313233343536# """# This is Sea's API interface.# You should not implement it, or speculate about its implementation# """#class Sea(object):...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/09/920-Number-of-Music-Playlists/#more">Read More</a>
+          <a href="/2020/11/14/1274-Number-of-Ships-in-a-Rectangle/#more">Read More</a>
         </p>
       
     </div>
@@ -383,7 +377,7 @@ dp[i-1][j]*max(j-K, 0):表示添加一个已经用过的歌曲123456789101112131
 
 
   
-    <article id="post-465-Optimal-Account-Balancing"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -391,7 +385,7 @@ dp[i-1][j]*max(j-K, 0):表示添加一个已经用过的歌曲123456789101112131
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/08/465-Optimal-Account-Balancing/">465. Optimal Account Balancing</a>
+      <a class="article-title" href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/">1368. Minimum Cost to Make at Least One Valid Path in a Grid</a>
     </h1>
   
 
@@ -399,8 +393,8 @@ dp[i-1][j]*max(j-K, 0):表示添加一个已经用过的歌曲123456789101112131
     
     <div class="article-meta">
       
-	<a href="/2020/11/08/465-Optimal-Account-Balancing/" class="article-date">
-	  <time datetime="2020-11-09T04:58:27.000Z" itemprop="datePublished">2020-11-08</time>
+	<a href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/" class="article-date">
+	  <time datetime="2020-11-14T21:01:19.000Z" itemprop="datePublished">2020-11-14</time>
 	</a>
 
       
@@ -414,12 +408,14 @@ dp[i-1][j]*max(j-K, 0):表示添加一个已经用过的歌曲123456789101112131
       
         <p class="article-excerpt-content">
           
-an array of non-zero numbers, which sums to be zero. For example[4, -2, -2, 6, -6]
-converted into finding the minimal clique such that the elements sum up to be zero. Minimal means there is no subset which sums up to zero.[4, -2, -2] and [6, -6]
-...
+dfs and bfs combination
+using bfs to find the minimum path(cost) to the target –&gt; in this problem: the length of path is k
+using dfs to update the node for the next level
+dfs to find the current node can reach to(if change current node)
+update...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/08/465-Optimal-Account-Balancing/#more">Read More</a>
+          <a href="/2020/11/14/1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid/#more">Read More</a>
         </p>
       
     </div>
@@ -438,7 +434,7 @@ converted into finding the minimal clique such that the elements sum up to be ze
 
 
   
-    <article id="post-363-Max-Sum-of-Rectangle-No-Larger-Than-K"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-773-Sliding-Puzzle"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -446,7 +442,7 @@ converted into finding the minimal clique such that the elements sum up to be ze
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/08/363-Max-Sum-of-Rectangle-No-Larger-Than-K/">363. Max Sum of Rectangle No Larger Than K </a>
+      <a class="article-title" href="/2020/11/13/773-Sliding-Puzzle/">773. Sliding Puzzle</a>
     </h1>
   
 
@@ -454,8 +450,8 @@ converted into finding the minimal clique such that the elements sum up to be ze
     
     <div class="article-meta">
       
-	<a href="/2020/11/08/363-Max-Sum-of-Rectangle-No-Larger-Than-K/" class="article-date">
-	  <time datetime="2020-11-09T03:22:41.000Z" itemprop="datePublished">2020-11-08</time>
+	<a href="/2020/11/13/773-Sliding-Puzzle/" class="article-date">
+	  <time datetime="2020-11-14T00:21:25.000Z" itemprop="datePublished">2020-11-13</time>
 	</a>
 
       
@@ -469,14 +465,14 @@ converted into finding the minimal clique such that the elements sum up to be ze
       
         <p class="article-excerpt-content">
           
-
-
-
-
-1234567891011121314151617181920212223242526272829303132class Solution(object):    def maxSumSubmatrix(self, matrix, k):        """        :type matrix: List[List[int]]        :type k: int        :rtype: int        """        def maxSumSubarra...
+convert it to graph
+using BFS to find the minimun path
+Cornor Case
+if nei/C != pos/C and nei%C != pos%C: continue &lt;—- this happens because we convert to dismension to 1 dimension
+Considering the case [[1,2,3], [0,4,5]]. If the next move is to ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/08/363-Max-Sum-of-Rectangle-No-Larger-Than-K/#more">Read More</a>
+          <a href="/2020/11/13/773-Sliding-Puzzle/#more">Read More</a>
         </p>
       
     </div>
@@ -495,7 +491,7 @@ converted into finding the minimal clique such that the elements sum up to be ze
 
 
   
-    <article id="post-871-Minimum-Number-of-Refueling-Stops"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-dropbox"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -503,7 +499,7 @@ converted into finding the minimal clique such that the elements sum up to be ze
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/08/871-Minimum-Number-of-Refueling-Stops/">871. Minimum Number of Refueling Stops</a>
+      <a class="article-title" href="/2020/11/13/dropbox/">dropbox</a>
     </h1>
   
 
@@ -511,12 +507,12 @@ converted into finding the minimal clique such that the elements sum up to be ze
     
     <div class="article-meta">
       
-	<a href="/2020/11/08/871-Minimum-Number-of-Refueling-Stops/" class="article-date">
-	  <time datetime="2020-11-08T22:46:01.000Z" itemprop="datePublished">2020-11-08</time>
+	<a href="/2020/11/13/dropbox/" class="article-date">
+	  <time datetime="2020-11-13T21:38:42.000Z" itemprop="datePublished">2020-11-13</time>
 	</a>
 
       
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+    <a class="article-category-link" href="/categories/System-Design/">System Design</a>
 
       
       
@@ -525,11 +521,18 @@ converted into finding the minimal clique such that the elements sum up to be ze
     <div class="article-entry" itemprop="articleBody">
       
         <p class="article-excerpt-content">
-          dpdp[i], the farthest location we can get to using i refueling stops. 
-1234567891011121314151617class Solution(object):    def minRefuelStops(self, target, startFuel, stations):        """        :type target: int        :type startFuel: int      ...
+          Why Cloud Storage
+Availability: 
+Have data availability anywhere, anytime
+Access their files/photos from any device whenever and wherever they like.
+
+
+Reliability and Durability
+Offers  100% reliability and durability of data
+Never lose their data...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/08/871-Minimum-Number-of-Refueling-Stops/#more">Read More</a>
+          <a href="/2020/11/13/dropbox/#more">Read More</a>
         </p>
       
     </div>
@@ -548,7 +551,7 @@ converted into finding the minimal clique such that the elements sum up to be ze
 
 
   
-    <article id="post-Interval"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-1411-Number-of-Ways-to-Paint-N-×-3-Grid"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -556,7 +559,7 @@ converted into finding the minimal clique such that the elements sum up to be ze
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/Interval/">Interval</a>
+      <a class="article-title" href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/">1411. Number of Ways to Paint N × 3 Grid</a>
     </h1>
   
 
@@ -564,178 +567,8 @@ converted into finding the minimal clique such that the elements sum up to be ze
     
     <div class="article-meta">
       
-	<a href="/2020/11/06/Interval/" class="article-date">
-	  <time datetime="2020-11-07T06:29:12.000Z" itemprop="datePublished">2020-11-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Algorithms/">Algorithms</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          
-sort based on start/end time
-
-when update pointer, max()/min()
-
-759. Employee Free Time
-
-
-
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/06/Interval/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-759-Employee-Free-Time"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/759-Employee-Free-Time/">759. Employee Free Time</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/06/759-Employee-Free-Time/" class="article-date">
-	  <time datetime="2020-11-07T06:23:27.000Z" itemprop="datePublished">2020-11-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          Method 1
-put interval in the format of (timestamp, end/open) in to the array
-sort them
-using prev, cur, occuppied to track it
-if it is open, occuppied += 1 othervise -=1
-add new interval to the result only when occuppied == 01234567891011121314151...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/06/759-Employee-Free-Time/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-115-Distinct-Subsequences"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/115-Distinct-Subsequences/">115. Distinct Subsequences </a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/06/115-Distinct-Subsequences/" class="article-date">
-	  <time datetime="2020-11-07T05:54:22.000Z" itemprop="datePublished">2020-11-06</time>
-	</a>
-
-      
-    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
-
-      
-      
-
-    </div>
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p class="article-excerpt-content">
-          s: i, t: jdp[i][j]: the number of distinct subsenquences in s[0, i] &amp; t[0:j]at first, must initialize dp[i][j] = sp[i-1][j] then if s[i] == t[j], we can update dp[i][j] by adding dp[i-1][j-1]
-123456789101112131415161718192021class Solution(obj...
-        </p>
-        <p class="article-more-link">
-          <a href="/2020/11/06/115-Distinct-Subsequences/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-      
-      
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- Table of Contents -->
-
-
-  
-    <article id="post-472-Concatenated-Words"  class="article article-type-post" itemscope itemprop="blogPost" >
-  <div id="articleInner" class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/472-Concatenated-Words/">472. Concatenated Words</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-meta">
-      
-	<a href="/2020/11/06/472-Concatenated-Words/" class="article-date">
-	  <time datetime="2020-11-07T05:19:33.000Z" itemprop="datePublished">2020-11-06</time>
+	<a href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/" class="article-date">
+	  <time datetime="2020-11-13T18:25:54.000Z" itemprop="datePublished">2020-11-13</time>
 	</a>
 
       
@@ -749,10 +582,18 @@ add new interval to the result only when occuppied == 01234567891011121314151...
       
         <p class="article-excerpt-content">
           
-split to prefix &amp; suffix to backtrack1234567891011121314151617181920212223242526272829class Solution(object):    def findAllConcatenatedWordsInADict(self, words):        """        :type words: List[str]        :rtype: List[str]        """   ...
+In each row, there are two patterns:
+
+
+121: the first color same as the third in the row
+Initial the pattern has 6 states: 121, 323, 212, 313, 131,232
+
+
+123: one row has three different colors
+Initial the pattern has 6 states: 123, 132, 213, 231,...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/06/472-Concatenated-Words/#more">Read More</a>
+          <a href="/2020/11/13/1411-Number-of-Ways-to-Paint-N-%C3%97-3-Grid/#more">Read More</a>
         </p>
       
     </div>
@@ -771,7 +612,7 @@ split to prefix &amp; suffix to backtrack123456789101112131415161718192021222324
 
 
   
-    <article id="post-679-24-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
+    <article id="post-174-Dungeon-Game"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -779,7 +620,7 @@ split to prefix &amp; suffix to backtrack123456789101112131415161718192021222324
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2020/11/06/679-24-Game/">679. 24 Game</a>
+      <a class="article-title" href="/2020/11/13/174-Dungeon-Game/">174. Dungeon Game</a>
     </h1>
   
 
@@ -787,8 +628,119 @@ split to prefix &amp; suffix to backtrack123456789101112131415161718192021222324
     
     <div class="article-meta">
       
-	<a href="/2020/11/06/679-24-Game/" class="article-date">
-	  <time datetime="2020-11-07T04:52:37.000Z" itemprop="datePublished">2020-11-06</time>
+	<a href="/2020/11/13/174-Dungeon-Game/" class="article-date">
+	  <time datetime="2020-11-13T17:39:10.000Z" itemprop="datePublished">2020-11-13</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+dp[i][j]: the minimum health needed to reach the princess at the pos i, j
+记得 如果不需要的话 初始化是112345678910111213141516171819202122232425262728class Solution(object):    def calculateMinimumHP(self, dungeon):        """        :type dungeon: List[List[...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/13/174-Dungeon-Game/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-471-Encode-String-with-Shortest-Length"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/471-Encode-String-with-Shortest-Length/">471. Encode String with Shortest Length </a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/471-Encode-String-with-Shortest-Length/" class="article-date">
+	  <time datetime="2020-11-13T07:46:49.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          
+using dp[i][j]: shortest length from i to j, but i must from end to start
+because when update dp[i][j]: will using dp[k+1][j], k+1 &gt; i —&gt; split
+
+
+also need to update dp[i][j] using compression, str(len(cur_s)/len(pattern)) + ‘[‘ + dp[i][k] ...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/471-Encode-String-with-Shortest-Length/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-440-K-th-Smallest-in-Lexicographical-Order"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/">440. K-th Smallest in Lexicographical Order</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/" class="article-date">
+	  <time datetime="2020-11-13T05:23:28.000Z" itemprop="datePublished">2020-11-12</time>
 	</a>
 
       
@@ -804,10 +756,67 @@ split to prefix &amp; suffix to backtrack123456789101112131415161718192021222324
           
 
 
-12345678910111213141516171819202122232425from operator import truediv, mul, add, subclass Solution(object):    def judgePoint24(self, nums):        """        :type nums: List[int]        :rtype: bool        """        if not nums: return False...
+12345678910111213141516171819202122232425class Solution(object):    def findKthNumber(self, n, k):        """        :type n: int        :type k: int        :rtype: int        """        result = 1        k -= 1                while k &gt; 0:  ...
         </p>
         <p class="article-more-link">
-          <a href="/2020/11/06/679-24-Game/#more">Read More</a>
+          <a href="/2020/11/12/440-K-th-Smallest-in-Lexicographical-Order/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+      
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+
+  
+    <article id="post-1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/">1312. Minimum Insertion Steps to Make a String Palindrome</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/" class="article-date">
+	  <time datetime="2020-11-13T04:43:28.000Z" itemprop="datePublished">2020-11-12</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Leetcode/">Leetcode</a>
+
+      
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p class="article-excerpt-content">
+          convert the problem to find the longest common sequence
+
+find the longest common sequences between s and reversed(s) -&gt; m
+then the chars needed to add is len(s) - m
+
+1234567891011121314151617class Solution(object):    def minInsertions(self, s)...
+        </p>
+        <p class="article-more-link">
+          <a href="/2020/11/12/1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome/#more">Read More</a>
         </p>
       
     </div>
@@ -830,7 +839,7 @@ split to prefix &amp; suffix to backtrack123456789101112131415161718192021222324
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/41/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="page-number" href="/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="space">&hellip;</span><a class="page-number" href="/page/76/">76</a><a class="extend next" rel="next" href="/page/43/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/41/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="page-number" href="/page/41/">41</a><span class="page-number current">42</span><a class="page-number" href="/page/43/">43</a><a class="page-number" href="/page/44/">44</a><span class="space">&hellip;</span><a class="page-number" href="/page/80/">80</a><a class="extend next" rel="next" href="/page/43/">Next &amp;raquo;</a>
   </nav>
 
 </section>
