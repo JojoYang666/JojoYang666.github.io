@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>kubernetes installation | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="why Decprecate Docker in the KubernetesBad things on the docker:  docker is just for single machine how to run container in multiple machine and communicate with each other —&gt; cross-host networking">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kubernetes Installation">
+<meta property="og:url" content="https://jojoyang666.github.io/2021/02/19/Kubernetes-Installation/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="why Decprecate Docker in the KubernetesBad things on the docker:  docker is just for single machine how to run container in multiple machine and communicate with each other —&gt; cross-host networking">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-20T02:51:18.000Z">
+<meta property="article:modified_time" content="2021-02-20T02:57:35.358Z">
+<meta property="article:author" content="Jojo Yang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Kubernetes-Installation" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Kubernetes Installation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/02/19/Kubernetes-Installation/" class="article-date">
+	  <time datetime="2021-02-20T02:51:18.000Z" itemprop="datePublished">2021-02-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Kubernetes/">Kubernetes</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="why-Decprecate-Docker-in-the-Kubernetes"><a href="#why-Decprecate-Docker-in-the-Kubernetes" class="headerlink" title="why Decprecate Docker in the Kubernetes"></a>why Decprecate Docker in the Kubernetes</h1><p>Bad things on the docker:</p>
+<ol>
+<li>docker is just for single machine</li>
+<li>how to run container in multiple machine and communicate with each other —&gt; cross-host networking</li>
+<li>state/volume is hard to manage —&gt; multiple machines</li>
+</ol>
+<p>Key focus on Kubernetes</p>
+<ol>
+<li>multi-host</li>
+<li>cross-host networking</li>
+<li>state/volume management on the multiple machines</li>
+</ol>
+<p>containerd:<br>reuse some aspect of docker–&gt; (build container(Docker file), docker registry)</p>
+<p>cri container runtime for Kubernetes:<br>allowed Kubernetes not a hard dependency on Docker</p>
+<h1 id="Pre-for-docker"><a href="#Pre-for-docker" class="headerlink" title="Pre for docker"></a>Pre for docker</h1><ol>
+<li>image building</li>
+<li>container &lt;-&gt; container networking</li>
+<li>volume management</li>
+</ol>
+<h1 id="structure"><a href="#structure" class="headerlink" title="structure"></a>structure</h1><p>why should we distinguish between server and db?<br>    * state<br>        * stateless: app server<br>        * stateful: db</p>
+<p>the way to hanlde scalability &amp; falut handling is very different between server(stateless) and db(stateful)</p>
+<p>LB:<br>    * ingress<br>    * proxy<br>    * not need too much cpu/ram/storage, but the bottleneck maybe networking</p>
+<p>in cloud, you cannot recover a failed machine, rather than it bring up a new machine<br>—-&gt; this architecture is not working for stateful component for scalability, because the data is store in the stateful component, the logical is same among for the stateless component, not invovled with any permanent stored data in the server</p>
+<p>scalabiry for stareful:</p>
+<ol>
+<li>primary-secondary db<ul>
+<li>network seperation between primay &amp; secondary —-&gt; delay</li>
+<li>because the consistency between primary &amp; secondary –&gt; client cannot write directly to the secondary</li>
+</ul>
+</li>
+</ol>
+<h1 id="Linux-pre-requisites"><a href="#Linux-pre-requisites" class="headerlink" title="Linux pre-requisites"></a>Linux pre-requisites</h1><p><a href="https://jnaapti.com/downloads/linux-prereq.pdf" target="_blank" rel="noopener">https://jnaapti.com/downloads/linux-prereq.pdf</a></p>
+<h1 id="Resources"><a href="#Resources" class="headerlink" title="Resources"></a>Resources</h1><p><a href="https://jnaapti.com/downloads/citrix-dec-2020.pdf" target="_blank" rel="noopener">https://jnaapti.com/downloads/citrix-dec-2020.pdf</a><br><a href="https://landscape.cncf.io/" target="_blank" rel="noopener">https://landscape.cncf.io/</a></p>
+<h1 id="Installation-Instructions"><a href="#Installation-Instructions" class="headerlink" title="Installation Instructions"></a>Installation Instructions</h1><h1 id="Docker-Installation"><a href="#Docker-Installation" class="headerlink" title="Docker Installation"></a>Docker Installation</h1><h1 id="https-docs-docker-com-engine-install-ubuntu"><a href="#https-docs-docker-com-engine-install-ubuntu" class="headerlink" title="https://docs.docker.com/engine/install/ubuntu/"></a><a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a></h1><p>sudo su<br>apt-get update<br>apt-get -y install <br>apt-transport-https ca-certificates curl gnupg-agent software-properties-common<br>curl -fsSL <a href="https://download.docker.com/linux/ubuntu/gpg" target="_blank" rel="noopener">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -<br>add-apt-repository <br>“deb [arch=amd64] <a href="https://download.docker.com/linux/ubuntu" target="_blank" rel="noopener">https://download.docker.com/linux/ubuntu</a> <br>$(lsb_release -cs) <br>stable”<br>apt-get update<br>apt-get -y install docker-ce docker-ce-cli containerd.io</p>
+<h1 id="Back-to-non-root"><a href="#Back-to-non-root" class="headerlink" title="Back to non-root"></a>Back to non-root</h1><h1 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h1><p>sudo systemctl status docker</p>
+<h1 id="Kubernetes-Installation"><a href="#Kubernetes-Installation" class="headerlink" title="Kubernetes Installation"></a>Kubernetes Installation</h1><h1 id="https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl"><a href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl" class="headerlink" title="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl"></a><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl</a></h1><h1 id="Run-as-root"><a href="#Run-as-root" class="headerlink" title="Run as root"></a>Run as root</h1><p>sudo su<br>curl -s <a href="https://packages.cloud.google.com/apt/doc/apt-key.gpg" target="_blank" rel="noopener">https://packages.cloud.google.com/apt/doc/apt-key.gpg</a> | apt-key add -<br>cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list<br>deb <a href="https://apt.kubernetes.io/" target="_blank" rel="noopener">https://apt.kubernetes.io/</a> kubernetes-xenial main<br>EOF<br>apt-get update<br>apt-get install -y kubelet kubeadm kubectl<br>apt-mark hold kubelet kubeadm kubectl</p>
+<h1 id="https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm"><a href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm" class="headerlink" title="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/"></a><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/</a></h1><h1 id="Create-the-Control-Plane-node-components"><a href="#Create-the-Control-Plane-node-components" class="headerlink" title="Create the Control Plane node components"></a>Create the Control Plane node components</h1><p>kubeadm init –pod-network-cidr=10.244.0.0/16</p>
+<h1 id="If-you-have-swap-enabled"><a href="#If-you-have-swap-enabled" class="headerlink" title="If you have swap enabled"></a>If you have swap enabled</h1><p>sudo swapoff -a</p>
+<h1 id="Run-as-non-root"><a href="#Run-as-non-root" class="headerlink" title="Run as non-root"></a>Run as non-root</h1><h1 id="Copy-the-admin-configuration-of-Kubernetes-into-kube-config-this-is-the-location-kubectl-looks-for-the-config-to-know-where-the-API-server-is-and-which-user-to-use-to-authenticate-with-the-server"><a href="#Copy-the-admin-configuration-of-Kubernetes-into-kube-config-this-is-the-location-kubectl-looks-for-the-config-to-know-where-the-API-server-is-and-which-user-to-use-to-authenticate-with-the-server" class="headerlink" title="Copy the admin configuration of Kubernetes into ~/.kube/config - this is the location kubectl looks for the config to know where the API server is and which user to use to authenticate with the server"></a>Copy the admin configuration of Kubernetes into ~/.kube/config - this is the location kubectl looks for the config to know where the API server is and which user to use to authenticate with the server</h1><p>mkdir -p $HOME/.kube<br>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>sudo chown $(id -u):$(id -g) $HOME/.kube/config</p>
+<h1 id="Verification-at-this-point"><a href="#Verification-at-this-point" class="headerlink" title="Verification at this point"></a>Verification at this point</h1><p>docker images<br>docker ps<br>kubectl get nodes</p>
+<p>kubectl apply -f <br>        <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml" target="_blank" rel="noopener">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a><br>kubectl taint nodes $(hostname) node-role.kubernetes.io/master:NoSchedule-</p>
+<p>kubeadm init —&gt; api server, controler manager, ercd, scheduler, cloud controler manager —&gt; control plane<br>kubeadm join  —&gt; join the second/third… machine to the cluster —&gt; these are worker nodes, where are running our application</p>
+<p>kubeadm –&gt; initl the cluster<br>kubectl –&gt; dameon for worker nodes</p>
+<ul>
+<li>intract with cluster</li>
+</ul>
+<p>in /.kube/config, we can know where the api server is, then using the kubectl to interact with the cluster by this api server</p>
+<h1 id="Run-as-non-root-1"><a href="#Run-as-non-root-1" class="headerlink" title="Run as non-root"></a>Run as non-root</h1><p>sudo usermod -aG docker ${USER}<br>docker images<br>docker ps</p>
+<h1 id="The-status-will-show-as-NotReady"><a href="#The-status-will-show-as-NotReady" class="headerlink" title="The status will show as NotReady"></a>The status will show as NotReady</h1><p>kubectl get nodes</p>
+<h1 id="The-reason-we-see-is-that-the-Network-Plugin-is-not-initialized"><a href="#The-reason-we-see-is-that-the-Network-Plugin-is-not-initialized" class="headerlink" title="The reason we see is that the Network Plugin is not initialized"></a>The reason we see is that the Network Plugin is not initialized</h1><p>kubectl describe nodes<br>sudo systemctl status kubelet</p>
+<h1 id="This-is-used-to-install-the-Flannel-network-driver"><a href="#This-is-used-to-install-the-Flannel-network-driver" class="headerlink" title="This is used to install the Flannel network driver"></a>This is used to install the Flannel network driver</h1><p>kubectl apply -f <br>        <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml" target="_blank" rel="noopener">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a></p>
+<h1 id="Verification-1"><a href="#Verification-1" class="headerlink" title="Verification"></a>Verification</h1><p>kubectl get nodes</p>
+<h1 id="This-time-it-should-show-the-status-as-Ready"><a href="#This-time-it-should-show-the-status-as-Ready" class="headerlink" title="This time it should show the status as Ready"></a>This time it should show the status as Ready</h1><h1 id="Since-we-have-a-single-node-and-there-is-a-taint-to-not-schedule-on-master-we-have-to-remove-the-taint-so-that-we-can-schedule-workloads-in-the-control-plane-node-itself"><a href="#Since-we-have-a-single-node-and-there-is-a-taint-to-not-schedule-on-master-we-have-to-remove-the-taint-so-that-we-can-schedule-workloads-in-the-control-plane-node-itself" class="headerlink" title="Since we have a single node and there is a taint to not schedule on master, we have to remove the taint so that we can schedule workloads in the control plane node itself"></a>Since we have a single node and there is a taint to not schedule on master, we have to remove the taint so that we can schedule workloads in the control plane node itself</h1><p>kubectl taint nodes $(hostname) node-role.kubernetes.io/master:NoSchedule-<br>kubectl describe nodes | grep Taint</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: 'If you think my post is working for you, please donate to support me continue working', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/JojoYang666/JojoYang666.github.io/master/css/images/WechatPay.jpeg',
+  alipayImage: 'https://raw.githubusercontent.com/JojoYang666/JojoYang666.github.io/master/css/images/vemon.png'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2021/02/19/Kubernetes-Installation/" target="_blank" title="Kubernetes Installation">https://jojoyang666.github.io/2021/02/19/Kubernetes-Installation/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/02/19/Kubernetes-concepts/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Kubernetes concepts
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/25/1610-Maximum-Number-of-Visible-Points/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">1610. Maximum Number of Visible Points</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#why-Decprecate-Docker-in-the-Kubernetes"><span class="nav-number">1.</span> <span class="nav-text">why Decprecate Docker in the Kubernetes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pre-for-docker"><span class="nav-number">2.</span> <span class="nav-text">Pre for docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#structure"><span class="nav-number">3.</span> <span class="nav-text">structure</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-pre-requisites"><span class="nav-number">4.</span> <span class="nav-text">Linux pre-requisites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Resources"><span class="nav-number">5.</span> <span class="nav-text">Resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation-Instructions"><span class="nav-number">6.</span> <span class="nav-text">Installation Instructions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-Installation"><span class="nav-number">7.</span> <span class="nav-text">Docker Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-docs-docker-com-engine-install-ubuntu"><span class="nav-number">8.</span> <span class="nav-text">https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;ubuntu&#x2F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Back-to-non-root"><span class="nav-number">9.</span> <span class="nav-text">Back to non-root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification"><span class="nav-number">10.</span> <span class="nav-text">Verification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes-Installation"><span class="nav-number">11.</span> <span class="nav-text">Kubernetes Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl"><span class="nav-number">12.</span> <span class="nav-text">https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;setup&#x2F;production-environment&#x2F;tools&#x2F;kubeadm&#x2F;install-kubeadm&#x2F;#installing-kubeadm-kubelet-and-kubectl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-as-root"><span class="nav-number">13.</span> <span class="nav-text">Run as root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm"><span class="nav-number">14.</span> <span class="nav-text">https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;setup&#x2F;production-environment&#x2F;tools&#x2F;kubeadm&#x2F;create-cluster-kubeadm&#x2F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-the-Control-Plane-node-components"><span class="nav-number">15.</span> <span class="nav-text">Create the Control Plane node components</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#If-you-have-swap-enabled"><span class="nav-number">16.</span> <span class="nav-text">If you have swap enabled</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-as-non-root"><span class="nav-number">17.</span> <span class="nav-text">Run as non-root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Copy-the-admin-configuration-of-Kubernetes-into-kube-config-this-is-the-location-kubectl-looks-for-the-config-to-know-where-the-API-server-is-and-which-user-to-use-to-authenticate-with-the-server"><span class="nav-number">18.</span> <span class="nav-text">Copy the admin configuration of Kubernetes into ~&#x2F;.kube&#x2F;config - this is the location kubectl looks for the config to know where the API server is and which user to use to authenticate with the server</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification-at-this-point"><span class="nav-number">19.</span> <span class="nav-text">Verification at this point</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-as-non-root-1"><span class="nav-number">20.</span> <span class="nav-text">Run as non-root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-status-will-show-as-NotReady"><span class="nav-number">21.</span> <span class="nav-text">The status will show as NotReady</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-reason-we-see-is-that-the-Network-Plugin-is-not-initialized"><span class="nav-number">22.</span> <span class="nav-text">The reason we see is that the Network Plugin is not initialized</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#This-is-used-to-install-the-Flannel-network-driver"><span class="nav-number">23.</span> <span class="nav-text">This is used to install the Flannel network driver</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification-1"><span class="nav-number">24.</span> <span class="nav-text">Verification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#This-time-it-should-show-the-status-as-Ready"><span class="nav-number">25.</span> <span class="nav-text">This time it should show the status as Ready</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Since-we-have-a-single-node-and-there-is-a-taint-to-not-schedule-on-master-we-have-to-remove-the-taint-so-that-we-can-schedule-workloads-in-the-control-plane-node-itself"><span class="nav-number">26.</span> <span class="nav-text">Since we have a single node and there is a taint to not schedule on master, we have to remove the taint so that we can schedule workloads in the control plane node itself</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              Front Size
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            You already change font size
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              Night eye protection mode
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            Night eye protection mode has turned on, click again to turn off
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

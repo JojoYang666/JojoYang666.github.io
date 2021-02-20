@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>kubernetes simple examples | Jojo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="Kubernetes BasicsCreate a pod called nginx using the image nginxkubectl run –image nginx nginx List the podskubectl get pods Get details about all podskubectl describe pods Describe a specific podkube">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kubernetes Simple Examples">
+<meta property="og:url" content="https://jojoyang666.github.io/2021/02/19/Kubernetes-Simple-Examples/index.html">
+<meta property="og:site_name" content="Jojo&#39;s Blog">
+<meta property="og:description" content="Kubernetes BasicsCreate a pod called nginx using the image nginxkubectl run –image nginx nginx List the podskubectl get pods Get details about all podskubectl describe pods Describe a specific podkube">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-20T02:54:54.000Z">
+<meta property="article:modified_time" content="2021-02-20T02:55:49.064Z">
+<meta property="article:author" content="Jojo Yang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Jojo&#39;s Blog" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt; src:url("/css/fonts/FuturaPTBold.otf") format("woff");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt-light; src:url("/css/fonts/FuturaPTBook.otf") format("woff");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt-italic; src:url("/css/fonts/FuturaPTBookOblique.otf") format("woff");font-weight:400;font-style:italic;}
+}
+
+  </style>
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+  
+<script src="/js/bootstrap.js"></script>
+
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    
+<link rel="stylesheet" href="/css/dialog.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">Home</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">Archives</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">Categories</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">Tags</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">About</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-Kubernetes-Simple-Examples" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Kubernetes Simple Examples
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2021/02/19/Kubernetes-Simple-Examples/" class="article-date">
+	  <time datetime="2021-02-20T02:54:54.000Z" itemprop="datePublished">2021-02-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Kubernetes/">Kubernetes</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		PV:<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+      
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Kubernetes-Basics"><a href="#Kubernetes-Basics" class="headerlink" title="Kubernetes Basics"></a>Kubernetes Basics</h1><h1 id="Create-a-pod-called-nginx-using-the-image-nginx"><a href="#Create-a-pod-called-nginx-using-the-image-nginx" class="headerlink" title="Create a pod called nginx using the image nginx"></a>Create a pod called nginx using the image nginx</h1><p>kubectl run –image nginx nginx</p>
+<h1 id="List-the-pods"><a href="#List-the-pods" class="headerlink" title="List the pods"></a>List the pods</h1><p>kubectl get pods</p>
+<h1 id="Get-details-about-all-pods"><a href="#Get-details-about-all-pods" class="headerlink" title="Get details about all pods"></a>Get details about all pods</h1><p>kubectl describe pods</p>
+<h1 id="Describe-a-specific-pod"><a href="#Describe-a-specific-pod" class="headerlink" title="Describe a specific pod"></a>Describe a specific pod</h1><p>kubectl describe pods nginx<br>kubectl describe pod/nginx<br>kubectl describe pod nginx</p>
+<h1 id="Make-a-note-of-the-IP-address-of-the-pod"><a href="#Make-a-note-of-the-IP-address-of-the-pod" class="headerlink" title="Make a note of the IP address of the pod"></a>Make a note of the IP address of the pod</h1><h1 id="In-my-case-it’s-10-244-0-4"><a href="#In-my-case-it’s-10-244-0-4" class="headerlink" title="In my case it’s 10.244.0.4"></a>In my case it’s 10.244.0.4</h1><p>curl <ip-address></p>
+<h1 id="exec-into-the-container"><a href="#exec-into-the-container" class="headerlink" title="exec into the container"></a>exec into the container</h1><p>kubectl exec -it nginx – /bin/bash<br>echo “Hello from container” &gt; /usr/share/nginx/html/index.html<br>^D<br>curl <ip-address></p>
+<h1 id="View-the-logs-of-the-pod"><a href="#View-the-logs-of-the-pod" class="headerlink" title="View the logs of the pod"></a>View the logs of the pod</h1><p>kubectl logs nginx</p>
+<h1 id="Remove-the-pod"><a href="#Remove-the-pod" class="headerlink" title="Remove the pod"></a>Remove the pod</h1><p>kubectl delete pod nginx</p>
+<h1 id="YAML-to-JSON-converter"><a href="#YAML-to-JSON-converter" class="headerlink" title="YAML to JSON converter"></a>YAML to JSON converter</h1><p><a href="https://onlineyamltools.com/convert-yaml-to-json" target="_blank" rel="noopener">https://onlineyamltools.com/convert-yaml-to-json</a></p>
+<p>name:<br>  first: John<br>  last: Doe<br>age: 10<br>present: false<br>emails:</p>
+<ul>
+<li>type: Personal<br>value: <a href="mailto:john@example.com">john@example.com</a></li>
+<li>type: Work<br>value: <a href="mailto:john@example.org">john@example.org</a><br>values:</li>
+<li><ul>
+<li>10</li>
+<li>20</li>
+</ul>
+</li>
+<li><ul>
+<li>30</li>
+<li>40<br>description: |<br>Hello<br>World</li>
+</ul>
+</li>
+</ul>
+<h1 id="Pod-spec-as-a-YAML"><a href="#Pod-spec-as-a-YAML" class="headerlink" title="Pod spec as a YAML"></a>Pod spec as a YAML</h1><p>mkdir -p ~/data<br>cd ~/data<br>cat &gt; myfirstpod.yaml &lt;&lt;DELIM<br>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: nginx<br>spec:<br>  containers:</p>
+<ul>
+<li>name: nginx<br>image: nginx<br>DELIM<h1 id="Create-the-pod-using-the-spec-in-the-YAML"><a href="#Create-the-pod-using-the-spec-in-the-YAML" class="headerlink" title="Create the pod using the spec in the YAML"></a>Create the pod using the spec in the YAML</h1>kubectl apply -f myfirstpod.yaml </li>
+</ul>
+<p>kubectl get –raw /api/v1/pods</p>
+<h1 id="If-the-spec-has-not-changed-and-we-apply-it-a-second-time-we-see-that-the-orchestrator-says-“unchanged”"><a href="#If-the-spec-has-not-changed-and-we-apply-it-a-second-time-we-see-that-the-orchestrator-says-“unchanged”" class="headerlink" title="If the spec has not changed and we apply it a second time, we see that the orchestrator says “unchanged”"></a>If the spec has not changed and we apply it a second time, we see that the orchestrator says “unchanged”</h1><p>kubectl apply -f myfirstpod.yaml </p>
+<h1 id="Change-image"><a href="#Change-image" class="headerlink" title="Change image"></a>Change image</h1><p>cat &gt; myfirstpod.yaml &lt;&lt;DELIM<br>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: nginx<br>spec:<br>  containers:</p>
+<ul>
+<li>name: nginx<br>image: nginx:1.18<br>DELIM<h1 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h1>kubectl apply -f myfirstpod.yaml<br>kubectl get pods<h1 id="We-see-that-“RESTARTS”-has-changed-to-1"><a href="#We-see-that-“RESTARTS”-has-changed-to-1" class="headerlink" title="We see that “RESTARTS” has changed to 1"></a>We see that “RESTARTS” has changed to 1</h1>kubectl describe pod nginx<h1 id="Delete-all-resources-described-in-the-pod"><a href="#Delete-all-resources-described-in-the-pod" class="headerlink" title="Delete all resources described in the pod"></a>Delete all resources described in the pod</h1>kubectl delete -f myfirstpod.yaml</li>
+</ul>
+<h1 id="Multiple-containers-in-a-single-pod"><a href="#Multiple-containers-in-a-single-pod" class="headerlink" title="Multiple containers in a single pod"></a>Multiple containers in a single pod</h1><p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: nginx<br>spec:<br>  containers:</p>
+<ul>
+<li>name: nginx<br>image: nginx:1.18</li>
+<li>name: nginx2<br>image: nginx</li>
+</ul>
+<p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: nginx<br>spec:<br>  containers:</p>
+<ul>
+<li>name: nginx<br>image: nginx:1.18</li>
+<li>name: curl<br>image: curlimages/curl<br>stdin: true<br>tty: true<br>command: [“/bin/sh”]</li>
+</ul>
+<p>kubectl apply -f myfirstpod.yaml<br>kubectl exec -it nginx -c curl – /bin/sh</p>
+<h1 id="Inside-the-container"><a href="#Inside-the-container" class="headerlink" title="Inside the container"></a>Inside the container</h1><h1 id="We-see-no-nginx-running"><a href="#We-see-no-nginx-running" class="headerlink" title="We see no nginx running"></a>We see no nginx running</h1><p>ps aux</p>
+<h1 id="The-IP-listed-is-same-as-the-pod"><a href="#The-IP-listed-is-same-as-the-pod" class="headerlink" title="The IP listed is same as the pod"></a>The IP listed is same as the pod</h1><p>ifconfig</p>
+<h1 id="We-can-curl-the-nginx-server-via-localhost-even-though-it’s-not-running-in-the-same-container"><a href="#We-can-curl-the-nginx-server-via-localhost-even-though-it’s-not-running-in-the-same-container" class="headerlink" title="We can curl the nginx server via localhost even though it’s not running in the same container"></a>We can curl the nginx server via localhost even though it’s not running in the same container</h1><p>curl localhost<br>^D</p>
+<h1 id="Usecases"><a href="#Usecases" class="headerlink" title="Usecases"></a>Usecases</h1><p><a href="https://medium.com/better-programming/understanding-kubernetes-multi-container-pod-patterns-577f74690aee" target="_blank" rel="noopener">https://medium.com/better-programming/understanding-kubernetes-multi-container-pod-patterns-577f74690aee</a></p>
+<h1 id="Replicasets"><a href="#Replicasets" class="headerlink" title="Replicasets"></a>Replicasets</h1><p>mkdir -p ~/data<br>cd ~/data<br>cat &gt; myrs.yaml &lt;&lt;DELIM<br>apiVersion: apps/v1<br>kind: ReplicaSet<br>metadata:<br>  name: nginx-rs<br>spec:<br>  replicas: 3<br>  selector:<br>    matchLabels:<br>      app: nginx<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx<br>DELIM<br>kubectl apply -f myrs.yaml<br>kubectl get pods<br>kubectl describe pods | grep IP<br>kubectl get replicasets<br>kubectl describe replicasets # kubectl describe rs</p>
+<h1 id="You-should-see-3-containers"><a href="#You-should-see-3-containers" class="headerlink" title="You should see 3 containers"></a>You should see 3 containers</h1><p>docker ps | grep “k8s_nginx”</p>
+<h1 id="Force-remove-one-of-them"><a href="#Force-remove-one-of-them" class="headerlink" title="Force remove one of them"></a>Force remove one of them</h1><p>docker rm -f <any_one_container_from_above></p>
+<h1 id="Now-list-the-pods-again"><a href="#Now-list-the-pods-again" class="headerlink" title="Now list the pods again"></a>Now list the pods again</h1><p>kubectl get pods</p>
+<h1 id="What-if-we-delete-a-pod"><a href="#What-if-we-delete-a-pod" class="headerlink" title="What if we delete a pod"></a>What if we delete a pod</h1><p>kubectl delete pod <one_of_the_pods_from_the_replicaset></p>
+<h1 id="The-pod-gets-recreated-because-the-replicaset-controller-observes-and-takes-an-action"><a href="#The-pod-gets-recreated-because-the-replicaset-controller-observes-and-takes-an-action" class="headerlink" title="The pod gets recreated because the replicaset-controller observes and takes an action"></a>The pod gets recreated because the replicaset-controller observes and takes an action</h1><p>kubectl get pods<br>kubectl describe rs</p>
+<h1 id="Try-scale-out-and-scale-down"><a href="#Try-scale-out-and-scale-down" class="headerlink" title="Try scale out and scale down"></a>Try scale out and scale down</h1><h1 id="Change-replicas-to-6-and-apply"><a href="#Change-replicas-to-6-and-apply" class="headerlink" title="Change replicas to 6 and apply"></a>Change replicas to 6 and apply</h1><h1 id="Then-change-to-2-and-apply-again"><a href="#Then-change-to-2-and-apply-again" class="headerlink" title="Then change to 2 and apply again"></a>Then change to 2 and apply again</h1><h1 id="No-implicit-ownership"><a href="#No-implicit-ownership" class="headerlink" title="No implicit ownership"></a>No implicit ownership</h1><p>kubectl get pods –show-labels</p>
+<h1 id="First-create-a-replicaset-with-2-replicas-the-pods-have-the-label-app-nginx"><a href="#First-create-a-replicaset-with-2-replicas-the-pods-have-the-label-app-nginx" class="headerlink" title="First create a replicaset with 2 replicas (the pods have the label app=nginx)"></a>First create a replicaset with 2 replicas (the pods have the label app=nginx)</h1><h1 id="Create-another-pod-with-this-spec"><a href="#Create-another-pod-with-this-spec" class="headerlink" title="Create another pod with this spec"></a>Create another pod with this spec</h1><p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: nginx<br>  labels:<br>    app: nginx<br>spec:<br>  containers:</p>
+<ul>
+<li>name: nginx<br>image: nginx:1.18</li>
+</ul>
+<p>kubectl describe rs nginx-rs</p>
+<h1 id="Change-detection"><a href="#Change-detection" class="headerlink" title="Change detection"></a>Change detection</h1><p><a href="https://kubernetes.io/docs/reference/using-api/api-concepts/#efficient-detection-of-changes" target="_blank" rel="noopener">https://kubernetes.io/docs/reference/using-api/api-concepts/#efficient-detection-of-changes</a></p>
+<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><p>apiVersion: apps/v1<br>kind: Deployment<br>metadata:<br>  name: nginx-deployment<br>spec:<br>  replicas: 3<br>  selector:<br>    matchLabels:<br>      app: nginx<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx:1.18</p>
+<p>kubectl apply -f mydeployment.yaml<br>kubectl get deployment # shortform is kubectl get deploy</p>
+<h1 id="Then-change-the-image-to-nginx-1-19"><a href="#Then-change-the-image-to-nginx-1-19" class="headerlink" title="Then change the image to nginx:1.19"></a>Then change the image to nginx:1.19</h1><p>kubectl apply -f mydeployment.yaml<br>kubectl get pods -w</p>
+<p>kubectl describe deployment<br>kubectl delete deployment nginx-deployment</p>
+<p>kubectl get all<br>kubectl get deploy,rs,pods</p>
+<h1 id="Deploy-again"><a href="#Deploy-again" class="headerlink" title="Deploy again"></a>Deploy again</h1><p>kubectl get deploy,rs,pods</p>
+<h1 id="Describe-the-deployment"><a href="#Describe-the-deployment" class="headerlink" title="Describe the deployment"></a>Describe the deployment</h1><p>kubectl describe deploy nginx-deployment<br>kubectl rollout restart deployment/nginx-deployment</p>
+<h1 id="Pulling-from-private-registries"><a href="#Pulling-from-private-registries" class="headerlink" title="Pulling from private registries"></a>Pulling from private registries</h1><p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/" target="_blank" rel="noopener">https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/</a></p>
+<h1 id="Rollback-demo"><a href="#Rollback-demo" class="headerlink" title="Rollback demo"></a>Rollback demo</h1><h1 id="Deploy-nginx-with-version-1-18-to-begin-with"><a href="#Deploy-nginx-with-version-1-18-to-begin-with" class="headerlink" title="Deploy nginx with version 1.18 to begin with"></a>Deploy nginx with version 1.18 to begin with</h1><p>apiVersion: apps/v1<br>kind: Deployment<br>metadata:<br>  name: nginx-deployment<br>spec:<br>  replicas: 3<br>  selector:<br>    matchLabels:<br>      app: nginx<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx:1.18</p>
+<p>kubectl delete -f mydeployment.yaml<br>kubectl apply -f mydeployment.yaml</p>
+<h1 id="Change-the-image-to-1-19-and-apply-again"><a href="#Change-the-image-to-1-19-and-apply-again" class="headerlink" title="Change the image to 1.19 and apply again"></a>Change the image to 1.19 and apply again</h1><p>kubectl apply -f mydeployment.yaml</p>
+<h1 id="kubectl-rollout-history"><a href="#kubectl-rollout-history" class="headerlink" title="kubectl rollout history"></a>kubectl rollout history</h1><p>kubectl rollout history deployment/nginx-deployment<br>kubectl rollout undo deployment/nginx-deployment<br>kubectl get deploy nginx-deployment -o yaml | grep revisionHistoryLimit</p>
+<h1 id="Recreate-strategy"><a href="#Recreate-strategy" class="headerlink" title="Recreate strategy"></a>Recreate strategy</h1><p><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment</a><br>apiVersion: apps/v1<br>kind: Deployment<br>metadata:<br>  name: nginx-deployment<br>spec:<br>  replicas: 3<br>  strategy:<br>    type: Recreate<br>  selector:<br>    matchLabels:<br>      app: nginx<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx:1.19<br>        imagePullPolicy: Always</p>
+<p>kubectl apply -f mydeployment.yaml<br>kubectl rollout restart deployment/nginx-deployment</p>
+<h1 id="Services"><a href="#Services" class="headerlink" title="Services"></a>Services</h1><h1 id="Ensure-that-we-have-some-nginx-replicas-running"><a href="#Ensure-that-we-have-some-nginx-replicas-running" class="headerlink" title="Ensure that we have some nginx replicas running"></a>Ensure that we have some nginx replicas running</h1><p>apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>spec:<br>  selector:<br>    app: nginx<br>  ports:</p>
+<ul>
+<li>port: 80<br>targetPort: 80<br>protocol: TCP</li>
+</ul>
+<p>kubectl apply -f mydeployment.yaml<br>kubectl get services # or shortform kubectl get svc<br>kubectl get endpoints # or shortform kubectl get ep<br>kubectl describe pods | grep -P “^IP:”<br>curl <any_one_of_the_pod_ips></p>
+<h1 id="curl-the-cluster-ip-every-second-and-see-if-there-are-any-disruptions-to-the-service-when-a-deployment-is-in-progress"><a href="#curl-the-cluster-ip-every-second-and-see-if-there-are-any-disruptions-to-the-service-when-a-deployment-is-in-progress" class="headerlink" title="curl the cluster ip every second and see if there are any disruptions to the service when a deployment is in progress"></a>curl the cluster ip every second and see if there are any disruptions to the service when a deployment is in progress</h1><p>while true;do curl -s <cluster_ip> | grep -P “<title>“;sleep 1;done</p>
+<h1 id="Demo-of-how-we-can-resolve-the-service-name-to-connect-to-the-pod"><a href="#Demo-of-how-we-can-resolve-the-service-name-to-connect-to-the-pod" class="headerlink" title="Demo of how we can resolve the service name to connect to the pod"></a>Demo of how we can resolve the service name to connect to the pod</h1><h1 id="Create-a-pod-that-has-curl-in-it"><a href="#Create-a-pod-that-has-curl-in-it" class="headerlink" title="Create a pod that has curl in it"></a>Create a pod that has curl in it</h1><p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: curl<br>spec:<br>  containers:</p>
+<ul>
+<li>name: curl<br>image: curlimages/curl<br>stdin: true<br>tty: true<br>command: [“/bin/sh”]</li>
+</ul>
+<p>kubectl apply -f curlpod.yaml<br>kubectl get pods<br>kubectl exec -it curl – /bin/sh</p>
+<h1 id="Inside-the-container-1"><a href="#Inside-the-container-1" class="headerlink" title="Inside the container"></a>Inside the container</h1><p>nslookup nginx<br>curl nginx</p>
+<h1 id="Services-1"><a href="#Services-1" class="headerlink" title="Services"></a>Services</h1><p><a href="https://kubernetes.io/docs/concepts/services-networking/service/" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/services-networking/service/</a><br><a href="https://docs.openshift.com/container-platform/3.4/architecture/additional_concepts/flannel.html" target="_blank" rel="noopener">https://docs.openshift.com/container-platform/3.4/architecture/additional_concepts/flannel.html</a><br><a href="https://docs.cilium.io/en/k8s-doc/architecture/" target="_blank" rel="noopener">https://docs.cilium.io/en/k8s-doc/architecture/</a></p>
+<p>apiVersion: apps/v1<br>kind: Deployment<br>metadata:<br>  name: nginx-deployment<br>spec:<br>  replicas: 3<br>  selector:<br>    matchLabels:<br>      app: nginx<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx:1.19<br>        imagePullPolicy: Always</p>
+<hr>
+<p>apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>spec:<br>  selector:<br>    app: nginx<br>  ports:</p>
+<ul>
+<li>port: 80<br>targetPort: 80<br>protocol: TCP</li>
+</ul>
+<p>kubectl apply -f mydeployment.yaml</p>
+<h1 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h1><p>kubectl get svc</p>
+<h1 id="Make-a-note-of-the-cluster-ip"><a href="#Make-a-note-of-the-cluster-ip" class="headerlink" title="Make a note of the cluster ip"></a>Make a note of the cluster ip</h1><p>curl <cluster-ip></p>
+<h1 id="Load-Balancer"><a href="#Load-Balancer" class="headerlink" title="Load Balancer"></a>Load Balancer</h1><p>apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>spec:<br>  type: LoadBalancer<br>  selector:<br>    app: nginx<br>  ports:</p>
+<ul>
+<li>port: 80<br>targetPort: 80<br>protocol: TCP</li>
+</ul>
+<h1 id="Hack-set-an-external-IP"><a href="#Hack-set-an-external-IP" class="headerlink" title="Hack - set an external IP"></a>Hack - set an external IP</h1><p>apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>spec:<br>  type: LoadBalancer<br>  externalIPs:</p>
+<ul>
+<li><your-ip-here>
+selector:
+app: nginx
+ports:</li>
+<li>port: 80<br>targetPort: 80</li>
+</ul>
+<p>kubectl get svc</p>
+<h1 id="Make-a-note-of-the-cluster-ip-and-node-port"><a href="#Make-a-note-of-the-cluster-ip-and-node-port" class="headerlink" title="Make a note of the cluster ip and node port"></a>Make a note of the cluster ip and node port</h1><h1 id="Sample-output"><a href="#Sample-output" class="headerlink" title="Sample output"></a>Sample output</h1><h1 id="nginx-LoadBalancer-10-111-26-168-128-199-118-23-80-30811-TCP-21h"><a href="#nginx-LoadBalancer-10-111-26-168-128-199-118-23-80-30811-TCP-21h" class="headerlink" title="nginx        LoadBalancer   10.111.26.168   128.199.118.23   80:30811/TCP   21h"></a>nginx        LoadBalancer   10.111.26.168   128.199.118.23   80:30811/TCP   21h</h1><h1 id="In-this-case-the-external-ip-is-128-199-118-23-and-node-port-is-30811"><a href="#In-this-case-the-external-ip-is-128-199-118-23-and-node-port-is-30811" class="headerlink" title="In this case, the external ip is 128.199.118.23 and node port is 30811"></a>In this case, the external ip is 128.199.118.23 and node port is 30811</h1><p>curl <external-ip>:80<br>curl <vm-ip>:<nodeport><br>curl <cluster-ip>:80</p>
+<p>kubectl get ep</p>
+<p>curl <pod-ip>:80</p>
+<h1 id="Persistent-Volumes-and-Persistent-Volume-Claims"><a href="#Persistent-Volumes-and-Persistent-Volume-Claims" class="headerlink" title="Persistent Volumes and Persistent Volume Claims"></a>Persistent Volumes and Persistent Volume Claims</h1><p>kubectl delete all –all</p>
+<p>apiVersion: v1<br>kind: PersistentVolumeClaim<br>metadata:<br>  name: my-pv-claim<br>spec:<br>  storageClassName: manual<br>  accessModes:<br>    - ReadWriteOnce<br>  resources:<br>    requests:<br>      storage: 1Gi</p>
+<p>kubectl get pvc<br>kubectl get pv</p>
+<p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: nginx-pod-with-storage<br>spec:<br>  volumes:</p>
+<ul>
+<li>name: my-storage<br>persistentVolumeClaim:<br>  claimName: my-pv-claim<br>containers:</li>
+<li>name: nginx<br>image: nginx<br>volumeMounts:<ul>
+<li>mountPath: “/usr/share/nginx/html”<br>name: my-storage</li>
+</ul>
+</li>
+</ul>
+<p>kubectl get pods</p>
+<p>apiVersion: v1<br>kind: PersistentVolume<br>metadata:<br>  name: my-pv-volume<br>  labels:<br>    type: local<br>spec:<br>  storageClassName: manual<br>  capacity:<br>    storage: 5Gi<br>  accessModes:<br>    - ReadWriteOnce<br>  hostPath:<br>    path: “/data”</p>
+<h1 id="Modify-a-file-in-this-volume-from-inside-the-container"><a href="#Modify-a-file-in-this-volume-from-inside-the-container" class="headerlink" title="Modify a file in this volume from inside the container"></a>Modify a file in this volume from inside the container</h1><p>kubectl exec -it nginx-pod-with-storage – /bin/bash<br>echo “Hello” &gt; /usr/share/nginx/html/index.html<br>exit</p>
+<h1 id="Now-visit-data"><a href="#Now-visit-data" class="headerlink" title="Now visit /data"></a>Now visit /data</h1><p>ls /data<br>cat /data/index.html</p>
+<h1 id="Create-a-file-from-host-and-see-if-the-container-reflects-it"><a href="#Create-a-file-from-host-and-see-if-the-container-reflects-it" class="headerlink" title="Create a file from host and see if the container reflects it"></a>Create a file from host and see if the container reflects it</h1><p>echo “About” | sudo tee /data/about.html<br>curl <pod-ip>/about.html<br>kubectl exec nginx-pod-with-storage – cat /usr/share/nginx/html/about.html</p>
+<h1 id="Statefulsets"><a href="#Statefulsets" class="headerlink" title="Statefulsets"></a>Statefulsets</h1><p>apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>  labels:<br>    app: nginx<br>spec:<br>  ports:</p>
+<ul>
+<li>port: 80<br>name: web<br>clusterIP: None<br>selector:<br>app: nginx</li>
+</ul>
+<hr>
+<p>apiVersion: apps/v1<br>kind: StatefulSet<br>metadata:<br>  name: web<br>spec:<br>  selector:<br>    matchLabels:<br>      app: nginx # has to match .spec.template.metadata.labels<br>  serviceName: “nginx”<br>  replicas: 3 # by default is 1<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx # has to match .spec.selector.matchLabels<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx<br>        ports:<br>        - containerPort: 80<br>          name: web<br>        volumeMounts:<br>        - name: www<br>          mountPath: /usr/share/nginx/html<br>  volumeClaimTemplates:</p>
+<ul>
+<li>metadata:<br>  name: www<br>spec:<br>  accessModes: [ “ReadWriteOnce” ]<br>  storageClassName: manual<br>  resources:<pre><code>requests:
+  storage: 1Gi</code></pre></li>
+</ul>
+<p>kubectl delete all –all<br>kubectl apply -f statefulset.yaml<br>kubectl get statefulset<br>kubectl get pvc<br>kubectl get pods<br>kubectl get svc</p>
+<h1 id="Let-us-add-one-PV"><a href="#Let-us-add-one-PV" class="headerlink" title="Let us add one PV"></a>Let us add one PV</h1><p>kind: PersistentVolume<br>apiVersion: v1<br>metadata:<br>  name: vol1<br>  labels:<br>    type: local<br>spec:<br>  storageClassName: manual<br>  capacity:<br>    storage: 5Gi<br>  accessModes:</p>
+<ul>
+<li>ReadWriteOnce<br>hostPath:<br>path: “/data1”</li>
+</ul>
+<p>kubectl apply -f stateful-pvs.yaml</p>
+<h1 id="One-volume-is-listed-and-it-will-be-bound-to-the-first-PVC-of-the-statefulset"><a href="#One-volume-is-listed-and-it-will-be-bound-to-the-first-PVC-of-the-statefulset" class="headerlink" title="One volume is listed and it will be bound to the first PVC of the statefulset"></a>One volume is listed and it will be bound to the first PVC of the statefulset</h1><p>kubectl get pv</p>
+<h1 id="The-pvc-is-bound-and-you-will-see-one-more-PVC-getting-listed-for-the-second-pod-in-the-statefulset"><a href="#The-pvc-is-bound-and-you-will-see-one-more-PVC-getting-listed-for-the-second-pod-in-the-statefulset" class="headerlink" title="The pvc is bound and you will see one more PVC getting listed (for the second pod in the statefulset)"></a>The pvc is bound and you will see one more PVC getting listed (for the second pod in the statefulset)</h1><p>kubectl get pvc</p>
+<h1 id="The-first-pod-starts-running-and-the-second-one-is-now-pending"><a href="#The-first-pod-starts-running-and-the-second-one-is-now-pending" class="headerlink" title="The first pod starts running and the second one is now pending"></a>The first pod starts running and the second one is now pending</h1><p>kubectl get pods</p>
+<h1 id="Ready-will-be-1-3"><a href="#Ready-will-be-1-3" class="headerlink" title="Ready will be 1/3"></a>Ready will be 1/3</h1><p>kubectl get statefulsets<br>kubectl get all,pvc,pv</p>
+<h1 id="Add-the-second-PV"><a href="#Add-the-second-PV" class="headerlink" title="Add the second PV"></a>Add the second PV</h1><p>kind: PersistentVolume<br>apiVersion: v1<br>metadata:<br>  name: vol2<br>  labels:<br>    type: local<br>spec:<br>  storageClassName: manual<br>  capacity:<br>    storage: 5Gi<br>  accessModes:</p>
+<ul>
+<li>ReadWriteOnce<br>hostPath:<br>path: “/data2”</li>
+</ul>
+<h1 id="2-directories-are-created-that-represent-the-2-PVs"><a href="#2-directories-are-created-that-represent-the-2-PVs" class="headerlink" title="2 directories are created (that represent the 2 PVs)"></a>2 directories are created (that represent the 2 PVs)</h1><p>ls /data1<br>ls /data2</p>
+<h1 id="Create-an-index-html-in-the-2-directories"><a href="#Create-an-index-html-in-the-2-directories" class="headerlink" title="Create an index.html in the 2 directories"></a>Create an index.html in the 2 directories</h1><p>echo “Hello from volume 1” | sudo tee /data1/index.html<br>echo “Hello from volume 2” | sudo tee /data2/index.html</p>
+<h1 id="Now-create-a-client-curl-pod-to-connect-to-these-services-in-the-statefulset"><a href="#Now-create-a-client-curl-pod-to-connect-to-these-services-in-the-statefulset" class="headerlink" title="Now create a client (curl pod) to connect to these services in the statefulset"></a>Now create a client (curl pod) to connect to these services in the statefulset</h1><p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: curl<br>spec:<br>  containers:</p>
+<ul>
+<li>name: curl<br>image: curlimages/curl<br>stdin: true<br>tty: true<br>command: [“/bin/sh”]</li>
+</ul>
+<p>kubectl apply -f curlpod.yaml<br>kubectl get pods</p>
+<p>kubectl exec -it curl – /bin/sh</p>
+<h1 id="Inside-the-container-2"><a href="#Inside-the-container-2" class="headerlink" title="Inside the container"></a>Inside the container</h1><p>nslookup web-0.nginx.default.svc.cluster.local<br>nslookup web-1.nginx.default.svc.cluster.local</p>
+<h1 id="Connect-to-the-nginx-service-in-pod-1"><a href="#Connect-to-the-nginx-service-in-pod-1" class="headerlink" title="Connect to the nginx service in pod 1"></a>Connect to the nginx service in pod 1</h1><p>curl web-0.nginx</p>
+<h1 id="Connect-to-the-server-in-pod-2"><a href="#Connect-to-the-server-in-pod-2" class="headerlink" title="Connect to the server in pod 2"></a>Connect to the server in pod 2</h1><p>curl web-1.nginx</p>
+<h1 id="ConfigMaps"><a href="#ConfigMaps" class="headerlink" title="ConfigMaps"></a>ConfigMaps</h1><p><a href="https://kubernetes.io/docs/concepts/configuration/configmap/" target="_blank" rel="noopener">https://kubernetes.io/docs/concepts/configuration/configmap/</a></p>
+<p>apiVersion: v1<br>kind: ConfigMap<br>metadata:<br>  name: game-demo<br>data:</p>
+<h1 id="property-like-keys-each-key-maps-to-a-simple-value"><a href="#property-like-keys-each-key-maps-to-a-simple-value" class="headerlink" title="property-like keys; each key maps to a simple value"></a>property-like keys; each key maps to a simple value</h1><p>  player_initial_lives: “3”<br>  ui_properties_file_name: “user-interface.properties”</p>
+<h1 id="file-like-keys"><a href="#file-like-keys" class="headerlink" title="file-like keys"></a>file-like keys</h1><p>  game.properties: |<br>    enemy.types=aliens,monsters<br>    player.maximum-lives=5<br>  user-interface.properties: |<br>    color.good=purple<br>    color.bad=yellow<br>    allow.textmode=true</p>
+<hr>
+<p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: configmap-demo-pod<br>spec:<br>  containers:<br>    - name: demo<br>      image: nginx<br>      stdin: true<br>      tty: true<br>      command: [“/bin/sh”]<br>      env:<br>        # Define the environment variable<br>        - name: PLAYER_INITIAL_LIVES # Notice that the case is different here<br>                                     # from the key name in the ConfigMap.<br>          valueFrom:<br>            configMapKeyRef:<br>              name: game-demo           # The ConfigMap this value comes from.<br>              key: player_initial_lives # The key to fetch.<br>        - name: UI_PROPERTIES_FILE_NAME<br>          valueFrom:<br>            configMapKeyRef:<br>              name: game-demo<br>              key: ui_properties_file_name<br>      volumeMounts:<br>      - name: config<br>        mountPath: “/config”<br>        readOnly: true<br>  volumes:<br>    # You set volumes at the Pod level, then mount them into containers inside that Pod<br>    - name: config<br>      configMap:<br>        # Provide the name of the ConfigMap you want to mount.<br>        name: game-demo<br>        # An array of keys from the ConfigMap to create as files<br>        items:<br>        - key: “game.properties”<br>          path: “game.properties”<br>        - key: “user-interface.properties”<br>          path: “user-interface.properties”</p>
+<p>kubectl get configmaps<br>kubectl get pods</p>
+<p>kubectl exec -it configmap-demo-pod – /bin/bash</p>
+<h1 id="Inside-the-container-3"><a href="#Inside-the-container-3" class="headerlink" title="Inside the container"></a>Inside the container</h1><p>env<br>ls /config<br>cat /config/game.properties<br>cat /config/user-interface.properties</p>
+<h1 id="Secret"><a href="#Secret" class="headerlink" title="Secret"></a>Secret</h1><p> kubectl create secret generic db-secret <br>–from-literal=DB_PASSWORD=mysecretpassword</p>
+<p>kubectl get secret<br>kubectl describe secret<br>kubectl get secret db-secret -o yaml</p>
+<p>apiVersion: v1<br>kind: Pod<br>metadata:<br>  name: pod-with-secret<br>spec:<br>  containers:<br>    - name: nginx<br>      image: nginx<br>      envFrom:<br>      - secretRef:<br>          name: db-secret</p>
+<p>kubectl apply -f pod-with-secret.yaml<br>kubectl get pods<br>kubectl exec -it pod-with-secret – env | grep “DB_PASSWORD”</p>
+<h1 id="Namespaces"><a href="#Namespaces" class="headerlink" title="Namespaces"></a>Namespaces</h1><p>kubectl get pods –all-namespaces<br>kubectl get pods -n default<br>kubectl get pods -n kube-system<br>kubectl get svc -n kube-system</p>
+<h1 id="Deploying-to-multiple-namespaces"><a href="#Deploying-to-multiple-namespaces" class="headerlink" title="Deploying to multiple namespaces"></a>Deploying to multiple namespaces</h1><p>kubectl delete all –all<br>kubectl apply -f mydeployment.yaml </p>
+<h1 id="Deploying-to-myns1-namespace"><a href="#Deploying-to-myns1-namespace" class="headerlink" title="Deploying to myns1 namespace"></a>Deploying to myns1 namespace</h1><p>apiVersion: apps/v1<br>kind: Deployment<br>metadata:<br>  name: nginx-deployment<br>  namespace: myns1<br>spec:<br>  replicas: 3<br>  selector:<br>    matchLabels:<br>      app: nginx<br>  template:<br>    metadata:<br>      labels:<br>        app: nginx<br>    spec:<br>      containers:<br>      - name: nginx<br>        image: nginx:1.19<br>        imagePullPolicy: Always</p>
+<hr>
+<p>apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>  namespace: myns1<br>spec:<br>  type: NodePort<br>  selector:<br>    app: nginx<br>  ports:</p>
+<ul>
+<li>port: 80<br>targetPort: 80<br>protocol: TCP</li>
+</ul>
+<h1 id="Create-and-list-namespaces"><a href="#Create-and-list-namespaces" class="headerlink" title="Create and list namespaces"></a>Create and list namespaces</h1><p>kubectl create namespace myns1<br>kubectl get namespaces</p>
+<p>kubectl apply -f mydeployment.yaml<br>kubectl get deploy,svc -n myns1<br>kubectl get svc –all-namespaces | grep nginx</p>
+<p>curl <both-cluster-ips></p>
+<h1 id="Connecting-to-services-of-different-namespaces"><a href="#Connecting-to-services-of-different-namespaces" class="headerlink" title="Connecting to services of different namespaces"></a>Connecting to services of different namespaces</h1><p>kubectl apply -f curlpod.yaml<br>kubectl exec -it curl – /bin/sh</p>
+<h1 id="Inside-the-container-4"><a href="#Inside-the-container-4" class="headerlink" title="Inside the container"></a>Inside the container</h1><p>nslookup nginx<br>nslookup nginx.myns1.svc.cluster.local</p>
+<h1 id="Config-and-Context"><a href="#Config-and-Context" class="headerlink" title="Config and Context"></a>Config and Context</h1><p>kubectl config get-contexts</p>
+<h1 id="Open-kube-config-and-change-cluster-name-to-dev-cluster-context-name-to-dev-context-and-carefully-edit-the-1-context-and-set-the-same-names"><a href="#Open-kube-config-and-change-cluster-name-to-dev-cluster-context-name-to-dev-context-and-carefully-edit-the-1-context-and-set-the-same-names" class="headerlink" title="Open ~/.kube/config and change cluster name to dev-cluster, context name to dev-context and carefully edit the 1 context and set the same names"></a>Open ~/.kube/config and change cluster name to dev-cluster, context name to dev-context and carefully edit the 1 context and set the same names</h1><h1 id="Create-a-new-context"><a href="#Create-a-new-context" class="headerlink" title="Create a new context"></a>Create a new context</h1><p>kubectl config set-context dev-myns1-context –cluster dev-cluster –user kubernetes-admin –namespace myns1<br>kubectl config get-contexts<br>kubectl config use-context dev-myns1-context<br>kubectl config get-contexts<br>kubectl config set-context –current –namespace myns1</p>
+<p>export KUBECONFIG=<del>/.kube/config:</del>/.kube/prod-config</p>
+<h1 id="k9s"><a href="#k9s" class="headerlink" title="k9s"></a>k9s</h1><p><a href="https://k9scli.io/" target="_blank" rel="noopener">https://k9scli.io/</a><br>cd /tmp<br>wget “<a href="https://github.com/derailed/k9s/releases/download/v0.24.2/k9s_Linux_x86_64.tar.gz&quot;" target="_blank" rel="noopener">https://github.com/derailed/k9s/releases/download/v0.24.2/k9s_Linux_x86_64.tar.gz&quot;</a><br>tar -xzf k9s_Linux_x86_64.tar.gz<br>sudo mv k9s /usr/local/bin/<br>cd ~<br>k9s</p>
+<h1 id="Sample-projects"><a href="#Sample-projects" class="headerlink" title="Sample projects"></a>Sample projects</h1><h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><p><a href="https://github.com/buzypi/spring-jpa" target="_blank" rel="noopener">https://github.com/buzypi/spring-jpa</a></p>
+<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><p><a href="https://github.com/buzypi/users-service" target="_blank" rel="noopener">https://github.com/buzypi/users-service</a><br><a href="https://github.com/buzypi/payments-service" target="_blank" rel="noopener">https://github.com/buzypi/payments-service</a></p>
+<h1 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h1><p><a href="https://github.com/buzypi/users-service-go" target="_blank" rel="noopener">https://github.com/buzypi/users-service-go</a><br><a href="https://github.com/buzypi/payments-service-go" target="_blank" rel="noopener">https://github.com/buzypi/payments-service-go</a></p>
+<h1 id="Deploying-a-sample-application"><a href="#Deploying-a-sample-application" class="headerlink" title="Deploying a sample application"></a>Deploying a sample application</h1><p>cd ~/data<br>git clone <a href="https://github.com/buzypi/users-service" target="_blank" rel="noopener">https://github.com/buzypi/users-service</a><br>cd users-service<br>docker build -t users-service:v1 .<br>kubectl apply -f deployment.yaml<br>kubectl get svc</p>
+<h1 id="Note-the-cluster-ip-of-users-service"><a href="#Note-the-cluster-ip-of-users-service" class="headerlink" title="Note the cluster ip of users-service"></a>Note the cluster ip of users-service</h1><p>curl <cluster-ip>:5000/ping<br>curl <cluster-ip>:5000/users<br>curl <cluster-ip>:5000/user/1<br>curl <cluster-ip>:5000/user/2<br>curl <cluster-ip>:5000/user/3</p>
+<p>kubectl edit svc users-service</p>
+<h1 id="Add-externalIPs-‘‘"><a href="#Add-externalIPs-‘‘" class="headerlink" title="Add externalIPs: [‘‘]"></a>Add externalIPs: [‘<your-vm-ip>‘]</h1><h1 id="If-needed-change-port-from-5000-to-80-don’t-change-targetPort"><a href="#If-needed-change-port-from-5000-to-80-don’t-change-targetPort" class="headerlink" title="If needed, change port from 5000 to 80 (don’t change targetPort)"></a>If needed, change port from 5000 to 80 (don’t change targetPort)</h1><h1 id="Pod-reader"><a href="#Pod-reader" class="headerlink" title="Pod-reader"></a>Pod-reader</h1><p>kind: Role<br>apiVersion: rbac.authorization.k8s.io/v1<br>metadata:<br>  name: pod-reader<br>rules:</p>
+<ul>
+<li>apiGroups: [“”, “extensions”, “apps”] # “” indicates the core API group<br>resources: [“pods”, “deployments”]<br>verbs: [“get”, “watch”, “list”]</li>
+</ul>
+<hr>
+<p>kind: RoleBinding<br>apiVersion: rbac.authorization.k8s.io/v1<br>metadata:<br>  name: read-pods<br>subjects:</p>
+<ul>
+<li>kind: User<br>name: system:serviceaccount:default:gautham # Name is case sensitive<br>apiGroup: rbac.authorization.k8s.io<br>roleRef:<br>kind: Role #this must be Role or ClusterRole<br>name: pod-reader # this must match the name of the Role or ClusterRole you wish to bind to<br>apiGroup: rbac.authorization.k8s.io</li>
+</ul>
+<p><a href="http://docs.shippable.com/deploy/tutorial/create-kubeconfig-for-self-hosted-kubernetes-cluster/" target="_blank" rel="noopener">http://docs.shippable.com/deploy/tutorial/create-kubeconfig-for-self-hosted-kubernetes-cluster/</a></p>
+<h1 id="Helm"><a href="#Helm" class="headerlink" title="Helm"></a>Helm</h1><p><a href="https://helm.sh/" target="_blank" rel="noopener">https://helm.sh/</a><br><a href="https://helm.sh/docs/helm/helm_search_hub/#helm" target="_blank" rel="noopener">https://helm.sh/docs/helm/helm_search_hub/#helm</a><br><a href="https://helm.sh/docs/topics/charts/#helm" target="_blank" rel="noopener">https://helm.sh/docs/topics/charts/#helm</a></p>
+<p>headless Service<br>apiVersion: v1<br>kind: Service<br>metadata:<br>  name: nginx<br>  labels:<br>    app: nginx<br>spec:<br>  ports:</p>
+<ul>
+<li>port: 80<br>name: web<br>clusterIP: None<br>selector:<br>app: nginx</li>
+</ul>
+<p>config map: non credential env/config setting<br>secret: credential env/config setting</p>
+<p>k9s</p>
+<p>to run container inside container will be the main problem for docker</p>
+<p>ci: vcs -&gt; build system -&gt; artifact repository<br>cd: artifact repository -&gt; QA -&gt; deployment system<br>blue/green –&gt; cluster must have enough capacity –&gt; at least twice capacity of current version<br>3. canary deployment –&gt; not available in kubernetes</p>
+<h1 id="common-commands"><a href="#common-commands" class="headerlink" title="common commands"></a>common commands</h1><p>kubectl get nodes<br>kubesctol describe nodes<br>kubectl get pods<br>kubectl describe pods ***<br>kubectl run –image ** **</p>
+<h1 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h1><ol>
+<li><p><a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml" target="_blank" rel="noopener">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a><br>–&gt; networker driver –&gt; kubernetes can connect with each other</p>
+</li>
+<li><p>untaint nodes —&gt; make it have the ability as worker nodes</p>
+<ul>
+<li>Noschedule- —-&gt; untaint nodes</li>
+<li>Noschedule+  —–&gt;taint nodes</li>
+</ul>
+</li>
+</ol>
+<p>kubectl get pods -w —&gt; see the sequence of running this pods</p>
+<ol start="3">
+<li>serveral containers in same pod:<ul>
+<li>containers must be interdenedent</li>
+<li>assume there is no order between containers</li>
+</ul>
+</li>
+</ol>
+<p>replicate set controller: scale the stateless component by running repolcate set</p>
+<p>scheduler: find which node should run the pod</p>
+<h1 id="why-Decprecate-Docker-in-the-Kubernetes"><a href="#why-Decprecate-Docker-in-the-Kubernetes" class="headerlink" title="why Decprecate Docker in the Kubernetes"></a>why Decprecate Docker in the Kubernetes</h1><p>Bad things on the docker:</p>
+<ol>
+<li>docker is just for single machine</li>
+<li>how to run container in multiple machine and communicate with each other —&gt; cross-host networking</li>
+<li>state/volume is hard to manage —&gt; multiple machines</li>
+</ol>
+<p>Key focus on Kubernetes</p>
+<ol>
+<li>multi-host</li>
+<li>cross-host networking</li>
+<li>state/volume management on the multiple machines</li>
+</ol>
+<p>containerd:<br>reuse some aspect of docker–&gt; (build container(Docker file), docker registry)</p>
+<p>cri container runtime for Kubernetes:<br>allowed Kubernetes not a hard dependency on Docker</p>
+<h1 id="Pre-for-docker"><a href="#Pre-for-docker" class="headerlink" title="Pre for docker"></a>Pre for docker</h1><ol>
+<li>image building</li>
+<li>container &lt;-&gt; container networking</li>
+<li>volume management</li>
+</ol>
+<h1 id="structure"><a href="#structure" class="headerlink" title="structure"></a>structure</h1><p>why should we distinguish between server and db?<br>    * state<br>        * stateless: app server<br>        * stateful: db</p>
+<p>the way to hanlde scalability &amp; falut handling is very different between server(stateless) and db(stateful)</p>
+<p>LB:<br>    * ingress<br>    * proxy<br>    * not need too much cpu/ram/storage, but the bottleneck maybe networking</p>
+<p>in cloud, you cannot recover a failed machine, rather than it bring up a new machine<br>—-&gt; this architecture is not working for stateful component for scalability, because the data is store in the stateful component, the logical is same among for the stateless component, not invovled with any permanent stored data in the server</p>
+<p>scalabiry for stareful:</p>
+<ol>
+<li>primary-secondary db<ul>
+<li>network seperation between primay &amp; secondary —-&gt; delay</li>
+<li>because the consistency between primary &amp; secondary –&gt; client cannot write directly to the secondary<h1 id="Learning-resources"><a href="#Learning-resources" class="headerlink" title="Learning resources"></a>Learning resources</h1><h1 id="Linux-pre-requisites"><a href="#Linux-pre-requisites" class="headerlink" title="Linux pre-requisites"></a>Linux pre-requisites</h1><a href="https://jnaapti.com/downloads/linux-prereq.pdf" target="_blank" rel="noopener">https://jnaapti.com/downloads/linux-prereq.pdf</a></li>
+</ul>
+</li>
+</ol>
+<h1 id="Others-1"><a href="#Others-1" class="headerlink" title="Others"></a>Others</h1><h1 id="Linux-pre-requisites-1"><a href="#Linux-pre-requisites-1" class="headerlink" title="Linux pre-requisites"></a>Linux pre-requisites</h1><p><a href="https://jnaapti.com/downloads/linux-prereq.pdf" target="_blank" rel="noopener">https://jnaapti.com/downloads/linux-prereq.pdf</a></p>
+<h1 id="Installation-Instructions"><a href="#Installation-Instructions" class="headerlink" title="Installation Instructions"></a>Installation Instructions</h1><h1 id="Docker-Installation"><a href="#Docker-Installation" class="headerlink" title="Docker Installation"></a>Docker Installation</h1><h1 id="https-docs-docker-com-engine-install-ubuntu"><a href="#https-docs-docker-com-engine-install-ubuntu" class="headerlink" title="https://docs.docker.com/engine/install/ubuntu/"></a><a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a></h1><p>apt-get update<br>apt-get -y install <br>apt-transport-https ca-certificates curl gnupg-agent software-properties-common<br>curl -fsSL <a href="https://download.docker.com/linux/ubuntu/gpg" target="_blank" rel="noopener">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -<br>add-apt-repository <br>“deb [arch=amd64] <a href="https://download.docker.com/linux/ubuntu" target="_blank" rel="noopener">https://download.docker.com/linux/ubuntu</a> <br>$(lsb_release -cs) <br>stable”<br>apt-get update<br>apt-get -y install docker-ce docker-ce-cli containerd.io</p>
+<h1 id="Verification-1"><a href="#Verification-1" class="headerlink" title="Verification"></a>Verification</h1><p>sudo systemctl status docker</p>
+<h1 id="Kubernetes-Installation"><a href="#Kubernetes-Installation" class="headerlink" title="Kubernetes Installation"></a>Kubernetes Installation</h1><h1 id="https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl"><a href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl" class="headerlink" title="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl"></a><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl</a></h1><h1 id="Run-as-root"><a href="#Run-as-root" class="headerlink" title="Run as root"></a>Run as root</h1><p>sudo su<br>curl -s <a href="https://packages.cloud.google.com/apt/doc/apt-key.gpg" target="_blank" rel="noopener">https://packages.cloud.google.com/apt/doc/apt-key.gpg</a> | apt-key add -<br>cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list<br>deb <a href="https://apt.kubernetes.io/" target="_blank" rel="noopener">https://apt.kubernetes.io/</a> kubernetes-xenial main<br>EOF<br>apt-get update<br>apt-get install -y kubelet kubeadm kubectl<br>apt-mark hold kubelet kubeadm kubectl</p>
+<h1 id="https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm"><a href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm" class="headerlink" title="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/"></a><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/</a></h1><p>kubeadm init –pod-network-cidr=10.244.0.0/16</p>
+<h1 id="Run-as-non-root"><a href="#Run-as-non-root" class="headerlink" title="Run as non-root"></a>Run as non-root</h1><p>mkdir -p $HOME/.kube<br>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>sudo chown $(id -u):$(id -g) $HOME/.kube/config</p>
+<h1 id="Verification-at-this-point"><a href="#Verification-at-this-point" class="headerlink" title="Verification at this point"></a>Verification at this point</h1><p>docker images<br>docker ps<br>kubectl get nodes</p>
+<p>kubectl apply -f <br>        <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml" target="_blank" rel="noopener">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a><br>kubectl taint nodes $(hostname) node-role.kubernetes.io/master:NoSchedule-</p>
+<p>kubeadm init —&gt; api server, controler manager, ercd, scheduler, cloud controler manager —&gt; control plane<br>kubeadm join  —&gt; join the second/third… machine to the cluster —&gt; these are worker nodes, where are running our application</p>
+<p>kubeadm –&gt; initl the cluster<br>kubectl –&gt; dameon for worker nodes</p>
+<ul>
+<li>intract with cluster</li>
+</ul>
+<p>in /.kube/config, we can know where the api server is, then using the kubectl to interact with the cluster by this api server</p>
+<ol>
+<li>kubectl get nodes</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: 'If you think my post is working for you, please donate to support me continue working', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/JojoYang666/JojoYang666.github.io/master/css/images/WechatPay.jpeg',
+  alipayImage: 'https://raw.githubusercontent.com/JojoYang666/JojoYang666.github.io/master/css/images/vemon.png'
+});
+</script>
+      
+      
+      <div>
+        <ul class="post-copyright">
+          <li class="post-copyright-author">
+          <strong>Post author:  </strong>Jojo Yang</a>
+          </li>
+          <li class="post-copyright-link">
+          <strong>Post link:  </strong>
+          <a href="/2021/02/19/Kubernetes-Simple-Examples/" target="_blank" title="Kubernetes Simple Examples">https://jojoyang666.github.io/2021/02/19/Kubernetes-Simple-Examples/</a>
+          </li>
+          <li class="post-copyright-license">
+            <strong>Copyright Notice:   </strong>
+            All articles in this blog are licensed under <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+            unless stating additionally.
+          </li>
+         
+        </ul>
+<div>
+
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+        
+      
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/02/19/Kubernetes-concepts/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Kubernetes concepts</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes-Basics"><span class="nav-number">1.</span> <span class="nav-text">Kubernetes Basics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-a-pod-called-nginx-using-the-image-nginx"><span class="nav-number">2.</span> <span class="nav-text">Create a pod called nginx using the image nginx</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#List-the-pods"><span class="nav-number">3.</span> <span class="nav-text">List the pods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Get-details-about-all-pods"><span class="nav-number">4.</span> <span class="nav-text">Get details about all pods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Describe-a-specific-pod"><span class="nav-number">5.</span> <span class="nav-text">Describe a specific pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Make-a-note-of-the-IP-address-of-the-pod"><span class="nav-number">6.</span> <span class="nav-text">Make a note of the IP address of the pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#In-my-case-it’s-10-244-0-4"><span class="nav-number">7.</span> <span class="nav-text">In my case it’s 10.244.0.4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#exec-into-the-container"><span class="nav-number">8.</span> <span class="nav-text">exec into the container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#View-the-logs-of-the-pod"><span class="nav-number">9.</span> <span class="nav-text">View the logs of the pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Remove-the-pod"><span class="nav-number">10.</span> <span class="nav-text">Remove the pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YAML-to-JSON-converter"><span class="nav-number">11.</span> <span class="nav-text">YAML to JSON converter</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pod-spec-as-a-YAML"><span class="nav-number">12.</span> <span class="nav-text">Pod spec as a YAML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-the-pod-using-the-spec-in-the-YAML"><span class="nav-number">13.</span> <span class="nav-text">Create the pod using the spec in the YAML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#If-the-spec-has-not-changed-and-we-apply-it-a-second-time-we-see-that-the-orchestrator-says-“unchanged”"><span class="nav-number">14.</span> <span class="nav-text">If the spec has not changed and we apply it a second time, we see that the orchestrator says “unchanged”</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Change-image"><span class="nav-number">15.</span> <span class="nav-text">Change image</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Update"><span class="nav-number">16.</span> <span class="nav-text">Update</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#We-see-that-“RESTARTS”-has-changed-to-1"><span class="nav-number">17.</span> <span class="nav-text">We see that “RESTARTS” has changed to 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delete-all-resources-described-in-the-pod"><span class="nav-number">18.</span> <span class="nav-text">Delete all resources described in the pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multiple-containers-in-a-single-pod"><span class="nav-number">19.</span> <span class="nav-text">Multiple containers in a single pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inside-the-container"><span class="nav-number">20.</span> <span class="nav-text">Inside the container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#We-see-no-nginx-running"><span class="nav-number">21.</span> <span class="nav-text">We see no nginx running</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-IP-listed-is-same-as-the-pod"><span class="nav-number">22.</span> <span class="nav-text">The IP listed is same as the pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#We-can-curl-the-nginx-server-via-localhost-even-though-it’s-not-running-in-the-same-container"><span class="nav-number">23.</span> <span class="nav-text">We can curl the nginx server via localhost even though it’s not running in the same container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Usecases"><span class="nav-number">24.</span> <span class="nav-text">Usecases</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Replicasets"><span class="nav-number">25.</span> <span class="nav-text">Replicasets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#You-should-see-3-containers"><span class="nav-number">26.</span> <span class="nav-text">You should see 3 containers</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Force-remove-one-of-them"><span class="nav-number">27.</span> <span class="nav-text">Force remove one of them</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Now-list-the-pods-again"><span class="nav-number">28.</span> <span class="nav-text">Now list the pods again</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-if-we-delete-a-pod"><span class="nav-number">29.</span> <span class="nav-text">What if we delete a pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-pod-gets-recreated-because-the-replicaset-controller-observes-and-takes-an-action"><span class="nav-number">30.</span> <span class="nav-text">The pod gets recreated because the replicaset-controller observes and takes an action</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Try-scale-out-and-scale-down"><span class="nav-number">31.</span> <span class="nav-text">Try scale out and scale down</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Change-replicas-to-6-and-apply"><span class="nav-number">32.</span> <span class="nav-text">Change replicas to 6 and apply</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Then-change-to-2-and-apply-again"><span class="nav-number">33.</span> <span class="nav-text">Then change to 2 and apply again</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#No-implicit-ownership"><span class="nav-number">34.</span> <span class="nav-text">No implicit ownership</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#First-create-a-replicaset-with-2-replicas-the-pods-have-the-label-app-nginx"><span class="nav-number">35.</span> <span class="nav-text">First create a replicaset with 2 replicas (the pods have the label app&#x3D;nginx)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-another-pod-with-this-spec"><span class="nav-number">36.</span> <span class="nav-text">Create another pod with this spec</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Change-detection"><span class="nav-number">37.</span> <span class="nav-text">Change detection</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deployment"><span class="nav-number">38.</span> <span class="nav-text">Deployment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Then-change-the-image-to-nginx-1-19"><span class="nav-number">39.</span> <span class="nav-text">Then change the image to nginx:1.19</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploy-again"><span class="nav-number">40.</span> <span class="nav-text">Deploy again</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Describe-the-deployment"><span class="nav-number">41.</span> <span class="nav-text">Describe the deployment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pulling-from-private-registries"><span class="nav-number">42.</span> <span class="nav-text">Pulling from private registries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rollback-demo"><span class="nav-number">43.</span> <span class="nav-text">Rollback demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploy-nginx-with-version-1-18-to-begin-with"><span class="nav-number">44.</span> <span class="nav-text">Deploy nginx with version 1.18 to begin with</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Change-the-image-to-1-19-and-apply-again"><span class="nav-number">45.</span> <span class="nav-text">Change the image to 1.19 and apply again</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kubectl-rollout-history"><span class="nav-number">46.</span> <span class="nav-text">kubectl rollout history</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Recreate-strategy"><span class="nav-number">47.</span> <span class="nav-text">Recreate strategy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Services"><span class="nav-number">48.</span> <span class="nav-text">Services</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ensure-that-we-have-some-nginx-replicas-running"><span class="nav-number">49.</span> <span class="nav-text">Ensure that we have some nginx replicas running</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#curl-the-cluster-ip-every-second-and-see-if-there-are-any-disruptions-to-the-service-when-a-deployment-is-in-progress"><span class="nav-number">50.</span> <span class="nav-text">curl the cluster ip every second and see if there are any disruptions to the service when a deployment is in progress</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Demo-of-how-we-can-resolve-the-service-name-to-connect-to-the-pod"><span class="nav-number">51.</span> <span class="nav-text">Demo of how we can resolve the service name to connect to the pod</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-a-pod-that-has-curl-in-it"><span class="nav-number">52.</span> <span class="nav-text">Create a pod that has curl in it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inside-the-container-1"><span class="nav-number">53.</span> <span class="nav-text">Inside the container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Services-1"><span class="nav-number">54.</span> <span class="nav-text">Services</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification"><span class="nav-number">55.</span> <span class="nav-text">Verification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Make-a-note-of-the-cluster-ip"><span class="nav-number">56.</span> <span class="nav-text">Make a note of the cluster ip</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Load-Balancer"><span class="nav-number">57.</span> <span class="nav-text">Load Balancer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hack-set-an-external-IP"><span class="nav-number">58.</span> <span class="nav-text">Hack - set an external IP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Make-a-note-of-the-cluster-ip-and-node-port"><span class="nav-number">59.</span> <span class="nav-text">Make a note of the cluster ip and node port</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-output"><span class="nav-number">60.</span> <span class="nav-text">Sample output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nginx-LoadBalancer-10-111-26-168-128-199-118-23-80-30811-TCP-21h"><span class="nav-number">61.</span> <span class="nav-text">nginx        LoadBalancer   10.111.26.168   128.199.118.23   80:30811&#x2F;TCP   21h</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#In-this-case-the-external-ip-is-128-199-118-23-and-node-port-is-30811"><span class="nav-number">62.</span> <span class="nav-text">In this case, the external ip is 128.199.118.23 and node port is 30811</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Persistent-Volumes-and-Persistent-Volume-Claims"><span class="nav-number">63.</span> <span class="nav-text">Persistent Volumes and Persistent Volume Claims</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Modify-a-file-in-this-volume-from-inside-the-container"><span class="nav-number">64.</span> <span class="nav-text">Modify a file in this volume from inside the container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Now-visit-data"><span class="nav-number">65.</span> <span class="nav-text">Now visit &#x2F;data</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-a-file-from-host-and-see-if-the-container-reflects-it"><span class="nav-number">66.</span> <span class="nav-text">Create a file from host and see if the container reflects it</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Statefulsets"><span class="nav-number">67.</span> <span class="nav-text">Statefulsets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Let-us-add-one-PV"><span class="nav-number">68.</span> <span class="nav-text">Let us add one PV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#One-volume-is-listed-and-it-will-be-bound-to-the-first-PVC-of-the-statefulset"><span class="nav-number">69.</span> <span class="nav-text">One volume is listed and it will be bound to the first PVC of the statefulset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-pvc-is-bound-and-you-will-see-one-more-PVC-getting-listed-for-the-second-pod-in-the-statefulset"><span class="nav-number">70.</span> <span class="nav-text">The pvc is bound and you will see one more PVC getting listed (for the second pod in the statefulset)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-first-pod-starts-running-and-the-second-one-is-now-pending"><span class="nav-number">71.</span> <span class="nav-text">The first pod starts running and the second one is now pending</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ready-will-be-1-3"><span class="nav-number">72.</span> <span class="nav-text">Ready will be 1&#x2F;3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-the-second-PV"><span class="nav-number">73.</span> <span class="nav-text">Add the second PV</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-directories-are-created-that-represent-the-2-PVs"><span class="nav-number">74.</span> <span class="nav-text">2 directories are created (that represent the 2 PVs)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-an-index-html-in-the-2-directories"><span class="nav-number">75.</span> <span class="nav-text">Create an index.html in the 2 directories</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Now-create-a-client-curl-pod-to-connect-to-these-services-in-the-statefulset"><span class="nav-number">76.</span> <span class="nav-text">Now create a client (curl pod) to connect to these services in the statefulset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inside-the-container-2"><span class="nav-number">77.</span> <span class="nav-text">Inside the container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Connect-to-the-nginx-service-in-pod-1"><span class="nav-number">78.</span> <span class="nav-text">Connect to the nginx service in pod 1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Connect-to-the-server-in-pod-2"><span class="nav-number">79.</span> <span class="nav-text">Connect to the server in pod 2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ConfigMaps"><span class="nav-number">80.</span> <span class="nav-text">ConfigMaps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#property-like-keys-each-key-maps-to-a-simple-value"><span class="nav-number">81.</span> <span class="nav-text">property-like keys; each key maps to a simple value</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#file-like-keys"><span class="nav-number">82.</span> <span class="nav-text">file-like keys</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inside-the-container-3"><span class="nav-number">83.</span> <span class="nav-text">Inside the container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Secret"><span class="nav-number">84.</span> <span class="nav-text">Secret</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Namespaces"><span class="nav-number">85.</span> <span class="nav-text">Namespaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploying-to-multiple-namespaces"><span class="nav-number">86.</span> <span class="nav-text">Deploying to multiple namespaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploying-to-myns1-namespace"><span class="nav-number">87.</span> <span class="nav-text">Deploying to myns1 namespace</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-and-list-namespaces"><span class="nav-number">88.</span> <span class="nav-text">Create and list namespaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Connecting-to-services-of-different-namespaces"><span class="nav-number">89.</span> <span class="nav-text">Connecting to services of different namespaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inside-the-container-4"><span class="nav-number">90.</span> <span class="nav-text">Inside the container</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Config-and-Context"><span class="nav-number">91.</span> <span class="nav-text">Config and Context</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Open-kube-config-and-change-cluster-name-to-dev-cluster-context-name-to-dev-context-and-carefully-edit-the-1-context-and-set-the-same-names"><span class="nav-number">92.</span> <span class="nav-text">Open ~&#x2F;.kube&#x2F;config and change cluster name to dev-cluster, context name to dev-context and carefully edit the 1 context and set the same names</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Create-a-new-context"><span class="nav-number">93.</span> <span class="nav-text">Create a new context</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#k9s"><span class="nav-number">94.</span> <span class="nav-text">k9s</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sample-projects"><span class="nav-number">95.</span> <span class="nav-text">Sample projects</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java"><span class="nav-number">96.</span> <span class="nav-text">Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">97.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Go"><span class="nav-number">98.</span> <span class="nav-text">Go</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deploying-a-sample-application"><span class="nav-number">99.</span> <span class="nav-text">Deploying a sample application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Note-the-cluster-ip-of-users-service"><span class="nav-number">100.</span> <span class="nav-text">Note the cluster ip of users-service</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-externalIPs-‘‘"><span class="nav-number">101.</span> <span class="nav-text">Add externalIPs: [‘‘]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#If-needed-change-port-from-5000-to-80-don’t-change-targetPort"><span class="nav-number">102.</span> <span class="nav-text">If needed, change port from 5000 to 80 (don’t change targetPort)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pod-reader"><span class="nav-number">103.</span> <span class="nav-text">Pod-reader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Helm"><span class="nav-number">104.</span> <span class="nav-text">Helm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#common-commands"><span class="nav-number">105.</span> <span class="nav-text">common commands</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Others"><span class="nav-number">106.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#why-Decprecate-Docker-in-the-Kubernetes"><span class="nav-number">107.</span> <span class="nav-text">why Decprecate Docker in the Kubernetes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pre-for-docker"><span class="nav-number">108.</span> <span class="nav-text">Pre for docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#structure"><span class="nav-number">109.</span> <span class="nav-text">structure</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Learning-resources"><span class="nav-number">110.</span> <span class="nav-text">Learning resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-pre-requisites"><span class="nav-number">111.</span> <span class="nav-text">Linux pre-requisites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Others-1"><span class="nav-number">112.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-pre-requisites-1"><span class="nav-number">113.</span> <span class="nav-text">Linux pre-requisites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation-Instructions"><span class="nav-number">114.</span> <span class="nav-text">Installation Instructions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-Installation"><span class="nav-number">115.</span> <span class="nav-text">Docker Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-docs-docker-com-engine-install-ubuntu"><span class="nav-number">116.</span> <span class="nav-text">https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;ubuntu&#x2F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification-1"><span class="nav-number">117.</span> <span class="nav-text">Verification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes-Installation"><span class="nav-number">118.</span> <span class="nav-text">Kubernetes Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl"><span class="nav-number">119.</span> <span class="nav-text">https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;setup&#x2F;production-environment&#x2F;tools&#x2F;kubeadm&#x2F;install-kubeadm&#x2F;#installing-kubeadm-kubelet-and-kubectl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-as-root"><span class="nav-number">120.</span> <span class="nav-text">Run as root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm"><span class="nav-number">121.</span> <span class="nav-text">https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;setup&#x2F;production-environment&#x2F;tools&#x2F;kubeadm&#x2F;create-cluster-kubeadm&#x2F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-as-non-root"><span class="nav-number">122.</span> <span class="nav-text">Run as non-root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification-at-this-point"><span class="nav-number">123.</span> <span class="nav-text">Verification at this point</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2021 Jojo&#39;s Blog All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				UV : <span id="busuanzi_value_site_uv"></span> |  
+				PV : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+  
+<script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">Setting</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              Front Size
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            You already change font size
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              Night eye protection mode
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            Night eye protection mode has turned on, click again to turn off
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            Jojo&#39;s Blog
+          </div>
+          <div class="panel-body">
+            Copyright © 2021 Jojo Yang All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+</body>
+</html>

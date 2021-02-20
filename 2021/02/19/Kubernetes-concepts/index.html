@@ -3,21 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>basic concept for kubernetes | Jojo&#39;s Blog</title>
+  <title>kubernetes concepts | Jojo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="why Decprecate Docker in the KubernetesBad things on the docker:  docker is just for single machine how to run container in multiple machine and communicate with each other —&gt; cross-host networking">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Basic concept for kubernetes">
-<meta property="og:url" content="https://jojoyang666.github.io/2020/12/07/Basic-concept-for-kubernetes/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Kubernetes concepts">
+<meta property="og:url" content="https://jojoyang666.github.io/2021/02/19/Kubernetes-concepts/index.html">
 <meta property="og:site_name" content="Jojo&#39;s Blog">
-<meta property="og:description" content="why Decprecate Docker in the KubernetesBad things on the docker:  docker is just for single machine how to run container in multiple machine and communicate with each other —&gt; cross-host networking">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-07T15:12:27.000Z">
-<meta property="article:modified_time" content="2020-12-07T19:27:09.462Z">
+<meta property="article:published_time" content="2021-02-20T02:52:17.000Z">
+<meta property="article:modified_time" content="2021-02-20T02:52:32.648Z">
 <meta property="article:author" content="Jojo Yang">
 <meta name="twitter:card" content="summary">
   
@@ -171,7 +169,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-Basic-concept-for-kubernetes" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-Kubernetes-concepts" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -179,7 +177,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      Basic concept for kubernetes
+      Kubernetes concepts
     </h1>
   
 
@@ -187,8 +185,8 @@
     
     <div class="article-meta">
       
-	<a href="/2020/12/07/Basic-concept-for-kubernetes/" class="article-date">
-	  <time datetime="2020-12-07T15:12:27.000Z" itemprop="datePublished">2020-12-07</time>
+	<a href="/2021/02/19/Kubernetes-concepts/" class="article-date">
+	  <time datetime="2021-02-20T02:52:17.000Z" itemprop="datePublished">2021-02-19</time>
 	</a>
 
       
@@ -206,59 +204,12 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="why-Decprecate-Docker-in-the-Kubernetes"><a href="#why-Decprecate-Docker-in-the-Kubernetes" class="headerlink" title="why Decprecate Docker in the Kubernetes"></a>why Decprecate Docker in the Kubernetes</h1><p>Bad things on the docker:</p>
-<ol>
-<li>docker is just for single machine</li>
-<li>how to run container in multiple machine and communicate with each other —&gt; cross-host networking</li>
-<li>state/volume is hard to manage —&gt; multiple machines</li>
-</ol>
-<p>Key focus on Kubernetes</p>
-<ol>
-<li>multi-host</li>
-<li>cross-host networking</li>
-<li>state/volume management on the multiple machines</li>
-</ol>
-<p>containerd:<br>reuse some aspect of docker–&gt; (build container(Docker file), docker registry)</p>
-<p>cri container runtime for Kubernetes:<br>allowed Kubernetes not a hard dependency on Docker</p>
-<h1 id="Pre-for-docker"><a href="#Pre-for-docker" class="headerlink" title="Pre for docker"></a>Pre for docker</h1><ol>
-<li>image building</li>
-<li>container &lt;-&gt; container networking</li>
-<li>volume management</li>
-</ol>
-<h1 id="structure"><a href="#structure" class="headerlink" title="structure"></a>structure</h1><p>why should we distinguish between server and db?<br>    * state<br>        * stateless: app server<br>        * stateful: db</p>
-<p>the way to hanlde scalability &amp; falut handling is very different between server(stateless) and db(stateful)</p>
-<p>LB:<br>    * ingress<br>    * proxy<br>    * not need too much cpu/ram/storage, but the bottleneck maybe networking</p>
-<p>in cloud, you cannot recover a failed machine, rather than it bring up a new machine<br>—-&gt; this architecture is not working for stateful component for scalability, because the data is store in the stateful component, the logical is same among for the stateless component, not invovled with any permanent stored data in the server</p>
-<p>scalabiry for stareful:</p>
-<ol>
-<li>primary-secondary db<ul>
-<li>network seperation between primay &amp; secondary —-&gt; delay</li>
-<li>because the consistency between primary &amp; secondary –&gt; client cannot write directly to the secondary<h1 id="Learning-resources"><a href="#Learning-resources" class="headerlink" title="Learning resources"></a>Learning resources</h1><h1 id="Linux-pre-requisites"><a href="#Linux-pre-requisites" class="headerlink" title="Linux pre-requisites"></a>Linux pre-requisites</h1><a href="https://jnaapti.com/downloads/linux-prereq.pdf" target="_blank" rel="noopener">https://jnaapti.com/downloads/linux-prereq.pdf</a></li>
-</ul>
-</li>
-</ol>
-<h1 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h1><h1 id="Linux-pre-requisites-1"><a href="#Linux-pre-requisites-1" class="headerlink" title="Linux pre-requisites"></a>Linux pre-requisites</h1><p><a href="https://jnaapti.com/downloads/linux-prereq.pdf" target="_blank" rel="noopener">https://jnaapti.com/downloads/linux-prereq.pdf</a></p>
-<h1 id="Installation-Instructions"><a href="#Installation-Instructions" class="headerlink" title="Installation Instructions"></a>Installation Instructions</h1><h1 id="Docker-Installation"><a href="#Docker-Installation" class="headerlink" title="Docker Installation"></a>Docker Installation</h1><h1 id="https-docs-docker-com-engine-install-ubuntu"><a href="#https-docs-docker-com-engine-install-ubuntu" class="headerlink" title="https://docs.docker.com/engine/install/ubuntu/"></a><a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a></h1><p>apt-get update<br>apt-get -y install <br>apt-transport-https ca-certificates curl gnupg-agent software-properties-common<br>curl -fsSL <a href="https://download.docker.com/linux/ubuntu/gpg" target="_blank" rel="noopener">https://download.docker.com/linux/ubuntu/gpg</a> | sudo apt-key add -<br>add-apt-repository <br>“deb [arch=amd64] <a href="https://download.docker.com/linux/ubuntu" target="_blank" rel="noopener">https://download.docker.com/linux/ubuntu</a> <br>$(lsb_release -cs) <br>stable”<br>apt-get update<br>apt-get -y install docker-ce docker-ce-cli containerd.io</p>
-<h1 id="Verification"><a href="#Verification" class="headerlink" title="Verification"></a>Verification</h1><p>sudo systemctl status docker</p>
-<h1 id="Kubernetes-Installation"><a href="#Kubernetes-Installation" class="headerlink" title="Kubernetes Installation"></a>Kubernetes Installation</h1><h1 id="https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl"><a href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl" class="headerlink" title="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl"></a><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/#installing-kubeadm-kubelet-and-kubectl</a></h1><h1 id="Run-as-root"><a href="#Run-as-root" class="headerlink" title="Run as root"></a>Run as root</h1><p>sudo su<br>curl -s <a href="https://packages.cloud.google.com/apt/doc/apt-key.gpg" target="_blank" rel="noopener">https://packages.cloud.google.com/apt/doc/apt-key.gpg</a> | apt-key add -<br>cat &lt;&lt;EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list<br>deb <a href="https://apt.kubernetes.io/" target="_blank" rel="noopener">https://apt.kubernetes.io/</a> kubernetes-xenial main<br>EOF<br>apt-get update<br>apt-get install -y kubelet kubeadm kubectl<br>apt-mark hold kubelet kubeadm kubectl</p>
-<h1 id="https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm"><a href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm" class="headerlink" title="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/"></a><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/" target="_blank" rel="noopener">https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/</a></h1><p>kubeadm init –pod-network-cidr=10.244.0.0/16</p>
-<h1 id="Run-as-non-root"><a href="#Run-as-non-root" class="headerlink" title="Run as non-root"></a>Run as non-root</h1><p>mkdir -p $HOME/.kube<br>sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config<br>sudo chown $(id -u):$(id -g) $HOME/.kube/config</p>
-<h1 id="Verification-at-this-point"><a href="#Verification-at-this-point" class="headerlink" title="Verification at this point"></a>Verification at this point</h1><p>docker images<br>docker ps<br>kubectl get nodes</p>
-<p>kubectl apply -f <br>        <a href="https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml" target="_blank" rel="noopener">https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</a><br>kubectl taint nodes $(hostname) node-role.kubernetes.io/master:NoSchedule-</p>
-<p>kubeadm init —&gt; api server, controler manager, ercd, scheduler, cloud controler manager —&gt; control plane<br>kubeadm join  —&gt; join the second/third… machine to the cluster —&gt; these are worker nodes, where are running our application</p>
-<p>kubeadm –&gt; initl the cluster<br>kubectl –&gt; dameon for worker nodes</p>
-<ul>
-<li>intract with cluster</li>
-</ul>
-<p>in /.kube/config, we can know where the api server is, then using the kubectl to interact with the cluster by this api server</p>
-<ol>
-<li>kubectl get nodes</li>
-</ol>
-
+        
 
 	<div class="row">
     <embed src="/assets/kubernetes_pre_concepts.pdf" width="100%" height="550" type="application/pdf">
 	</div>
+
 
 
 
@@ -289,7 +240,7 @@ var a = new Donate({
           </li>
           <li class="post-copyright-link">
           <strong>Post link:  </strong>
-          <a href="/2020/12/07/Basic-concept-for-kubernetes/" target="_blank" title="Basic concept for kubernetes">https://jojoyang666.github.io/2020/12/07/Basic-concept-for-kubernetes/</a>
+          <a href="/2021/02/19/Kubernetes-concepts/" target="_blank" title="Kubernetes concepts">https://jojoyang666.github.io/2021/02/19/Kubernetes-concepts/</a>
           </li>
           <li class="post-copyright-license">
             <strong>Copyright Notice:   </strong>
@@ -337,19 +288,19 @@ var a = new Donate({
     
 <nav id="article-nav">
   
-    <a href="/2020/12/07/15-3Sum/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/02/19/Kubernetes-Simple-Examples/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          15. 3Sum
+          Kubernetes Simple Examples
         
       </div>
     </a>
   
   
-    <a href="/2020/12/06/238-Product-of-Array-Except-Self/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/02/19/Kubernetes-Installation/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">238. Product of Array Except Self </div>
+      <div class="article-nav-title">Kubernetes Installation</div>
     </a>
   
 </nav>
@@ -363,7 +314,7 @@ var a = new Donate({
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#why-Decprecate-Docker-in-the-Kubernetes"><span class="nav-number">1.</span> <span class="nav-text">why Decprecate Docker in the Kubernetes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pre-for-docker"><span class="nav-number">2.</span> <span class="nav-text">Pre for docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#structure"><span class="nav-number">3.</span> <span class="nav-text">structure</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Learning-resources"><span class="nav-number">4.</span> <span class="nav-text">Learning resources</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-pre-requisites"><span class="nav-number">5.</span> <span class="nav-text">Linux pre-requisites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Others"><span class="nav-number">6.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-pre-requisites-1"><span class="nav-number">7.</span> <span class="nav-text">Linux pre-requisites</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Installation-Instructions"><span class="nav-number">8.</span> <span class="nav-text">Installation Instructions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-Installation"><span class="nav-number">9.</span> <span class="nav-text">Docker Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-docs-docker-com-engine-install-ubuntu"><span class="nav-number">10.</span> <span class="nav-text">https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;ubuntu&#x2F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification"><span class="nav-number">11.</span> <span class="nav-text">Verification</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes-Installation"><span class="nav-number">12.</span> <span class="nav-text">Kubernetes Installation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-install-kubeadm-installing-kubeadm-kubelet-and-kubectl"><span class="nav-number">13.</span> <span class="nav-text">https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;setup&#x2F;production-environment&#x2F;tools&#x2F;kubeadm&#x2F;install-kubeadm&#x2F;#installing-kubeadm-kubelet-and-kubectl</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-as-root"><span class="nav-number">14.</span> <span class="nav-text">Run as root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#https-kubernetes-io-docs-setup-production-environment-tools-kubeadm-create-cluster-kubeadm"><span class="nav-number">15.</span> <span class="nav-text">https:&#x2F;&#x2F;kubernetes.io&#x2F;docs&#x2F;setup&#x2F;production-environment&#x2F;tools&#x2F;kubeadm&#x2F;create-cluster-kubeadm&#x2F;</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Run-as-non-root"><span class="nav-number">16.</span> <span class="nav-text">Run as non-root</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Verification-at-this-point"><span class="nav-number">17.</span> <span class="nav-text">Verification at this point</span></a></li></ol>
+        <ol class="nav">None</ol>
     
     </div>
   </aside>
